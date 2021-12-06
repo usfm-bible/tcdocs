@@ -1,4 +1,12 @@
+---
+title: Repository Structure
+author: M. Hosken
+status: open
+---
+
 # Repository Structure
+
+M. Hosken
 
 ## Executive Summary
 
@@ -76,9 +84,14 @@ insufficient, PDF is a good fallback format.
 
 To reflect the two stages of standards development (inputs and outputs), the
 repository has different top level directories to hold documents for the
-different aspects of the committee's work.
+different aspects of the committee's work. For each directory we also consider
+the role of issues against content in that directory.
 
-### Proposals
+Files in the all the directories are considered to be owned by the technical
+committee and any committee member may make changes under the authority of the
+techincal committee.
+
+### proposals
 
 Proposal documents are not designed to be edited, at least collaboratively. They
 are the inputs that the committee discusses to then create the outputs. As such,
@@ -92,7 +105,7 @@ successful document registry scheme used by the Unicode Consortium.
 
 The full filename for a document may be anything but is generally the document
 code followed by a non space separated descriptive title. Thus this document is
-`u21001\_repository\_structure.md`. Any other associated files with a document,
+`u21001_repository_structure.md`. Any other associated files with a document,
 for example images, should follow the same initial document code. Each
 proposals/ year directory contains an images/ directory so that images
 associated with documents can be stored separately and not clutter the directory
@@ -106,7 +119,14 @@ with a letter. For example u21001a. Notice that the document number is 3 digits.
 It is not anticipated that the committee will need to address more than a
 thousand documents a year. It is unlikely even to address a hundred!
 
-#### Index.md
+Documents are considerd to be owned by their author and committee members should
+not make changes to other people's proposal documents. Thus issues are requests
+for the author to make changes to their proposal. At some point, proposal
+documents are considered closed and no changes should be made to them. They have
+been actioned and the changes should affect the actioned results rather than the
+proposal that caused the actions.
+
+#### index.md
 
 Each year directory also contains one `index.md` file that consists of a list of
 all the documents in the directory. Each entry in the list includes: the
@@ -131,7 +151,7 @@ committee approval to add a document. Clearly anything unsuitable for the
 repository will not be added. Whether a document exists is evident from there
 being a link for it in the index.md.
 
-### Markers
+### markers
 
 The primary structure of the USFM user manual is around descriptions of markers.
 This is a good primary descriptive mechanism. The markers directory contains
@@ -142,22 +162,36 @@ in the user manual. Thus there might be a file markers/pb.md containing further
 description of the pb marker. The markers/ directory has an images/
 subdirectory.
 
-### Miscellaneous
+Issues against documents in the markers directory can become work items for the
+technical committee or can spawn a proposal document. But, naturally, they are
+requests to add content or make changes to the relevant marker documents. These
+would probably be the main issues that get raised.
+
+### miscellaneous
 
 There are situations that may need describing that are not best discussed in the
 description of a particular marker. These can be discussed in documents in the
 miscellaneous/ directory. Documents are not coded and just have a descriptive
 title. The miscellaneous/ directory has an images/ subdirectory.
 
-### Grammar
+Like issues against documents in the markers directory, issues againsts
+miscellaneous/ documents may spawn work items for the technical committee.
+
+### grammar
 
 In developing a formal grammar, the committee will create various files as well
 as documents. These are all kept in a suitable tree withing the grammar/
 directory. The structure is yet to be agreed and is flexible to the needs of
 that project.
 
-### Committee
+Issues in this directory would be to fix problems in the files in this tree.
+
+### committee
 
 The committee/ directory contains documents pertinant to the description of the
 committee. For example, it is intended that once agreed, much of the content of
 this proposal end up as a document in that directory.
+
+Issues in this directory would reflect small changes not worth raising a
+proposal document for to committee documents.
+
