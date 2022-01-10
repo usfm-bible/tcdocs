@@ -2,6 +2,8 @@
 title: Repository Structure
 author: M. Hosken
 status: open
+code: 21001
+issue: 
 ---
 
 # Repository Structure
@@ -70,6 +72,8 @@ marking fenced code sections.
 - **usfm** for USFM fragments
 - **xml** for USX fragments
 
+Discuss how to produce 2 output docs from single source docs.
+
 ### PDF
 
 In some cases, especially where the document is not intended to be edited, for
@@ -126,6 +130,24 @@ documents are considered closed and no changes should be made to them. They have
 been actioned and the changes should affect the actioned results rather than the
 proposal that caused the actions.
 
+It is expected that a proposal has a corresponding issue.
+
+This document aims to present an exemplar of a proposal document. The structure
+of a proposal document is lightweight. The header of:
+
+```
+---
+title: Proposal Title
+author: An. Author, An O. Author
+status: open or completed or rejected
+issue: github issue number if relevant
+code: document code
+---
+```
+
+Proposals are expected to begin with an executive summary that states, in
+summary, how the world will be different once this proposal is acted upon.
+
 #### index.md
 
 Each year directory also contains one `index.md` file that consists of a list of
@@ -167,7 +189,7 @@ technical committee or can spawn a proposal document. But, naturally, they are
 requests to add content or make changes to the relevant marker documents. These
 would probably be the main issues that get raised.
 
-### miscellaneous
+### documentation
 
 There are situations that may need describing that are not best discussed in the
 description of a particular marker. These can be discussed in documents in the
@@ -176,6 +198,8 @@ title. The miscellaneous/ directory has an images/ subdirectory.
 
 Like issues against documents in the markers directory, issues againsts
 miscellaneous/ documents may spawn work items for the technical committee.
+
+This directory also includes such components as document templates as well as bits that go into the docs.
 
 ### grammar
 
