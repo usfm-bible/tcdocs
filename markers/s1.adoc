@@ -20,6 +20,7 @@ A section heading may take any number and kind of footnote.
 
 === Proverbs 22.17 (GNT)
 
+[source,latex]
 ----
 \s1 The Thirty Wise Sayings
 \p
@@ -36,7 +37,7 @@ out, you will bring back the right answer.
 those who stand helpless in court.
 ----
 
-image::images/s1_example1.jpg[Proverbs 22.17 (GNT)]
+image::images/s1_example1.jpg[Proverbs 22.17 (GNT),250]
 
 == Typesetting
 

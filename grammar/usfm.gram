@@ -1,0 +1,10 @@
+start: char_simple+ finished();
+
+char_simple: t=TagType("Character") c1=((char_text char_embed)*) c2=char_text? e=EndTag()<CmpTag(t, e)>?
+    { make_char(t, c1, c2) };
+
+char_embed: t=TagEmbed() c1=((char_text char_embed)*) c2=char_text? e=EndTagEmbed()<CmpTag(t, e)>?
+    { make_char(t, c1, c2) };
+
+char_text: a=((Word() | Ws())+) { str_join(a) };
+

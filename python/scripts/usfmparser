@@ -1,0 +1,51 @@
+#!/usr/bin/python3
+
+import sys, os
+try:
+    import usfmparser
+except ImportError:
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
+    import usfmparser
+import re, argparse, logging
+from usfmparser import UsfmParser, asusfm
+from usfmparser.fparser import createParser
+from usfmparser.funcparserlib import parser as fpp
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('infile',help="Input file or string content")
+parser.add_argument('-g','--grammar',required=True,help="input grammar")
+parser.add_argument('-d','--debug',action='store_true',help='Run parser in debug')
+parser.add_argument('-s','--stylesheet',action='append',default=[],help="Read stylesheets in order")
+parser.add_argument('-T','--tokens',action='store_true',help="Display tokens before parsing")
+args = parser.parse_args()
+
+if args.debug:
+    logging.basicConfig(filename="fparser.log", level=logging.DEBUG)
+    fpp.debug = True
+
+support = UsfmParser()
+for s in args.stylesheet:
+    support._readstylesheet(s)
+gvars = {k: getattr(support, k) for k in dir(support) if not k.startswith("_")}
+
+with open(args.grammar) as inf:
+    gr = inf.read()
+    results = {}
+    createParser(gr, results, gvars, debug=args.debug)
+    pegparser = results['start']
+
+if os.path.exists(args.infile):
+    with open(args.infile, encoding="utf-8") as inf:
+        content = inf.read()
+else:
+    content = args.infile
+
+debug_print = print
+fpp.debug = False
+toks = support._tokenize(content)
+if args.tokens:
+    print(toks)
+usx = pegparser.parse(toks)
+print(asusfm(usx))
+
