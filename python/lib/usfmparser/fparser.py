@@ -109,11 +109,12 @@ def __add__(self, other):
     @Parser
     def _add(tokens, s):
         (v1, s2) = self.run(tokens, s)
-        if not hasattr(s2, 'vars'):
-            s2.vars = dict(getattr(s, 'vars', {}).items())
-        s2.vars[self.name] = v1
+        #if not hasattr(s2, 'vars'):
+        #    s2.vars = dict(getattr(s, 'vars', {}).items())
+        #s2.vars[self.name] = v1
         (v2, s3) = other.run(tokens, s2)
         debug_print("Doing {}: {} + {}: {}".format(self.name, self, other.name, other))
+        # not sure why we have to overwrite vars here
         s3.vars = dict(getattr(s2, 'vars', {}).items())
         s3.vars[other.name] = v2
         return magic(v1, v2), s3
@@ -132,7 +133,7 @@ def __or__(self, other):
             return self.run(tokens, s)
         except NoParseError as e:
             s1 = State(s.pos, e.state.max)
-            s1.vars = getattr(s, 'vars', {})
+            #s1.vars = getattr(s, 'vars', {})
             return other.run(tokens, s1)
 
     _or.name = '(%s | %s)' % (self.name, other.name)

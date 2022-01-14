@@ -7,9 +7,10 @@ except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
     import usfmparser
 import re, argparse, logging
-from usfmparser import UsfmParser, asusfm
+from usfmparser import UsfmParser
 from usfmparser.fparser import createParser
 from usfmparser.funcparserlib import parser as fpp
+from lxml import etree
 
 
 parser = argparse.ArgumentParser()
@@ -47,5 +48,5 @@ toks = support._tokenize(content)
 if args.tokens:
     print(toks)
 usx = pegparser.parse(toks)
-print(asusfm(usx))
+print(etree.tostring(usx))
 

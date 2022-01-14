@@ -1,4 +1,4 @@
-start: char_simple+ finished();
+start: a=(char_simple+) finished() { make_usx(a) };
 
 char_simple: t=TagType("Character") c1=((char_text char_embed)*) c2=char_text? e=EndTag()<CmpTag(t, e)>?
     { make_char(t, c1, c2) };

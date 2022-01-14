@@ -5,44 +5,7 @@ from .fparser import createParser, make_tokenizer, debug_print
 from .funcparserlib import parser as fpp
 from .funcparserlib.parser import some, finished
 from .funcparserlib.lexer import Token
-
-def tree(c, indent=0):
-    if hasattr(c, 'tree'):
-        return c.tree(indent=indent)
-    elif isinstance(c, (list, tuple)):
-        return "\n".join(tree(e, indent+2) for e in c)
-    elif isinstance(c, str):
-        return " "*indent + c
-    elif c is None:
-        return ""
-    else:
-        return "Unknown type {}".format(type(c))
-
-def asusfm(c):
-    if hasattr(c, 'asusfm'):
-        return c.asusfm()
-    elif isinstance(c, (list, tuple)):
-        return "".join(asusfm(e) for e in c)
-    elif isinstance(c, str):
-        return c
-    elif c is None:
-        return ""
-    else:
-        return "Unknown type {}".format(type(c))
-
-class Char:
-    def __init__(self, tag, content):
-        self.style = tag
-        self.content = content
-    def __str__(self):
-        return "\\{} {}".format(self.style, self.content)
-    def tree(self, indent=0):
-        res = [(" "*indent or "") + "Char({})".format(self.style)]
-        for c in self.content:
-            res.append(tree(c, indent=indent+2))
-        return "\n".join(res)
-    def asusfm(self):
-        return "\\{0} {1}\\{0}*".format(self.style, asusfm(self.content))
+from .usxmodel import usx, char
 
 class UsfmParser:
     _tokenspecs = [
@@ -124,7 +87,10 @@ class UsfmParser:
             for a in c:
                 content.append(a.value if isinstance(a, Token) else a)
         content.append(c2.value if isinstance(c2, Token) else c2)
-        return Char(tag.tname, content)
+        return char(attrib={'style': tag.tname}, *content)
+
+    def make_usx(self, c):
+        return usx(attrib={"version": "1.0"}, *c)
 
     def str_join(self, a):
         return "".join(c.value for c in a)
