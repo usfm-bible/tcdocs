@@ -1,10 +1,14 @@
-start: a=(char_simple+) finished() { make_usx(a) };
+start: a=(para_simple+) finished() { make_usx(a) };
+
+para_simple: t=TagType("Paragraph") a=(char_simple+) { make_para(t, a) };
 
 char_simple: t=TagType("Character") c1=((char_text char_embed)*) c2=char_text? e=EndTag()<CmpTag(t, e)>?
-    { make_char(t, c1, c2) };
+                                                                                    { make_char(t, c1, c2) }
+             | char_embed;
 
 char_embed: t=TagEmbed() c1=((char_text char_embed)*) c2=char_text? e=EndTagEmbed()<CmpTag(t, e)>?
-    { make_char(t, c1, c2) };
+                                                                                    { make_char(t, c1, c2) }
+             | char_text;
 
 char_text: a=((Word() | Ws())+) { str_join(a) };
 

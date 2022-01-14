@@ -5,7 +5,7 @@ from .fparser import createParser, make_tokenizer, debug_print
 from .funcparserlib import parser as fpp
 from .funcparserlib.parser import some, finished
 from .funcparserlib.lexer import Token
-from .usxmodel import usx, char
+from .usxmodel import usx, char, para
 
 class UsfmParser:
     _tokenspecs = [
@@ -91,6 +91,9 @@ class UsfmParser:
 
     def make_usx(self, c):
         return usx(attrib={"version": "1.0"}, *c)
+
+    def make_para(self, tag, content):
+        return para(attrib={'style': tag.tname}, *content)
 
     def str_join(self, a):
         return "".join(c.value for c in a)

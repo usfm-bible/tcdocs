@@ -62,7 +62,7 @@ def make_tokenizer(specs):
 
     return f
 
-def makeerrmsg(t):
+def makerrmsg(t, e):
     if isinstance(t, Token):
         if t.start is None or t.end is None:
             loc = ""
@@ -81,7 +81,7 @@ def parse(self, tokens):
         max = e.state.max
         if len(tokens) > max:
             t = tokens[max]
-            msg = makerrmsg(t)
+            msg = makerrmsg(t, e)
         else:
             msg = "Got unexpected end of file"
         #if e.state is not None:
@@ -335,12 +335,12 @@ def createParser(grtext, results, gvars=None, debug=False):
     elem.name = 'Elem'
     elemmain = (elem + maybe(modifier)) >> make_mod
     elemmain.name = 'Elem_main'
-    seq = oneplus(elemmain) >> make_seq
+    action = skipop('{') + notop("}") + skipop('}')
+    seq = ((oneplus(elemmain) >> make_seq) + maybe(action)) >> make_action
     seq.name = 'Seq'
     choice.define((seq + many(skipop("|") + seq)) >> make_choice)
-    action = skipop('{') + notop("}") + skipop('}')
     ruleid = name + skipop(':')
-    rule = ((ruleid + ((choice + maybe(action)) >> make_action)) >> make_rule) + (skipop(';') | (name >> do_errortoken("Missing ;")))
+    rule = ((ruleid + choice) >> make_rule) + (skipop(';') | (name >> do_errortoken("Missing ;")))
     pegparser = many(rule) + finished
     tokens = tokenize(grtext)
     res = pegparser.parse(tokens)
