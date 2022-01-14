@@ -5,7 +5,7 @@ from .fparser import createParser, make_tokenizer, debug_print
 from .funcparserlib import parser as fpp
 from .funcparserlib.parser import some, finished
 from .funcparserlib.lexer import Token
-from .usxmodel import usx, char, para
+from .usxmodel import usx, char, para, chapter, verse
 
 class UsfmParser:
     _tokenspecs = [
@@ -13,7 +13,7 @@ class UsfmParser:
         ('Tag',         (r"\\(?P<embed>\+?)(?P<tname>[a-z][a-z0-9]*)(?:\s|(?!\*))", )),
         ('Attribute',   (r"(?P<key>[a-z][a-z0-9]*)\s*=\"(?P<val>.*?)\"\s*", )),
         ('Pipe',        (r"\|", )),
-        ('Word',        (r".+?(?=[\\\s]|$)", )),
+        ('Word',        (r"[^\s\\]+?(?=[\\\s]|$)", )),
         ('Ws',          (r"\s", ))
     ]
 
@@ -38,6 +38,9 @@ class UsfmParser:
     def _tokenize(self, content):
         t = make_tokenizer(self._tokenspecs)
         return list(t(content))
+
+    def Tag(self, test):
+        return some(lambda t: t.type == "Tag" and t.tname == test)
 
     def _tagtype(self, tag):
         return self._tags.get(tag, {}).get('StyleType', None)
@@ -80,14 +83,8 @@ class UsfmParser:
     def finished(self):
         return finished
 
-    def make_char(self, tag, c1, c2):
-        content = []
-        # import pdb; pdb.set_trace()
-        for c in c1:
-            for a in c:
-                content.append(a.value if isinstance(a, Token) else a)
-        content.append(c2.value if isinstance(c2, Token) else c2)
-        return char(attrib={'style': tag.tname}, *content)
+    def make_char(self, tag, c):
+        return char(attrib={'style': tag.tname}, *c)
 
     def make_usx(self, c):
         return usx(attrib={"version": "1.0"}, *c)
@@ -95,6 +92,21 @@ class UsfmParser:
     def make_para(self, tag, content):
         return para(attrib={'style': tag.tname}, *content)
 
-    def str_join(self, a):
-        return "".join(c.value for c in a)
+    def make_chapter(self, tag, content):
+        return chapter(attrib={'style': tag.tname, 'number': content.value})
+
+    def make_verse(self, tag, content):
+        return verse(attrib={'style': tag.tname, 'number': content.value})
+
+    def str_join(self, *content):
+        out = []
+        for a in content:
+            if isinstance(a, Token):
+                out.append(a.value)
+            elif isinstance(a, (list, tuple)):
+                out.append(self.str_join(*a))
+        return "".join(out)
+
+    def dump(self, *content):
+        pass
 

@@ -10,3 +10,8 @@ class para(ElementBase):
 class char(ElementBase):
     pass
 
+class chapter(ElementBase):
+    pass
+
+class verse(ElementBase):
+    pass
