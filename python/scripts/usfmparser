@@ -7,7 +7,7 @@ except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
     import usfmparser
 import re, argparse, logging
-from usfmparser import UsfmParser
+from usfmparser import UsfmParser, style_error
 from usfmparser.fparser import createParser
 from usfmparser.funcparserlib import parser as fpp
 from lxml import etree
@@ -18,6 +18,7 @@ parser.add_argument('infile',help="Input file or string content")
 parser.add_argument('-g','--grammar',required=True,help="input grammar")
 parser.add_argument('-d','--debug',action='store_true',help='Run parser in debug')
 parser.add_argument('-s','--stylesheet',action='append',default=[],help="Read stylesheets in order")
+parser.add_argument('-r','--rng',help="Relax NG USX grammar, .rng")
 parser.add_argument('-T','--tokens',action='store_true',help="Display tokens before parsing")
 args = parser.parse_args()
 
@@ -48,5 +49,18 @@ toks = support._tokenize(content)
 if args.tokens:
     print(toks)
 usx = pegparser.parse(toks)
-print(etree.tostring(usx))
+if len(support.errors):
+    for e in support.errors:
+        print(style_error(e))
+
+#usx = support.cleanup_usx(usx)
+if args.rng is not None:
+    relax = etree.RelaxNG(file=args.rng)
+    res = relax.validate(usx)
+    print("Validation {}".format("Passed" if res else "Failed"))
+    if not res:
+        for l in relax.error_log:
+            print("{1}: {0.message} at {0.path}".format(l, etree.RelaxNGErrorTypes._names.get(l.type, "Unknown")))
+else:
+    print(etree.tostring(usx, encoding="unicode", pretty_print=True))
 
