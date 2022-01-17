@@ -20,6 +20,9 @@ def flatten_content(content):
             res.append(c)
     return res
 
+def isempty(s):
+    return s is None or re.match(r"^\s*$", s)
+
 class UsfmParser:
     _tokenspecs = [
         ('EndTag',      (r"\\(?P<embed>\+?)(?P<tname>[a-z][a-z0-9]*)?\*", )),
@@ -185,13 +188,50 @@ class UsfmParser:
         pass
 
     def cleanup_usx(self, usx):
+        ''' Inserts verse and chapter eid elements appropriately '''
         lastv = None
         for v in usx.findall('.//verse'):
-            if lastv is not None:
-                v.addprevious(verse(attrib={'eid': lastv.get('sid')}))
+            if lastv is None:
+                lastv = v
+                continue
+            eid = lastv.get('sid')
+            ev = verse(attrib={'eid': eid})
+            pv = v.getparent()
+            pl = lastv.getparent()
+            if id(pv) == id(pl):
+                v.addprevious(ev)
+            else:
+                endp = pl
+                pl = pl.getnext()
+                block = False
+                while id(pl) != id(pv):
+                    if pl.tag == 'para' and self._tags.get(pl.get('style'), {}).get('TextType', '') != 'Section':
+                        if not block:
+                            pl.set('vid', eid)
+                            endp = pl
+                    else:
+                        block = True
+                    pl = pl.getnext()
+                if not block and pv.index(v) > 0 or not isempty(pv.text):
+                    v.addprevious(ev)
+                else:
+                    endp.append(ev)
             lastv = v
         if lastv is not None:
-            usx.append(verse(attrib={'eid': lastv.get('sid')}))
+            eid = lastv.get('sid')
+            ev = verse(attrib={'eid': eid})
+            pl = lastv.getparent()
+            endp = pl
+            block = False
+            while pl is not None:
+                if pl.tag == 'para' and self._tags.get(pl.get('style'), {}).get('TextType', '') != 'Section':
+                    if not block:
+                        pl.set('vid', eid)
+                        endp = pl
+                else:
+                    block = True
+                pl = pl.getnext()
+            endp.append(ev)
 
         lastc = None
         for c in usx.findall('.//chapter'):

@@ -53,7 +53,7 @@ if len(support.errors):
     for e in support.errors:
         print(style_error(e))
 
-#usx = support.cleanup_usx(usx)
+usx = support.cleanup_usx(usx)
 if args.rng is not None:
     relax = etree.RelaxNG(file=args.rng)
     res = relax.validate(usx)
