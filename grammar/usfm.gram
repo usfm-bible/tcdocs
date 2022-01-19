@@ -1,9 +1,9 @@
 start: i=id_line a=(para_simple+) finished() { make_usx(i, a) };
 
-id_line: t=Tag('id') a=Word() Ws()+ b=line { make_id(t, a, b) };
+id_line: t=Tag('id') a=Word() Ws()+ b=(line?) { make_id(t, a, b) };
 
 para_simple: chapter
-             | t=TagType("Paragraph") Ws()* a=(para_content+) { make_para(t, a) };
+             | t=TagType("Paragraph") Ws()* a=(para_content*) { make_para(t, a) };
 
 para_content: verse
              | note
@@ -11,10 +11,10 @@ para_content: verse
              | break
              | char_simple;
 
-chapter: c=chapter_def t=Tag("ca") Ws()* v=text e=EndTag()<CmpTag(t, e)> { make_alt(t, v, c) }
+chapter: c=chapter_def t=Tag("ca") Ws()* v=text e=EndTag()<CmpTag(t, e)> Ws()* { make_alt(t, v, c) }
         | chapter_def;
 
-chapter_def: t=Tag("c") a=Word() Ws()? { make_chapter(t, a) };
+chapter_def: t=Tag("c") Ws()* a=Word() Ws()+ { make_chapter(t, a) };
 
 verse: v=verse_pub t=Tag("va") Ws()* c=text e=EndTag()<CmpTag(t, e)> { make_alt(t, c, v) }
         | verse_pub;
@@ -22,13 +22,17 @@ verse: v=verse_pub t=Tag("va") Ws()* c=text e=EndTag()<CmpTag(t, e)> { make_alt(
 verse_pub: v=verse_def t=Tag("vp") Ws()* c=text e=EndTag()<CmpTag(t, e)> { make_pub(t, c, v) }
         | verse_def;
 
-verse_def: t=Tag("v") a=Word() Ws()* { make_verse(t, a) };
+verse_def: t=Tag("v") Ws()* a=Word() Ws()* { make_verse(t, a) };
 
 note: t=TagType("Note") a=Word() Ws()* c=(char_simple*) e=EndTag()<CmpTag(t, e)> { make_note(t, a, c) };
 
-milestone: t=TagType("Milestone") Ws()* Pipe a=(Attribute+) EndTag('') { make_milestone(t, a) }
+milestone: figure
+        | t=TagType("Milestone") Ws()* Pipe() a=(TokenType("Attribute")+) EndTag('') { make_milestone(t, a) }
         | t=TagType("Milestone") Ws()* EndTag('') { make_milestone(t, []) }
         | t=TagUnknown() { do_error("Unknown tag", t) };
+
+figure: t=Tag("fig") Ws()* c=(prepipe?) Pipe() a=(TokenType("Attribute")+) EndTag("fig") { make_figattrib(t, c, a) }
+        | t=Tag("fig") c=text e=EndTag()<CmpTag(t, e)> { make_fig(t, c) };
 
 break: t=Tag("b") Ws()* { make_break() };
 
@@ -44,3 +48,5 @@ char_text: a=(Word() | Ws())+ { str_join(a) };
 text: a=Word() b=(Word() | Ws())* { str_join(a, b) };
 
 line: a=Word() b=(Word() | c=Ws()<strneq(c, "\n")>)* d=Ws()<streq(d, "\n")> { str_join(a, b) };
+
+prepipe: a=(TokenType("Word") | Ws())+ { str_join(a) };

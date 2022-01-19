@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3 -u
 
 import sys, os
 try:
@@ -10,7 +10,43 @@ import re, argparse, logging
 from usfmparser import UsfmParser, style_error
 from usfmparser.fparser import createParser
 from usfmparser.funcparserlib import parser as fpp
+from usfmparser.funcparserlib import lexer as fpl
 from lxml import etree
+from zipfile import ZipFile, BadZipFile
+
+def iterdbl(root, skips=[], start=None):
+    if os.path.isdir(root):
+        fs = (root, sorted(os.listdir(root)))
+    else:
+        fs = (".", [root])
+    started = False
+    for f in fs[1]:
+        if f.lower().endswith(".sfm"):
+            if f[0] in '012345678':     # don't want 9x books since non scripture
+                with open(os.path.join(fs[0], f)) as inf:
+                    yield ("{}".format(f), inf.read())
+            continue
+        if not f.endswith(".zip"):
+            continue
+        if any(f.startswith(x) for x in skips):
+            continue
+        if start is not None:
+            if f.startswith(start):
+                started = True
+            if not started:
+                continue
+        print(f)
+        try:
+            z = ZipFile(os.path.join(fs[0], f))
+            sf = z.open("source/source.zip")
+            sz = ZipFile(sf)
+        except (KeyError, BadZipFile):
+            continue
+        for sfm in sz.namelist():
+            if not sfm.lower().endswith(".sfm") or sfm[0] not in '012345678':
+                continue
+            sfmf = sz.open(sfm)
+            yield ("{}:{}".format(f, sfm), sfmf.read().decode("utf-8", errors="replace"))
 
 
 parser = argparse.ArgumentParser()
@@ -20,6 +56,9 @@ parser.add_argument('-d','--debug',action='store_true',help='Run parser in debug
 parser.add_argument('-s','--stylesheet',action='append',default=[],help="Read stylesheets in order")
 parser.add_argument('-r','--rng',help="Relax NG USX grammar, .rng")
 parser.add_argument('-T','--tokens',action='store_true',help="Display tokens before parsing")
+parser.add_argument('-q','--quiet',action='store_true',help="Don't be so noisy")
+parser.add_argument("-S",'--skip',action='append',default=[],help='prefix to skip')
+parser.add_argument("--start",help="Starting prefix")
 args = parser.parse_args()
 
 if args.debug:
@@ -38,29 +77,48 @@ with open(args.grammar) as inf:
     pegparser = results['start']
 
 if os.path.exists(args.infile):
-    with open(args.infile, encoding="utf-8") as inf:
-        content = inf.read()
+    if os.path.isdir(args.infile):
+        content = iterdbl(args.infile, args.skip, start=args.start)
+    elif args.infile.lower().endswith(".zip"):
+        content = iterdbl(args.infile)
+    else:
+        with open(args.infile, encoding="utf-8") as inf:
+            content = [(args.infile, inf.read())]
 else:
-    content = args.infile
+    content = [("", args.infile)]
 
 debug_print = print
 fpp.debug = False
-toks = support._tokenize(content)
-if args.tokens:
-    print(toks)
-usx = pegparser.parse(toks)
-if len(support.errors):
-    for e in support.errors:
-        print(style_error(e))
-
-usx = support.cleanup_usx(usx)
 if args.rng is not None:
     relax = etree.RelaxNG(file=args.rng)
-    res = relax.validate(usx)
-    print("Validation {}".format("Passed" if res else "Failed"))
-    if not res:
-        for l in relax.error_log:
-            print("{1}: {0.message} at {0.path}".format(l, etree.RelaxNGErrorTypes._names.get(l.type, "Unknown")))
-else:
-    print(etree.tostring(usx, encoding="unicode", pretty_print=True))
+for data in content:
+    support.initbook()
+    toks = None
+    try:
+        toks = support._tokenize(data[1].replace("\r", ""))
+    except fpl.LexerError as e:
+        support.errors.append((str(e), ""))
+    if toks:
+        if args.tokens:
+            print(toks)
+        try:
+            usx = pegparser.parse(toks)
+        except fpp.NoParseError as e:
+            support.errors.append((str(e), ""))
+
+    if len(support.errors):
+        for e in support.errors:
+            print(style_error(e, prefix=data[0] + ": "))
+        continue
+
+    usx = support.cleanup_usx(usx)
+    if args.rng is not None:
+        res = relax.validate(usx)
+        if not args.quiet:
+            print("{}: Validation {}".format(data[0], "Passed" if res else "Failed"))
+        if not res:
+            for l in relax.error_log:
+                print("{2} {1}: {0.message} at {0.path}".format(l, etree.RelaxNGErrorTypes._names.get(l.type, "Unknown"), data[0]))
+    else:
+        print(etree.tostring(usx, encoding="unicode", pretty_print=True))
 

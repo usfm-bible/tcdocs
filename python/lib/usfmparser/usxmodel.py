@@ -25,5 +25,8 @@ class note(ElementBase):
 class milestone(ElementBase):
     pass
 
+class figure(ElementBase):
+    pass
+
 class optbreak(ElementBase):
     pass
