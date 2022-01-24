@@ -14,7 +14,7 @@ from usfmparser.funcparserlib import lexer as fpl
 from lxml import etree
 from zipfile import ZipFile, BadZipFile
 
-def iterdbl(root, skips=[], start=None):
+def iterdbl(root, skips=[], start=None, filternames=None):
     if os.path.isdir(root):
         fs = (root, sorted(os.listdir(root)))
     else:
@@ -30,6 +30,9 @@ def iterdbl(root, skips=[], start=None):
             continue
         if any(f.startswith(x) for x in skips):
             continue
+        if filternames is not None and len(filternames):
+            if not any(f.startswith(x) for x in filternames):
+                continue
         if start is not None:
             if f.startswith(start):
                 started = True
@@ -59,6 +62,7 @@ parser.add_argument('-T','--tokens',action='store_true',help="Display tokens bef
 parser.add_argument('-q','--quiet',action='store_true',help="Don't be so noisy")
 parser.add_argument("-S",'--skip',action='append',default=[],help='prefix to skip')
 parser.add_argument("--start",help="Starting prefix")
+parser.add_argument("-F","--filter",help="File of prefixes to include")
 args = parser.parse_args()
 
 if args.debug:
@@ -76,9 +80,15 @@ with open(args.grammar) as inf:
     createParser(gr, results, gvars, debug=args.debug)
     pegparser = results['start']
 
+filternames = set()
+if args.filter is not None:
+    with open(args.filter) as inf:
+        for l in inf.readlines():
+            filternames.add(l.strip())
+
 if os.path.exists(args.infile):
     if os.path.isdir(args.infile):
-        content = iterdbl(args.infile, args.skip, start=args.start)
+        content = iterdbl(args.infile, args.skip, start=args.start, filternames=filternames)
     elif args.infile.lower().endswith(".zip"):
         content = iterdbl(args.infile)
     else:

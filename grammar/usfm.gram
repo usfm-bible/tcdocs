@@ -2,7 +2,9 @@ start: i=id_line a=(para_simple+) finished() { make_usx(i, a) };
 
 id_line: t=Tag('id') a=Word() Ws()+ b=(line?) { make_id(t, a, b) };
 
-para_simple: chapter
+para_simple: c=chapter v=verse { do_error("Missing paragraph after chapter", c) }
+             | chapter
+             | t=Tag("tr") Ws()* a=(cell*) { make_tablerow(t, a) }
              | t=TagType("Paragraph") Ws()* a=(para_content*) { make_para(t, a) };
 
 para_content: verse
@@ -11,10 +13,12 @@ para_content: verse
              | break
              | char_simple;
 
+cell: t=TagType('Cell') Ws()* a=(para_content*) { make_tablecell(t, a) };
+
 chapter: c=chapter_def t=Tag("ca") Ws()* v=text e=EndTag()<CmpTag(t, e)> Ws()* { make_alt(t, v, c) }
         | chapter_def;
 
-chapter_def: t=Tag("c") Ws()* a=Word() Ws()+ { make_chapter(t, a) };
+chapter_def: t=Tag("c") Ws()* a=Word() Ws()* { make_chapter(t, a) };
 
 verse: v=verse_pub t=Tag("va") Ws()* c=text e=EndTag()<CmpTag(t, e)> { make_alt(t, c, v) }
         | verse_pub;
@@ -24,7 +28,7 @@ verse_pub: v=verse_def t=Tag("vp") Ws()* c=text e=EndTag()<CmpTag(t, e)> { make_
 
 verse_def: t=Tag("v") Ws()* a=Word() Ws()* { make_verse(t, a) };
 
-note: t=TagType("Note") a=Word() Ws()* c=(char_simple*) e=EndTag()<CmpTag(t, e)> { make_note(t, a, c) };
+note: t=TagType("Note") Ws()* a=Word() Ws()* c=(char_simple*) e=EndTag()<CmpTag(t, e)> { make_note(t, a, c) };
 
 milestone: figure
         | t=TagType("Milestone") Ws()* Pipe() a=(TokenType("Attribute")+) EndTag('') { make_milestone(t, a) }
@@ -36,10 +40,12 @@ figure: t=Tag("fig") Ws()* c=(prepipe?) Pipe() a=(TokenType("Attribute")+) EndTa
 
 break: t=Tag("b") Ws()* { make_break() };
 
-char_simple: t=TagType("Character") Ws()* c=(char_embed*) e=EndTag()<CmpTag(t, e)>?  { make_char(t, c) }
+char_simple:   t=TagType("Character") Ws()* c=(prepipe?) Pipe() a=(TokenType("Attribute")+) e=EndTag()<CmpTag(t, e)>?  { make_char(t, c, a) }
+             | t=TagType("Character") Ws()* c=(char_embed*) e=EndTag()<CmpTag(t, e)>?  { make_char(t, c) }
              | char_embed;
 
-char_embed:  t=TagEmbed() Ws()* c=(char_embed*) e=EndTagEmbed()<CmpTag(t, e)>?  { make_char(t, c) }
+char_embed:  t=TagEmbed() Ws()* c=(prepipe?) Pipe() a=(TokenType("Attribute")+) e=EndTagEmbed()<CmpTag(t, e)>?  { make_char(t, c, a) }
+             | t=TagEmbed() Ws()* c=(char_embed*) e=EndTagEmbed()<CmpTag(t, e)>?  { make_char(t, c) }
              | note
              | char_text;
 

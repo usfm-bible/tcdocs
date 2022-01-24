@@ -5,10 +5,11 @@ from .fparser import createParser, make_tokenizer, debug_print
 from .funcparserlib import parser as fpp
 from .funcparserlib.parser import some, finished, oneplus
 from .funcparserlib.lexer import Token
-from .usxmodel import usx, char, para, chapter, verse, note, book, milestone, figure, optbreak
+from .usxmodel import usx, char, para, table, row, cell, chapter, verse, note, \
+                      book, milestone, figure, optbreak
 
 def style_error(e, prefix=""):
-    res = prefix + e[0] + "at {}".format(e[1])
+    res = prefix + e[0] + " at {}".format(e[1])
     return res
 
 def flatten_content(content, strip=False):
@@ -29,6 +30,8 @@ def flatten_content(content, strip=False):
 
 def isempty(s):
     return s is None or re.match(r"^\s*$", s)
+
+celltags = ['t{}{}'.format(t, i) for i in range(1,9) for t in ('h', 'hc', 'hr', 'c', 'cc', 'cr')]
 
 class UsfmParser:
     _tokenspecs = [
@@ -62,6 +65,8 @@ class UsfmParser:
                 if mkr == "Marker":
                     currtag = val
                     self._tags[currtag] = {}
+                elif currtag in celltags and mkr == 'StyleType':
+                    self._tags[currtag][mkr] = 'Cell'
                 else:
                     self._tags[currtag][mkr] = val
 
@@ -150,8 +155,8 @@ class UsfmParser:
         content = flatten_content(content, strip=True)
         try:
             return para(attrib={'style': tag.tname}, *content)
-        except ValueError:
-            return para(attrib={'style': tag.tname, 'error': '1'})
+        except ValueError as e:
+            return para(attrib={'style': tag.tname, 'error': str(e)})
 
     def make_chapter(self, tag, content):
         cid = "{} {}".format(self.bkid, content.value)
@@ -166,13 +171,27 @@ class UsfmParser:
         self.currverse.set("pubnumber", content)
         return base
 
-    def make_char(self, tag, c):
-        return char(attrib={'style': tag.tname}, *c)
+    def make_char(self, tag, c, a=None):
+        attribs = {'style': tag.tname}
+        if a is not None:
+            for v in a:
+                attribs[v.key] = v.val
+        return char(attrib=attribs, *c)
 
     def make_verse(self, tag, content):
         sid = "{}:{}".format(self.currchap.get('sid'), content.value)
         self.currverse = verse(attrib={'style': tag.tname, 'number': content.value, 'sid': sid})
         return self.currverse
+
+    def make_tablerow(self, tag, content):
+        content = flatten_content(content, strip=True)
+        return row(*content)
+
+    def make_tablecell(self, tag, content):
+        alignments = {'c': 'center', '': 'start', 'r': 'end'}
+        content = flatten_content(content, strip=True)
+        align = alignments[re.sub(r"^t.([cr]?)\d", r"\1", tag.tname)]
+        return cell(attrib={'style': tag.tname, 'align': align}, *content)
 
     def make_note(self, tag, caller, content):
         content = [c for c in content if c is not None]
@@ -244,7 +263,7 @@ class UsfmParser:
                 endp = pl
                 pl = pl.getnext()
                 block = False
-                while id(pl) != id(pv):
+                while pl is not None and id(pl) != id(pv):
                     if pl.tag == 'para' and self._tags.get(pl.get('style'), {}).get('TextType', '') != 'Section':
                         if not block:
                             pl.set('vid', eid)
@@ -281,4 +300,14 @@ class UsfmParser:
         if lastc is not None:
             usx.append(chapter(attrib={'eid': lastc.get('sid')}))
 
+        # Add table elements for first row in sequence
+        for r in usx.findall('.//row'):
+            oldp = r.getparent()
+            if r.getprevious().tag == 'row':
+                newp = r.getprevious().getparent()
+                oldp.replace(r, newp)
+            else:
+                newp = table()
+                r.getparent().remove(r)
+            newp.append(r)
         return usx

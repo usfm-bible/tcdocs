@@ -10,6 +10,15 @@ class book(ElementBase):
 class para(ElementBase):
     pass
 
+class table(ElementBase):
+    pass
+
+class row(ElementBase):
+    pass
+
+class cell(ElementBase):
+    pass
+
 class char(ElementBase):
     pass
 
