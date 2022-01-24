@@ -2,7 +2,7 @@ start: i=id_line a=(para_simple+) finished() { make_usx(i, a) };
 
 id_line: t=Tag('id') a=Word() Ws()+ b=(line?) { make_id(t, a, b) };
 
-para_simple: c=chapter v=verse { do_error("Missing paragraph after chapter", c) }
+para_simple:   c=chapter Ws()* a=(para_content+) { do_error("Inserted paragraph after chapter", c, [c] + [make_para("p", a)]) }
              | chapter
              | t=Tag("tr") Ws()* a=(cell*) { make_tablerow(t, a) }
              | t=TagType("Paragraph") Ws()* a=(para_content*) { make_para(t, a) };

@@ -282,7 +282,7 @@ def createParser(grtext, results, gvars=None, debug=False):
         p, a = b
         if a is None:
             return p
-        action = a.value
+        action = "".join(x.value for x in a)
         @Parser
         def _pact(t, s):
             v1, s1 = p.run(t, s)
@@ -335,7 +335,7 @@ def createParser(grtext, results, gvars=None, debug=False):
     elem.name = 'Elem'
     elemmain = (elem + maybe(modifier)) >> make_mod
     elemmain.name = 'Elem_main'
-    action = skipop('{') + notop("}") + skipop('}')
+    action = skipop('{') + many(notop("}")) + skipop('}')
     seq = ((oneplus(elemmain) >> make_seq) + maybe(action)) >> make_action
     seq.name = 'Seq'
     choice.define((seq + many(skipop("|") + seq)) >> make_choice)

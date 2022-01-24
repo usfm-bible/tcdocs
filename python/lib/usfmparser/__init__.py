@@ -8,8 +8,16 @@ from .funcparserlib.lexer import Token
 from .usxmodel import usx, char, para, table, row, cell, chapter, verse, note, \
                       book, milestone, figure, optbreak
 
+def setsource(e, tag):
+    e.sourceline = tag.start[0]
+
 def style_error(e, prefix=""):
-    res = prefix + e[0] + " at {}".format(e[1])
+    l = getattr(e[1], 'sourceline', None)
+    if l is not None:
+        s = "line {}".format(l)
+    else:
+        s = e[1]
+    res = prefix + e[0] + " at {}".format(s)
     return res
 
 def flatten_content(content, strip=False):
@@ -149,18 +157,25 @@ class UsfmParser:
         if idline is None:
             idline = ""
         self.bkid = idword.value
-        return book(attrib={'style': tag.tname, 'code': self.bkid}, *[idline])
+        res = book(attrib={'style': tag.tname, 'code': self.bkid}, *[idline])
+        setsource(res, tag)
+        return res
 
     def make_para(self, tag, content):
         content = flatten_content(content, strip=True)
+        t = tag if isinstance(tag, str) else tag.tname
         try:
-            return para(attrib={'style': tag.tname}, *content)
+            res= para(attrib={'style': t}, *content)
         except ValueError as e:
-            return para(attrib={'style': tag.tname, 'error': str(e)})
+            res= para(attrib={'style': t, 'error': str(e)})
+        if not isinstance(tag, str):
+            setsource(res, tag)
+        return res
 
     def make_chapter(self, tag, content):
         cid = "{} {}".format(self.bkid, content.value)
         self.currchap = chapter(attrib={'style': tag.tname, 'number': content.value, 'sid': cid})
+        setsource(self.currchap, tag)
         return self.currchap
 
     def make_alt(self, token, content, base):
@@ -176,33 +191,44 @@ class UsfmParser:
         if a is not None:
             for v in a:
                 attribs[v.key] = v.val
-        return char(attrib=attribs, *c)
+        res = char(attrib=attribs, *c)
+        setsource(res, tag)
+        return res
 
     def make_verse(self, tag, content):
         sid = "{}:{}".format(self.currchap.get('sid'), content.value)
         self.currverse = verse(attrib={'style': tag.tname, 'number': content.value, 'sid': sid})
+        setsource(self.currverse, tag)
         return self.currverse
 
     def make_tablerow(self, tag, content):
         content = flatten_content(content, strip=True)
-        return row(*content)
+        res = row(*content)
+        setsource(res, tag)
+        return res
 
     def make_tablecell(self, tag, content):
         alignments = {'c': 'center', '': 'start', 'r': 'end'}
         content = flatten_content(content, strip=True)
         align = alignments[re.sub(r"^t.([cr]?)\d", r"\1", tag.tname)]
-        return cell(attrib={'style': tag.tname, 'align': align}, *content)
+        res = cell(attrib={'style': tag.tname, 'align': align}, *content)
+        setsource(res, tag)
+        return res
 
     def make_note(self, tag, caller, content):
         content = [c for c in content if c is not None]
-        return note(attrib={'style': tag.tname, 'caller': caller.value}, *content)
+        res = note(attrib={'style': tag.tname, 'caller': caller.value}, *content)
+        setsource(res, tag)
+        return res
 
     def make_milestone(self, tag, content):
         attribs = {'style': tag.tname}
         if content is not None:
             for v in content:
                 attribs[v.key] = v.val
-        return milestone(attrib=attribs)
+        res = milestone(attrib=attribs)
+        setsource(res, tag)
+        return res
 
     def make_fig(self, tag, content):
         values = content.split("|") if content is not None else [""]
@@ -211,7 +237,9 @@ class UsfmParser:
             if i+1 >= len(values):
                 break
             attribs[a] = values[i+1]
-        return figure(attrib=attribs, *[values[0]])
+        res = figure(attrib=attribs, *[values[0]])
+        setsource(res, tag)
+        return res
 
     def make_figattrib(self, tag, content, attr):
         content = flatten_content(content, strip=True)
@@ -219,14 +247,16 @@ class UsfmParser:
         if attr is not None:
             for v in attr:
                 attribs["file" if v.key == "src" else v.key] = v.val
-        return figure(attrib=attribs, *content)
+        res = figure(attrib=attribs, *content)
+        setsource(res, tag)
+        return res
 
     def make_break(self):
         return optbreak()
 
-    def do_error(self, label, token):
+    def do_error(self, label, token, ret=None):
         self.errors.append((label, token))
-        return None
+        return ret
 
     def str_join(self, *content):
         out = []
@@ -250,11 +280,13 @@ class UsfmParser:
         ''' Inserts verse and chapter eid elements appropriately '''
         lastv = None
         for v in usx.findall('.//verse'):
+            if v.get('eid', None) is not None:
+                continue
             if lastv is None:
                 lastv = v
                 continue
             eid = lastv.get('sid')
-            ev = verse(attrib={'eid': eid})
+            ev = verse(attrib={'eid': eid or ""})
             pv = v.getparent()
             pl = lastv.getparent()
             if id(pv) == id(pl):
@@ -278,14 +310,14 @@ class UsfmParser:
             lastv = v
         if lastv is not None:
             eid = lastv.get('sid')
-            ev = verse(attrib={'eid': eid})
+            ev = verse(attrib={'eid': eid or ""})
             pl = lastv.getparent()
             endp = pl
             block = False
             while pl is not None:
                 if pl.tag == 'para' and self._tags.get(pl.get('style'), {}).get('TextType', '') != 'Section':
                     if not block:
-                        pl.set('vid', eid)
+                        pl.set('vid', eid or "")
                         endp = pl
                 else:
                     block = True
@@ -295,12 +327,12 @@ class UsfmParser:
         lastc = None
         for c in usx.findall('.//chapter'):
             if lastc is not None:
-                c.addprevious(chapter(attrib={'eid': lastc.get('sid')}))
+                c.addprevious(chapter(attrib={'eid': lastc.get('sid') or ""}))
             lastc = c
         if lastc is not None:
-            usx.append(chapter(attrib={'eid': lastc.get('sid')}))
+            usx.append(chapter(attrib={'eid': lastc.get('sid') or ""}))
 
-        # Add table elements for first row in sequence
+        # Insert a table element for first row in sequence and make rows children of it
         for r in usx.findall('.//row'):
             oldp = r.getparent()
             if r.getprevious().tag == 'row':

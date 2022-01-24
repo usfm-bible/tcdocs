@@ -55,11 +55,12 @@ def iterdbl(root, skips=[], start=None, filternames=None):
 parser = argparse.ArgumentParser()
 parser.add_argument('infile',help="Input file or string content")
 parser.add_argument('-g','--grammar',required=True,help="input grammar")
-parser.add_argument('-d','--debug',action='store_true',help='Run parser in debug')
 parser.add_argument('-s','--stylesheet',action='append',default=[],help="Read stylesheets in order")
 parser.add_argument('-r','--rng',help="Relax NG USX grammar, .rng")
-parser.add_argument('-T','--tokens',action='store_true',help="Display tokens before parsing")
+parser.add_argument('-o','--output',help="Where to put single file output")
 parser.add_argument('-q','--quiet',action='store_true',help="Don't be so noisy")
+parser.add_argument('-d','--debug',action='store_true',help='Run parser in debug')
+parser.add_argument('-T','--tokens',action='store_true',help="Display tokens before parsing")
 parser.add_argument("-S",'--skip',action='append',default=[],help='prefix to skip')
 parser.add_argument("--start",help="Starting prefix")
 parser.add_argument("-F","--filter",help="File of prefixes to include")
@@ -104,6 +105,7 @@ if args.rng is not None:
 for data in content:
     support.initbook()
     toks = None
+    usx = None
     try:
         toks = support._tokenize(data[1].replace("\r", ""))
     except fpl.LexerError as e:
@@ -119,7 +121,8 @@ for data in content:
     if len(support.errors):
         for e in support.errors:
             print(style_error(e, prefix=data[0] + ": "))
-        continue
+        if usx is None or not len(usx):
+            continue
 
     usx = support.cleanup_usx(usx)
     if args.rng is not None:
@@ -130,5 +133,10 @@ for data in content:
             for l in relax.error_log:
                 print("{2} {1}: {0.message} at {0.path}".format(l, etree.RelaxNGErrorTypes._names.get(l.type, "Unknown"), data[0]))
     else:
-        print(etree.tostring(usx, encoding="unicode", pretty_print=True))
-
+        if args.output:
+            outf = open(args.output, "w", encoding="utf-8")
+        else:
+            outf = sys.stdout
+        outf.write(etree.tostring(usx, encoding="unicode", pretty_print=True))
+        if args.output:
+            outf.close()
