@@ -1,6 +1,6 @@
 = \p
 :description: Regular paragraph
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/p.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par-p.adoc
 :source-highlighter: pygments
 
 == Summary
@@ -18,7 +18,7 @@ TextProperties:: paragraph, publishable, vernacular
 
 == Structure
 
-Diagram here...
+'Railroad' type diagram here...
 
 == Examples
 
@@ -44,6 +44,8 @@ and be baptized,” he told the people, “and God will forgive your sins.”
 
 image::images/usfm-par-p_1.jpg[Mark 1.1-4 (GNT),250]
 
-== Presentation Issues
+== Publication Issues
 
 == Discussion
+
+Links to open repository Issues

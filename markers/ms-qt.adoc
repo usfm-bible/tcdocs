@@ -1,0 +1,3 @@
+:description: Quotation start / end milestones
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/ms-qt.adoc
+:source-highlighter: pygments

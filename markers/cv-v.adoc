@@ -1,0 +1,3 @@
+:description: Verse number
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv-c.adoc
+:source-highlighter: pygments
