@@ -7,7 +7,9 @@
 
 Description:: Regular paragraph. Followed by a space and paragraph text, or by a new line and a verse marker.
 Syntax:: `\p(_text...)`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Properties
 

@@ -25,7 +25,11 @@ TextProperties:: publishable, vernacular, note
 
 == Structure
 
-'Railroad' type diagram here...
+image::images/note-f_railroad.svg[]
+
+This is the automatically generated railroad:
+
+image::images/note-f_railroad1.svg[]
 
 == Examples
 
