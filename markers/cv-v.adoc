@@ -1,3 +1,35 @@
+= \v
 :description: Verse number
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv-c.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv-v.adoc
 :source-highlighter: pygments
+
+== Summary
+
+Description:: Verse number. The marker is followed by the verse number `#`, followed by a space and verse text.
+Syntax:: `+\v_#_+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `lh li li1 li2 li3 li4 lf lim lim1 lim2 lim3 lim4 m mi nb p pc ph phi pi pi1 pi2 pi3 pr pmo pm pmc pmr po q q1 q2 q3 q4 qc qr qd qm qm1 qm2 qm3 tr tc1 tc2 tc3 tc4 tcr1 tcr2 tcr3 tcr4 s3 d sp`
+TextType:: VerseNumber
+TextProperties:: verse
+
+== Structure
+
+'Railroad' type diagram here...
+
+== Examples
+
+.Matthew 1.18,19 (GNT)
+[source#src-cv-v_1,usfm,highlight=4;5]
+----
+\s1 The Birth of Jesus Christ
+\r (Luke 2.1-7)
+\p
+\v 18 This was how the birth of Jesus Christ took place. His mother Mary was engaged to Joseph, but before they were married, she found out that she was going to have a baby by the Holy Spirit.
+\v 19 Joseph was a man who always did what was right, but he did not want to disgrace Mary publicly; so he made plans to break the engagement privately.
+----
+
+image::images/cv-v_1.jpg[Matthew 1.18-19,250]

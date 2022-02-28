@@ -6,12 +6,13 @@
 == Summary
 
 Description:: A footnote container. Footnotes are entered inline within the main scripture body text. The boundaries of the footnote text are defined by an opening and closing marker. Footnote-related character elements make up the footnote content.
-Syntax:: `+\f_+_(\fr_REF_)footnote content\f*+`
-`+`::: Footnote caller
+Syntax:: `+\f_<caller>_(\fr_<C#:V#:>_)<content>\f*+`
+`caller`::: Footnote caller
 - `+` - The caller should be generated automatically by the translation editor, or publishing tools
 - `-` - No caller should be generated or used.
 - `?` - Where  `?`` represents the character to be used for the caller.
-`footnote content`::: The footnote-related character elements and text which make up the footnote content.
+`C#:V#:`::: Chapter-verse reference. The chapter-verse separator and end-of-reference punctuation are text specific. 
+`content`::: The footnote-related character elements and text which make up the footnote content.
 Added:: 1.0
 
 NOTE: See the Syntax Notes for information on the use of endmarkers for elements within footnote content.
@@ -34,18 +35,17 @@ image::images/note-f_railroad1.svg[]
 == Examples
 
 .Mark 1.1 and 1.4 (GNT)
-[source#note-f_1,usfm,highlight=2]
+[source#src-note-f_1,usfm,highlight=2]
 ----
 \p
-\v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: \ft Some
-manuscripts do not have \fq the Son of God.\f*
+\v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: \ft Some manuscripts do not have \fq the Son of God.\f*
 ...
 \p
 \v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4 \fq John appeared in the desert, baptizing and preaching\ft ; some manuscripts have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”
 ----
 
 image::images/note-f_1.jpg[Mark 1.1 (caller) (GNT),250]
-image::images/note-f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),450]
+image::images/note-f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),550]
 
 == Publication Issues
 

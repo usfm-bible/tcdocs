@@ -1,3 +1,38 @@
+= \c
 :description: Chapter number
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv-c.adoc
 :source-highlighter: pygments
+
+== Summary
+
+Description:: Chapter number. The marker is followed by the chapter number `#`. No further text should follow this marker.
+Syntax:: `+\c_#+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `id`
+TextType:: ChapterNumber
+TextProperties:: chapter
+
+== Structure
+
+'Railroad' type diagram here...
+
+== Examples
+
+.Matthew 1 (GNT)
+[source#src-cv-c_1,usfm,highlight=3]
+----
+\io1 The last week in and near Jerusalem (21.1–27.66)
+\io1 The resurrection and appearances of the Lord (28.1-20)
+\c 1
+\s1 The Ancestors of Jesus Christ
+\r (Luke 3.23-38)
+\p
+\v 1 This is the list of the ancestors of Jesus Christ, a descendant of David, who was a
+descendant of Abraham.
+----
+
+image::images/cv-c_1.jpg[Matthew 1 (GNT),250]

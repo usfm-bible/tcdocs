@@ -6,7 +6,7 @@
 == Summary
 
 Description:: Regular paragraph. Followed by a space and paragraph text, or by a new line and a verse marker.
-Syntax:: `\p(_text...)`
+Syntax:: `+\p(_text...)+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -14,7 +14,7 @@ Added:: 1.0
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: c
+OccursUnder:: `c`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
@@ -25,7 +25,7 @@ TextProperties:: paragraph, publishable, vernacular
 == Examples
 
 .Mark 1.1-4 (GNT)
-[source#par-p_1,usfm,highlight=4;13]
+[source#src-par-p_1,usfm,highlight=4;13]
 ----
 \c 1
 \s1 The Preaching of John the Baptist

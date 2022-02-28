@@ -6,13 +6,13 @@
 == Summary
 
 Description:: Section heading. The variable `#`` represents the level of division.
-Syntax:: `+\s#_text...+`
+Syntax:: `+\s#_...+`
 Added:: 1.0
 
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: c
+OccursUnder:: `c`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular, level_1
 
@@ -23,7 +23,7 @@ TextProperties:: paragraph, publishable, vernacular, level_1
 == Examples
 
 .Proverbs 22.17 (GNT)
-[source#par-s_1,usfm,highlight=1;8]
+[source#src-par-s_1,usfm,highlight=1;8]
 ----
 \s1 The Thirty Wise Sayings
 \p
@@ -43,7 +43,7 @@ those who stand helpless in court.
 image::images/par-s1_1.jpg[Proverbs 22.17 (GNT),250]
 
 .Proverbs 22.22,24 (GNT)
-[source#par-s2_1,usfm,highlight=2;6]
+[source#src-par-s2_1,usfm,highlight=2;6]
 ----
 \v 21 and will teach you what the truth really is. Then when you are sent to find it out, you will bring back the right answer.
 \s2 -1-

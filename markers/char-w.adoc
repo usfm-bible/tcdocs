@@ -6,7 +6,7 @@
 == Summary
 
 Description:: Wordlist / glossary / dictionary entry. Surround a word or phrase with this markup to indicate that it should appear in the glossary.
-Syntax:: `+\w_text...\w*+`
+Syntax:: `+\w_...\w*+`
 Attributes:: `lemma`, `strong`, `srcloc`
 Added:: 1.0
 Updated:: 3.0 (attributes)
@@ -20,7 +20,7 @@ TextProperties:: publishable, vernacular
 
 == Attributes
 
-lemma:: Citation form for the term in the glossary (default)
+lemma:: Citation form for the term in the glossary _(default)_
 strong:: Strong’s ID in the form `+H####+` (Hebrew) or `+G####+` (Greek)
 - A strong’s ID augmentation identifier, if required, should be separated from the strong value by a colon `:`. An augmentation is a method of extending Strong’s by aligning it to another lexicon (e.g. Brown-Driver-Briggs). This requires dividing some words into two or more separate words.
 - There are instances where more than one word may need to be included within `+\w_...\w*+` because of how Hebrew and Greek use word repetition - e.g. for a superlative. Exodus 29:37 repeats the word ‘holy’ as the superlative form.
