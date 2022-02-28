@@ -40,7 +40,7 @@ out, you will bring back the right answer.
 those who stand helpless in court.
 ----
 
-image::images/usfm-par-s1_1.jpg[Proverbs 22.17 (GNT),250]
+image::images/par-s1_1.jpg[Proverbs 22.17 (GNT),250]
 
 .Proverbs 22.22,24 (GNT)
 [source#par-s2_1,usfm,highlight=2;6]
@@ -56,7 +56,7 @@ image::images/usfm-par-s1_1.jpg[Proverbs 22.17 (GNT),250]
 \v 25 You might learn their habits and not be able to change.
 ----
 
-image::images/usfm-par-s2_1.jpg[Proverbs 22.22-24 (GNT),250]
+image::images/par-s2_1.jpg[Proverbs 22.22-24 (GNT),250]
 
 == Publication Issues
 

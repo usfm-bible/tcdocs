@@ -40,8 +40,8 @@ manuscripts do not have \fq the Son of God.\f*
 \v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4 \fq John appeared in the desert, baptizing and preaching\ft ; some manuscripts have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”
 ----
 
-image::images/usfm-note-f_1.jpg[Mark 1.1 (caller) (GNT),250]
-image::images/usfm-note-f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),450]
+image::images/note-f_1.jpg[Mark 1.1 (caller) (GNT),250]
+image::images/note-f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),450]
 
 == Publication Issues
 

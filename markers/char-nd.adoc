@@ -30,7 +30,7 @@ TextProperties:: publishable, vernacular
 \v 15 Tell the Israelites that I, the \nd Lord\nd*, the God of their ancestors, the God of Abraham, Isaac, and Jacob, have sent you to them. This is my name forever; this is what all future generations are to call me.
 ----
 
-image::images/usfm-char-nd_1.jpg[Exodus 3.15(GNT),250]
+image::images/char-nd_1.jpg[Exodus 3.15(GNT),250]
 
 == Publication Issues
 

@@ -42,7 +42,7 @@ TextProperties:: paragraph, publishable, vernacular
 and be baptized,” he told the people, “and God will forgive your sins.”
 ----
 
-image::images/usfm-par-p_1.jpg[Mark 1.1-4 (GNT),250]
+image::images/par-p_1.jpg[Mark 1.1-4 (GNT),250]
 
 == Publication Issues
 
