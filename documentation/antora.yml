@@ -1,8 +1,3 @@
 name: test
 title: Test
 version: 0.1
-start_page: milestones.adoc
-asciidoc:
-  attributes:
-    source-language: asciidoc@
-    table-caption: false
