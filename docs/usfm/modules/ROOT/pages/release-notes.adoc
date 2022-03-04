@@ -1,0 +1,101 @@
+= Release Notes
+
+== 3.0.1
+_January 2020_
+
+This update is primarily for providing documentation fixes, as well as minor updates to Paratext stylesheets (enable PT9 ColorNames feature; allow \xt in more contexts)
+
+== 3.0
+USFM 3.0 additions or revisions are highlighted throughout this documentation using the badge 'usfm 3.0'
+
+_April 2018_
+
+=== Marker Additions
+
+- USFM version identifier: `\usfm`
+- Alternate language table of contents texts: `\toca#``
+- List of witnesses in footnotes (for critical editions): `\fw …\fw*`
+- Target references “added” text: `\xta …\xta*`
+- Superscript: `\sup …\sup*`
+- Translator’s section (chunk) milestones: `\ts-s\*` and `\ts-e\*`
+
+=== Marker Revisions
+
+- Revised syntax for ruby glosses (CJK texts): `\rb …\rb*`
+- Add descriptive attribute gloss for `\rb …\rb*`
+- Added default link-href linking attribute for `\xt …\xt*`
+- Changed common attributes for milestones:
+* Replace single id with separate start `sid` and end `eid` milestone attributes. This update aligns USFM with the corresponding single `<ms>` milestone element in USX, where the id attribute content would not be unique for `<ms>`.
+- Changed name of linking attribute `link-name` to `link-id`.
+- Restored `\pr` for use as “text refrain”.
+
+=== Syntax and Features
+
+Clarify and support syntax for standalone milestones.
+
+Document best practice for attributes containing multiple values, or multiple parts (see the gloss attribute for `\rb …\rb*`)
+
+== 3.0rc1
+_October 2016_
+
+=== Marker Additions
+
+- Letter opening: `\po`
+- List header and footer elements: `\lh` and `\lf`
+- Embedded list: `\lim#`
+- Hebrew note: `\qd`
+- Semantic division: `\sd#`
+- Aramaic wordlist entry: `\wa …\wa*`
+- Geographic proper name (Chinese texts): `\png …\png*`
+- Target references “added” text: `\xta …\xta*`
+- Published cross reference origin text: `\xop …\xop*`
+- Structured list items: `\lik …\lik*` and `\liv# …\liv#*`
+- List item total: `\litl …\litl*`
+- Link text: `\jmp …\jmp*`
+- Common peripheral identifiers
+- Ruby glosses (CJK texts): `\rb …\rb*`
+- Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`
+
+=== Marker Revisions
+
+- Support citation form for wordlist / glossary text (update `\w …\w*`).
+- Support for explicit table cell column spanning.
+- Revised syntax for figures / illustrations applying descriptive attributes: `\fig …\fig*`
+- Deprecated cross reference and footnote DC content markers: `\xdc …\xdc*` and `\fdc …\fdc*`
+- Deprecated combined marker for proper name within translator’s addition: `\addpn …\addpn*`
+- Deprecated numbered running header: `\h#`
+- Deprecated pronunciation info marker: `\pro …\pro*` in favour of ruby annotations proposal.
+
+=== Syntax and Features
+
+- Syntax for assigning word-level descriptive attributes.
+* Descriptive attributes for `\w …\w*`
+* Descriptive attributes for `\fig …\fig*`
+- Syntax for assigning word-level linking attributes.
+- Syntax for milestones.
+* Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`.
+* Syntax for peripheral (`\periph`) identifiers.
+
+=== Standard Reference
+
+* Clarify and document specification regarding whitespace and new lines.
+
+== 2.5
+
+== 2.4
+
+== 2.35
+
+== 2.3
+
+== 2.2
+
+== 2.1
+
+== 2.05
+
+== 2.04
+
+== 2.03
+
+== 2.0
