@@ -26,11 +26,11 @@ TextProperties:: publishable, vernacular, note
 
 == Structure
 
-image::images/note-f_railroad.svg[]
+//image::images/note-f_railroad.svg[]
 
-This is the automatically generated railroad:
+// This is the automatically generated railroad:
 
-image::images/note-f_railroad1.svg[]
+//image::images/note-f_railroad1.svg[]
 
 == Examples
 
