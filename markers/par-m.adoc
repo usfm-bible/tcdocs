@@ -1,0 +1,46 @@
+= \m
+:description: Continuation (margin) paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par-m.adoc
+:source-highlighter: pygments
+
+== Summary
+
+Description:: Continuation (margin) paragraph. Followed by a space and paragraph text, or by a new line and a verse marker. Usually used to resume prose at the margin (without indent) after poetic text or quotation.
+Syntax:: `+\m(_text...)+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `c`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+'Railroad' type diagram here...
+
+== Examples
+
+.Mark 12.37 (GNT)
+[source#src-par-m_1,usfm,highlight=8]
+----
+\p
+\v 35 As Jesus was teaching in the Temple, he asked the question, “How can the teachers
+of the Law say that the Messiah will be the descendant of David?
+\v 36 The Holy Spirit inspired David to say:
+\q1 ‘The Lord said to my Lord:
+\q2 Sit here at my right side
+\q2 until I put your enemies under your feet.’
+\b
+\m
+\v 37 David himself called him ‘Lord’; so how can the Messiah be David's descendant?”
+----
+
+image::images/par-m_1.jpg[Mark 12.37 (GNT),250]
+
+== Publication Issues
+
+== Discussion
+
+Links to open repository Issues
