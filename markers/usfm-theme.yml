@@ -1,0 +1,10 @@
+extends: default-with-fallback-font
+base:
+    font-size: 10
+heading:
+    h1-font-size: $base-font-size * 1.8
+    h2-font-size: $base-font-size * 1.4
+    h3-font-size: $base-font-size * 1.2
+    margin-bottom: 3
+code:
+    font-size: 9
