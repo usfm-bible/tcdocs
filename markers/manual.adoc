@@ -1,0 +1,13 @@
+= USFM Manual
+:doctype: book
+:source-highlighter: pygments
+:toc:
+:toclevels: 1
+
+= Paragraphs
+
+include::par/p.adoc[leveloffset=+1]
+
+= Notes
+
+include::note/f.adoc[leveloffset=+1]
