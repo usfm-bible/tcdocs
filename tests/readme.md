@@ -31,7 +31,8 @@ included in a file. The following keys are considered to have meaning.
 - **description**. A textual description (in markdown) of the test data and its
   purpose in being included.
 - **validated**. This may take one of two values: `pass` and `fail`. If the value
-  is `fail` then the data is not expected to pass validation and if there is only a
+  is `fail` then the data is expected to not pass validation and if there is only a
   origin.sfm and no origin.xml, then the origin.sfm is not expected to parse
-  correctly.
-
+  correctly. If it is empty then the result is indeterminate. But ideally it should be set.
+ - **tags**. A space separated list of single word tags to allow
+   subcategorisation of tests.
