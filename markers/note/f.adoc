@@ -1,7 +1,11 @@
 = \f ...\f*
 :description: Name of God
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note-f.adoc
+ifndef::localdir[]
 :source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/note/images
 
 == Summary
 
@@ -25,12 +29,9 @@ TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
 == Structure
+image::f_rail.svg[]
 
-//image::images/note-f_railroad.svg[]
-
-// This is the automatically generated railroad:
-
-//image::images/note-f_railroad1.svg[]
+image::fchar_rail.svg[]
 
 == Examples
 
@@ -44,8 +45,8 @@ TextProperties:: publishable, vernacular, note
 \v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4 \fq John appeared in the desert, baptizing and preaching\ft ; some manuscripts have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”
 ----
 
-image::images/note-f_1.jpg[Mark 1.1 (caller) (GNT),250]
-image::images/note-f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),550]
+image::f_1.jpg[Mark 1.1 (caller) (GNT),250]
+image::f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),550]
 
 == Publication Issues
 

@@ -8,3 +8,9 @@ heading:
     margin-bottom: 3
 code:
     font-size: 9
+font:
+  catalog:
+    merge: true
+    Lato: /usr/share/fonts/truetype/lato/Lato-Medium.ttf
+    DejaVu Sans: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+  fallbacks: [DejaVu Sans]

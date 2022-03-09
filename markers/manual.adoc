@@ -3,6 +3,7 @@
 :source-highlighter: pygments
 :toc:
 :toclevels: 1
+:localdir: ./
 
 = Paragraphs
 
