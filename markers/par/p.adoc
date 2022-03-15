@@ -1,7 +1,11 @@
 = \p
 :description: Regular paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par-p.adoc
+ifndef::localdir[]
 :source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
 
 == Summary
 
@@ -18,9 +22,19 @@ OccursUnder:: `c`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
-== Structure
+== USFM Structure
 
-'Railroad' type diagram here...
+image::p_rail.svg[]
+
+image::char_rail.svg[]
+
+image::link_rail.svg[]
+
+== USX Structure
+
+image:p_usx.svg[]
+
+image::char_usx.svg[]
 
 == Examples
 
@@ -44,7 +58,7 @@ TextProperties:: paragraph, publishable, vernacular
 and be baptized,” he told the people, “and God will forgive your sins.”
 ----
 
-image::par/images/p_1.jpg[Mark 1.1-4 (GNT),250]
+image::../par/images/p_1.jpg[Mark 1.1-4 (GNT),250]
 
 == Publication Issues
 

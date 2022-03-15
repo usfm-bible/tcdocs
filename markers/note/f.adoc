@@ -5,7 +5,7 @@ ifndef::localdir[]
 :source-highlighter: pygments
 :localdir: ../
 endif::[]
-:imagesdir: {localdir}/note/images
+:imagesdir: {localdir}/images
 
 == Summary
 
@@ -28,10 +28,20 @@ OccursUnder:: `c cp lh li li1 li2 li3 li4 lf lim lim1 lim2 lim3 lim4 m mi nb p p
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
-== Structure
+== USFM Structure
 image::f_rail.svg[]
 
 image::fchar_rail.svg[]
+
+image::cat_rail.svg[]
+
+image::ref_rail.svg[]
+
+== USX Structure
+
+image::f_usx.svg[]
+
+image::fchar_usx.svg[]
 
 == Examples
 
@@ -45,11 +55,12 @@ image::fchar_rail.svg[]
 \v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4 \fq John appeared in the desert, baptizing and preaching\ft ; some manuscripts have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”
 ----
 
-image::f_1.jpg[Mark 1.1 (caller) (GNT),250]
-image::f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),550]
+image::../note/images/f_1.jpg[Mark 1.1 (caller) (GNT),250]
+image::../note/images/f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),550]
 
 == Publication Issues
 
 == Discussion
 
-Links to open repository Issues
+- We currently allow interspersed text and foonotechars. Do we want to allow this? Or do we say that you can have one text run followed by any number of footnotechars?
+- What do we want to say about WS around a footnote caller? The current model follows PTXprint in requiring a space after the caller.

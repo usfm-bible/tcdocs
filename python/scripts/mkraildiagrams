@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+
+import os, sys, argparse
+try:
+    from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
+except ImportError:
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
+    from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
+parser.add_argument("-o","--outdir",required=True,help="Output directory for generated svgs")
+parser.add_argument("-C","--charwidth",type=int,default=6,help="Average width of characters to use")
+args = parser.parse_args()
+
+rdoc = ETDoc(args.grammar)
+rgram = RGrammar(rdoc)
+rgram.parse(rdoc.getroot())
+
+jobs = (
+    ("Char", "char", ("Char.char.style.enum", "+char.closed", "Break",
+                      "CharWithAttrib.enum"), ("+char.link", )),
+    ("Footnote", "f", (), ("category",)),
+    ("FootnoteChar", "fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
+    ("Para", "p", ("Para.para.style.enum", "Break")),
+    ("Reference", "ref"),
+    ("category", "cat"),
+    ("char.link", "link"),
+    ("CharWithAttrib.char.style.w", "w", ("Break", ), ("+char.link", )),
+    ("CharWithAttrib.char.style.rb", "rb", ("Break", ), ("+char.link", ))
+)
+
+for j in jobs:
+    keeps = j[2] if len(j) > 2 else []
+    for a in (("rail", True), ("usx", False)):
+        if not a[1] and len(j) > 3:
+            keeps = keeps + j[3]
+        rdia = RDiagram(j[0], rdoc, keeps=keeps, cwidth=args.charwidth)
+        rgram.makediagram(j[0], rdia=rdia, usfm=a[1])
+        outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[1], a[0]))
+        with open(outfile, "w", encoding="utf-8") as outf:
+            d = rdia.asRail()
+            d.writeSvg(outf.write)
