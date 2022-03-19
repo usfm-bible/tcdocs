@@ -811,7 +811,7 @@
       <element>
         <name ns="">char</name>
         <attribute>
-          <usfm:tag id="a"/>
+          <usfm:tag id="a" grouping="9"/>
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>

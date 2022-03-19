@@ -496,7 +496,7 @@ IntroChar.char.style.enum = (
 
 Char = (
     element char {
-        [usfm:tag[id="a"]]
+        [usfm:tag[id="a" grouping="9"]]
         attribute style { Char.char.style.enum },
         [usfm:order="2"]
         char.link,

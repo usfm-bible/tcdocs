@@ -83,39 +83,39 @@ manys = {
 }
 
 CSS_STYLE = '''\
-    svg.railroad-diagram {
+    svg.railroad-diagram {{
         background-color:hsl(30,20%,95%);
-    }
-    svg.railroad-diagram path {
-        stroke-width: 2;
+    }}
+    svg.railroad-diagram path {{
+        stroke-width: {line-width};
         stroke: black;
         fill: none;
-    }
-    svg.railroad-diagram text {
-        font-size: 12pt;
+    }}
+    svg.railroad-diagram text {{
+        font-size: {text-size};
         text-anchor: middle;
-        font-family: DejaVu Sans
-    }
-    svg.railroad-diagram text.label {
+        font-family: {font};
+    }}
+    svg.railroad-diagram text.label {{
         text-anchor:start;
-    }
-    svg.railroad-diagram text.comment {
-        font-family: DejaVu Sans;
-        font-size: 15pt;
-    }
-    svg.railroad-diagram rect{
-        stroke-width: 2;
+    }}
+    svg.railroad-diagram text.comment {{
+        font-family: {font};
+        font-size: {comment-size};
+    }}
+    svg.railroad-diagram rect{{
+        stroke-width: {line-width};
         stroke:black;
-        fill: rgb(210, 255, 210);
-    }
-    svg.railroad-diagram rect.group-box {
+        fill: {color};
+    }}
+    svg.railroad-diagram rect.group-box {{
         stroke: gray;
         stroke-dasharray: 10 5;
         fill: none;
-    }
-    .terminal {
-        font-family: DejaVu Sans;
-    }
+    }}
+    .terminal {{
+        font-family: {font};
+    }}
 '''
 
 class RChoice(list):
@@ -250,13 +250,13 @@ class RDiagram:
         if cwidth != 0:
             railroad.CHAR_WIDTH = cwidth
 
-    def addElement(self, e, grammar, curr=None, attrcurr=None, group=None):
+    def addElement(self, e, grammar, curr=None, attrcurr=None, group=None, grouping=8):
         '''Generates a diagram for the XML description. Incomplete'''
         tag = self.doc.localise(e.tag)
         if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group"):
-            ncurr = RChoice(combine=tag, parent=curr)
+            ncurr = RChoice(combine=tag, parent=curr, groupby=grouping)
             for c in e:
-                self.addElement(c, grammar, curr=ncurr, attrcurr=attrcurr)
+                self.addElement(c, grammar, curr=ncurr, attrcurr=attrcurr, grouping=grouping)
             if len(ncurr):
                 curr.append(ncurr)
             curr = ncurr
@@ -271,10 +271,13 @@ class RDiagram:
             ncurr.append(scurr)
             pcurr.append(ncurr)
             for c in e:
-                self.addElement(c, grammar, curr=scurr, attrcurr=ncurr)
+                self.addElement(c, grammar, curr=scurr, attrcurr=ncurr, grouping=grouping)
             curr = pcurr
         elif tag == "attribute":
             name = e.findtext(self.doc.globalise('name'))
+            g = e.find(self.doc.globalise("usfm:tag"))
+            if g is not None:
+                grouping = int(g.get("grouping", 8))
             if isinstance(attrcurr, RChoice) and attrcurr.combine == "optional":
                 name += "?"
                 #attrcurr.parent.remove(attrcurr)
@@ -285,7 +288,7 @@ class RDiagram:
             else:
                 curr.append(v)
             for c in e:
-                last = self.addElement(c, grammar, curr=v)
+                last = self.addElement(c, grammar, curr=v, grouping=grouping)
             last = getlastchoice(last)
             if last is not None:
                 last.combine = "attributes"
@@ -298,7 +301,7 @@ class RDiagram:
             else:
                 if "+"+name not in self.keeps:
                     self.visited.add(name)
-                grammar.makediagram(name, curr=curr, attrcurr=attrcurr, rdia=self, usfm=False)
+                grammar.makediagram(name, curr=curr, attrcurr=attrcurr, rdia=self, usfm=False, grouping=grouping)
         elif tag in ("text", "empty"):
             name = e.get("name", tag)
             curr.append(RTerminal(name, parent=curr))
@@ -457,9 +460,16 @@ class RDiagram:
         self.curr.asXml(top)
         return res
 
-    def asRail(self):
+    def asRail(self, **kw):
+        defaults = {
+            'font': 'DejaVu Sans',
+            'text-size': '12pt',
+            'comment-size': '15pt',
+            'color': 'rgb(210, 255, 210)',
+            'line-width': '2'}
+        defaults.update(kw)
         content = self.curr.asRail()
-        res = Diagram(content, type='complex', css=CSS_STYLE)
+        res = Diagram(content, type='complex', css=CSS_STYLE.format(**defaults))
         return res
         
 
@@ -480,7 +490,7 @@ class RGrammar:
         for v in self.defines.values():
             v.collect_markers(self)
 
-    def makediagram(self, name, curr=None, rdia=None, usfm=True, attrcurr=None):
+    def makediagram(self, name, curr=None, rdia=None, usfm=True, attrcurr=None, grouping=8):
         if name not in self.defines:
             if name not in self.markers:
                 return None
@@ -497,7 +507,7 @@ class RGrammar:
             if usfm:
                 rdia.addElementUsfm(e, self, curr=ncurr, group=top.name)
             else:
-                rdia.addElement(e, self, curr=ncurr, group=top.name, attrcurr=attrcurr)
+                rdia.addElement(e, self, curr=ncurr, group=top.name, attrcurr=attrcurr, grouping=grouping)
         return rdia
 
     def getvals(self, name):

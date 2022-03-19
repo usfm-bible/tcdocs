@@ -12,7 +12,7 @@
     svg.railroad-diagram text {
         font-size: 12pt;
         text-anchor: middle;
-        font-family: DejaVu Sans
+        font-family: DejaVu Sans;
     }
     svg.railroad-diagram text.label {
         text-anchor:start;
@@ -24,7 +24,7 @@
     svg.railroad-diagram rect{
         stroke-width: 2;
         stroke:black;
-        fill: rgb(210, 255, 210);
+        fill: rgb(210, 210, 255);
     }
     svg.railroad-diagram rect.group-box {
         stroke: gray;
