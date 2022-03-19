@@ -777,7 +777,7 @@ Sidebar =
     }
 
 category =
-    [usfm:tag["cat"] usfm:text[strip="both"] usfm:endtag["cat"]]
+    [usfm:tag["cat"] usfm:text[strip="right"] usfm:endtag["cat"]]
     attribute category { text }
 
 Figure =
