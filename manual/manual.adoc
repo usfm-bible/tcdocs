@@ -1,0 +1,14 @@
+= USFM Manual
+:doctype: book
+:source-highlighter: pygments
+:toc:
+:toclevels: 1
+:localdir: ../markers/
+
+= Paragraphs
+
+include::{localdir}par/p.adoc[leveloffset=+1]
+
+= Notes
+
+include::{localdir}note/f.adoc[leveloffset=+1]
