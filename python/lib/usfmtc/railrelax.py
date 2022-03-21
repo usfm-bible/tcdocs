@@ -161,6 +161,8 @@ class RChoice(list):
                     n.items.append(o)
                 return n
         contents = [r for r in (v.asRail() for v in self) if r is not None]
+        if not len(contents):
+            return None
         if len(contents) > 1 and self.combine not in ("choice", "sequence", "stack", "attributed", "attributes"):
             contents = [actions["sequence"](self, None, contents)]
         if len(contents) < 2 and self.combine in ("choice", "sequence", "stack", "attributed", "attributes"):
@@ -321,23 +323,24 @@ class RDiagram:
         if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group"):
             nums = int(e.get(self.doc.globalise('usfm:grouping'), 8))
             ncurr = RChoice(combine=tag, parent=curr, groupby=nums)
+            curr.append(ncurr)
             for c in e:
-                self.addElementUsfm(c, grammar, curr=ncurr, parent=e, group=group)
-            if len(ncurr):
-                curr.append(ncurr)
+                ncurr = self.addElementUsfm(c, grammar, curr=ncurr, parent=e, group=group)
         elif tag in ("element", "attribute"):
             if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true":
-                return
+                return curr
             ncurr = RChoice(combine="sequence", parent=curr)
-            for c in sorted(e, key=lambda x:int(x.get(self.doc.globalise('usfm:order'), 0))):
-                self.addElementUsfm(c, grammar, curr=ncurr, parent=e, group=group)
             curr.append(ncurr)
+            for c in sorted(e, key=lambda x:int(x.get(self.doc.globalise('usfm:order'), 0))):
+                ncurr = self.addElementUsfm(c, grammar, curr=ncurr, parent=e, group=group)
+            if tag == "attribute":
+                curr = ncurr
         elif tag in ("text", "empty"):
             for c in e:
-                self.addElementUsfm(c, grammar, curr=curr, parent=e, group=group)
+                curr = self.addElementUsfm(c, grammar, curr=curr, parent=e, group=group)
         elif tag == "ref":
             if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true":
-                return
+                return curr
             name = e.get('name')
             if name in self.visited or (name not in self.keeps and "+"+name not in self.keeps):
                 curr.append(RTerminal(name, ref=True, parent=curr))
@@ -346,43 +349,59 @@ class RDiagram:
                     self.visited.add(name)
                 grammar.makediagram(name, curr=curr, rdia=self)
         elif tag == "usfm:tag":
+            if e.get("stacked", "false") == "true":
+                scurr = RChoice(combine="stack", parent=curr)
+                curr.append(scurr)
+                curr = scurr
+            else:
+                scurr = None
             rcurr = RChoice(combine="sequence", parent=curr)
             curr.append(rcurr)
-            curr = rcurr
-            curr = self.addstrip("left", e, curr)
+            rcurr = self.addstrip("left", e, rcurr)
             if 'id' in e.attrib:
                 tid = e.get('id')
                 self.ids[(group, tid)] = self.idcount
                 ncurr = RGroup(chr(0x278A+self.idcount))
                 self.idcount += 1
-                curr.append(ncurr)
-                curr = ncurr
+                rcurr.append(ncurr)
+                rcurr = ncurr
             if e.text is not None and e.text.strip() != "":
-                curr.append(RTerminal('"\\{}"'.format(e.text.strip())))
+                rcurr.append(RTerminal('"{}"'.format(e.get('prefix', '\\'), e.text.strip())))
             else:
                 ncurr = RChoice(combine="sequence", parent=curr)
-                curr.append(ncurr)
-                ncurr.append(RTerminal('"\\"'))
+                rcurr.append(ncurr)
+                ncurr.append(RTerminal('"{}"'.format(e.get('prefix', '\\'))))
                 vals = self.getvals(parent, grammar)
                 nums = int(e.get('grouping', 8))
-                curr.append(RChoice(*[RTerminal('"{}"'.format(v), parent=curr) for v in vals], combine="choice", parent=curr, groupby=nums))
-            curr = self.addstrip("right", e, rcurr, default="right single")
+                rcurr.append(RChoice(*[RTerminal('"{}"'.format(v), parent=rcurr) for v in vals], combine="choice", parent=rcurr, groupby=nums))
+            if scurr is not None:
+                curr = RChoice(combine="sequence", parent=scurr)
+                scurr.append(curr)
+            curr = self.addstrip("right", e, curr, default="right single")
         elif tag == "usfm:endtag":
             many = e.get('many', '')
             ncurr = RChoice(combine=manys.get(many, 'sequence'), parent=curr)
             curr.append(ncurr)
-            curr = ncurr
-            curr = self.addstrip("left", e, curr)
+            ncurr = self.addstrip("left", e, ncurr)
             if 'id' in e.attrib:
                 tid = e.get('id')
-                c = self.ids[(group, tid)]
-                curr.append(RTerminal('\u21D0 {}'.format(chr(0x278A + c))))
-                curr.append(RTerminal('"*"'))
+                f = (group, tid)
+                if f not in self.ids:
+                    p = parent
+                    while p is not None:
+                        if isinstance(p, RGroup):
+                            f = (p.name, tid)
+                            if f in self.ids:
+                                break
+                            p = p.parent
+                c = self.ids[f]
+                ncurr.append(RTerminal('\u21D0 {}'.format(chr(0x278A + c))))
+                ncurr.append(RTerminal('"*"'))
             else:
                 if e.text is None:
                     e.text = ""
-                curr.append(RTerminal('"\\{}*"'.format(e.text.strip())))
-            curr = self.addstrip("right", e, curr)
+                ncurr.append(RTerminal('"\\{}*"'.format(e.text.strip())))
+            ncurr = self.addstrip("right", e, ncurr)
         elif tag == "usfm:attrib":
             curr = self.addstrip("left", e, curr)
             fbreg = parent.findtext('{}[@type="string"]/{}[@name="pattern"]'.format(
@@ -413,11 +432,13 @@ class RDiagram:
         elif tag == "usfm:repeat":
             rep = RChoice(combine="sequence")
             for c in e:
-                self.addElementUsfm(c, grammar, curr=rep, parent=e, group=group)
+                rep = self.addElementUsfm(c, grammar, curr=rep, parent=e, group=group)
             if len(rep) == 1:
                 rep = rep[0]
             if isinstance(curr, RChoice):
                 curr.repeat = rep
+        return curr
+
 
     def getvals(self, e, grammar):
         res = []
@@ -505,9 +526,9 @@ class RGrammar:
             curr.append(ncurr)
         for e in top.content:
             if usfm:
-                rdia.addElementUsfm(e, self, curr=ncurr, group=top.name)
+                ncurr = rdia.addElementUsfm(e, self, curr=ncurr, group=top.name)
             else:
-                rdia.addElement(e, self, curr=ncurr, group=top.name, attrcurr=attrcurr, grouping=grouping)
+                ncurr = rdia.addElement(e, self, curr=ncurr, group=top.name, attrcurr=attrcurr, grouping=grouping)
         return rdia
 
     def getvals(self, name):

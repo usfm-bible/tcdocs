@@ -28,6 +28,8 @@ image::p_rail.svg[]
 
 image::char_rail.svg[]
 
+image::charembed_rail.svg[]
+
 image::link_rail.svg[]
 
 == USX Structure
@@ -35,6 +37,8 @@ image::link_rail.svg[]
 image:p_usx.svg[]
 
 image::char_usx.svg[]
+
+image::charembed_usx.svg[]
 
 == Examples
 

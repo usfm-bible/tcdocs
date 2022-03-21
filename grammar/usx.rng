@@ -558,7 +558,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
-        <usfm:tag id="a" grouping="15" strip="right?"/>
+        <usfm:tag id="a" grouping="12" strip="right?" stacked="true"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -806,32 +806,37 @@
       <value>iqt</value>
     </choice>
   </define>
+  <define name="CharContent">
+    <group>
+      <ref name="char.link" usfm:order="2"/>
+      <optional>
+        <ref name="char.closed"/>
+      </optional>
+      <text>
+        <usfm:text/>
+      </text>
+      <zeroOrMore>
+        <choice>
+          <ref name="Reference"/>
+          <ref name="CharEmbed"/>
+          <ref name="Milestone"/>
+          <ref name="Footnote"/>
+          <ref name="Break"/>
+          <text/>
+        </choice>
+      </zeroOrMore>
+    </group>
+  </define>
   <define name="Char">
     <choice>
       <element>
         <name ns="">char</name>
         <attribute>
-          <usfm:tag id="a" grouping="9"/>
+          <usfm:tag id="a" grouping="9" stacked="true"/>
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
-        <ref name="char.link" usfm:order="2"/>
-        <optional>
-          <ref name="char.closed"/>
-        </optional>
-        <text>
-          <usfm:text/>
-        </text>
-        <zeroOrMore>
-          <choice>
-            <ref name="Reference"/>
-            <ref name="Char"/>
-            <ref name="Milestone"/>
-            <ref name="Footnote"/>
-            <ref name="Break"/>
-            <text/>
-          </choice>
-        </zeroOrMore>
+        <ref name="CharContent"/>
         <usfm:endtag id="a" many="?" usfm:order="3"/>
       </element>
       <ref name="CharWithAttrib.enum"/>
@@ -875,6 +880,21 @@
       <value>em</value>
       <value>sc</value>
       <value>sup</value>
+    </choice>
+  </define>
+  <define name="CharEmbed">
+    <choice>
+      <element>
+        <name ns="">char</name>
+        <attribute>
+          <usfm:tag id="a" prefix="\+" grouping="9" stacked="true"/>
+          <name ns="">style</name>
+          <ref name="Char.char.style.enum"/>
+        </attribute>
+        <ref name="CharContent"/>
+        <usfm:endtag id="a" many="?" usfm:order="3"/>
+      </element>
+      <ref name="CharWithAttrib.enum"/>
     </choice>
   </define>
   <define name="ListChar">

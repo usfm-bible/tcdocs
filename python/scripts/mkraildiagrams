@@ -20,6 +20,8 @@ rgram.parse(rdoc.getroot())
 
 alljobs = {
     "Char": ("char", ("Char.char.style.enum", "+char.closed", "Break",
+                      "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
+    "CharEmbed": ("charembed", ("Char.char.style.enum", "+char.closed", "Break",
                       "CharWithAttrib.enum"), ("+char.link", )),
     "Footnote": ("f", (), ("category",)),
     "FootnoteChar": ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),

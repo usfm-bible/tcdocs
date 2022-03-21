@@ -357,7 +357,7 @@ PeripheralContent = (Chapter | Para | List | Table | Footnote | CrossReference |
 
 Para =
     element para {
-        [usfm:tag[id="a" grouping="15" strip="right?"]]
+        [usfm:tag[id="a" grouping="12" strip="right?" stacked="true"]]
         attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         (Reference | Footnote | CrossReference | Char | Milestone | Figure | Verse | Break | text)+
@@ -494,20 +494,25 @@ IntroChar.char.style.enum = (
     | "iqt" # For quoted scripture text appearing in the introduction
     )
 
+CharContent = (
+    [usfm:order="2"]
+    char.link,
+    char.closed?,
+    [usfm:text[]]
+    text,
+    (Reference | CharEmbed | Milestone | Footnote | Break | text)* # Nested character <char> markup
+    )
+
 Char = (
     element char {
-        [usfm:tag[id="a" grouping="9"]]
+        [usfm:tag[id="a" grouping="9" stacked="true"]]
         attribute style { Char.char.style.enum },
-        [usfm:order="2"]
-        char.link,
-        char.closed?,
-        [usfm:text[]]
-        text,
-        (Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
+        CharContent
         >> usfm:endtag[id="a" many="?" usfm:order="3"]
     }
     | CharWithAttrib.enum
     )
+
 Char.char.style.enum = (
       "va" # Second (alternate) verse number (for coding dual numeration in Psalms; see also NRSV Exo 22.1-4)
     | "vp" # Published verse marker - this is a verse marking that would be used in the published text
@@ -545,6 +550,16 @@ Char.char.style.enum = (
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text
     | "sup" # A character style, for superscript text. Typically for use in critical edition footnotes.
+    )
+
+CharEmbed = (
+    element char {
+        [usfm:tag[id="a" prefix="\+" grouping="9" stacked="true"]]
+        attribute style { Char.char.style.enum },
+        CharContent
+        >> usfm:endtag[id="a" many="?" usfm:order="3"]
+    }
+    | CharWithAttrib.enum
     )
 
 ListChar = (
