@@ -1,5 +1,5 @@
-name: usfm-usx
-title: USFM/USX Documentation
+name: usfm-docs
+title: USFM Documentation
 version: latest
 display_version: default
 asciidoc:
