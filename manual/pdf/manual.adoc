@@ -5,10 +5,10 @@
 :toclevels: 1
 :localdir: ../markers/
 
-= Paragraphs
+== Paragraphs
 
 include::{localdir}par/p.adoc[leveloffset=+1]
 
-= Notes
+== Notes
 
 include::{localdir}note/f.adoc[leveloffset=+1]
