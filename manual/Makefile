@@ -1,7 +1,7 @@
 all: manual.pdf
 
 ../grammar/usx.rng : ../grammar/usx.rnc
-	- rnc2rng $< $@
+	- ../python/scripts/urnc2rng $< $@
 
 images/p_rail.svg : ../grammar/usx.rng ../python/scripts/mkraildiagrams
 	- ../python/scripts/mkraildiagrams -g $< -o ../markers/images

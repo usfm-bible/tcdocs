@@ -357,10 +357,10 @@ PeripheralContent = (Chapter | Para | List | Table | Footnote | CrossReference |
 
 Para =
     element para {
-        [usfm:tag[id="a" grouping="12" strip="right?" stacked="true"]]
+        [usfm:tag[id="a" grouping="12" stacked="true" strip="none"]]
         attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        (Reference | Footnote | CrossReference | Char | Milestone | Figure | Verse | Break | text)+
+        (Reference | Footnote | CrossReference | Char | Milestone | Figure | Verse | Break | [usfm:text[strip="left"]] text?)+
         >> usfm:endtag[id="a" many="?"]
     }
 Para.para.style.enum = (

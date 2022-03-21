@@ -366,7 +366,7 @@ class RDiagram:
                 rcurr.append(ncurr)
                 rcurr = ncurr
             if e.text is not None and e.text.strip() != "":
-                rcurr.append(RTerminal('"{}"'.format(e.get('prefix', '\\'), e.text.strip())))
+                rcurr.append(RTerminal('"{}{}"'.format(e.get('prefix', '\\'), e.text.strip())))
             else:
                 ncurr = RChoice(combine="sequence", parent=curr)
                 rcurr.append(ncurr)

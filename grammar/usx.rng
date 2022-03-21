@@ -558,7 +558,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
-        <usfm:tag id="a" grouping="12" strip="right?" stacked="true"/>
+        <usfm:tag id="a" grouping="12" stacked="true" strip="none"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -580,7 +580,11 @@
           <ref name="Figure"/>
           <ref name="Verse"/>
           <ref name="Break"/>
-          <text/>
+          <optional>
+            <text>
+              <usfm:text strip="left"/>
+            </text>
+          </optional>
         </choice>
       </oneOrMore>
       <usfm:endtag id="a" many="?"/>
