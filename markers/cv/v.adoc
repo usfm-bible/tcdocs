@@ -1,7 +1,13 @@
 = \v
 :description: Verse number
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv-v.adoc
-:source-highlighter: pygments
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/v.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+tag::public[]
 
 == Summary
 
@@ -28,8 +34,19 @@ TextProperties:: verse
 \s1 The Birth of Jesus Christ
 \r (Luke 2.1-7)
 \p
-\v 18 This was how the birth of Jesus Christ took place. His mother Mary was engaged to Joseph, but before they were married, she found out that she was going to have a baby by the Holy Spirit.
-\v 19 Joseph was a man who always did what was right, but he did not want to disgrace Mary publicly; so he made plans to break the engagement privately.
+\v 18 This was how the birth of Jesus Christ took place. His mother Mary was 
+engaged to Joseph, but before they were married, she found out that she was 
+going to have a baby by the Holy Spirit.
+\v 19 Joseph was a man who always did what was right, but he did not want to 
+disgrace Mary publicly; so he made plans to break the engagement privately.
 ----
 
-image::images/cv-v_1.jpg[Matthew 1.18-19,250]
+image::cv/v_1.jpg[Matthew 1.18-19,300]
+
+== Publication Issues
+
+end::public[]
+
+== Discussion
+
+Links to open repository Issues

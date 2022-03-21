@@ -1,7 +1,13 @@
 = \fr
 :description: Footnote - Origin reference
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char-fr.adoc
-:source-highlighter: pygments
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fr.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+tag::public[]
 
 == Summary
 
@@ -29,15 +35,22 @@ TextProperties:: publishable, vernacular, note
 [source#src-char-fr_1,usfm,highlight=2;5]
 ----
 \p
-\v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: \ft Some manuscripts do not have \fq the Son of God.\f*
+\v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: 
+\ft Some manuscripts do not have \fq the Son of God.\f*
 ...
 \p
-\v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4: \fq John appeared in the desert, baptizing and preaching; \ft some manuscripts have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”
+\v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4: 
+\fq John appeared in the desert, baptizing and preaching; \ft some manuscripts 
+have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away 
+from your sins and be baptized,” he told the people, “and God will forgive 
+your sins.”
 ----
 
-image::images/char-fr_1.jpg[Mark 1.1 and 1.4 (GNT),550]
+image::char/fr_1.jpg[Mark 1.1 and 1.4 (GNT),600]
 
 == Publication Issues
+
+end::public[]
 
 == Discussion
 

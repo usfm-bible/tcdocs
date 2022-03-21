@@ -1,11 +1,13 @@
 = \f ...\f*
-:description: Name of God
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note-f.adoc
+:description: Footnote
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note/f.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: highlightjs
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
+
+tag::public[]
 
 == Summary
 
@@ -29,21 +31,19 @@ TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
 == USFM Structure
-image::f_rail.svg[]
+image::schema/f_rail.svg[]
 
-image::fchar_rail.svg[]
+image::schema/fchar_rail.svg[]
 
-image::cat_rail.svg[]
+image::schema/cat_rail.svg[]
 
-image::ref_rail.svg[]
+image::schema/ref_rail.svg[]
 
 == USX Structure
 
-image::f_usx.svg[]
+image::schema/f_usx.svg[]
 
-image::fchar_usx.svg[]
-
-image::ref_usx.svg[]
+image::schema/fchar_usx.svg[]
 
 == Examples
 
@@ -51,14 +51,19 @@ image::ref_usx.svg[]
 [source#src-note-f_1,usfm,highlight=2]
 ----
 \p
-\v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: \ft Some manuscripts do not have \fq the Son of God.\f*
+\v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: 
+\ft Some manuscripts do not have \fq the Son of God.\f*
 ...
 \p
-\v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4 \fq John appeared in the desert, baptizing and preaching\ft ; some manuscripts have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”
+\v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4 
+\fq John appeared in the desert, baptizing and preaching\ft ; some manuscripts 
+have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away 
+from your sins and be baptized,” he told the people, “and God will forgive 
+your sins.”
 ----
 
-image::../note/images/f_1.jpg[Mark 1.1 (caller) (GNT),250]
-image::../note/images/f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),550]
+image::note/f_1.jpg[Mark 1.1 (caller) (GNT),300]
+image::note/f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),600]
 
 == Publication Issues
 

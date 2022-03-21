@@ -1,0 +1,12 @@
+name: usfm
+title: USFM Documentation
+version: latest
+display_version: default
+asciidoc:
+  attributes:
+    source-language: usfm@
+    xrefstyle: short@
+    listing-caption: Example@
+nav:
+- modules/ROOT/nav.adoc
+- modules/paragraph/nav.adoc
