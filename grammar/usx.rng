@@ -1467,7 +1467,7 @@
   <define name="category">
     <attribute>
       <usfm:tag>cat</usfm:tag>
-      <usfm:text strip="right"/>
+      <usfm:text strip="right*"/>
       <usfm:endtag>cat</usfm:endtag>
       <name ns="">category</name>
       <text/>
