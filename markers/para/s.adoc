@@ -11,7 +11,7 @@ tag::public[]
 
 == Summary
 
-Description:: Section heading. The variable `#`` represents the level of division.
+Description:: Section heading. The variable `#` represents the level of division.
 Syntax:: `+\s#_...+`
 Added:: 1.0
 
