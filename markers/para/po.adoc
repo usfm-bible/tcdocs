@@ -47,7 +47,7 @@ his own people:
 \po May God our Father and the Lord Jesus Christ give you grace and peace.
 ----
 
-image::par/po_1.jpg[Romans 1.1 and 7 (GNT),600]
+image::para/po_1.jpg[Romans 1.1 and 7 (GNT),600]
 
 == Publication Issues
 
