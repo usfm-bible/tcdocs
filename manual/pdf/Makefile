@@ -1,11 +1,11 @@
 all: manual.pdf
 
-../grammar/usx.rng : ../grammar/usx.rnc
+../../grammar/usx.rng : ../../grammar/usx.rnc
 	- ../python/scripts/urnc2rng $< $@
 
-images/p_rail.svg : ../grammar/usx.rng ../python/scripts/mkraildiagrams
-	- ../python/scripts/mkraildiagrams -g $< -o ../markers/images
+../../markers/images/schema/p_rail.svg : ../../grammar/usx.rng ../../python/scripts/mkraildiagrams
+	- ../../python/scripts/mkraildiagrams -g $< -o ../markers/images
 
-manual.pdf : manual.adoc usfm-theme.yml images/p_rail.svg
-	- asciidoctor-pdf -a pdf-themesdir=. -a pdf-theme=usfm -a pdf-fontsdir="../fonts;GEM_FONTS_DIR" $<
+manual.pdf : manual.adoc usfm-theme.yml ../../markers/images/schema/p_rail.svg
+	- asciidoctor-pdf -a pdf-themesdir=. -a pdf-theme=usfm -a pdf-fontsdir="../../fonts;GEM_FONTS_DIR" $<
 
