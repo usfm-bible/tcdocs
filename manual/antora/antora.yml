@@ -9,4 +9,8 @@ asciidoc:
     listing-caption: Example@
 nav:
 - modules/ROOT/nav.adoc
+- modules/cv/nav.adoc
 - modules/para/nav.adoc
+- modules/char/nav.adoc
+- modules/ms/nav.adoc
+- modules/note/nav.adoc
