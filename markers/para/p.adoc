@@ -1,6 +1,6 @@
-= \p
+= p
 :description: Regular paragraph
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par/p.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/p.adoc
 ifndef::localdir[]
 :source-highlighter: highlightjs
 :localdir: ../
@@ -11,8 +11,10 @@ tag::public[]
 
 == Summary
 
-Description:: Regular paragraph. Followed by a space and paragraph text, or by a new line and a verse marker.
-Syntax:: `+\p(_text...)+`
+Description:: Regular paragraph.
+Syntax::
+- *USFM:* `+\p text...+`
+- *USX:* `+<para style="p">text...</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -20,23 +22,11 @@ Added:: 1.0
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `c`
+OccursUnder:: `[ChapterContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
-== USFM Structure
-
-image::schema/p_rail.svg[]
-
-image::schema/char_rail.svg[]
-
-image::schema/link_rail.svg[]
-
-== USX Structure
-
-image:schema/p_usx.svg[]
-
-image::schema/char_usx.svg[]
+== Structure
 
 == Examples
 

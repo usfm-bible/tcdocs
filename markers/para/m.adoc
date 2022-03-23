@@ -1,6 +1,6 @@
-= \m
+= m
 :description: Continuation (margin) paragraph
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par/m.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/m.adoc
 ifndef::localdir[]
 :source-highlighter: highlightjs
 :localdir: ../
@@ -11,20 +11,20 @@ tag::public[]
 
 == Summary
 
-Description:: Continuation (margin) paragraph. Followed by a space and paragraph text, or by a new line and a verse marker. Usually used to resume prose at the margin (without indent) after poetic text or quotation.
-Syntax:: `+\m(_text...)+`
+Description:: Continuation (margin) paragraph. Commonly used to resume prose at the margin (without indent) after poetic text or quotation.
+Syntax::
+- *USFM:* `+\m text...+`
+- *USX:* `+<para style="m">text...</para>+`
 Added:: 1.0
 
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `c`
+OccursUnder:: `[ChapterContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
 == Structure
-
-'Railroad' type diagram here...
 
 == Examples
 

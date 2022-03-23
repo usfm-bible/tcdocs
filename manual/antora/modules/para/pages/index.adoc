@@ -1,1 +1,34 @@
-= Paragraph Types
+= Paragraph Styles
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+tag::public[]
+
+== Summary
+
+== USFM
+
+Syntax:: `+\{paraStyle}_+`
+
+=== Structure
+
+image::schema/p_rail.svg[]
+
+image::schema/char_rail.svg[]
+
+image::schema/link_rail.svg[]
+
+== USX
+
+Syntax:: `+<para style="{paraStyle}">text...</para>+`
+
+=== Structure
+
+image:schema/p_usx.svg[]
+
+image::schema/char_usx.svg[]
+
+end::public[]

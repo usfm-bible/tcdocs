@@ -1,1 +1,1 @@
-= Milestone Types
+= Milestones

@@ -1,6 +1,6 @@
-= \s#
+= s#
 :description: Section heading
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par/s.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/s.adoc
 ifndef::localdir[]
 :source-highlighter: highlightjs
 :localdir: ../
@@ -12,19 +12,19 @@ tag::public[]
 == Summary
 
 Description:: Section heading. The variable `#` represents the level of division.
-Syntax:: `+\s#_...+`
+Syntax::
+- *USFM:* `+\s# text...+`
+- *USX:* `+<para style="s#">text...</para>+`
 Added:: 1.0
 
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `c`
+OccursUnder:: `[ChapterContent]`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular, level_1
 
 == Structure
-
-'Railroad' type diagram here...
 
 == Examples
 

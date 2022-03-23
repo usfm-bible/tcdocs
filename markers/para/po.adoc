@@ -1,6 +1,6 @@
-= \po
+= po
 :description: Opening of an epistle/letter
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/par/po.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/po.adoc
 ifndef::localdir[]
 :source-highlighter: highlightjs
 :localdir: ../
@@ -11,20 +11,20 @@ tag::public[]
 
 == Summary
 
-Description:: Opening of an epistle/letter. Followed by a space and paragraph text, or by a new line and a verse marker.
-Syntax:: `+\po(_text...)+`
+Description:: Opening of an epistle/letter.
+Syntax::
+- *USFM:* `+\po text...+`
+- *USX:* `+<para style="po">text...</para>+`
 Added:: 3.0
 
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `c`
+OccursUnder:: `[ChapterContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
 == Structure
-
-'Railroad' type diagram here...
 
 == Examples
 
