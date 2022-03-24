@@ -1,1 +1,3 @@
-= About USFM
+= About USFM and USX
+
+IMPORTANT: *This is a development site only*. The current USFM and USX documentation sites are available at https://ubsicap.hithub.io/usfm[] and https://ubsicap.hithub.io/usx[]
