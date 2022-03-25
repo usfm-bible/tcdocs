@@ -48,4 +48,4 @@
 <path d="M 140.0 75 h 18.0"></path><path d="M 242.0 75 h 18.0"></path><path d="M 158.0 75 h 20"></path><g>
 <path d="M 178.0 75 h 44"></path></g><path d="M 222.0 75 h 20"></path><path d="M 158.0 75 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g class="terminal ">
 <path d="M 178.0 95 h 0.0"></path><path d="M 222.0 95 h 0.0"></path><rect height="22" rx="10" ry="10" width="44" x="178.0" y="84"></rect><text x="200.0" y="99">text</text></g><path d="M 222.0 95 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path></g><path d="M 260.0 75 h 20"></path></g></g><g class="non-terminal ">
-<path d="M 50.0 28 h 0.0"></path><path d="M 123.0 28 h 0.0"></path><text class="comment" x="86.5" y="33">Reference</text></g></g><path d="M 290 75 h 10"></path><path d="M 300 75 h 20 m 0 -10 v 20"></path></g></svg>
+<path d="M 50.0 28 h 0.0"></path><path d="M 179.0 28 h 0.0"></path><text class="comment" x="114.5" y="33">FootnoteReference</text></g></g><path d="M 290 75 h 10"></path><path d="M 300 75 h 20 m 0 -10 v 20"></path></g></svg>
