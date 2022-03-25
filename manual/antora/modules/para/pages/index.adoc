@@ -9,7 +9,7 @@ endif::[]
 
 == USFM
 
-Syntax:: `+\{paraStyle}_+`
+Syntax:: `+\[Para@style]_+`
 
 === Structure
 
@@ -21,7 +21,7 @@ image::schema/link_rail.svg[]
 
 == USX
 
-Syntax:: `+<para style="{paraStyle}">text...</para>+`
+Syntax:: `+<para style="[Para@style]">text...</para>+`
 
 === Structure
 
