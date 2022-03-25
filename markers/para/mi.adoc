@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Regular paragraph.
-- See also: xref:pmo.adoc[pmo], xref:pmc.adoc[pmc]
+- See also: xref:markers:pmo.adoc[pmo], xref:markers:pmc.adoc[pmc]
 Syntax::
 - *USFM:* `+\mi_text...+`
 - *USX:* `+<para style="mi">text...</para>+`
