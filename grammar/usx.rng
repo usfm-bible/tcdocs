@@ -1311,6 +1311,13 @@
       <optional>
         <ref name="category"/>
       </optional>
+      <optional>
+        <attribute>
+          <usfm:text strip="both*"/>
+          <name ns="">fr</name>
+          <text/>
+        </attribute>
+      </optional>
       <oneOrMore>
         <ref name="FootnoteChar"/>
       </oneOrMore>

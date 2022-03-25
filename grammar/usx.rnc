@@ -714,6 +714,8 @@ Footnote =
         [usfm:text[strip="right" re="\S+"]]
         attribute caller { text },
         category?,
+        [usfm:tag ["fr"]]
+        attribute fr { text }?,
         FootnoteChar+
         >> usfm:endtag[id="a"]
     }
