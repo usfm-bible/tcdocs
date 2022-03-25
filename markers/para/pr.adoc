@@ -1,0 +1,57 @@
+= pr
+:description: Right-aligned paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pr.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Right-aligned paragraph.
+- _Recommended use:_ Text refrain
+Syntax::
+- *USFM:* `+\pr_text...+`
+- *USX:* `+<para style="pr">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Deuteronomy 27.15,16,17 (GNT)
+[source#src-para-pr_1,usfm,highlight=3;6;9]
+----
+\p
+\v 15 “ ‘God's curse on anyone who makes an idol of stone, wood, or metal and 
+secretly worships it; the \nd Lord\nd* hates idolatry.’
+\pr “And all the people will answer, ‘Amen!’
+\p
+\v 16 “ ‘God's curse on anyone who dishonors his father or mother.’
+\pr “And all the people will answer, ‘Amen!’
+\p
+\v 17 “ ‘God's curse on anyone who moves a neighbor's property line.’
+\pr “And all the people will answer, ‘Amen!’
+----
+
+image::para/pr_1.jpg[Deuteronomy 27.15-17 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,3 @@
+= pc
+
+include::markers:para/pc.adoc[tag=public]

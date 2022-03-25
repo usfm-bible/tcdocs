@@ -1,0 +1,56 @@
+= pc
+:description: Centered paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pc.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Centered paragraph.
+- _Recommended use:_ Inscriptions
+Syntax::
+- *USFM:* `+\pc_text...+`
+- *USX:* `+<para style="pc">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Revelation 17.5 (CEV)
+[source#src-para-pc_1,usfm,highlight=3]
+----
+\v 4 The woman was dressed in purple and scarlet robes, and she wore jewelry 
+made of gold, precious stones, and pearls. In her hand she held a gold cup 
+filled with the filthy and nasty things she had done.
+\v 5 On her forehead a mysterious name was written:
+\pc I AM THE GREAT CITY OF BABYLON, THE MOTHER OF EVERY IMMORAL AND FILTHY 
+THING ON EARTH.
+\m
+\v 6 I could tell that the woman was drunk on the blood of God's people who 
+had given their lives for Jesus. This surprising sight amazed me, ...
+----
+
+image::para/pc_1.jpg[Revelation 17.5 (CEV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

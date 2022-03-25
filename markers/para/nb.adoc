@@ -1,0 +1,57 @@
+= nb
+:description: No break
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/nb.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: No break. Indicates that “no-break” should occur with previous paragraph (regardless of previous paragraph type). Commonly used in cases where the previous paragraph spans the chapter boundary.
+Syntax::
+- *USFM:* `+\nb_text...+`
+- *USX:* `+<para style="nb">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.John 7.53–8.2 (CEV)
+[source#src-para-nb_1,usfm,highlight=7]
+----
+\p
+\v 52 Then they said, “Nicodemus, you must be from Galilee! Read the 
+Scriptures, and you will find that no prophet is to come from Galilee.”
+\s1 A Woman Caught in Sin
+\p
+\v 53 Everyone else went home,
+\c 8
+\nb
+\v 1 but Jesus walked out to the Mount of Olives.
+\v 2 Then early the next morning he went to the temple. The people came 
+to him, and he sat down and started teaching them.
+----
+
+image::para/nb_1.jpg[John 7.53–8.2 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,50 @@
+= ph
+:description: Indented paragraph with hanging indent
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ph.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Indented paragraph with hanging indent.
+- The variable `#` represents the level of overall paragraph indent.
+Syntax::
+- *USFM:* `+\ph#_text...+`
+- *USX:* `+<para style="ph#">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+Status:: Deprecated
+// - Recommended alternate: xref:li.adoc[]
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.@Missing
+[source#src-para-ph_1,usfm,highlight=4;13]
+----
+Missing
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

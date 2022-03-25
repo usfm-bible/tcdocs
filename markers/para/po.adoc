@@ -1,5 +1,5 @@
 = po
-:description: Opening of an epistle/letter
+:description: Letter opening
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/po.adoc
 ifndef::localdir[]
 :source-highlighter: highlightjs
@@ -11,16 +11,19 @@ endif::[]
 
 == Summary
 
-Description:: Opening of an epistle/letter.
+Description:: Letter opening.
 Syntax::
-- *USFM:* `+\po text...+`
+- *USFM:* `+\po_text...+`
 - *USX:* `+<para style="po">text...</para>+`
+// tag::spec[]
 Added:: 3.0
+// end::spec[]
+
 
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`
+OccursUnder:: `[ChapterContent], [Sidebar]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
@@ -29,7 +32,7 @@ TextProperties:: paragraph, publishable, vernacular
 == Examples
 
 .Romans 1.1,7 (GNT)
-[source#src-par-po_1,usfm,highlight=2;10;12]
+[source#src-para-po_1,usfm,highlight=2;10;12]
 ----
 \c 1
 \po

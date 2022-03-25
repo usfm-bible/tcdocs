@@ -1,0 +1,50 @@
+= cls
+:description: Letter closing
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/cls.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Letter closing.
+Syntax::
+- *USFM:* `+\cls_text...+`
+- *USX:* `+<para style="cls">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Colossians 4.18 (GNT)
+[source#src-para-cls_1,usfm,highlight=3]
+----
+\p
+\v 18 With my own hand I write this: \sig Greetings from Paul\sig*. Do not 
+forget my chains!
+\cls May God's grace be with you.
+----
+
+image::para/cls_1.jpg[Colossians 4.18 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

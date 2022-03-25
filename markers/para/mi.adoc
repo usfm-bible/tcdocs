@@ -1,0 +1,62 @@
+= mi
+:description: Regular paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/mi.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Regular paragraph.
+- See also: xref:pmo.adoc[pmo], xref:pmc.adoc[pmc]
+Syntax::
+- *USFM:* `+\mi_text...+`
+- *USX:* `+<para style="mi">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Matthew 11.18-19 (CEV)
+[source#src-para-mi_1,usfm,highlight=10]
+----
+\pi
+\v 16 You people are like children sitting in the market and shouting to 
+each other,
+\b
+\q1
+\v 17 “We played the flute,
+\q2 but you would not dance!
+\q1 We sang a funeral song,
+\q2 but you would not mourn!”
+\b
+\mi
+\v 18 John the Baptist did not go around eating and drinking, and you said, 
+“That man has a demon in him!”
+\v 19 But the Son of Man goes around eating and drinking, and you say, “That 
+man eats and drinks too much! He is even a friend of tax collectors ...
+----
+
+image::para/mi_1.jpg[Matthew 11.18-19 (CEV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

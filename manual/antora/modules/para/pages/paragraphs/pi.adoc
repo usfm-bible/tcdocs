@@ -1,0 +1,3 @@
+= pi#
+
+include::markers:para/pi.adoc[tag=public]

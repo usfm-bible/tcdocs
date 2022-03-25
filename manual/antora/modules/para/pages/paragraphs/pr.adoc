@@ -1,0 +1,3 @@
+= pr
+
+include::markers:para/pr.adoc[tag=public]

@@ -11,11 +11,14 @@ endif::[]
 
 == Summary
 
-Description:: Section heading. The variable `#` represents the level of division.
+Description:: Section heading.
+- The variable `#` represents the level of division.
 Syntax::
-- *USFM:* `+\s# text...+`
+- *USFM:* `+\s#_text...+`
 - *USX:* `+<para style="s#">text...</para>+`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Properties
 
@@ -29,7 +32,7 @@ TextProperties:: paragraph, publishable, vernacular, level_1
 == Examples
 
 .Proverbs 22.17 (GNT)
-[source#src-par-s_1,usfm,highlight=1;8]
+[source#src-para-s_1,usfm,highlight=1;8]
 ----
 \s1 The Thirty Wise Sayings
 \p

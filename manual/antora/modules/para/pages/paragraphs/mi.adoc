@@ -1,0 +1,3 @@
+= mi
+
+include::markers:para/mi.adoc[tag=public]

@@ -1,0 +1,3 @@
+= p
+
+include::markers:para/nb.adoc[tag=public]

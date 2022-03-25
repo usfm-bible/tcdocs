@@ -1,0 +1,84 @@
+= b
+:description: Blank line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/b.adoc
+ifndef::localdir[]
+:source-highlighter: highlightjs
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Blank line. Use for stanza breaks in poetry, or between poetry and prose.
+Syntax::
+- *USFM:* `+\b+`
+- *USX:* `+<para style="b"/>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Psalm 3 (GNT)
+[source#src-para-b_1,usfm,highlight=9;17]
+----
+\c 3
+\s1 Morning Prayer for Help
+\q1
+\v 1 I have so many enemies, \nd Lord\nd*,
+\q2 so many who turn against me!
+\q1
+\v 2 They talk about me and say,
+\q2 “God will not help him.”
+\b
+\q1
+\v 3 But you, O \nd Lord\nd*, are always my shield from danger;
+\q2 you give me victory
+\q2 and restore my courage.
+\q1
+\v 4 I call to the \nd Lord\nd* for help,
+\q2 and from his sacred hill he answers me.
+\b
+\q1
+\v 5 I lie down and sleep,
+\q2 and all night long the \nd Lord\nd* protects me.
+\q1
+\v 6 I am not afraid of the thousands of enemies
+\q2 who surround me on every side.
+----
+
+image::para/b_1.jpg[Psalm 3 (GNT),300]
+
+.Habakkuk 3.1 (GNT)
+[source#src-para-b_2,usfm,highlight=5]
+----
+\c 3
+\s1 A Prayer of Habakkuk
+\p
+\v 1 This is a prayer of the prophet Habakkuk:
+\b
+\q1
+\v 2 O \nd Lord\nd*, I have heard of what you have done,
+\q2 and I am filled with awe.
+----
+
+image::para/b_2.jpg[Habakkuk 3.1 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

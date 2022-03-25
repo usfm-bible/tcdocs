@@ -1,0 +1,3 @@
+= pmc
+
+include::markers:para/pmc.adoc[tag=public]

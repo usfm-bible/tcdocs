@@ -1,0 +1,3 @@
+= pmr
+
+include::markers:para/pmr.adoc[tag=public]
