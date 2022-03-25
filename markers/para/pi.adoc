@@ -13,7 +13,7 @@ endif::[]
 
 Description:: Indented paragraph. Used in some texts for discourse sections.
 - The variable `#` represents the level of indent.
-- See also: xref:markers:pm.adoc[pm]
+- See also: xref:markers:para/pm.adoc[pm]
 Syntax::
 - *USFM:* `+\pi#_text...+`
 - *USX:* `+<para style="pi#">text...</para>+`
