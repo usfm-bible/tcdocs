@@ -714,7 +714,8 @@ Footnote =
         [usfm:text[strip="right" re="\S+"]]
         attribute caller { text },
         category?,
-        (FootnoteChar | [usfm:text[]] text )+
+        FootnoteReference?,
+        (FootnoteChar | FootnoteReference)+
         >> usfm:endtag[id="a"]
     }
 
@@ -726,13 +727,11 @@ FootnoteChar =
         char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        (Char | FootnoteChar | FootnoteVerse | Reference | [usfm:text[]] text)+
-        >> usfm:endtag[id="a" many="?"]
+        (CharEmbed | FootnoteVerse | [usfm:text[]] text)+
+        >> usfm:endtag[id="a" many="?" deprecated="true"]
     }
 FootnoteChar.char.style.enum = (
-      "fr" # The origin reference for the footnote
-    | "cat" # Note category (study Bible)
-    | "ft" # Footnote text, Protocanon
+    "ft" # Footnote text, Protocanon
     | "fk" # A footnote keyword
     | "fq" # A footnote scripture quote or alternate rendering
     | "fqa" # A footnote alternate rendering for a portion of scripture text
@@ -816,10 +815,10 @@ Figure =
         text? # Caption
     }
 
-Reference =
+FootnoteReference =
     element ref {
-        [usfm:order="2" usfm:text[strip="left?" "|"] usfm:text[] usfm:endtag[]]
-        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } } >> usfm:tag[strip="none" "ref"],
+        [usfm:order="2" usfm:text[strip="left?" "|"] usfm:text[] usfm:endtag[many="?" deprecated="true" "fr"]]
+        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } } >> usfm:tag[strip="none" "fr"],
         [usfm:text[strip="left"]] 
         text?
     }

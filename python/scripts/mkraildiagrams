@@ -12,6 +12,7 @@ parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
 parser.add_argument("-o","--outdir",required=True,help="Output directory for generated svgs")
 parser.add_argument("-n","--node",help="Process a single node")
 parser.add_argument("-C","--charwidth",type=float,default=6.,help="Average width of characters to use")
+parser.add_argument("-z","--debug",type=int,default=0,help="bit 0 - print job name")
 args = parser.parse_args()
 
 rdoc = ETDoc(args.grammar)
@@ -23,10 +24,10 @@ alljobs = {
                       "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
     "CharEmbed": ("charembed", ("Char.char.style.enum", "+char.closed", "Break",
                       "CharWithAttrib.enum"), ("+char.link", )),
-    "Footnote": ("f", (), ("category",)),
+    "Footnote": ("f", (), ("category", )),
     "FootnoteChar": ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
     "Para": ("p", ("Para.para.style.enum", "Break")),
-    "Reference": ("ref",),
+    "FootnoteReference": ("ref",),
     "category": ("cat",),
     "char.link": ("link",),
     "CharWithAttrib.char.style.w": ("w", ("Break", ), ("+char.link", )),
@@ -43,6 +44,8 @@ for k, j in jobs.items():
     for a in (("rail", True), ("usx", False)):
         if not a[1] and len(j) > 2:
             keeps = keeps + j[2]
+        if args.debug & 1:
+            print(f"{k}")
         rdia = RDiagram(k, rdoc, keeps=keeps, cwidth=args.charwidth)
         rgram.makediagram(k, rdia=rdia, usfm=a[1])
         outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[0], a[0]))
