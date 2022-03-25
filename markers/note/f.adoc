@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -66,6 +66,8 @@ image::note/f_1.jpg[Mark 1.1 (caller) (GNT),300]
 image::note/f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),600]
 
 == Publication Issues
+
+// end::public[]
 
 == Discussion
 

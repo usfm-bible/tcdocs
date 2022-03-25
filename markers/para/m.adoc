@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -48,7 +48,7 @@ image::para/m_1.jpg[Mark 12.37 (GNT),300]
 
 == Publication Issues
 
-end::public[]
+// end::public[]
 
 == Discussion
 

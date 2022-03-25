@@ -3,12 +3,12 @@
 :source-highlighter: pygments
 :toc:
 :toclevels: 1
-:localdir: ../markers/
+:localdir: ../../markers/
 
 == Paragraphs
 
-include::{localdir}para/p.adoc[leveloffset=+1]
+include::{localdir}para/p.adoc[leveloffset=+1 tag=all]
 
 == Notes
 
-include::{localdir}note/f.adoc[leveloffset=+1]
+include::{localdir}note/f.adoc[leveloffset=+1 tag=all]

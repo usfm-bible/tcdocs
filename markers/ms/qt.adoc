@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -89,7 +89,7 @@ NOTE: The `sid` and `eid` attributes in the above example have been formed using
 
 == Publication Issues
 
-end::public[]
+// end::public[]
 
 == Discussion
 

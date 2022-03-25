@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -43,7 +43,7 @@ image::char/nd_1.jpg[Exodus 3.15 (GNT),300]
 
 == Publication Issues
 
-end::public[]
+// end::public[]
 
 == Discussion
 

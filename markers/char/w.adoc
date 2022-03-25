@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -42,7 +42,7 @@ Source USFM text and corresponding formatted layout image
 
 == Publication Issues
 
-end::public[]
+// end::public[]
 
 == Discussion
 

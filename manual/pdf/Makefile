@@ -1,10 +1,10 @@
 all: manual.pdf
 
 ../../grammar/usx.rng : ../../grammar/usx.rnc
-	- ../python/scripts/urnc2rng $< $@
+	- ../../python/scripts/urnc2rng $< $@
 
 ../../markers/images/schema/p_rail.svg : ../../grammar/usx.rng ../../python/scripts/mkraildiagrams
-	- ../../python/scripts/mkraildiagrams -g $< -o ../markers/images
+	- ../../python/scripts/mkraildiagrams -g $< -o ../../markers/images/schema
 
 manual.pdf : manual.adoc usfm-theme.yml ../../markers/images/schema/p_rail.svg
 	- asciidoctor-pdf -a pdf-themesdir=. -a pdf-theme=usfm -a pdf-fontsdir="../../fonts;GEM_FONTS_DIR" $<

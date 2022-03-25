@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
 parser.add_argument("-o","--outdir",required=True,help="Output directory for generated svgs")
 parser.add_argument("-n","--node",help="Process a single node")
-parser.add_argument("-C","--charwidth",type=int,default=6,help="Average width of characters to use")
+parser.add_argument("-C","--charwidth",type=float,default=6.,help="Average width of characters to use")
 args = parser.parse_args()
 
 rdoc = ETDoc(args.grammar)

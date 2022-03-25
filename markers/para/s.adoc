@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -73,7 +73,7 @@ image::para/s2_1.jpg[Proverbs 22.22-24 (GNT),300]
 
 == Publication Issues
 
-end::public[]
+// end::public[]
 
 == Discussion
 

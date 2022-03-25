@@ -7,7 +7,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-tag::public[]
+// tag::public[]
 
 == Summary
 
@@ -45,7 +45,7 @@ image::cv/v_1.jpg[Matthew 1.18-19,300]
 
 == Publication Issues
 
-end::public[]
+// end::public[]
 
 == Discussion
 

@@ -1,0 +1,3 @@
+= f
+
+include::markers:note/f.adoc[tag=public]

@@ -484,8 +484,8 @@ class RDiagram:
     def asRail(self, **kw):
         defaults = {
             'font': 'DejaVu Sans',
-            'text-size': '12pt',
-            'comment-size': '15pt',
+            'text-size': '12px',
+            'comment-size': '14px',
             'color': 'rgb(210, 255, 210)',
             'line-width': '2'}
         defaults.update(kw)
