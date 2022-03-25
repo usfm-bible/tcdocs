@@ -82,6 +82,8 @@ manys = {
     '?': "optional"
 }
 
+rmanys = {v:k for k,v in manys.items()}
+
 CSS_STYLE = '''\
     svg.railroad-diagram {{
         background-color:hsl(30,20%,95%);
@@ -257,10 +259,13 @@ class RDiagram:
         tag = self.doc.localise(e.tag)
         if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group"):
             ncurr = RChoice(combine=tag, parent=curr, groupby=grouping)
+            acurr = RChoice(combine=tag, parent=attrcurr, groupby=grouping)
             for c in e:
-                self.addElement(c, grammar, curr=ncurr, attrcurr=attrcurr, grouping=grouping)
+                self.addElement(c, grammar, curr=ncurr, attrcurr=acurr, grouping=grouping)
             if len(ncurr):
                 curr.append(ncurr)
+            if len(acurr):
+                attrcurr.append(acurr)
             curr = ncurr
         elif tag == "element":
             name = e.findtext(self.doc.globalise('name'))
@@ -274,6 +279,19 @@ class RDiagram:
             pcurr.append(ncurr)
             for c in e:
                 self.addElement(c, grammar, curr=scurr, attrcurr=ncurr, grouping=grouping)
+            if len(ncurr):
+                children = ncurr[:]
+                ncurr.clear()
+            for a in children:
+                if isinstance(a, RChoice) and rmanys.get(a.combine, '') != '':
+                    for c in a:
+                        if isinstance(c, RChoice) and c.combine == 'sequence' and isinstance(c[0], RTerminal):
+                            c.name += rmanys[a.combine]
+                        ncurr.append(c)
+                        c.parent = ncurr
+                else:
+                    ncurr.append(a)
+                    
             curr = pcurr
         elif tag == "attribute":
             name = e.findtext(self.doc.globalise('name'))
@@ -522,6 +540,7 @@ class RGrammar:
         ncurr = RGroup(top.name, parent=curr)
         if curr is None:
             rdia.curr = ncurr
+            attrcurr = ncurr
         if curr is not None:
             curr.append(ncurr)
         for e in top.content:

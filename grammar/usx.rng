@@ -1312,12 +1312,7 @@
         <ref name="category"/>
       </optional>
       <oneOrMore>
-        <choice>
-          <ref name="FootnoteChar"/>
-          <text>
-            <usfm:text/>
-          </text>
-        </choice>
+        <ref name="FootnoteChar"/>
       </oneOrMore>
       <usfm:endtag id="a"/>
     </element>
@@ -1338,8 +1333,7 @@
       </optional>
       <oneOrMore>
         <choice>
-          <ref name="Char"/>
-          <ref name="FootnoteChar"/>
+          <ref name="CharEmbed"/>
           <ref name="FootnoteVerse"/>
           <ref name="Reference"/>
           <text>
@@ -1347,7 +1341,7 @@
           </text>
         </choice>
       </oneOrMore>
-      <usfm:endtag id="a" many="?"/>
+      <usfm:endtag id="a" many="?" deprecated="true"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">
@@ -1541,7 +1535,7 @@
           <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
         </data>
       </attribute>
-      <usfm:tag strip="none">ref</usfm:tag>
+      <usfm:tag strip="none">fr</usfm:tag>
       <optional>
         <text>
           <usfm:text strip="left"/>
