@@ -1,6 +1,6 @@
 <?xml encoding="utf-8"?>
 <test-metadata>
-        <description>Test that a body paragraph is not allowed before the first chapter element</description>
+        <description>c is a mandatory marker</description>
         <validated>fail</validated>
         <tags></tags>
 </test-metadata>
