@@ -1,4 +1,6 @@
-<?xml version=“1.0” standalone=“yes” ?>
-<description>CrossReferencesInsideCharacterMarker. From paratext test suite</description>    
-<validated>pass</validated>   
-<tags></tags>
+<?xml encoding="utf-8"?>
+<test-metadata>
+        <description>CrossReferencesInsideCharacterMarker. From paratext test suite</description>
+        <validated>pass</validated>
+        <tags>clarify</tags>
+</test-metadata>

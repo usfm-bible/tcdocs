@@ -1,4 +1,6 @@
-<?xml version=“1.0” standalone=“yes” ?>
-<description>InvalidMilestone_MissingEnd. From paratext test suite</description>    
-<validated>fail</validated>   
-<tags></tags>
+<?xml encoding="utf-8"?>
+<test-metadata>
+        <description>InvalidMilestone_MissingEnd. From paratext test suite</description>
+        <validated>fail</validated>
+        <tags>clarify</tags>
+</test-metadata>

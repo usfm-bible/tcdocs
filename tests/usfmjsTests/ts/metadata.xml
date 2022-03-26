@@ -1,4 +1,6 @@
-<?xml version=“1.0” standalone=“yes” ?>
-<description>  handles ts tag</description>    
-<validated>pass</validated>   
-<tags></tags>
+<?xml encoding="utf-8"?>
+<test-metadata>
+        <description>  handles ts tag</description>
+        <validated>pass</validated>
+        <tags></tags>
+</test-metadata>
