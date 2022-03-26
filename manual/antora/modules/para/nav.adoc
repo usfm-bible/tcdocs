@@ -20,7 +20,7 @@
 *** xref:paragraphs/mi.adoc[mi - Indented continuation]
 // DEPRECATED *** xref:paragraphs/mi.adoc[ph - Indented hanging]
 *** xref:paragraphs/nb.adoc[nb - No break]
-*** xref:paragraphs/nb.adoc[b - Blank line]
+*** xref:paragraphs/b.adoc[b - Blank line]
 ** Poetry
 // ** xref:poetry/index.adoc[]
 ** Lists
