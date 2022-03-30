@@ -1,0 +1,55 @@
+= qm#
+:description: Embedded text poetic line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qm.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Embedded text poetic line.
+- The variable `#` represents the level of indent.
+Syntax::
+- *USFM:* `+\qm#_text...+`
+- *USX:* `+<para style="qm#">text...</para>+`
+// tag::spec[]
+Added:: 2.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic, level_#
+
+== Structure
+
+== Examples
+
+.1 Chronicles 12.18 (GNT - markup adapted)
+[source#src-para-qm_1,usfm,highlight=3..5]
+----
+\p
+\v 18 God's spirit took control of one of them, Amasai, who later became the 
+commander of “The Thirty,” and he called out,
+\qm1 “David son of Jesse, we are yours!
+\qm1 Success to you and those who help you!
+\qm1 God is on your side.”
+\b
+\m David welcomed them and made them officers in his army.
+----
+
+image::para/qm_1.jpg[1 Chronicles 12.18 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

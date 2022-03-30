@@ -1,0 +1,56 @@
+= qa
+:description: Acrostic heading
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qa.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Acrostic heading.
+Syntax::
+- *USFM:* `+\qa_text...+`
+- *USX:* `+<para style="qa">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic
+
+== Structure
+
+== Examples
+
+.Psalm 119 (NIV)
+[source#src-para-qa_1,usfm,highlight=2;7]
+----
+\c 119
+\qa Aleph
+\q1
+\v 1 Blessed are they whose ways are blameless,
+\q2 who walk according to the law of the \nd Lord\nd*.
+...
+\qa Beth
+\q1
+\v 9 How can a young man keep his way pure?
+\q2 By living according to your word.
+----
+
+image::para/qa_1.jpg[Psalm 119 (NIV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

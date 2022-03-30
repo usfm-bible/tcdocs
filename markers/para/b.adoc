@@ -2,7 +2,7 @@
 :description: Blank line
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/b.adoc
 ifndef::localdir[]
-:source-highlighter: highlightjs
+:source-highlighter: pygments
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

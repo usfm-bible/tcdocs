@@ -1,0 +1,3 @@
+= qd
+
+include::markers:para/qd.adoc[tag=public]

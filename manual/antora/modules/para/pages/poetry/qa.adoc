@@ -1,0 +1,3 @@
+= qa
+
+include::markers:para/qa.adoc[tag=public]

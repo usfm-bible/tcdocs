@@ -1,0 +1,3 @@
+= b
+
+include::markers:para/b.adoc[tag=public]

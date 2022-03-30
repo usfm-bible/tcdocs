@@ -10,7 +10,7 @@
 *** xref:paragraphs/m.adoc[m - Continuation (margin)]
 *** xref:paragraphs/po.adoc[po - Letter opening]
 *** xref:paragraphs/cls.adoc[cls - Letter closing]
-*** xref:paragraphs/pr.adoc[pr - Right aligned]
+*** xref:paragraphs/pr.adoc[pr - Right-aligned]
 *** xref:paragraphs/pc.adoc[pc - Centered]
 *** xref:paragraphs/pm.adoc[pm - Embedded text]
 *** xref:paragraphs/pmo.adoc[pmo -Embedded opening]
@@ -23,5 +23,15 @@
 *** xref:paragraphs/b.adoc[b - Blank line]
 ** Poetry
 // ** xref:poetry/index.adoc[]
+*** xref:poetry/q.adoc[q# - Poetic line]
+*** xref:poetry/qr.adoc[qr - Right-aligned]
+*** xref:poetry/qc.adoc[qc - Centered]
+*** xref:poetry/qa.adoc[qa - Acrostic heading]
+*** xref:poetry/qm.adoc[qm - Embedded]
+*** xref:poetry/qd.adoc[qd - Hebrew note]
+*** xref:poetry/b.adoc[b - Blank line]
+*** Characters (Poetry)
+**** xref:char:poetry/qs.adoc[qs - Selah]
+**** xref:char:poetry/qac.adoc[qac - Acrostic character]
 ** Lists
 // ** xref:lists/index.adoc[]

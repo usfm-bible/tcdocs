@@ -1,0 +1,3 @@
+= qac
+
+include::markers:char/qac.adoc[tag=public]

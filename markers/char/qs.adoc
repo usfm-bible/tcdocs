@@ -1,0 +1,55 @@
+= qs
+:description: Selah
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qs.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Used to mark the expression “Selah”. Commonly found in Psalms and Habakkuk.
+Syntax::
+- *USFM:* `+\qs_...\qs*+`
+- *USX:* `+<char style="qs">text...</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[ChapterContent] > [ParaPoetic], [Sidebar] > [ParaPoetic]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular, poetic
+
+== Structure
+
+== Examples
+
+.Psalm 3.2 (NRSV)
+[source#src-char-qs_1,usfm,highlight=9]
+----
+\c 3
+\s1 Trust in God under Adversity
+\d A Psalm of David, when he fled from his son Absalom.
+\q1
+\v 1 O \nd Lord\nd*, how many are my foes!
+\q2 Many are rising against me;
+\q1
+\v 2 many are saying to me,
+\q2 “There is no help for you \qs Selah\qs*
+----
+
+image::char/qs_1.jpg[Exodus 3.15 (GNT),300]
+
+== Publication Issues
+
+* This text is frequently right aligned, and rendered on the same line as the previous poetic line, if space allows.
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

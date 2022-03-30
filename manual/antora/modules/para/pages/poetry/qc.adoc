@@ -1,0 +1,3 @@
+= qc
+
+include::markers:para/qc.adoc[tag=public]

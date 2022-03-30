@@ -1,0 +1,71 @@
+= q#
+:description: Poetic line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/q.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Poetic line.
+- The variable `#` represents the level of indent.
+Syntax::
+- *USFM:* `+\q#_text...+`
+- *USX:* `+<para style="q#">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic, level_#
+
+== Structure
+
+== Examples
+
+.Habakkuk 3.1-2 (GNT)
+[source#src-para-q1_1,usfm,highlight=6;9;11]
+----
+\c 3
+\s1 A Prayer of Habakkuk
+\p
+\v 1 This is a prayer of the prophet Habakkuk:
+\b
+\q1
+\v 2 O \nd Lord\nd*, I have heard of what you have done,
+\q2 and I am filled with awe.
+\q1 Now do again in our times
+\q2 the great deeds you used to do.
+\q1 Be merciful, even when you are angry.
+----
+
+image::para/q1_1.jpg[Habakkuk 3.1 (GNT),300]
+
+.Habakkuk 3.1-2 (GNT)
+[source#src-para-q2_1,usfm,highlight=3;5]
+----
+\q1
+\v 2 O \nd Lord\nd*, I have heard of what you have done,
+\q2 and I am filled with awe.
+\q1 Now do again in our times
+\q2 the great deeds you used to do.
+\q1 Be merciful, even when you are angry.
+----
+
+image::para/q2_1.jpg[Habakkuk 3.2 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

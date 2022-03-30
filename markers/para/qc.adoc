@@ -1,0 +1,57 @@
+= qc
+:description: Centered poetic line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qc.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Centered poetic line.
+Syntax::
+- *USFM:* `+\qc_text...+`
+- *USX:* `+<para style="qc">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic
+
+== Structure
+
+== Examples
+
+.Psalm 72.19 (GNT)
+[source#src-para-qc_1,usfm,highlight=8]
+----
+\q1
+\v 18 Praise the \nd Lord\nd*, the God of Israel!
+\q1 He alone does these wonderful things.
+\q1
+\v 19 Praise his glorious name forever!
+\q1 May his glory fill the whole world.
+\b
+\qc Amen! Amen!
+\b
+\q1
+\v 20 This is the end of the prayers of David son of Jesse.
+----
+
+image::para/qc_1.jpg[Psalm 72.19 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

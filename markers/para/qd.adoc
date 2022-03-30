@@ -1,0 +1,55 @@
+= qd
+:description: Hebrew note
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qd.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Hebrew note. A Hebrew musical performance comment similar in content to the Hebrew Psalm descriptive titles (\d), but placed at the end of the poetic section.
+Syntax::
+- *USFM:* `+\qd_text...+`
+- *USX:* `+<para style="qd">text...</para>+`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic
+
+== Structure
+
+== Examples
+
+.Habakkuk 3:19 (NIV)
+[source#src-para-qd_1,usfm,highlight=9]
+----
+\q1
+\v 18 yet I will rejoice in the \nd Lord\nd*,
+\q2 I will be joyful in God my Savior.
+\b
+\q1 \v 19 The Sovereign \nd Lord\nd* is my strength;
+\q2 he makes my feet like the feet of a deer,
+\q2 he enables me to tread on the heights.
+\b
+\qd For the director of music. On my stringed instruments.
+----
+
+image::para/qd_1.jpg[Habakkuk 3:19 (NIV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues
