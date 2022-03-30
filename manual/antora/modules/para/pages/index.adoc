@@ -1,6 +1,6 @@
 = Paragraph Styles
 ifndef::localdir[]
-:source-highlighter: highlightjs
+:source-highlighter: pygments
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

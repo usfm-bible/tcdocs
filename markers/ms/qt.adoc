@@ -2,7 +2,7 @@
 :description: Quotation start / end milestones
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/ms/qt.adoc
 ifndef::localdir[]
-:source-highlighter: highlightjs
+:source-highlighter: pygments
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

@@ -2,7 +2,7 @@
 :description: Section heading
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/s.adoc
 ifndef::localdir[]
-:source-highlighter: highlightjs
+:source-highlighter: pygments
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
@@ -25,14 +25,14 @@ Added:: 1.0
 StyleType:: Paragraph
 OccursUnder:: `[ChapterContent]`
 TextType:: Section
-TextProperties:: paragraph, publishable, vernacular, level_1
+TextProperties:: paragraph, publishable, vernacular, level_#
 
 == Structure
 
 == Examples
 
 .Proverbs 22.17 (GNT)
-[source#src-para-s_1,usfm,highlight=1;8]
+[source#src-para-s1_1,usfm,highlight=1;8]
 ----
 \s1 The Thirty Wise Sayings
 \p
