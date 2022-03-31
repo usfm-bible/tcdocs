@@ -20,7 +20,7 @@ Added:: 1.0
 == Properties
 
 StyleType:: Character
-OccursUnder:: `[ChapterContent] > [ParaPoetic], [Sidebar] > [ParaPoetic]`
+OccursUnder:: `[ChapterContent] > [PoeticPara], [Sidebar] > [PoeticPara]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular, poetic
 
