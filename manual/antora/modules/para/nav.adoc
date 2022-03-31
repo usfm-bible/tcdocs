@@ -36,7 +36,7 @@
 ** Lists
 *** xref:lists/lh.adoc[lh - List header]
 *** xref:lists/li.adoc[li# - List entry]
-*** xref:lists/lf.adoc[lf# - List footer]
+*** xref:lists/lf.adoc[lf - List footer]
 *** xref:lists/lim.adoc[lim# - Embedded list entry]
 *** Characters (Lists)
 **** xref:char:lists/litl.adoc[litl - List entry total]
