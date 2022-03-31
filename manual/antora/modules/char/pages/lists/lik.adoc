@@ -1,0 +1,4 @@
+= lik
+:env-antora:
+
+include::markers:char/lik.adoc[tag=public]

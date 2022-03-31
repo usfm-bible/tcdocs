@@ -1,0 +1,68 @@
+= litl
+:description: List entry total
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/litl.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: List entry total. Use in accounting lists for identifying the _total_ component of a list entry (li). An alternative form to using a table for the same content.
+Syntax::
+- *USFM:* `+\litl_...\litl*+`
+- *USX:* `+<char style="litl">text...</char>+`
+Added:: 3.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[ChapterContent] > [ListPara], [Sidebar] > [ListPara]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Nehemiah 7.6-14 (GNT - markup adapted)
+[source#src-char-litl_1,usfm,highlight=8;10,12,14,16,18,20]
+----
+\pm
+\v 6 These are the people of the province who came up from the captivity of 
+the exiles whom Nebuchadnezzar king of Babylon had taken captive (they returned 
+to Jerusalem and Judah, each to his own town,
+\v 7 in company with Zerubbabel, Jeshua, Nehemiah, Azariah, Raamiah, Nahamani, 
+Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):
+\b
+\pm The list of the men of Israel:
+\b
+\lim1
+\v 8 the descendants of Parosh - \litl 2,172\litl*
+\lim1
+\v 9 of Shephatiah - \litl 372\litl*
+\lim1
+\v 10 of Arah - \litl 652\litl*
+\lim1
+\v 11 of Pahath-Moab (through the line of Jeshua and Joab) - \litl 2,818\litl*
+\lim1
+\v 12 of Elam - \litl 1,254\litl*
+\lim1
+\v 13 of Zattu - \litl 845\litl*
+\lim1
+\v 14 of Zaccai - \litl 760\litl*
+...
+----
+
+image::char/litl_1.jpg[Nehemiah 7.6-14 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

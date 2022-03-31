@@ -1,0 +1,59 @@
+= li#
+:description: List entry
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/li.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: List entry. May be used to mark the entries of a structure such as the days within the creation account, or the decalogue (10 commandments).
+- The variable `#` represents the level of indent.
+Syntax::
+- *USFM:* `+\li#_text...+`
+- *USX:* `+<para style="li#">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Numbers 7.84-88 (GNT)
+[source#src-para-li_1,usfm,highlight=6]
+----
+\p
+\v 84-88 The totals of the offerings brought by the twelve leaders for the 
+dedication of the altar were as follows:
+\li –twelve silver bowls and twelve silver basins weighing a total of 60 pounds
+\li –twelve gold dishes weighing a total of 48 ounces, filled with incense
+\li –twelve bulls, twelve rams, and twelve one-year-old lambs, plus the grain 
+offerings that go with them, for the burnt offerings
+\li –twelve goats for the sin offerings
+\li –twenty-four bulls, sixty rams, sixty goats, sixty one-year-old lambs, for 
+the fellowship offerings
+----
+
+image::para/li_1.jpg[Numbers 7.84-88 (GNT),300]
+
+== Publication Issues
+
+- Commonly formatted using a hanging indent (out-dented).
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

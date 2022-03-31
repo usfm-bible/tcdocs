@@ -1,0 +1,63 @@
+= lh
+:description: List header
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/lh.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: List header. Some lists include an introductory and concluding remark (lf). They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
+Syntax::
+- *USFM:* `+\lh_text...+`
+- *USX:* `+<para style="lh">text...</para>+`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent], [Sidebar]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.1 Chronicles 27:16-22 (GNT - markup adapted)
+[source#src-para-lh_1,usfm,highlight=2]
+----
+\s1 Administration of the Tribes of Israel
+\lh
+\v 16-22 This is the list of the administrators of the tribes of Israel:
+\li1 Reuben - Eliezer son of Zichri
+\li1 Simeon - Shephatiah son of Maacah
+\li1 Levi - Hashabiah son of Kemuel
+\li1 Aaron - Zadok
+\li1 Judah - Elihu, one of King David's brothers
+\li1 Issachar - Omri son of Michael
+\li1 Zebulun - Ishmaiah son of Obadiah
+\li1 Naphtali - Jeremoth son of Azriel
+\li1 Ephraim - Hoshea son of Azaziah
+\li1 West Manasseh - Joel son of Pedaiah
+\li1 East Manasseh - Iddo son of Zechariah
+\li1 Benjamin - Jaasiel son of Abner
+\li1 Dan - Azarel son of Jeroham
+\lf This was the list of the administrators of the tribes of Israel.
+----
+
+image::para/lh_1.jpg[1 Chronicles 27:16-22 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

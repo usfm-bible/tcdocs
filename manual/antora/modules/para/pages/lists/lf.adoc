@@ -1,0 +1,4 @@
+= lf
+:env-antora:
+
+include::markers:para/lf.adoc[tag=public]
