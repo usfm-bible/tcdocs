@@ -1,3 +1,4 @@
 = pi#
+:env-antora:
 
 include::markers:para/pi.adoc[tag=public]
