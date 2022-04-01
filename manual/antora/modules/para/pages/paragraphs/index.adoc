@@ -1,1 +1,3 @@
 = Paragraphs
+
+include::../../nav.adoc[tag=nav-paragraphs]

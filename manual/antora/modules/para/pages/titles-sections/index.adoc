@@ -1,1 +1,3 @@
 = Titles and Sections
+
+include::../../nav.adoc[tag=nav-titles-sections]

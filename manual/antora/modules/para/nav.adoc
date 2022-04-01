@@ -1,8 +1,9 @@
 * xref:index.adoc[]
 ** xref:identification/index.adoc[]
 ** xref:introductions/index.adoc[]
-** Titles and Sections
-// ** xref:titles-sections/index.adoc[]
+// ** Titles & Sections
+** xref:titles-sections/index.adoc[]
+// tag::nav-titles-sections[]
 *** xref:titles-sections/mt.adoc[mt# - Main title]
 *** xref:titles-sections/mte.adoc[mte# - Main title]
 *** xref:titles-sections/ms.adoc[ms# - Major section heading]
@@ -13,8 +14,10 @@
 *** xref:titles-sections/d.adoc[d - Descriptive title]
 *** xref:titles-sections/sp.adoc[sp - Descriptive title]
 *** xref:titles-sections/sd.adoc[sd# - Semantic division]
-** Paragraphs
-// ** xref:paragraphs/index.adoc[]
+// end::nav-titles-sections[]
+// ** Paragraphs
+** xref:paragraphs/index.adoc[]
+// tag::nav-paragraphs[]
 *** xref:paragraphs/p.adoc[p - Paragraph]
 *** xref:paragraphs/m.adoc[m - Continuation (margin)]
 *** xref:paragraphs/po.adoc[po - Letter opening]
@@ -30,8 +33,10 @@
 // DEPRECATED *** xref:paragraphs/mi.adoc[ph - Indented hanging]
 *** xref:paragraphs/nb.adoc[nb - No break]
 *** xref:paragraphs/b.adoc[b - Blank line]
-** Poetry
-// ** xref:poetry/index.adoc[]
+// end::nav-paragraphs[]
+// ** Poetry
+** xref:poetry/index.adoc[]
+// tag::nav-poetry[]
 *** xref:poetry/q.adoc[q# - Poetic line]
 *** xref:poetry/qr.adoc[qr - Right-aligned]
 *** xref:poetry/qc.adoc[qc - Centered]
@@ -42,7 +47,10 @@
 *** Characters (Poetry)
 **** xref:char:poetry/qs.adoc[qs - Selah]
 **** xref:char:poetry/qac.adoc[qac - Acrostic character]
-** Lists
+// end::nav-poetry[]
+// ** Lists
+** xref:lists/index.adoc[]
+// tag::nav-lists[]
 *** xref:lists/lh.adoc[lh - List header]
 *** xref:lists/li.adoc[li# - List entry]
 *** xref:lists/lf.adoc[lf - List footer]
@@ -52,3 +60,4 @@
 **** _Structured List Entries_
 **** xref:char:lists/lik.adoc[lik - List entry key]
 **** xref:char:lists/liv.adoc[liv - List entry value]
+// end::nav-lists[]
