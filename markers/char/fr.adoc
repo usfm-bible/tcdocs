@@ -12,22 +12,24 @@ endif::[]
 == Summary
 
 Description:: Footnote - Origin reference.
-Syntax:: `+\fr_<C#:V#:>+`
-`C#:V#:`::: Chapter-verse reference. The chapter-verse separator and end-of-reference punctuation are text specific.
+Syntax::
+- *USFM:* `+\fr_{C#:V#:}+`
+- *USX:* `+<char style="fr">{C#:V#:}</char>+`
+`C#:V#:`::: Chapter-verse origin reference. The chapter-verse separator and end-of-reference punctuation are text specific.
 Added:: 1.0
 
-_See also:_ link:note-f.adoc[Footnote]
+ifdef::env-antora[]
+See also: xref:note:f.adoc[Footnote]
+endif::env-antora[]
 
 == Properties
 
 StyleType:: Character
-OccursUnder:: `f fe ef`
+OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
 == Structure
-
-'Railroad' type diagram here...
 
 == Examples
 

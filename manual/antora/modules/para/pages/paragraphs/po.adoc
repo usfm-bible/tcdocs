@@ -1,3 +1,4 @@
 = po
+:env-antora:
 
 include::markers:para/po.adoc[tag=public]

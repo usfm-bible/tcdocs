@@ -1,3 +1,4 @@
 = cls
+:env-antora:
 
 include::markers:para/cls.adoc[tag=public]

@@ -12,21 +12,23 @@ endif::[]
 == Summary
 
 Description:: Footnote - Note text.
-Syntax:: `+\ft_...+`
+Syntax::
+- *USFM:* `+\ft_text...+`
+- *USX:* `+<char style="ft">text...</char>+`
 Added:: 1.0
 
-_See also:_ link:note-f.adoc[Footnote]
+ifdef::env-antora[]
+See also: xref:note:f.adoc[Footnote]
+endif::env-antora[]
 
 == Properties
 
 StyleType:: Character
-OccursUnder:: `f fe ef`
+OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
 == Structure
-
-'Railroad' type diagram here...
 
 == Examples
 

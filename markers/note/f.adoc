@@ -1,4 +1,4 @@
-= \f ...\f*
+= f
 :description: Footnote
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note/f.adoc
 ifndef::localdir[]
@@ -11,14 +11,15 @@ endif::[]
 
 == Summary
 
-Description:: A footnote container. Footnotes are entered inline within the main scripture body text. The boundaries of the footnote text are defined by an opening and closing marker. Footnote-related character elements make up the footnote content.
-Syntax:: `+\f_<caller>_(\fr_<C#:V#:>_)<content>\f*+`
+Description:: A footnote container. Footnotes are entered inline within the main scripture body text. The boundaries of the footnote text are defined by an opening and closing marker. Footnote character style elements make up the footnote content.
+Syntax::
+- *USFM:* `+\f_{caller}_{content}\f*+`
+- *USX:* `+<note caller="{caller}" style="f">{content}</note>+`
 `caller`::: Footnote caller
-- `+` - The caller should be generated automatically by the translation editor, or publishing tools
-- `-` - No caller should be generated or used.
-- `?` - Where  `?`` represents the character to be used for the caller.
-`C#:V#:`::: Chapter-verse reference. The chapter-verse separator and end-of-reference punctuation are text specific. 
-`content`::: The footnote-related character elements and text which make up the footnote content.
+** `+` - The caller should be generated automatically by the translation editor, or publishing tools
+** `-` - No caller should be generated or used.
+** `?` - Where  `?`` represents the character to be used for the caller.
+`content`::: The footnote character style elements and text which make up the footnote content.
 Added:: 1.0
 
 NOTE: See the Syntax Notes for information on the use of endmarkers for elements within footnote content.
@@ -26,7 +27,7 @@ NOTE: See the Syntax Notes for information on the use of endmarkers for elements
 == Properties
 
 StyleType:: Note
-OccursUnder:: `c cp lh li li1 li2 li3 li4 lf lim lim1 lim2 lim3 lim4 m mi nb p pc ph phi pi pi1 pi2 pi3 pr pmo pm pmc pmr po q q1 q2 q3 q4 qc qr qd qm qm1 qm2 qm3 qs sp tc1 tc2 tc3 tc4 mt mt1 mt2 mt3 ms ms1 ms2 ms3 s s1 s2 s3 d ip`
+OccursUnder:: `[ParaWithNote]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

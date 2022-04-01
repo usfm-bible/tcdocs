@@ -1,3 +1,4 @@
 = pmr
+:env-antora:
 
 include::markers:para/pmr.adoc[tag=public]

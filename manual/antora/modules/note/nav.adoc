@@ -1,3 +1,7 @@
 * xref:index.adoc[]
 ** xref:f.adoc[f - Footnote]
-
+** xref:fe.adoc[fe - Endnote]
+** xref:x.adoc[x - Cross Reference]
+** xref:ef.adoc[ef - Extended Note]
+** xref:ex.adoc[ex - Extended CrossRef]
+** xref:esb.adoc[esb - Sidebar]

@@ -1,3 +1,4 @@
 = pmc
+:env-antora:
 
 include::markers:para/pmc.adoc[tag=public]

@@ -1,3 +1,4 @@
 = pc
+:env-antora:
 
 include::markers:para/pc.adoc[tag=public]

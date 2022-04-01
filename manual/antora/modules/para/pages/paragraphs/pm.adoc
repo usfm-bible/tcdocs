@@ -1,3 +1,4 @@
 = pm
+:env-antora:
 
 include::markers:para/pm.adoc[tag=public]

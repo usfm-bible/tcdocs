@@ -1,6 +1,6 @@
-= qs
+= qac
 :description: Acrostic character
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qs.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qac.adoc
 ifndef::localdir[]
 :source-highlighter: pygments
 :localdir: ../

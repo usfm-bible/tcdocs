@@ -1,3 +1,4 @@
 = qr
+:env-antora:
 
 include::markers:para/qr.adoc[tag=public]

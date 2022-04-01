@@ -1,3 +1,4 @@
 = qm#
+:env-antora:
 
 include::markers:para/qm.adoc[tag=public]

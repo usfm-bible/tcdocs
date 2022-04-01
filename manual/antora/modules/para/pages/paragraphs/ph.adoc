@@ -1,3 +1,4 @@
 = ph
+:env-antora:
 
 include::markers:para/ph.adoc[tag=public]

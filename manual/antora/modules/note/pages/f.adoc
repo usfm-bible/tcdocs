@@ -1,3 +1,4 @@
 = f
+:env-antora:
 
 include::markers:note/f.adoc[tag=public]

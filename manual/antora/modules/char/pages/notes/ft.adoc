@@ -1,0 +1,4 @@
+= ft
+:env-antora:
+
+include::markers:char/ft.adoc[tag=public]

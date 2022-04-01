@@ -1,0 +1,4 @@
+= fr
+:env-antora:
+
+include::markers:char/fr.adoc[tag=public]

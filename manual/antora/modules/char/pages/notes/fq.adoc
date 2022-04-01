@@ -1,0 +1,4 @@
+= fq
+:env-antora:
+
+include::markers:char/fq.adoc[tag=public]

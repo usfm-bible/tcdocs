@@ -1,3 +1,4 @@
 = m
+:env-antora:
 
 include::markers:para/m.adoc[tag=public]

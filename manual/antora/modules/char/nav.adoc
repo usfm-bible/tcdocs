@@ -1,1 +1,23 @@
 * xref:index.adoc[]
+** xref:attributes.adoc[Attributes]
+** xref:nesting.adoc[Nesting]
+// ** Lists
+** xref:lists/index.adoc[Lists]
+// tag::nav-lists[]
+*** xref:lists/litl.adoc[litl - Entry total]
+*** xref:lists/lik.adoc[lik - Entry key]
+*** xref:lists/liv.adoc[liv - Entry value(s)]
+// end::nav-lists[]
+// ** Poetry
+** xref:poetry/index.adoc[Poetry]
+// tag::nav-poetry[]
+*** xref:poetry/qac.adoc[qac - Acrostic character]
+*** xref:poetry/qs.adoc[qs - Selah]
+// end::nav-poetry[]
+// ** Notes
+** xref:notes/index.adoc[Notes]
+*** xref:notes/fr.adoc[fr - Origin reference]
+*** xref:notes/fq.adoc[fq - Translation quotation]
+*** xref:notes/ft.adoc[ft - Footnote text]
+// ** Formatting
+** xref:format/index.adoc[Formatting]

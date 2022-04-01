@@ -1,3 +1,4 @@
 = qa
+:env-antora:
 
 include::markers:para/qa.adoc[tag=public]
