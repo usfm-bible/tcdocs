@@ -20,7 +20,7 @@ Added:: 3.0
 == Properties
 
 StyleType:: Character
-OccursUnder:: `[ChapterContent] > [ListPara], [Sidebar] > [ListPara]`
+OccursUnder:: `[ChapterContent] > [ListPara]`, `[Sidebar] > [ListPara]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

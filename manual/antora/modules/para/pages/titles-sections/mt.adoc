@@ -1,0 +1,3 @@
+= s#
+
+include::markers:para/s.adoc[tag=public]

@@ -25,7 +25,7 @@ Status:: Deprecated
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `[ChapterContent], [Sidebar]`
+OccursUnder:: `[ChapterContent]`, `[Sidebar]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

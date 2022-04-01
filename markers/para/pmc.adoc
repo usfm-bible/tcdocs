@@ -22,7 +22,7 @@ Added:: 2.0
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `[ChapterContent] > [ParaWithEmbed], [Sidebar] > [ParaWithEmbed]`
+OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[Sidebar] > [ParaWithEmbed]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
