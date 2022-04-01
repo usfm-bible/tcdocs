@@ -23,7 +23,7 @@ Added:: 3.0
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[Sidebar]`
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

@@ -1,0 +1,55 @@
+= sr
+:description: Section reference range
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/sr.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Section reference range. References added under a section heading to indicate the scope of the section.
+- (sr) is not equivalent to (r) which is used to mark parallel references.
+ifdef::env-antora[]
+- See also: xref:para:titles-sections/mr.adoc[mr]
+endif::env-antora[]
+Syntax::
+- *USFM:* `+\sr_text...+`
+- *USX:* `+<para style="sr">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular, level_#
+
+== Structure
+
+== Examples
+
+.Proverbs 22.17 (GNT - markup adapted)
+[source#src-para-sr_1,usfm,highlight=2]
+----
+\s1 The Thirty Wise Sayings
+\sr (22.17--24.22)
+\p
+\v 17 Listen, and I will teach you what the wise have said. 
+Study their teachings, ...
+----
+
+image::para/sr_1.jpg[Proverbs 22.17 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

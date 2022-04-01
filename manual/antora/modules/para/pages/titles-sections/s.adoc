@@ -1,3 +1,4 @@
 = s#
+:env-antora:
 
 include::markers:para/s.adoc[tag=public]

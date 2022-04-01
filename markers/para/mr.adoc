@@ -1,0 +1,53 @@
+= mr
+:description: Major section reference range
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/mr.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Major section reference range. References added under a major section heading to indicate the scope of the section.
+Syntax::
+- *USFM:* `+\mr_text...+`
+- *USX:* `+<para style="mr">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent] > [MajorSectionPara]`, `[SidebarContent] > [MajorSectionPara]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular, level_#
+
+== Structure
+
+== Examples
+
+.Psalm 1 (Book 1 division) (GNT)
+[source#src-para-mr_1,usfm,highlight=3]
+----
+\c 1
+\ms1 Book One
+\mr (Psalms 1–41)
+\s True Happiness
+\q1
+\v 1 Happy are those
+\q2 who reject the advice of evil people,
+----
+
+image::para/mr_1.jpg[Psalm 1 (Book 1 division) (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,48 @@
+= mte#
+:description: Main title at introduction end
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/mte.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily idential to the main title (mt).
+- The variable `#` represents the level of division.
+Syntax::
+- *USFM:* `+\mte#_text...+`
+- *USX:* `+<para style="mte#">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Title
+TextProperties:: paragraph, publishable, vernacular, level_#
+
+== Structure
+
+== Examples
+
+.@Missing
+[source#src-para-mte_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,4 @@
+= mr
+:env-antora:
+
+include::markers:para/mr.adoc[tag=public]

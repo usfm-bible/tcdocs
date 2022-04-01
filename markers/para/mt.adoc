@@ -1,6 +1,6 @@
-= s#
-:description: Section heading
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/s.adoc
+= mt#
+:description: Main title
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/mt.adoc
 ifndef::localdir[]
 :source-highlighter: pygments
 :localdir: ../
@@ -11,11 +11,11 @@ endif::[]
 
 == Summary
 
-Description:: Section heading.
+Description:: Main title.
 - The variable `#` represents the level of division.
 Syntax::
-- *USFM:* `+\s#_text...+`
-- *USX:* `+<para style="s#">text...</para>+`
+- *USFM:* `+\mt#_text...+`
+- *USX:* `+<para style="mt#">text...</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -23,56 +23,41 @@ Added:: 1.0
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`
-TextType:: Section
+OccursUnder:: `[BookTitlesContent]`
+TextType:: Title
 TextProperties:: paragraph, publishable, vernacular, level_#
 
 == Structure
 
 == Examples
 
-.Proverbs 22.17 (GNT)
-[source#src-para-s1_1,usfm,highlight=1;8]
+.Introduction to Acts (GNT)
+[source#src-para-mt_1,usfm,highlight=4..5]
 ----
-\s1 The Thirty Wise Sayings
-\p
-\v 17 Listen, and I will teach you what the wise have said. Study their 
-teachings,
-\v 18 and you will be glad if you remember them and can quote them.
-\v 19 I want you to put your trust in the \nd Lord\nd*; that is why I am 
-going to tell
-them to you now.
-\v 20 I have written down thirty sayings for you. They contain knowledge 
-and good advice,
-\v 21 and will teach you what the truth really is. Then when you are sent 
-to find it
-out, you will bring back the right answer.
-\s2 -1-
-\p
-\v 22 Don't take advantage of the poor just because you can; don't take 
-advantage of those who stand helpless in court.
+\h Acts
+\toc1 The Acts of the Apostles
+\toc2 Acts
+\mt1 THE ACTS
+\mt2 of the Apostles
+\is Introduction
+\ip \bk The Acts of the Apostles\bk* is a continuation of \bk The Gospel according to Luke\bk*.
 ----
 
-image::para/s1_1.jpg[Proverbs 22.17 (GNT),300]
+image::para/mt_1.jpg[Introduction to Acts (GNT),300]
 
-.Proverbs 22.22,24 (GNT)
-[source#src-par-s2_1,usfm,highlight=2;6]
+.Introduction to John (GNT)
+[source#src-para-mt_2,usfm,highlight=4..6]
 ----
-\v 21 and will teach you what the truth really is. Then when you are sent to 
-find it out, you will bring back the right answer.
-\s2 -1-
-\p
-\v 22 Don't take advantage of the poor just because you can; don't take 
-advantage of those who stand helpless in court.
-\v 23 The \nd Lord\nd* will argue their case for them and threaten the life of 
-anyone who threatens theirs.
-\s2 -2-
-\p
-\v 24 Don't make friends with people who have hot, violent tempers.
-\v 25 You might learn their habits and not be able to change.
+\h John
+\toc1 The Gospel according to John
+\toc2 John
+\mt2 The Gospel
+\mt3 according to
+\mt1 JOHN
+\is Introduction
 ----
 
-image::para/s2_1.jpg[Proverbs 22.22-24 (GNT),300]
+image::para/mt_2.jpg[Introduction to John (GNT),300]
 
 == Publication Issues
 

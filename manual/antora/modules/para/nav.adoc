@@ -3,7 +3,16 @@
 ** xref:introductions/index.adoc[]
 ** Titles and Sections
 // ** xref:titles-sections/index.adoc[]
-*** xref:titles-sections/s.adoc[s# - Section heading]
+*** xref:titles-sections/mt.adoc[mt# - Main title]
+*** xref:titles-sections/mte.adoc[mte# - Main title]
+*** xref:titles-sections/ms.adoc[ms# - Major section heading]
+*** xref:titles-sections/mr.adoc[mr - Major section range]
+*** xref:titles-sections/s.adoc[s# - Section heading]c
+*** xref:titles-sections/sr.adoc[sr - Section range]
+*** xref:titles-sections/r.adoc[r - Parallel references]
+*** xref:titles-sections/d.adoc[d - Descriptive title]
+*** xref:titles-sections/sp.adoc[sp - Descriptive title]
+*** xref:titles-sections/sd.adoc[sd# - Semantic division]
 ** Paragraphs
 // ** xref:paragraphs/index.adoc[]
 *** xref:paragraphs/p.adoc[p - Paragraph]

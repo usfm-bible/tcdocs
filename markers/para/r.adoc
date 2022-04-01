@@ -1,0 +1,57 @@
+= r
+:description: Parallel passage reference(s)
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/r.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Parallel passage reference(s). A list of references to parallel passages, usually added under a section heading.
+- (r) is not equivalent to (sr) which is used to mark references indicating the scope of the section.
+ifdef::env-antora[]
+- See also: xref:para:titles-sections/mr.adoc[mr], xref:para:titles-sections/sr.adoc[mr]
+endif::env-antora[]
+Syntax::
+- *USFM:* `+\sr_text...+`
+- *USX:* `+<para style="sr">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular, level_#
+
+== Structure
+
+== Examples
+
+.Matthew 3.1 (GNT)
+[source#src-para-r_1,usfm,highlight=3]
+----
+\c 3
+\s1 The Preaching of John the Baptist
+\r (Mark 1.1-8; Luke 3.1-18; John 1.19-28)
+\p
+\v 1 At that time John the Baptist came to the desert of Judea and 
+started preaching.
+\v 2 “Turn away from your sins,” he said, ...
+----
+
+image::para/r_1.jpg[Matthew 3.1 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

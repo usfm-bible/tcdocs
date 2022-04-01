@@ -25,7 +25,7 @@ Status:: Deprecated
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[Sidebar]`
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
@@ -34,7 +34,7 @@ TextProperties:: paragraph, publishable, vernacular
 == Examples
 
 .@Missing
-[source#src-para-ph_1,usfm,highlight=4;13]
+[source#src-para-ph_1,usfm,highlight=1]
 ----
 Missing
 ----

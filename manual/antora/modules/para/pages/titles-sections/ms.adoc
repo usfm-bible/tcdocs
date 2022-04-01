@@ -1,0 +1,4 @@
+= ms#
+:env-antora:
+
+include::markers:para/ms.adoc[tag=public]

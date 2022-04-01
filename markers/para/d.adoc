@@ -1,0 +1,55 @@
+= d
+:description: Descriptive title ("Hebrew subtitle")
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/d.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Descriptive title ("Hebrew subtitle"). Sometimes found in Psalms under a section heading (s) (e.g. “For the director of Music”).
+Syntax::
+- *USFM:* `+\d_text...+`
+- *USX:* `+<para style="d">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Psalm 3.1 (NRSV)
+[source#src-para-d_1,usfm,highlight=3]
+----
+\c 3
+\s1 Trust in God under Adversity
+\d A Psalm of David, when he fled from his son Absalom.
+\q1
+\v 1 O \nd Lord\nd*, how many are my foes!
+\q2 Many are rising against me;
+\q1
+\v 2 many are saying to me,
+\q2 “There is no help for you in God.” \qs Selah\qs*
+----
+
+image::para/d_1.jpg[Psalm 3.1 (NRSV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,68 @@
+= ms#
+:description: Major section heading
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ms.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Major section heading.
+- The variable `#` represents the level of division.
+Syntax::
+- *USFM:* `+\ms#_text...+`
+- *USX:* `+<para style="ms#">text...</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular, level_#
+
+== Structure
+
+== Examples
+
+.Psalm 1 (Book 1 division) (GNT)
+[source#src-para-ms1_1,usfm,highlight=2]
+----
+\c 1
+\ms1 Book One
+\mr (Psalms 1–41)
+\s True Happiness
+\q1
+\v 1 Happy are those
+\q2 who reject the advice of evil people,
+----
+
+image::para/ms1_1.jpg[Psalm 1 (Book 1 division) (GNT),300]
+
+.Daniel 1.1 (GNT)
+[source#src-par-ms1_2,usfm,highlight=2]
+----
+\c 1
+\ms1 The Story of Daniel and His Friends
+\mr (1.1—6.28)
+\s The Young Men at Nebuchadnezzar's Court
+\p
+\v 1 In the third year that Jehoiakim was king of Judah, King Nebuchadnezzar 
+of Babylonia attacked Jerusalem and surrounded the city.
+----
+
+image::para/ms1_1.jpg[Daniel 1.1 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

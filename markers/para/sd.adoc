@@ -1,0 +1,62 @@
+= sd#
+:description: Semantic division
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/sd.adoc
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Semantic division (semantic space). Vertical space used to divide the text into sections, in a manner similar to the structure added through a sequence of heading texts with (ms) or (s). The purpose of `sd#` is distinct from (b) which primarily denotes whitespace (in particular at poetic stanza breaks) and does not imply a hierarchy or division.
+- The variable `#` represents the level of division be marked.
+Syntax::
+- *USFM:* `+\sd#_text...+`
+- *USX:* `+<para style="sd#">text...</para>+`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent]`
+TextType:: Section
+TextProperties:: paragraph, publishable, level_#
+
+== Structure
+
+== Examples
+
+.Matthew 13.51-54 (NIV “Books of the Bible”).
+[source#src-para-s1_1,usfm,highlight=1;8]
+----
+\m
+\v 51 “Have you understood all these things?” Jesus asked.
+\p “Yes,” they replied.
+\p
+\v 52 He said to them, “Therefore every teacher of the law who has been 
+instructed about the kingdom of heaven is like the owner of a house who 
+brings out of his storeroom new treasures as well as old.”
+\sd2
+\p
+\v 53 When Jesus had finished these parables, he moved on from there.
+\v 54 Coming to his hometown, he began teaching the people in their synagogue, 
+and they were amazed. “Where did this man get this wisdom and these miraculous 
+powers?” they asked.
+----
+
+NOTE: In this layout design, chapter and verse numbers are suppressed, and new sections begin with drop capital.
+
+image::para/sd_1.jpg[Matthew 13.51-54 (NIV “Books of the Bible”),500]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues
