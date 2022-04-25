@@ -3,4 +3,4 @@
 \s some text
 \p
 \v 1 verse text \em caption|no default attr\em*
-\v 2 verse text \em caption|
+\v 2 verse text \em caption|xattr=no quotes\em*

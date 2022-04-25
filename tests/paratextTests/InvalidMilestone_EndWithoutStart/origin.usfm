@@ -3,4 +3,4 @@
 \s some text
 \p
 \v 1 verse text 
-\v 2 verse text\q
+\v 2 verse text\qte |eid="qt2"\*

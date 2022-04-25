@@ -2,4 +2,4 @@
 \c 1
 \s some text
 \p
-\v 1 verse text \em text|
+\v 1 verse text \em text|xweight="heavy"\em*"
