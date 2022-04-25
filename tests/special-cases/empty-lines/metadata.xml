@@ -2,5 +2,5 @@
 <test-metadata>
         <description>Files with empty lines</description>
         <validated>pass</validated>
-        <tags>clarify</tags>
+        <tags></tags>
 </test-metadata>

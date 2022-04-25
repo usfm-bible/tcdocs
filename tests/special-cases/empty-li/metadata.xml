@@ -2,5 +2,5 @@
 <test-metadata>
         <description>li without text</description>
         <validated>pass</validated>
-        <tags>clarify</tags>
+        <tags></tags>
 </test-metadata>
