@@ -30,20 +30,18 @@ class RelaxUSFMParser:
     def _local(self, t):
         return self.doc.localise(t)
 
-    def procChildren(self, e, curr, quietRefs=False, nofollow=False):
+    def procChildren(self, e, curr, quietRefs=False, nofollow=False, usfm=True):
         ncurr = curr
-        for a in ("tag", "attrib"):
-            tag = e.find(self._global("usfm:{}".format(a)))
-            if tag is not None:
-                break
-        if tag is not None:
-            ncurr = self.parseGrammar(tag, ncurr, parent=e, quietRefs=quietRefs)
-        else:
-            for i, c in sorted(enumerate(e), key=lambda x: (int(x[1].get(self._global('usfm:order'), 0)), x[0])):
-                if c.get(self._global("usfm:ignore"), "false").lower() == "true":
-                    continue
-                scurr = self.parseGrammar(c, ncurr, parent=e, quietRefs=quietRefs)
-                if not nofollow:
+        usfmonly = False
+        for i, c in sorted(enumerate(e), key=lambda x: (int(x[1].get(self._global('usfm:order'), 0)), x[0])):
+            if usfmonly and not self._local(c.tag).startswith("usfm:") \
+                    or c.get(self._global("usfm:ignore"), "false").lower() == "true":
+                continue
+            scurr = self.parseGrammar(c, ncurr, parent=e, quietRefs=quietRefs)
+            if not nofollow:
+                if scurr is None:
+                    usfmonly = True
+                else:
                     ncurr = scurr
         return ncurr
 
@@ -88,10 +86,10 @@ class RelaxUSFMParser:
             scurr = None
         tag = self._local(e.tag)
         if tag == 'element':
-            tag = "group"
-        if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group"):
+            tag = "stack" if e.get(self._global("usfm:stacked"), "false") == "true" else "group"
+        if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group", "stack"):
             ncurr = self.makeSequence(tag, e, curr)
-            self.procChildren(e, ncurr, nofollow=tag == "choice")
+            self.procChildren(e, ncurr, nofollow=(tag == "choice"))
         elif tag == 'attribute':
             if not any([self._local(n.tag).startswith("usfm:") for n in e]):
                 return curr
@@ -137,6 +135,8 @@ class RelaxUSFMParser:
                 curr = self.makeSequence("sequence", e, scurr)
                 scurr = None
             curr = self._addstrip("right", e, curr, default="right single")
+            if len(vals):
+                curr = None
         elif tag == "usfm:endtag":
             many = e.get('many', '')
             ncurr = self.makeSequence(manys.get(many, 'sequence'), e, curr)
@@ -180,10 +180,12 @@ class RelaxUSFMParser:
             if tag == "usfm:attrib":
                 self.makeTerminal("'\"'", curr)
             curr = self._addstrip("right", e, curr)
+            if done:
+                curr = None
         elif tag == "usfm:repeat":
             rep = self.makeSequence("sequence", e, None)
             rep = self.procChildren(e, rep)
-            if len(rep) == 1:
+            if rep is not None and len(rep) == 1:
                 rep = rep[0]
             self.back.addrepeat(rep, curr)
 
@@ -245,15 +247,20 @@ class RelaxXMLParser(RelaxUSFMParser):
             self.curr = self.makeSequence("sequence", None, None)
             curr = self.curr
             quietRefs = False
+        if e.get(self._global("usfm:stacked"), "false") == "true":
+            scurr = self.makeSequence("stack", e, curr)
+            curr = scurr
+        else:
+            scurr = None
         tag = self._local(e.tag)
         if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group"):
             ncurr = self.makeSequence(tag, e, curr)
-            self.procChildren(e, ncurr)
+            curr = self.procChildren(e, ncurr, usfm=False, nofollow=True)
         elif tag == "element":
             name = e.findtext(self._global('name'))
             pcurr = self.makeSequence("sequence", e, curr)
             self.makeTerminal("<{}>".format(name), pcurr)
-            ncurr = self.back.elementStart(name, pcurr)
+            ncurr = self.back.elementStart(name, pcurr, e.get(self._global("usfm:stacked"), "false") == "true")
             pcurr.append(ncurr)
             for c in e:
                 self.parseGrammar(c, ncurr, e)
@@ -292,6 +299,8 @@ class RelaxXMLParser(RelaxUSFMParser):
                 if reg:
                     ntype = '/{}/'.format(reg)
             self.makeTerminal(ntype, curr)
+        if scurr is not None:
+            curr = self.makeSequence("sequence", e, scurr)
         return curr
             
 

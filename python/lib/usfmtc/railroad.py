@@ -670,10 +670,12 @@ class Choice(DiagramMultiContainer):
     def format(self, x, y, width):
         leftGap, rightGap = determineGaps(width, self.width)
         noclose = getattr(self, 'noclose', 0)
+        # noclose: 1 = no entry above curve, 2 = no exit curve, 4 = no entry below curve?
 
         # Hook up the two sides if self is narrower than its stated width.
         Path(x, y).h(leftGap).addTo(self)
-        Path(x + leftGap + self.width, y + self.height).h(rightGap).addTo(self)
+        if (noclose & 2) == 0:
+            Path(x + leftGap + self.width, y + self.height).h(rightGap).addTo(self)
         x += leftGap
 
         innerWidth = self.width - AR * 4

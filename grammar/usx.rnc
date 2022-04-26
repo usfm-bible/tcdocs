@@ -11,13 +11,13 @@ start = USX
 USX = ( Scripture | Peripheral )
 
 Scripture = (
+    [usfm:stacked = "true"]
     element usx {
         attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} },
         attribute xsi:noNamespaceSchemaLocation { text }?,
 
-        [usfm:stacked="true"]
         BookIdentification,
-        BookHeaders*,
+        ( BookHeaders*,
         BookTitles+,
         BookIntroduction*,
         BookIntroductionEndTitles*,
@@ -25,7 +25,7 @@ Scripture = (
         Chapter,
         # Chapter is used to separate intro from scripture text.
         # All books will have chapter including the single chapter books: OBA, PHM, 2JN, 3JN, JUD
-        ChapterContent+
+        ChapterContent+ )
     }
     )
 
@@ -603,11 +603,12 @@ CharWithAttrib.char.style.w =
         [usfm:tag [id="a"]]
         attribute style { "w" }, # A wordlist text item
         ( [usfm:attrib []]
-        attribute lemma { xsd:string { minLength = "1" } } # Lemma/citation form found in glossary
-        | [usfm:attrib []]
-        attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} } # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)
-        | [usfm:attrib []]
-        attribute srcloc { xsd:string { pattern = "[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+" } } )*, # Location of the word in the source text
+        attribute lemma { xsd:string { minLength = "1" } }? # Lemma/citation form found in glossary
+        & [usfm:attrib []]
+        attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} }? # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)
+        & [usfm:attrib []]
+        attribute srcloc { xsd:string { pattern = "[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+" } }? # Location of the word in the source text
+        >> usfm:repeat[usfm:text[noquotes="true" "WS"]]),
         char.link,
         char.closed?,
         text,
@@ -830,12 +831,13 @@ Figure =
     }
 
 FootnoteReference =
+    [usfm:tag [strip="right" "fr"]]
     element ref {
-        [usfm:order="2" usfm:text[strip="left?" "|"] usfm:text[] usfm:endtag[many="?" deprecated="true" "fr"]]
-        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }? >> usfm:tag[strip="none" "fr"],
-        [usfm:text[strip="left"]] 
-        text?
-    }
+        [usfm:text [stripe="left"]]
+        text?,
+        [usfm:text[strip="none" "|"] usfm:text[]] 
+        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?
+    } >> usfm:endtag[many="?" deprecated="true" "fr"]
 
 Break = 
     element optbreak { [usfm:tag[lookahead="\" "b"]] empty }

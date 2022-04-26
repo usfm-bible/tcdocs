@@ -4,7 +4,9 @@ from usfmtc import railroad
 from usfmtc.railroad import Diagram, Choice, Optional, Terminal, NonTerminal, Sequence, DEFAULT_STYLE, Group, Sequence, OneOrMore, ZeroOrMore, HorizontalChoice, Stack, Comment, MultipleChoice
 
 def bigChoice(e, t, c, default=0, **kw):
-    if len(c) < e.groupby + 2:
+    if len(c) == 0:
+        return None
+    elif len(c) < e.groupby + 2:
         return Choice(getattr(e, 'default', default), *c, **kw)
     else:
         s = []
@@ -96,13 +98,17 @@ class RChoice(list):
                         continue
                 nonopts.append(e)
             rep = self.repeat.asRail() if self.repeat is not None else None
-            o = ZeroOrMore(Choice(0, *[r for r in (v.asRail() for v in opts) if r is not None]), rep) if len(opts) else None
-            n = MultipleChoice(0, "all", *[r for r in (v.asRail() for v in nonopts) if r is not None]) if len(nonopts) else None
+            ocontents = [r for r in (v.asRail() for v in opts) if r is not None]
+            o = None
+            if len(ocontents):
+                o = ZeroOrMore(Choice(0, *ocontents), rep) if len(opts) else None
+            ncontents = [r for r in (v.asRail() for v in nonopts) if r is not None] + ocontents
+            n = None
+            if len(ncontents):
+                n = MultipleChoice(0, "all", *ncontents) if len(nonopts) else None
             if n is None:
                 return o
             else:
-                if o is not None:
-                    n.items.append(o)
                 return n
         contents = [r for r in (v.asRail() for v in self) if r is not None]
         if not len(contents):
@@ -184,9 +190,14 @@ def getlastchoice(e):
 
 
 class SplitRail:
-    def __init__(self, curr):
+    def __init__(self, curr, isstack=False):
         self.all = RChoice(combine="attributed", parent=curr)
-        self.main = RChoice(combine="sequence", parent=self.all)
+        self.seq = RChoice(combine="sequence", parent = self.all)
+        if isstack:
+            self.main = RChoice(self.seq, combine="stack", parent=self.all)
+            self.seq.parent = self.main
+        else:
+            self.main = self.seq
         self.all.append(self.main)
         self.mod = ""
 
@@ -286,8 +297,8 @@ class SFMRail:
             curr.repeat = rep
 
 # Methods needed for processing XML
-    def elementStart(self, name, curr):
-        res = SplitRail(curr)
+    def elementStart(self, name, curr, isstack=False):
+        res = SplitRail(curr, isstack)
         return res
 
     def elementEnd(self, curr):

@@ -24,11 +24,11 @@ rgram.parse(rdoc.getroot())
 backend = SFMRail()
 
 alljobs = {
-    "BookHeaders": ("bkhdrs",),
-    "BookTitles": ("bktitles",),
+    "BookHeaders": ("bkhdrs", tuple(), ("BookHeaders.para.style.enum",)),
+    "BookTitles": ("bktitles", tuple(), ("BookTitles.para.style.enum",)),
     "BookIdentification.book.code.enum": ("bkident",),
     "BookIntroduction": ("bkintro",),
-    "BookIntroductionEndTitles": ("bkintroend",),
+    "BookIntroductionEndTitles": ("bkintroend", tuple(), ("BookIntroductionEndTitles.para.style.enum",)),
     "Char": ("char", ("Char.char.style.enum", "+char.closed", "Break",
                       "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
     "CharEmbed": ("charembed", ("Char.char.style.enum", "+char.closed", "Break",

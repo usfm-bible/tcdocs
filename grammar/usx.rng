@@ -14,7 +14,7 @@
     </choice>
   </define>
   <define name="Scripture">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">usx</name>
       <attribute>
         <name ns="">version</name>
@@ -29,26 +29,28 @@
           <text/>
         </attribute>
       </optional>
-      <ref name="BookIdentification" usfm:stacked="true"/>
-      <zeroOrMore>
-        <ref name="BookHeaders"/>
-      </zeroOrMore>
-      <oneOrMore>
-        <ref name="BookTitles"/>
-      </oneOrMore>
-      <zeroOrMore>
-        <ref name="BookIntroduction"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="BookIntroductionEndTitles"/>
-      </zeroOrMore>
-      <optional>
-        <ref name="BookChapterLabel"/>
-      </optional>
-      <ref name="Chapter"/>
-      <oneOrMore>
-        <ref name="ChapterContent"/>
-      </oneOrMore>
+      <ref name="BookIdentification"/>
+      <group>
+        <zeroOrMore>
+          <ref name="BookHeaders"/>
+        </zeroOrMore>
+        <oneOrMore>
+          <ref name="BookTitles"/>
+        </oneOrMore>
+        <zeroOrMore>
+          <ref name="BookIntroduction"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="BookIntroductionEndTitles"/>
+        </zeroOrMore>
+        <optional>
+          <ref name="BookChapterLabel"/>
+        </optional>
+        <ref name="Chapter"/>
+        <oneOrMore>
+          <ref name="ChapterContent"/>
+        </oneOrMore>
+      </group>
     </element>
   </define>
   <define name="Peripheral">
@@ -974,8 +976,8 @@
         <name ns="">style</name>
         <value>w</value>
       </attribute>
-      <zeroOrMore>
-        <choice>
+      <interleave>
+        <optional>
           <attribute>
             <usfm:attrib/>
             <name ns="">lemma</name>
@@ -983,6 +985,8 @@
               <param name="minLength">1</param>
             </data>
           </attribute>
+        </optional>
+        <optional>
           <attribute>
             <usfm:attrib/>
             <name ns="">strong</name>
@@ -990,6 +994,8 @@
               <param name="pattern">([HG]\d{4,5}(:[a-z])?,?)+</param>
             </data>
           </attribute>
+        </optional>
+        <optional>
           <attribute>
             <usfm:attrib/>
             <name ns="">srcloc</name>
@@ -997,8 +1003,11 @@
               <param name="pattern">[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+</param>
             </data>
           </attribute>
-        </choice>
-      </zeroOrMore>
+        </optional>
+        <usfm:repeat>
+          <usfm:text noquotes="true">WS</usfm:text>
+        </usfm:repeat>
+      </interleave>
       <ref name="char.link"/>
       <optional>
         <ref name="char.closed"/>
@@ -1550,25 +1559,25 @@
   </define>
   <define name="FootnoteReference">
     <element>
+      <usfm:tag strip="right">fr</usfm:tag>
       <name ns="">ref</name>
       <optional>
-        <attribute usfm:order="2">
-          <usfm:text strip="left?">|</usfm:text>
+        <text>
+          <usfm:text stripe="left"/>
+        </text>
+      </optional>
+      <optional>
+        <attribute>
+          <usfm:text strip="none">|</usfm:text>
           <usfm:text/>
-          <usfm:endtag many="?" deprecated="true">fr</usfm:endtag>
           <name ns="">loc</name>
           <data type="string">
             <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
           </data>
         </attribute>
       </optional>
-      <usfm:tag strip="none">fr</usfm:tag>
-      <optional>
-        <text>
-          <usfm:text strip="left"/>
-        </text>
-      </optional>
     </element>
+    <usfm:endtag many="?" deprecated="true">fr</usfm:endtag>
   </define>
   <define name="Break">
     <element>
