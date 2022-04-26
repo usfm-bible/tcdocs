@@ -29,7 +29,7 @@
           <text/>
         </attribute>
       </optional>
-      <ref name="BookIdentification"/>
+      <ref name="BookIdentification" usfm:stacked="true"/>
       <zeroOrMore>
         <ref name="BookHeaders"/>
       </zeroOrMore>
@@ -105,17 +105,22 @@
   <define name="BookIdentification">
     <element>
       <name ns="">book</name>
-      <attribute>
+      <attribute usfm:order="-1">
+        <usfm:tag prefix="" strip="right" grouping="13"/>
         <name ns="">code</name>
         <ref name="BookIdentification.book.code.enum"/>
       </attribute>
-      <attribute>
+      <attribute usfm:order="-2">
+        <usfm:tag/>
         <name ns="">style</name>
         <value>id</value>
       </attribute>
       <optional>
-        <text/>
+        <text>
+          <usfm:text/>
+        </text>
       </optional>
+      <usfm:text name="NL"/>
     </element>
   </define>
   <define name="BookIdentification.book.code.enum">
@@ -221,6 +226,10 @@
       <value>REP</value>
       <value>4BA</value>
       <value>LAO</value>
+      <data type="string">
+        <usfm:text/>
+        <param name="pattern">\S{3}</param>
+      </data>
     </choice>
   </define>
   <define name="PeripheralBookIdentification">
@@ -382,11 +391,14 @@
     <element>
       <name ns="">para</name>
       <attribute>
+        <usfm:tag/>
         <name ns="">style</name>
         <ref name="BookHeaders.para.style.enum"/>
       </attribute>
       <optional>
-        <text/>
+        <text>
+          <usfm:text/>
+        </text>
       </optional>
     </element>
   </define>
@@ -411,6 +423,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
+        <usfm:tag/>
         <name ns="">style</name>
         <ref name="BookTitles.para.style.enum"/>
       </attribute>
@@ -420,7 +433,9 @@
           <ref name="CrossReference"/>
           <ref name="Char"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -443,6 +458,7 @@
       <element>
         <name ns="">para</name>
         <attribute>
+          <usfm:tag/>
           <name ns="">style</name>
           <ref name="BookIntroduction.para.style.enum"/>
         </attribute>
@@ -455,7 +471,9 @@
             <ref name="IntroChar"/>
             <ref name="Milestone"/>
             <ref name="Figure"/>
-            <text/>
+            <text>
+              <usfm:text/>
+            </text>
           </choice>
         </zeroOrMore>
       </element>
@@ -505,6 +523,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
+        <usfm:tag/>
         <name ns="">style</name>
         <ref name="BookIntroductionEndTitles.para.style.enum"/>
       </attribute>
@@ -515,7 +534,9 @@
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -558,7 +579,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
-        <usfm:tag id="a" grouping="12" stacked="true" strip="none"/>
+        <usfm:tag id="a" grouping="12" usfm:stacked="true" strip="none"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -836,7 +857,7 @@
       <element>
         <name ns="">char</name>
         <attribute>
-          <usfm:tag id="a" grouping="9" stacked="true"/>
+          <usfm:tag id="a" grouping="9" usfm:stacked="true"/>
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
@@ -891,7 +912,7 @@
       <element>
         <name ns="">char</name>
         <attribute>
-          <usfm:tag id="a" prefix="\+" grouping="9" stacked="true"/>
+          <usfm:tag id="a" prefix="\+" grouping="9" usfm:stacked="true"/>
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
@@ -953,33 +974,34 @@
         <name ns="">style</name>
         <value>w</value>
       </attribute>
+      <zeroOrMore>
+        <choice>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">lemma</name>
+            <data type="string">
+              <param name="minLength">1</param>
+            </data>
+          </attribute>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">strong</name>
+            <data type="string">
+              <param name="pattern">([HG]\d{4,5}(:[a-z])?,?)+</param>
+            </data>
+          </attribute>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">srcloc</name>
+            <data type="string">
+              <param name="pattern">[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+</param>
+            </data>
+          </attribute>
+        </choice>
+      </zeroOrMore>
       <ref name="char.link"/>
       <optional>
         <ref name="char.closed"/>
-      </optional>
-      <optional>
-        <attribute>
-          <name ns="">lemma</name>
-          <data type="string">
-            <param name="minLength">1</param>
-          </data>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <name ns="">strong</name>
-          <data type="string">
-            <param name="pattern">([HG]\d{4,5}(:[a-z])?,?)+</param>
-          </data>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <name ns="">srcloc</name>
-          <data type="string">
-            <param name="pattern">[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+</param>
-          </data>
-        </attribute>
       </optional>
       <text/>
       <zeroOrMore>
@@ -1464,7 +1486,7 @@
   <define name="category">
     <attribute>
       <usfm:tag>cat</usfm:tag>
-      <usfm:text strip="right*"/>
+      <usfm:text name="Word"/>
       <usfm:endtag>cat</usfm:endtag>
       <name ns="">category</name>
       <text/>
@@ -1529,15 +1551,17 @@
   <define name="FootnoteReference">
     <element>
       <name ns="">ref</name>
-      <attribute usfm:order="2">
-        <usfm:text strip="left?">|</usfm:text>
-        <usfm:text/>
-        <usfm:endtag many="?" deprecated="true">fr</usfm:endtag>
-        <name ns="">loc</name>
-        <data type="string">
-          <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
-        </data>
-      </attribute>
+      <optional>
+        <attribute usfm:order="2">
+          <usfm:text strip="left?">|</usfm:text>
+          <usfm:text/>
+          <usfm:endtag many="?" deprecated="true">fr</usfm:endtag>
+          <name ns="">loc</name>
+          <data type="string">
+            <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
+          </data>
+        </attribute>
+      </optional>
       <usfm:tag strip="none">fr</usfm:tag>
       <optional>
         <text>

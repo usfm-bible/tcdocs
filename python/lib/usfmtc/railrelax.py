@@ -131,6 +131,26 @@ class RChoice(list):
         self.groupby = groupby
         self.repeat = None
 
+    def simplify(self):
+        if len(self) > 1:
+            return self
+        if len(self) == 0:
+            self.parent.remove(self)
+            return self.parent
+        if not isinstance(self.parent, RChoice):
+            self.parent.remove(self)
+            self.parent.add(self[0])
+            pname = self.parent.combine
+            if pname == "optional":
+                self.parent.combine = self.combine
+            elif self.combine == "optional":
+                pass
+            elif pname == "zeroOrMore" or self.combine == "zeroOrMore":
+                self.parent.combine = "zeroOrMore"
+            elif pname == "oneOrMore" or self.combine == "oneOrMore":
+                self.parent.combine = "oneOrMore"
+        return self.parent
+
     def asXml(self, parent):
         if not len(self):
             return None
@@ -291,7 +311,6 @@ class RDiagram:
                         c.parent = ncurr
                 else:
                     ncurr.append(a)
-                    
             curr = pcurr
         elif tag == "attribute":
             name = e.findtext(self.doc.globalise('name'))
@@ -313,7 +332,7 @@ class RDiagram:
             if last is not None:
                 last.combine = "attributes"
         elif tag == "ref":
-            if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true":
+            if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true" or id(e) in self.used:
                 return
             name = e.get('name')
             if name in self.visited or (name not in self.keeps and "+"+name not in self.keeps):
@@ -332,6 +351,10 @@ class RDiagram:
             ntype = e.get("type", "")
             if ntype == "boolean":
                 ntype = "BOOL"
+            elif ntype == "string":
+                reg = e.findtext('./{}/[@name="pattern"]'.format(self.doc.globalise('param')))
+                if reg:
+                    ntype = '/{}/'.format(reg)
             curr.append(RTerminal(ntype, parent=curr))
         return curr
 
@@ -347,6 +370,9 @@ class RDiagram:
         elif tag in ("element", "attribute"):
             if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true":
                 return curr
+            if tag == "attribute":
+                if not any(self.doc.localise(n.tag).startswith("usfm:") for n in e):
+                    return curr
             ncurr = RChoice(combine="sequence", parent=curr)
             curr.append(ncurr)
             for c in sorted(e, key=lambda x:int(x.get(self.doc.globalise('usfm:order'), 0))):
@@ -357,8 +383,14 @@ class RDiagram:
             for c in e:
                 curr = self.addElementUsfm(c, grammar, curr=curr, parent=e, group=group)
         elif tag == "ref":
-            if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true":
+            if e.get(self.doc.globalise("usfm:ignore"), "false").lower() == "true" or id(e) in self.used:
                 return curr
+            if e.get(self.doc.globalise("usfm:stacked"), "false") == "true":
+                scurr = RChoice(combine="stack", parent=curr)
+                curr.append(scurr)
+                curr = scurr
+            else:
+                scurr = None
             name = e.get('name')
             if name in self.visited or (name not in self.keeps and "+"+name not in self.keeps):
                 curr.append(RTerminal(name, ref=True, parent=curr))
@@ -366,8 +398,18 @@ class RDiagram:
                 if "+"+name not in self.keeps:
                     self.visited.add(name)
                 grammar.makediagram(name, curr=curr, rdia=self)
+            if scurr is not None:
+                curr = RChoice(combine="sequence", parent=scurr)
+                scurr.append(curr)
+        #elif tag == "value":
+        #    curr.append(RTerminal('"{}"'.format(e.text)))
+        elif tag == "data":
+            if e.get('type', '') == "string":
+                reg = e.findtext('./{}/[@name="pattern"]'.format(self.doc.globalise('param')))
+                if reg:
+                    curr.append(RTerminal('/{}/'.format(reg)))
         elif tag == "usfm:tag":
-            if e.get("stacked", "false") == "true":
+            if e.get(self.doc.globalise("usfm:stacked"), "false") == "true":
                 scurr = RChoice(combine="stack", parent=curr)
                 curr.append(scurr)
                 curr = scurr
@@ -383,15 +425,18 @@ class RDiagram:
                 self.idcount += 1
                 rcurr.append(ncurr)
                 rcurr = ncurr
+            s = e.get('prefix', '\\')
             if e.text is not None and e.text.strip() != "":
-                rcurr.append(RTerminal('"{}{}"'.format(e.get('prefix', '\\'), e.text.strip())))
+                if len(s):
+                    rcurr.append(RTerminal('"{}{}"'.format(s, e.text.strip())))
             else:
                 ncurr = RChoice(combine="sequence", parent=curr)
                 rcurr.append(ncurr)
-                ncurr.append(RTerminal('"{}"'.format(e.get('prefix', '\\'))))
+                if len(s):
+                    ncurr.append(RTerminal('"{}"'.format(s)))
                 vals = self.getvals(parent, grammar)
                 nums = int(e.get('grouping', 8))
-                rcurr.append(RChoice(*[RTerminal('"{}"'.format(v), parent=rcurr) for v in vals], combine="choice", parent=rcurr, groupby=nums))
+                rcurr.append(RChoice(*[RTerminal('{}'.format(v), parent=rcurr) for v in vals], combine="choice", parent=rcurr, groupby=nums))
             if scurr is not None:
                 curr = RChoice(combine="sequence", parent=scurr)
                 scurr.append(curr)
@@ -442,6 +487,8 @@ class RDiagram:
             if e.text is not None and e.text.strip() != "":
                 q = '"' if not e.get('noquotes', 'false') == 'true' else ''
                 curr.append(RTerminal('{0}{1}{0}'.format(q, e.text)))
+            elif n := e.get("name", None):
+                curr.append(RTerminal(n))
             elif reg is None:
                 curr.append(RTerminal("Text"))
             else:
@@ -465,10 +512,15 @@ class RDiagram:
             if tag in ("interleave", "choice"):
                 res.extend(self.getvals(c, grammar))
             elif tag == "value":
-                res.append(c.text)
+                res.append('"{}"'.format(c.text))
+            elif tag == "data" and c.get('type', '') == 'string':
+                reg = c.findtext('./{}/[@name="pattern"]'.format(self.doc.globalise('param')))
+                if len(reg):
+                    res.append('/{}/'.format(reg))
             elif tag == "ref":
                 name = c.get('name')
                 ref = grammar.defines.get(name).content
+                self.used.add(id(c))
                 res.extend(self.getvals(ref, grammar))
         return res
 
@@ -541,6 +593,7 @@ class RGrammar:
         if curr is None:
             rdia.curr = ncurr
             attrcurr = ncurr
+            rdia.used = set()
         if curr is not None:
             curr.append(ncurr)
         for e in top.content:

@@ -209,9 +209,9 @@ class XMLSerializer(object):
                 self.write('<notAllowed/>')
             elif x.type in set([TEXT, EMPTY]):
                 if not len(x.value):
-                    self.write('<%s/>' % x.type.lower())
+                    self.write('<%s%s/>' % (x.type.lower(), attribs))
                 else:
-                    self.write('<%s>' % x.type.lower())
+                    self.write('<%s%s>' % (x.type.lower(), attribs))
                     self.visit(x.value)
                     self.write('</%s>' % x.type.lower())
             elif x.type == SEQ:
