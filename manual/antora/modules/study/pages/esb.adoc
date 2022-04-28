@@ -1,4 +1,4 @@
-= esb
+= Sidebar
 :env-antora:
 
 // include::markers:note/esb.adoc[tag=public]

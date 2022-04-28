@@ -2,5 +2,5 @@
 ** Extended Book Introductions
 ** Division/Section Introductions
 ** Extended Notes
-** xref:esb.adoc[esb - Sidebar]
+** xref:esb.adoc[]
 ** Categories

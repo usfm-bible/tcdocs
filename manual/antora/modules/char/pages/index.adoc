@@ -1,4 +1,4 @@
-= Character Styles
+= Characters
 ifndef::localdir[]
 :source-highlighter: pygments
 :localdir: ../
@@ -7,22 +7,20 @@ endif::[]
 
 == Summary
 
-== USFM
+Description:: Character-level container.
+Syntax::
+* *USFM:* `+\[char@style]_{content}\[char@style]*+`
+* *USX:* `+<char style="[char@style]">{content}</char>+`
+`char@style`:: Character type
+include::../nav.adoc[tag=nav-topcat]
+`content`:: Character content
 
-=== Syntax
+== Diagram
 
-`+\[Char@style]_text...\[Char@style]*+`
-
-=== Structure
-
+=== USFM
 image::schema/char_rail.svg[]
 
-== USX
-
-=== Syntax
-
-`+<char style="[Char@style]">text...</char>+`
-
-=== Structure
-
+=== USX
 image::schema/char_usx.svg[]
+
+== Descendants
