@@ -1,1 +1,28 @@
 = Character Styles
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+== Summary
+
+== USFM
+
+=== Syntax
+
+`+\[Char@style]_text...\[Char@style]*+`
+
+=== Structure
+
+image::schema/char_rail.svg[]
+
+== USX
+
+=== Syntax
+
+`+<char style="[Char@style]">text...</char>+`
+
+=== Structure
+
+image::schema/char_usx.svg[]

@@ -19,7 +19,7 @@ Syntax::
 Added:: 1.0
 
 ifdef::env-antora[]
-See also: xref:note:f.adoc[Footnote]
+See also: xref:note:footnote/f.adoc[Footnote]
 endif::env-antora[]
 
 == Properties

@@ -1,1 +1,6 @@
 = Chapters and Verses
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images

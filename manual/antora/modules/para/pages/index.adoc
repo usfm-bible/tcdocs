@@ -17,9 +17,13 @@ endif::[]
 
 image::schema/p_rail.svg[]
 
-image::schema/char_rail.svg[]
-
-image::schema/link_rail.svg[]
+* xref:note:index.adoc[Notes]
+- Footnote
+- CrossReference
+* xref:char:index.adoc[Char] - Character Styles
+* Milestone
+* Figure
+* Verse
 
 == USX
 
@@ -31,4 +35,10 @@ image::schema/link_rail.svg[]
 
 image:schema/p_usx.svg[]
 
-image::schema/char_usx.svg[]
+* xref:note:index.adoc[Notes]
+- Footnote
+- CrossReference
+* xref:char:index.adoc[Char] - Character Styles
+* Milestone
+* Figure
+* Verse
