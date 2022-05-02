@@ -12,7 +12,9 @@ endif::[]
 == Summary
 
 Description:: Name of God.
-Syntax:: `+\nd_...\nd*+`
+Syntax::
+* *USFM:* `+\nd_{content}\nd*+`
+* *USX:* `+<char style="nd">{content}</nd>+`
 Added:: 1.0
 
 == Properties

@@ -16,8 +16,8 @@ ifdef::env-antora[]
 - See also: xref:para:paragraphs/pmo.adoc[pmo], xref:para:paragraphs/pmc.adoc[pmc]
 endif::env-antora[]
 Syntax::
-- *USFM:* `+\mi_text...+`
-- *USX:* `+<para style="mi">text...</para>+`
+* *USFM:* `+\mi_{content}+`
+* *USX:* `+<para style="mi">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

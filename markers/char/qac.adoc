@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Acrostic character. Used to mark the acrostic letter within a poetic line.
 Syntax::
-- *USFM:* `+\qac_...\qac*+`
-- *USX:* `+<char style="qac">text...</char>+`
+* *USFM:* `+\qac_...\qac*+`
+* *USX:* `+<char style="qac">{content}</char>+`
 Added:: 1.0
 
 == Properties

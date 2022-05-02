@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Footnote - Translation quotation.
 Syntax::
-- *USFM:* `+\fq_text...+`
-- *USX:* `+<char style="fq">text...</char>+`
+* *USFM:* `+\fq_{content}+`
+* *USX:* `+<char style="fq">{content}</char>+`
 Added:: 1.0
 
 ifdef::env-antora[]

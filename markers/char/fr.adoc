@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Footnote - Origin reference.
 Syntax::
-- *USFM:* `+\fr_{C#:V#:}+`
-- *USX:* `+<char style="fr">{C#:V#:}</char>+`
+* *USFM:* `+\fr_{C#:V#:}+`
+* *USX:* `+<char style="fr">{C#:V#:}</char>+`
 `C#:V#:`::: Chapter-verse origin reference. The chapter-verse separator and end-of-reference punctuation are text specific.
 Added:: 1.0
 

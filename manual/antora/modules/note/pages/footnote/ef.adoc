@@ -1,4 +1,4 @@
 = ef
 :env-antora:
 
-// include::markers:note/ef.adoc[tag=public]
+include::markers:note/ef.adoc[tag=public]

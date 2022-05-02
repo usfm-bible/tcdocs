@@ -26,9 +26,9 @@ image:schema/p_usx.svg[]
 == Descendants
 
 * xref:note:index.adoc[Notes]
-- Footnote
-- CrossReference
-* xref:char:index.adoc[Char] - Character Styles
+** xref:note:footnote/index.adoc[] (Footnote)
+** xref:note:crossref/index.adoc[] (CrossReference)
+* xref:char:index.adoc[] (Char)
 * Milestone
 * Figure
 * Verse

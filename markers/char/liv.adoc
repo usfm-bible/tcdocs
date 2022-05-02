@@ -13,8 +13,8 @@ endif::[]
 
 Description:: List entry 'value' content.
 Syntax::
-- *USFM:* `+\liv_...\liv*+`
-- *USX:* `+<char style="liv">text...</char>+`
+* *USFM:* `+\liv_{content}\liv*+`
+* *USX:* `+<char style="liv">{content}</char>+`
 Added:: 3.0
 
 == Properties

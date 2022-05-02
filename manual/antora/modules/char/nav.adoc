@@ -24,8 +24,8 @@
 // end::nav-topcat[]
 // tag::nav-notes[]
 *** xref:notes/fr.adoc[fr - Origin reference]
-*** xref:notes/fq.adoc[fq - Translation quotation]
-*** xref:notes/ft.adoc[ft - Footnote text]
+*** xref:notes/fq.adoc[fq - Translation quote]
+*** xref:notes/ft.adoc[ft - Note text]
 // tag::end-notes[]
 // ** Formatting
 // tag::nav-topcat[]

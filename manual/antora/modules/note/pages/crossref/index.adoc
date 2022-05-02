@@ -1,1 +1,5 @@
 = Cross References
+
+Cross References are a type of xref:note:index.adoc[Note].
+
+include::../../nav.adoc[tag=nav-crossrefs]
