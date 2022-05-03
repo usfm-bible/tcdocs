@@ -1,2 +1,5 @@
-* xref:c.adoc[Chapters]
-* xref:v.adoc[Verses]
+* xref:index.adoc[]
+// tag::nav-topcat[]
+** xref:c.adoc[]
+** xref:v.adoc[]
+// end::nav-topcat[]
