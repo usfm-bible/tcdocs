@@ -40,9 +40,8 @@
 <path d="M 20 45 v 20 m 0 -10 h 20"></path></g><path d="M 40 55 h 10"></path><g>
 <path d="M 50 55 h 0.0"></path><path d="M 371.5 55 h 0.0"></path><rect class="group-box" height="38" rx="10" ry="10" width="321.5" x="50.0" y="36"></rect><g>
 <path d="M 50.0 55 h 10.0"></path><path d="M 361.5 55 h 10.0"></path><g class="terminal ">
-<path d="M 60.0 55 h 0.0"></path><path d="M 131.0 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="71.0" x="60.0" y="44"></rect><text x="95.5" y="59">"\cat"</text></g><path d="M 131.0 55 h 10"></path><path d="M 141.0 55 h 10"></path><g>
-<path d="M 151.0 55 h 0.0"></path><path d="M 361.5 55 h 0.0"></path><g class="terminal ">
+<path d="M 60.0 55 h 0.0"></path><path d="M 131.0 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="71.0" x="60.0" y="44"></rect><text x="95.5" y="59">"\cat"</text></g><path d="M 131.0 55 h 10"></path><path d="M 141.0 55 h 10"></path><g class="terminal ">
 <path d="M 151.0 55 h 0.0"></path><path d="M 188.0 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="37.0" x="151.0" y="44"></rect><text x="169.5" y="59">WS</text></g><path d="M 188.0 55 h 10"></path><path d="M 198.0 55 h 10"></path><g class="terminal ">
 <path d="M 208.0 55 h 0.0"></path><path d="M 262.0 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="208.0" y="44"></rect><text x="235.0" y="59">Word</text></g><path d="M 262.0 55 h 10"></path><path d="M 272.0 55 h 10"></path><g class="terminal ">
-<path d="M 282.0 55 h 0.0"></path><path d="M 361.5 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="282.0" y="44"></rect><text x="321.75" y="59">"\cat&#42;"</text></g></g></g><g class="non-terminal ">
+<path d="M 282.0 55 h 0.0"></path><path d="M 361.5 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="282.0" y="44"></rect><text x="321.75" y="59">"\cat&#42;"</text></g></g><g class="non-terminal ">
 <path d="M 50.0 28 h 0.0"></path><path d="M 116.0 28 h 0.0"></path><text class="comment" x="83.0" y="33">category</text></g></g><path d="M 371.5 55 h 10"></path><path d="M 381.5 55 h 20 m 0 -10 v 20"></path></g></svg>

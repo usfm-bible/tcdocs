@@ -111,7 +111,9 @@ class RelaxUSFMParser:
         elif tag == "data":
             if e.get('type', '') == "string":
                 reg = e.findtext('./{}/[@name="pattern"]'.format(self.doc.globalise('param')))
-                if reg:
+                if reg is None:
+                    self.makeTerminal("text", curr)
+                elif reg:
                     self.makeTerminal('/{}/'.format(reg), curr)
         elif tag == "value":
             self.makeTerminal('"{}"'.format(e.text.strip()), curr)
@@ -127,16 +129,15 @@ class RelaxUSFMParser:
             else:
                 if len(s):
                     self.makeTerminal('"{}"'.format(s), rcurr)
-            vals = self._getvals(parent)
-            ncurr = self.makeSequence("choice", e, rcurr)
-            for v in vals:
-                self.makeTerminal(v, ncurr)
+                vals = self._getvals(parent)
+                ncurr = self.makeSequence("choice", e, rcurr)
+                for v in vals:
+                    self.makeTerminal(v, ncurr)
             if scurr is not None:
                 curr = self.makeSequence("sequence", e, scurr)
                 scurr = None
             curr = self._addstrip("right", e, curr, default="right single")
-            if len(vals):
-                curr = None
+            curr = None
         elif tag == "usfm:endtag":
             many = e.get('many', '')
             ncurr = self.makeSequence(manys.get(many, 'sequence'), e, curr)
@@ -153,6 +154,10 @@ class RelaxUSFMParser:
             curr = self._addstrip("left", e, curr)
             fbreg = parent.findtext('{}[@type="string"]/{}[@name="pattern"]'.format(
                                             self._global('data'), self._global('param')))
+            if fbreg is None:
+                fbreg = parent.find('{}[@type="integer"]'.format(self._global('data')))
+                if fbreg is not None:
+                    fbreg = '\d+'
             reg = e.get("re", fbreg)
             done = False
             if tag == "usfm:attrib":
@@ -180,8 +185,7 @@ class RelaxUSFMParser:
             if tag == "usfm:attrib":
                 self.makeTerminal("'\"'", curr)
             curr = self._addstrip("right", e, curr)
-            if done:
-                curr = None
+            curr = None
         elif tag == "usfm:repeat":
             rep = self.makeSequence("sequence", e, None)
             rep = self.procChildren(e, rep)
@@ -218,8 +222,8 @@ class RelaxUSFMParser:
         if many is not None:
             ocurr = self.makeSequence(many, None, ncurr)
             self.makeTerminal("WS", ocurr)
-            ncurr = ocurr
-        return ncurr
+            curr = ocurr
+        return curr
 
     def _getvals(self, e):
         res = []
@@ -231,7 +235,9 @@ class RelaxUSFMParser:
                 res.append('"{}"'.format(c.text))
             elif tag == "data" and c.get('type', '') == 'string':
                 reg = c.findtext('./{}/[@name="pattern"]'.format(self._global('param')))
-                if len(reg):
+                if reg is None:
+                    res.append("text")
+                elif len(reg):
                     res.append('/{}/'.format(reg))
             elif tag == "ref":
                 name = c.get('name')
@@ -296,7 +302,9 @@ class RelaxXMLParser(RelaxUSFMParser):
                 ntype = "BOOL"
             elif ntype == "string":
                 reg = e.findtext('./{}/[@name="pattern"]'.format(self.doc.globalise('param')))
-                if reg:
+                if reg is None:
+                    ntype = "text"
+                elif reg:
                     ntype = '/{}/'.format(reg)
             self.makeTerminal(ntype, curr)
         if scurr is not None:

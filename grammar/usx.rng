@@ -1185,49 +1185,47 @@
   <define name="ChapterStart">
     <element>
       <name ns="">chapter</name>
-      <interleave>
+      <attribute>
+        <usfm:tag/>
+        <name ns="">style</name>
+        <value>c</value>
+      </attribute>
+      <attribute>
+        <usfm:text strip="right"/>
+        <name ns="">number</name>
+        <data type="integer"/>
+      </attribute>
+      <attribute usfm:ignore="true">
+        <name ns="">sid</name>
+        <data type="string">
+          <param name="minLength">1</param>
+          <param name="pattern">[A-Z1-4]{3} ?[0-9]+</param>
+        </data>
+      </attribute>
+      <optional>
         <attribute>
-          <usfm:tag>c</usfm:tag>
-          <name ns="">style</name>
-          <value>c</value>
-        </attribute>
-        <attribute>
-          <usfm:text strip="both"/>
-          <name ns="">number</name>
-          <data type="integer"/>
-        </attribute>
-        <attribute>
-          <name ns="">sid</name>
+          <usfm:tag>ca</usfm:tag>
+          <usfm:text/>
+          <usfm:endtag>ca</usfm:endtag>
+          <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[A-Z1-4]{3} ?[0-9]+</param>
+            <param name="pattern">[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*</param>
           </data>
         </attribute>
-        <optional>
-          <attribute>
-            <usfm:tag>ca</usfm:tag>
-            <usfm:text strip="both"/>
-            <usfm:endtag>ca</usfm:endtag>
-            <name ns="">altnumber</name>
-            <data type="string">
-              <param name="minLength">1</param>
-              <param name="pattern">[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*</param>
-            </data>
-          </attribute>
-        </optional>
-        <optional>
-          <attribute>
-            <usfm:tag>cp</usfm:tag>
-            <usfm:text strip="both"/>
-            <usfm:endtag>cp</usfm:endtag>
-            <name ns="">pubnumber</name>
-            <data type="string">
-              <param name="minLength">1</param>
-            </data>
-          </attribute>
-        </optional>
-        <empty/>
-      </interleave>
+      </optional>
+      <optional>
+        <attribute>
+          <usfm:tag>cp</usfm:tag>
+          <usfm:text/>
+          <usfm:endtag>cp</usfm:endtag>
+          <name ns="">pubnumber</name>
+          <data type="string">
+            <param name="minLength">1</param>
+          </data>
+        </attribute>
+      </optional>
+      <empty/>
     </element>
   </define>
   <define name="ChapterEnd">
@@ -1266,12 +1264,12 @@
     <element>
       <name ns="">verse</name>
       <attribute>
-        <usfm:tag>v</usfm:tag>
+        <usfm:tag/>
         <name ns="">style</name>
         <value>v</value>
       </attribute>
       <attribute>
-        <usfm:text strip="both?"/>
+        <usfm:text strip="right"/>
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
@@ -1281,7 +1279,7 @@
       <optional>
         <attribute>
           <usfm:tag>va</usfm:tag>
-          <usfm:text strip="both"/>
+          <usfm:text/>
           <usfm:endtag>va</usfm:endtag>
           <name ns="">altnumber</name>
           <data type="string">
@@ -1293,7 +1291,7 @@
       <optional>
         <attribute>
           <usfm:tag>vp</usfm:tag>
-          <usfm:text strip="both"/>
+          <usfm:text/>
           <usfm:endtag>vp</usfm:endtag>
           <name ns="">pubnumber</name>
           <data type="string">
@@ -1301,7 +1299,7 @@
           </data>
         </attribute>
       </optional>
-      <attribute>
+      <attribute usfm:ignore="true">
         <name ns="">sid</name>
         <data type="string">
           <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*</param>
@@ -1417,6 +1415,7 @@
     <element>
       <name ns="">note</name>
       <attribute>
+        <usfm:tag id="a"/>
         <name ns="">style</name>
         <choice>
           <value>x</value>
@@ -1424,15 +1423,19 @@
         </choice>
       </attribute>
       <attribute>
+        <usfm:text strip="right" re="\S+"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
       <oneOrMore>
         <choice>
           <ref name="CrossReferenceChar"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </oneOrMore>
+      <usfm:endtag id="a"/>
     </element>
   </define>
   <define name="CrossReferenceChar">

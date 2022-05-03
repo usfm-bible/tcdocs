@@ -671,15 +671,16 @@ Chapter = ( ChapterStart | ChapterEnd )
 
 ChapterStart =
     element chapter { # Start of new chapter
-        [usfm:tag["c"]]
-        attribute style { "c" } &
-        [usfm:text[strip="both"]]
-        attribute number { xsd:integer }&
-        attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } }&
-        [usfm:tag["ca"] usfm:text[strip="both"] usfm:endtag["ca"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*" } }?&
-        [usfm:tag["cp"] usfm:text[strip="both"] usfm:endtag["cp"]]
-        attribute pubnumber { xsd:string { minLength = "1" } }?&
+        [usfm:tag[]]
+        attribute style { "c" },
+        [usfm:text[strip="right"]]
+        attribute number { xsd:integer },
+        [usfm:ignore="true"]
+        attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
+        [usfm:tag["ca"] usfm:text[] usfm:endtag["ca"]]
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*" } }?,
+        [usfm:tag["cp"] usfm:text[] usfm:endtag["cp"]]
+        attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
     }
     # E.g. <chapter number="1" style="c" altnumber="2" pubnumber="A" />
@@ -702,14 +703,15 @@ Verse = ( VerseStart | VerseEnd )
 
 VerseStart =
     element verse {
-        [usfm:tag["v"]]
+        [usfm:tag[]]
         attribute style { "v" },
-        [usfm:text[strip="both?"]]
+        [usfm:text[strip="right"]]
         attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
-        [usfm:tag["va"] usfm:text[strip="both"] usfm:endtag["va"]]
+        [usfm:tag["va"] usfm:text[] usfm:endtag["va"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
-        [usfm:tag["vp"] usfm:text[strip="both"] usfm:endtag["vp"]]
+        [usfm:tag["vp"] usfm:text[] usfm:endtag["vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
+        [usfm:ignore="true"]
         attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*" } },
         empty
     }
@@ -774,9 +776,12 @@ FootnoteVerse =
 
 CrossReference =
     element note {
+        [usfm:tag[id="a"]]
         attribute style { "x" | "ex" },
+        [usfm:text[strip="right" re="\S+"]]
         attribute caller { text },
-        (CrossReferenceChar | text)+
+        (CrossReferenceChar | [usfm:text[]] text)+
+        >> usfm:endtag[id="a"]
     }
 
 CrossReferenceChar =
