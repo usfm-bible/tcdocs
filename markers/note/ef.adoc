@@ -1,4 +1,4 @@
-= \ef ...\ef*
+= ef
 :description: Extended footnote
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note/ef.adoc
 ifndef::localdir[]

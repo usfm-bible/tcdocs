@@ -1,4 +1,4 @@
-= \nd ...\nd*
+= nd
 :description: Name of God
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/nd.adoc
 ifndef::localdir[]

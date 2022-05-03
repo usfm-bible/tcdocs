@@ -1,4 +1,4 @@
-= \w ...\w*
+= w
 :description: Wordlist / glossary / dictionary entry
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/w.adoc
 ifndef::localdir[]
@@ -15,14 +15,16 @@ Description:: Wordlist / glossary / dictionary entry. Surround a word or phrase 
 Syntax::
 * *USFM:* `+\w_{content}|[@lemma,strong,srcloc]\w*+`
 * *USX:* `+<char style="w" [@lemma,strong,srcloc]>{content}</char>+`
-Attributes:: `lemma`, `strong`, `srcloc`
-* `lemma` - Citation form for the term in the glossary _(default)_
-* `strong` - Strong’s ID in the form `+H####+` (Hebrew) or `+G####+` (Greek)
-** A strong’s ID augmentation identifier, if required, should be separated from the strong value by a colon `:`. An augmentation is a method of extending Strong’s by aligning it to another lexicon (e.g. Brown-Driver-Briggs). This requires dividing some words into two or more separate words.
-** There are instances where more than one word may need to be included within `+\w_...\w*+` because of how Hebrew and Greek use word repetition - e.g. for a superlative. Exodus 29:37 repeats the word ‘holy’ as the superlative form.
-* `srcloc` - Location of the word in the source text; Example: GNT version 5 text, book 51, chapter 1, verse 2, word 1.
+Attributes:::
+** `lemma` - Citation form for the term in the glossary _(default)_
+** `strong` - Strong’s ID in the form `+H####+` (Hebrew) or `+G####+` (Greek)
+*** A strong’s ID augmentation identifier, if required, should be separated from the strong value by a colon `:`. An augmentation is a method of extending Strong’s by aligning it to another lexicon (e.g. Brown-Driver-Briggs). This requires dividing some words into two or more separate words.
+*** There are instances where more than one word may need to be included within `+\w_...\w*+` because of how Hebrew and Greek use word repetition - e.g. for a superlative. Exodus 29:37 repeats the word ‘holy’ as the superlative form.
+** `srcloc` - Location of the word in the source text; Example: GNT version 5 text, book 51, chapter 1, verse 2, word 1.
+// tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (attributes)
+// end::spec[]
 
 == Properties
 

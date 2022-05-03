@@ -11,9 +11,9 @@ Description:: Character-level container.
 Syntax::
 * *USFM:* `+\[char@style]_{content}\[char@style]*+`
 * *USX:* `+<char style="[char@style]">{content}</char>+`
-`char@style`:: Character type
+`char@style`::: Character type
 include::../nav.adoc[tag=nav-topcat]
-`content`:: Character content
+`content`::: Character content
 
 == Diagram
 

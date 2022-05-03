@@ -1,4 +1,4 @@
-= \ft
+= ft
 :description: Footnote - Note text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ft.adoc
 ifndef::localdir[]
