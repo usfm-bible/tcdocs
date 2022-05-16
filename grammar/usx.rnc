@@ -702,6 +702,7 @@ BookChapterLabel =
 Verse = ( VerseStart | VerseEnd )
 
 VerseStart =
+    [usfm:stacked = "true"]
     element verse {
         [usfm:tag[]]
         attribute style { "v" },
@@ -786,10 +787,12 @@ CrossReference =
 
 CrossReferenceChar =
     element char {
+        [usfm:tag[id="a"]]
         attribute style { CrossReferenceChar.char.style.enum },
         char.link?,
         char.closed?,
         (Char | CrossReferenceChar | Reference | text)+
+        >> usfm:endtag[id="a" many="?" depracted="true"]
     }
 CrossReferenceChar.char.style.enum = (
       "xo" # The cross reference origin reference

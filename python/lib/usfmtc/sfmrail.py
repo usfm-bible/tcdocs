@@ -251,7 +251,7 @@ class SFMRail:
         res = Diagram(content, type='complex', css=CSS_STYLE.format(**defaults))
         return res
 
-    def sequence(self, combine="sequence", parent=None, groupby=8):
+    def sequence(self, combine="sequence", parent=None, group=None, groupby=8):
         #if parent is not None and isinstance(parent, SplitRail):
         #    parent.setmod(rmanys.get(combine, ""))
         #    return parent

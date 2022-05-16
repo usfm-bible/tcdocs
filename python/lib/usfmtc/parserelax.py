@@ -52,9 +52,12 @@ class RelaxUSFMParser:
             curr.append(ncurr)
         return ncurr
 
-    def makeTerminal(self, name, curr, ref=False):
+    def makeTerminal(self, name, curr, ref=False, many=""):
+        m = manys.get(many, "sequence")
+        curr = curr if m == "sequence" else self.makeSequence(m, None, curr)
         res = self.back.terminal(name, curr, ref=ref)
         curr.append(res)
+        return curr
 
     def makeRef(self, e, tid, curr):
         ''' Make a back referenceable group, returning the sequence within it '''
@@ -210,19 +213,15 @@ class RelaxUSFMParser:
                 self.makeLookAhead('"{}"'.format(alt), ncurr)
             else:
                 self.makeLookBehind('"{}"'.format(alt), ncurr)
-        else:
-            ncurr = curr
+            curr = ncurr
         stripvals = e.get("strip", default).split()
-        for t in ("both", side):
-            m = [x[-1] for t in ("both", side) for x in stripvals if x.startswith(t)]
-            if len(m):
-                many = manys.get(m[0], "sequence")
-            else:
-                many = None
+        m = [x[-1] for t in ("both", side) for x in stripvals if x.startswith(t)]
+        if len(m):
+            many = m[0] if m[0] in manys else ""
+        else:
+            many = None
         if many is not None:
-            ocurr = self.makeSequence(many, None, ncurr)
-            self.makeTerminal("WS", ocurr)
-            curr = ocurr
+            curr = self.makeTerminal("WS", curr, many=many)
         return curr
 
     def _getvals(self, e):
@@ -270,6 +269,7 @@ class RelaxXMLParser(RelaxUSFMParser):
             pcurr.append(ncurr)
             for c in e:
                 self.parseGrammar(c, ncurr, e)
+            self.makeTerminal("</{}>".format(name), ncurr)
             self.back.elementEnd(ncurr)
         elif tag == "attribute":
             name = e.findtext(self._global('name'))

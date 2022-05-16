@@ -5,10 +5,63 @@
 :toclevels: 1
 :localdir: ../../markers/
 
-== Paragraphs
+
+include::{localdir}cv/index.adoc[leveloffset=0 tag=all]
+include::{localdir}cv/c.adoc[leveloffset=+1 tag=all]
+include::{localdir}cv/v.adoc[leveloffset=+1 tag=all]
+
+include::{localdir}para/index.adoc[leveloffset=0 tag=all]
+
+include::{localdir}para/mt.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/mte.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/ms.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/mr.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/s.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/sr.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/r.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/d.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/sp.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/sd.adoc[leveloffset=+1 tag=all]
 
 include::{localdir}para/p.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/m.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/po.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/cls.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/pr.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/pc.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/pm.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/pmo.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/pmc.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/pi.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/mi.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/nb.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/b.adoc[leveloffset=+1 tag=all]
 
-== Notes
+include::{localdir}para/q.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/qr.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/qc.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/qa.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/qm.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/qd.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/b.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/qs.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/qac.adoc[leveloffset=+1 tag=all]
+
+include::{localdir}para/lh.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/li.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/lf.adoc[leveloffset=+1 tag=all]
+include::{localdir}para/lim.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/litl.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/lik.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/liv.adoc[leveloffset=+1 tag=all]
+
+include::{localdir}note/index.adoc[leveloffset=0 tag=all]
 
 include::{localdir}note/f.adoc[leveloffset=+1 tag=all]
+include::{localdir}note/fe.adoc[leveloffset=+1 tag=all]
+include::{localdir}note/ef.adoc[leveloffset=+1 tag=all]
+include::{localdir}note/x.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/fr.adoc[leveloffset=+1 tag=all]
+include::{localdir}char/fq.adoc[leveloffset=+1 tag=all]
+// include::{localdir}char/ft.adoc[leveloffset=+1 tag=all]
+

@@ -24,6 +24,18 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
+== Diagrams
+
+=== USFM
+
+image:schema/crossref_rail.svg[]
+image:schema/xchar_rail.svg[]
+
+=== USX
+
+image:schema/crossref_usx.svg[]
+image:schema/xchar_usx.svg[]
+
 == Properties
 
 StyleType:: Note

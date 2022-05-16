@@ -22,6 +22,16 @@ ifdef::env-antora[]
 See also: xref:note:footnote/f.adoc[Footnote]
 endif::env-antora[]
 
+== Diagram
+
+=== USFM
+
+image:schema/ref_rail.svg[]
+
+=== USX
+
+image:schema/ref_usx.svg[]
+
 == Properties
 
 StyleType:: Character

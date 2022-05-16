@@ -1261,7 +1261,7 @@
     </choice>
   </define>
   <define name="VerseStart">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">verse</name>
       <attribute>
         <usfm:tag/>
@@ -1442,6 +1442,7 @@
     <element>
       <name ns="">char</name>
       <attribute>
+        <usfm:tag id="a"/>
         <name ns="">style</name>
         <ref name="CrossReferenceChar.char.style.enum"/>
       </attribute>
@@ -1459,6 +1460,7 @@
           <text/>
         </choice>
       </oneOrMore>
+      <usfm:endtag id="a" many="?" depracted="true"/>
     </element>
   </define>
   <define name="CrossReferenceChar.char.style.enum">
