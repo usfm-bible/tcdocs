@@ -11,12 +11,13 @@ start = USX
 USX = ( Scripture | Peripheral )
 
 Scripture = (
+    [usfm:stacked = "true"]
     element usx {
         attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} },
         attribute xsi:noNamespaceSchemaLocation { text }?,
-        
+
         BookIdentification,
-        BookHeaders*,
+        ( BookHeaders*,
         BookTitles+,
         BookIntroduction*,
         BookIntroductionEndTitles*,
@@ -24,7 +25,7 @@ Scripture = (
         Chapter,
         # Chapter is used to separate intro from scripture text.
         # All books will have chapter including the single chapter books: OBA, PHM, 2JN, 3JN, JUD
-        ChapterContent+
+        ChapterContent+ )
     }
     )
 
@@ -55,9 +56,13 @@ PeripheralDividedBook = (
 
 BookIdentification =
     element book {
+        [usfm:order="-1" usfm:tag[prefix="" strip="right" grouping="13"]]
         attribute code { BookIdentification.book.code.enum }, # e.g. code="GEN"
+        [usfm:order="-2" usfm:tag[]]
         attribute style { "id" },
+        [usfm:text[]]
         text? # Brief description of the project (optional)
+        >> usfm:text[name="NL"]
     }
 BookIdentification.book.code.enum = (
        "GEN" # Genesis
@@ -161,6 +166,7 @@ BookIdentification.book.code.enum = (
      | "REP" # Reproof
      | "4BA" # 4 Baruch
      | "LAO" # Laodiceans
+     | [usfm:text[]] xsd:string { pattern = "\S{3}" }
      )
 
 PeripheralBookIdentification =
@@ -257,7 +263,8 @@ PeripheralOther = (
 
 BookHeaders =
     element para {
-        attribute style { BookHeaders.para.style.enum }, text?
+        [usfm:tag[]]
+        attribute style { BookHeaders.para.style.enum }, [usfm:text[]] text?
     }
 BookHeaders.para.style.enum = (
       "ide" # File encoding information
@@ -277,8 +284,9 @@ BookHeaders.para.style.enum = (
 
 BookTitles =
     element para {
+        [usfm:tag[]]
         attribute style { BookTitles.para.style.enum },
-        (Footnote | CrossReference | Char | Break | text)*
+        (Footnote | CrossReference | Char | Break | [usfm:text[]] text)*
     }
 BookTitles.para.style.enum = (
       "mt" # The main title of the book (if single level)
@@ -294,9 +302,11 @@ BookTitles.para.style.enum = (
 
 BookIntroduction =
     element para {
+        [usfm:tag[]]
         attribute style { BookIntroduction.para.style.enum },
-        (Reference | Footnote | CrossReference | Char | IntroChar | Milestone | Figure | text)*
+        (Reference | Footnote | CrossReference | Char | IntroChar | Milestone | Figure | [usfm:text[]] text)*
     } | Table
+
 BookIntroduction.para.style.enum = (
       "imt" # Introduction major title, level 1 - (if single level)
     | "imt1" # Introduction major title, level 1 (if multiple levels)
@@ -337,8 +347,9 @@ BookIntroduction.para.style.enum = (
 
 BookIntroductionEndTitles =
     element para {
+        [usfm:tag[]]
         attribute style { BookIntroductionEndTitles.para.style.enum },
-        (Footnote | CrossReference | Char | Milestone | Break | text)*
+        (Footnote | CrossReference | Char | Milestone | Break | [usfm:text[]] text)*
     }
 BookIntroductionEndTitles.para.style.enum = (
       "mt" # The main title of the book (if single level)
@@ -357,7 +368,7 @@ PeripheralContent = (Chapter | Para | List | Table | Footnote | CrossReference |
 
 Para =
     element para {
-        [usfm:tag[id="a" grouping="12" stacked="true" strip="none"]]
+        [usfm:tag[id="a" grouping="12" usfm:stacked="true" strip="none"]]
         attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         (Reference | Footnote | CrossReference | Char | Milestone | Figure | Verse | Break | [usfm:text[strip="left"]] text?)+
@@ -505,7 +516,7 @@ CharContent = (
 
 Char = (
     element char {
-        [usfm:tag[id="a" grouping="9" stacked="true"]]
+        [usfm:tag[id="a" grouping="9" usfm:stacked="true"]]
         attribute style { Char.char.style.enum },
         CharContent
         >> usfm:endtag[id="a" many="?" usfm:order="3"]
@@ -554,7 +565,7 @@ Char.char.style.enum = (
 
 CharEmbed = (
     element char {
-        [usfm:tag[id="a" prefix="\+" grouping="9" stacked="true"]]
+        [usfm:tag[id="a" prefix="\+" grouping="9" usfm:stacked="true"]]
         attribute style { Char.char.style.enum },
         CharContent
         >> usfm:endtag[id="a" many="?" usfm:order="3"]
@@ -591,11 +602,15 @@ CharWithAttrib.char.style.w =
     element char {
         [usfm:tag [id="a"]]
         attribute style { "w" }, # A wordlist text item
+        ( [usfm:attrib []]
+        attribute lemma { xsd:string { minLength = "1" } }? # Lemma/citation form found in glossary
+        & [usfm:attrib []]
+        attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} }? # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)
+        & [usfm:attrib []]
+        attribute srcloc { xsd:string { pattern = "[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+" } }? # Location of the word in the source text
+        >> usfm:repeat[usfm:text[noquotes="true" "WS"]]),
         char.link,
         char.closed?,
-        attribute lemma { xsd:string { minLength = "1" } }?, # Lemma/citation form found in glossary
-        attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} }?, # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)
-        attribute srcloc { xsd:string { pattern = "[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+" } }?, # Location of the word in the source text
         text,
         (Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
         >> usfm:endtag[id="a"]
@@ -656,15 +671,16 @@ Chapter = ( ChapterStart | ChapterEnd )
 
 ChapterStart =
     element chapter { # Start of new chapter
-        [usfm:tag["c"]]
-        attribute style { "c" } &
-        [usfm:text[strip="both"]]
-        attribute number { xsd:integer }&
-        attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } }&
-        [usfm:tag["ca"] usfm:text[strip="both"] usfm:endtag["ca"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*" } }?&
-        [usfm:tag["cp"] usfm:text[strip="both"] usfm:endtag["cp"]]
-        attribute pubnumber { xsd:string { minLength = "1" } }?&
+        [usfm:tag[]]
+        attribute style { "c" },
+        [usfm:text[strip="right"]]
+        attribute number { xsd:integer },
+        [usfm:ignore="true"]
+        attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
+        [usfm:tag["ca"] usfm:text[] usfm:endtag["ca"]]
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*" } }?,
+        [usfm:tag["cp"] usfm:text[] usfm:endtag["cp"]]
+        attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
     }
     # E.g. <chapter number="1" style="c" altnumber="2" pubnumber="A" />
@@ -686,15 +702,17 @@ BookChapterLabel =
 Verse = ( VerseStart | VerseEnd )
 
 VerseStart =
+    [usfm:stacked = "true"]
     element verse {
-        [usfm:tag["v"]]
+        [usfm:tag[]]
         attribute style { "v" },
-        [usfm:text[strip="both?"]]
+        [usfm:text[strip="right"]]
         attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
-        [usfm:tag["va"] usfm:text[strip="both"] usfm:endtag["va"]]
+        [usfm:tag["va"] usfm:text[] usfm:endtag["va"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
-        [usfm:tag["vp"] usfm:text[strip="both"] usfm:endtag["vp"]]
+        [usfm:tag["vp"] usfm:text[] usfm:endtag["vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
+        [usfm:ignore="true"]
         attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*" } },
         empty
     }
@@ -759,17 +777,22 @@ FootnoteVerse =
 
 CrossReference =
     element note {
+        [usfm:tag[id="a"]]
         attribute style { "x" | "ex" },
+        [usfm:text[strip="right" re="\S+"]]
         attribute caller { text },
-        (CrossReferenceChar | text)+
+        (CrossReferenceChar | [usfm:text[]] text)+
+        >> usfm:endtag[id="a"]
     }
 
 CrossReferenceChar =
     element char {
+        [usfm:tag[id="a"]]
         attribute style { CrossReferenceChar.char.style.enum },
         char.link?,
         char.closed?,
         (Char | CrossReferenceChar | Reference | text)+
+        >> usfm:endtag[id="a" many="?" depracted="true"]
     }
 CrossReferenceChar.char.style.enum = (
       "xo" # The cross reference origin reference
@@ -791,7 +814,7 @@ Sidebar =
     }
 
 category =
-    [usfm:tag["cat"] usfm:text[strip="right*"] usfm:endtag["cat"]]
+    [usfm:tag["cat"] usfm:text[name="Word"] usfm:endtag["cat"]]
     attribute category { text }
 
 Figure =
@@ -816,12 +839,13 @@ Figure =
     }
 
 FootnoteReference =
+    [usfm:tag [strip="right" "fr"]]
     element ref {
-        [usfm:order="2" usfm:text[strip="left?" "|"] usfm:text[] usfm:endtag[many="?" deprecated="true" "fr"]]
-        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } } >> usfm:tag[strip="none" "fr"],
-        [usfm:text[strip="left"]] 
-        text?
-    }
+        [usfm:text [stripe="left"]]
+        text?,
+        [usfm:text[strip="none" "|"] usfm:text[]] 
+        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?
+    } >> usfm:endtag[many="?" deprecated="true" "fr"]
 
 Break = 
     element optbreak { [usfm:tag[lookahead="\" "b"]] empty }

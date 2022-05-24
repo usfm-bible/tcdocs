@@ -2,10 +2,13 @@
 
 import os, sys, argparse
 try:
-    from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
+    from usfmtc.sfmrail import SFMRail
+    #from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
 except ImportError:
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
+    #from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
+    from usfmtc.sfmrail import SFMRail
+from usfmtc.parserelax import ETDoc, Grammar, RelaxXMLParser, RelaxUSFMParser
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
@@ -16,22 +19,33 @@ parser.add_argument("-z","--debug",type=int,default=0,help="bit 0 - print job na
 args = parser.parse_args()
 
 rdoc = ETDoc(args.grammar)
-rgram = RGrammar(rdoc)
+rgram = Grammar(rdoc)
 rgram.parse(rdoc.getroot())
+backend = SFMRail()
 
 alljobs = {
-    "Char": ("char", ("Char.char.style.enum", "+char.closed", "Break",
-                      "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
-    "CharEmbed": ("charembed", ("Char.char.style.enum", "+char.closed", "Break",
-                      "CharWithAttrib.enum"), ("+char.link", )),
-    "Footnote": ("f", (), ("category", )),
-    "FootnoteChar": ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
-    "Para": ("p", ("Para.para.style.enum", "Break")),
-    "FootnoteReference": ("ref",),
-    "category": ("cat",),
-    "char.link": ("link",),
+    "BookHeaders":          ("bkhdrs", tuple(), ("BookHeaders.para.style.enum",)),
+    "BookTitles":           ("bktitles", tuple(), ("BookTitles.para.style.enum",)),
+    "BookIdentification.book.code.enum": ("bkident",),
+    "BookIntroduction":     ("bkintro",),
+    "BookIntroductionEndTitles": ("bkintroend", tuple(), ("BookIntroductionEndTitles.para.style.enum",)),
+    "Chapter":              ("chapter", ("ChapterStart", "ChapterEnd")),
+    "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Break",
+                                        "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
+    "CharEmbed":            ("charembed", ("Char.char.style.enum", "+char.closed", "Break",
+                                            "CharWithAttrib.enum"), ("+char.link", )),
     "CharWithAttrib.char.style.w": ("w", ("Break", ), ("+char.link", )),
-    "CharWithAttrib.char.style.rb": ("rb", ("Break", ), ("+char.link", ))
+    "CharWithAttrib.char.style.rb": ("rb", ("Break", ), ("+char.link", )),
+    "CrossReference":       ("crossref",),
+    "CrossReferenceChar":   ("xchar",("CrossReferenceChar.char.style.enum",)),
+    "Footnote":             ("f", tuple(), ("category", )),
+    "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
+    "FootnoteReference":    ("ref",),
+    "Para":                 ("p", ("Para.para.style.enum", "Break")),
+    "Scripture":            ("id", ("BookIdentification", "BookIdentification.book.code.enum")),
+    "Verse":                ("verse", ("VerseStart", "VerseEnd")),
+    "category":             ("cat",),
+    "char.link":            ("link",),
 }
 
 if args.node:
@@ -46,9 +60,11 @@ for k, j in jobs.items():
             keeps = keeps + j[2]
         if args.debug & 1:
             print(f"{k}")
-        rdia = RDiagram(k, rdoc, keeps=keeps, cwidth=args.charwidth)
-        rgram.makediagram(k, rdia=rdia, usfm=a[1])
+        #rdia = RDiagram(k, rdoc, keeps=keeps, cwidth=args.charwidth)
+        #rgram.makediagram(k, rdia=rdia, usfm=a[1])
+        p = (RelaxUSFMParser if a[1] else RelaxXMLParser)(rdoc, backend, rgram, keeps)
+        rgram.parseRef(k, parser=p, quietRefs=False)
         outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[0], a[0]))
         with open(outfile, "w", encoding="utf-8") as outf:
-            d = rdia.asRail(color='rgb(210, 255, 210)' if a[1] else 'rgb(210, 210, 255)')
+            d = backend.output(p.curr, color='rgb(210, 255, 210)' if a[1] else 'rgb(210, 210, 255)')
             d.writeSvg(outf.write)

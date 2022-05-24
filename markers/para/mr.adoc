@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Major section reference range. References added under a major section heading to indicate the scope of the section.
 Syntax::
-- *USFM:* `+\mr_text...+`
-- *USX:* `+<para style="mr">text...</para>+`
+* *USFM:* `+\mr_{content}+`
+* *USX:* `+<para style="mr">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

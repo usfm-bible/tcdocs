@@ -13,8 +13,8 @@ endif::[]
 
 Description:: List entry 'key' content.
 Syntax::
-- *USFM:* `+\lik_...\lik*+`
-- *USX:* `+<char style="lik">text...</char>+`
+* *USFM:* `+\lik_{content}\lik*+`
+* *USX:* `+<char style="lik">{content}</char>+`
 Added:: 3.0
 
 == Properties

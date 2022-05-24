@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Used to mark the expression “Selah”. Commonly found in Psalms and Habakkuk.
 Syntax::
-- *USFM:* `+\qs_...\qs*+`
-- *USX:* `+<char style="qs">text...</char>+`
+* *USFM:* `+\qs_{content}\qs*+`
+* *USX:* `+<char style="qs">{content}</char>+`
 Added:: 1.0
 
 == Properties

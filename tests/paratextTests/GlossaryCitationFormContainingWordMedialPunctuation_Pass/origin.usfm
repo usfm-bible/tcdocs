@@ -1,3 +1,5 @@
 \id GLO
 \c 1
-\p \v 1 something \p  \k keywor
+\p \v 1 something \p  \k keywordkeyw\k* definition
+\c 1
+\p \v 1 something \p  \k keyword\'keyw\k* definition

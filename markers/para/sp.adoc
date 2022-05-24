@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Speaker identification.
 Syntax::
-- *USFM:* `+\sp_text...+`
-- *USX:* `+<para style="sp">text...</para>+`
+* *USFM:* `+\sp_{content}+`
+* *USX:* `+<para style="sp">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

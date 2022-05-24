@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Descriptive title ("Hebrew subtitle"). Sometimes found in Psalms under a section heading (s) (e.g. “For the director of Music”).
 Syntax::
-- *USFM:* `+\d_text...+`
-- *USX:* `+<para style="d">text...</para>+`
+* *USFM:* `+\d_{content}+`
+* *USX:* `+<para style="d">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

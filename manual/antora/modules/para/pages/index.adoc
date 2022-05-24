@@ -1,4 +1,4 @@
-= Paragraph Styles
+= Paragraphs
 ifndef::localdir[]
 :source-highlighter: pygments
 :localdir: ../
@@ -7,28 +7,28 @@ endif::[]
 
 == Summary
 
-== USFM
+Description:: Paragraph-level container.
+Syntax::
+* *USFM:* `+\[para@style]_{content}+`
+* *USX:* `+<para style="[para@style]">{content}</para>+`
+`para@style`::: Paragraph type
+include::../nav.adoc[tag=nav-topcat]
+`content`::: Paragraph content
 
-=== Syntax
+== Diagram
 
-`+\[Para@style]_+`
-
-=== Structure
-
+=== USFM
 image::schema/p_rail.svg[]
 
-image::schema/char_rail.svg[]
-
-image::schema/link_rail.svg[]
-
-== USX
-
-=== Syntax
-
-`+<para style="[Para@style]">text...</para>+`
-
-=== Structure
-
+=== USX
 image:schema/p_usx.svg[]
 
-image::schema/char_usx.svg[]
+== Descendants
+
+* xref:note:index.adoc[Notes]
+** xref:note:footnote/index.adoc[] (Footnote)
+** xref:note:crossref/index.adoc[] (CrossReference)
+* xref:char:index.adoc[] (Char)
+* Milestone
+* Figure
+* Verse

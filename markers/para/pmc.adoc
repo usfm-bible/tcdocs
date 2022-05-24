@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Embedded text closing.
 Syntax::
-- *USFM:* `+\pmc_text...+`
-- *USX:* `+<para style="pmc">text...</para>+`
+* *USFM:* `+\pmc_{content}+`
+* *USX:* `+<para style="pmc">{content}</para>+`
 // tag::spec[]
 Added:: 2.0
 // end::spec[]

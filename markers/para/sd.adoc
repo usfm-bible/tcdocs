@@ -14,8 +14,8 @@ endif::[]
 Description:: Semantic division (semantic space). Vertical space used to divide the text into sections, in a manner similar to the structure added through a sequence of heading texts with (ms) or (s). The purpose of `sd#` is distinct from (b) which primarily denotes whitespace (in particular at poetic stanza breaks) and does not imply a hierarchy or division.
 - The variable `#` represents the level of division be marked.
 Syntax::
-- *USFM:* `+\sd#_text...+`
-- *USX:* `+<para style="sd#">text...</para>+`
+* *USFM:* `+\sd#_{content}+`
+* *USX:* `+<para style="sd#">{content}</para>+`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

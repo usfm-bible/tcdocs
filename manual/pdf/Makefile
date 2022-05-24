@@ -7,5 +7,5 @@ all: manual.pdf
 	- ../../python/scripts/mkraildiagrams -g $< -o ../../markers/images/schema
 
 manual.pdf : manual.adoc usfm-theme.yml ../../markers/images/schema/p_rail.svg
-	- asciidoctor-pdf -a pdf-themesdir=. -a pdf-theme=usfm -a pdf-fontsdir="../../fonts;GEM_FONTS_DIR" $<
+	- asciidoctor-pdf --trace -a pdf-themesdir=. -a pdf-theme=usfm -a pdf-fontsdir="../../fonts;GEM_FONTS_DIR" $<
 

@@ -13,8 +13,8 @@ endif::[]
 
 Description:: List footer. Some lists include an introductory (lh) and concluding remark. They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
 Syntax::
-- *USFM:* `+\lf_text...+`
-- *USX:* `+<para style="lf">text...</para>+`
+* *USFM:* `+\lf_{content}+`
+* *USX:* `+<para style="lf">{content}</para>+`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

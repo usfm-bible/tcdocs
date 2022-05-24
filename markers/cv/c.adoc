@@ -1,4 +1,4 @@
-= \c
+= c
 :description: Chapter number
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/c.adoc
 ifndef::localdir[]
@@ -11,20 +11,36 @@ endif::[]
 
 == Summary
 
-Description:: Chapter number. The marker is followed by the chapter number `#`. No further text should follow this marker.
-Syntax:: `+\c_#+`
+Description:: Chapter number (milestone).
+Syntax::
+* *USFM:* `+\c_{cnum}+`
+* *USX:* `+<chapter style="c" number="{cnum}" [@altnumber,pubnumber,sid,eid]" />+`
+`cnum`::: Chapter number
+Additional attributes:::
+** `altnumber` - Chapter number for an alternate versification scheme.
+** `pubnumber` - Published chapter character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential chapter number used within the translation editing environment.
+** `sid`^*^ - Chapter start identifier. A standard book + chapter scripture reference. Book names must be one of `[bookCode]`. _Required at chapter start milestone._
+*** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+** `eid`^*^ - Chapter end identifier. A standard book + chapter scripture reference. Book names must be one of `[bookCode]`. _Required at chapter end milestone._
+*** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Properties
 
 StyleType:: Paragraph
-OccursUnder:: `id`
+OccursUnder:: `[Scripture]`
 TextType:: ChapterNumber
 TextProperties:: chapter
 
-== Structure
+== Diagram
 
-'Railroad' type diagram here...
+=== USFM
+image::schema/chapter_rail.svg[]
+
+=== USX
+image:schema/chapter_usx.svg[]
 
 == Examples
 
@@ -48,5 +64,3 @@ image::cv/c_1.jpg[Matthew 1 (GNT),300]
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

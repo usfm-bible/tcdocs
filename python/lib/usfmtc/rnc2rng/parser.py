@@ -483,7 +483,7 @@ def primary_string_parametrized(s, p):
 
 @pg.production('primary : TEXT')
 def primary_text(s, p):
-    return Node('TEXT', None)
+    return Node('TEXT', p[0].value)
 
 @pg.production('primary : EMPTY')
 def primary_empty(s, p):

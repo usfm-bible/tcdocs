@@ -13,8 +13,8 @@ endif::[]
 
 Description:: List entry total. Use in accounting lists for identifying the _total_ component of a list entry (li). An alternative form to using a table for the same content.
 Syntax::
-- *USFM:* `+\litl_...\litl*+`
-- *USX:* `+<char style="litl">text...</char>+`
+* *USFM:* `+\litl_{content}\litl*+`
+* *USX:* `+<char style="litl">{content}</char>+`
 Added:: 3.0
 
 == Properties

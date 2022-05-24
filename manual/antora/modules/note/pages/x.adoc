@@ -1,4 +1,0 @@
-= x
-:env-antora:
-
-// include::markers:note/x.adoc[tag=public]

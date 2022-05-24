@@ -1,4 +1,4 @@
-= \fq
+= fq
 :description: Footnote - Translation quotation
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fq.adoc
 ifndef::localdir[]
@@ -13,12 +13,12 @@ endif::[]
 
 Description:: Footnote - Translation quotation.
 Syntax::
-- *USFM:* `+\fq_text...+`
-- *USX:* `+<char style="fq">text...</char>+`
+* *USFM:* `+\fq_{content}+`
+* *USX:* `+<char style="fq">{content}</char>+`
 Added:: 1.0
 
 ifdef::env-antora[]
-See also: xref:note:f.adoc[Footnote]
+See also: xref:note:footnote/f.adoc[Footnote]
 endif::env-antora[]
 
 == Properties

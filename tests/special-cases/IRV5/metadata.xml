@@ -2,5 +2,5 @@
 <test-metadata>
         <description>IRV files that had parsing issues</description>
         <validated>pass</validated>
-        <tags>clarify</tags>
+        <tags></tags>
 </test-metadata>

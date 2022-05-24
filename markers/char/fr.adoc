@@ -1,4 +1,4 @@
-= \fr
+= fr
 :description: Footnote - Origin reference
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fr.adoc
 ifndef::localdir[]
@@ -13,14 +13,24 @@ endif::[]
 
 Description:: Footnote - Origin reference.
 Syntax::
-- *USFM:* `+\fr_{C#:V#:}+`
-- *USX:* `+<char style="fr">{C#:V#:}</char>+`
+* *USFM:* `+\fr_{C#:V#:}+`
+* *USX:* `+<char style="fr">{C#:V#:}</char>+`
 `C#:V#:`::: Chapter-verse origin reference. The chapter-verse separator and end-of-reference punctuation are text specific.
 Added:: 1.0
 
 ifdef::env-antora[]
-See also: xref:note:f.adoc[Footnote]
+See also: xref:note:footnote/f.adoc[Footnote]
 endif::env-antora[]
+
+== Diagram
+
+=== USFM
+
+image:schema/ref_rail.svg[]
+
+=== USX
+
+image:schema/ref_usx.svg[]
 
 == Properties
 

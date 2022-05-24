@@ -13,8 +13,8 @@ endif::[]
 
 Description:: No break. Indicates that “no-break” should occur with previous paragraph (regardless of previous paragraph type). Commonly used in cases where the previous paragraph spans the chapter boundary.
 Syntax::
-- *USFM:* `+\nb_text...+`
-- *USX:* `+<para style="nb">text...</para>+`
+* *USFM:* `+\nb_{content}+`
+* *USX:* `+<para style="nb">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

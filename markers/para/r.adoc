@@ -17,8 +17,8 @@ ifdef::env-antora[]
 - See also: xref:para:titles-sections/mr.adoc[mr], xref:para:titles-sections/sr.adoc[mr]
 endif::env-antora[]
 Syntax::
-- *USFM:* `+\sr_text...+`
-- *USX:* `+<para style="sr">text...</para>+`
+* *USFM:* `+\sr_{content}+`
+* *USX:* `+<para style="sr">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

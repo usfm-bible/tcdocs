@@ -2,5 +2,5 @@
 <test-metadata>
         <description>qa contents should not showup in verseText</description>
         <validated>pass</validated>
-        <tags>clarify</tags>
+        <tags></tags>
 </test-metadata>

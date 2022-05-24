@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Embedded text paragraph.
 Syntax::
-- *USFM:* `+\pm_text...+`
-- *USX:* `+<para style="pm">text...</para>+`
+* *USFM:* `+\pm_{content}+`
+* *USX:* `+<para style="pm">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

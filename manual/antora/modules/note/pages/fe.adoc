@@ -1,4 +1,0 @@
-= fe
-:env-antora:
-
-// include::markers:note/fe.adoc[tag=public]

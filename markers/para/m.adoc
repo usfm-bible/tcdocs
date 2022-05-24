@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Continuation (margin) paragraph. Commonly used to resume prose at the margin (without indent) after poetic text or quotation.
 Syntax::
-- *USFM:* `+\m_text...+`
-- *USX:* `+<para style="m">text...</para>+`
+* *USFM:* `+\m_{content}+`
+* *USX:* `+<para style="m">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Regular paragraph.
 Syntax::
-- *USFM:* `+\p_text...+`
-- *USX:* `+<para style="p">text...</para>+`
+* *USFM:* `+\p_{content}+`
+* *USX:* `+<para style="p">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

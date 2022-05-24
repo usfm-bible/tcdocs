@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Blank line. Use for stanza breaks in poetry, or between poetry and prose.
 Syntax::
-- *USFM:* `+\b+`
-- *USX:* `+<para style="b"/>+`
+* *USFM:* `+\b+`
+* *USX:* `+<para style="b"/>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -26,7 +26,7 @@ OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 
-== Structure
+== Diagram
 
 == Examples
 

@@ -1,4 +1,4 @@
-= \ft
+= ft
 :description: Footnote - Note text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ft.adoc
 ifndef::localdir[]
@@ -13,12 +13,12 @@ endif::[]
 
 Description:: Footnote - Note text.
 Syntax::
-- *USFM:* `+\ft_text...+`
-- *USX:* `+<char style="ft">text...</char>+`
+* *USFM:* `+\ft_{content}+`
+* *USX:* `+<char style="ft">{content}</char>+`
 Added:: 1.0
 
 ifdef::env-antora[]
-See also: xref:note:f.adoc[Footnote]
+See also: xref:note:footnote/f.adoc[Footnote]
 endif::env-antora[]
 
 == Properties

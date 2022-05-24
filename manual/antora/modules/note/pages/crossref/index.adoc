@@ -1,0 +1,17 @@
+= Cross References
+
+Cross References are a type of xref:note:index.adoc[Note].
+
+include::../../nav.adoc[tag=nav-crossrefs]
+
+== Diagram
+
+=== USFM
+image::schema/crossref_rail.svg[]
+//image::schema/crossrefchar_rail.svg[]
+
+=== USX
+image::schema/crossref_usx.svg[]
+//image::schema/crossrefchar_usx.svg[]
+
+== Descendants

@@ -13,8 +13,8 @@ endif::[]
 
 Description:: Letter opening.
 Syntax::
-- *USFM:* `+\po_text...+`
-- *USX:* `+<para style="po">text...</para>+`
+* *USFM:* `+\po_{content}+`
+* *USX:* `+<para style="po">{content}</para>+`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
