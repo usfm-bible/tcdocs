@@ -368,7 +368,7 @@ PeripheralContent = (Chapter | Para | List | Table | Footnote | CrossReference |
 
 Para =
     element para {
-        [usfm:tag[id="a" grouping="12" usfm:stacked="true" strip="none"]]
+        [usfm:tag[id="a" grouping="15" usfm:stacked="true" strip="none"]]
         attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         (Reference | Footnote | CrossReference | Char | Milestone | Figure | Verse | Break | [usfm:text[strip="left"]] text?)+
@@ -516,7 +516,7 @@ CharContent = (
 
 Char = (
     element char {
-        [usfm:tag[id="a" grouping="9" usfm:stacked="true"]]
+        [usfm:stacked="true" usfm:tag[id="a" grouping="9"]]
         attribute style { Char.char.style.enum },
         CharContent
         >> usfm:endtag[id="a" many="?" usfm:order="3"]
@@ -565,7 +565,7 @@ Char.char.style.enum = (
 
 CharEmbed = (
     element char {
-        [usfm:tag[id="a" prefix="\+" grouping="9" usfm:stacked="true"]]
+        [usfm:stacked="true" usfm:tag[id="a" prefix="\+" grouping="9"]]
         attribute style { Char.char.style.enum },
         CharContent
         >> usfm:endtag[id="a" many="?" usfm:order="3"]
@@ -602,7 +602,7 @@ CharWithAttrib.char.style.w =
     element char {
         [usfm:tag [id="a"]]
         attribute style { "w" }, # A wordlist text item
-        ( [usfm:attrib []]
+        ( [usfm:stacked="true" usfm:attrib []]
         attribute lemma { xsd:string { minLength = "1" } }? # Lemma/citation form found in glossary
         & [usfm:attrib []]
         attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} }? # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)
@@ -670,12 +670,12 @@ MilestoneWithAttrib.ms.style.qt =
 Chapter = ( ChapterStart | ChapterEnd )
 
 ChapterStart =
+    [usfm:stacked="true"]
     element chapter { # Start of new chapter
         [usfm:tag[]]
         attribute style { "c" },
         [usfm:text[strip="right"]]
         attribute number { xsd:integer },
-        [usfm:ignore="true"]
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:tag["ca"] usfm:text[] usfm:endtag["ca"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*" } }?,
@@ -777,9 +777,9 @@ FootnoteVerse =
 
 CrossReference =
     element note {
-        [usfm:tag[id="a"]]
+        [usfm:tag[id="a" strip="none"]]
         attribute style { "x" | "ex" },
-        [usfm:text[strip="right" re="\S+"]]
+        [usfm:text[strip="both" re="\S+"]]
         attribute caller { text },
         (CrossReferenceChar | [usfm:text[]] text)+
         >> usfm:endtag[id="a"]

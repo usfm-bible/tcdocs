@@ -1,0 +1,59 @@
+<svg class="railroad-diagram" height="291" viewBox="0 0 568.0 291" width="568.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<style>/* <![CDATA[ */
+    svg.railroad-diagram {
+        background-color:hsl(30,20%,95%);
+    }
+    svg.railroad-diagram path {
+        stroke-width: 2;
+        stroke: black;
+        fill: none;
+    }
+    svg.railroad-diagram text {
+        font-size: 12px;
+        text-anchor: middle;
+        font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram text.label {
+        text-anchor:start;
+    }
+    svg.railroad-diagram text.comment {
+        font-family: DejaVu Sans;
+        font-size: 14px;
+    }
+    svg.railroad-diagram rect{
+        stroke-width: 2;
+        stroke:black;
+        fill: rgb(210, 210, 255);
+    }
+    svg.railroad-diagram rect.group-box {
+        stroke: gray;
+        stroke-dasharray: 10 5;
+        fill: none;
+    }
+    .terminal {
+        font-family: DejaVu Sans;
+    }
+
+/* ]]> */
+</style><g>
+<path d="M 20 84 v 20 m 0 -10 h 20"></path></g><path d="M 40 94 h 10"></path><g>
+<path d="M 50 94 h 0.0"></path><path d="M 518.0 94 h 0.0"></path><rect class="group-box" height="235" rx="10" ry="10" width="468.0" x="50.0" y="36"></rect><g>
+<path d="M 50.0 94 h 10.0"></path><path d="M 508.0 94 h 10.0"></path><g class="terminal ">
+<path d="M 60.0 94 h 0.0"></path><path d="M 116.0 94 h 0.0"></path><rect height="22" rx="10" ry="10" width="56.0" x="60.0" y="83"></rect><text x="88.0" y="98">&#60;para></text></g><path d="M 116.0 94 h 10"></path><g>
+<path d="M 126.0 94 h 0.0"></path><path d="M 508.0 94 h 0.0"></path><path d="M 126.0 94 a 10 10 0 0 0 10 -10 v -19 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 146.0 55 h 0.0"></path><path d="M 488.0 55 h 0.0"></path><g class="terminal ">
+<path d="M 146.0 55 h 0.0"></path><path d="M 202.0 55 h 0.0"></path><rect height="22" rx="10" ry="10" width="56.0" x="146.0" y="44"></rect><text x="174.0" y="59">@style</text></g><path d="M 202.0 55 h 10"></path><path d="M 212.0 55 h 10"></path><g class="non-terminal ">
+<path d="M 222.0 55 h 0.0"></path><path d="M 488.0 55 h 0.0"></path><rect height="22" width="266.0" x="222.0" y="44"></rect><text x="355.0" y="59">BookIntroductionEndTitles.para.style.enum</text></g></g><path d="M 126.0 94 h 20"></path><g>
+<path d="M 146.0 94 h 69.0"></path><path d="M 419.0 94 h 69.0"></path><path d="M 215.0 94 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 235.0 74 h 164.0"></path></g><path d="M 399.0 74 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 215.0 94 h 20"></path><g>
+<path d="M 235.0 94 h 0.0"></path><path d="M 399.0 94 h 0.0"></path><path d="M 235.0 94 h 10"></path><g>
+<path d="M 245.0 94 h 0.0"></path><path d="M 389.0 94 h 0.0"></path><path d="M 245.0 94 h 20"></path><g class="non-terminal ">
+<path d="M 265.0 94 h 18.0"></path><path d="M 351.0 94 h 18.0"></path><rect height="22" width="68.0" x="283.0" y="83"></rect><text x="317.0" y="98">Footnote</text></g><path d="M 369.0 94 h 20"></path><path d="M 245.0 94 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 265.0 124 h 0.0"></path><path d="M 369.0 124 h 0.0"></path><rect height="22" width="104.0" x="265.0" y="113"></rect><text x="317.0" y="128">CrossReference</text></g><path d="M 369.0 124 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><path d="M 245.0 94 a 10 10 0 0 1 10 10 v 40 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 265.0 154 h 30.0"></path><path d="M 339.0 154 h 30.0"></path><rect height="22" width="44.0" x="295.0" y="143"></rect><text x="317.0" y="158">Char</text></g><path d="M 369.0 154 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><path d="M 245.0 94 a 10 10 0 0 1 10 10 v 70 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 265.0 184 h 15.0"></path><path d="M 354.0 184 h 15.0"></path><rect height="22" width="74.0" x="280.0" y="173"></rect><text x="317.0" y="188">Milestone</text></g><path d="M 369.0 184 a 10 10 0 0 0 10 -10 v -70 a 10 10 0 0 1 10 -10"></path><path d="M 245.0 94 a 10 10 0 0 1 10 10 v 100 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 265.0 214 h 27.0"></path><path d="M 342.0 214 h 27.0"></path><rect height="22" width="50.0" x="292.0" y="203"></rect><text x="317.0" y="218">Break</text></g><path d="M 369.0 214 a 10 10 0 0 0 10 -10 v -100 a 10 10 0 0 1 10 -10"></path><path d="M 245.0 94 a 10 10 0 0 1 10 10 v 130 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 265.0 244 h 30.0"></path><path d="M 339.0 244 h 30.0"></path><rect height="22" rx="10" ry="10" width="44.0" x="295.0" y="233"></rect><text x="317.0" y="248">text</text></g><path d="M 369.0 244 a 10 10 0 0 0 10 -10 v -130 a 10 10 0 0 1 10 -10"></path></g><path d="M 389.0 94 h 10"></path><path d="M 245.0 94 a 10 10 0 0 0 -10 10 v 149 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 245.0 263 h 144.0"></path></g><path d="M 389.0 263 a 10 10 0 0 0 10 -10 v -149 a 10 10 0 0 0 -10 -10"></path></g><path d="M 399.0 94 h 20"></path></g><path d="M 488.0 94 h 20"></path></g></g><g class="non-terminal ">
+<path d="M 50.0 28 h 0.0"></path><path d="M 235.0 28 h 0.0"></path><text class="comment" x="142.5" y="33">BookIntroductionEndTitles</text></g></g><path d="M 518.0 94 h 10"></path><path d="M 528.0 94 h 20 m 0 -10 v 20"></path></g></svg>

@@ -46,11 +46,38 @@ class RelaxUSFMParser:
         return ncurr
 
     def makeSequence(self, tag, e, curr):
-        nums = int(e.get(self._global('usfm:grouping'), 8)) if e is not None else 8
+        nums = int(e.get('grouping', 8)) if e is not None else 8
         ncurr = self.back.sequence(combine=tag, parent=curr, groupby=nums)
         if curr is not None and id(curr) != id(ncurr):
             curr.append(ncurr)
         return ncurr
+
+    def makeTag(self, vals, curr, e, prefix=None, refid=None, refbase=None):
+        ocurr = curr
+        if e.get('id', None):
+            curr = self.makeRef(e, e.get('id'), curr)
+        if len(vals) == 1:
+            if vals[0].startswith('"'):
+                self.makeTerminal('"{}{}"'.format(prefix or "", vals[0][1:-1]), curr)
+            elif prefix:
+                ncurr = self.makeSequence("sequence", e, curr)
+                self.makeTerminal('"{}"'.format(prefix), ncurr)
+                self.makeTerminal(vals[0], ncurr)
+        else:
+            if prefix is not None and len(prefix):
+                self.makeTerminal('"{}"'.format(prefix), curr)
+            ncurr = self.makeSequence("choice", e, curr)
+            for v in vals:
+                self.makeTerminal(v, ncurr)
+        return ocurr
+
+    def makeEndTag(self, txt, curr, e, prefix=None, refid=None, refbase=None, term=None):
+        if refid is not None:
+            self.makeBackRef(e, refid, curr)
+            if term is not None and len(term):
+                self.makeTerminal('"{}"'.format(term), curr)
+        else:
+            self.makeTerminal('"{}{}{}"'.format(prefix or "", (txt or "").strip(), term or ""), curr)
 
     def makeTerminal(self, name, curr, ref=False, many=""):
         m = manys.get(many, "sequence")
@@ -82,17 +109,17 @@ class RelaxUSFMParser:
             self.curr = self.makeSequence("sequence", None, None)
             curr = self.curr
             quietRefs = False
+        tag = self._local(e.tag)
         if e.get(self._global("usfm:stacked"), "false") == "true":
             scurr = self.makeSequence("stack", e, curr)
             curr = scurr
         else:
             scurr = None
-        tag = self._local(e.tag)
         if tag == 'element':
             tag = "stack" if e.get(self._global("usfm:stacked"), "false") == "true" else "group"
         if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group", "stack"):
             ncurr = self.makeSequence(tag, e, curr)
-            self.procChildren(e, ncurr, nofollow=(tag == "choice"))
+            self.procChildren(e, ncurr, nofollow=(tag in ("choice", "stack")))
         elif tag == 'attribute':
             if not any([self._local(n.tag).startswith("usfm:") for n in e]):
                 return curr
@@ -123,19 +150,13 @@ class RelaxUSFMParser:
         elif tag == "usfm:tag":
             rcurr = self.makeSequence("sequence", e, curr)
             rcurr = self._addstrip("left", e, rcurr)
-            if 'id' in e.attrib:
-                rcurr = self.makeRef(e, e.get('id'), rcurr)
-            s = e.get('prefix', '\\')
+            refid = e.get('id', None)
+            pref = e.get('prefix', '\\')
             if e.text is not None and e.text.strip() != "":
-                if len(s):
-                    self.makeTerminal('"{}{}"'.format(s, e.text.strip()), rcurr)
+                vals = ['"{}"'.format(e.text.strip())]
             else:
-                if len(s):
-                    self.makeTerminal('"{}"'.format(s), rcurr)
                 vals = self._getvals(parent)
-                ncurr = self.makeSequence("choice", e, rcurr)
-                for v in vals:
-                    self.makeTerminal(v, ncurr)
+            curr = self.makeTag(vals, rcurr, e, prefix=pref, refid=refid)
             if scurr is not None:
                 curr = self.makeSequence("sequence", e, scurr)
                 scurr = None
@@ -145,13 +166,10 @@ class RelaxUSFMParser:
             many = e.get('many', '')
             ncurr = self.makeSequence(manys.get(many, 'sequence'), e, curr)
             ncurr = self._addstrip("left", e, ncurr)
-            if 'id' in e.attrib:
-                self.makeBackRef(e, e.get('id'), ncurr)
-                self.makeTerminal('"*"', ncurr)
-            else:
-                if e.text is None:
-                    e.text = ""
-                self.makeTerminal('"\\{}*"'.format(e.text.strip()), ncurr)
+            prefix = e.get('prefix', '\\')
+            refid = e.get('id', None)
+            terminate = e.get('term', '*')
+            self.makeEndTag(e.text, ncurr, e, prefix=prefix, refid=refid, term=terminate)
             ncurr = self._addstrip("right", e, ncurr)
         elif tag in ("usfm:attrib", "usfm:text"):
             curr = self._addstrip("left", e, curr)

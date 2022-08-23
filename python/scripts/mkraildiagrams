@@ -59,7 +59,7 @@ for k, j in jobs.items():
         if not a[1] and len(j) > 2:
             keeps = keeps + j[2]
         if args.debug & 1:
-            print(f"{k}")
+            print(f"{j[0]}_{a[0]}")
         #rdia = RDiagram(k, rdoc, keeps=keeps, cwidth=args.charwidth)
         #rgram.makediagram(k, rdia=rdia, usfm=a[1])
         p = (RelaxUSFMParser if a[1] else RelaxXMLParser)(rdoc, backend, rgram, keeps)

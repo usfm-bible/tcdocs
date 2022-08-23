@@ -581,7 +581,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
-        <usfm:tag id="a" grouping="12" usfm:stacked="true" strip="none"/>
+        <usfm:tag id="a" grouping="15" usfm:stacked="true" strip="none"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -858,8 +858,8 @@
     <choice>
       <element>
         <name ns="">char</name>
-        <attribute>
-          <usfm:tag id="a" grouping="9" usfm:stacked="true"/>
+        <attribute usfm:stacked="true">
+          <usfm:tag id="a" grouping="9"/>
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
@@ -913,8 +913,8 @@
     <choice>
       <element>
         <name ns="">char</name>
-        <attribute>
-          <usfm:tag id="a" prefix="\+" grouping="9" usfm:stacked="true"/>
+        <attribute usfm:stacked="true">
+          <usfm:tag id="a" prefix="\+" grouping="9"/>
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
@@ -978,7 +978,7 @@
       </attribute>
       <interleave>
         <optional>
-          <attribute>
+          <attribute usfm:stacked="true">
             <usfm:attrib/>
             <name ns="">lemma</name>
             <data type="string">
@@ -1183,7 +1183,7 @@
     </choice>
   </define>
   <define name="ChapterStart">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">chapter</name>
       <attribute>
         <usfm:tag/>
@@ -1195,7 +1195,7 @@
         <name ns="">number</name>
         <data type="integer"/>
       </attribute>
-      <attribute usfm:ignore="true">
+      <attribute>
         <name ns="">sid</name>
         <data type="string">
           <param name="minLength">1</param>
@@ -1415,7 +1415,7 @@
     <element>
       <name ns="">note</name>
       <attribute>
-        <usfm:tag id="a"/>
+        <usfm:tag id="a" strip="none"/>
         <name ns="">style</name>
         <choice>
           <value>x</value>
@@ -1423,7 +1423,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:text strip="right" re="\S+"/>
+        <usfm:text strip="both" re="\S+"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
