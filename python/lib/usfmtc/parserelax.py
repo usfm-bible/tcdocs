@@ -43,6 +43,8 @@ class RelaxUSFMParser:
                     usfmonly = True
                 else:
                     ncurr = scurr
+            if e.get(self._global('usfm:done'), False):
+                break
         return ncurr
 
     def makeSequence(self, tag, e, curr):
@@ -156,6 +158,7 @@ class RelaxUSFMParser:
                 vals = ['"{}"'.format(e.text.strip())]
             else:
                 vals = self._getvals(parent)
+                parent.set(self._global('usfm:done'), True)
             curr = self.makeTag(vals, rcurr, e, prefix=pref, refid=refid)
             if scurr is not None:
                 curr = self.makeSequence("sequence", e, scurr)

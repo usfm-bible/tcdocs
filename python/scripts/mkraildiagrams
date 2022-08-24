@@ -26,9 +26,8 @@ backend = SFMRail()
 alljobs = {
     "BookHeaders":          ("bkhdrs", tuple(), ("BookHeaders.para.style.enum",)),
     "BookTitles":           ("bktitles", tuple(), ("BookTitles.para.style.enum",)),
-    "BookIdentification.book.code.enum": ("bkident",),
-    "BookIntroduction":     ("bkintro",),
-    "BookIntroductionEndTitles": ("bkintroend", tuple(), ("BookIntroductionEndTitles.para.style.enum",)),
+    "BookIntroduction":     ("bkintro", tuple(), ('BookIntroduction.para.style.enum',)),
+    "BookIntroductionEndTitles": ("bkintroend", ("BookIntroductionEndTitles.para.style.enum",), tuple()),
     "Chapter":              ("chapter", ("ChapterStart", "ChapterEnd")),
     "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Break",
                                         "CharWithAttrib.enum", "CharContent"), ("+char.link", )),

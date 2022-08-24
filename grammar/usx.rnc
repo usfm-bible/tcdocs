@@ -302,7 +302,7 @@ BookTitles.para.style.enum = (
 
 BookIntroduction =
     element para {
-        [usfm:tag[]]
+        [usfm:tag[grouping="12"]]
         attribute style { BookIntroduction.para.style.enum },
         (Reference | Footnote | CrossReference | Char | IntroChar | Milestone | Figure | [usfm:text[]] text)*
     } | Table
@@ -602,7 +602,7 @@ CharWithAttrib.char.style.w =
     element char {
         [usfm:tag [id="a"]]
         attribute style { "w" }, # A wordlist text item
-        ( [usfm:stacked="true" usfm:attrib []]
+        ( [usfm:attrib []]
         attribute lemma { xsd:string { minLength = "1" } }? # Lemma/citation form found in glossary
         & [usfm:attrib []]
         attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} }? # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)

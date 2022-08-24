@@ -460,7 +460,7 @@
       <element>
         <name ns="">para</name>
         <attribute>
-          <usfm:tag/>
+          <usfm:tag grouping="12"/>
           <name ns="">style</name>
           <ref name="BookIntroduction.para.style.enum"/>
         </attribute>
@@ -978,7 +978,7 @@
       </attribute>
       <interleave>
         <optional>
-          <attribute usfm:stacked="true">
+          <attribute>
             <usfm:attrib/>
             <name ns="">lemma</name>
             <data type="string">
