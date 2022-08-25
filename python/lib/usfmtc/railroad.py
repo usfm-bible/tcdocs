@@ -454,14 +454,15 @@ class Stack(DiagramMultiContainer):
 
 
 class OptionalSequence(DiagramMultiContainer):
-    def __new__(cls, *items):
+    def __new__(cls, *items, **kw):
         if len(items) <= 1:
-            return Sequence(*items)
+            return Sequence(*items, **kw)
         else:
             return super(OptionalSequence, cls).__new__(cls)
 
-    def __init__(self, *items):
+    def __init__(self, *items, **kw):
         DiagramMultiContainer.__init__(self, 'g', items)
+        self.inline = kw.get('inline', False)
         self.needsSpace = False
         self.width = 0
         self.up = 0
@@ -469,15 +470,17 @@ class OptionalSequence(DiagramMultiContainer):
         self.down = self.items[0].down
         heightSoFar = 0
         for i,item in enumerate(self.items):
-            self.up = max(self.up, max(AR * 2, item.up + VS) - heightSoFar)
+            self.up = max(self.up, max((0 if self.inline else AR * 2), item.up + VS) - heightSoFar)
             heightSoFar += item.height
             if i > 0:
-                self.down = max(self.height + self.down, heightSoFar + max(AR*2, item.down + VS)) - self.height
+                self.down = max(self.height + self.down, heightSoFar + max((0 if self.inline else AR*2), item.down + VS)) - self.height
             itemWidth = item.width + (10 if item.needsSpace else 0)
             if i == 0:
                 self.width += AR + max(itemWidth, AR)
             else:
                 self.width += AR*2 + max(itemWidth, AR) + AR
+        if self.inlines:
+            self.width += AR * 2
         addDebug(self)
 
     def __repr__(self):
@@ -495,16 +498,28 @@ class OptionalSequence(DiagramMultiContainer):
             itemSpace = 10 if item.needsSpace else 0
             itemWidth = item.width + itemSpace
             if i == 0:
-                # Upper skip
-                (Path(x,y)
-                    .arc('se')
-                    .up(y - upperLineY - AR*2)
-                    .arc('wn')
-                    .right(itemWidth - AR)
-                    .arc('ne')
-                    .down(y + item.height - upperLineY - AR*2)
-                    .arc('ws')
-                    .addTo(self))
+                if not self.inline:
+                    # Upper skip
+                    (Path(x,y)
+                        .arc('se')
+                        .up(y - upperLineY - AR*2)
+                        .arc('wn')
+                        .right(itemWidth - AR)
+                        .arc('ne')
+                        .down(y + item.height - upperLineY - AR*2)
+                        .arc('ws')
+                        .addTo(self))
+                else:
+                    DiagramItem('path', attrs={
+                        "d": "M {x} {y} h -26 a 4 4 0 0 0 -4 4 v 12 a 4 4 0 0 0 4 4 h 26 z".format(x=x+30, y=y-10),
+                        "class": "diagram-text"
+                        }).addTo(text)
+                    DiagramItem('text', text="?", attrs={
+                        "x": x + 15,
+                        "y": y + 4,
+                        "class": "diagram-text"
+                        }).addTo(text)
+
                 # Straight line
                 (Path(x, y)
                     .right(itemSpace + AR)
@@ -513,13 +528,14 @@ class OptionalSequence(DiagramMultiContainer):
                 x += itemWidth + AR
                 y += item.height
             elif i < last:
-                # Upper skip
-                (Path(x, upperLineY)
-                    .right(AR*2 + max(itemWidth, AR) + AR)
-                    .arc('ne')
-                    .down(y - upperLineY + item.height - AR*2)
-                    .arc('ws')
-                    .addTo(self))
+                if not self.inline:
+                    # Upper skip
+                    (Path(x, upperLineY)
+                        .right(AR*2 + max(itemWidth, AR) + AR)
+                        .arc('ne')
+                        .down(y - upperLineY + item.height - AR*2)
+                        .arc('ws')
+                        .addTo(self))
                 # Straight line
                 (Path(x,y)
                     .right(AR*2)
@@ -528,18 +544,19 @@ class OptionalSequence(DiagramMultiContainer):
                 (Path(x + item.width + AR*2, y + item.height)
                     .right(itemSpace + AR)
                     .addTo(self))
-                # Lower skip
-                (Path(x,y)
-                    .arc('ne')
-                    .down(item.height + max(item.down + VS, AR*2) - AR*2)
-                    .arc('ws')
-                    .right(itemWidth - AR)
-                    .arc('se')
-                    .up(item.down + VS - AR*2)
-                    .arc('wn')
-                    .addTo(self))
-                x += AR*2 + max(itemWidth, AR) + AR
-                y += item.height
+                if not self.inline:
+                    # Lower skip
+                    (Path(x,y)
+                        .arc('ne')
+                        .down(item.height + max(item.down + VS, AR*2) - AR*2)
+                        .arc('ws')
+                        .right(itemWidth - AR)
+                        .arc('se')
+                        .up(item.down + VS - AR*2)
+                        .arc('wn')
+                        .addTo(self))
+                    x += AR*2 + max(itemWidth, AR) + AR
+                    y += item.height
             else:
                 # Straight line
                 (Path(x, y)
@@ -549,16 +566,17 @@ class OptionalSequence(DiagramMultiContainer):
                 (Path(x + AR*2 + item.width, y + item.height)
                     .right(itemSpace + AR)
                     .addTo(self))
-                # Lower skip
-                (Path(x,y)
-                    .arc('ne')
-                    .down(item.height + max(item.down + VS, AR*2) - AR*2)
-                    .arc('ws')
-                    .right(itemWidth - AR)
-                    .arc('se')
-                    .up(item.down + VS - AR*2)
-                    .arc('wn')
-                    .addTo(self))
+                if not self.inline:
+                    # Lower skip
+                    (Path(x,y)
+                        .arc('ne')
+                        .down(item.height + max(item.down + VS, AR*2) - AR*2)
+                        .arc('ws')
+                        .right(itemWidth - AR)
+                        .arc('se')
+                        .up(item.down + VS - AR*2)
+                        .arc('wn')
+                        .addTo(self))
         return self
 
 class AlternatingSequence(DiagramMultiContainer):

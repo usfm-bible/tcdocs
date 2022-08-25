@@ -1,27 +1,30 @@
 #!/usr/bin/python3
 
 from usfmtc import railroad
-from usfmtc.railroad import Diagram, Choice, Optional, Terminal, NonTerminal, Sequence, DEFAULT_STYLE, Group, Sequence, OneOrMore, ZeroOrMore, HorizontalChoice, Stack, Comment, MultipleChoice
+from usfmtc.railroad import Diagram, Choice, Optional, Terminal, NonTerminal, Sequence, DEFAULT_STYLE, Group, Sequence, OneOrMore, ZeroOrMore, HorizontalChoice, Stack, Comment, MultipleChoice, OptionalSequence
 
-def bigChoice(e, t, c, default=0, **kw):
+def bigChoice(e, t, c, m=Choice, default=0, **kw):
     if len(c) == 0:
         return None
     elif len(c) < e.groupby + 2:
-        return Choice(getattr(e, 'default', default), *c, **kw)
+        return m(getattr(e, 'default', default), *c, **kw)
     else:
         s = []
         for i in range(0, len(c), e.groupby):
-            s.append(Choice(3 if len(c) - i > 3 else 0, *c[i:i+e.groupby], **kw))
+            s.append(m(3 if len(c) - i > 3 else 0, *c[i:i+e.groupby], **kw))
         return HorizontalChoice(*s, **kw)
+
+def multichoice(index, *c, **kw):
+    return MultipleChoice(index, "any", *c, **kw)
 
 actions = {
     'choice': lambda e,t,c: bigChoice(e, t, c),
     'attributed': lambda e,t,c: bigChoice(e, t, c, default=len(c) - 1, noclose=1),
     'attributes': lambda e,t,c: bigChoice(e, t, c, default=len(c) - 1, noclose=7),
-    'interleave': lambda e,t,c: ZeroOrMore(bigChoice(e, t, c)),
+    'interleave': lambda e,t,c: bigChoice(e, t, c, m=multichoice),
     'terminal': lambda e,t,c: Terminal(t),
     'nonterminal': lambda e,t,c: NonTerminal(t),
-    'optional': lambda e,t,c: Optional(c[0], getattr(e, 'skip', True)),
+    'optional': lambda e,t,c: Optional(c[0], getattr(e, 'opt', None)),
     'group': lambda e,t,c: Group(c[0], t),
     'sequence': lambda e,t,c: Sequence(*c),
     'oneormore': lambda e,t,c: OneOrMore(c[0], getattr(e, 'opt', None)),
@@ -75,7 +78,7 @@ CSS_STYLE = '''\
 '''
 
 class RChoice(list):
-    def __init__(self, *a, combine="choice", parent=None, groupby=8):
+    def __init__(self, *a, combine="choice", parent=None, groupby=8, opt=None, init=None):
         super().__init__(a)
         if combine == "group":
             combine = "sequence"
@@ -83,33 +86,29 @@ class RChoice(list):
         self.parent = parent
         self.groupby = groupby
         self.repeat = None
+        self.opt = opt
+        self.init = init
 
     def asRail(self):
         if not len(self):
             return None
         if self.combine == "interleave":
-            opts = []
-            nonopts = []
+            contents = []
             for e in self:
-                if isinstance(e, RChoice):
+                if isinstance(e, RChoice) and len(e):
                     if e.combine == "optional":
-                        if len(e):
-                            opts.append(e[0])
-                        continue
-                nonopts.append(e)
+                        contents.append(OptionalSequence(e[0].asRail(), inline=True))
+                    else:
+                        contents.append(e.asRail())
             rep = self.repeat.asRail() if self.repeat is not None else None
-            ocontents = [r for r in (v.asRail() for v in opts) if r is not None]
             o = None
-            if len(ocontents):
-                o = ZeroOrMore(Choice(0, *ocontents), rep) if len(opts) else None
-            ncontents = [r for r in (v.asRail() for v in nonopts) if r is not None] + ocontents
-            n = None
-            if len(ncontents):
-                n = MultipleChoice(0, "all", *ncontents) if len(nonopts) else None
-            if n is None:
-                return o
-            else:
-                return n
+            if len(contents):
+                results = Choice(0, *contents)
+                if self.init:
+                    o = Optional(Sequence(self.init.asRail(), OneOrMore(results, rep)))
+                else:
+                    o = ZeroOrMore(results, rep) if results is not None else None
+            return o
         contents = [r for r in (v.asRail() for v in self) if r is not None]
         if not len(contents):
             return None
@@ -251,12 +250,12 @@ class SFMRail:
         res = Diagram(content, type='complex', css=CSS_STYLE.format(**defaults))
         return res
 
-    def sequence(self, combine="sequence", parent=None, group=None, groupby=8):
+    def sequence(self, combine="sequence", parent=None, group=None, groupby=8, opt=None):
         #if parent is not None and isinstance(parent, SplitRail):
         #    parent.setmod(rmanys.get(combine, ""))
         #    return parent
         #else:
-        return RChoice(combine=combine, parent=parent, groupby=groupby)
+        return RChoice(combine=combine, parent=parent, groupby=groupby, opt=opt)
 
     def terminal(self, name, curr, ref=False):
         return RTerminal(name, parent=curr, ref=ref)
@@ -292,9 +291,12 @@ class SFMRail:
     def lookbehind(self, val, curr):
         return self.terminal('\u21D0 {}'.format(val), curr)
 
-    def addrepeat(self, rep, curr):
+    def addrepeat(self, rep, curr, init=None):
         if isinstance(curr, RChoice):
             curr.repeat = rep
+            curr.init = init
+        return curr
+
 
 # Methods needed for processing XML
     def elementStart(self, name, curr, isstack=False):

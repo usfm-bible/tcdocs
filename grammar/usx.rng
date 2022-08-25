@@ -692,6 +692,7 @@
     <element>
       <name ns="">para</name>
       <attribute>
+        <usfm:tag/>
         <name ns="">style</name>
         <ref name="List.para.style.enum"/>
       </attribute>
@@ -755,7 +756,7 @@
           </attribute>
           <oneOrMore>
             <choice>
-              <ref name="Verse"/>
+              <ref name="Verse" usfm:ignore="true"/>
               <ref name="TableContent"/>
             </choice>
           </oneOrMore>
@@ -767,6 +768,7 @@
     <element>
       <name ns="">cell</name>
       <attribute>
+        <usfm:tag/>
         <name ns="">style</name>
         <data type="string">
           <param name="pattern">t[hc][rc]?\d+</param>
@@ -928,6 +930,7 @@
     <element>
       <name ns="">char</name>
       <attribute>
+        <usfm:tag/>
         <name ns="">style</name>
         <ref name="ListChar.char.style.enum"/>
       </attribute>
@@ -980,6 +983,7 @@
         <optional>
           <attribute>
             <usfm:attrib/>
+            <usfm:property inline="true"/>
             <name ns="">lemma</name>
             <data type="string">
               <param name="minLength">1</param>
@@ -1004,7 +1008,7 @@
             </data>
           </attribute>
         </optional>
-        <usfm:repeat>
+        <usfm:repeat initattriblist="true">
           <usfm:text noquotes="true">WS</usfm:text>
         </usfm:repeat>
       </interleave>
@@ -1030,6 +1034,7 @@
     <element>
       <name ns="">char</name>
       <attribute>
+        <usfm:tag id="a"/>
         <name ns="">style</name>
         <value>rb</value>
       </attribute>
@@ -1058,6 +1063,7 @@
           <text/>
         </choice>
       </zeroOrMore>
+      <usfm:endtag id="a"/>
     </element>
   </define>
   <define name="char.link">
@@ -1100,31 +1106,38 @@
   </define>
   <define name="Milestone">
     <choice>
-      <element>
-        <name ns="">ms</name>
-        <attribute>
-          <name ns="">style</name>
-          <ref name="Milestone.ms.style.enum"/>
-        </attribute>
-        <optional>
+      <group>
+        <element>
+          <name ns="">ms</name>
           <attribute>
-            <name ns="">sid</name>
-            <data type="string">
-              <param name="pattern">[\p{L}\d_\-\.:]+</param>
-            </data>
+            <usfm:tag strip="none"/>
+            <name ns="">style</name>
+            <ref name="Milestone.ms.style.enum"/>
           </attribute>
-        </optional>
-        <optional>
-          <attribute>
-            <name ns="">eid</name>
-            <data type="string">
-              <param name="pattern">[\p{L}\d_\-\.:]+</param>
-            </data>
-          </attribute>
-        </optional>
-        <empty/>
-      </element>
-      <ref name="MilestoneWithAttrib.enum"/>
+          <optional>
+            <attribute>
+              <name ns="">sid</name>
+              <data type="string">
+                <param name="pattern">[\p{L}\d_\-\.:]+</param>
+              </data>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute>
+              <name ns="">eid</name>
+              <data type="string">
+                <param name="pattern">[\p{L}\d_\-\.:]+</param>
+              </data>
+            </attribute>
+          </optional>
+          <empty/>
+        </element>
+        <usfm:endtag/>
+      </group>
+      <group>
+        <ref name="MilestoneWithAttrib.enum"/>
+        <usfm:endtag/>
+      </group>
     </choice>
   </define>
   <define name="Milestone.ms.style.enum">
@@ -1144,6 +1157,7 @@
     <element>
       <name ns="">ms</name>
       <attribute>
+        <usfm:tag strip="right?"/>
         <name ns="">style</name>
         <data type="string">
           <param name="pattern">qt[1-5]?(\-[se])?</param>
@@ -1167,6 +1181,7 @@
       </optional>
       <optional>
         <attribute>
+          <usfm:attrib startlist="true"/>
           <name ns="">who</name>
           <data type="string">
             <param name="minLength">2</param>
@@ -1500,7 +1515,7 @@
   <define name="category">
     <attribute>
       <usfm:tag>cat</usfm:tag>
-      <usfm:text name="Word"/>
+      <usfm:text name="Word" strip="right?"/>
       <usfm:endtag>cat</usfm:endtag>
       <name ns="">category</name>
       <text/>
@@ -1510,56 +1525,62 @@
     <element>
       <usfm:tag>fig</usfm:tag>
       <name ns="">figure</name>
-      <attribute>
-        <usfm:attrib/>
-        <name ns="">style</name>
-        <text/>
-      </attribute>
-      <optional>
+      <interleave>
         <attribute>
           <usfm:attrib/>
-          <name ns="">alt</name>
+          <name ns="">style</name>
           <text/>
         </attribute>
-      </optional>
-      <attribute>
-        <usfm:attrib/>
-        <name ns="">file</name>
-        <text/>
-      </attribute>
-      <optional>
         <attribute>
           <usfm:attrib/>
-          <name ns="">size</name>
+          <name ns="">file</name>
           <text/>
         </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <usfm:attrib/>
-          <name ns="">loc</name>
-          <text/>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <usfm:attrib/>
-          <name ns="">copy</name>
-          <text/>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <usfm:attrib/>
-          <name ns="">ref</name>
-          <text/>
-        </attribute>
-      </optional>
-      <optional>
-        <text>
-          <usfm:attrib key="caption"/>
-        </text>
-      </optional>
+        <optional>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">alt</name>
+            <text/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">size</name>
+            <text/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">loc</name>
+            <text/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">copy</name>
+            <text/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute>
+            <usfm:attrib/>
+            <name ns="">ref</name>
+            <text/>
+          </attribute>
+        </optional>
+        <optional>
+          <text>
+            <usfm:attrib>caption</usfm:attrib>
+          </text>
+        </optional>
+        <usfm:repeat initattriblist="true">
+          <usfm:text noquotes="true">WS</usfm:text>
+        </usfm:repeat>
+      </interleave>
+      <usfm:endtag>fig</usfm:endtag>
     </element>
   </define>
   <define name="FootnoteReference">

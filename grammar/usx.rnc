@@ -450,6 +450,7 @@ Para.para.style.enum = (
 
 List =
     element para {
+        [usfm:tag[]]
         attribute style { List.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         (Reference | Footnote | CrossReference | Char | ListChar | Milestone | Figure | Verse | Break | text)+
@@ -476,11 +477,12 @@ Table =
             attribute style {
                 ("tr") # Table row
             },
-            (Verse | TableContent)+
+            ([usfm:ignore="true"]Verse | TableContent)+
         }+
     }
 TableContent =
     element cell {
+        [usfm:tag[]]
         attribute style { xsd:string { pattern = "t[hc][rc]?\d+" } },
         attribute align { cell.align.enum },
         attribute colspan { xsd:integer }?,
@@ -575,6 +577,7 @@ CharEmbed = (
 
 ListChar = (
     element char {
+        [usfm:tag[]]
         attribute style { ListChar.char.style.enum },
         char.link?,
         char.closed?,
@@ -602,13 +605,13 @@ CharWithAttrib.char.style.w =
     element char {
         [usfm:tag [id="a"]]
         attribute style { "w" }, # A wordlist text item
-        ( [usfm:attrib []]
+        ( [usfm:attrib[] usfm:property[inline="true"]]
         attribute lemma { xsd:string { minLength = "1" } }? # Lemma/citation form found in glossary
         & [usfm:attrib []]
         attribute strong { xsd:string { pattern = "([HG]\d{4,5}(:[a-z])?,?)+"} }? # Strong�s ID in the form H##### (Hebrew) or G##### (Greek)
         & [usfm:attrib []]
         attribute srcloc { xsd:string { pattern = "[a-z]{3,5}\d?:\d+\.\d+\.\d+\.\d+" } }? # Location of the word in the source text
-        >> usfm:repeat[usfm:text[noquotes="true" "WS"]]),
+        >> usfm:repeat[initattriblist="true" usfm:text[noquotes="true" "WS"]]),
         char.link,
         char.closed?,
         text,
@@ -618,12 +621,14 @@ CharWithAttrib.char.style.w =
 
 CharWithAttrib.char.style.rb = 
     element char {
+        [usfm:tag[id="a"]]
         attribute style { "rb" }, # Base text for ruby glosses
         char.link?,
         char.closed?,
         attribute gloss { xsd:string { minLength = "1" } }?, # Ruby glosses
         text,
         (Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
+        >> usfm:endtag[id="a"]
     }
 
 char.link =
@@ -640,14 +645,17 @@ char.closed =
     attribute closed { xsd:boolean } # Present to allow roundtripping to USFM, not needed for publishing
 
 Milestone = (
-    element ms {
+    (element ms {
+        [usfm:tag[strip="none"]]
         attribute style { Milestone.ms.style.enum },
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
         empty
     }
-    | MilestoneWithAttrib.enum
+    >> usfm:endtag[])
+    | (MilestoneWithAttrib.enum >> usfm:endtag[])
     )
+
 Milestone.ms.style.enum = (
       xsd:string { pattern="ts?(\-[se])?" }
     | xsd:string { pattern="[Zz].+" } # Only supporting "qt#-s|e" in USX 3.0. All other styles would be user generated.
@@ -659,9 +667,11 @@ MilestoneWithAttrib.enum = (
     )
 MilestoneWithAttrib.ms.style.qt = 
     element ms {
+        [usfm:tag[strip="right?"]]
         attribute style { xsd:string { pattern="qt[1-5]?(\-[se])?" } }, # Quotation speaker
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # Milestone start id for locating start and end pairs
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # Milestone end id for locating start and end pairs
+        [usfm:attrib[startlist="true"]]
         attribute who { xsd:string { minLength = "2" } }?, # Name / identity of quote speaker
         empty
     }
@@ -814,28 +824,30 @@ Sidebar =
     }
 
 category =
-    [usfm:tag["cat"] usfm:text[name="Word"] usfm:endtag["cat"]]
+    [usfm:tag["cat"] usfm:text[name="Word" strip="right?"] usfm:endtag["cat"]]
     attribute category { text }
 
 Figure =
     [usfm:tag["fig"]]
     element figure {
+        ([usfm:attrib[]]
+        attribute style { text } &
         [usfm:attrib[]]
-        attribute style { text },
+        attribute file { text } &
         [usfm:attrib[]]
-        attribute alt { text }?,
+        attribute alt { text }? &
         [usfm:attrib[]]
-        attribute file { text },
+        attribute size { text }? &
         [usfm:attrib[]]
-        attribute size { text }?,
+        attribute loc { text }? &
         [usfm:attrib[]]
-        attribute loc { text }?,
+        attribute copy { text }? &
         [usfm:attrib[]]
-        attribute copy { text }?,
-        [usfm:attrib[]]
-        attribute ref { text }?,
-        [usfm:attrib[key="caption"]]
-        text? # Caption
+        attribute ref { text }? &
+        [usfm:attrib["caption"]]
+        text?
+        >> usfm:repeat[initattriblist="true" usfm:text[noquotes="true" "WS"]])
+        >> usfm:endtag["fig"]
     }
 
 FootnoteReference =

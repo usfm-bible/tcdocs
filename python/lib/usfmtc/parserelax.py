@@ -126,7 +126,7 @@ class RelaxUSFMParser:
             if not any([self._local(n.tag).startswith("usfm:") for n in e]):
                 return curr
             ncurr = self.makeSequence('sequence', e, curr)
-            curr = self.procChildren(e, ncurr)
+            self.procChildren(e, ncurr)
         elif tag in ("text", "empty"):
             self.procChildren(e, curr)
         elif tag == "ref":
@@ -164,7 +164,7 @@ class RelaxUSFMParser:
                 curr = self.makeSequence("sequence", e, scurr)
                 scurr = None
             curr = self._addstrip("right", e, curr, default="right single")
-            curr = None
+            # curr = None
         elif tag == "usfm:endtag":
             many = e.get('many', '')
             ncurr = self.makeSequence(manys.get(many, 'sequence'), e, curr)
@@ -175,6 +175,14 @@ class RelaxUSFMParser:
             self.makeEndTag(e.text, ncurr, e, prefix=prefix, refid=refid, term=terminate)
             ncurr = self._addstrip("right", e, ncurr)
         elif tag in ("usfm:attrib", "usfm:text"):
+            if e.get("startlist", "false") == "true":
+                self.makeTerminal('"|"', curr)
+                self.makeTerminal('WS', curr, many="?")
+                ncurr = self.makeSequence("choice", e, curr)
+            else:
+                ncurr = curr
+            curr = self.makeSequence("sequence", e, ncurr)
+            #curr = ncurr
             curr = self._addstrip("left", e, curr)
             fbreg = parent.findtext('{}[@type="string"]/{}[@name="pattern"]'.format(
                                             self._global('data'), self._global('param')))
@@ -215,7 +223,14 @@ class RelaxUSFMParser:
             rep = self.procChildren(e, rep)
             if rep is not None and len(rep) == 1:
                 rep = rep[0]
-            self.back.addrepeat(rep, curr)
+            init = None
+            if e.get('initattriblist', "false") == "true":
+                init = self.makeSequence("sequence", e, None)
+                self.makeTerminal('"|"', init)
+            curr = self.back.addrepeat(rep, curr, init=init)
+        elif tag == "usfm:property":
+            for k, v in e.attrib.items():
+                setattr(curr, k, v)
 
         if scurr is not None:
             curr = self.makeSequence("sequence", e, scurr)
