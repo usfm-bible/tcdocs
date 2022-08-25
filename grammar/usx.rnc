@@ -818,9 +818,11 @@ CrossReferenceChar.char.style.enum = (
 
 Sidebar =
     element sidebar {
+        [usfm:tag[id="a"]]
         attribute style { "esb" },
         category?,
         (Para | List | Table | Footnote | CrossReference)+
+        >> usfm:endtag[id="a"]
     }
 
 category =

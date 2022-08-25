@@ -46,6 +46,7 @@ alljobs = {
     "Milestone":            ("ms", ("MilestoneWithAttrib.enum", "MilestoneWithAttrib.ms.style.qt")),
     "Para":                 ("p", ("Para.para.style.enum", "Break")),
     "Scripture":            ("id", ("BookIdentification", "BookIdentification.book.code.enum")),
+    "Sidebar":              ("esb",),
     "Table":                ("table", ("TableContent",)),
     "Verse":                ("verse", ("VerseStart", "VerseEnd")),
     "category":             ("cat",),
