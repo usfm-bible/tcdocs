@@ -2,7 +2,7 @@
 :description: Parallel passage reference(s)
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/r.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

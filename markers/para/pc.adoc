@@ -2,7 +2,7 @@
 :description: Centered paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pc.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

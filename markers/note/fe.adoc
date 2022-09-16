@@ -2,7 +2,7 @@
 :description: Endnote
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note/fe.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

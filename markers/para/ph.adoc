@@ -2,7 +2,7 @@
 :description: Indented paragraph with hanging indent
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ph.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

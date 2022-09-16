@@ -2,7 +2,7 @@
 :description: Right-aligned paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pr.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

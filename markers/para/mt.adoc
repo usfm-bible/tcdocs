@@ -2,7 +2,7 @@
 :description: Main title
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/mt.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images

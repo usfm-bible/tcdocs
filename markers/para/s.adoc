@@ -2,7 +2,7 @@
 :description: Section heading
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/s.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
