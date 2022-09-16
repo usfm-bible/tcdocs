@@ -1,1 +1,3 @@
 = Character Styles for Lists
+
+include::../../nav.adoc[tag=nav-lists]

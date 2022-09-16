@@ -1,0 +1,4 @@
+= pn
+:env-antora:
+
+include::markers:char/pn.adoc[tag=public]

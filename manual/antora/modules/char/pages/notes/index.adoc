@@ -1,1 +1,3 @@
 = Character Styles for Notes
+
+include::../../nav.adoc[tag=nav-notes]

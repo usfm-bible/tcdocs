@@ -1,0 +1,45 @@
+= wj
+:description: Words of Jesus
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/wj.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Words of Jesus.
+Syntax::
+* *USFM:* `+\wj_{content}\wj*+`
+* *USX:* `+<char style="wj">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.@Missing
+[source#src-char-wj_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

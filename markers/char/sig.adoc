@@ -1,0 +1,48 @@
+= sig
+:description: Author's signature
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/sig.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Autrhor's signature. Signature of the author of a letter or epistle.
+Syntax::
+* *USFM:* `+\sig_{content}\sig*+`
+* *USX:* `+<char style="sig">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Colossians 4.18 (GNT)
+[source#src-char-sig_1,usfm,highlight=2]
+----
+\p
+\v 18 With my own hand I write this: \sig Greetings from Paul\sig*. 
+Do not forget my chains!
+\cls May God's grace be with you.
+----
+
+image::char/sig_1.jpg[Colossians 4.18 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

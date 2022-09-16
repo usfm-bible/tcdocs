@@ -1,0 +1,45 @@
+= pn
+:description: Proper name
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/pn.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Proper name.
+Syntax::
+* *USFM:* `+\pn_{content}\pn*+`
+* *USX:* `+<char style="pn">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.@Missing
+[source#src-char-pn_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

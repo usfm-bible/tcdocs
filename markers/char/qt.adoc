@@ -1,0 +1,71 @@
+= qt
+:description: Quoted text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qt.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Quoted text. Old Testament quotations in the New Testament, or other quotations.
+Syntax::
+* *USFM:* `+\qt_{content}\qt*+`
+* *USX:* `+<char style="qt">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+Poetic format, where all text is a quotation.
+
+----
+\q1 \qt ........................................\qt*
+\q2 \qt ........................................\qt*
+\q1 \qt ........................................\qt*
+\q2 \qt ........................................\qt*
+----
+
+Poetic format, where text is mixed (only some is a quotation).
+
+----
+\q1 \qt ...............\qt* ..............\qt ........\qt*
+\q2 \qt .....\qt* ................................
+\q1 ..................................................
+\q2 \qt.........................................\qt*
+----
+
+.Mark 1.2-3 (GNT)
+[source#src-char-qt_1,usfm,highlight=4;5;7;8;9]
+----
+\p
+\v 1 This is the Good News about Jesus Christ, the Son of God.
+\v 2 It began as the prophet Isaiah had written:
+\q1 \qt “God said, ‘I will send my messenger ahead of you\qt*
+\q2 \qt to open the way for you.’\qt*
+\q1
+\v 3 \qt Someone is shouting in the desert,\qt*
+\q2 \qt ‘Get the road ready for the Lord;\qt*
+\q2 \qt make a straight path for him to travel!’ ”\qt*
+----
+
+image::char/qt_1.jpg[Mark 1.2-3 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,1 +1,3 @@
 = Character Styles for Poetry
+
+include::../../nav.adoc[tag=nav-poetry]

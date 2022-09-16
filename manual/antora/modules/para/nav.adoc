@@ -38,9 +38,10 @@
 *** xref:paragraphs/pmr.adoc[pmr - Embedded refrain]
 *** xref:paragraphs/pi.adoc[pi# - Indented]
 *** xref:paragraphs/mi.adoc[mi - Indented continuation]
-// DEPRECATED *** xref:paragraphs/mi.adoc[ph - Indented hanging]
 *** xref:paragraphs/nb.adoc[nb - No break]
 *** xref:paragraphs/b.adoc[b - Blank line]
+*** _Deprecated_
+**** xref:paragraphs/ph.adoc[ph - Indented hanging]
 // end::nav-paragraphs[]
 // ** Poetry
 // tag::nav-topcat[]

@@ -1,0 +1,49 @@
+= addpn
+:description: Translator's addition
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/addpn.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Proper name within translator's addition.
+Syntax::
+* *USFM:* `+\addpn_{content}\addpn*+`
+* *USX:* `+<char style="addpn">{content}</char>+`
+// tag::spec[]
+Added:: 1.0
+Deprecated:: 3.0
+// end::spec[]
+* _Recommended alternate:_ Nested xref:char:features/pn.adoc[pn - Proper name] within xref:char:features/add.adoc[add - Translator addition]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.@Missing
+[source#src-char-addpn_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,4 @@
+= wj
+:env-antora:
+
+include::markers:char/wj.adoc[tag=public]

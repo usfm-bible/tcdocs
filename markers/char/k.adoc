@@ -1,0 +1,45 @@
+= k
+:description: Keyword/keyterm
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/k.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Keyword/keyterm.
+Syntax::
+* *USFM:* `+\k_{content}\k*+`
+* *USX:* `+<char style="k">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.@Missing
+[source#src-char-k_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

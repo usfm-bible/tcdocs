@@ -1,0 +1,4 @@
+= k
+:env-antora:
+
+include::markers:char/k.adoc[tag=public]

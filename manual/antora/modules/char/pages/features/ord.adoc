@@ -1,0 +1,4 @@
+= ord
+:env-antora:
+
+include::markers:char/ord.adoc[tag=public]

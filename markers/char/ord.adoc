@@ -1,0 +1,45 @@
+= ord
+:description: Ordinal number ending
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ord.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Ordinal number ending.
+Syntax::
+* *USFM:* `+\ord_{content}\ord*+`
+* *USX:* `+<char style="ord">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [CrossReferenceContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.1st
+[source#src-char-ord_1,usfm,highlight=1]
+----
+1\ord st\ord
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

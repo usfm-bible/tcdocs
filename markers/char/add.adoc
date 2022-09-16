@@ -1,0 +1,47 @@
+= add
+:description: Translator's addition
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/add.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Translator's addition. Words supplied by the translator in order to make the meaning of the original language clear.
+Syntax::
+* *USFM:* `+\add_{content}\add*+`
+* *USX:* `+<char style="add">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Genesis 5.29 (Russian Synodal)
+[source#src-char-add_1,usfm,highlight=3]
+----
+\p
+\v 29 И нарек ему имя: Ной, сказав: он утешит нас в работе нашей и в трудах рук
+наших при \add возделывании\add* земли, которую проклял Господь.
+----
+
+image::char/add_1.jpg[Genesis 5.29 (Russian Synodal),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

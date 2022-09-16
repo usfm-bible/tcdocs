@@ -1,0 +1,51 @@
+= tl
+:description: Transliterated words
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/tl.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Transliterated words.
+Syntax::
+* *USFM:* `+\tl_{content}\tl*+`
+* *USX:* `+<char style="tl">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Matthew 27.46 (GNT)
+[source#src-char-tl_1,usfm,highlight=6..7]
+----
+\s1 The Death of Jesus
+\r (Mark 15.33-41; Luke 23.44-49; John 19.28-30)
+\p
+\v 45 At noon the whole country was covered with darkness, which lasted for 
+three hours.
+\v 46 At about three o'clock Jesus cried out with a loud shout, \tl “Eli, Eli, 
+lema sabachthani?”\tl* which means, “My God, my God, why did you abandon me?”
+----
+
+image::char/tl_1.jpg[Matthew 27.46 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -18,9 +18,9 @@ Syntax::
 * *USX:* `+<para style="ph#">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
-Status:: Deprecated
-// - Recommended alternate: xref:li.adoc[]
+Deprecated:: 3.0
 // end::spec[]
+* _Recommended alternate:_ xref:para:lists/li.adoc[li# - List entry]
 
 == Properties
 

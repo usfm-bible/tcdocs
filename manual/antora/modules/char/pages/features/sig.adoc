@@ -1,0 +1,4 @@
+= sig
+:env-antora:
+
+include::markers:char/sig.adoc[tag=public]

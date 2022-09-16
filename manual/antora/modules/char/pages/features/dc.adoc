@@ -1,0 +1,4 @@
+= dc
+:env-antora:
+
+include::markers:char/dc.adoc[tag=public]

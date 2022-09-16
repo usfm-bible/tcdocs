@@ -1,1 +1,3 @@
 = Character Styles for Visual Formatting
+
+include::../../nav.adoc[tag=nav-format]

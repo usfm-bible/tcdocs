@@ -1,0 +1,54 @@
+= sls
+:description: Secondary language source
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/sls.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Secondary language source. Passage of text based on a secondary language or alternate text source. For example: The French NBS02 has large sections of text in EZR and DAN in italics, to represent where the original text is in Aramaic, not Hebrew.
+Syntax::
+* *USFM:* `+\sls_{content}\sls*+`
+* *USX:* `+<char style="sls">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Ezra 4.8—6.18 (NBS - French, Nouvelle Bible Segond)
+[source#src-char-sls_1,usfm,highlight=5..9]
+----
+\v 7 Et aux jours d'Artaxerxès, Bishlam, Mitredath, Tabéel et le reste de leurs
+collègues écrivirent à Artaxerxès, roi de Perse. Le texte de la lettre fut 
+écrit en araméen, traduit en araméen.
+\p
+\v 8 \sls Rehoum, chancelier, et Shimshaï, secrétaire, écrivirent au roi 
+Artaxerxès la lettre suivante concernant Jérusalem, savoir:\sls*
+\v 9 \sls «Rehoum, chancelier, Shimshaï, secrétaire, et le reste de leurs 
+collègues, ceux de Dîn, d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de 
+Babylone, de Suse, de Déha, d'Elam,\sls*
+...
+----
+
+image::char/sls_1.jpg[Ezra 4.8—6.18 (NBS - French, Nouvelle Bible Segond),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues
