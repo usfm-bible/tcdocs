@@ -28,7 +28,7 @@ TextProperties:: publishable, vernacular
 
 == Examples
 
-.Ezra 4.8—6.18 (NBS - French, Nouvelle Bible Segond)
+.Ezra 4.8—6.18 (French - NBS - Nouvelle Bible Segond)
 [source#src-char-sls_1,usfm,highlight=5..9]
 ----
 \v 7 Et aux jours d'Artaxerxès, Bishlam, Mitredath, Tabéel et le reste de leurs
@@ -43,7 +43,7 @@ Babylone, de Suse, de Déha, d'Elam,\sls*
 ...
 ----
 
-image::char/sls_1.jpg[Ezra 4.8—6.18 (NBS - French, Nouvelle Bible Segond),300]
+image::char/sls_1.jpg[Ezra 4.8 to 6.18 (French - NBS - Nouvelle Bible Segond),300]
 
 == Publication Issues
 
