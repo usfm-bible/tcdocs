@@ -7,18 +7,6 @@
 *** xref:footnote/f.adoc[f - Footnote]
 *** xref:footnote/fe.adoc[fe - Endnote]
 *** xref:footnote/ef.adoc[ef - Extended Note]
-*** Characters (Notes)
-**** xref:char:notes/fr.adoc[fr - Origin reference]
-**** xref:char:notes/fq.adoc[fq - Translation quote]
-//TODO **** xref:char:notes/fq.adoc[fqa - Alternate translation]
-//TODO **** xref:char:notes/fk.adoc[fk - Keyword]
-//TODO **** xref:char:notes/fl.adoc[fl - Label text]
-//TODO **** xref:char:notes/fw.adoc[fw - Witness list]
-//TODO **** xref:char:notes/fp.adoc[fp - Additional paragraph]
-//TODO **** xref:char:notes/fv.adoc[fv - Verse number]
-**** xref:char:notes/ft.adoc[ft - Note text]
-//TODO **** xref:char:notes/fdc.adoc[fdc - DC-only content]
-//TODO **** xref:char:notes/fm.adoc[fm - Reference mark]
 // end::nav-footnotes[]
 // ** Cross References
 // tag::nav-topcat[]

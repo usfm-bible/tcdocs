@@ -4,6 +4,12 @@ Cross References are a type of xref:note:index.adoc[Note].
 
 include::../../nav.adoc[tag=nav-crossrefs]
 
+[NOTE]
+.See also -- Character Styles for Cross References
+====
+include::note:/crossref/xref-char.adoc[tag=xrefs-only]
+====
+
 == Diagram
 
 === USFM

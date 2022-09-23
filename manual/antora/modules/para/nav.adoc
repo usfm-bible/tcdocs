@@ -55,9 +55,6 @@
 *** xref:poetry/qm.adoc[qm# - Embedded poetic line]
 *** xref:poetry/qd.adoc[qd - Hebrew note]
 *** xref:poetry/b.adoc[b - Blank line]
-*** Characters (Poetry)
-**** xref:char:poetry/qs.adoc[qs - Selah]
-**** xref:char:poetry/qac.adoc[qac - Acrostic character]
 // end::nav-poetry[]
 // ** Lists
 // tag::nav-topcat[]
@@ -68,9 +65,4 @@
 *** xref:lists/li.adoc[li# - List entry]
 *** xref:lists/lf.adoc[lf - List footer]
 *** xref:lists/lim.adoc[lim# - Embedded list entry]
-*** Characters (Lists)
-**** xref:char:lists/litl.adoc[litl - List entry total]
-**** _Structured List Entries_
-**** xref:char:lists/lik.adoc[lik - List entry key]
-**** xref:char:lists/liv.adoc[liv - List entry value]
 // end::nav-lists[]

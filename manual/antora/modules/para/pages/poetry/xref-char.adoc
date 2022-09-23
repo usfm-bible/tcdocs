@@ -1,0 +1,6 @@
+== Character Styles for Poetry
+
+// tag::xrefs-only[]
+* xref:char:poetry/qs.adoc[qs - Selah]
+* xref:char:poetry/qac.adoc[qac - Acrostic character]
+// end::xrefs-only[]

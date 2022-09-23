@@ -1,3 +1,9 @@
 = Poetry
 
 include::../../nav.adoc[tag=nav-poetry]
+
+[NOTE]
+.See also -- Character Styles for Poetry
+====
+include::para:/poetry/xref-char.adoc[tag=xrefs-only]
+====

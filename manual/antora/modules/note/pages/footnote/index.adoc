@@ -4,6 +4,12 @@ Footnotes are a type of xref:note:index.adoc[Note].
 
 include::../../nav.adoc[tag=nav-footnotes]
 
+[NOTE]
+.See also -- Character Styles for Footnotes
+====
+include::note:/footnote/xref-char.adoc[tag=xrefs-only]
+====
+
 == Diagram
 
 === USFM

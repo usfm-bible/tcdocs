@@ -1,0 +1,5 @@
+== Character Styles for Cross References
+
+// tag::xrefs-only[]
+
+// end::xrefs-only[]

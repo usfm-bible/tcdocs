@@ -1,3 +1,9 @@
 = Lists
 
 include::../../nav.adoc[tag=nav-lists]
+
+[NOTE]
+.See also -- Character Styles for Lists
+====
+include::para:/lists/xref-char.adoc[tag=xrefs-only]
+====
