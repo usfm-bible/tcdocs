@@ -1,0 +1,4 @@
+= wa
+:env-antora:
+
+include::markers:char/wa.adoc[tag=public]

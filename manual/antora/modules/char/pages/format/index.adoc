@@ -1,3 +1,8 @@
-= Character Styles for Visual Formatting
+= Character Types for Text Formatting
+
+[CAUTION]
+====
+The use of formatting oriented character markup is strongly discouraged. Please search for the appropriate USFM element to markup content, wherever possible.
+====
 
 include::../../nav.adoc[tag=nav-format]

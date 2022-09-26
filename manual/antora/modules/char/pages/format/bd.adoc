@@ -1,0 +1,3 @@
+= bd
+
+include::markers:char/bd.adoc[tag=public]

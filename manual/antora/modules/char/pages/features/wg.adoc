@@ -1,0 +1,4 @@
+= wg
+:env-antora:
+
+include::markers:char/wg.adoc[tag=public]

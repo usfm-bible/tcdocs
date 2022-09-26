@@ -1,0 +1,49 @@
+= Figure
+ifndef::localdir[]
+:source-highlighter: pygments
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+== Summary
+
+Description:: Figure / illustration.
+Syntax::
+* *USFM:* `+\fig_{caption}|src="{filename} size="{size}" ref="{reference} [@alt,loc,copy]"\fig*+`
+* *USX:* `+<figure style="fig" file="{filename}" size="{size}" ref="{reference}" [@alt,loc,copy]>{caption}</figure>+`
+Attributes:::
+** `alt` - Short, free-form description of image.
+** `src`^*^ - Filename
+** `size`^*^ - Illustration relative size. Options are `col` (illustration should be inserted inline within the current text column) or `span` (illustration should be inserted across -- 'spanning' -- text columns).
+** `loc` - Location / range. Specify a range of references at which the illustration might be inserted.
+** `copy` - Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
+** `ref`^*^ - Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
+caption::: I
+// tag::spec[]
+Added:: 1.0
+Updated:: 3.0 (xref:char:attributes.adoc[attributes])
+// end::spec[]
+
+== Properties
+
+StyleType:: 
+OccursUnder:: 
+TextType:: 
+TextProperties:: 
+
+== Diagram
+
+=== USFM
+
+
+=== USX
+
+
+== Examples
+
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

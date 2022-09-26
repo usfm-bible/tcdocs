@@ -1,0 +1,3 @@
+= em
+
+include::markers:char/em.adoc[tag=public]

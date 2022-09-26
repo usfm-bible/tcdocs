@@ -28,8 +28,8 @@ TextProperties:: publishable, vernacular
 
 == Examples
 
-Poetic format, where all text is a quotation.
-
+.Poetic format, where all text is a quotation
+[source#src-char-qt_1,usfm]
 ----
 \q1 \qt ........................................\qt*
 \q2 \qt ........................................\qt*
@@ -37,8 +37,8 @@ Poetic format, where all text is a quotation.
 \q2 \qt ........................................\qt*
 ----
 
-Poetic format, where text is mixed (only some is a quotation).
-
+.Poetic format, where text is mixed (only some text is a quotation)
+[source#src-char-qt_2,usfm]
 ----
 \q1 \qt ...............\qt* ..............\qt ........\qt*
 \q2 \qt .....\qt* ................................
@@ -47,7 +47,7 @@ Poetic format, where text is mixed (only some is a quotation).
 ----
 
 .Mark 1.2-3 (GNT)
-[source#src-char-qt_1,usfm,highlight=4;5;7;8;9]
+[source#src-char-qt_3,usfm,highlight=4;5;7;8;9]
 ----
 \p
 \v 1 This is the Good News about Jesus Christ, the Son of God.

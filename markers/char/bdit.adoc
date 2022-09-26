@@ -1,6 +1,6 @@
-= png
-:description: Geopgraphic proper name
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/png.adoc
+= bdit
+:description: Italic text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/bdit.adoc
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
@@ -11,17 +11,16 @@ endif::[]
 
 == Summary
 
-Description:: Geographic proper name. Some publications visually distinguish between proper names of people and proper names of geographic places.
+Description:: Bold + italic text.
 Syntax::
-* *USFM:* `+\png_{content}\png*+`
-* *USX:* `+<char style="png">{content}</char>+`
-Added:: 3.0
+* *USFM:* `+\bdit_{content}\bdit*+`
+* *USX:* `+<char style="bdit">{content}</char>+`
+Added:: 1.0
 
 == Properties
 
 StyleType:: Character
 OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
 TextProperties:: publishable, vernacular
 
 == Structure
@@ -29,7 +28,7 @@ TextProperties:: publishable, vernacular
 == Examples
 
 .Missing
-[source#src-char-png_1,usfm,highlight=1]
+[source#src-char-bdit_1,usfm]
 ----
 Missing
 ----

@@ -1,0 +1,4 @@
+= pro
+:env-antora:
+
+include::markers:char/pro.adoc[tag=public]

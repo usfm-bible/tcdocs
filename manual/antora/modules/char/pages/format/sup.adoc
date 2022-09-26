@@ -1,0 +1,3 @@
+= sup
+
+include::markers:char/sup.adoc[tag=public]

@@ -31,7 +31,7 @@ TextProperties:: paragraph, publishable, vernacular, level_#
 
 == Examples
 
-.@Missing
+.Missing
 [source#src-para-mte_1,usfm,highlight=1]
 ----
 Missing

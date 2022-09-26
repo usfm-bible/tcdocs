@@ -1,6 +1,6 @@
-= png
-:description: Geopgraphic proper name
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/png.adoc
+= wh
+:description: Hebrew wordlist entry
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/wh.adoc
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
@@ -11,11 +11,11 @@ endif::[]
 
 == Summary
 
-Description:: Geographic proper name. Some publications visually distinguish between proper names of people and proper names of geographic places.
+Description:: Aramaic wordist entry.
 Syntax::
-* *USFM:* `+\png_{content}\png*+`
-* *USX:* `+<char style="png">{content}</char>+`
-Added:: 3.0
+* *USFM:* `+\wh_{content}\wh*+`
+* *USX:* `+<char style="wh">{content}</char>+`
+Added:: 1.0
 
 == Properties
 
@@ -29,7 +29,7 @@ TextProperties:: publishable, vernacular
 == Examples
 
 .Missing
-[source#src-char-png_1,usfm,highlight=1]
+[source#src-char-wh_1,usfm,highlight=1]
 ----
 Missing
 ----

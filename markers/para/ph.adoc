@@ -33,7 +33,7 @@ TextProperties:: paragraph, publishable, vernacular
 
 == Examples
 
-.@Missing
+.Missing
 [source#src-para-ph_1,usfm,highlight=1]
 ----
 Missing

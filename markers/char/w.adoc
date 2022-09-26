@@ -19,7 +19,7 @@ Attributes:::
 ** `lemma` - Citation form for the term in the glossary _(default)_
 ** `strong` - Strong’s ID in the form `+H####+` (Hebrew) or `+G####+` (Greek)
 *** A strong’s ID augmentation identifier, if required, should be separated from the strong value by a colon `:`. An augmentation is a method of extending Strong’s by aligning it to another lexicon (e.g. Brown-Driver-Briggs). This requires dividing some words into two or more separate words.
-*** There are instances where more than one word may need to be included within `+\w_...\w*+` because of how Hebrew and Greek use word repetition - e.g. for a superlative. Exodus 29:37 repeats the word ‘holy’ as the superlative form.
+*** There are instances where more than one word may need to be included within `+\w_...\w*+` because of how Hebrew and Greek use word repetitions (e.g. for a superlative). Exodus 29:37 repeats the word ‘holy’ as the superlative form.
 ** `srcloc` - Location of the word in the source text; Example: GNT version 5 text, book 51, chapter 1, verse 2, word 1.
 // tag::spec[]
 Added:: 1.0
@@ -39,7 +39,33 @@ TextProperties:: publishable, vernacular
 
 == Examples
 
-Source USFM text and corresponding formatted layout image
+.Glossay word without attributes
+[source#src-char-w_1,usfm,highlight=1]
+----
+\w gracious\w*
+----
+
+.Glossay word with unidentified (default) lemma attribute
+[source#src-char-w_2,usfm,highlight=1]
+----
+\w gracious|grace\w*
+----
+
+.Glossay word with explicit lemma attribute
+[source#src-char-w_3,usfm,highlight=1]
+----
+\w gracious|lemma="grace"\w*
+----
+
+.Glossay word with lemma and strong
+[source#src-char-w_4,usfm,highlight=1]
+----
+\w gracious|lemma="grace" strong="G5485"\w*
+\w gracious|strong="G5485"\w*
+\w gracious|strong="H1234,G5485"\w*
+----
+
+//image::char/missing.jpg[,300]
 
 == Publication Issues
 

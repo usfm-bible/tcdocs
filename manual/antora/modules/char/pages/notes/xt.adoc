@@ -1,0 +1,4 @@
+= xt
+:env-antora:
+
+//include::markers:char/xt.adoc[tag=public]

@@ -1,0 +1,3 @@
+= sc
+
+include::markers:char/sc.adoc[tag=public]

@@ -1,6 +1,6 @@
-= png
-:description: Geopgraphic proper name
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/png.adoc
+= pro
+:description: Pronunciation annotation
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/pro.adoc
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
@@ -11,11 +11,15 @@ endif::[]
 
 == Summary
 
-Description:: Geographic proper name. Some publications visually distinguish between proper names of people and proper names of geographic places.
+Description:: Pronunciation annotation.
 Syntax::
-* *USFM:* `+\png_{content}\png*+`
-* *USX:* `+<char style="png">{content}</char>+`
-Added:: 3.0
+* *USFM:* `+\pro_{content}\pro*+`
+* *USX:* `+<char style="pro">{content}</char>+`
+// tag::spec[]
+Added:: 2.0
+Deprecated:: 3.0
+// end::spec[]
+* _Recommended alternate:_ xref:char:features/rb.adoc[rb - Ruby gloss].
 
 == Properties
 
@@ -29,7 +33,7 @@ TextProperties:: publishable, vernacular
 == Examples
 
 .Missing
-[source#src-char-png_1,usfm,highlight=1]
+[source#src-char-pro_1,usfm,highlight=1]
 ----
 Missing
 ----

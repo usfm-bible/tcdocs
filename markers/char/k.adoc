@@ -28,7 +28,7 @@ TextProperties:: publishable, vernacular
 
 == Examples
 
-.@Missing
+.Missing
 [source#src-char-k_1,usfm,highlight=1]
 ----
 Missing
