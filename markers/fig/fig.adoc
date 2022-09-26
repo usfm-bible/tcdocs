@@ -5,6 +5,8 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
+// tag::public[]
+
 == Summary
 
 Description:: Figure / illustration.
@@ -18,7 +20,7 @@ Attributes:::
 ** `loc` - Location / range. Specify a range of references at which the illustration might be inserted.
 ** `copy` - Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
 ** `ref`^*^ - Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
-caption::: I
+caption::: 
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (xref:char:attributes.adoc[attributes])
@@ -26,10 +28,10 @@ Updated:: 3.0 (xref:char:attributes.adoc[attributes])
 
 == Properties
 
-StyleType:: 
-OccursUnder:: 
-TextType:: 
-TextProperties:: 
+//StyleType:: 
+//OccursUnder:: 
+//TextType:: 
+//TextProperties:: 
 
 == Diagram
 

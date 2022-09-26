@@ -1,1 +1,1 @@
-* xref:fig.adoc[]
+* xref:fig.adoc[Figures]
