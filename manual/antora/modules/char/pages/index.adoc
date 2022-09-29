@@ -1,9 +1,4 @@
 = Characters
-ifndef::localdir[]
-:source-highlighter: pygments
-:localdir: ../
-endif::[]
-:imagesdir: {localdir}/images
 
 == Summary
 
@@ -23,4 +18,7 @@ image::schema/char_rail.svg[]
 === USX
 image::schema/char_usx.svg[]
 
-== Descendants
+== Child Elements
+
+* Footnotes - [xref:note:footnote/index.adoc[Footnote]]
+* Characters - [xref:char:index.adoc[CharEmbed]]

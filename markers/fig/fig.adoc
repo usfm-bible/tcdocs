@@ -1,6 +1,8 @@
-= Figure
+= fig
+:description: Figure / illustration
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/fig/fig.adoc
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
@@ -20,7 +22,7 @@ Attributes:::
 ** `loc` - Location / range. Specify a range of references at which the illustration might be inserted.
 ** `copy` - Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
 ** `ref`^*^ - Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
-caption::: 
+caption::: Illustration cxaption text.
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (xref:char:attributes.adoc[attributes])
@@ -28,21 +30,47 @@ Updated:: 3.0 (xref:char:attributes.adoc[attributes])
 
 == Properties
 
-//StyleType:: 
-//OccursUnder:: 
-//TextType:: 
-//TextProperties:: 
+StyleType:: Character
+OccursUnder:: `[ParaWithFig]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular
 
 == Diagram
 
 === USFM
-
+image::schema/fig_rail.svg[]
 
 === USX
-
+image::schema/fig_usx.svg[]
 
 == Examples
 
+.Spanning Columns - Mark 1.18 (GNT)
+[source#src-note-fig_1,usfm,highlight=5;6]
+----
+\p
+\v 16 As Jesus walked along the shore of Lake Galilee, he saw two fishermen,
+Simon and his brother Andrew, catching fish with a net.
+\v 17 Jesus said to them, “Come with me, and I will teach you to catch people.”
+\v 18 At once they left their nets and went with him. \fig At once they left
+their nets.|src="avnt016.jpg" size="span" ref="1.18"\fig*
+----
+
+image::fig/fig_1.jpg[Mark 1.18 (GNT),600]
+
+.Current Column - Mark 1.31 (GNT)
+[source#src-note-fig_2,usfm,highlight=4;5]
+----
+\v 30 Simon's mother-in-law was sick in bed with a fever, and as soon as Jesus
+arrived, he was told about her.
+\v 31 He went to her, took her by the hand, and helped her up. The fever left
+her, and she began to wait on them. \fig Took her by the hand, and...the fever
+left her.|src="avnt017.tif" size="col" ref="1.31"\fig*
+\p
+\v 32 After the sun had set and evening had come ...
+----
+
+image::fig/fig_2.jpg[Mark 1.31 (GNT),550]
 
 == Publication Issues
 

@@ -1,0 +1,3 @@
+= Character Types for Footnotes
+
+include::../../../nav.adoc[tag=nav-footnotes]

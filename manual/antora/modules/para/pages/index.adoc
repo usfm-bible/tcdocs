@@ -1,9 +1,4 @@
 = Paragraphs
-ifndef::localdir[]
-:source-highlighter: pygments
-:localdir: ../
-endif::[]
-:imagesdir: {localdir}/images
 
 == Summary
 
@@ -23,12 +18,12 @@ image::schema/p_rail.svg[]
 === USX
 image:schema/p_usx.svg[]
 
-== Descendants
+== Child Elements
 
 * xref:note:index.adoc[Notes]
-** xref:note:footnote/index.adoc[] (Footnote)
-** xref:note:crossref/index.adoc[] (CrossReference)
-* xref:char:index.adoc[] (Char)
-* Milestone
-* Figure
-* Verse
+** Footnotes - [xref:note:footnote/index.adoc[Footnote]]
+** Cross References - [xref:note:crossref/index.adoc[CrossReference]]
+* Characters - [xref:char:index.adoc[Char]]
+* Milestones
+* Figures - [xref:fig:fig.adoc[Figure]]
+* Verses - [xref:cv:v.adoc[Verse]]

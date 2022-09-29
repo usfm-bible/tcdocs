@@ -1,0 +1,80 @@
+= esb ... esbe
+:description: Sidebar container
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/sbar/esb.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Sidebar container.
+Syntax::
+* *USFM:* `+\esb_\cat_{category}\cat*{content}\esbe+`
+* *USX:* `+<sidebar style="esb" category="{category}">{content}</sidebar>+`
+`category`::: Sidebar category.
+`content`::: The sidebar paragraph elements and text.
+// tag::spec[]
+Added:: 2.1
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent], [ChapterContent]`
+TextType:: Other
+TextProperties:: publishable, vernacular, note
+
+== Diagram
+
+=== USFM
+image::schema/esb_rail.svg[]
+
+=== USX
+image::schema/esb_usx.svg[]
+
+== Examples
+
+.Mark 1 (CEV Learning Bible)
+[source#src-sbar-esb_1,usfm,highlight=2;17]
+----
+\v 18 At once they left their nets and went with him.
+\esb \cat History\cat*
+\ms Fish and Fishing
+\p In Jesus' time, fishing took place mostly on lake Galilee, because Jewish 
+people could not use many of the harbors along the coast of the Mediterranean 
+Sea, since these harbors were often controlled by unfriendly neighbors. The 
+most common fish in the Lake of Galilee were carp and catfish. The Law of 
+Moses allowed people to eat any fish with fins and scales, but since catfish 
+lack scales (as do eels and sharks) they were not to be eaten (\xt Lev 
+11.9-12\xt*). Fish were also probably brought from Tyre and Sidon, where they 
+were dried and salted.
+...
+\p Among early Christians, the fish was a favorite image for Jesus, because 
+the Greek word for fish (\tl ichthus\tl*) consists of the first letters of the 
+Greek words that tell who Jesus is: \fig Ihsous Christos Theou Uios Swthr|
+alt="Christian Fish Image" src="christfish.jpg" size="col" ref="1.18"\fig*
+\esbe
+\p
+\v 19 He went a little farther on and saw two other brothers, James and John,
+the sons of Zebedee.
+----
+
+image::sbar/esb_1.jpg[Mark 1 (CEV Learning Bible),550]
+
+== Child Elements
+
+* Paragraphs - [xref:para:paragraphs/index.adoc[Para]]
+* Lists - [xref:para:lists/index.adoc[List]]
+* Tables
+* Footnotes - [xref:note:footnote/index.adoc[Footnote]]
+* Cross References - [xref:note:crossref/index.adoc[CrossReference]]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

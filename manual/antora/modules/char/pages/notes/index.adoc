@@ -1,3 +1,7 @@
 = Character Types for Notes
 
-include::../../nav.adoc[tag=nav-notes]
+== Footnotes
+include::../../nav.adoc[tag=nav-footnotes]
+
+== Cross References
+include::../../nav.adoc[tag=nav-crossrefs]

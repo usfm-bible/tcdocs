@@ -2,8 +2,6 @@
 
 include::../../nav.adoc[tag=nav-poetry]
 
-[NOTE]
-.See also -- Character Styles for Poetry
-====
+== Child Elements
+** Character Types for Poetry - [xref:char:poetry/index.adoc[PoetryChar]]
 include::para:/poetry/xref-char.adoc[tag=xrefs-only]
-====

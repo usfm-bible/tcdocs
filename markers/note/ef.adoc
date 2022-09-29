@@ -22,7 +22,7 @@ Syntax::
 `category`::: Note category
 `content`::: The footnote character style elements and text.
 // tag::spec[]
-Added:: 1.0
+Added:: 2.1
 // end::spec[]
 
 == Properties

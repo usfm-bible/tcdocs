@@ -2,7 +2,6 @@
 
 // tag::xrefs-only[]
 * xref:char:lists/litl.adoc[litl - List entry total]
-* _Structured List Entries_
-** xref:char:lists/lik.adoc[lik - List entry key]
-** xref:char:lists/liv.adoc[liv - List entry value]
+* xref:char:lists/lik.adoc[lik - List entry key]
+* xref:char:lists/liv.adoc[liv - List entry value]
 // end::xrefs-only[]

@@ -1,0 +1,3 @@
+= Character Types for Cross References
+
+include::../../../nav.adoc[tag=nav-crossrefs]

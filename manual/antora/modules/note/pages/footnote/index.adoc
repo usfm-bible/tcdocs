@@ -4,12 +4,6 @@ Footnotes are a type of xref:note:index.adoc[Note].
 
 include::../../nav.adoc[tag=nav-footnotes]
 
-[NOTE]
-.See also -- Character Styles for Footnotes
-====
-include::note:/footnote/xref-char.adoc[tag=xrefs-only]
-====
-
 == Diagram
 
 === USFM
@@ -21,5 +15,10 @@ image::schema/cat_rail.svg[]
 === USX
 image::schema/f_usx.svg[]
 image::schema/fchar_usx.svg[]
+image::schema/ref_usx.svg[]
+image::schema/cat_usx.svg[]
 
-== Descendants
+== Child Elements
+
+** Character Types for Footnotes - [xref:char:notes/footnote/index.adoc[FootnoteChar]]
+include::note:/footnote/xref-char.adoc[tag=xrefs-only]
