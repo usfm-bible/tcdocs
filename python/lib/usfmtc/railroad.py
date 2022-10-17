@@ -89,7 +89,7 @@ class DiagramItem(object):
 class DiagramMultiContainer(DiagramItem):
     def __init__(self, name, items, attrs=None, text=None, **kw):
         DiagramItem.__init__(self, name, attrs, text)
-        self.items = [wrapString(item) for item in items]
+        self.items = [wrapString(item) for item in items if item is not None]
         for k, v in kw.items():
             setattr(self, k, v)
 

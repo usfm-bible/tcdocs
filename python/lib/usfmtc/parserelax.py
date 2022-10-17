@@ -33,7 +33,8 @@ class RelaxUSFMParser:
     def procChildren(self, e, curr, quietRefs=False, nofollow=False, usfm=True):
         ncurr = curr
         usfmonly = False
-        for i, c in sorted(enumerate(e), key=lambda x: (int(x[1].get(self._global('usfm:order'), 0)), x[0])):
+        gusfmorder = self._global('usfm:order')
+        for i, c in sorted(enumerate(e), key=lambda x: (int(x[1].get(gusfmorder, 0)), x[0])):
             if usfmonly and not self._local(c.tag).startswith("usfm:") \
                     or c.get(self._global("usfm:ignore"), "false").lower() == "true":
                 continue
@@ -47,30 +48,46 @@ class RelaxUSFMParser:
                 break
         return ncurr
 
-    def makeSequence(self, tag, e, curr):
+    def makeSequence(self, tag, e, curr, t=None, name=None, noadd=False):
         nums = int(e.get('grouping', 8)) if e is not None else 8
-        ncurr = self.back.sequence(combine=tag, parent=curr, groupby=nums)
-        if curr is not None and id(curr) != id(ncurr):
+        ncurr = self.back.sequence(combine=tag, parent=curr, groupby=nums, t=t, name=name)
+        if curr is not None and id(curr) != id(ncurr) and not noadd:
             curr.append(ncurr)
         return ncurr
+
+    def makeElement(self, tag, e, curr, name):
+        res = self.makeSequence(tag, e, curr, t="element", name=name)
+        self.back.elementStart(name, res)
+        return res
+
+    def endElement(self, ncurr):
+        self.back.elementEnd(ncurr)
+
+    def makeAttribute(self, tag, e, curr, name):
+        res = self.makeSequence(tag, e, curr, t="attribute", name=name)
+        self.back.attributeStart(name, res)
+        return res
+
+    def endAttribute(self, ncurr):
+        self.back.attributeEnd(ncurr)
 
     def makeTag(self, vals, curr, e, prefix=None, refid=None, refbase=None):
         ocurr = curr
         if e.get('id', None):
             curr = self.makeRef(e, e.get('id'), curr)
         if len(vals) == 1:
-            if vals[0].startswith('"'):
-                self.makeTerminal('"{}{}"'.format(prefix or "", vals[0][1:-1]), curr)
-            elif prefix:
+            if prefix:
                 ncurr = self.makeSequence("sequence", e, curr)
                 self.makeTerminal('"{}"'.format(prefix), ncurr)
-                self.makeTerminal(vals[0], ncurr)
+            else:
+                ncurr = curr
+            self.makeTerminal(vals[0][1:-1] if vals[0].startswith('"') else vals[0], ncurr, keep=True)
         else:
             if prefix is not None and len(prefix):
                 self.makeTerminal('"{}"'.format(prefix), curr)
             ncurr = self.makeSequence("choice", e, curr)
             for v in vals:
-                self.makeTerminal(v, ncurr)
+                self.makeTerminal(v, ncurr, keep=True)
         return ocurr
 
     def makeEndTag(self, txt, curr, e, prefix=None, refid=None, refbase=None, term=None):
@@ -81,11 +98,11 @@ class RelaxUSFMParser:
         else:
             self.makeTerminal('"{}{}{}"'.format(prefix or "", (txt or "").strip(), term or ""), curr)
 
-    def makeTerminal(self, name, curr, ref=False, many=""):
+    def makeTerminal(self, name, curr, ref=False, keep=False, many=""):
         m = manys.get(many, "sequence")
-        curr = curr if m == "sequence" else self.makeSequence(m, None, curr)
-        res = self.back.terminal(name, curr, ref=ref)
-        curr.append(res)
+        sub = curr if m == "sequence" else self.makeSequence(m, None, curr)
+        res = self.back.terminal(name, curr, ref=ref, keep=keep)
+        sub.append(res)
         return curr
 
     def makeRef(self, e, tid, curr):
@@ -106,12 +123,21 @@ class RelaxUSFMParser:
         res = self.back.lookbehind(val, curr)
         curr.append(res)
 
-    def parseGrammar(self, e, curr, parent=None, quietRefs=False):
+    def parseGrammar(self, e, curr, parent=None, quietRefs=False, inparent=False):
         if curr is None:
             self.curr = self.makeSequence("sequence", None, None)
             curr = self.curr
-            quietRefs = False
+            # quietRefs = False
         tag = self._local(e.tag)
+        if e.get(self._global('usfm:parent'), "false") == "true" and not inparent:
+            p = curr.parent.parent
+            if p is not None:
+                pc = self.makeSequence("sequence", None, p, noadd=True)
+                p.insert(-1, pc)
+            else:
+                pc = curr
+            self.parseGrammar(e, pc, parent=parent, quietRefs=quietRefs, inparent=True)
+            return curr
         if e.get(self._global("usfm:stacked"), "false") == "true":
             scurr = self.makeSequence("stack", e, curr)
             curr = scurr
@@ -119,14 +145,20 @@ class RelaxUSFMParser:
             scurr = None
         if tag == 'element':
             tag = "stack" if e.get(self._global("usfm:stacked"), "false") == "true" else "group"
-        if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group", "stack"):
+            name = e.findtext(self._global('name'))
+            ncurr = self.makeElement(tag, e, curr, name)
+            self.procChildren(e, ncurr, nofollow=(tag in ("choice", "stack")), quietRefs=quietRefs)
+            self.endElement(ncurr)
+        elif tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group", "stack"):
             ncurr = self.makeSequence(tag, e, curr)
-            self.procChildren(e, ncurr, nofollow=(tag in ("choice", "stack")))
+            self.procChildren(e, ncurr, nofollow=(tag in ("choice", "stack")), quietRefs=quietRefs)
         elif tag == 'attribute':
             if not any([self._local(n.tag).startswith("usfm:") for n in e]):
                 return curr
-            ncurr = self.makeSequence('sequence', e, curr)
-            self.procChildren(e, ncurr)
+            name = e.findtext(self._global('name'))
+            ncurr = self.makeAttribute('sequence', e, curr, name)
+            self.procChildren(e, ncurr, quietRefs=quietRefs)
+            self.endAttribute(ncurr)
         elif tag in ("text", "empty"):
             self.procChildren(e, curr)
         elif tag == "ref":
@@ -176,8 +208,14 @@ class RelaxUSFMParser:
             ncurr = self._addstrip("right", e, ncurr)
         elif tag in ("usfm:attrib", "usfm:text"):
             if e.get("startlist", "false") == "true":
-                self.makeTerminal('"|"', curr)
-                self.makeTerminal('WS', curr, many="?")
+                p = curr.parent.parent
+                if p is not None:
+                    pc = self.makeSequence("sequence", None, p, noadd=True)
+                    p.insert(-1, pc)
+                else:
+                    pc = curr
+                self.makeTerminal('"|"', pc)
+                self.makeTerminal('WS', pc, many="?")
                 ncurr = self.makeSequence("choice", e, curr)
             else:
                 ncurr = curr
@@ -295,14 +333,17 @@ class RelaxXMLParser(RelaxUSFMParser):
             scurr = None
         tag = self._local(e.tag)
         if tag in ("interleave", "choice", "oneOrMore", "zeroOrMore", "optional", "group"):
-            ncurr = self.makeSequence(tag, e, curr)
+            ncurr = self.makeSequence(tag, e, curr) if tag != "interleave" else curr
             curr = self.procChildren(e, ncurr, usfm=False, nofollow=True)
         elif tag == "element":
             name = e.findtext(self._global('name'))
             pcurr = self.makeSequence("sequence", e, curr)
             self.makeTerminal("<{}>".format(name), pcurr)
             ncurr = self.back.elementStart(name, pcurr, e.get(self._global("usfm:stacked"), "false") == "true")
-            pcurr.append(ncurr)
+            if ncurr is None:
+                ncurr = pcurr
+            else:
+                pcurr.append(ncurr)
             for c in e:
                 self.parseGrammar(c, ncurr, e)
             self.makeTerminal("</{}>".format(name), ncurr)
@@ -333,7 +374,7 @@ class RelaxXMLParser(RelaxUSFMParser):
             if e.text is not None and e.text.strip() != "":
                 self.makeTerminal('"{}"'.format(e.text.strip()), curr)
         elif tag == "data":
-            ntype = e.get("type", "")
+            ntype = e.get("type", "unknown")
             if ntype == "boolean":
                 ntype = "BOOL"
             elif ntype == "string":
@@ -364,7 +405,6 @@ class Grammar:
                 self.defines[name] = e
 
     def parseRef(self, name, curr=None, parser=None, quietRefs=False):
-        # import pdb; pdb.set_trace()
         top = self.defines.get(name, None)
         if top is None:
             return
@@ -407,10 +447,12 @@ class ETDoc:
         return res
 
     def globalise(self, t):
+        def nsget(m):
+            return "{{{}}}".format(self.tb.ns.get(m.group(1), m.group(1)))
         if ':' not in t and '' in self.tb.ns:
             return "{{{}}}{}".format(self.tb.ns[''], t)
         else:
-            return re.sub(r"^(.*?):", lambda m: "{{{}}}".format(self.tb.ns.get(m.group(1), m.group(1))), t)
+            return re.sub(r"^(.*?):", nsget, t)
 
     def teq(self, a, b):
         return self.localise(a) == self.localise(a)
