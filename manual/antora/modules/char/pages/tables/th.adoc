@@ -1,0 +1,4 @@
+= th#
+:env-antora:
+
+include::markers:char/th.adoc[tag=public]

@@ -1,0 +1,44 @@
+= Tables
+
+include::../../nav.adoc[tag=nav-tables]
+
+[NOTE]
+.Structure for tables in USX
+====
+In USX, tables are not composed with corresponding <para> and <char> elements, as other USFM xref:para:index.adoc[paragraph] and xref:char:index.adoc[character] elements are. In USFM text, the first `\tr` in a sequence of `\tr` paragraphs initiates a new table. In USX, this sequence of rows is re-composed within a `<table>...</table>` container.
+
+.USFM table structure
+[source#src-para-tr_1,usfm]
+----
+\tr \tc1 {cell 1 content} \tc2 {cell 2 content}
+\tr \tc1 {cell 3 content} \tc2 {cell 4 content}
+----
+
+.USX table structure
+[source#src-table_1,xml]
+----
+<table>
+   <row>
+      <cell style="[char@style]" align="start">{cell 1 content}</cell>
+      <cell style="[char@style]" align="start">{cell 2 content}</cell>
+   </row>
+   <row>
+      <cell style="[char@style]" align="start">{cell 3 content}</cell>
+      <cell style="[char@style]" align="start">{cell 4 content}</cell>
+   </row>
+</table>
+----
+
+====
+
+== Diagram
+
+=== USFM
+image::schema/table_rail.svg[]
+
+=== USX
+image::schema/table_usx.svg[]
+
+== Child Elements
+** Character Types for Table Rows - [xref:char:tables/index.adoc[TableContent]]
+include::para:/tables/xref-char.adoc[tag=xrefs-only]

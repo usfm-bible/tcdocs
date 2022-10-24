@@ -1,0 +1,3 @@
+= Character Types for Table Rows
+
+include::../../nav.adoc[tag=nav-tables]

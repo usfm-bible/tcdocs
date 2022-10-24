@@ -1,0 +1,57 @@
+= tc#
+:description: Table cell
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/th.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Table cell.
+- The variable `#` represents the table column number.
+Syntax::
+* *USFM:* `+\tc#_{content}+`
+** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\tc1-2`
+* *USX:* `+<cell style="tc#" colspan="{columns} align="{alignment}">{content}</cell>+`
+`columns`::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="tc1" colspan="2" align="start">+`
+`alignment`::: Cell alignment = `start` | `center` | `end`. Represents "left", "center", and "right" respectively in left-to-right direction texts, and "right", "center", "left" in right-to-left direction texts.
+`content`::: The cell text.
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[TableRow]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Numbers 2.10-16 (GNT)
+[source#src-char-tc_1,usfm,highlight=5..8]
+----
+\p
+\v 10-16 On the east side, those under the banner of the division of Judah 
+shall camp in their groups, under their leaders, as follows:
+\tr \th1 Tribe \th2 Leader \thr3 Number
+\tr \tc1 Judah \tc2 Nahshon son of Amminadab \tcr3 74,600
+\tr \tc1 Issachar \tc2 Nethanel son of Zuar \tcr3 54,400
+\tr \tc1 Zebulun \tc2 Eliab son of Helon \tcr3 57,400
+\tr \tcr1-2 Total: \tcr3 186,400
+----
+
+image::char/tc_1.jpg[Numbers 2.10-16 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

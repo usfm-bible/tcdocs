@@ -1,0 +1,4 @@
+= tr
+:env-antora:
+
+include::markers:para/tr.adoc[tag=public]

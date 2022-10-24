@@ -1,0 +1,44 @@
+= tr
+:description: Table row
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Table row start. In USFM text, the first `\tr` in a sequence of `\tr` paragraphs initiates a new table. In USX, this sequence of rows is re-composed within a `<table>...</table>` container. See xref:para:tables/index.adoc[Tables].
+Syntax::
+* *USFM:* `+\tr_{content}+`
+* *USX:* `+<table><row style="tr" vid="{vid}">{content}</row>...</table>+`
+`vid`::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be one of `[bookCode]`. Chapter:verse separator is always a colon `:`.
+*** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+`content`::: xref:char:tables/index.adoc[Character/cell types for table rows]
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`, `[ChapterContent]`, `[SidebarContent]`, `[PeripheralContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+See examples provided in the xref:char:tables/index.adoc[character/cell types for table rows] descriptions.
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

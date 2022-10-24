@@ -1,0 +1,4 @@
+= thr#
+:env-antora:
+
+include::markers:char/thr.adoc[tag=public]

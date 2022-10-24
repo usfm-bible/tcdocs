@@ -1,0 +1,57 @@
+= thr#
+:description: Table column heading - right aligned
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/th.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Table column heading cell - right aligned.
+- The variable `#` represents the table column number.
+Syntax::
+* *USFM:* `+\thr#_{content}+`
+** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\th1-2`
+* *USX:* `+<cell style="thr#" colspan="{columns} align="{alignment}">{content}</cell>+`
+`columns`::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="thr1" colspan="2" align="right">+`
+`alignment`::: Cell alignment = `start` | `center` | `end`. Represents "left", "center", and "right" respectively in left-to-right direction texts, and "right", "center", "left" in right-to-left direction texts.
+`content`::: The cell text.
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[TableRow]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Numbers 2.10-16 (GNT)
+[source#src-char-thr_1,usfm,highlight=4]
+----
+\p
+\v 10-16 On the south, those under the banner of the division of Reuben shall 
+camp in their groups, under their leaders, as follows:
+\tr \th1 Tribe \th2 Leader \thr3 Number
+\tr \tc1 Reuben \tc2 Elizur son of Shedeur \tcr3 46,500
+\tr \tc1 Simeon \tc2 Shelumiel son of Zurishaddai \tcr3 59,300
+\tr \tc1 Gad \tc2 Eliasaph son of Deuel \tcr3 45,650
+\tr \tcr1-2 Total: \tcr3 151,450
+----
+
+image::char/thr_1.jpg[Numbers 2.10-16 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

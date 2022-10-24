@@ -66,3 +66,10 @@
 *** xref:lists/lf.adoc[lf - List footer]
 *** xref:lists/lim.adoc[lim# - Embedded list entry]
 // end::nav-lists[]
+// ** Tables
+// tag::nav-topcat[]
+** xref:tables/index.adoc[]
+// end::nav-topcat[]
+// tag::nav-tables[]
+*** xref:tables/tr.adoc[tr - Table row]
+// end::nav-tables[]

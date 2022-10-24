@@ -1,0 +1,58 @@
+= th#
+:description: Table column heading
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/th.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Table column heading cell.
+- The variable `#` represents the table column number.
+Syntax::
+* *USFM:* `+\th#_{content}+`
+** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\th1-2`
+* *USX:* `+<cell style="th#" colspan="{columns} align="{alignment}">{content}</cell>+`
+`columns`::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="th1" colspan="2" align="start">+`
+`alignment`::: Cell alignment = `start` | `center` | `end`. Represents "left", "center", and "right" respectively in left-to-right direction texts, and "right", "center", "left" in right-to-left direction texts.
+`content`::: The cell text.
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[TableRow]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Numbers 7.12-83 (GNT)
+[source#src-char-th_1,usfm,highlight=3]
+----
+\p
+\v 12-83 They presented their offerings in the following order:
+\tr \th1 Day \th2 Tribe \th3 Leader
+\tr \tcr1 1st \tc2 Judah \tc3 Nahshon son of Amminadab
+\tr \tcr1 2nd \tc2 Issachar \tc3 Nethanel son of Zuar
+\tr \tcr1 3rd \tc2 Zebulun \tc3 Eliab son of Helon
+\tr \tcr1 4th \tc2 Reuben \tc3 Elizur son of Shedeur
+\tr \tcr1 5th \tc2 Simeon \tc3 Shelumiel son of Zurishaddai
+...
+----
+
+image::char/th_1.jpg[Numbers 7.12-83 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

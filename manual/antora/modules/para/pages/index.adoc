@@ -5,9 +5,11 @@
 Description:: Paragraph-level container.
 Syntax::
 * *USFM:* `+\[para@style]_{content}+`
-* *USX:* `+<para style="[para@style]">{content}</para>+`
+* *USX:* `+<para style="[para@style]" vid="{vid}">{content}</para>+`
 `para@style`::: Paragraph type
 include::../nav.adoc[tag=nav-topcat]
+`vid`::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be one of `[bookCode]`. Chapter:verse separator is always a colon '`:`'.
+*** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 `content`::: Paragraph content
 
 == Diagram

@@ -1,0 +1,4 @@
+= tc#
+:env-antora:
+
+include::markers:char/tc.adoc[tag=public]

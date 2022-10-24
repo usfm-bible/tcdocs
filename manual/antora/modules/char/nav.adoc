@@ -41,6 +41,14 @@
 *** xref:format/sc.adoc[sc - Smallcap text]
 *** xref:format/sup.adoc[sup - Smallcap text]
 // end::nav-format[]
+// ** Poetry
+// tag::nav-topcat[]
+** xref:poetry/index.adoc[Poetry]
+// end::nav-topcat[]
+// tag::nav-poetry[]
+*** xref:poetry/qac.adoc[qac - Acrostic character]
+*** xref:poetry/qs.adoc[qs - Selah]
+// end::nav-poetry[]
 // ** Lists
 // tag::nav-topcat[]
 ** xref:lists/index.adoc[Lists]
@@ -50,6 +58,16 @@
 *** xref:lists/lik.adoc[lik - Entry key]
 *** xref:lists/liv.adoc[liv - Entry value(s)]
 // end::nav-lists[]
+// ** Tables
+// tag::nav-topcat[]
+** xref:tables/index.adoc[Tables]
+// end::nav-topcat[]
+// tag::nav-tables[]
+*** xref:tables/th.adoc[th# - Table column head]
+*** xref:tables/thr.adoc[thr# - Table column head - right aligned]
+*** xref:tables/tc.adoc[tc# - Table cell]
+*** xref:tables/tcr.adoc[tcr# - Table cell - right aligned]
+// end::nav-tables[]
 // ** Notes
 // tag::nav-topcat[]
 ** xref:notes/index.adoc[Notes]
@@ -61,11 +79,3 @@
 // end::nav-footnotes[]
 // tag::nav-crossrefs[]
 // end::nav-crossrefs[]
-// ** Poetry
-// tag::nav-topcat[]
-** xref:poetry/index.adoc[Poetry]
-// end::nav-topcat[]
-// tag::nav-poetry[]
-*** xref:poetry/qac.adoc[qac - Acrostic character]
-*** xref:poetry/qs.adoc[qs - Selah]
-// end::nav-poetry[]
