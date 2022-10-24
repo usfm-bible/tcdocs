@@ -98,8 +98,13 @@ class RChoice(list):
                 if isinstance(e, RChoice) and len(e):
                     if e.combine == "optional":
                         contents.append(OptionalSequence(e[0].asRail(), inline=True))
+                    elif e.combine == "interleave":
+                        temp = e.asRail()
+                        contents.extend(list(temp))
                     else:
                         contents.append(e.asRail())
+                else:
+                    contents.append(e.asRail())
             rep = self.repeat.asRail() if self.repeat is not None else None
             o = None
             if len(contents):
@@ -121,6 +126,8 @@ class RChoice(list):
         return None
 
     def append(self, val):
+        if id(val) == id(self):
+            raise ValueError("Circular addition")
         super().append(val)
 
     def mergemany(self, many):
@@ -250,14 +257,14 @@ class SFMRail:
         res = Diagram(content, type='complex', css=CSS_STYLE.format(**defaults))
         return res
 
-    def sequence(self, combine="sequence", parent=None, group=None, groupby=8, opt=None):
+    def sequence(self, combine="sequence", parent=None, group=None, groupby=8, t=None, name=None, opt=None):
         #if parent is not None and isinstance(parent, SplitRail):
         #    parent.setmod(rmanys.get(combine, ""))
         #    return parent
         #else:
         return RChoice(combine=combine, parent=parent, groupby=groupby, opt=opt)
 
-    def terminal(self, name, curr, ref=False):
+    def terminal(self, name, curr, ref=False, keep=False):
         return RTerminal(name, parent=curr, ref=ref)
 
     def group(self, name, curr):
@@ -297,7 +304,19 @@ class SFMRail:
             curr.init = init
         return curr
 
+    def elementStart(self, name, curr, isstack=False):
+        return None
 
+    def elementEnd(self, curr):
+        return
+
+    def attributeStart(self, name, curr):
+        return curr
+
+    def attributeEnd(self, curr):
+        return
+
+class XMLRail(SFMRail):
 # Methods needed for processing XML
     def elementStart(self, name, curr, isstack=False):
         res = SplitRail(curr, isstack)
@@ -328,3 +347,10 @@ class SFMRail:
     def attributeEnd(self, base, last):
         if isinstance(base, SplitRail):
             base.finishAttribute(last)
+            return base
+        else:
+            return last
+
+    def group(self, name, curr):
+        return curr
+

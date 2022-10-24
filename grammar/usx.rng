@@ -293,6 +293,7 @@
     <element>
       <name ns="">periph</name>
       <attribute>
+        <usfm:tag>periph</usfm:tag>
         <name ns="">id</name>
         <choice>
           <ref name="Peripheral.FRT.periph.id.enum"/>
@@ -306,6 +307,7 @@
       </attribute>
       <optional>
         <attribute>
+          <usfm:text/>
           <name ns="">alt</name>
           <text/>
         </attribute>
@@ -610,7 +612,6 @@
           </optional>
         </choice>
       </oneOrMore>
-      <usfm:endtag id="a" many="?"/>
     </element>
   </define>
   <define name="Para.para.style.enum">
@@ -921,7 +922,7 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="CharContent"/>
-        <usfm:endtag id="a" many="?" usfm:order="3"/>
+        <usfm:endtag id="a" usfm:order="3"/>
       </element>
       <ref name="CharWithAttrib.enum"/>
     </choice>
@@ -930,7 +931,7 @@
     <element>
       <name ns="">char</name>
       <attribute>
-        <usfm:tag/>
+        <usfm:tag id="a"/>
         <name ns="">style</name>
         <ref name="ListChar.char.style.enum"/>
       </attribute>
@@ -951,6 +952,7 @@
           <text/>
         </choice>
       </zeroOrMore>
+      <usfm:endtag id="a" many="?"/>
     </element>
   </define>
   <define name="ListChar.char.style.enum">
@@ -1038,21 +1040,22 @@
         <name ns="">style</name>
         <value>rb</value>
       </attribute>
-      <optional>
-        <ref name="char.link"/>
-      </optional>
-      <optional>
-        <ref name="char.closed"/>
-      </optional>
-      <optional>
+      <text>
+        <usfm:text/>
+      </text>
+      <interleave>
         <attribute>
+          <usfm:attrib startlist="true"/>
           <name ns="">gloss</name>
           <data type="string">
             <param name="minLength">1</param>
           </data>
         </attribute>
+        <ref name="char.link"/>
+      </interleave>
+      <optional>
+        <ref name="char.closed"/>
       </optional>
-      <text/>
       <zeroOrMore>
         <choice>
           <ref name="Reference"/>
@@ -1416,14 +1419,14 @@
     <element>
       <name ns="">char</name>
       <attribute>
-        <usfm:tag>fv</usfm:tag>
+        <usfm:tag id="a"/>
         <name ns="">style</name>
         <value>fv</value>
       </attribute>
       <text>
         <usfm:text/>
       </text>
-      <usfm:endtag>fv</usfm:endtag>
+      <usfm:endtag id="a"/>
     </element>
   </define>
   <define name="CrossReference">
@@ -1495,7 +1498,7 @@
     <element>
       <name ns="">sidebar</name>
       <attribute>
-        <usfm:tag id="a"/>
+        <usfm:tag/>
         <name ns="">style</name>
         <value>esb</value>
       </attribute>
@@ -1511,7 +1514,7 @@
           <ref name="CrossReference"/>
         </choice>
       </oneOrMore>
-      <usfm:endtag id="a"/>
+      <usfm:tag>esbe</usfm:tag>
     </element>
   </define>
   <define name="category">
@@ -1574,8 +1577,8 @@
           </attribute>
         </optional>
         <optional>
-          <text>
-            <usfm:attrib>caption</usfm:attrib>
+          <text usfm:parent="true">
+            <usfm:text strip="none"/>
           </text>
         </optional>
         <usfm:repeat initattriblist="true">
@@ -1611,7 +1614,7 @@
     <element>
       <name ns="">optbreak</name>
       <empty>
-        <usfm:tag lookahead="\">b</usfm:tag>
+        <usfm:text strip="both*">//</usfm:text>
       </empty>
     </element>
   </define>

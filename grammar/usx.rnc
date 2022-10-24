@@ -204,12 +204,14 @@ PeripheralDividedBookIdentification.book.code.enum = (
 
 PeripheralDivision =
     element periph {
+        [usfm:tag["periph"]]
         attribute id { 
               Peripheral.FRT.periph.id.enum
             | Peripheral.INT.periph.id.enum
             | Peripheral.BAK.periph.id.enum
             | Peripheral.OTH.periph.id.enum
             | xsd:string { pattern = "x\-[\p{L}_\-\.:]+" } },
+        [usfm:text[]]
         attribute alt { text }?,
         BookHeaders*,
         BookTitles+,
@@ -372,7 +374,6 @@ Para =
         attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         (Reference | Footnote | CrossReference | Char | Milestone | Figure | Verse | Break | [usfm:text[strip="left"]] text?)+
-        >> usfm:endtag[id="a" many="?"]
     }
 Para.para.style.enum = (
       "restore" # Comment about when text was restored
@@ -570,19 +571,20 @@ CharEmbed = (
         [usfm:stacked="true" usfm:tag[id="a" prefix="\+" grouping="9"]]
         attribute style { Char.char.style.enum },
         CharContent
-        >> usfm:endtag[id="a" many="?" usfm:order="3"]
+        >> usfm:endtag[id="a" usfm:order="3"]
     }
     | CharWithAttrib.enum
     )
 
 ListChar = (
     element char {
-        [usfm:tag[]]
+        [usfm:tag[id="a"]]
         attribute style { ListChar.char.style.enum },
         char.link?,
         char.closed?,
         text,
         (Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
+        >> usfm:endtag[id="a" many="?"]
     }
     )
 ListChar.char.style.enum = (
@@ -623,10 +625,12 @@ CharWithAttrib.char.style.rb =
     element char {
         [usfm:tag[id="a"]]
         attribute style { "rb" }, # Base text for ruby glosses
-        char.link?,
-        char.closed?,
-        attribute gloss { xsd:string { minLength = "1" } }?, # Ruby glosses
+        [usfm:text[] usfm:text[strip="right?" "|"]]
         text,
+        ([usfm:attrib[]]
+        attribute gloss { xsd:string { minLength = "1" }& # Ruby glosses
+        char.link),
+        char.closed?,
         (Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
         >> usfm:endtag[id="a"]
     }
@@ -778,11 +782,11 @@ FootnoteChar.char.style.enum = (
 
 FootnoteVerse =
     element char {
-        [usfm:tag["fv"]]
+        [usfm:tag[id="a"]]
         attribute style { "fv" },
         [usfm:text[]]
         text
-        >> usfm:endtag["fv"]
+        >> usfm:endtag[id="a"]
     }
 
 CrossReference =
@@ -818,11 +822,11 @@ CrossReferenceChar.char.style.enum = (
 
 Sidebar =
     element sidebar {
-        [usfm:tag[id="a"]]
+        [usfm:tag[]]
         attribute style { "esb" },
         category?,
         (Para | List | Table | Footnote | CrossReference)+
-        >> usfm:endtag[id="a"]
+        >> usfm:tag["esbe"]
     }
 
 category =
@@ -846,7 +850,7 @@ Figure =
         attribute copy { text }? &
         [usfm:attrib[]]
         attribute ref { text }? &
-        [usfm:attrib["caption"]]
+        [usfm:parent="true" usfm:text[strip="none"]]
         text?
         >> usfm:repeat[initattriblist="true" usfm:text[noquotes="true" "WS"]])
         >> usfm:endtag["fig"]
@@ -862,4 +866,4 @@ FootnoteReference =
     } >> usfm:endtag[many="?" deprecated="true" "fr"]
 
 Break = 
-    element optbreak { [usfm:tag[lookahead="\" "b"]] empty }
+    element optbreak { [usfm:text[strip="both*" "//"]] empty }

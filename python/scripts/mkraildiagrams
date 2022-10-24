@@ -2,13 +2,12 @@
 
 import os, sys, argparse
 try:
-    from usfmtc.sfmrail import SFMRail
-    #from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
+    from usfmtc.sfmrail import SFMRail, XMLRail
 except ImportError:
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    #from usfmtc.railrelax import ETDoc, RGrammar, RDiagram
-    from usfmtc.sfmrail import SFMRail
+    from usfmtc.sfmrail import SFMRail, XMLRail
 from usfmtc.parserelax import ETDoc, Grammar, RelaxXMLParser, RelaxUSFMParser
+from usfmtc.usxgrammar import alljobs
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
@@ -21,37 +20,8 @@ args = parser.parse_args()
 rdoc = ETDoc(args.grammar)
 rgram = Grammar(rdoc)
 rgram.parse(rdoc.getroot())
-backend = SFMRail()
-
-alljobs = {
-    "BookHeaders":          ("bkhdrs", tuple(), ("BookHeaders.para.style.enum",)),
-    "BookTitles":           ("bktitles", tuple(), ("BookTitles.para.style.enum",)),
-    "BookIntroduction":     ("bkintro", tuple(), ('BookIntroduction.para.style.enum',)),
-    "BookIntroductionEndTitles": ("bkintroend", ("BookIntroductionEndTitles.para.style.enum",)),
-    "Chapter":              ("chapter", ("ChapterStart", "ChapterEnd")),
-    "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Break",
-                                        "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
-    "CharEmbed":            ("charembed", ("Char.char.style.enum", "+char.closed", "Break",
-                                            "CharWithAttrib.enum"), ("+char.link", )),
-    "CharWithAttrib.char.style.w": ("w", ("Break", "+char.closed"), ("+char.link", )),
-    "CharWithAttrib.char.style.rb": ("rb", ("Break", "+char.closed"), ("+char.link", )),
-    "CrossReference":       ("crossref",),
-    "CrossReferenceChar":   ("xchar",("CrossReferenceChar.char.style.enum", "+char.closed")),
-    "Figure":               ("fig",),
-    "Footnote":             ("f", tuple(), ("category", )),
-    "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
-    "FootnoteReference":    ("ref",),
-    "List":                 ("list", tuple(), ("List.para.style.enum",)),
-    "ListChar":             ("listchar", ("+char.closed",), ("ListChar.char.style.enum",)),
-    "Milestone":            ("ms", ("MilestoneWithAttrib.enum", "MilestoneWithAttrib.ms.style.qt")),
-    "Para":                 ("p", ("Para.para.style.enum", "Break")),
-    "Scripture":            ("id", ("BookIdentification", "BookIdentification.book.code.enum")),
-    "Sidebar":              ("esb",),
-    "Table":                ("table", ("TableContent",)),
-    "Verse":                ("verse", ("VerseStart", "VerseEnd")),
-    "category":             ("cat",),
-    "char.link":            ("link",),
-}
+backendsfm = SFMRail()
+backendxml = XMLRail()
 
 if args.node:
    jobs = {args.node: alljobs[args.node]}
@@ -67,9 +37,15 @@ for k, j in jobs.items():
             print(f"{j[0]}_{a[0]}")
         #rdia = RDiagram(k, rdoc, keeps=keeps, cwidth=args.charwidth)
         #rgram.makediagram(k, rdia=rdia, usfm=a[1])
-        p = (RelaxUSFMParser if a[1] else RelaxXMLParser)(rdoc, backend, rgram, keeps)
+        if a[1]:
+            back = backendsfm
+            proc = RelaxUSFMParser
+        else:
+            back = backendxml
+            proc = RelaxXMLParser
+        p = proc(rdoc, back, rgram, keeps)
         rgram.parseRef(k, parser=p, quietRefs=False)
         outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[0], a[0]))
         with open(outfile, "w", encoding="utf-8") as outf:
-            d = backend.output(p.curr, color='rgb(210, 255, 210)' if a[1] else 'rgb(210, 210, 255)')
+            d = back.output(p.curr, color='rgb(210, 255, 210)' if a[1] else 'rgb(210, 210, 255)')
             d.writeSvg(outf.write)
