@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: List entry. May be used to mark the entries of a structure such as the days within the creation account, or the decalogue (10 commandments).
-- The variable `#` represents the level of indent.
+* The variable `#` represents the level of indent.
 Syntax::
 * *USFM:* `+\li#_{content}+`
 * *USX:* `+<para style="li#">{content}</para>+`

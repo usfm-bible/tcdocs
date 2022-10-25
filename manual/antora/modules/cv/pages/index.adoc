@@ -1,17 +1,18 @@
 = Chapters and Verses
 ifndef::localdir[]
-:source-highlighter: pygments
+:source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
 
-== Chapters and Verses as Milestones
-
+.Chapters and Verses as Milestones
+****
 A milestone type of markup is needed when a document has two or more structures that interact in a non-hierarchical manner – also referred to as overlapping or concurrent markup. The 2 primary overlapping structures in scripture text are:
 
 . The paragraph structures used to express the discourse/narrative of the text, and
 . The division of the text into books, chapters and verses.
 
 In scripture texts encoded using USFM or USX, the paragraph level markup forms the main structure of the document, while chapter and verse elements are empty milestones which identify the location where chapters or verses begins and end.
+****
 
 include::../nav.adoc[tag=nav-topcat]

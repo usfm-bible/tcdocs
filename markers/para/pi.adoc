@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Indented paragraph. Used in some texts for discourse sections.
-- The variable `#` represents the level of indent.
+* The variable `#` represents the level of indent.
 ifdef::env-antora[]
 - See also: xref:para:paragraphs/pm.adoc[pm]
 endif::env-antora[]

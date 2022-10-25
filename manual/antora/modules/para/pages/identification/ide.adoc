@@ -1,0 +1,4 @@
+= ide
+:env-antora:
+
+include::markers:para/ide.adoc[tag=public]

@@ -1,0 +1,49 @@
+= h
+:description: Running header text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/h.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Running header text.
+Syntax::
+* *USFM:* `+\h_{content}+`
+* *USX:* `+<para style="h">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+Updated:: 3.0
+* *Deprecated* the use of a numbered variable syntax `+\h#_{content}+`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Matthew (GNT)
+[source#src-para-h_1,usfm,highlight=1]
+----
+\h Matthew
+----
+
+image::para/h_1.jpg[Matthew (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

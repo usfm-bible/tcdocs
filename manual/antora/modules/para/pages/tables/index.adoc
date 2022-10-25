@@ -12,7 +12,7 @@ The content for cells is marked with xref:char:tables/index.adoc[character types
 
 include::para:/tables/xref-char.adoc[tag=xrefs-only]
 
-Normally USX represents USFM xref:para:index.adoc[paragraph] and xref:char:index.adoc[character] types with corresponding <para> and <char> tags. For tables, the structures are different. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container.
+USX represents most USFM xref:para:index.adoc[paragraph] and xref:char:index.adoc[character] types with corresponding <para> and <char> tags. For tables, the structures are different. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container.
 
 .USFM table structure
 [source#src-para-tr_1,usfm]

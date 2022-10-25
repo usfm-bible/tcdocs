@@ -1,0 +1,48 @@
+= sts
+:description: Project/file status tracking
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/sts.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Project/file status tracking.
+Syntax::
+* *USFM:* `+\sts_{content}+`
+* *USX:* `+<para style="sts">{content}</para>+`
+`content`::: The content of the status marker can be defined by the downstream system being used to track project status. For example: A project management approach which identifies 4 stages for a scripture translation's development might record numbers `1`, `2`, `3`, or `4` for `\sts` content.
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular
+
+== Structure
+
+== Examples
+
+.Any project
+[source#src-para-sts_1,usfm,highlight=1]
+----
+\sts 2
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

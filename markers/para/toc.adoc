@@ -1,0 +1,54 @@
+= toc#
+:description: Book name texts
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/toc.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Book name texts. One common use of these texts is for composing a table of contents. They are also a record of names used in scripture references texts, such as `+\r+` or `+\xt+`.
+* The variable `#` represents the book name form.
+** `+\toc1+` - Long book name.
+** `+\toc2+` - Short book name.
+** `+\toc3+` - Book abbreviation.
+Syntax::
+* *USFM:* `+\toc#_{content}+`
+* *USX:* `+<para style="toc#">{content}</para>+`
+// tag::spec[]
+Added:: 2.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Matthew (GNT)
+[source#src-para-toc_1,usfm,highlight=2..4]
+----
+\h Matthew
+\toc1 The Gospel According to Matthew
+\toc2 Matthew
+\toc3 Mat
+----
+
+image::para/toc_1.jpg[Matthew (GNT),550]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

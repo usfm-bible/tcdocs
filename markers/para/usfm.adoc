@@ -1,0 +1,56 @@
+= usfm
+:description: Blank line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/usfm.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: USFM/USX version specification. Identifies the USFM/USX version which an editor or processor must support to sucessfully handle markup within the file.
+ifdef::env-antora[]
+[NOTE]
+.USX syntax note
+====
+USX represents most USFM xref:para:index.adoc[paragraph] types a corresponding <para> element. For `\usfm`, the `+{version}+` number becomes the `+@version+` attribute value for the `+<usx>+` root element.
+====
+endif::env-antora[]
+Syntax::
+* *USFM:* `+\usfm_{version}+`
+* *USX:* `+<usx version="{version}">+`
+`version`::: USFM/USX version number.
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular
+
+== Structure
+
+== Examples
+
+.Matthew (GNT)
+[source#src-para-usfm_1,usfm,highlight=2]
+----
+\id MAT 41MATGNT92.SFM, Good News Translation, June 2003
+\usfm 3.0
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

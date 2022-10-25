@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Embedded list entry.
-- The variable `#` represents the level of indent.
+* The variable `#` represents the level of indent.
 Syntax::
 * *USFM:* `+\lim#_{content}+`
 * *USX:* `+<para style="lim#">{content}</para>+`

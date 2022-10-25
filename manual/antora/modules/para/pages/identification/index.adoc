@@ -1,1 +1,11 @@
 = Identification
+
+include::../../nav.adoc[tag=nav-identification]
+
+== Diagram
+
+=== USFM
+image::schema/bkhdrs_rail.svg[]
+
+=== USX
+image::schema/bkhdrs_usx.svg[]

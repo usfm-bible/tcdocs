@@ -1,0 +1,49 @@
+= id
+:description: Blank line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/id.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Scripture book identification.
+Syntax::
+* *USFM:* `+\id_{code}_{content}+`
+* *USX:* `+<book code="{code}" style="id">{content}</book>+`
+`code` ^*^::: A standard 3-character scripture xref:para:identification/books.adoc[book identifier].
+`content`::: Additional description _(optional)_
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular, book
+
+== Structure
+
+== Examples
+
+.Matthew (GNT)
+[source#src-para-id_1,usfm,highlight=1]
+----
+\id MAT 41MATGNT92.SFM, Good News Translation, June 2003
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

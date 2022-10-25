@@ -1,0 +1,53 @@
+= rem
+:description: Remarks/comments
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/rem.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Remarks/comments. For adding brief comments by a translator, consultant, or supporter. This content is not a type of footnote, and is not intended for publication. When `+\rem+` is used, it is often found at the top of a file together with other xref:para:identification/index.adoc[identification] content. However, `+\rem+` can be used for adding non-publishable remarks/comments anywhere within a text.
+ifdef::env-antora[]
+[CAUTION]
+====
+Adding names of individuals, initials, or other personal information directly within scripture text files is strongly discouraged.
+====
+endif::env-antora[]
+Syntax::
+* *USFM:* `+\rem_{content}+`
+* *USX:* `+<para style="rem">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular
+
+== Structure
+
+== Examples
+
+.Any project
+[source#src-para-rem_1,usfm,highlight=1]
+----
+\rem First draft complete, waiting for checks.
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

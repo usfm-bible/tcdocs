@@ -1,0 +1,4 @@
+= rem
+:env-antora:
+
+include::markers:para/rem.adoc[tag=public]

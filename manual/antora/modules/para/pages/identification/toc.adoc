@@ -1,0 +1,4 @@
+= toc#
+:env-antora:
+
+include::markers:para/toc.adoc[tag=public]

@@ -12,10 +12,13 @@ endif::[]
 == Summary
 
 Description:: Table row start.
+ifdef::env-antora[]
 [NOTE]
+.Syntax notes
 ====
 In *USFM*, a table is composed by a series of paragraphs marked with `\tr`. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container. See xref:para:tables/index.adoc[Tables].
 ====
+endif::env-antora[]
 Syntax::
 * *USFM:* `+\tr_{content}+`
 * *USX:* `+<table><row style="tr" vid="{vid}">{content}</row>...</table>+`

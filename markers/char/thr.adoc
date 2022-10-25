@@ -12,11 +12,14 @@ endif::[]
 == Summary
 
 Description:: Table column heading cell - right aligned.
-- The variable `#` represents the table column number.
+* The variable `#` represents the table column number.
+ifdef::env-antora[]
 [NOTE]
+.Syntax notes
 ====
 In *USFM*, a table is composed by a series of paragraphs marked with `\tr`, and the content for cells is marked with xref:char:tables/index.adoc[character types for table cells], such as `\thr#`. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` containing `+<row>+`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
 ====
+endif::env-antora[]
 Syntax::
 * *USFM:* `+\thr#_{content}+`
 ** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\th1-2`

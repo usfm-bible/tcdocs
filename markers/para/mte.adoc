@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily idential to the main title (mt).
-- The variable `#` represents the level of division.
+* The variable `#` represents the level of division.
 Syntax::
 * *USFM:* `+\mte#_{content}+`
 * *USX:* `+<para style="mte#">{content}</para>+`

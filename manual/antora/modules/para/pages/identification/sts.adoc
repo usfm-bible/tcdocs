@@ -1,0 +1,4 @@
+= sts
+:env-antora:
+
+include::markers:para/sts.adoc[tag=public]

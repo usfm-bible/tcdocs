@@ -1,0 +1,48 @@
+= ide
+:description: Character encoding scheme
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ide.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Specify the character encoding scheme used for the file contents. _(optional)_.
+Syntax::
+* *USFM:* `+\ide#_{encoding}+`
+* *USX:* `+<para style="ide">{encoding}</para>+`
+`encoding`::: Character encoding scheme (e.g. `CP-1252`, `CP-1251`, `UTF-8`, `UTF-16LE`, `UTF-16BE`, `UTF-32LE`, `UTF-32BE`, or `Custom`). _Texts which rely upon a custom encoding and font solution should be converted to Unicode, if at all possible._
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular
+
+== Structure
+
+== Examples
+
+.Any project
+[source#src-para-ide_1,usfm,highlight=1]
+----
+\ide UTF-8
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

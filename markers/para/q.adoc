@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Poetic line.
-- The variable `#` represents the level of indent.
+* The variable `#` represents the level of indent.
 Syntax::
 * *USFM:* `+\q#_{content}+`
 * *USX:* `+<para style="q#">{content}</para>+`

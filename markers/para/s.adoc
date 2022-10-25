@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Section heading.
-- The variable `#` represents the level of division.
+* The variable `#` represents the level of division.
 Syntax::
 * *USFM:* `+\s#_{content}+`
 * *USX:* `+<para style="s#">{content}</para>+`
