@@ -1,3 +1,8 @@
-= Character Types for Table Rows
+= Character Types for Table Cells
 
 include::../../nav.adoc[tag=nav-tables]
+
+[IMPORTANT]
+====
+_See_ the information on xref:para:tables/index.adoc[alternate structures for tables in USFM and USX].
+====

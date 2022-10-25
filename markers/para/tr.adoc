@@ -11,7 +11,11 @@ endif::[]
 
 == Summary
 
-Description:: Table row start. In USFM text, the first `\tr` in a sequence of `\tr` paragraphs initiates a new table. In USX, this sequence of rows is re-composed within a `<table>...</table>` container. See xref:para:tables/index.adoc[Tables].
+Description:: Table row start.
+[NOTE]
+====
+In *USFM*, a table is composed by a series of paragraphs marked with `\tr`. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container. See xref:para:tables/index.adoc[Tables].
+====
 Syntax::
 * *USFM:* `+\tr_{content}+`
 * *USX:* `+<table><row style="tr" vid="{vid}">{content}</row>...</table>+`
