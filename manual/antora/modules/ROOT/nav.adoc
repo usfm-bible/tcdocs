@@ -1,3 +1,6 @@
 * xref:index.adoc[]
-** xref:release-notes.adoc[]
-** xref:syntax-notes.adoc[]
+** xref:release-notes.adoc[Release Notes]
+** xref:syntax.adoc[Syntax Notes]
+*** xref:whitespace.adoc[Whitespace]
+*** xref:z-namespace.adoc[z Namespace]
+*** xref:docs-syntax.adoc[Docs Syntax Notes]
