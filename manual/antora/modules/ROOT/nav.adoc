@@ -2,5 +2,5 @@
 ** xref:release-notes.adoc[Release Notes]
 ** xref:syntax.adoc[Syntax Notes]
 *** xref:whitespace.adoc[Whitespace]
-*** xref:z-namespace.adoc[z Namespace]
-*** xref:docs-syntax.adoc[Docs Syntax Notes]
+*** xref:extensions.adoc[Extensions]
+*** xref:syntax-docs.adoc[Docs Syntax Notes]
