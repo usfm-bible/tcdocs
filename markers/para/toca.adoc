@@ -27,7 +27,7 @@ Added:: 3.0
 
 StyleType:: Paragraph
 OccursUnder:: `[BookHeaders]`
-TextType:: Section
+TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 
 == Structure

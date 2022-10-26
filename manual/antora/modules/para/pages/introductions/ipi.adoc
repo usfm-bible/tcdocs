@@ -1,0 +1,4 @@
+= ipi
+:env-antora:
+
+include::markers:para/ipi.adoc[tag=public]

@@ -1,0 +1,4 @@
+= ib
+:env-antora:
+
+include::markers:para/ib.adoc[tag=public]

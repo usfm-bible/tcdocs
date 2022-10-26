@@ -1,0 +1,54 @@
+= is#
+:description: Intoduction section heading
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/is.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Intoduction section heading.
+* The variable `#` represents the level of division.
+Syntax::
+* *USFM:* `+\is#_{content}+`
+* *USX:* `+<para style="is#">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular level_#
+
+== Structure
+
+== Examples
+
+.Introduction to Mark (RVE)
+[source#src-para-is_1,usfm,highlight=5]
+----
+\h SAN MARCOS
+\mt2 Evangelio según
+\mt1 SAN MARCOS
+\imt1 INTRODUCCIÓN
+\is1 Importancia del evangelio de Marcos
+\ip Este evangelio, segundo de los libros del NT, contiene poco material que no 
+aparezca igualmente en \bk Mateo\bk* y \bk Lucas\bk*.
+----
+
+image::para/is_1.jpg[Introduction to Mark (RVE),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

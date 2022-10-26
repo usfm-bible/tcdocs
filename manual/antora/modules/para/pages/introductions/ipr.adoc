@@ -1,0 +1,4 @@
+= ipr
+:env-antora:
+
+include::markers:para/ipr.adoc[tag=public]

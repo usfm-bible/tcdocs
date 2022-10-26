@@ -1,0 +1,55 @@
+= im
+:description: Introduction continuation (margin) paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/im.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction continuation (margin) paragraph.
+Syntax::
+* *USFM:* `+\im_{content}+`
+* *USX:* `+<para style="im">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to the GCEV
+[source#src-para-im_1,usfm,highlight=8]
+----
+\imt1 Preface:
+\is1 A Word about the Contemporary English Version
+\imi \em Translation it is that opens the window, to let in the light; that 
+breaks the shell, that we may eat the kernel; that puts aside the curtain, 
+that we may look into the most holy place; that removes the cover of the well, 
+that we may come by the water.\em* (“The Translators to the Reader,” King 
+James Version, 1611).
+\im The most important document in the history of the English language is the 
+\bk King James Version\bk* of the Bible...
+----
+
+image::para/im_1.jpg[Introduction to the GCEV,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

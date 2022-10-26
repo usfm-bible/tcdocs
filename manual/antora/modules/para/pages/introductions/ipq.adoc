@@ -1,0 +1,4 @@
+= ipq
+:env-antora:
+
+include::markers:para/ipq.adoc[tag=public]

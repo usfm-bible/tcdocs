@@ -1,0 +1,55 @@
+= ip
+:description: Introduction paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ip.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction paragraph.
+Syntax::
+* *USFM:* `+\ip_{content}+`
+* *USX:* `+<para style="ip">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to Mark (GNT)
+[source#src-para-ip_1,usfm,highlight=5]
+----
+\h Mark
+\mt2 The Gospel according to
+\mt1 MARK
+\is Introduction
+\ip \bk The Gospel according to Mark\bk* begins with the statement that it is 
+“the Good News about Jesus Christ, the Son of God.” Jesus is pictured as a 
+man of action and authority. His authority is seen in his teaching, in his 
+power over demons, and in forgiving people's sins. Jesus speaks of himself as 
+the Son of Man, who came to give his life to set people free from sin.
+----
+
+image::para/ip_1.jpg[Introduction to Mark (GNT),400]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

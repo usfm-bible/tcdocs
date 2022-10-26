@@ -1,1 +1,11 @@
 = Introductions
+
+include::../../nav.adoc[tag=nav-introductions]
+
+== Diagram
+
+=== USFM
+image::schema/bkintro_rail.svg[]
+
+=== USX
+image::schema/bkintro_usx.svg[]

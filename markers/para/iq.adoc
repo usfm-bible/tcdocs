@@ -1,0 +1,57 @@
+= iq#
+:description: Introduction poetic line
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/iq.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction poetic line.
+* The variable `#` represents the level of indent.
+Syntax::
+* *USFM:* `+\iq#_{content}+`
+* *USX:* `+<para style="iq#">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to Titus (CEV)
+[source#src-para-iq_1,usfm,highlight=3..9]
+----
+\ip Paul also tells how we are saved:
+\ib
+\iq1 God our Savior showed us
+\iq2 how good and kind he is.
+\iq1 He saved us because
+\iq2 of his mercy,
+\iq1 and not because
+\iq2 of any good things
+\iq2 that we have done.
+\ipr (3.4,5a)
+----
+
+image::para/iq_1.jpg[Introduction to Titus (CEV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

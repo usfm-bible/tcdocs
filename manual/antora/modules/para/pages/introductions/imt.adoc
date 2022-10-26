@@ -1,0 +1,4 @@
+= imt#
+:env-antora:
+
+include::markers:para/imt.adoc[tag=public]

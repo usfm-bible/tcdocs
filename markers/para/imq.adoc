@@ -1,0 +1,55 @@
+= imq
+:description: Introduction quote from text paragraph (margin)
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/imq.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction quote from text paragraph (margin).
+Syntax::
+* *USFM:* `+\imq_{content}+`
+* *USX:* `+<para style="imq">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to Genesis (CEV)
+[source#src-para-imq_1,usfm,highlight=4]
+----
+... One of these brothers, Joseph, had become the governor of Egypt. But 
+Joseph knew that God would someday keep his promise to his people:
+\ib
+\imq Before Joseph died, he told his brothers, “I won't live much longer. 
+But God will take care of you and lead you out of Egypt to the land he 
+promised Abraham, Isaac, and Jacob.”
+\ipr (50.24)
+\iot A QUICK LOOK AT THIS BOOK
+...
+----
+
+image::para/imq_1.jpg[Introduction to Genesis (CEV),400]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

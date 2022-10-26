@@ -1,0 +1,54 @@
+= ipi
+:description: Introduction indented paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ipi.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction indented paragraph.
+Syntax::
+* *USFM:* `+\ipi_{content}+`
+* *USX:* `+<para style="ipi">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to the Deuterocanonicals/Apocrypha (GCEV)
+[source#src-para-ipi_1,usfm,highlight=3;6]
+----
+\ip The following lists summarize each Christian tradition’s views of the 
+books here designated as Deuterocanonicals/Apocrypha.
+\ipi Many Protestants consider the following books to be Apocrypha as 
+defined above: Tobit, Judith, additions to Esther (as found in Greek Esther 
+in the CEV) ...
+\ipi Roman Catholics consider the following books to be Deuterocanonical and 
+of equal status with all other books of the Old Testament: Tobit, Judith, 
+Greek Esther ...
+----
+
+image::para/ipi_1.jpg[Introduction to the Deuterocanonicals/Apocrypha (GCEV),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

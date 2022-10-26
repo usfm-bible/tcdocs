@@ -1,0 +1,54 @@
+= imt#
+:description: Intoduction major title
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/imt.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Intoduction major title. _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[\is]) when the introduction text contains numerous sub-divisions.
+* The variable `#` represents the level of division.
+Syntax::
+* *USFM:* `+\imt#_{content}+`
+* *USX:* `+<para style="imt#">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular level_#
+
+== Structure
+
+== Examples
+
+.Introduction to Mark (RVE)
+[source#src-para-imt_1,usfm,highlight=4]
+----
+\h SAN MARCOS
+\mt2 Evangelio según
+\mt1 SAN MARCOS
+\imt1 INTRODUCCIÓN
+\is1 Importancia del evangelio de Marcos
+\ip Este evangelio, segundo de los libros del NT, contiene poco material que no 
+aparezca igualmente en \bk Mateo\bk* y \bk Lucas.\bk*
+----
+
+image::para/imt_1.jpg[Introduction to Mark (RVE),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

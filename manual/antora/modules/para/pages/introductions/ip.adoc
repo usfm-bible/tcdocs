@@ -1,0 +1,4 @@
+= ip
+:env-antora:
+
+include::markers:para/ip.adoc[tag=public]

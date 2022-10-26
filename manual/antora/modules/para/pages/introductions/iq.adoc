@@ -1,0 +1,4 @@
+= iq#
+:env-antora:
+
+include::markers:para/iq.adoc[tag=public]

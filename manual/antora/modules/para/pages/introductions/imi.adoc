@@ -1,0 +1,4 @@
+= imi
+:env-antora:
+
+include::markers:para/imi.adoc[tag=public]
