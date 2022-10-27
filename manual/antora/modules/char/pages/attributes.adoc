@@ -61,5 +61,5 @@ Any user defined attributes must begin with the prefix `+x-+`.
 
 * xref:char:features/w.adoc[w] -- `lemma`, `strong`, `srcloc`
 * xref:char:features/rb.adoc[rb] -- `gloss`
-* xref:char:notes/crossref/xt.adoc[xt] -- `link-href` - a linking attribute
-* xref:fig:fig.adoc[figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref` - harmonizing the USFM 2.x syntax for this marker with the USFM 3 attribute specification
+* xref:char:notes/crossref/xt.adoc[xt] -- `link-href` (a linking attribute)
+* xref:fig:fig.adoc[figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref` (harmonizing the USFM 2.x syntax for this marker with the USFM 3 attribute specification)
