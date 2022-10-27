@@ -1,11 +1,13 @@
-= Character Marker Nesting in USFM
+= Character Marker Nesting
 
-== Background
+== USFM
+
+=== Background
 In USFM, xref:char:index.adoc[character] level markup is applied to a span of text within a containing xref:para:index.adoc[paragraph]. In some texts, the USFM markup required to identify the content will require nesting one character level marker within another character level marker. In these situations a USFM editor, processor, or publishing system must understand how to interpret or display the nested markup contexts. In some editors (e.g. Paratext), the start of a new character level marker is interpreted as an implicit closure of the the previous character environment. If the intent is to nest the inner character markup, the meaning or formatting applied to the outer marker layer applies to the inner level also. The inner markup adds additional meaning and formatting for the nested text.
 
 The most common occurrence for nested character markup is within footnotes, where text occurring within a footnote quotation (\fq), keyword (\fk), or the footnote text (\ft), requires further markup.
 
-== Indicating markup is nested
+=== Indicating markup is nested
 Add a plus sign `+` as a prefix to the opening and closing forms of a nested marker pair to indicate that a nested character environment is starting. The `+` is added after the backslash, and before the marker text.
 
 In the following example text:
@@ -34,7 +36,7 @@ text ...
 
 If necessary, multiple levels of nesting character markup can occur.
 
-== Examples
+=== Examples
 
 .Numbers 21.14 (GNT) - \bk \+nd nested
 [source#src-char-nesting_4,usfm,highlight=1]
@@ -61,7 +63,7 @@ had not sent any rain, and there was no one to cultivate the land;
 
 image::char/fknd-nested_1.jpg[Genesis 2.4 (GNT) - \fk and \ft \+nd nested,600]
 
-== Nesting in USX
+== USX
 
 In USX (XML) documents, nested elements occur without requiring any additional syntax.
 
