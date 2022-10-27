@@ -31,6 +31,11 @@
 *** xref:introductions/iq.adoc[iq# - Intro poetic line]
 *** xref:introductions/ili.adoc[ili# - Intro list entry]
 *** xref:introductions/ib.adoc[ib - Intro blank line]
+*** xref:introductions/iot.adoc[iot - Intro outline title]
+*** xref:introductions/io.adoc[io# - Intro outline entry]
+*** xref:introductions/iex.adoc[iex - Intro bridge text]
+*** xref:introductions/imte.adoc[imte - Intro major title end]
+*** xref:introductions/ie.adoc[ie - Intro end]
 // end::nav-introductions[]
 // ** Titles & Sections
 // tag::nav-topcat[]

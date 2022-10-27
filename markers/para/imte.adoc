@@ -1,0 +1,48 @@
+= imt#
+:description: Intoduction major title ending
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/imt.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Intoduction major title ending. Used to mark a major title indicating the end of the introduction.
+* The variable `#` represents the level of division.
+Syntax::
+* *USFM:* `+\imte#_{content}+`
+* *USX:* `+<para style="imte#">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular level_#
+
+== Structure
+
+== Examples
+
+.Introduction to Mark
+[source#src-para-imte_1,usfm,highlight=1]
+----
+\imte End of the Introduction to the Gospel of Mark
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -1,0 +1,4 @@
+= ie
+:env-antora:
+
+include::markers:para/ie.adoc[tag=public]

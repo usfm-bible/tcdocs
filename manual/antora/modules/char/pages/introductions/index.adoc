@@ -1,0 +1,3 @@
+= Character Types for Introductions
+
+include::../../nav.adoc[tag=nav-introductions]

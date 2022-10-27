@@ -12,7 +12,7 @@ endif::[]
 == Summary
 
 Description:: Centered paragraph.
-- _Recommended use:_ Inscriptions
+* _Recommended use:_ Inscriptions
 Syntax::
 * *USFM:* `+\pc_{content}+`
 * *USX:* `+<para style="pc">{content}</para>+`

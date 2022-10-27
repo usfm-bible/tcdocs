@@ -41,6 +41,14 @@
 *** xref:format/sc.adoc[sc - Smallcap text]
 *** xref:format/sup.adoc[sup - Smallcap text]
 // end::nav-format[]
+// ** Introductions
+// tag::nav-topcat[]
+** xref:introductions/index.adoc[Introductions]
+// end::nav-topcat[]
+// tag::nav-introductions[]
+*** xref:introductions/ior.adoc[ior - Intro outline refs]
+*** xref:introductions/iqt.adoc[iqt - Intro quoted text]
+// end::nav-introductions[]
 // ** Poetry
 // tag::nav-topcat[]
 ** xref:poetry/index.adoc[Poetry]

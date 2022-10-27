@@ -11,7 +11,8 @@ endif::[]
 
 == Summary
 
-Description:: Intoduction major title. _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[\is]) when the introduction text contains numerous sub-divisions.
+Description:: Intoduction major title.
+* _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[\is]) when the introduction text contains numerous sub-divisions.
 * The variable `#` represents the level of division.
 Syntax::
 * *USFM:* `+\imt#_{content}+`

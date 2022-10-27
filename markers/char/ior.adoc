@@ -1,0 +1,50 @@
+= ior
+:description: Introduction outline references
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ior.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction outline references.
+Syntax::
+* *USFM:* `+\ior_{content}\ior*+`
+* *USX:* `+<char style="ior">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent] > [IntroOutlinePara]`
+TextType:: Other
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to Mark (GNT)
+[source#src-char-ior_1,usfm,highlight=1..6]
+----
+\io1 The beginning of the gospel \ior (1.1-13)\ior*
+\io1 Jesus' public ministry in Galilee \ior (1.14–9.50)\ior*
+\io1 From Galilee to Jerusalem \ior (10.1-52)\ior*
+\io1 The last week in and near Jerusalem \ior (11.1–15.47)\ior*
+\io1 The resurrection of Jesus \ior (16.1-8)\ior*
+\io1 The appearances and ascension of the risen Lord \ior (16.9-20)\ior*
+----
+
+image::char/ior_1.jpg[Introduction to Mark (GNT),400]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

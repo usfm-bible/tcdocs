@@ -1,0 +1,45 @@
+= iqt
+:description: Introduction quoted text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/iqt.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction quoted text. Inline scripture quotations, or other quoted text, appearing within the introduction.
+Syntax::
+* *USFM:* `+\iqt_{content}\iqt*+`
+* *USX:* `+<char style="iqt">{content}</char>+`
+Added:: 1.0
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Missing
+[source#src-char-ior_1,usfm]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

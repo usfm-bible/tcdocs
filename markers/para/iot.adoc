@@ -1,0 +1,60 @@
+= iot
+:description: Intoduction outline title
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/iot.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Intoduction outline title.
+Syntax::
+* *USFM:* `+\iot_{content}+`
+* *USX:* `+<para style="iot">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to Mark (GNT)
+[source#src-para-iot_1,usfm,highlight=3]
+----
+\ip The two endings to the Gospel, which are enclosed in brackets, are 
+generally regarded as written by someone other than the author of \bk Mark\bk*
+\iot Outline of Contents
+\io1 The beginning of the gospel (1.1-13)
+\io1 Jesus' public ministry in Galilee (1.14–9.50)
+\io1 From Galilee to Jerusalem (10.1-52)
+\io1 The last week in and near Jerusalem (11.1–15.47)
+\io1 The resurrection of Jesus (16.1-8)
+\io1 The appearances and ascension of the risen Lord (16.9-20)
+\c 1
+\s The Preaching of John the Baptist
+\r (Matthew 3.1-12; Luke 3.1-18; John 1.19-28)
+\p
+\v 1 This is the Good News about Jesus Christ
+----
+
+image::para/iot_1.jpg[Introduction to Mark (GNT),400]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

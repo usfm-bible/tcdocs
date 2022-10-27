@@ -1,0 +1,4 @@
+= imte#
+:env-antora:
+
+include::markers:para/imte.adoc[tag=public]

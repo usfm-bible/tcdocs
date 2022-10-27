@@ -1,0 +1,50 @@
+= iex
+:description: Introduction explanatory or bridge text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/iex.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction explanatory or bridge text.
+* _Recommended use:_ Explanation of missing book or section in a short Old Testament, or for attribution sentences found at the end of the 14 Pauline Epistles.
+Syntax::
+* *USFM:* `+\iex_{content}+`
+* *USX:* `+<para style="iex">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[ChapterContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.After Romans 16 (KJV54 - BFBS)
+[source#src-para-iex_1,usfm,highlight=2]
+----
+\v 27 to God only wise, \add be\add* glory through Jesus Christ for ever. Amen.
+\iex Written to the Romans from Corinthus, and sent by Phebe servant of the 
+church at Cenchrea.
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

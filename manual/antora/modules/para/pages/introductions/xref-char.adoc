@@ -1,0 +1,6 @@
+== Character Styles for Introductions
+
+// tag::xrefs-only[]
+* xref:char:introductions/ior.adoc[ior - Intro outline refs]
+* xref:char:introductions/iqt.adoc[iqt - Intro quoted text]
+// end::xrefs-only[]

@@ -1,0 +1,4 @@
+= io#
+:env-antora:
+
+include::markers:para/io.adoc[tag=public]

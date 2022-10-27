@@ -1,0 +1,4 @@
+= iot
+:env-antora:
+
+include::markers:para/iot.adoc[tag=public]

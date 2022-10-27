@@ -1,0 +1,54 @@
+= ie
+:description: Introduction end
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ie.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction end. Explicitly indicate the end of the introduction material _(optional)_.
+Syntax::
+* *USFM:* `+\ie+`
+* *USX:* `+<para style="ie"/>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Paragraph
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Structure
+
+== Examples
+
+.Introduction to Mark (GNT)
+[source#src-para-ie_1,usfm,highlight=3]
+----
+\io1 The resurrection of Jesus (16.1-8)
+\io1 The appearances and ascension of the risen Lord (16.9-20)
+\ie
+\c 1
+\s The Preaching of John the Baptist
+\r (Matthew 3.1-12; Luke 3.1-18; John 1.19-28)
+\p
+\v 1 This is the Good News about Jesus Christ
+----
+
+image::para/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues
