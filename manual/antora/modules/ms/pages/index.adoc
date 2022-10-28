@@ -1,1 +1,128 @@
 = Milestones
+
+== Summary
+
+Description:: Milestone marker.
+Syntax::
+* *USFM:* `+\[ms@style]\*+`
+* *USX:* `+<ms style="[ms@style]"/>+`
+`ms@style`::: Milestone type
+include::../nav.adoc[tag=nav-topcat]
+
+== Diagram
+
+=== USFM
+image::schema/ms_rail.svg[]
+
+=== USX
+image::schema/ms_usx.svg[]
+
+== Background
+
+Markup for identifying milestones is needed when documents have multiple structures that interact in a non-hierarchical manner. This is also referred to as 'overlapping' or 'concurrent' markup. A key example of the overlapping structures in scripture text are
+
+. Paragraphs used to structure the discourse/narrative of the text and
+. The division of the text into books, chapters and verses.
+
+In USFM or USX texts, markup identifying paragraph level containers forms the main structure of the document, while xref:cv:c.adoc[chapter] and xref:cv:v.adoc[verse] markers are effectively milestones.
+
+Another overlapping structure is encountered when identifying the start and end of the words of individual speakers within the text, which will regularly cross paragraph boundaries.
+
+== Basic Syntax
+
+*In USFM*, milestones follow a syntax similar to xref:char:index.adoc[character level markup], but using a unique self-closing syntax. This specific syntax identifies the marker as a milestone. Milestones can mark a single position within the text, or the positions of the start or end of a span of text.
+
+Self-closing markup is indicated by immediately terminating the marker, and any attributes, with a second backslash plus asterisk `\*`.
+
+*In USX*, a milestone is expressed using the `<ms>` element.
+
+== Indicating Start and End Milestones
+
+A milestone marker may end with either `-s` or `-e`
+
+* `-s` indicates that the milestone is for marking the start of a span of text.
+* `-e` indicates that the marker is an end milestone.
+
+.USFM: Milestones for the start and end of a quotation/speaker
+[source#src-ms-qt,usfm]
+----
+\qt1-s\*
+...
+\qt1-e\*
+----
+
+.USX: Milestone for the start of a quotation/speaker
+[source#src-usx-ms-qt,xml]
+----
+<ms style="qt1-s"/>
+...
+<ms style="qt1-e"/>
+----
+
+== Standalone Milestones
+
+This syntax can also be used for standalone milestones, not using start `-s` and end `-e` suffixes.
+
+.USFM: Standalone milestone (xref:ROOT:extensions.adoc[\z namespace] in this example)
+[source#src-ms-zms,usfm]
+----
+\zms\*
+----
+
+.USX: Standalone milestone
+[source#src-usx-ms-zms,xml]
+----
+<ms style="zms"/>
+----
+
+[NOTE]
+====
+_USFM does not currently define any standalone milestones._ This may change with future updates to USFM, as specific needs are identified.
+====
+
+== Attributes
+
+The following optional xref:char:attributes.adoc[attributes] can be added to any USFM milestone marker.
+
+sid:: A unique identifier which can be used to unambiguously identify the starting milestone, and to clearly associate the starting milestone with the ending milestone (`eid`). The `sid` can be composed of any mixture of numbers, letters, and underscores, and should be a unique `sid` throughout the scripture text.
+
+eid:: A unique identifier which can be used to unambiguously identify the ending milestone, and to clearly associate the ending milestone with the starting milestone (`sid`). If an `sid` attribute is used for the starting milestone in a milestone pair, the ending milestone must include `eid`.
+
+Additional attributes may be available for or required by a specific milestone type (e.g the use of the `who` attribute in the following quotation milestone example).
+
+.USFM: Milestone attributes sid, eid, who
+[source#src-ms-attrib,usfm]
+----
+\p
+\v 1 Early in the morning the chief priests met hurriedly with the elders,
+the teachers of the Law, and the whole Council, and made their plans. They 
+put Jesus in chains, led him away, and handed him over to Pilate.
+\v 2 Pilate questioned him, \qt-s |sid="qt.MRK.15:2.1" who="Pilate"\*“Are you 
+the king of the Jews?”\qt-e |eid="qt.MRK.15:2.1"\*
+\p Jesus answered, \qt-s |sid="qt.MRK.15:2.2" who="Jesus"\*“So you say.”
+\qt-e |eid="qt.MRK.15:2.2"\*
+----
+
+.USX: Milestone attributes sid, eid, who
+[source#src-usx-ms-attrib,xml]
+----
+<para style="p">
+  <verse number="1" style="v" sid="MRK 15:1" /> Early in the morning the 
+  chief priests met hurriedly with the elders, the teachers of the Law, and 
+  the whole Council, and made their plans. They put Jesus in chains, led him 
+  away, and handed him over to Pilate.<verse eid="MRK 15:1" />
+  <verse number="2" style="v" sid="MRK 15:2" />Pilate questioned him, 
+  <ms style="qt-s" sid="qt.MRK.15:2.1" who="Pilate"/>“Are you the king of the 
+  Jews?”<ms style="qt-e" sid="qt.MRK.15:2.1"/>
+</para>
+<para style="p" vid="MRK 15:2">
+  Jesus answered, <ms style="qt-s" sid="qt.MRK.15:2.2" who="Jesus"/>“So you 
+  say.”<ms style="qt-e" eid="qt.MRK.15:2.2"/><verse eid="MRK 15:2" />
+</para>
+----
+
+== Levels
+
+As with other USFM/USX numbered marker types, a numeric variable may be added to a milestone marker to indicate a relative weighting or level. In the example above of the quotation/speaker milestone, a numbered version of the marker may be used to indicate the level of nesting of the quotation being marked (i.e. a quote within a quote).
+
+The unnumbered version may be used when only one level of marker exists within the project text. Numbers should always be included when more than one level of the marker exists within the project text.

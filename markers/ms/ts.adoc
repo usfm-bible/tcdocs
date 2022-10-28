@@ -1,0 +1,142 @@
+= ts-s / ts-e
+:description: Translator's section start and end milestones
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/ms/ts.adoc
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Translator's section start and end milestones. For identifying a section (chunk) of text suitable for translating at one time.
+Syntax::
+* *USFM:*
+** `+\ts-s |[@sid]\*+`
+** `+\ts-e |[@eid]\*+`
+* *USX:*
+** `+<ms style="ts-s" [@sid]/>+`
+** `+<ms style="ts-e" [@eid]/>+`
+Attributes:::
+** `sid`, `eid` - See the xref:ms:index.adoc#_attributes[attributes for any milestone].
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+== Properties
+
+StyleType:: Milestone
+OccursUnder:: `[ChapterContent]`
+
+== Structure
+
+== Examples
+
+.USFM: Jude 5-8 (ULB) - standalone milestones
+[source#src-ms-ts_1,usfm,highlight=]
+----
+\ts\*
+\p
+\v 5 Now I wish to remind you, although you know everything, that the Lord 
+once saved a people out of the land of Egypt, but that afterward he destroyed 
+those who did not believe.
+\v 6 And angels who did not keep to their own principality, but left their 
+proper dwelling place—God has kept them in everlasting chains in darkness for 
+the judgment of the great day.
+\ts\*
+\v 7 It is just like Sodom and Gomorrah and the cities around them, which in 
+a similar way gave themselves over to fornication and pursued unnatural 
+desires. They were given as examples of those who suffer the punishment of 
+eternal fire.
+\p
+\v 8 Yet in the same way these also pollute their bodies in their dreams, and 
+they reject authority, and they say evil things about the glorious ones.
+\ts\*
+----
+
+.USX: Jude 5-8 (ULB) - standalone milestones
+[source#src-usx-ts-qt_1,xml,highlight=]
+----
+<ms style="ts"/>
+<para style="p">
+  <verse number="5" style="v" sid="JUD 1:5"/>Now I wish to remind you, 
+  although you know everything, that the Lord once saved a people out of 
+  the land of Egypt, but that afterward he destroyed those who did not 
+  believe.<verse eid="JUD 1:5"/>
+  <verse number="6" style="v" sid="JUD 1:6"/>And angels who did not keep 
+  to their own principality, but left their proper dwelling place—God has 
+  kept them in everlasting chains in darkness for the judgment of the 
+  great day.<verse eid="JUD 1:6"/><ms style="ts"/>
+  <verse number="7" style="v" sid="JUD 1:7"/>It is just like Sodom and 
+  Gomorrah and the cities around them, which in a similar way gave 
+  themselves over to fornication and pursued unnatural desires. They were 
+  given as examples of those who suffer the punishment of eternal fire.
+  <verse eid="JUD 1:7"/>
+</para>
+<para style="p">
+  <verse number="8" style="v" sid="JUD 1:8"/>Yet in 
+  the same way these also pollute their bodies in their dreams, and they 
+  reject authority, and they say evil things about the glorious ones.
+  <ms style="ts"/>
+----
+
+.USFM: Jude 5-8 (ULB) - milestone pairs
+[source#src-ms-ts_2,usfm,highlight=]
+----
+\ts |sid="ts.JUD.5-6"\*
+\p
+\v 5 Now I wish to remind you, although you know everything, that the Lord 
+once saved a people out of the land of Egypt, but that afterward he destroyed 
+those who did not believe.
+\v 6 And angels who did not keep to their own principality, but left their 
+proper dwelling place—God has kept them in everlasting chains in darkness for 
+the judgment of the great day.
+\ts-e |eid="ts.JUD.5-6"\*
+\ts-s |sid="ts.JUD.7-8"\*
+\v 7 It is just like Sodom and Gomorrah and the cities around them, which in 
+a similar way gave themselves over to fornication and pursued unnatural 
+desires. They were given as examples of those who suffer the punishment of 
+eternal fire.
+\p
+\v 8 Yet in the same way these also pollute their bodies in their dreams, and 
+they reject authority, and they say evil things about the glorious ones.
+\ts-e |eid="ts.JUD.7-8"\*
+----
+
+.USX: Jude 5-8 (ULB) - milestone pairs
+[source#src-usx-ts-qt_2,xml,highlight=]
+----
+<ms style="ts-s" sid="ts.JUD.5-6"/>
+<para style="p">
+  <verse number="5" style="v" sid="JUD 1:5"/>Now I wish to remind you, 
+  although you know everything, that the Lord once saved a people out of 
+  the land of Egypt, but that afterward he destroyed those who did not 
+  believe.<verse eid="JUD 1:5"/>
+  <verse number="6" style="v" sid="JUD 1:6"/>And angels who did not keep 
+  to their own principality, but left their proper dwelling place—God has 
+  kept them in everlasting chains in darkness for the judgment of the 
+  great day.<verse eid="JUD 1:6"/>
+  <ms style="ts-e" eid="ts.JUD.5-6"/>
+  <ms style="ts-s" sid="ts.JUD.7-8"/>
+  <verse number="7" style="v" sid="JUD 1:7"/>It is just like Sodom and 
+  Gomorrah and the cities around them, which in a similar way gave 
+  themselves over to fornication and pursued unnatural desires. They were 
+  given as examples of those who suffer the punishment of eternal fire.
+  <verse eid="JUD 1:7"/>
+</para>
+<para style="p">
+  <verse number="8" style="v" sid="JUD 1:8"/>Yet in 
+  the same way these also pollute their bodies in their dreams, and they 
+  reject authority, and they say evil things about the glorious ones.
+  <ms style="ts-e" eid="ts.JUD.7-8"/>
+----
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

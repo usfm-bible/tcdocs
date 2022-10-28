@@ -35,8 +35,6 @@ TextProperties:: publishable, vernacular
 
 == Structure
 
-'Railroad' type diagram here...
-
 == Examples
 
 .Glossay word without attributes
