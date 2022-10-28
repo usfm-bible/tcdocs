@@ -1,4 +1,9 @@
 = Whitespace
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
 
 USFM considers space (`U+0020`), tab (`U+0009`), and xref:whitespace.adoc#newlines[newline characters] to be whitespace.
 

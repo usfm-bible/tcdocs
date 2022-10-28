@@ -1,1 +1,7 @@
 = Documentation Syntax Notes
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+

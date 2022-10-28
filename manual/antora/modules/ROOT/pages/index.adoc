@@ -1,3 +1,13 @@
-= About USFM and USX
+= USFM and USX Documentation
 
-IMPORTANT: *This is a development site only*. The current USFM and USX documentation sites are available at https://ubsicap.github.io/usfm[] and https://ubsicap.github.io/usx[]
+IMPORTANT: Presently *this is a development site only*. Current USFM and USX documentation sites are available at https://ubsicap.github.io/usfm[] and https://ubsicap.github.io/usx[]
+
+* xref:ROOT:release-notes.adoc[Release Notes]
+* xref:ROOT:syntax.adoc[Syntax Notes]
+* xref:cv:index.adoc[Chapters and Verses]
+* xref:para:index.adoc[Paragraphs]
+* xref:char:index.adoc[Characters]
+* xref:ms:index.adoc[Milestones]
+* xref:note:index.adoc[Notes]
+* xref:fig:fig.adoc[Figures]
+* xref:sbar:esb.adoc[Sidebars]

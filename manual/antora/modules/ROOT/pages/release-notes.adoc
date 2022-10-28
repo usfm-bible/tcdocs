@@ -1,4 +1,9 @@
 = Release Notes
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
 
 == 3.0.1
 _January 2020_
