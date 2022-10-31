@@ -1,0 +1,11 @@
+= Bidirectional Text
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+== Scripture References
+
+image::ROOT:bidi-ref_no200f.png[Scripture reference without RTL marks,250]
+image::ROOT:bidi-ref_with200f.png[Scripture reference with RTL marks,250]

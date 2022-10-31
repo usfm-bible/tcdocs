@@ -2,5 +2,6 @@
 ** xref:release-notes.adoc[Release Notes]
 ** xref:syntax.adoc[Syntax Notes]
 *** xref:whitespace.adoc[Whitespace]
+*** xref:bidirectional.adoc[Bidirectional Text]
 *** xref:extensions.adoc[Extensions]
 *** xref:syntax-docs.adoc[Docs Syntax Notes]
