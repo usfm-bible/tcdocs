@@ -1,6 +1,7 @@
 = lim#
 :description: Embedded list entry
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/lim.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

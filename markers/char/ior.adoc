@@ -1,6 +1,7 @@
 = ior
 :description: Introduction outline references
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ior.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = bdit
 :description: Italic text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/bdit.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

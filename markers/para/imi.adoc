@@ -1,6 +1,7 @@
 = imi
 :description: Introduction indented continuation (margin) paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/imi.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

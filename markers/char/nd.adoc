@@ -1,6 +1,7 @@
 = nd
 :description: Name of God
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/nd.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

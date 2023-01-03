@@ -1,6 +1,7 @@
 = thr#
 :description: Table column heading - right aligned
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/th.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

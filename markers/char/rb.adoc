@@ -1,6 +1,7 @@
 = rb
 :description: Ruby gloss
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/rb.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = litl
 :description: List entry total
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/litl.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

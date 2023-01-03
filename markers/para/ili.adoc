@@ -1,6 +1,7 @@
 = ili#
 :description: Introduction list entry
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ili.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

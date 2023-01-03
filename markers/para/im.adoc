@@ -1,6 +1,7 @@
 = im
 :description: Introduction continuation (margin) paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/im.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

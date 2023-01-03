@@ -1,6 +1,7 @@
 = sls
 :description: Secondary language source
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/sls.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

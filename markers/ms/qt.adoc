@@ -1,6 +1,7 @@
 = qt#-s / qt#-e
 :description: Quotation start and end milestones
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/ms/qt.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = h
 :description: Running header text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/h.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

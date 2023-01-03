@@ -1,6 +1,7 @@
 = qa
 :description: Acrostic heading
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qa.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

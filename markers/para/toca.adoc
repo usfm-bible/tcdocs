@@ -1,6 +1,7 @@
 = toca#
 :description: Alternate language book name texts
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/toca.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

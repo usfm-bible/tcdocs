@@ -1,6 +1,7 @@
 = wa
 :description: Aramaic wordlist entry
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/wa.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

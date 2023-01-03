@@ -1,6 +1,8 @@
 = p
 :description: Regular paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/p.adoc
+:noindex:
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

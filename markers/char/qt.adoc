@@ -1,6 +1,7 @@
 = qt
 :description: Quoted text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qt.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

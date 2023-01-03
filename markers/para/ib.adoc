@@ -1,6 +1,7 @@
 = ib
 :description: Introduction blank line
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ib.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

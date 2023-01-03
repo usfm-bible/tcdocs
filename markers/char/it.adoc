@@ -1,6 +1,7 @@
 = it
 :description: Italic text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/it.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

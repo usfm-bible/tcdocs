@@ -1,6 +1,7 @@
 = pn
 :description: Proper name
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/pn.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = sig
 :description: Author's signature
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/sig.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

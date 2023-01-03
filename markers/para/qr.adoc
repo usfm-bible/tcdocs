@@ -1,6 +1,7 @@
 = qr
 :description: Right-aligned poetic line
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qr.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

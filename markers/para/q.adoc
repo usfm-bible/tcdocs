@@ -1,6 +1,7 @@
 = q#
 :description: Poetic line
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/q.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = ph
 :description: Indented paragraph with hanging indent
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ph.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

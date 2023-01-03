@@ -1,6 +1,7 @@
 = esb ... esbe
 :description: Sidebar container
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/sbar/esb.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

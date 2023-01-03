@@ -1,6 +1,7 @@
 = ipq
 :description: Introduction quote from text paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ipq.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

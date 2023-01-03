@@ -1,6 +1,7 @@
 = x
 :description: Cross references list
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note/x.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

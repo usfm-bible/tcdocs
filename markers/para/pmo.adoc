@@ -1,6 +1,7 @@
 = pmo
 :description: Embedded text opening
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pmo.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

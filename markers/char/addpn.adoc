@@ -1,6 +1,7 @@
 = addpn
 :description: Translator's addition
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/addpn.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

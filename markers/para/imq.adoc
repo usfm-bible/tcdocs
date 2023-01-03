@@ -1,6 +1,7 @@
 = imq
 :description: Introduction quote from text paragraph (margin)
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/imq.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

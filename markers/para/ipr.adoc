@@ -1,6 +1,7 @@
 = ipr
 :description: Introduction right-aligned paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ipr.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

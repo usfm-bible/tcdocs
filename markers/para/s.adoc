@@ -1,6 +1,7 @@
 = s#
 :description: Section heading
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/s.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = qm#
 :description: Embedded text poetic line
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/qm.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = lh
 :description: List header
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/lh.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

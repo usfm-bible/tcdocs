@@ -1,6 +1,7 @@
 = liv
 :description: List entry 'value' content
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/liv.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

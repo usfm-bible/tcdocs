@@ -1,6 +1,7 @@
 = ip
 :description: Introduction paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ip.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

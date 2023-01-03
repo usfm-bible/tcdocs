@@ -1,6 +1,7 @@
 = ts-s / ts-e
 :description: Translator's section start and end milestones
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/ms/ts.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

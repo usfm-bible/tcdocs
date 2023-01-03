@@ -1,6 +1,7 @@
 = em
 :description: Emphasis text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/em.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

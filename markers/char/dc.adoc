@@ -1,6 +1,7 @@
 = dc
 :description: Deuterocanonical content
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/add.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

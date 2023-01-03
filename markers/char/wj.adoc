@@ -1,6 +1,7 @@
 = wj
 :description: Words of Jesus
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/wj.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

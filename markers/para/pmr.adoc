@@ -1,6 +1,7 @@
 = pmr
 :description: Embedded text refrain
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pmr.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

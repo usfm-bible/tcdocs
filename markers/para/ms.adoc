@@ -1,6 +1,7 @@
 = ms#
 :description: Major section heading
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ms.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

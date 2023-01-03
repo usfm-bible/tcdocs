@@ -1,6 +1,7 @@
 = v
 :description: Verse number
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/v.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

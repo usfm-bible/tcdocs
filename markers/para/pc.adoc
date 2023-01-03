@@ -1,6 +1,7 @@
 = pc
 :description: Centered paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pc.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

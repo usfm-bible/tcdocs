@@ -1,6 +1,7 @@
 = tl
 :description: Transliterated words
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/tl.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

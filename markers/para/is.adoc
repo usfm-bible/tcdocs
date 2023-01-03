@@ -1,6 +1,7 @@
 = is#
 :description: Intoduction section heading
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/is.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

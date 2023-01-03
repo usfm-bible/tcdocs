@@ -1,6 +1,7 @@
 = fr
 :description: Footnote - Origin reference
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fr.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

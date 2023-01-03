@@ -1,6 +1,7 @@
 = mte#
 :description: Main title at introduction end
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/mte.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

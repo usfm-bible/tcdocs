@@ -1,6 +1,7 @@
 = ide
 :description: Character encoding scheme
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ide.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = f
 :description: Regular translation footnote
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/note/f.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

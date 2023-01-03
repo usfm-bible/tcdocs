@@ -1,6 +1,7 @@
 = iq#
 :description: Introduction poetic line
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/iq.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

@@ -1,6 +1,7 @@
 = iot
 :description: Intoduction outline title
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/iot.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

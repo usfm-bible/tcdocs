@@ -1,6 +1,7 @@
 = nb
 :description: No break
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/nb.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

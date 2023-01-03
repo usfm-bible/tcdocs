@@ -1,6 +1,7 @@
 = pm
 :description: Embedded text paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pm.adoc
+:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
