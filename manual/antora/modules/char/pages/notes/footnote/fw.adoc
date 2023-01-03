@@ -1,0 +1,4 @@
+= fw
+:env-antora:
+
+include::markers:char/fw.adoc[tag=public]

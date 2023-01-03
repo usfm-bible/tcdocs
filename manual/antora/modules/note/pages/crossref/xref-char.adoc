@@ -1,5 +1,5 @@
 == Character Styles for Cross References
 
 // tag::xrefs-only[]
-
+* xref:char:notes/crossref/xt.adoc[xt - Target references]
 // end::xrefs-only[]

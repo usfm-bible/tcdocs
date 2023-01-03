@@ -16,7 +16,9 @@ Description:: Footnote - Note text.
 Syntax::
 * *USFM:* `+\ft_{content}+`
 * *USX:* `+<char style="ft">{content}</char>+`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 ifdef::env-antora[]
 See also: xref:note:footnote/f.adoc[Footnote]

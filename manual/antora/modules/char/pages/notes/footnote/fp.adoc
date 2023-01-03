@@ -1,0 +1,4 @@
+= fp
+:env-antora:
+
+include::markers:char/fp.adoc[tag=public]

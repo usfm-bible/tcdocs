@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Deuterocanonical content. For identifying content which is relevant for publications which include Deuterocanonlical (DC) books. 
+Description:: Deuterocanonical content. The marked content is relevant for publications which include Deuterocanonlical (DC) books. 
 Syntax::
 * *USFM:* `+\dc_{content}\dc*+`
 * *USX:* `+<char style="dc">{content}</char>+`

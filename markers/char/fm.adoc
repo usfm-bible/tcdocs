@@ -1,0 +1,60 @@
+= fm
+:description: Footnote - Reference mark
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fm.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Footnote - Reference mark. Use where multiple locations in the scripture text refer the reader to a common footnote text.
+Syntax::
+* *USFM:* `+\fm_{content}\fm*+`
+* *USX:* `+<char style="fm">{content}</char>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:footnote/f.adoc[Footnote]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Genesis 2.9 and 2.17 (GNT)
+[source#src-char-fm_1,usfm,highlight=4;5,8]
+----
+\v 9 \x - \xo 2.9: \xt Rev 2.7; 22.2,14.\x* He made all kinds of beautiful 
+trees grow there and produce good fruit. In the middle of the garden stood 
+the tree that gives life and the tree that gives knowledge of what is good 
+and what is bad.\f + \fr 2.9: \fq knowledge of what is good and what is bad; 
+\ft or \fq knowledge of everything.\f*
+...
+\v 17 except the tree that gives knowledge of what is good and what is 
+bad.\fm GEN 2:9\fm* You must not eat the fruit of that tree; if you do, you 
+will die the same day.” 
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

@@ -16,7 +16,9 @@ Description:: Footnote - Translation quotation.
 Syntax::
 * *USFM:* `+\fq_{content}+`
 * *USX:* `+<char style="fq">{content}</char>+`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 ifdef::env-antora[]
 See also: xref:note:footnote/f.adoc[Footnote]

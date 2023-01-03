@@ -1,0 +1,4 @@
+= fk
+:env-antora:
+
+include::markers:char/fk.adoc[tag=public]

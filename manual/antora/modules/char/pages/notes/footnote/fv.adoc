@@ -1,0 +1,4 @@
+= fv
+:env-antora:
+
+include::markers:char/fv.adoc[tag=public]

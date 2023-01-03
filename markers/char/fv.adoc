@@ -1,0 +1,64 @@
+= fv
+:description: Footnote - Verse number
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fv.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Footnote - Verse number. A verse number occuring in a xref:char:notes/footnote/fq.adoc[fq - text quotation] or xref:char:notes/footnote/fqa.adoc[fqa - alternative translation].
+Syntax::
+* *USFM:* `+\fv_{content}\fv*+`
+* *USX:* `+<char style="fv">{content}</char>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+[NOTE]
+====
+This marker is normally xref:char:nesting.adoc[nested] within another footnote character type (e.g. xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/fqa.adoc[fqa]).
+====
+
+ifdef::env-antora[]
+See also: xref:note:footnote/f.adoc[Footnote]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.John 7.38 (GNT)
+[source#src-char-fv_1,usfm,highlight=2;5]
+----
+\p
+\v 37 On the last and most important day of the festival Jesus stood up and 
+said in a loud voice, “Whoever is thirsty should come to me, and
+\v 38 whoever believes in me should drink. As the scripture says, ‘Streams of 
+life-giving water will pour out from his side.’” \f + \fr 7.38: \ft Jesus' 
+words in verses 37-38 may be translated: \fqa “Whoever is thirsty should come 
+to me and drink. \+fv 38\+fv* As the scripture says, ‘Streams of life-giving 
+water will pour out from within anyone who believes in me.’”\f*
+----
+
+image::char/fv_1.jpg[John 7.38 (GNT),600]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

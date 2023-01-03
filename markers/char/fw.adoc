@@ -1,0 +1,57 @@
+= fw
+:description: Footnote - Witness list
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fw.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Footnote - Witness list. For distinguishing a list of sigla representing witnesses in critical editions.
+Syntax::
+* *USFM:* `+\fw_{content}+`
+* *USX:* `+<char style="fw">{content}</char>+`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+[NOTE]
+====
+Apparatus entries of printed critical editions are densely packed with information. One key part is the list of witnesses supporting a specific reading. The witnesses are usually represented by sigla consisting of one character, an abbreviation, or a number. It can be very helpful to distinguish witness lists from other footnote text, which can make it simpler to introduce checking tools for these lists, and to create linking and reader helps in digital representations.
+====
+
+ifdef::env-antora[]
+See also: xref:note:footnote/f.adoc[Footnote]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Matthew 28.14 (Nestle-Aland 29)
+[source#src-char-fw_1,usfm]
+----
+\f ⸀ \fr 28,14 \ft υπο \fw B D 0148. 892\f*
+----
+
+image::char/fw_1.jpg[Matthew 28.14 (Nestle-Aland 29),500]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

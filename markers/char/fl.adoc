@@ -1,0 +1,52 @@
+= fl
+:description: Footnote - Label
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fl.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Footnote - Label text. Use for marking words used consistently across translation notes (such as the words “Or” in an alternative translation note, “Others”, “Heb.”, “LXX” etc.).
+Syntax::
+* *USFM:* `+\fl_{content}+`
+* *USX:* `+<char style="fl">{content}</char>+`
+// tag::spec[]
+Added:: 2.03
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:footnote/f.adoc[Footnote]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Missing
+[source#src-char-fl_1,usfm]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

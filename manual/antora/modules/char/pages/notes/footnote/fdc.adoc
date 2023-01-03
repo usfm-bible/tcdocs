@@ -1,0 +1,4 @@
+= fdc
+:env-antora:
+
+include::markers:char/fdc.adoc[tag=public]

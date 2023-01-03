@@ -1,0 +1,52 @@
+= fqa
+:description: Footnote - Alternate translation
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/fqa.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Footnote - Alternate translation. Used to distinguish between a quotation of the current scripture translation (marked with xref:char:notes/footnote/fq.adoc[fq]) and an alternate translation.
+Syntax::
+* *USFM:* `+\fqa_{content}+`
+* *USX:* `+<char style="fqa">{content}</char>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:footnote/f.adoc[Footnote]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Missing
+[source#src-char-fqa_1,usfm]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

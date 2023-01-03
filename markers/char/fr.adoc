@@ -17,7 +17,9 @@ Syntax::
 * *USFM:* `+\fr_{C#:V#:}+`
 * *USX:* `+<char style="fr">{C#:V#:}</char>+`
 `C#:V#:`::: Chapter-verse origin reference. The chapter-verse separator and end-of-reference punctuation are text specific.
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 ifdef::env-antora[]
 See also: xref:note:footnote/f.adoc[Footnote]
