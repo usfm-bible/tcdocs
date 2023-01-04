@@ -20,3 +20,7 @@ image:schema/xchar_usx.svg[]
 
 ** Character Types for Cross References - [xref:char:notes/crossref/index.adoc[CrossReferenceChar]]
 include::note:/crossref/xref-char.adoc[tag=xrefs-only]
+
+
+** Character Types for Footnotes - [xref:char:notes/footnote/index.adoc[FootnoteChar]]
+include::note:/footnote/xref-char.adoc[tag=xrefs-only]
