@@ -1,0 +1,4 @@
+= xk
+:env-antora:
+
+include::markers:char/xk.adoc[tag=public]

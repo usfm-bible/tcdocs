@@ -36,7 +36,7 @@ TextProperties:: publishable, vernacular, note
 == Examples
 
 .Mark 1.1; 1.4 (GNT)
-[source#src-char-ft_1,usfm,highlight=2;5]
+[source#src-char-ft_1,usfm,highlight=3;7..8]
 ----
 \p
 \v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: 

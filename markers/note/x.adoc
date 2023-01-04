@@ -25,6 +25,10 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
+ifdef::env-antora[]
+See also: Character Types for Cross References - [xref:char:notes/crossref/index.adoc[CrossReferenceChar]]
+endif::env-antora[]
+
 == Properties
 
 StyleType:: Note

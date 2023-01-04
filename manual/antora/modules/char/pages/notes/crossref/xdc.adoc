@@ -1,0 +1,4 @@
+= xdc
+:env-antora:
+
+include::markers:char/xdc.adoc[tag=public]

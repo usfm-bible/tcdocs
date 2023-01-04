@@ -1,0 +1,4 @@
+= xop
+:env-antora:
+
+include::markers:char/xop.adoc[tag=public]

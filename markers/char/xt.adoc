@@ -1,5 +1,5 @@
 = xt
-:description: Cross Reference - Target reference(s)
+:description: Cross Reference - Target references
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xt.adoc
 :noindex:
 ifndef::localdir[]
@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Note text.
+Description:: Cross Reference - Target references. A list of scripture references commonly given as book abbreviation, chapter, and verse(s). The punctuation used between chapter and verse, reference ranges, and between target references is consistent within a translation text, but differs among texts.
 Syntax::
 * *USFM:* `+\xt_{content}+`
 * *USX:* `+<char style="xt">{content}</char>+`

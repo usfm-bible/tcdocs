@@ -1,5 +1,13 @@
 == Character Styles for Cross References
 
 // tag::xrefs-only[]
+* xref:char:notes/crossref/xt.adoc[xo - Origin reference]
+* xref:char:notes/crossref/xop.adoc[xop - Published origin text]
+* xref:char:notes/crossref/xk.adoc[xk - Keyword]
+* xref:char:notes/crossref/xq.adoc[xq - Translation quote]
 * xref:char:notes/crossref/xt.adoc[xt - Target references]
+* xref:char:notes/crossref/xta.adoc[xta - Target added text]
+* xref:char:notes/crossref/xot.adoc[xot - OT references]
+* xref:char:notes/crossref/xnt.adoc[xnt - NT references]
+* xref:char:notes/crossref/xdc.adoc[xdc - DC references]
 // end::xrefs-only[]

@@ -1,0 +1,67 @@
+= xop
+:description: Cross Reference - Published origin text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xop.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Cross Reference - Published origin text. In some cases the text to be published in the position of the cross reference origin (xref:char:notes/crossref/xo.adoc[xo]) does not follow the usual chapter, verse pattern. A standard origin reference following this pattern is required for validation of the cross reference location. xref:char:notes/crossref/xop.adoc[xop] can be used to supply the content intended for publishing, which is similar to the application of [cp] (published chapter character) and [vp] (published verse character).
+Syntax::
+* *USFM:* `+\xop_{content}\xop*+`
+* *USX:* `+<char style="xop">{content}</char>+`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:crossref/x.adoc[Cross Reference]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Jonah 1.1-5 (Bulgarian Orthodox Bible)
+[source#src-char-xop_1,usfm,highlight=2;4;10;13]
+----
+\p
+\v 1 \x - \xo 1:1 \xop Гл 1. (1)\xop* \xt 4 Царств. 14:25.\x*И биде слово 
+Господне към Иона, син Аматиев:
+\v 2 \x - \xo 1:2 \xop (2)\xop* \xt Бит. 10:11. Иона 3:3.\x*„стани, иди в 
+Ниневия, град голям, и проповядвай в него, защото злодеянията му достигнаха 
+до Мене“.
+\v 3 И стана Иона да побегне в Тарсис от лицето Господне; дойде в Иопия и 
+намери кораб, който отиваше за Тарсис, плати за превоз и влезе в него, за 
+да отплува с тях в Тарсис от лицето Господне.
+\v 4 \x - \xo 1:4 \xop (4)\xop* \xt Пс. 106:25.\x*Но Господ подигна в морето 
+силен вятър, и стана в морето голяма буря, и корабът насмалко оставаше да се 
+разбие.
+\v 5 \x - \xo 1:5 \xop (5)\xop* \xt 4 Царств. 17:29.\x*Уплашиха се 
+корабниците; те викаха всеки към своя бог и почнаха да хвърлят в морето 
+товара от кораба, за да му олекне от него; а Иона бе слязъл в дъното на 
+кораба, бе легнал и дълбоко заспал.
+----
+
+image::char/xop_1.jpg[Jonah 1.1-5 (Bulgarian Orthodox Bible),600]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

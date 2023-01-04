@@ -1,0 +1,52 @@
+= xnt
+:description: Cross Reference - NT references
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xnt.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Cross Reference - NT target references. The marked xref:notes:crossref/xt[target references] are relevant for publications which include New Testament (NT) books.
+Syntax::
+* *USFM:* `+\xnt_{content}\xnt*+`
+* *USX:* `+<char style="xnt">{content}</char>+`
+// tag::spec[]
+Added:: 2.2
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:crossref/x.adoc[Cross Reference]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Missing
+[source#src-char-xnt_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

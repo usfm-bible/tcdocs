@@ -1,0 +1,52 @@
+= xq
+:description: Cross Reference - Translation quotation
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xk.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Cross Reference - Translation quotation. Use of a quotation can help a reader to identify the portion of text which the xref:notes:crossref/xt[target references] are provided for.
+Syntax::
+* *USFM:* `+\xq_{content}+`
+* *USX:* `+<char style="xq">{content}</char>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:crossref/x.adoc[Cross Reference]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Missing
+[source#src-char-xq_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

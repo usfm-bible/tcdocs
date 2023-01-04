@@ -10,6 +10,6 @@
 * xref:char:notes/footnote/fp.adoc[fp - Additional paragraph]
 * xref:char:notes/footnote/fv.adoc[fv - Verse number]
 * xref:char:notes/footnote/ft.adoc[ft - Note text]
-* xref:char:notes/footnote/fdc.adoc[fdc - DC-only content]
+* xref:char:notes/footnote/fdc.adoc[fdc - DC content]
 * xref:char:notes/footnote/fm.adoc[fm - Reference mark]
 // end::xrefs-only[]

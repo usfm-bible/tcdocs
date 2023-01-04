@@ -1,0 +1,4 @@
+= xta
+:env-antora:
+
+include::markers:char/xta.adoc[tag=public]

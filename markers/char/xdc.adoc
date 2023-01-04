@@ -1,0 +1,73 @@
+= xdc
+:description: Cross Reference - DC references
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xdc.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Cross Reference - DC target references. The marked xref:notes:crossref/xt[target references] are relevant for publications which include Deuterocanonlical (DC) books.
+Syntax::
+* *USFM:* `+\xdc_{content}\xdc*+`
+* *USX:* `+<char style="xdc">{content}</char>+`
+// tag::spec[]
+Added:: 2.2
+Deprecated:: 3.0
+// end::spec[]
+* _Recommended alternate:_ xref:char:nesting.adoc[Nested] xref:char:features/dc.adoc[dc - Deuterocanonical content]
+
+ifdef::env-antora[]
+See also: xref:note:crossref/x.adoc[Cross Reference]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Psalm 115.3-4 (GNT - cross references)
+[source#src-char-xdc_1,usfm,highlight=5]
+----
+\q1
+\v 3 Our God is in heaven;
+\q2 he does whatever he wishes.
+\q1
+\v 4 \x - \xo 115.4-8: \xt Ps 135.15-18; \xdc Ltj Jr 4-73; \xt Rev 9.20.\x* 
+Their gods are made of silver and gold,
+\q2 formed by human hands.
+----
+
+image::char/missing.jpg[,300]
+
+.1 Corinthians 15.51-52 (GNT - cross reference)
+[source#src-char-xdc_2,usfm,highlight=5]
+----
+\p
+\v 51-52 \x - \xo 15.51,52: \xdc 2Es 6.23; \xt 1Th 4.15-17.\x* Listen to this 
+secret truth: we shall not all die, but when the last trumpet sounds, we 
+shall all be changed in an instant, as quickly as the blinking of an eye. For 
+when the trumpet sounds, the dead will be raised, never to die again, and we 
+shall all be changed.
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

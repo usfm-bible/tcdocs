@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Keyword. The footnote relates to a specific keyword quoted from the text.
+Description:: Footnote - Keyword. The footnote relates to this specific keyword quoted from the text.
 Syntax::
 * *USFM:* `+\fk_{content}+`
 * *USX:* `+<char style="fk">{content}</char>+`
@@ -36,7 +36,7 @@ TextProperties:: publishable, vernacular, note
 == Examples
 
 .Genesis 3.20 (GNT)
-[source#src-char-fk_1,usfm,highlight=2;5]
+[source#src-char-fk_1,usfm,highlight=2..5]
 ----
 \p
 \v 20 Adam \f + \fr 3.20: \fk Adam: \ft This name in Hebrew means “all human 

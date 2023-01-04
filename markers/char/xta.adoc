@@ -1,0 +1,57 @@
+= xta
+:description: Cross Reference - Target references added text
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xta.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Cross Reference - Target references added text. Used for marking additional publishable text within in the list of xref:notes:crossref/xt[target references] which can be ignored when identifying references or generating links.
+Syntax::
+* *USFM:* `+\xta_{content}+`
+* *USX:* `+<char style="xta">{content}</char>+`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:crossref/x.adoc[Cross Reference]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Matthew 3.0 (GNT - text and markup adapted)
+[source#src-char-xta_1,usfm,highlight=3]
+----
+\c 3
+\s1 The Preaching of John the Baptist\x - \xo 3.0 \xta Compare with \xt Mk 
+1.1-8; Lk 3.1-18; \xta and \xt Jn 1.19-28 \xta parallel passages.\x*
+\p
+\v 1 At that time John the Baptist came to the desert of Judea and started 
+preaching.
+----
+
+image::char/xta_1.jpg[Matthew 3.0 (GNT - text and markup adapted),500]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues

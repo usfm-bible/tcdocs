@@ -1,0 +1,4 @@
+= xq
+:env-antora:
+
+include::markers:char/xq.adoc[tag=public]

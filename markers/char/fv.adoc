@@ -41,7 +41,7 @@ TextProperties:: publishable, vernacular, note
 == Examples
 
 .John 7.38 (GNT)
-[source#src-char-fv_1,usfm,highlight=2;5]
+[source#src-char-fv_1,usfm,highlight=7]
 ----
 \p
 \v 37 On the last and most important day of the festival Jesus stood up and 

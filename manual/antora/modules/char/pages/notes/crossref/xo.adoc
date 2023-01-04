@@ -1,0 +1,4 @@
+= xo
+:env-antora:
+
+include::markers:char/xo.adoc[tag=public]

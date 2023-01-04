@@ -36,7 +36,7 @@ TextProperties:: publishable, vernacular, note
 == Examples
 
 .Genesis 2.9 and 2.17 (GNT)
-[source#src-char-fm_1,usfm,highlight=4;5,8]
+[source#src-char-fm_1,usfm,highlight=4..5;8]
 ----
 \v 9 \x - \xo 2.9: \xt Rev 2.7; 22.2,14.\x* He made all kinds of beautiful 
 trees grow there and produce good fruit. In the middle of the garden stood 

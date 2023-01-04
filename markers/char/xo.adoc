@@ -1,0 +1,52 @@
+= xo
+:description: Cross Reference - Origin reference
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/xo.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Cross Reference - Origin reference. This is the chapter and verse(s) which the xref:notes:crossref/xt[target references] are provided for. The punctuation used between chapter and verse should be the same as for the xref:notes:crossref/xt[target references].
+Syntax::
+* *USFM:* `+\xo_{content}+`
+* *USX:* `+<char style="xo">{content}</char>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+ifdef::env-antora[]
+See also: xref:note:crossref/x.adoc[Cross Reference]
+endif::env-antora[]
+
+== Properties
+
+StyleType:: Character
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Structure
+
+== Examples
+
+.Missing
+[source#src-char-xo_1,usfm,highlight=1]
+----
+Missing
+----
+
+image::char/missing.jpg[,300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues
