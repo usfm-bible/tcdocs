@@ -93,6 +93,9 @@ class DiagramMultiContainer(DiagramItem):
         for k, v in kw.items():
             setattr(self, k, v)
 
+    def append(self, item):
+        self.items.append(item)
+
     def walk(self, cb):
         cb(self)
         for item in self.items:
@@ -675,10 +678,13 @@ class Choice(DiagramMultiContainer):
             if i < default:
                 self.up += max(arcs, item.height + item.down + VS + self.items[i+1].up)
             elif i == default:
-                continue
+                self.down += arcs
+                self.up += arcs
             else:
                 self.down += max(arcs, item.up + VS + self.items[i-1].down + self.items[i-1].height)
         self.down -= self.items[default].height # already counted in self.height
+        self.down += self.items[-1].height
+        self.needsSpace = True
         addDebug(self)
 
     def __repr__(self):
@@ -934,7 +940,7 @@ class HorizontalChoice(DiagramMultiContainer):
         last = self.items[-1]
 
         # upper track
-        upperSpan = (sum(x.width+(20 if x.needsSpace else 0) for x in self.items[:-1])
+        upperSpan = (sum(x.width+(20 if x.needsSpace and not noclose else 0) for x in self.items[:-1])
             + (len(self.items) - 2) * AR*2
             - AR)
         (Path(x,y)
@@ -1018,9 +1024,10 @@ def Optional(item, skip=False):
 
 
 class OneOrMore(DiagramItem):
-    def __init__(self, item, repeat=None):
+    def __init__(self, item=None, repeat=None):
         DiagramItem.__init__(self, 'g')
-        self.item = wrapString(item)
+        if item is not None:
+            self.item = wrapString(item)
         repeat = repeat or Skip()
         self.rep = wrapString(repeat)
         self.width = max(self.item.width, self.rep.width) + AR * 2
@@ -1031,6 +1038,9 @@ class OneOrMore(DiagramItem):
             self.item.down + VS + self.rep.up + self.rep.height + self.rep.down)
         self.needsSpace = True
         addDebug(self)
+
+    def append(self, item):
+        self.item = wrapString(item)
 
     def format(self, x, y, width):
         leftGap, rightGap = determineGaps(width, self.width)
@@ -1064,11 +1074,9 @@ class OneOrMore(DiagramItem):
         return 'OneOrMore(%r, repeat=%r)' % (self.item, self.rep)
 
 
-def ZeroOrMore(item, repeat=None, skip=False):
+def ZeroOrMore(item=None, repeat=None, skip=False):
     result = Optional(OneOrMore(item, repeat), skip)
     return result
-
-
 
 
 class Group(DiagramItem):

@@ -202,7 +202,7 @@ class XMLSerializer(object):
                 if len(x.value) == 1 and x.value[0].type != SEQ:
                     self.visit(x.value, indent=False)
                 else:
-                    self.write('<%s>' % x.type.lower())
+                    self.write('<%s%s>' % (x.type.lower(), attribs))
                     self.visit(x.value)
                     self.write('</%s>' % x.type.lower())
             elif x.type == NOT_ALLOWED:

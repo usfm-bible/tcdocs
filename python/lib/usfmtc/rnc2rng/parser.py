@@ -2,7 +2,7 @@ from codecs import BOM_UTF16_BE, BOM_UTF16_LE
 from urllib.request import urlopen
 from urllib.parse import urljoin, urlparse
 
-import rply, sys, os
+import rply, sys, os, html
 
 KEYWORDS = set([
     'attribute', 'datatypes', 'default', 'div', 'element', 'empty', 'external',
@@ -65,7 +65,7 @@ def lex(src):
         if t.name == 'ID' and t.value in KEYWORDS:
             t.name = t.value.upper()
         elif t.name == 'LITERAL':
-            t.value = t.value[1:-1]
+            t.value = html.unescape(t.value[1:-1])
         elif t.name == 'COMMENT':
             continue
         yield t
@@ -428,9 +428,12 @@ def particle_some(s, p):
 def particle_primary(s, p):
     return p[0]
 
-@pg.production('annotated-primary : LPAREN pattern RPAREN')
-def annotated_primary_group(s, p):
-    return Node('GROUP', None, p[1])
+@pg.production('annotated-primary : annotations LPAREN pattern RPAREN')
+def annotated_primary_annotated_group(s, p):
+    if len(p[0]):
+        return Node('GROUP', None, p[0] + p[2]) #[Node('SEQ', None, p[0] + p[2])])
+    else:
+        return Node('GROUP', None, p[2])
 
 @pg.production('annotated-primary : annotations primary')
 def annotated_primary_annotated(s, p):

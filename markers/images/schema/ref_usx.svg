@@ -1,6 +1,7 @@
-<svg class="railroad-diagram" height="101" viewBox="0 0 672.0 101" width="672.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class="railroad-diagram" height="112" viewBox="0 0 673.5 112" width="673.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <style>/* <![CDATA[ */
+
     svg.railroad-diagram {
         background-color:hsl(30,20%,95%);
     }
@@ -37,15 +38,13 @@
 
 /* ]]> */
 </style><g>
-<path d="M 20 60 v 20 m 0 -10 h 20"></path></g><path d="M 40 70 h 10"></path><g>
-<path d="M 50 70 h 0.0"></path><path d="M 622.0 70 h 0.0"></path><g class="terminal ">
-<path d="M 50.0 70 h 0.0"></path><path d="M 112.5 70 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="50.0" y="59"></rect><text x="81.25" y="74">&#60;ref></text></g><path d="M 112.5 70 h 10"></path><g>
-<path d="M 122.5 70 h 0.0"></path><path d="M 622.0 70 h 0.0"></path><path d="M 122.5 70 a 10 10 0 0 0 10 -10 v -19 a 10 10 0 0 1 10 -10"></path><g>
-<path d="M 142.5 31 h 0.0"></path><path d="M 602.0 31 h 0.0"></path><g class="terminal ">
-<path d="M 142.5 31 h 0.0"></path><path d="M 205.0 31 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="142.5" y="20"></rect><text x="173.75" y="35">@loc?</text></g><path d="M 205.0 31 h 10"></path><path d="M 215.0 31 h 10"></path><g class="terminal ">
-<path d="M 225.0 31 h 0.0"></path><path d="M 602.0 31 h 0.0"></path><rect height="22" rx="10" ry="10" width="377.0" x="225.0" y="20"></rect><text x="413.5" y="35">/&#91;A-Z1-4&#93;{3}(-&#91;A-Z1-4&#93;{3})? ?&#91;a-z0-9\-:&#93;&#42;/</text></g></g><path d="M 122.5 70 h 20"></path><g>
-<path d="M 142.5 70 h 142.25"></path><path d="M 459.75 70 h 142.25"></path><g>
-<path d="M 284.75 70 h 0.0"></path><path d="M 378.75 70 h 0.0"></path><path d="M 284.75 70 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
-<path d="M 304.75 50 h 54.0"></path></g><path d="M 358.75 50 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 284.75 70 h 20"></path><g class="terminal ">
-<path d="M 304.75 70 h 0.0"></path><path d="M 358.75 70 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="304.75" y="59"></rect><text x="331.75" y="74">text</text></g><path d="M 358.75 70 h 20"></path></g><path d="M 378.75 70 h 10"></path><g class="terminal ">
-<path d="M 388.75 70 h 0.0"></path><path d="M 459.75 70 h 0.0"></path><rect height="22" rx="10" ry="10" width="71.0" x="388.75" y="59"></rect><text x="424.25" y="74">&#60;/ref></text></g></g><path d="M 602.0 70 h 20"></path></g></g><path d="M 622.0 70 h 10"></path><path d="M 632.0 70 h 20 m 0 -10 v 20"></path></g></svg>
+<path d="M 20 61 v 20 m 0 -10 h 20"></path></g><path d="M 40 71 h 10"></path><g>
+<path d="M 50 71 h 0.0"></path><path d="M 623.5 71 h 0.0"></path><g>
+<path d="M 50.0 71 h 0.0"></path><path d="M 623.5 71 h 0.0"></path><g class="terminal ">
+<path d="M 50.0 71 h 0.0"></path><path d="M 112.5 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="50.0" y="60"></rect><text x="81.25" y="75">&#60;ref></text></g><path d="M 112.5 71 h 10"></path><path d="M 122.5 71 h 10"></path><g>
+<path d="M 132.5 71 h 0.0"></path><path d="M 623.5 71 h 0.0"></path><path d="M 132.5 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 152.5 41 h 0.0"></path><path d="M 603.5 41 h 0.0"></path><g class="terminal ">
+<path d="M 152.5 41 h 0.0"></path><path d="M 206.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="152.5" y="30"></rect><text x="179.5" y="45">@loc</text></g><path d="M 206.5 41 h 10"></path><path d="M 216.5 41 h 10"></path><g class="terminal ">
+<path d="M 226.5 41 h 0.0"></path><path d="M 603.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="377.0" x="226.5" y="30"></rect><text x="415.0" y="45">/&#91;A-Z1-4&#93;{3}(-&#91;A-Z1-4&#93;{3})? ?&#91;a-z0-9\-:&#93;&#42;/</text></g></g><path d="M 132.5 71 h 20"></path><g>
+<path d="M 152.5 71 h 198.5"></path><path d="M 405.0 71 h 198.5"></path><g class="terminal ">
+<path d="M 351.0 71 h 0.0"></path><path d="M 405.0 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="351.0" y="60"></rect><text x="378.0" y="75">TEXT</text></g></g><path d="M 603.5 71 h 20"></path></g></g></g><path d="M 623.5 71 h 10"></path><path d="M 633.5 71 h 20 m 0 -10 v 20"></path></g></svg>

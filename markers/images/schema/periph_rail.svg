@@ -1,0 +1,114 @@
+<svg class="railroad-diagram" height="1168" viewBox="0 0 731.5 1168" width="731.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<style>/* <![CDATA[ */
+
+    svg.railroad-diagram {
+        background-color:hsl(30,20%,95%);
+    }
+    svg.railroad-diagram path {
+        stroke-width: 2;
+        stroke: black;
+        fill: none;
+    }
+    svg.railroad-diagram text {
+        font-size: 12px;
+        text-anchor: middle;
+        font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram text.label {
+        text-anchor:start;
+    }
+    svg.railroad-diagram text.comment {
+        font-family: DejaVu Sans;
+        font-size: 14px;
+    }
+    svg.railroad-diagram rect{
+        stroke-width: 2;
+        stroke:black;
+        fill: rgb(210, 255, 210);
+    }
+    svg.railroad-diagram rect.group-box {
+        stroke: gray;
+        stroke-dasharray: 10 5;
+        fill: none;
+    }
+    .terminal {
+        font-family: DejaVu Sans;
+    }
+
+/* ]]> */
+</style><g>
+<path d="M 20 21 v 20 m 0 -10 h 20"></path></g><path d="M 40 31 h 10"></path><g>
+<path d="M 50 31 h 0.0"></path><path d="M 681.5 929 h 0.0"></path><g>
+<path d="M 50.0 31 h 0.0"></path><path d="M 50.0 31 h 10"></path><g class="terminal ">
+<path d="M 60.0 31 h 253.25"></path><path d="M 418.25 31 h 253.25"></path><rect height="22" rx="10" ry="10" width="105.0" x="313.25" y="20"></rect><text x="365.75" y="35">'\periph '</text></g><path d="M 671.5 31 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 71 h 183.5"></path><path d="M 488.0 71 h 183.5"></path><path d="M 243.5 71 h 20"></path><g>
+<path d="M 263.5 71 h 204.5"></path></g><path d="M 468.0 71 h 20"></path><path d="M 243.5 71 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 263.5 91 h 0.0"></path><path d="M 468.0 91 h 0.0"></path><g>
+<path d="M 263.5 91 h 0.0"></path><path d="M 468.0 91 h 0.0"></path><g class="terminal ">
+<path d="M 263.5 91 h 0.0"></path><path d="M 317.5 91 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="263.5" y="80"></rect><text x="290.5" y="95">TEXT</text></g><path d="M 317.5 91 h 10"></path><path d="M 327.5 91 h 10"></path><g class="terminal ">
+<path d="M 337.5 91 h 0.0"></path><path d="M 468.0 91 h 0.0"></path><rect height="22" rx="10" ry="10" width="130.5" x="337.5" y="80"></rect><text x="402.75" y="95">ATTRIBTEXTEND</text></g></g></g><path d="M 468.0 91 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path></g><path d="M 671.5 71 a 10 10 0 0 1 10 10 v 29 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 107 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 247 h 10.0"></path><path d="M 661.5 247 h 10.0"></path><g class="terminal ">
+<path d="M 70.0 247 h 0.0"></path><path d="M 115.5 247 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="70.0" y="236"></rect><text x="92.75" y="251">'|'</text></g><path d="M 115.5 247 h 10"></path><g>
+<path d="M 125.5 247 h 0.0"></path><path d="M 614.5 247 h 0.0"></path><path d="M 125.5 247 a 10 10 0 0 0 10 -10 v -99 a 10 10 0 0 1 10 -10 h 197.5"></path><path d="M 363.0 546 h 231.5 a 10 10 0 0 0 10 -10 v -279 a 10 10 0 0 1 10 -10"></path><path d="M 125.5 247 h 10"></path><g>
+<path d="M 135.5 247 h 10.0"></path><path d="M 333.0 247 h 10.0"></path><path d="M 145.5 247 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><g class="terminal ">
+<path d="M 165.5 217 h 34.0"></path><path d="M 279.0 217 h 34.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="199.5" y="206"></rect><text x="239.25" y="221">"promo"</text></g><path d="M 313.0 217 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><path d="M 145.5 247 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><g class="terminal ">
+<path d="M 165.5 187 h 17.0"></path><path d="M 296.0 187 h 17.0"></path><rect height="22" rx="10" ry="10" width="113.5" x="182.5" y="176"></rect><text x="239.25" y="191">"halftitle"</text></g><path d="M 313.0 187 a 10 10 0 0 1 10 10 v 40 a 10 10 0 0 0 10 10"></path><path d="M 145.5 247 a 10 10 0 0 0 10 -10 v -70 a 10 10 0 0 1 10 -10"></path><g class="terminal ">
+<path d="M 165.5 157 h 34.0"></path><path d="M 279.0 157 h 34.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="199.5" y="146"></rect><text x="239.25" y="161">"title"</text></g><path d="M 313.0 157 a 10 10 0 0 1 10 10 v 70 a 10 10 0 0 0 10 10"></path><path d="M 145.5 247 h 20"></path><g class="terminal ">
+<path d="M 165.5 247 h 12.75"></path><path d="M 300.25 247 h 12.75"></path><rect height="22" rx="10" ry="10" width="122.0" x="178.25" y="236"></rect><text x="239.25" y="251">"imprimatur"</text></g><path d="M 313.0 247 h 20"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 277 h 25.5"></path><path d="M 287.5 277 h 25.5"></path><rect height="22" rx="10" ry="10" width="96.5" x="191.0" y="266"></rect><text x="239.25" y="281">"pubdata"</text></g><path d="M 313.0 277 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 40 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 307 h 21.25"></path><path d="M 291.75 307 h 21.25"></path><rect height="22" rx="10" ry="10" width="105.0" x="186.75" y="296"></rect><text x="239.25" y="311">"foreword"</text></g><path d="M 313.0 307 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 70 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 337 h 25.5"></path><path d="M 287.5 337 h 25.5"></path><rect height="22" rx="10" ry="10" width="96.5" x="191.0" y="326"></rect><text x="239.25" y="341">"preface"</text></g><path d="M 313.0 337 a 10 10 0 0 0 10 -10 v -70 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 100 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 367 h 21.25"></path><path d="M 291.75 367 h 21.25"></path><rect height="22" rx="10" ry="10" width="105.0" x="186.75" y="356"></rect><text x="239.25" y="371">"contents"</text></g><path d="M 313.0 367 a 10 10 0 0 0 10 -10 v -100 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 130 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 397 h 0.0"></path><path d="M 313.0 397 h 0.0"></path><rect height="22" rx="10" ry="10" width="147.5" x="165.5" y="386"></rect><text x="239.25" y="401">"alphacontents"</text></g><path d="M 313.0 397 a 10 10 0 0 0 10 -10 v -130 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 160 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 427 h 0.0"></path><path d="M 313.0 427 h 0.0"></path><rect height="22" rx="10" ry="10" width="147.5" x="165.5" y="416"></rect><text x="239.25" y="431">"abbreviations"</text></g><path d="M 313.0 427 a 10 10 0 0 0 10 -10 v -160 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 190 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 457 h 21.25"></path><path d="M 291.75 457 h 21.25"></path><rect height="22" rx="10" ry="10" width="105.0" x="186.75" y="446"></rect><text x="239.25" y="461">"intbible"</text></g><path d="M 313.0 457 a 10 10 0 0 0 10 -10 v -190 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 220 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 487 h 34.0"></path><path d="M 279.0 487 h 34.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="199.5" y="476"></rect><text x="239.25" y="491">"intot"</text></g><path d="M 313.0 487 a 10 10 0 0 0 10 -10 v -220 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 250 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 517 h 25.5"></path><path d="M 287.5 517 h 25.5"></path><rect height="22" rx="10" ry="10" width="96.5" x="191.0" y="506"></rect><text x="239.25" y="521">"intpent"</text></g><path d="M 313.0 517 a 10 10 0 0 0 10 -10 v -250 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 280 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 547 h 12.75"></path><path d="M 300.25 547 h 12.75"></path><rect height="22" rx="10" ry="10" width="122.0" x="178.25" y="536"></rect><text x="239.25" y="551">"inthistory"</text></g><path d="M 313.0 547 a 10 10 0 0 0 10 -10 v -280 a 10 10 0 0 1 10 -10"></path><path d="M 145.5 247 a 10 10 0 0 1 10 10 v 310 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 165.5 577 h 17.0"></path><path d="M 296.0 577 h 17.0"></path><rect height="22" rx="10" ry="10" width="113.5" x="182.5" y="566"></rect><text x="239.25" y="581">"intpoetry"</text></g><path d="M 313.0 577 a 10 10 0 0 0 10 -10 v -310 a 10 10 0 0 1 10 -10"></path></g><path d="M 343.0 247 a 10 10 0 0 1 10 10 v 279 a 10 10 0 0 0 10 10"></path><path d="M 343.0 128 a 10 10 0 0 1 10 10 v 99 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 363.0 247 h 10.0"></path><path d="M 594.5 247 h 10.0"></path><path d="M 373.0 247 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><g class="terminal ">
+<path d="M 393.0 217 h 51.0"></path><path d="M 523.5 217 h 51.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="444.0" y="206"></rect><text x="483.75" y="221">"intnt"</text></g><path d="M 574.5 217 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><path d="M 373.0 247 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><g class="terminal ">
+<path d="M 393.0 187 h 51.0"></path><path d="M 523.5 187 h 51.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="444.0" y="176"></rect><text x="483.75" y="191">"intdc"</text></g><path d="M 574.5 187 a 10 10 0 0 1 10 10 v 40 a 10 10 0 0 0 10 10"></path><path d="M 373.0 247 a 10 10 0 0 0 10 -10 v -70 a 10 10 0 0 1 10 -10"></path><g class="terminal ">
+<path d="M 393.0 157 h 25.5"></path><path d="M 549.0 157 h 25.5"></path><rect height="22" rx="10" ry="10" width="130.5" x="418.5" y="146"></rect><text x="483.75" y="161">"intprophesy"</text></g><path d="M 574.5 157 a 10 10 0 0 1 10 10 v 70 a 10 10 0 0 0 10 10"></path><path d="M 373.0 247 h 20"></path><g class="terminal ">
+<path d="M 393.0 247 h 29.75"></path><path d="M 544.75 247 h 29.75"></path><rect height="22" rx="10" ry="10" width="122.0" x="422.75" y="236"></rect><text x="483.75" y="251">"intgospels"</text></g><path d="M 574.5 247 h 20"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 277 h 25.5"></path><path d="M 549.0 277 h 25.5"></path><rect height="22" rx="10" ry="10" width="130.5" x="418.5" y="266"></rect><text x="483.75" y="281">"intepistles"</text></g><path d="M 574.5 277 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 40 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 307 h 29.75"></path><path d="M 544.75 307 h 29.75"></path><rect height="22" rx="10" ry="10" width="122.0" x="422.75" y="296"></rect><text x="483.75" y="311">"intletters"</text></g><path d="M 574.5 307 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 70 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 337 h 51.0"></path><path d="M 523.5 337 h 51.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="444.0" y="326"></rect><text x="483.75" y="341">"chron"</text></g><path d="M 574.5 337 a 10 10 0 0 0 10 -10 v -70 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 100 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 367 h 38.25"></path><path d="M 536.25 367 h 38.25"></path><rect height="22" rx="10" ry="10" width="105.0" x="431.25" y="356"></rect><text x="483.75" y="371">"measures"</text></g><path d="M 574.5 367 a 10 10 0 0 0 10 -10 v -100 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 130 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 397 h 55.25"></path><path d="M 519.25 397 h 55.25"></path><rect height="22" rx="10" ry="10" width="71.0" x="448.25" y="386"></rect><text x="483.75" y="401">"maps"</text></g><path d="M 574.5 397 a 10 10 0 0 0 10 -10 v -130 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 160 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 427 h 34.0"></path><path d="M 540.5 427 h 34.0"></path><rect height="22" rx="10" ry="10" width="113.5" x="427.0" y="416"></rect><text x="483.75" y="431">"lxxquotes"</text></g><path d="M 574.5 427 a 10 10 0 0 0 10 -10 v -160 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 190 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 457 h 51.0"></path><path d="M 523.5 457 h 51.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="444.0" y="446"></rect><text x="483.75" y="461">"cover"</text></g><path d="M 574.5 457 a 10 10 0 0 0 10 -10 v -190 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 220 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 487 h 51.0"></path><path d="M 523.5 487 h 51.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="444.0" y="476"></rect><text x="483.75" y="491">"spine"</text></g><path d="M 574.5 487 a 10 10 0 0 0 10 -10 v -220 a 10 10 0 0 1 10 -10"></path><path d="M 373.0 247 a 10 10 0 0 1 10 10 v 250 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 393.0 517 h 0.0"></path><path d="M 574.5 517 h 0.0"></path><rect height="22" rx="10" ry="10" width="181.5" x="393.0" y="506"></rect><text x="483.75" y="521">/x\-&#91;\p{L}&#95;\-\.:&#93;+/</text></g><path d="M 574.5 517 a 10 10 0 0 0 10 -10 v -250 a 10 10 0 0 1 10 -10"></path></g><path d="M 604.5 247 h 10"></path></g><path d="M 614.5 247 h 10"></path><g class="terminal ">
+<path d="M 624.5 247 h 0.0"></path><path d="M 661.5 247 h 0.0"></path><rect height="22" rx="10" ry="10" width="37.0" x="624.5" y="236"></rect><text x="643.0" y="251">NL</text></g></g><path d="M 671.5 247 a 10 10 0 0 1 10 10 v 339 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 18 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 644 h 219.0"></path><path d="M 452.5 644 h 219.0"></path><path d="M 279.0 644 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 299.0 624 h 133.5"></path></g><path d="M 432.5 624 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 279.0 644 h 20"></path><g>
+<path d="M 299.0 644 h 0.0"></path><path d="M 432.5 644 h 0.0"></path><path d="M 299.0 644 h 10"></path><g class="non-terminal ">
+<path d="M 309.0 644 h 0.0"></path><path d="M 422.5 644 h 0.0"></path><rect height="22" width="113.5" x="309.0" y="633"></rect><text x="365.75" y="648">BookHeaders</text></g><path d="M 422.5 644 h 10"></path><path d="M 309.0 644 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 309.0 664 h 113.5"></path></g><path d="M 422.5 664 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 432.5 644 h 20"></path></g><path d="M 671.5 644 a 10 10 0 0 1 10 10 v 18 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 702 h 243.25"></path><path d="M 428.25 702 h 243.25"></path><path d="M 303.25 702 h 10"></path><g class="non-terminal ">
+<path d="M 313.25 702 h 0.0"></path><path d="M 418.25 702 h 0.0"></path><rect height="22" width="105.0" x="313.25" y="691"></rect><text x="365.75" y="706">BookTitles</text></g><path d="M 418.25 702 h 10"></path><path d="M 313.25 702 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 313.25 722 h 105.0"></path></g><path d="M 418.25 722 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 671.5 702 a 10 10 0 0 1 10 10 v 8 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 18 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 768 h 197.75"></path><path d="M 473.75 768 h 197.75"></path><path d="M 257.75 768 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 277.75 748 h 176.0"></path></g><path d="M 453.75 748 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 257.75 768 h 20"></path><g>
+<path d="M 277.75 768 h 0.0"></path><path d="M 453.75 768 h 0.0"></path><path d="M 277.75 768 h 10"></path><g class="non-terminal ">
+<path d="M 287.75 768 h 0.0"></path><path d="M 443.75 768 h 0.0"></path><rect height="22" width="156.0" x="287.75" y="757"></rect><text x="365.75" y="772">BookIntroduction</text></g><path d="M 443.75 768 h 10"></path><path d="M 287.75 768 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 287.75 788 h 156.0"></path></g><path d="M 443.75 788 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 453.75 768 h 20"></path></g><path d="M 671.5 768 a 10 10 0 0 1 10 10 v 18 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 18 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 844 h 159.5"></path><path d="M 512.0 844 h 159.5"></path><path d="M 219.5 844 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 239.5 824 h 252.5"></path></g><path d="M 492.0 824 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 219.5 844 h 20"></path><g>
+<path d="M 239.5 844 h 0.0"></path><path d="M 492.0 844 h 0.0"></path><path d="M 239.5 844 h 10"></path><g class="non-terminal ">
+<path d="M 249.5 844 h 0.0"></path><path d="M 482.0 844 h 0.0"></path><rect height="22" width="232.5" x="249.5" y="833"></rect><text x="365.75" y="848">BookIntroductionEndTitles</text></g><path d="M 482.0 844 h 10"></path><path d="M 249.5 844 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 249.5 864 h 232.5"></path></g><path d="M 482.0 864 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 492.0 844 h 20"></path></g><path d="M 671.5 844 a 10 10 0 0 1 10 10 v 18 a 10 10 0 0 1 -10 10 h -611.5 a 10 10 0 0 0 -10 10 v 27 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 929 h 186.25"></path><path d="M 485.25 929 h 186.25"></path><path d="M 246.25 929 a 10 10 0 0 0 10 -10 v -9 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 266.25 900 h 199.0"></path></g><path d="M 465.25 900 a 10 10 0 0 1 10 10 v 9 a 10 10 0 0 0 10 10"></path><path d="M 246.25 929 h 20"></path><g>
+<path d="M 266.25 929 h 0.0"></path><path d="M 465.25 929 h 0.0"></path><path d="M 266.25 929 h 10"></path><g>
+<path d="M 276.25 929 h 0.0"></path><path d="M 455.25 929 h 0.0"></path><path d="M 276.25 929 h 20"></path><g class="non-terminal ">
+<path d="M 296.25 929 h 29.75"></path><path d="M 405.5 929 h 29.75"></path><rect height="22" width="79.5" x="326.0" y="918"></rect><text x="365.75" y="933">Chapter</text></g><path d="M 435.25 929 h 20"></path><path d="M 276.25 929 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 296.25 959 h 42.5"></path><path d="M 392.75 959 h 42.5"></path><rect height="22" width="54.0" x="338.75" y="948"></rect><text x="365.75" y="963">Para</text></g><path d="M 435.25 959 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><path d="M 276.25 929 a 10 10 0 0 1 10 10 v 40 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 296.25 989 h 42.5"></path><path d="M 392.75 989 h 42.5"></path><rect height="22" width="54.0" x="338.75" y="978"></rect><text x="365.75" y="993">List</text></g><path d="M 435.25 989 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><path d="M 276.25 929 a 10 10 0 0 1 10 10 v 70 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 296.25 1019 h 38.25"></path><path d="M 397.0 1019 h 38.25"></path><rect height="22" width="62.5" x="334.5" y="1008"></rect><text x="365.75" y="1023">Table</text></g><path d="M 435.25 1019 a 10 10 0 0 0 10 -10 v -70 a 10 10 0 0 1 10 -10"></path><path d="M 276.25 929 a 10 10 0 0 1 10 10 v 100 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 296.25 1049 h 25.5"></path><path d="M 409.75 1049 h 25.5"></path><rect height="22" width="88.0" x="321.75" y="1038"></rect><text x="365.75" y="1053">Footnote</text></g><path d="M 435.25 1049 a 10 10 0 0 0 10 -10 v -100 a 10 10 0 0 1 10 -10"></path><path d="M 276.25 929 a 10 10 0 0 1 10 10 v 130 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 296.25 1079 h 0.0"></path><path d="M 435.25 1079 h 0.0"></path><rect height="22" width="139.0" x="296.25" y="1068"></rect><text x="365.75" y="1083">CrossReference</text></g><path d="M 435.25 1079 a 10 10 0 0 0 10 -10 v -130 a 10 10 0 0 1 10 -10"></path><path d="M 276.25 929 a 10 10 0 0 1 10 10 v 160 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 296.25 1109 h 29.75"></path><path d="M 405.5 1109 h 29.75"></path><rect height="22" width="79.5" x="326.0" y="1098"></rect><text x="365.75" y="1113">Sidebar</text></g><path d="M 435.25 1109 a 10 10 0 0 0 10 -10 v -160 a 10 10 0 0 1 10 -10"></path></g><path d="M 455.25 929 h 10"></path><path d="M 276.25 929 a 10 10 0 0 0 -10 10 v 189 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 276.25 1138 h 179.0"></path></g><path d="M 455.25 1138 a 10 10 0 0 0 10 -10 v -189 a 10 10 0 0 0 -10 -10"></path></g><path d="M 465.25 929 h 20"></path></g><path d="M 671.5 929 h 10"></path><path d="M 681.5 929 h 0.0"></path></g></g><path d="M 681.5 929 h 10"></path><path d="M 691.5 929 h 20 m 0 -10 v 20"></path></g></svg>

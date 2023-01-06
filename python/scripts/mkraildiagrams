@@ -15,16 +15,24 @@ parser.add_argument("-o","--outdir",required=True,help="Output directory for gen
 parser.add_argument("-n","--node",help="Process a single node")
 parser.add_argument("-C","--charwidth",type=float,default=6.,help="Average width of characters to use")
 parser.add_argument("-z","--debug",type=int,default=0,help="bit 0 - print job name")
+parser.add_argument("-A","--alt",action="store_true",help="Use alternative parser")
 args = parser.parse_args()
 
 rdoc = ETDoc(args.grammar)
-rgram = Grammar(rdoc)
-rgram.parse(rdoc.getroot())
-backendsfm = SFMRail()
-backendxml = XMLRail()
+if not args.alt:
+    from usfmtc.parser import UsfmParser, XmlParser, RailRoad, XMLRailRoad
+    backendsfm = RailRoad()
+    backendxml = XMLRailRoad()
+    sfmproc = UsfmParser(rdoc, backendsfm)
+    xmlproc = XmlParser(rdoc, backendxml)
+else:
+    backendsfm = SFMRail()
+    rgram = Grammar(rdoc)
+    rgram.parse(rdoc.getroot())
+    backendxml = XMLRail()
 
 if args.node:
-   jobs = {args.node: alljobs[args.node]}
+    jobs = {args.node: alljobs[args.node]}
 else:
     jobs = alljobs 
 
@@ -37,14 +45,19 @@ for k, j in jobs.items():
             print(f"{j[0]}_{a[0]}")
         #rdia = RDiagram(k, rdoc, keeps=keeps, cwidth=args.charwidth)
         #rgram.makediagram(k, rdia=rdia, usfm=a[1])
-        if a[1]:
-            back = backendsfm
-            proc = RelaxUSFMParser
+        if not args.alt:
+            back = backendsfm if a[1] else backendxml
+            proc = sfmproc if a[1] else xmlproc
         else:
-            back = backendxml
+            back = backendsfm if a[1] else backendxml
             proc = RelaxXMLParser
-        p = proc(rdoc, back, rgram, keeps)
-        rgram.parseRef(k, parser=p, quietRefs=False)
+        if not args.alt:
+            p = proc
+            if p.parseRef(k, flattens=keeps) is None:
+                continue
+        else:
+            p = proc(rdoc, back, rgram, keeps)
+            rgram.parseRef(k, parser=p, quietRefs=False)
         outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[0], a[0]))
         with open(outfile, "w", encoding="utf-8") as outf:
             d = back.output(p.curr, color='rgb(210, 255, 210)' if a[1] else 'rgb(210, 210, 255)')
