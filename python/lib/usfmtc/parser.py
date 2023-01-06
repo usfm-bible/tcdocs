@@ -89,7 +89,8 @@ class UsfmParser:
         self.back.add_terminal(n, v)
 
     def attribute(self, e, res, skip, p, i):
-        res = self.back.attrib_start(self, e, res)
+        name = e.findtext(f"./{relaxns}name") or "*"
+        res = self.back.attrib_start(self, e, res, name)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
         self.proc_children(e, res)
@@ -98,7 +99,8 @@ class UsfmParser:
         return res
 
     def element(self, e, res, skip, p, i):
-        res = self.back.elem_start(self, e, res)
+        name = e.findtext(f"./{relaxns}name")
+        res = self.back.elem_start(self, e, res, name)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
         self.proc_children(e, res, False)
@@ -239,7 +241,8 @@ class XmlParser:
         return res
 
     def attribute(self, e, res, p):
-        res = self.back.attrib_start(self, e, res)
+        name = e.findtext(f"./{relaxns}name") or "*"
+        res = self.back.attrib_start(self, e, res, name)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
         self.proc_children(e, res)
@@ -248,11 +251,11 @@ class XmlParser:
         return res
 
     def element(self, e, res, p):
-        name = e.get(f"./{relaxns}name")
+        name = e.findtext(f"./{relaxns}name")
         if name in self.elements:
             res = self.elements[name]
         else:
-            res = self.back.elem_start(self, e, res)
+            res = self.back.elem_start(self, e, res, name)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
         self.proc_children(e, res)
@@ -326,6 +329,7 @@ class XmlParser:
         res.properties.update(e.attrib)
         return res
 
+# ----------------------------------------------------------------------------
 
 import usfmtc.railroad as rr
 CSS_STYLE = '''
@@ -365,7 +369,6 @@ CSS_STYLE = '''
 '''
 
 class RailRoad:
-
     def __init__(self):
         self.terminals = {}
 
@@ -421,13 +424,13 @@ class RailRoad:
         defaults.update(kw)
         return rr.Diagram(top.asRail(), type='complex', css=CSS_STYLE.format(**defaults))
 
-    def attrib_start(self, parser, e, context):
+    def attrib_start(self, parser, e, context, name):
         return self.append_seq(context, stacked=e.get("{}stacked".format(usfmns), "false") in ("true", "1"))
 
     def attrib_end(self, parser, e, context):
         return context
 
-    def elem_start(self, parser, e, context):
+    def elem_start(self, parser, e, context, name):
         return self.append_seq(context, stacked=e.get("{}stacked".format(usfmns), "false") in ("true", "1"))
 
     def elem_end(self, parser, e, context):
@@ -499,8 +502,7 @@ class RailRoad:
 
 class XMLRailRoad(RailRoad):
 
-    def elem_start(self, parser, e, context):
-        name = e.findtext(f'./{relaxns}name')
+    def elem_start(self, parser, e, context, name):
         seq = self.append_type(context, rr.Sequence, forced=True)
         context = self.match(f"<{name}>", seq)
         res = self.append_type(seq, rr.Choice, 0, forced=True, noclose=1)
@@ -515,8 +517,7 @@ class XMLRailRoad(RailRoad):
             context.args[0] = len(context) - 1
         return context
 
-    def attrib_start(self, parser, e, context):
-        name = e.findtext(f'./{relaxns}name') or "*"
+    def attrib_start(self, parser, e, context, name):
         parent = context
         while parent is not None and parent.kw.get('noclose', 0) == 0:
             parent = parent.parent
