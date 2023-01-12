@@ -352,6 +352,7 @@ class Element(list):
             res = et.Element(self.name, attrib=self.attributes)
         else:
             res = et.SubElement(parent, self.name, attrib=self.attributes)
+        res.set(' parent', parent)
         def asetchild(c, res):
             if isinstance(c, str):
                 if len(res):

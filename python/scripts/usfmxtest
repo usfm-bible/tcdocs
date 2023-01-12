@@ -10,6 +10,144 @@ except ImportError:
 from usfmtc.parser import UsfmParser, XmlParser
 import xml.etree.ElementTree as et
 
+def writexml(outf, root):
+    outf.write('<?xml version="1.0" encoding="utf-8"?>\n')
+    qnames, ns = et._namespaces(root, None)
+    _serialize_xml(outf.write, root, qnames, ns, True)
+    out.write("\n")
+
+def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwargs):
+    tag = elem.tag
+    text = elem.text
+    tag = qnames[tag]
+    if tag is None:
+        if text:
+            write(et._escape_cdata(text))
+        for e in elem:
+            _serialize_xml(write, e, qnames, None, short_empty_elements)
+    else:
+        write("<" + tag)
+        items = list(elem.items())
+        if items or namespaces:
+            if namespaces:
+                for v, k in sorted(namespaces.items(), key=lambda x: x[1]):  # sort on prefix
+                    if k:
+                        k = ":" + k
+                    write(" xmlns%s=\"%s\"" % (k, et._escape_attrib(v)))
+            for k, v in items:
+                if not k.startswith(" ") and v is not None:
+                    v = et._escape_attrib(v)
+                    write(" %s=\"%s\"" % (qnames[k], v))
+        if text or len(elem) or not short_empty_elements:
+            write(">")
+            if text:
+                write(et._escape_cdata(text))
+            for e in elem:
+                _serialize_xml(write, e, qnames, None, short_empty_elements)
+            write("</" + tag + ">")
+        else:
+            write(" />")
+    if elem.tail:
+        write(et._escape_cdata(elem.tail))
+
+def getindex(base):
+    parent = base.get(' parent')
+    return list(parent).index(base), parent
+
+def getprevious(base):
+    i, parent = getindex(base)
+    return parent[i-1] if i > 0 else None
+
+def addprevious(base, el):
+    i, parent = getindex(base)
+    parent.insert(i, el)
+
+def getnext(base):
+    i, parent = getindex(base)
+    return parent[i+1] if i < len(parent) - 1 else None
+
+def addvids(root):
+    lastv = None
+    bkel = root.find('./book')
+    bk = bkel.get('code', 'UNK')
+    currchap = 0
+    for v in list(root.iter()):
+        if v.tag == "chapter":
+            currchap = v.get('number')
+            currverse = 0
+            v.set('sid', "{} {}".format(bk, currchap))
+            continue
+        elif v.tag != "verse":
+            continue
+        if v.get('eid', None) is not None:
+            continue
+        currverse = v.get('number')
+        v.set('sid', "{} {}:{}".format(bk, currchap, currverse))
+        if lastv is None:
+            lastv = v
+            continue
+        eid = lastv.get('sid', None)
+        ev = v.makeelement('verse', {'eid': eid or ""})
+        pv = v.get(' parent')
+        pl = lastv.get(' parent')
+        if id(pv) == id(pl):
+            addprevious(v, ev) 
+        else:
+            endp = pl
+            pl = getnext(endp)
+            block = False
+            while pl is not None and id(pl) != id(pv):
+                if pl.tag == 'para' and partype(pl.get('style', None)) != 'Section':
+                    if not block:
+                        pl.set('vid', eid)
+                        endp = pl
+                else:
+                    block = True
+                pl = getnext(pl)
+            if not block and getindex(v)[0] > 0 or not (pv.text is None or pv.text == ""):
+                addprevious(v, ev)
+            else:
+                endp.append(ev)
+        lastv = v
+    if lastv is not None:
+        eid = lastv.get('sid')
+        ev = lastv.makeelement('verse', {'eid': eid or ''})
+        pl = lastv.get(' parent')
+        endp = pl
+        block = False
+        while pl is not None and id(pl) != id(pv):
+            if pl.tag == 'para' and partype(pl.get('style', None)) != 'Section':
+                if not block:
+                    pl.set('vid', eid)
+                    endp = pl
+            else:
+                block = True
+            pl = getnext(pl)
+        endp.append(ev)
+
+    lastc = None
+    for c in root.findall('.//chapter'):
+        if lastc is not None:
+            cel = c.makeelement('chapter', {'eid': lastc.get('sid', '')})
+            addprevious(c, cel)
+        lastc = c
+    if lastc is not None:
+        root.append(lastc.makeelement('chapter', {'eid': lastc.get('sid', '')}))
+
+    for r in root.findall('.//row'):
+        p = getprevious(r)
+        if p.tag == 'row':
+            newp = p.get(' parent')
+            i, oldp = getindex(r)
+            oldp[i] = newp
+        else:
+            # there's a bug here, surely newp is never attached
+            newp = p.makeelement('table')
+            oldp.remove(r)
+        newp.append(r)
+    return root
+
+
 def proconedir(d, sfmp, args):
     meta = {}
     doc = et.parse(os.path.join(d, "metadata.xml"))
@@ -20,9 +158,8 @@ def proconedir(d, sfmp, args):
         print(result)
     else:
         xml = result.asEt()
-        doc = et.ElementTree(xml)
-        doc.write(sys.stdout, encoding="unicode", xml_declaration=True)
-        print()
+        addvids(xml)
+        writexml(sys.stdout, xml)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
@@ -59,3 +196,4 @@ sfmproc.parseRef(args.start)
 
 for j in jobs:
     proconedir(j, sfmproc.curr, args)
+
