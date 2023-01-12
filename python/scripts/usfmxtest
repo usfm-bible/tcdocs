@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+import argparse, os, sys, logging
+
+try:
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+except ImportError:
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+from usfmtc.parser import UsfmParser, XmlParser
+import xml.etree.ElementTree as et
+
+def proconedir(d, sfmp, args):
+    meta = {}
+    doc = et.parse(os.path.join(d, "metadata.xml"))
+    for e in doc.getroot():
+        meta[e.tag] = e.text
+    result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+    if (args.debug & 1) != 0:
+        print(result)
+    else:
+        xml = result.asEt()
+        doc = et.ElementTree(xml)
+        doc.write(sys.stdout, encoding="unicode", xml_declaration=True)
+        print()
+
+parser = argparse.ArgumentParser()
+parser.add_argument("directory",help="A single or tree of test directories")
+parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
+parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
+parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
+parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree")
+args = parser.parse_args()
+
+if args.logging:
+    try:
+        loglevel = int(args.logging)
+    except ValueError:
+        loglevel = getattr(logging, args.logging.upper(), None)
+    if isinstance(loglevel, int):
+        parms = {'level': loglevel, 'datefmt': '%d/%b/%Y %H:%M:%S', 'format': '%(asctime)s.%(msecs)03d %(levelname)s:%(module)s(%(lineno)d) %(message)s'}
+        logfh = open("usfmxtest.log", "w", encoding="utf-8")
+        parms.update(stream=logfh, filemode="w") #, encoding="utf-8")
+        try:
+            logging.basicConfig(**parms)
+        except FileNotFoundError as e:      # no write access to the log
+            print("Exception", e)
+    log = logging.getLogger('usfmxtest')
+
+jobs = []
+for dp, dns, fns in os.walk(args.directory):
+    if 'metadata.xml' in fns:
+        jobs.append(dp)
+
+rdoc = et.parse(args.grammar)
+backendsfm = UsfmParserBackend()
+sfmproc = UsfmParser(rdoc, backendsfm)
+sfmproc.parseRef(args.start)
+
+for j in jobs:
+    proconedir(j, sfmproc.curr, args)

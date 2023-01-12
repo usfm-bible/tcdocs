@@ -4,18 +4,18 @@
          xmlns:usfm="http://usfm.bible/parse/2023"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <usfm:terminal name="WS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A/"/>
+  <usfm:terminal name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A)/"/>
   <usfm:terminal name="WSS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+/"/>
-  <usfm:terminal name="TAGEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+|(?=[\\|])/"/>
-  <usfm:terminal name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\])/"/>
+  <usfm:terminal name="TAGEND" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+|(?=[\\|]|$))/"/>
+  <usfm:terminal name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\]|$)/"/>
   <usfm:terminal name="ATTRIBTEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\|])/"/>
   <usfm:terminal name="NL" value="/\u000D?\u000A|\u000D/"/>
-  <usfm:terminal name="TEXT" value="/[^\\]*?/"/>
+  <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/"/>
   <usfm:alias name="usfm:tag" def="match">
     <usfm:match before="&#x27;\&#x27;" after="TAGEND"/>
   </usfm:alias>
   <usfm:alias name="usfm:endtag" def="match">
-    <usfm:match before="&#x27;\&#x27;" matchref="a" after="&#x27;*&#x27;"/>
+    <usfm:match before="&#x27;\&#x27;" matchref="a" after="&#x27;*&#x27;" dump="true"/>
   </usfm:alias>
   <usfm:alias name="usfm:text" def="match">
     <usfm:match match="TEXT" after="TEXTEND"/>
@@ -50,9 +50,9 @@
         <zeroOrMore>
           <ref name="BookHeaders"/>
         </zeroOrMore>
-        <oneOrMore>
+        <zeroOrMore>
           <ref name="BookTitles"/>
-        </oneOrMore>
+        </zeroOrMore>
         <zeroOrMore>
           <ref name="BookIntroduction"/>
         </zeroOrMore>
@@ -136,11 +136,11 @@
       <group usfm:seq="true">
         <optional>
           <group>
-            <usfm:match before="WS" match="TEXT"/>
+            <usfm:match before="/[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*/" match="/[^\\\n\r]*/"/>
             <text/>
           </group>
         </optional>
-        <usfm:match match="NL"/>
+        <usfm:match match="NL" dump="true"/>
       </group>
     </element>
   </define>
@@ -488,7 +488,6 @@
         </attribute>
         <zeroOrMore>
           <choice>
-            <ref name="Reference"/>
             <ref name="Footnote"/>
             <ref name="CrossReference"/>
             <ref name="Char"/>
@@ -616,7 +615,6 @@
       </optional>
       <oneOrMore>
         <choice>
-          <ref name="Reference"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
@@ -625,7 +623,7 @@
           <ref name="Break"/>
           <optional>
             <text>
-              <usfm:match ahead="/[\\]/"/>
+              <usfm:text/>
             </text>
           </optional>
         </choice>
@@ -725,7 +723,6 @@
       </optional>
       <oneOrMore>
         <choice>
-          <ref name="Reference"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
@@ -733,7 +730,9 @@
           <ref name="Milestone"/>
           <ref name="Verse"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </oneOrMore>
     </element>
@@ -836,13 +835,14 @@
       <text/>
       <zeroOrMore>
         <choice>
-          <ref name="Reference"/>
           <ref name="Char"/>
           <ref name="IntroChar"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -855,21 +855,24 @@
   </define>
   <define name="CharContent">
     <group>
-      <ref name="char.link" usfm:order="2"/>
       <optional>
-        <ref name="char.closed"/>
+        <ref name="char.link" usfm:order="2"/>
+      </optional>
+      <optional>
+        <ref name="char.closed" usfm:ignore="true"/>
       </optional>
       <text>
-        <usfm:match ahead="&#x27;\&#x27;"/>
+        <usfm:text/>
       </text>
       <zeroOrMore>
         <choice>
-          <ref name="Reference"/>
           <ref name="CharEmbed"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </zeroOrMore>
     </group>
@@ -961,7 +964,6 @@
       <text/>
       <zeroOrMore>
         <choice>
-          <ref name="Reference"/>
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
@@ -1068,7 +1070,7 @@
   </define>
   <define name="char.link">
     <group>
-      <usfm:match match="|"/>
+      <usfm:match match="&#x27;|&#x27;"/>
       <usfm:properties interleave_between="WS"/>
       <interleave>
         <optional>
@@ -1162,7 +1164,7 @@
   <define name="Chapter">
     <choice>
       <ref name="ChapterStart"/>
-      <ref name="ChapterEnd"/>
+      <ref name="ChapterEnd" usfm:ignore="true"/>
     </choice>
   </define>
   <define name="ChapterStart">
@@ -1191,7 +1193,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+\p{L}?(\x{200F}?[\-,][0-9]+\p{L}?)*</param>
+            <param name="pattern">[0-9]+\p{L}?(\u200F?[\-,][0-9]+\p{L}?)*</param>
           </data>
         </attribute>
       </optional>
@@ -1236,7 +1238,7 @@
   <define name="Verse">
     <choice>
       <ref name="VerseStart"/>
-      <ref name="VerseEnd"/>
+      <ref name="VerseEnd" usfm:ignore="true"/>
     </choice>
   </define>
   <define name="VerseStart">
@@ -1248,11 +1250,11 @@
         <value>v</value>
       </attribute>
       <attribute>
-        <usfm:text usfm:seq="true"/>
+        <usfm:match usfm:seq="true" after="WS"/>
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
-          <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
+          <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
         </data>
       </attribute>
       <optional>
@@ -1263,7 +1265,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
+            <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
           </data>
         </attribute>
       </optional>
@@ -1435,7 +1437,6 @@
         <choice>
           <ref name="Char"/>
           <ref name="CrossReferenceChar"/>
-          <ref name="Reference"/>
           <text/>
         </choice>
       </oneOrMore>
@@ -1511,10 +1512,9 @@
   </define>
   <define name="Break">
     <element>
+      <usfm:match match="&#x27;//&#x27;"/>
       <name ns="">optbreak</name>
-      <empty>
-        <usfm:text strip="both*">//</usfm:text>
-      </empty>
+      <empty/>
     </element>
   </define>
 </grammar>
