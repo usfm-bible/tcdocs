@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import argparse, os, sys, logging
+import argparse, os, sys, logging, re
 
 try:
     from usfmtc.sfmparser import UsfmParserBackend, parseusfm
@@ -14,7 +14,7 @@ def writexml(outf, root):
     outf.write('<?xml version="1.0" encoding="utf-8"?>\n')
     qnames, ns = et._namespaces(root, None)
     _serialize_xml(outf.write, root, qnames, ns, True)
-    out.write("\n")
+    outf.write("\n")
 
 def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwargs):
     tag = elem.tag
@@ -68,6 +68,8 @@ def getnext(base):
 
 def addvids(root):
     lastv = None
+    if root.get('version', None) is None:
+        root.set('version', '3.0')
     bkel = root.find('./book')
     bk = bkel.get('code', 'UNK')
     currchap = 0
@@ -147,6 +149,28 @@ def addvids(root):
         newp.append(r)
     return root
 
+def strnormal(s):
+    if s is None:
+        return ""
+    if not len(s.strip()):
+        return ""
+    return re.sub("\n\s*", " ", s)
+
+def etCmp(a, b):
+    if a.tag != b.tag or len(a.attrib) - (1 if ' parent' in a.attrib else 0) != len(b.attrib):
+        return False
+    if any(b.get(k, None) != v for k,v in a.items() if not k.startswith(" ")):
+        return False
+    if strnormal(a.text) != strnormal(b.text):
+        return False
+    if strnormal(a.tail) != strnormal(b.tail):
+        return False
+    if len(a) != len(b):
+        return False
+    for ac, bc in zip(a, b):
+        if not etCmp(ac, bc):
+            return False
+    return True
 
 def proconedir(d, sfmp, args):
     meta = {}
@@ -154,17 +178,22 @@ def proconedir(d, sfmp, args):
     for e in doc.getroot():
         meta[e.tag] = e.text
     result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+    xml = result.asEt()
+    addvids(xml)
     if (args.debug & 1) != 0:
         print(result)
-    else:
-        xml = result.asEt()
-        addvids(xml)
+    elif args.print:
         writexml(sys.stdout, xml)
+    if os.path.exists(os.path.join(d, "origin.xml")):
+        testxml = et.parse(os.path.join(d, "origin.xml"))
+        if not etCmp(xml, testxml.getroot()):
+            print(f"Failed {d}")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
+parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
 parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
 parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree")
 args = parser.parse_args()
