@@ -621,11 +621,9 @@
           <ref name="Milestone"/>
           <ref name="Verse"/>
           <ref name="Break"/>
-          <optional>
-            <text>
-              <usfm:text/>
-            </text>
-          </optional>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </oneOrMore>
     </element>
@@ -832,11 +830,9 @@
       <optional>
         <ref name="char.closed"/>
       </optional>
-      <text/>
-      <zeroOrMore>
+      <oneOrMore>
         <choice>
           <ref name="Char"/>
-          <ref name="IntroChar"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="Break"/>
@@ -844,7 +840,7 @@
             <usfm:text/>
           </text>
         </choice>
-      </zeroOrMore>
+      </oneOrMore>
     </element>
   </define>
   <define name="IntroChar.char.style.enum">
@@ -942,7 +938,7 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="CharContent"/>
-        <usfm:endtag usfm:order="3" after="&#x27;\+&#x27;"/>
+        <usfm:endtag usfm:order="3" before="&#x27;\+&#x27;" usfm:many="?"/>
       </element>
       <ref name="CharEmbedWithAttrib"/>
     </choice>

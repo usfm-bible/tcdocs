@@ -14,6 +14,13 @@ class AttribElement:
         self.attrib = attrib
 
 class UsfmParser:
+
+    _manies = {
+        '+': 'append_plus',
+        '?': 'append_opt',
+        '*': 'append_star',
+    }
+
     def __init__(self, doc, backend):
         self.aliases = {}
         self.back = backend
@@ -35,7 +42,7 @@ class UsfmParser:
             print("Can't find {}".format(name))
             return None
         self.groups = [name]
-        self.idcount = 0
+        self.idcount = 1
         self.attribnodes = [None]
         self.elemnodes = [None]
         res = self.proc_children(e, self.curr, False)
@@ -71,6 +78,8 @@ class UsfmParser:
                     newe.set(base.default, c.text)
                 c = newe
                 t = re.sub(r"^\{.*\}", "", c.tag)
+            if (m := c.get(f"{usfmns}many", None)) is not None:
+                res = getattr(self.back, self._manies[m])(res, **kw)
             if (not skip or t in ("match", "matchpair")) and c.get(f"{usfmns}ignore", "false") not in ("true", "1"):
                 fn = getattr(self, t, None)
                 if fn is not None:
@@ -152,7 +161,7 @@ class UsfmParser:
                     if a == "match" and v != v.upper() and v[0] not in "'/":
                         v = "'{}'".format(v)
                     res = self.back.match(v, res, dump=dump)
-                elif (r := e.get('matchref', None)) is not None:
+                elif (r := e.get('matchref', None)) not in (None, ""):
                     for j in range(len(self.groups) - 1, -1, -1):
                         k = (self.groups[j], r)
                         if k in self.ids:

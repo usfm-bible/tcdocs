@@ -380,7 +380,7 @@ Para =
     element para {
         [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        (Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text?)+
+        (Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)+
     }
 Para.para.style.enum = (
       "restore" # Comment about when text was restored
@@ -507,8 +507,7 @@ IntroChar =
     element char {
         attribute style { IntroChar.char.style.enum },
         char.closed?,
-        text,
-        (Char | IntroChar | Milestone | Footnote | Break | [usfm:text[]]text)* # Nested character <char> markup
+        (Char | Milestone | Footnote | Break | [usfm:text[]]text)+ # Nested character <char> markup
     }
 IntroChar.char.style.enum = (
       "ior" # Introduction references range for outline entry; for marking references separately
@@ -576,7 +575,7 @@ CharEmbed = (
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[id="a" before="'\+'" usfm:seq="true"]] attribute style { Char.char.style.enum },
         CharContent
-        >> usfm:endtag[usfm:order="3" after="'\+'"]
+        >> usfm:endtag[usfm:order="3" before="'\+'" usfm:many="?"]
     }
     | CharEmbedWithAttrib
     )

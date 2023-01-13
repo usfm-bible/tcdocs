@@ -13,6 +13,7 @@ class GlobalState:
         self.captures = []
         self.refs = {}
         self.defstack = []
+        self.cstack = []
 
     def _ensure(self, index):
         if index >= len(self.captures):
@@ -98,8 +99,8 @@ class Parser:
                 except NoParseError as e:
                     good = False
                     rese = e
-                logger.debug('{}ing[{}/{}:{}.{}->{}] {} at {} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
-                        self.to, self.index, kw.get('index', ""), repr(self),
+                logger.debug('{}ing[{}/{}:{}.{}{}->{}] {} at {} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
+                        self.to, self.index, kw.get('index', ""), s.gs.cstack, repr(self),
                         getattr(self, 'name', 'UNK'),
                         s.pos, s()[:10].replace("\n", "\\n")))
                 if rese is not None:
@@ -121,7 +122,6 @@ class Parser:
         try:
             (tree, _) = self.run(s)
         except NoParseError as e:
-            max = e.state.pos
             if len(s()):
                 tok = s()
                 raise NoParseError('%s: %s' % (e.msg, tok), e.state)
@@ -221,6 +221,7 @@ class Group(Parser):
                 c.mc = False
         if self.capture:
             s.gs.init(self.capture, "")
+        s.gs.cstack.append(0)
         while self._loop(i):
             subres = []
             nohit = True
@@ -230,6 +231,7 @@ class Group(Parser):
                 news = cuts
                 if (n := getattr(c, "inref", None)) is not None:
                     s.gs.defstack.append(n)
+                s.gs.cstack[-1] += 1
                 try:
                     (newv, news) = c.run(cuts, index=j)
                 except NoParseError as e:
@@ -241,10 +243,12 @@ class Group(Parser):
                         done = True
                         break
                     else:
+                        s.gs.cstack.pop()
                         raise e
                 if n is not None:
                     s.gs.defstack.pop()
                 if self.mode == "|+" and matched and c.mc:
+                    s.gs.cstack.pop()
                     raise NoParseError(f'Interleave multiply matched {c} in {self}', s)
                 allfailed = False
                 nohit = False
@@ -264,6 +268,7 @@ class Group(Parser):
             if self.mode in '?|':
                 break
             i += 1
+        s.gs.cstack.pop()
         return (self._returnRes(res, s), s)
 
     def append(self, parser):
@@ -304,9 +309,9 @@ def Skip(**kw):
 
 class Reference(Parser):
     def __init__(self, index, **kw):
-        self.index = index
+        self.backref = index
         def test(s):
-            v = s.gs.getcapture(index)
+            v = s.gs.getcapture(self.backref)
             if s().startswith(v):
                 return(v if not kw.get('dump', False) else None, s.extend(len(v)))
             else:
@@ -314,10 +319,10 @@ class Reference(Parser):
         super().__init__(test, **kw)
 
     def __repr__(self):
-        return "\u21D0{}".format(self.index)
+        return "\u21D0{}".format(self.backref)
 
     def asstr(self, context=None):
-        return "\u21D0{}".format(self.index)
+        return "\u21D0{}".format(self.backref)
 
 
 @dataclass

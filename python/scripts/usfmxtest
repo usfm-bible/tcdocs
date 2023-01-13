@@ -3,12 +3,19 @@
 import argparse, os, sys, logging, re
 
 try:
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
 from usfmtc.parser import UsfmParser, XmlParser
 import xml.etree.ElementTree as et
+
+allpartypes = {
+    'Section': """ms mse ms1 ms2 ms2e ms3 ms3e mr s s1 s2 s3 s4 s1e s2e s3e s4e sr r sp
+                    sd1 sd2 sd3 sd4 periph"""
+}
+
+partypes = {v: e for k, v in allpartypes.items() for e in k.split()}
 
 def writexml(outf, root):
     outf.write('<?xml version="1.0" encoding="utf-8"?>\n')
@@ -98,13 +105,15 @@ def addvids(root):
             endp = pl
             pl = getnext(endp)
             block = False
-            while pl is not None and id(pl) != id(pv):
-                if pl.tag == 'para' and partype(pl.get('style', None)) != 'Section':
+            while pl is not None:
+                if pl.tag == 'para' and partypes.get(pl.get('style', None), None) != 'Section':
                     if not block:
                         pl.set('vid', eid)
                         endp = pl
                 else:
                     block = True
+                if id(pl) == id(pv):
+                    break
                 pl = getnext(pl)
             if not block and getindex(v)[0] > 0 or not (pv.text is None or pv.text == ""):
                 addprevious(v, ev)
@@ -116,15 +125,6 @@ def addvids(root):
         ev = lastv.makeelement('verse', {'eid': eid or ''})
         pl = lastv.get(' parent')
         endp = pl
-        block = False
-        while pl is not None and id(pl) != id(pv):
-            if pl.tag == 'para' and partype(pl.get('style', None)) != 'Section':
-                if not block:
-                    pl.set('vid', eid)
-                    endp = pl
-            else:
-                block = True
-            pl = getnext(pl)
         endp.append(ev)
 
     lastc = None
@@ -138,16 +138,30 @@ def addvids(root):
 
     for r in root.findall('.//row'):
         p = getprevious(r)
-        if p.tag == 'row':
+        if p is not None and p.tag == 'row':
             newp = p.get(' parent')
             i, oldp = getindex(r)
             oldp[i] = newp
         else:
             # there's a bug here, surely newp is never attached
-            newp = p.makeelement('table')
+            i, oldp = getindex(r)
+            newp = r.makeelement('table', {})
             oldp.remove(r)
+            oldp.insert(i, newp)
+            r.set(' parent', newp)
+        newp.set(' parent', oldp)
         newp.append(r)
     return root
+
+def cleanup(node):
+    if node.tag == 'para':
+        if not len(node):
+            if node.text is not None:
+                node.text = node.text.strip()
+        elif node[-1].tail is not None:
+            node[-1].tail = node[-1].tail.rstrip()
+    for c in node:
+        cleanup(c)
 
 def strnormal(s):
     if s is None:
@@ -156,10 +170,14 @@ def strnormal(s):
         return ""
     return re.sub("\n\s*", " ", s)
 
+def attribnorm(d):
+    banned = ('closed',)
+    return {k:v for k, v in d.items() if k not in banned and not k.startswith(" ")}
+
 def etCmp(a, b):
-    if a.tag != b.tag or len(a.attrib) - (1 if ' parent' in a.attrib else 0) != len(b.attrib):
-        return False
-    if any(b.get(k, None) != v for k,v in a.items() if not k.startswith(" ")):
+    aattrib = attribnorm(a.attrib)
+    battrib = attribnorm(b.attrib)
+    if a.tag != b.tag or aattrib != battrib:
         return False
     if strnormal(a.text) != strnormal(b.text):
         return False
@@ -174,20 +192,29 @@ def etCmp(a, b):
 
 def proconedir(d, sfmp, args):
     meta = {}
+    print(f"{d}: ", end='', flush=True)
     doc = et.parse(os.path.join(d, "metadata.xml"))
     for e in doc.getroot():
         meta[e.tag] = e.text
-    result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
-    xml = result.asEt()
-    addvids(xml)
-    if (args.debug & 1) != 0:
-        print(result)
-    elif args.print:
-        writexml(sys.stdout, xml)
-    if os.path.exists(os.path.join(d, "origin.xml")):
-        testxml = et.parse(os.path.join(d, "origin.xml"))
-        if not etCmp(xml, testxml.getroot()):
-            print(f"Failed {d}")
+    try:
+        result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+    except NoParseError:
+        result = None
+    if result is not None:
+        xml = result.asEt()
+        addvids(xml)
+        cleanup(xml)
+        if (args.debug & 1) != 0:
+            print(result)
+        elif args.print:
+            writexml(sys.stdout, xml)
+        if os.path.exists(os.path.join(d, "origin.xml")):
+            testxml = et.parse(os.path.join(d, "origin.xml"))
+            passed = etCmp(xml, testxml.getroot())
+    else:
+        passed = False
+    res = passed == (meta.get('validated', 'pass') == 'pass')
+    print("Passed" if res else "Failed")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
