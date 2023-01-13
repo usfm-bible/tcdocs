@@ -1,5 +1,5 @@
 # usx.rnc
-# A compact syntax Relax NG Schema for USX 3.0.5
+# A compact syntax Relax NG Schema for USX 3.0.7
 
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
@@ -315,7 +315,7 @@ BookTitles.para.style.enum = (
 BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:tag[]] attribute style { BookIntroduction.para.style.enum },
-        (Footnote | CrossReference | Char | IntroChar | Milestone | [usfm:text[]] text)*
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | IntroChar | Milestone | [usfm:text[]] text)*
     } | Table
 
 BookIntroduction.para.style.enum = (
@@ -380,7 +380,7 @@ Para =
     element para {
         [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        (Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)+
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)+
     }
 Para.para.style.enum = (
       "restore" # Comment about when text was restored
@@ -460,7 +460,7 @@ List =
     element para {
         [usfm:grouping="8" usfm:tag[]] attribute style { List.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        (Footnote | CrossReference | Char | ListChar | Milestone | Verse | Break | [usfm:text[]]text)+
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | ListChar | Milestone | Verse | Break | [usfm:text[]]text)+
     }
 List.para.style.enum = (
       "lh" # List header (introductory remark)
@@ -479,7 +479,7 @@ List.para.style.enum = (
 
 Table = 
     element table {
-        attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
+        attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*" } }?,
         element row {
             [usfm:tag[]]
             attribute style {
@@ -507,7 +507,7 @@ IntroChar =
     element char {
         attribute style { IntroChar.char.style.enum },
         char.closed?,
-        (Char | Milestone | Footnote | Break | [usfm:text[]]text)+ # Nested character <char> markup
+        ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | [usfm:text[]]text)+ # Nested character <char> markup
     }
 IntroChar.char.style.enum = (
       "ior" # Introduction references range for outline entry; for marking references separately
@@ -519,7 +519,7 @@ CharContent = (
     char.link?,
     [usfm:ignore="true"]char.closed?,
     [usfm:text[]] text,
-    (CharEmbed | Milestone | Footnote | Break | [usfm:text[]] text)* # Nested character <char> markup
+    ([usfm:ignore="true"] Reference | CharEmbed | Milestone | Footnote | Break | [usfm:text[]] text)* # Nested character <char> markup
     )
 
 Char = (
@@ -586,10 +586,11 @@ ListChar = (
         char.link?,
         char.closed?,
         text,
-        (Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
+        ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
         >> usfm:endtag[many="?"]
     }
     )
+
 ListChar.char.style.enum = (
       "litl" # List entry total text
     | "lik" # Structured list entry key text
@@ -656,6 +657,23 @@ Milestone = (
     >> usfm:endtag[matchref=""])
     )
 
+Milestone.enum = (
+      "ts-s"
+    | "ts-e"
+    | "t-s"
+    | "t-e"
+    | "qt1-s"
+    | "qt1-e"
+    | "qt2-s"
+    | "qt2-e"
+    | "qt3-s"
+    | "qt3-e"
+    | "qt4-s"
+    | "qt4-e"
+    | "qt5-s"
+    | "qt5-e"
+)
+
 Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
 
 ChapterStart =
@@ -703,7 +721,7 @@ VerseStart =
         [usfm:tag["vp"] usfm:text[] usfm:endtag["vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]
-        attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*" } },
+        attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*" } },
         empty
     }
     # E.g. <verse number="1" style="v" altnumber="2" pubnumber="B" sid="GEN 1:22" />
@@ -711,7 +729,7 @@ VerseStart =
 
 VerseEnd =
     element verse {
-        attribute eid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*" } },
+        attribute eid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*" } },
         empty
     }
 
@@ -722,8 +740,7 @@ Footnote =
         [usfm:text[strip="right" re="\S+"]]
         attribute caller { text },
         category?,
-        FootnoteReference?,
-        (FootnoteChar | FootnoteReference)+
+        FootnoteChar*
         >> usfm:endtag[]
     }
 
@@ -735,11 +752,12 @@ FootnoteChar =
         char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        (CharEmbed | FootnoteVerse | [usfm:text[]] text)+
-        >> usfm:endtag[many="?" deprecated="true"]
+        ([usfm:ignore="true"] Reference | CharEmbed | FootnoteVerse | [usfm:text[]] text)+
+        >> usfm:endtag[many="?"]
     }
 FootnoteChar.char.style.enum = (
-    "ft" # Footnote text, Protocanon
+      "fr" # The origin reference for the footnote
+    | "ft" # Footnote text, Protocanon
     | "fk" # A footnote keyword
     | "fq" # A footnote scripture quote or alternate rendering
     | "fqa" # A footnote alternate rendering for a portion of scripture text
@@ -781,8 +799,8 @@ CrossReferenceChar =
         attribute style { CrossReferenceChar.char.style.enum },
         char.link?,
         char.closed?,
-        (Char | CrossReferenceChar | text)+
-        >> usfm:endtag[many="?" deprecated="true"]
+        ([usfm:ignore="true"] Reference | Char | CrossReferenceChar | text)+
+        >> usfm:endtag[many="?"]
     }
 CrossReferenceChar.char.style.enum = (
       "xo" # The cross reference origin reference
@@ -809,14 +827,11 @@ category =
     [usfm:tag["cat"] usfm:text[] usfm:endtag["cat"]]
     attribute category { text }
 
-FootnoteReference =
-    [usfm:tag ["fr"]]
+Reference =
     element ref {
-        [usfm:text[]]
-        (text)?,
-        [usfm:match[before="|"]] 
-        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?
-    } >> usfm:endtag[many="?" deprecated="true" "fr"]
+        attribute loc { xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } },
+        text?
+    }
 
 Break = 
     [usfm:match[match="'//'"]]

@@ -488,6 +488,7 @@
         </attribute>
         <zeroOrMore>
           <choice>
+            <ref name="Reference" usfm:ignore="true"/>
             <ref name="Footnote"/>
             <ref name="CrossReference"/>
             <ref name="Char"/>
@@ -615,6 +616,7 @@
       </optional>
       <oneOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
@@ -721,6 +723,7 @@
       </optional>
       <oneOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
@@ -758,7 +761,7 @@
         <attribute>
           <name ns="">vid</name>
           <data type="string">
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*</param>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*</param>
           </data>
         </attribute>
       </optional>
@@ -832,6 +835,7 @@
       </optional>
       <oneOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
@@ -862,6 +866,7 @@
       </text>
       <zeroOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="CharEmbed"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
@@ -960,6 +965,7 @@
       <text/>
       <zeroOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
@@ -1157,6 +1163,24 @@
       <usfm:endtag matchref=""/>
     </group>
   </define>
+  <define name="Milestone.enum">
+    <choice>
+      <value>ts-s</value>
+      <value>ts-e</value>
+      <value>t-s</value>
+      <value>t-e</value>
+      <value>qt1-s</value>
+      <value>qt1-e</value>
+      <value>qt2-s</value>
+      <value>qt2-e</value>
+      <value>qt3-s</value>
+      <value>qt3-e</value>
+      <value>qt4-s</value>
+      <value>qt4-e</value>
+      <value>qt5-s</value>
+      <value>qt5-e</value>
+    </choice>
+  </define>
   <define name="Chapter">
     <choice>
       <ref name="ChapterStart"/>
@@ -1279,7 +1303,7 @@
       <attribute usfm:ignore="true">
         <name ns="">sid</name>
         <data type="string">
-          <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*</param>
+          <param name="pattern">[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*</param>
         </data>
       </attribute>
       <empty/>
@@ -1291,7 +1315,7 @@
       <attribute>
         <name ns="">eid</name>
         <data type="string">
-          <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:\p{L}\p{Mn}]*</param>
+          <param name="pattern">[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*</param>
         </data>
       </attribute>
       <empty/>
@@ -1317,15 +1341,9 @@
       <optional>
         <ref name="category"/>
       </optional>
-      <optional>
-        <ref name="FootnoteReference"/>
-      </optional>
-      <oneOrMore>
-        <choice>
-          <ref name="FootnoteChar"/>
-          <ref name="FootnoteReference"/>
-        </choice>
-      </oneOrMore>
+      <zeroOrMore>
+        <ref name="FootnoteChar"/>
+      </zeroOrMore>
       <usfm:endtag/>
     </element>
   </define>
@@ -1345,6 +1363,7 @@
       </optional>
       <oneOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="CharEmbed"/>
           <ref name="FootnoteVerse"/>
           <text>
@@ -1352,11 +1371,12 @@
           </text>
         </choice>
       </oneOrMore>
-      <usfm:endtag many="?" deprecated="true"/>
+      <usfm:endtag many="?"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">
     <choice>
+      <value>fr</value>
       <value>ft</value>
       <value>fk</value>
       <value>fq</value>
@@ -1431,12 +1451,13 @@
       </optional>
       <oneOrMore>
         <choice>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="Char"/>
           <ref name="CrossReferenceChar"/>
           <text/>
         </choice>
       </oneOrMore>
-      <usfm:endtag many="?" deprecated="true"/>
+      <usfm:endtag many="?"/>
     </element>
   </define>
   <define name="CrossReferenceChar.char.style.enum">
@@ -1484,27 +1505,19 @@
       <text/>
     </attribute>
   </define>
-  <define name="FootnoteReference">
+  <define name="Reference">
     <element>
-      <usfm:tag>fr</usfm:tag>
       <name ns="">ref</name>
+      <attribute>
+        <name ns="">loc</name>
+        <data type="string">
+          <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
+        </data>
+      </attribute>
       <optional>
-        <group>
-          <usfm:text/>
-          <text/>
-        </group>
-      </optional>
-      <optional>
-        <attribute>
-          <usfm:match before="|"/>
-          <name ns="">loc</name>
-          <data type="string">
-            <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
-          </data>
-        </attribute>
+        <text/>
       </optional>
     </element>
-    <usfm:endtag many="?" deprecated="true">fr</usfm:endtag>
   </define>
   <define name="Break">
     <element>
