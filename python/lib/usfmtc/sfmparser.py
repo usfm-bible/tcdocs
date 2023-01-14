@@ -159,7 +159,7 @@ class String(Parser):
         return '/{}/{}'.format(self.re, "!" if self.keep else "")
 
     def merge(self, other, mode=None):
-        if not isinstance(other, String):
+        if not isinstance(other, String) or (self.keep and other.keep):
             return super().merge(other, mode=mode)
         if mode and "|" in mode:
             ore = other.re[1:-1] if other.re.startswith("(") and other.re.endswith(")") else other.re
@@ -330,8 +330,19 @@ class Attribute:
     name: str
     value: str
 
+    def __init__(self, name, value):
+        if isinstance(value, list):
+            if len(value) > 1:
+                self.name, self.value = value
+                return
+            else:
+                value = value[0]
+        self.name = name
+        self.value = value
+
     def __len__(self):
         return 1
+
 
 class Element(list):
     def __init__(self, *a, name=None):
@@ -339,6 +350,8 @@ class Element(list):
         self.attributes = {}
         for e in a:
             self._append(e)
+        if Parser.debug:
+            logger.debug(f"Create Element({self})")
 
     def _append(self, e):
         if isinstance(e, Attribute):
@@ -439,7 +452,7 @@ class UsfmParserBackend:
 # --- Parser backend API
 
     def attrib_start(self, parser, e, context, name, **kw):
-        group = Group(name=name, parent=context, mode="&", result=(lambda r:(Attribute(name, r) if len(r) else None)), **self.get_nodename())
+        group = Group(name=name, parent=context, mode="&", result=(lambda r: Attribute(name, r)), **self.get_nodename())
         self.nodes.append(group)
         return group
 

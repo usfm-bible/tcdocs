@@ -13,6 +13,7 @@ usfm:terminal [name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u2
 usfm:terminal [name="ATTRIBTEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\|])/"]
 usfm:terminal [name="NL" value="/\u000D?\u000A|\u000D/"]
 usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
+usfm:terminal [name="TEXTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"]
 usfm:alias [name="usfm:tag" def="match" usfm:match [before="'\'" after="TAGEND"]]
 usfm:alias [name="usfm:endtag" def="match" usfm:match [before="'\'" matchref="a" after="'*'" dump="true"]]
 usfm:alias [name="usfm:text" def="match" usfm:match[match="TEXT" after="TEXTEND"]]
@@ -281,10 +282,10 @@ BookHeaders =
     }
 BookHeaders.para.style.enum = (
       "ide" # File encoding information
-    | "h" # Running header text for a book
     | "h1" # Running header text (DEPRECATED)
     | "h2" # Running header text, left side of page (DEPRECATED)
     | "h3" # Running header text, right side of page (DEPRECATED)
+    | "h" # Running header text for a book
     | "toc1" # Long table of contents text
     | "toc2" # Short table of contents text
     | "toc3" # Book Abbreviation
@@ -301,14 +302,14 @@ BookTitles =
         (Footnote | CrossReference | Char | Break | [usfm:text[]] text)*
     }
 BookTitles.para.style.enum = (
-      "mt" # The main title of the book (if single level)
-    | "mt1" # The main title of the book (if multiple levels)
+      "mt1" # The main title of the book (if multiple levels)
     | "mt2" # A secondary title usually occurring before the main title
     | "mt3" # A tertiary title occurring after the main title
     | "mt4"
-    | "imt" # Introduction major title, level 1 (if single level)
+    | "mt" # The main title of the book (if single level)
     | "imt1" # Introduction major title, level 1 (if multiple levels)
     | "imt2" # Introduction major title, level 2
+    | "imt" # Introduction major title, level 1 (if single level)
     | "rem" # Remark
     )
 
@@ -319,39 +320,39 @@ BookIntroduction =
     } | Table
 
 BookIntroduction.para.style.enum = (
-      "imt" # Introduction major title, level 1 - (if single level)
-    | "imt1" # Introduction major title, level 1 (if multiple levels)
+      "imt1" # Introduction major title, level 1 (if multiple levels)
     | "imt2" # Introduction major title, level 2
     | "imt3" # Introduction major title, level 3
     | "imt4" # Introduction major title, level 4 (usually within parenthesis)
+    | "imt" # Introduction major title, level 1 - (if single level)
     | "ib" # Introduction blank line
     | "ie" # Introduction ending marker
-    | "ili" # A list entry, level 1 (if single level)
     | "ili1" # A list entry, level 1 (if multiple levels)
     | "ili2" # A list entry, level 2
-    | "im" # Introduction prose paragraph, with no first line indent (may occur after poetry)
+    | "ili" # A list entry, level 1 (if single level)
     | "imi" # Introduction prose paragraph text, indented, with no first line indent
     | "imq" # Introduction prose paragraph, quote from the body text, with no first line indent
-    | "io" # Introduction outline text, level 1 (if single level)
+    | "im" # Introduction prose paragraph, with no first line indent (may occur after poetry)
     | "io1" # Introduction outline text, level 1 (if multiple levels)
     | "io2" # Introduction outline text, level 2
     | "io3" # Introduction outline text, level 3
     | "io4" # Introduction outline text, level 4
     | "iot" # Introduction outline title
-    | "ip" # Introduction prose paragraph
+    | "io" # Introduction outline text, level 1 (if single level)
     | "ipi" # Introduction prose paragraph, indented, with first line indent
     | "ipq" # Introduction prose paragraph, quote from the body text
     | "ipr" # Introduction prose paragraph, right aligned
-    | "iq" # Introduction poetry text, level 1 (if single level)
+    | "ip" # Introduction prose paragraph
     | "iq1" # Introduction poetry text, level 1 (if multiple levels)
     | "iq2" # Introduction poetry text, level 2
     | "iq3" # Introduction poetry text, level 3
-    | "is" # Introduction section heading, level 1 (if single level)
+    | "iq" # Introduction poetry text, level 1 (if single level)
     | "is1" # Introduction section heading, level 1 (if multiple levels)
     | "is2" # Introduction section heading, level 2
-    | "imte" # Introduction major title at introduction end, level 1 (if single level)
+    | "is" # Introduction section heading, level 1 (if single level)
     | "imte1" # Introduction major title at introduction end, level 1 (if multiple levels)
     | "imte2" # Introduction major title at introduction end, level 2
+    | "imte" # Introduction major title at introduction end, level 1 (if single level)
     | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
     | "rem" # Remark
     )
@@ -388,27 +389,28 @@ Para.para.style.enum = (
     | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
     | "ip" # Division or Section introductory paragraph (study Bible)
     | "lit" # For a comment or note inserted for liturgical use
-    | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
+    | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
-    | "p" # Paragraph text, with first line indent
     | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
     | "pc" # Inscription (paragraph text centered)
-    | "pi" # Paragraph text, level 1 indent (if single level), with first line indent; often used for discourse
     | "pi1" # Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse
     | "pi2" # Paragraph text, level 2 indent, with first line indent; often used for discourse
     | "pi3" # Paragraph text, level 3 indent, with first line indent; often used for discourse
+    | "pi" # Paragraph text, level 1 indent (if single level), with first line indent; often used for discourse
     | "po" # Letter opening
     | "pr" # Text refrain (paragraph right-aligned)
     | "pmo" # Embedded text opening
-    | "pm" # Embedded text paragraph
     | "pmc" # Embedded text closing
     | "pmr" # Embedded text refrain
-    | "ph" # Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
+    | "pm" # Embedded text paragraph
     | "ph1" # Paragraph text, with level 1 hanging indent (if multiple levels)
     | "ph2" # Paragraph text, with level 2 hanging indent
     | "ph3" # Paragraph text, with level 3 hanging indent
-    | "q" # Poetry text, level 1 indent (if single level)
+    | "ph" # Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
+    | "p1" # Front or back matter text paragraph, level 1 (if multiple levels)
+    | "p2" # Front or back matter text paragraph, level 2 (if multiple levels)
+    | "p" # Paragraph text, with first line indent
     | "q1" # Poetry text, level 1 indent (if multiple levels)
     | "q2" # Poetry text, level 2 indent
     | "q3" # Poetry text, level 3 indent
@@ -416,41 +418,39 @@ Para.para.style.enum = (
     | "qa" # Poetry text, Acrostic marker/heading
     | "qc" # Poetry text, centered
     | "qr" # Poetry text, Right Aligned
-    | "qm" # Poetry text, embedded, level 1 indent (if single level)
     | "qm1" # Poetry text, embedded, level 1 indent (if multiple levels)
     | "qm2" # Poetry text, embedded, level 2 indent
     | "qm3" # Poetry text, embedded, level 3 indent
+    | "qm" # Poetry text, embedded, level 1 indent (if single level)
     | "qd" # A Hebrew musical performance annotation, similar in content to Hebrew descriptive title.
+    | "q" # Poetry text, level 1 indent (if single level)
     | "b" # Poetry text stanza break (e.g. stanza break)
     | "d" # A Hebrew text heading, to provide description (e.g. Psalms)
-    | "ms" # A major section division heading, level 1 (if single level)
     | "ms1" # A major section division heading, level 1 (if multiple levels)
     | "ms2" # A major section division heading, level 2
     | "ms3" # A major section division heading, level 3
+    | "ms" # A major section division heading, level 1 (if single level)
     | "mr" # A major section division references range heading
     | "r" # Parallel reference(s)
-    | "s" # A section heading, level 1 (if single level)
     | "s1" # A section heading, level 1 (if multiple levels)
     | "s2" # A section heading, level 2 (e.g. Proverbs 22-24)
     | "s3" # A section heading, level 3 (e.g. Genesis "The First Day")
     | "s4" # A section heading, level 4
     | "sr" # A section division references range heading
     | "sp" # A heading, to identify the speaker (e.g. Job)
-    | "sd" # Vertical space used to divide the text into sections, level 1 (if single level)
     | "sd1" # Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)
     | "sd2" # Semantic division location (vertical space used to divide the text into sections), level 2
     | "sd3" # Semantic division location (vertical space used to divide the text into sections), level 3
     | "sd4" # Semantic division location (vertical space used to divide the text into sections), level 4
+    | "sd" # Vertical space used to divide the text into sections, level 1 (if single level)
+    | "s" # A section heading, level 1 (if single level)
     | "ts" # Translator's chunk (to identify chunks of text suitable for translating at one time)
     | "cp" # Published chapter number
     | "cl" # Chapter label used for translations that add a word such as "Chapter"
     | "cd" # Chapter Description (Publishing option D, e.g. in Russian Bibles)
-    | "mte" # The main title of the book repeated at the end of the book, level 1 (if single level)
     | "mte1" # The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
     | "mte2" # A secondary title occurring before or after the 'ending' main title
-    | "p" # Front or back matter text paragraph, level 1
-    | "p1" # Front or back matter text paragraph, level 1 (if multiple levels)
-    | "p2" # Front or back matter text paragraph, level 2 (if multiple levels)
+    | "mte" # The main title of the book repeated at the end of the book, level 1 (if single level)
     | "k1" # Concordance main entry text or keyword, level 1
     | "k2" # Concordance main entry text or keyword, level 2
     | "rem" # Remark
@@ -464,17 +464,17 @@ List =
     }
 List.para.style.enum = (
       "lh" # List header (introductory remark)
-    | "li" # A list entry, level 1 (if single level)
     | "li1" # A list entry, level 1 (if multiple levels)
     | "li2" # A list entry, level 2
     | "li3" # A list entry, level 3
     | "li4" # A list entry, level 4
+    | "li" # A list entry, level 1 (if single level)
     | "lf" # List footer (introductory remark)
-    | "lim" # An embedded list entry, level 1 (if single level)
     | "lim1" # An embedded list entry, level 1 (if multiple levels)
     | "lim2" # An embedded list entry, level 2
     | "lim3" # An embedded list entry, level 3
     | "lim4" # An embedded list entry, level 4
+    | "lim" # An embedded list entry, level 1 (if single level)
     )
 
 Table = 
@@ -505,9 +505,10 @@ cell.align.enum = (
 
 IntroChar =
     element char {
-        attribute style { IntroChar.char.style.enum },
+        [usfm:tag[id="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
         char.closed?,
         ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | [usfm:text[]]text)+ # Nested character <char> markup
+        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" many="?" usfm:seq="true"]
     }
 IntroChar.char.style.enum = (
       "ior" # Introduction references range for outline entry; for marking references separately
@@ -548,8 +549,8 @@ Char.char.style.enum = (
     | "nd" # For name of deity
     | "ndx" # A subject index text item
     | "ord" # For the text portion of an ordinal number
-    | "pn" # For a proper name
     | "png" # For a geographic proper name
+    | "pn" # For a proper name
     | "pro" # For indicating pronunciation in CJK texts (DEPRECATED - used char@style rb)
     | "qt" # For Old Testament quoted text appearing in the New Testament
     | "rq" # A cross-reference indicating the source text for the preceding quotation.
@@ -564,8 +565,8 @@ Char.char.style.enum = (
     | "jmp" # For associating linking attributes to a span of text
     | "no" # A character style, use normal text
     | "it" # A character style, use italic text
-    | "bd" # A character style, use bold text
     | "bdit" # A character style, use bold + italic text
+    | "bd" # A character style, use bold text
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text
     | "sup" # A character style, for superscript text. Typically for use in critical edition footnotes.
@@ -594,23 +595,24 @@ ListChar = (
 ListChar.char.style.enum = (
       "litl" # List entry total text
     | "lik" # Structured list entry key text
-    | "liv" # Structured list entry value 1 content (if single value)
     | "liv1" # Structured list entrt value 1 content (if multiple values)
     | "liv2" # Structured list entry value 2 content
     | "liv3" # Structured list entry value 3 content
     | "liv4" # Structured list entry value 4 content
     | "liv5" # Structured list entry value 5 content
+    | "liv" # Structured list entry value 1 content (if single value)
     )
 
 CharWithAttrib =
     element char {
-        [usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
+        [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:order="3" usfm:match[match="'|'"]] ( [usfm:match[match="/[^\\=]*/"]] attribute * {xsd:string}
-            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'='&quot;" second="/[^\\&quot;]+/" after="/&quot;\s*/"]] attribute * {xsd:string})+
+        [usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?>!\s*=)/"]] attribute _default {xsd:string}
+            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
+                attribute * {xsd:string})+
         )?,
-        [usfm:text[]] text? # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
-        >> usfm:endtag[]
+        [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        >> usfm:endtag[usfm:order="4"]
     }
         
 CharEmbedWithAttrib =
@@ -621,7 +623,7 @@ CharEmbedWithAttrib =
             | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'='&quot;" second="/[^\\&quot;]+/" after="/&quot;\s*/"]] attribute * {xsd:string})+
         )?,
         [usfm:text[]] text? # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
-        >> usfm:endtag[before="'\+'"]
+        >> usfm:endtag[usfm:order="4" before="'\+'"]
     }
 
 CharWithAttrib.enum = (
@@ -768,8 +770,8 @@ FootnoteChar.char.style.enum = (
     | "fdc" # Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
     | "xt" # A cross reference target reference(s)
     | "it" # A character style, use italic text
-    | "bd" # A character style, use bold text
     | "bdit" # A character style, use bold + italic text
+    | "bd" # A character style, use bold text
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text; abbreviations
     )
@@ -803,10 +805,10 @@ CrossReferenceChar =
         >> usfm:endtag[many="?"]
     }
 CrossReferenceChar.char.style.enum = (
-      "xo" # The cross reference origin reference
-    | "xop" # Published cross reference origin text (origin reference that should appear in the published text)
-    | "xt" # The cross reference target reference(s), protocanon only
+      "xop" # Published cross reference origin text (origin reference that should appear in the published text)
+    | "xo" # The cross reference origin reference
     | "xta" # Cross reference target references added text
+    | "xt" # The cross reference target reference(s), protocanon only
     | "xk" # A cross reference keyword
     | "xq" # A cross-reference quotation from the scripture text
     | "xot" # Cross-reference target reference(s), Old Testament only

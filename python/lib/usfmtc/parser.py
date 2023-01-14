@@ -179,7 +179,7 @@ class UsfmParser:
         return res if cont else None
 
     def matchpair(self, e, res, **kw):
-        res = self.back.append_seq(res)
+        res = self.back.append_seq(res, forced=e.get(f"{usfmns}seq", "false") in ("true", "1"))
         for a in ('before', 'first', 'between', 'second', 'after'):
             v = e.get(a, None)
             if v is not None:
