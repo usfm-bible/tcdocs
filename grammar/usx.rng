@@ -874,7 +874,7 @@
           <ref name="Footnote"/>
           <ref name="Break"/>
           <text>
-            <usfm:text/>
+            <usfm:match match="TEXTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
         </choice>
       </zeroOrMore>
@@ -889,8 +889,41 @@
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
-        <ref name="CharContent"/>
-        <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
+        <choice>
+          <group>
+            <optional>
+              <group>
+                <usfm:match match="&#x27;|&#x27;" dump="true"/>
+                <choice>
+                  <attribute>
+                    <usfm:match match="/[^\\=]*(?&gt;!\s*=)/"/>
+                    <name ns="">_default</name>
+                    <data type="string"/>
+                  </attribute>
+                  <oneOrMore>
+                    <attribute>
+                      <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]+/" after="/&quot;\s*/"/>
+                      <anyName/>
+                      <data type="string"/>
+                    </attribute>
+                  </oneOrMore>
+                </choice>
+              </group>
+            </optional>
+            <group usfm:order="-1">
+              <optional>
+                <text>
+                  <usfm:match match="TEXTATTRIB"/>
+                </text>
+              </optional>
+            </group>
+            <usfm:endtag usfm:order="4"/>
+          </group>
+          <group>
+            <ref name="CharContent"/>
+            <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
+          </group>
+        </choice>
       </element>
       <ref name="CharWithAttrib"/>
     </choice>

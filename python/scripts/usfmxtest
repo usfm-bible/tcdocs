@@ -80,11 +80,15 @@ def addvids(root):
     bkel = root.find('./book')
     bk = bkel.get('code', 'UNK')
     currchap = 0
+    lastp = None
     for v in list(root.iter()):
         if v.tag == "chapter":
             currchap = v.get('number')
             currverse = 0
             v.set('sid', "{} {}".format(bk, currchap))
+            continue
+        elif v.tag == "para":
+            lastp = v
             continue
         elif v.tag != "verse":
             continue
@@ -112,7 +116,7 @@ def addvids(root):
                         endp = pl
                 elif id(pl) != id(pv):
                     block = True
-                if id(pl) == id(pv):
+                else:
                     break
                 pl = getnext(pl)
             if not block and getindex(v)[0] > 0 or not (pv.text is None or pv.text == ""):
@@ -120,11 +124,22 @@ def addvids(root):
             else:
                 endp.append(ev)
         lastv = v
-    if lastv is not None:
+    if lastv is not None and lastp is not None:
         eid = lastv.get('sid')
         ev = lastv.makeelement('verse', {'eid': eid or ''})
         pl = lastv.get(' parent')
-        endp = pl
+        block = False
+        endp = lastp
+        while pl is not None:
+            if pl.tag == 'para' and partypes.get(pl.get('style', None), None) != 'Section':
+                if pl.text or (len(pl) and pl[0].tag != 'verse'):
+                    pl.set('vid', eid)
+                    endp = pl
+            elif id(pl) != id(lastp):
+                block = True
+            else:
+                break
+            pl = getnext(pl)
         endp.append(ev)
 
     lastc = None

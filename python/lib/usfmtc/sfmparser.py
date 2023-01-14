@@ -249,9 +249,14 @@ class Group(Parser):
                         raise e
                 if n is not None:
                     s.gs.defstack.pop()
-                if self.mode == "|+" and matched and c.mc:
-                    s.gs.cstack.pop()
-                    raise NoParseError(f'Interleave multiply matched {c} in {self}', s)
+                if self.mode == "|+":
+                    if matched and c.mc:
+                        s.gs.cstack.pop()
+                        raise NoParseError(f'Interleave multiply matched {c} in {self}', s)
+                    elif cuts.pos != news.pos:  # real match
+                        c.mc = True
+                    else:
+                        continue
                 allfailed = False
                 nohit = False
                 cuts = news

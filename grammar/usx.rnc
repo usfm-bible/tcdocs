@@ -520,15 +520,22 @@ CharContent = (
     char.link?,
     [usfm:ignore="true"]char.closed?,
     [usfm:text[]] text,
-    ([usfm:ignore="true"] Reference | CharEmbed | Milestone | Footnote | Break | [usfm:text[]] text)* # Nested character <char> markup
+    ([usfm:ignore="true"] Reference | CharEmbed | Milestone | Footnote | Break |
+        [usfm:match[match="TEXTATTRIB" after="ATTRIBTEXTEND"]] text)* # Nested character <char> markup
     )
 
 Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        CharContent
-        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]  # required if not followed by Char or Para
+        (([usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?>!\s*=)/"]] attribute _default {xsd:string}
+            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
+                attribute * {xsd:string})+
+        )?,
+        [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        >> usfm:endtag[usfm:order="4"])
+        | (CharContent
+        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]))  # required if not followed by Char or Para
     }
     | CharWithAttrib
     )
