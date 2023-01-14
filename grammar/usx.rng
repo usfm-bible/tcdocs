@@ -846,7 +846,7 @@
           </text>
         </choice>
       </oneOrMore>
-      <usfm:endtag usfm:order="3" ahead="/[^\\]/" many="?" usfm:seq="true"/>
+      <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
     </element>
   </define>
   <define name="IntroChar.char.style.enum">
@@ -890,7 +890,7 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="CharContent"/>
-        <usfm:endtag usfm:order="3" ahead="/[^\\]/" many="?" usfm:seq="true"/>
+        <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
       </element>
       <ref name="CharWithAttrib"/>
     </choice>
@@ -945,7 +945,7 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="CharContent"/>
-        <usfm:endtag usfm:order="3" before="&#x27;\+&#x27;" usfm:many="?"/>
+        <usfm:endtag usfm:order="3" before="&#x27;\+&#x27;"/>
       </element>
       <ref name="CharEmbedWithAttrib"/>
     </choice>
@@ -975,7 +975,7 @@
           <text/>
         </choice>
       </zeroOrMore>
-      <usfm:endtag many="?"/>
+      <usfm:endtag usfm:many="?"/>
     </element>
   </define>
   <define name="ListChar.char.style.enum">
@@ -1338,7 +1338,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:text strip="right" re="\S+"/>
+        <usfm:match match="/\S+/" after="WS"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
@@ -1375,7 +1375,7 @@
           </text>
         </choice>
       </oneOrMore>
-      <usfm:endtag many="?"/>
+      <usfm:endtag usfm:many="?"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">
@@ -1416,7 +1416,7 @@
     <element>
       <name ns="">note</name>
       <attribute>
-        <usfm:tag id="a" strip="none"/>
+        <usfm:tag id="a"/>
         <name ns="">style</name>
         <choice>
           <value>x</value>
@@ -1424,18 +1424,13 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:text strip="both" re="\S+"/>
+        <usfm:match match="/\S+/" after="WS"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
-      <oneOrMore>
-        <choice>
-          <ref name="CrossReferenceChar"/>
-          <text>
-            <usfm:text/>
-          </text>
-        </choice>
-      </oneOrMore>
+      <zeroOrMore>
+        <ref name="CrossReferenceChar"/>
+      </zeroOrMore>
       <usfm:endtag/>
     </element>
   </define>
@@ -1448,20 +1443,21 @@
         <ref name="CrossReferenceChar.char.style.enum"/>
       </attribute>
       <optional>
-        <ref name="char.link"/>
+        <ref name="char.link" usfm:ignore="true"/>
       </optional>
       <optional>
-        <ref name="char.closed"/>
+        <ref name="char.closed" usfm:ignore="true"/>
       </optional>
       <oneOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
-          <ref name="Char"/>
-          <ref name="CrossReferenceChar"/>
-          <text/>
+          <ref name="CharEmbed"/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </oneOrMore>
-      <usfm:endtag many="?"/>
+      <usfm:endtag usfm:many="?"/>
     </element>
   </define>
   <define name="CrossReferenceChar.char.style.enum">

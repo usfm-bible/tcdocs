@@ -508,7 +508,7 @@ IntroChar =
         [usfm:tag[id="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
         char.closed?,
         ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | [usfm:text[]]text)+ # Nested character <char> markup
-        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" many="?" usfm:seq="true"]
+        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]
     }
 IntroChar.char.style.enum = (
       "ior" # Introduction references range for outline entry; for marking references separately
@@ -528,7 +528,7 @@ Char = (
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
         CharContent
-        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" many="?" usfm:seq="true"]  # required if not followed by Char or Para
+        >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]  # required if not followed by Char or Para
     }
     | CharWithAttrib
     )
@@ -576,7 +576,7 @@ CharEmbed = (
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[id="a" before="'\+'" usfm:seq="true"]] attribute style { Char.char.style.enum },
         CharContent
-        >> usfm:endtag[usfm:order="3" before="'\+'" usfm:many="?"]
+        >> usfm:endtag[usfm:order="3" before="'\+'"]
     }
     | CharEmbedWithAttrib
     )
@@ -588,7 +588,7 @@ ListChar = (
         char.closed?,
         text,
         ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
-        >> usfm:endtag[many="?"]
+        >> usfm:endtag[usfm:many="?"]
     }
     )
 
@@ -739,7 +739,7 @@ Footnote =
     element note {
         [usfm:tag[id="a"]]
         attribute style { "f" | "fe" | "ef" },
-        [usfm:text[strip="right" re="\S+"]]
+        [usfm:match[match="/\S+/" after="WS"]]
         attribute caller { text },
         category?,
         FootnoteChar*
@@ -755,7 +755,7 @@ FootnoteChar =
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:ignore="true"] Reference | CharEmbed | FootnoteVerse | [usfm:text[]] text)+
-        >> usfm:endtag[many="?"]
+        >> usfm:endtag[usfm:many="?"]
     }
 FootnoteChar.char.style.enum = (
       "fr" # The origin reference for the footnote
@@ -787,11 +787,11 @@ FootnoteVerse =
 
 CrossReference =
     element note {
-        [usfm:tag[id="a" strip="none"]]
+        [usfm:tag[id="a"]]
         attribute style { "x" | "ex" },
-        [usfm:text[strip="both" re="\S+"]]
+        [usfm:match[match="/\S+/" after="WS"]]
         attribute caller { text },
-        (CrossReferenceChar | [usfm:text[]] text)+
+        CrossReferenceChar*
         >> usfm:endtag[]
     }
 
@@ -799,10 +799,12 @@ CrossReferenceChar =
     element char {
         [usfm:tag[id="a"]]
         attribute style { CrossReferenceChar.char.style.enum },
+        [usfm:ignore="true"]
         char.link?,
+        [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | Char | CrossReferenceChar | text)+
-        >> usfm:endtag[many="?"]
+        ([usfm:ignore="true"] Reference | CharEmbed | [usfm:text[]] text)+
+        >> usfm:endtag[usfm:many="?"]
     }
 CrossReferenceChar.char.style.enum = (
       "xop" # Published cross reference origin text (origin reference that should appear in the published text)

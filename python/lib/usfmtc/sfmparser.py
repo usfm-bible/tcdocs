@@ -159,7 +159,7 @@ class String(Parser):
         return '/{}/{}'.format(self.re, "!" if self.keep else "")
 
     def merge(self, other, mode=None):
-        if not isinstance(other, String) or (self.keep and other.keep):
+        if not isinstance(other, String):
             return super().merge(other, mode=mode)
         if mode and "|" in mode:
             ore = other.re[1:-1] if other.re.startswith("(") and other.re.endswith(")") else other.re
@@ -167,6 +167,8 @@ class String(Parser):
                 self.re = self.re[:-1] + "|" + ore + ")"
             else:
                 self.re = "(" + self.re + "|" + ore + ")"
+        elif self.keep and other.keep:
+            return super().merge(other, mode=mode)
         else:
             self.re += other.re
         self.name = "/" + self.re + "/"
