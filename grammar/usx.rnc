@@ -7,7 +7,7 @@ datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 namespace usfm = "http://usfm.bible/parse/2023"
 
 usfm:terminal [name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A)/"]
-usfm:terminal [name="WSS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+/"]
+usfm:terminal [name="WSS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*/"]
 usfm:terminal [name="TAGEND" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+|(?=[\\|]|$))/"]
 usfm:terminal [name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\]|$)/"]
 usfm:terminal [name="ATTRIBTEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\|])/"]
@@ -379,7 +379,7 @@ PeripheralContent = (Chapter | Para | List | Table | Footnote | CrossReference |
 
 Para =
     element para {
-        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true"]] attribute style { Para.para.style.enum },
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)+
     }
@@ -389,8 +389,6 @@ Para.para.style.enum = (
     | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
     | "ip" # Division or Section introductory paragraph (study Bible)
     | "lit" # For a comment or note inserted for liturgical use
-    | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
-    | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
     | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
     | "pc" # Inscription (paragraph text centered)
@@ -431,6 +429,8 @@ Para.para.style.enum = (
     | "ms3" # A major section division heading, level 3
     | "ms" # A major section division heading, level 1 (if single level)
     | "mr" # A major section division references range heading
+    | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
+    | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "r" # Parallel reference(s)
     | "s1" # A section heading, level 1 (if multiple levels)
     | "s2" # A section heading, level 2 (e.g. Proverbs 22-24)

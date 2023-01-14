@@ -73,7 +73,30 @@ def getnext(base):
     i, parent = getindex(base)
     return parent[i+1] if i < len(parent) - 1 else None
 
-def addvids(root):
+def addvids(lastp, endp, v, atend=False):
+    res = lastp
+    lastp = getnext(lastp)
+    pending = []
+    while lastp is not None:
+        if lastp.tag not in ('para', 'table', 'row', 'cell'):
+            if id(lastp) == id(endp):
+                break
+            lastp = getnext(lastp)
+            continue
+        if lastp.tag == 'para' and partypes.get(lastp.get('style', None), None) == "Section":
+            pending.append(lastp)
+        elif id(lastp) != id(endp) or atend:
+            for p in pending:
+                p.set('vid', v)
+            pending = []
+            lastp.set('vid', v)
+            res = lastp
+        if id(lastp) == id(endp):
+            break
+        lastp = getnext(lastp)
+    return res
+
+def addesids(root):
     lastv = None
     if root.get('version', None) is None:
         root.set('version', '3.0')
@@ -90,9 +113,7 @@ def addvids(root):
         elif v.tag == "para":
             lastp = v
             continue
-        elif v.tag != "verse":
-            continue
-        if v.get('eid', None) is not None:
+        elif v.tag != "verse" or v.get('eid', None) is not None:
             continue
         currverse = v.get('number')
         v.set('sid', "{} {}:{}".format(bk, currchap, currverse))
@@ -106,41 +127,14 @@ def addvids(root):
         if id(pv) == id(pl):
             addprevious(v, ev) 
         else:
-            endp = pl
-            pl = getnext(endp)
-            block = False
-            while pl is not None:
-                if pl.tag == 'para' and partypes.get(pl.get('style', None), None) != 'Section':
-                    if not block and (pl.text or (len(pl) and pl[0].tag != 'verse')):
-                        pl.set('vid', eid)
-                        endp = pl
-                elif id(pl) != id(pv):
-                    block = True
-                else:
-                    break
-                pl = getnext(pl)
-            if not block and getindex(v)[0] > 0 or not (pv.text is None or pv.text == ""):
-                addprevious(v, ev)
-            else:
-                endp.append(ev)
+            endp = addvids(pl, pv, eid)
+            endp.append(ev)
         lastv = v
     if lastv is not None and lastp is not None:
-        eid = lastv.get('sid')
+        eid = lastv.get('sid', None)
+        addvids(lastv.get(' parent'), lastp, eid, atend=True)
         ev = lastv.makeelement('verse', {'eid': eid or ''})
-        pl = lastv.get(' parent')
-        block = False
-        endp = lastp
-        while pl is not None:
-            if pl.tag == 'para' and partypes.get(pl.get('style', None), None) != 'Section':
-                if pl.text or (len(pl) and pl[0].tag != 'verse'):
-                    pl.set('vid', eid)
-                    endp = pl
-            elif id(pl) != id(lastp):
-                block = True
-            else:
-                break
-            pl = getnext(pl)
-        endp.append(ev)
+        lastp.append(ev)
 
     lastc = None
     for c in root.findall('.//chapter'):
@@ -225,7 +219,7 @@ def proconedir(d, sfmp, args):
         if (args.debug & 1) != 0:
             print(result)
         xml = result.asEt()
-        addvids(xml)
+        addesids(xml)
         cleanup(xml)
         if args.print:
             writexml(sys.stdout, xml)
