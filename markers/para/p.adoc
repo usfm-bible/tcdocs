@@ -13,27 +13,23 @@ endif::[]
 
 == Summary
 
+Type of:: xref:para:index.adoc[Paragraph]
 Description:: Regular paragraph.
-Syntax::
-* *USFM:* `+\p_{content}+`
-* *USX:* `+<para style="p">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
+Syntax::
+* *USFM:* `+\p_{content}+`
+* *USX:* `+<para style="p">{content}</para>+`
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
 
 == Examples
-
+[tabs]
+======
+USFM::
++
 .Mark 1.1-4 (GNT)
-[source#src-para-p_1,usfm,highlight=4;13]
+[source#src-usfm-para-p_1,usfm,highlight=4;13]
 ----
 \c 1
 \s1 The Preaching of John the Baptist
@@ -48,12 +44,46 @@ TextProperties:: paragraph, publishable, vernacular
 \q2 ‘Get the road ready for the Lord;
 \q2 make a straight path for him to travel!’”
 \p
-\v 4 So John appeared in the desert, baptizing and preaching. “Turn away 
-from your sins and be baptized,” he told the people, “and God will forgive 
-your sins.”
+\v 4 So John appeared in the desert, baptizing and preaching. “Turn away from your 
+sins and be baptized,” he told the people, “and God will forgive your sins.”
 ----
+USX::
++
+.Mark 1.1-4 (GNT)
+[source#src-usx-para-p_1,xml,highlight=4;19]
+----
+<chapter number="1" style="c" sid="MRK" 1" />
+<para style="s1">The Preaching of John the Baptist</para>
+<para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
+<para style="p">
+  <verse number="1" style="v" sid="MRK" 1:1" />This is the Good News about Jesus 
+  Christ, the Son of God. <verse eid="MRK" 1:1" /><verse number="2" style="v" 
+  sid="MRK" 1:2" />It began as the prophet Isaiah had written:</para>
+<para style="q1" vid="MRK" 1:2">“God said, ‘I will send my messenger ahead of you
+  </para>
+<para style="q2" vid="MRK" 1:2">to open the way for you.’<verse eid="MRK" 1:2" />
+  </para>
+<para style="q1">
+  <verse number="3" style="v" sid="MRK" 1:3" />Someone is shouting in the desert,
+  </para>
+<para style="q2" vid="MRK" 1:3">‘Get the road ready for the Lord;</para>
+<para style="q2" vid="MRK" 1:3">make a straight path for him to travel!’”
+  <verse eid="MRK" 1:3" /></para>
+<para style="p">
+  <verse number="4" style="v" sid="MRK" 1:4" />So John appeared in the desert, 
+  baptizing and preaching. “Turn away from your sins and be baptized,” he told 
+  the people, “and God will forgive your sins.”<verse eid="MRK" 1:4" /></para>
+...
+----
+======
 
 image::para/p_1.jpg[Mark 1.1-4 (GNT),300]
+
+== Properties
+
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
@@ -61,4 +91,3 @@ image::para/p_1.jpg[Mark 1.1-4 (GNT),300]
 
 == Discussion
 
-Links to open repository Issues

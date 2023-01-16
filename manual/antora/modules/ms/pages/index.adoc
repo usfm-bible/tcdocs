@@ -9,13 +9,16 @@ Syntax::
 `ms@style`::: Milestone type
 include::../nav.adoc[tag=nav-topcat]
 
-== Diagram
-
-=== USFM
+== Diagrams
+[tabs]
+======
+USFM::
++
 image::schema/ms_rail.svg[]
-
-=== USX
+USX::
++
 image::schema/ms_usx.svg[]
+======
 
 == Background
 
@@ -93,7 +96,6 @@ _USFM or USX do not currently define any standalone milestones._ This may change
 ====
 
 == Attributes
-
 The following optional xref:char:attributes.adoc[attributes] can be added to any USFM milestone marker.
 
 sid:: A unique identifier which can be used to unambiguously identify the starting milestone, and to clearly associate the starting milestone with the ending milestone (`eid`). The `sid` can be composed of any mixture of numbers, letters, and underscores, and should be a unique `sid` throughout the scripture text.

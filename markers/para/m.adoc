@@ -12,31 +12,26 @@ endif::[]
 
 == Summary
 
+Type of:: xref:para:index.adoc[Paragraph]
 Description:: Continuation (margin) paragraph. Commonly used to resume prose at the margin (without indent) after poetic text or quotation.
-Syntax::
-* *USFM:* `+\m_{content}+`
-* *USX:* `+<para style="m">{content}</para>+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
-
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
+Syntax::
+* *USFM:* `+\m_{content}+`
+* *USX:* `+<para style="m">{content}</para>+`
 
 == Examples
-
+[tabs]
+======
+USFM::
++
 .Mark 12.37 (GNT)
-[source#src-para-m_1,usfm,highlight=8]
+[source#src-usfm-para-m_1,usfm,highlight=8]
 ----
 \p
-\v 35 As Jesus was teaching in the Temple, he asked the question, “How can 
-the teachers of the Law say that the Messiah will be the descendant of David?
+\v 35 As Jesus was teaching in the Temple, he asked the question, “How can the 
+teachers of the Law say that the Messiah will be the descendant of David?
 \v 36 The Holy Spirit inspired David to say:
 \q1 ‘The Lord said to my Lord:
 \q2 Sit here at my right side
@@ -46,8 +41,35 @@ the teachers of the Law say that the Messiah will be the descendant of David?
 \v 37 David himself called him ‘Lord’; so how can the Messiah be David's 
 descendant?”
 ----
+USX::
++
+.Mark 12.37 (GNT)
+[source#src-usx-para-m_1,xml,highlight=8]
+----
+<para style="p">
+  <verse number="35" style="v" sid="MRK 12:35" />As Jesus was teaching in the 
+  Temple, he asked the question, “How can the teachers of the Law say that the 
+  Messiah will be the descendant of David? <verse eid="MRK 12:35" />
+  <verse number="36" style="v" sid="MRK 12:36" />The Holy Spirit inspired David 
+  to say:</para>
+<para style="q1" vid="MRK 12:36">‘The Lord said to my Lord:</para>
+<para style="q2" vid="MRK 12:36">Sit here at my right side</para>
+<para style="q2" vid="MRK 12:36">until I put your enemies under your feet.’
+  <verse eid="MRK 12:36" /></para>
+<para style="b" />
+<para style="m">
+  <verse number="37" style="v" sid="MRK 12:37" />David himself called him ‘Lord’; 
+  so how can the Messiah be David's descendant?”<verse eid="MRK 12:37" />
+----
+======
 
 image::para/m_1.jpg[Mark 12.37 (GNT),300]
+
+== Properties
+
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
@@ -55,4 +77,3 @@ image::para/m_1.jpg[Mark 12.37 (GNT),300]
 
 == Discussion
 
-Links to open repository Issues
