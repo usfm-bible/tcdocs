@@ -811,7 +811,9 @@
           <ref name="Milestone"/>
           <ref name="Verse"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -896,7 +898,7 @@
                 <usfm:match match="&#x27;|&#x27;" dump="true"/>
                 <choice>
                   <attribute>
-                    <usfm:match match="/[^\\=]*(?!\s*=)/"/>
+                    <usfm:match match="/[^\\=]*(?=\\)/"/>
                     <name ns="">_default</name>
                     <data type="string"/>
                   </attribute>

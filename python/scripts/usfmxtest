@@ -162,6 +162,20 @@ def addesids(root):
         newp.append(r)
     return root
 
+aligns = { "": "start", "r": "end", "c": "center" }
+def cell_aligns(root):
+    for e in root.findall('.//cell'):
+        if e.get('align', None) is not None:
+            continue
+        s = e.get('style', None)
+        if s is None:
+            continue
+        v = re.match(r"^t[ch](.?)\d+", s)
+        if v is None:
+            continue
+        a = aligns[v.group(1)]
+        e.set('align', a)
+
 def cleanup(node):
     if node.tag == 'para':
         i = -1
@@ -220,6 +234,7 @@ def proconedir(d, sfmp, args):
             print(result)
         xml = result.asEt()
         addesids(xml)
+        cell_aligns(xml)
         cleanup(xml)
         if args.print:
             writexml(sys.stdout, xml)

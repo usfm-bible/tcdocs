@@ -494,7 +494,7 @@ TableContent =
         attribute style { xsd:string { pattern = "t[hc][rc]?\d+" } },
         attribute align { cell.align.enum },
         attribute colspan { xsd:integer }?,
-        (Footnote | CrossReference | Char | Milestone | Verse | Break | text)*
+        (Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
            
 cell.align.enum = (
@@ -528,7 +528,7 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (([usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?!\s*=)/"]] attribute _default {xsd:string}
+        (([usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
             | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
                 attribute * {xsd:string})+
         )?,
