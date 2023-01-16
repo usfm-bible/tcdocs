@@ -43,6 +43,10 @@ A milestone marker may end with either `-s` or `-e`
 * `-s` indicates that the milestone is for marking the start of a span of text.
 * `-e` indicates that the marker is an end milestone.
 
+[tabs]
+======
+USFM::
++
 .USFM: Milestones for the start and end of a quotation/speaker
 [source#src-ms-qt,usfm]
 ----
@@ -50,7 +54,8 @@ A milestone marker may end with either `-s` or `-e`
 ...
 \qt1-e\*
 ----
-
+USX::
++
 .USX: Milestone for the start of a quotation/speaker
 [source#src-usx-ms-qt,xml]
 ----
@@ -58,26 +63,33 @@ A milestone marker may end with either `-s` or `-e`
 ...
 <ms style="qt1-e"/>
 ----
+======
 
 == Standalone Milestones
 
 This syntax can also be used for standalone milestones, not using start `-s` and end `-e` suffixes.
 
+[tabs]
+======
+USFM::
++
 .USFM: Standalone milestone (xref:ROOT:extensions.adoc[\z namespace] in this example)
 [source#src-ms-zms,usfm]
 ----
 \zms\*
 ----
-
+USX::
++
 .USX: Standalone milestone
 [source#src-usx-ms-zms,xml]
 ----
 <ms style="zms"/>
 ----
+======
 
 [NOTE]
 ====
-_USFM does not currently define any standalone milestones._ This may change with future updates to USFM, as specific needs are identified.
+_USFM or USX do not currently define any standalone milestones._ This may change with future updates, as specific needs are identified.
 ====
 
 == Attributes
@@ -90,6 +102,10 @@ eid:: A unique identifier which can be used to unambiguously identify the ending
 
 Additional attributes may be available for or required by a specific milestone type (e.g the use of the `who` attribute in the following quotation milestone example).
 
+[tabs]
+======
+USFM::
++
 .USFM: Milestone attributes sid, eid, who
 [source#src-ms-attrib,usfm]
 ----
@@ -97,29 +113,31 @@ Additional attributes may be available for or required by a specific milestone t
 \v 1 Early in the morning the chief priests met hurriedly with the elders,
 the teachers of the Law, and the whole Council, and made their plans. They 
 put Jesus in chains, led him away, and handed him over to Pilate.
-\v 2 Pilate questioned him, \qt-s |sid="qt.MRK.15:2.1" who="Pilate"\*“Are you 
-the king of the Jews?”\qt-e |eid="qt.MRK.15:2.1"\*
+\v 2 Pilate questioned him, \qt-s |sid="qt.MRK.15:2.1" who="Pilate"\*“Are 
+you the king of the Jews?”\qt-e |eid="qt.MRK.15:2.1"\*
 \p Jesus answered, \qt-s |sid="qt.MRK.15:2.2" who="Jesus"\*“So you say.”
 \qt-e |eid="qt.MRK.15:2.2"\*
 ----
-
+USX::
++
 .USX: Milestone attributes sid, eid, who
 [source#src-usx-ms-attrib,xml]
 ----
 <para style="p">
   <verse number="1" style="v" sid="MRK 15:1" /> Early in the morning the 
-  chief priests met hurriedly with the elders, the teachers of the Law, and 
-  the whole Council, and made their plans. They put Jesus in chains, led him 
-  away, and handed him over to Pilate.<verse eid="MRK 15:1" />
+  chief priests met hurriedly with the elders, the teachers of the Law, 
+  and the whole Council, and made their plans. They put Jesus in chains, 
+  led him away, and handed him over to Pilate.<verse eid="MRK 15:1" />
   <verse number="2" style="v" sid="MRK 15:2" />Pilate questioned him, 
-  <ms style="qt-s" sid="qt.MRK.15:2.1" who="Pilate"/>“Are you the king of the 
-  Jews?”<ms style="qt-e" sid="qt.MRK.15:2.1"/>
+  <ms style="qt-s" sid="qt.MRK.15:2.1" who="Pilate"/>“Are you the king of 
+  the Jews?”<ms style="qt-e" sid="qt.MRK.15:2.1"/>
 </para>
 <para style="p" vid="MRK 15:2">
-  Jesus answered, <ms style="qt-s" sid="qt.MRK.15:2.2" who="Jesus"/>“So you 
-  say.”<ms style="qt-e" eid="qt.MRK.15:2.2"/><verse eid="MRK 15:2" />
+  Jesus answered, <ms style="qt-s" sid="qt.MRK.15:2.2" who="Jesus"/>“So 
+  you say.”<ms style="qt-e" eid="qt.MRK.15:2.2"/><verse eid="MRK 15:2"/>
 </para>
 ----
+======
 
 == Levels
 
