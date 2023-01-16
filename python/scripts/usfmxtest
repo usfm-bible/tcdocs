@@ -237,6 +237,7 @@ parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
+parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
 parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
 parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree")
 args = parser.parse_args()
@@ -259,6 +260,9 @@ if args.logging:
 jobs = []
 for dp, dns, fns in os.walk(args.directory):
     if 'metadata.xml' in fns:
+        st = os.stat(os.path.join(dp, "origin.usfm"))
+        if st.st_size > args.size * 1024:
+            continue
         jobs.append(dp)
 
 rdoc = et.parse(args.grammar)

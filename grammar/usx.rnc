@@ -528,7 +528,7 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (([usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?>!\s*=)/"]] attribute _default {xsd:string}
+        (([usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?!\s*=)/"]] attribute _default {xsd:string}
             | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
                 attribute * {xsd:string})+
         )?,
@@ -614,7 +614,7 @@ CharWithAttrib =
     element char {
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?>!\s*=)/"]] attribute _default {xsd:string}
+        [usfm:match[match="'|'" dump="true"]] ( [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
             | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
                 attribute * {xsd:string})+
         )?,
@@ -626,16 +626,16 @@ CharEmbedWithAttrib =
     element char {
         [usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:order="3" usfm:match[match="'|'"]] ( [usfm:match[match="/[^\\=]*/"]] attribute * {xsd:string}
-            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'='&quot;" second="/[^\\&quot;]+/" after="/&quot;\s*/"]] attribute * {xsd:string})+
+        [usfm:order="3" usfm:match[match="'|'"]] ( [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute * {xsd:string}
+            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]] attribute * {xsd:string})+
         )?,
         [usfm:text[]] text? # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4" before="'\+'"]
     }
 
 CharWithAttrib.enum = (
-      "w"
-    | "rb"
+      [usfm:propval="lemma"] "w"
+    | [usfm:propval="alt"] "rb"
 )
         
 char.link =
@@ -652,14 +652,13 @@ char.closed =
 
 Milestone = (
     (element ms {
-        [usfm:tag[after="/(?=[\\|])/"]] attribute style { xsd:string {pattern="[a-z][a-z0-9-]*" }},
+        [usfm:tag[after="/\s?(?=[\\|])/"]] attribute style { xsd:string {pattern="[a-z][a-z0-9-]*" }},
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
-        [usfm:match[match="'|'"]]
-        (  [usfm:match[match="/[^\\=]*/"]] attribute * {xsd:string}
-         | [usfm:properties[between="WS"]](
-             [usfm:matchpair[first="/[^\\=&quot;]+/" between="'='&quot;" second="/[^\\&quot;]+/" after="'&quot;'"]]
-             attribute * {xsd:string}+)
+        [usfm:match[match="'|'" dump="true"]]
+        (  [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute * {xsd:string}
+         | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
+             attribute * {xsd:string})+
         )?,
         empty
     }

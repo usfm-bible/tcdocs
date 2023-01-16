@@ -187,6 +187,7 @@ class Group(Parser):
         self.result = result
         self.name = name + mode
         self.capture = capture
+        self.propmap = {}
         if parent is not None:
             parent.append(self)
 
@@ -302,7 +303,7 @@ class Group(Parser):
             if isinstance(res, (str, Attribute, Element)):
                 break
             res = res[0]
-        final = self.result(res) if self.result is not None else res
+        final = self.result(res, self) if self.result is not None else res
         if self.capture:
             s.gs.capture(self.capture, final)
         return final
@@ -336,8 +337,10 @@ class Reference(Parser):
 class Attribute:
     name: str
     value: str
+    override: str
 
-    def __init__(self, name, value):
+    def __init__(self, name, value, override, **kw):
+        self.override = override
         if isinstance(value, list):
             if len(value) > 1:
                 self.name, self.value = value
@@ -352,9 +355,11 @@ class Attribute:
 
 
 class Element(list):
-    def __init__(self, *a, name=None):
+    def __init__(self, *a, name=None, propmap=None, **kw):
         self.name = name
         self.attributes = {}
+        self.propmap = propmap
+        self.kw = kw
         for e in a:
             self._append(e)
         if Parser.debug:
@@ -362,15 +367,15 @@ class Element(list):
 
     def _append(self, e):
         if isinstance(e, Attribute):
-            self.attributes[e.name] = e.value
+            if self.propmap is not None and e.override is not None:
+                self.attributes[self.propmap.get(self.attributes[e.override], e.name)] = e.value
+            else:
+                self.attributes[e.name] = e.value
         elif isinstance(e, list) and not isinstance(e, Element):
             for c in e:
                 self._append(c)
         else:
             self.append(e)
-
-    def addAttribute(self, name, val):
-        self.attributes[name] = val
 
     def asEt(self, parent=None):
         if parent is None:
@@ -403,19 +408,6 @@ class Element(list):
     def __repr__(self):
         return str(self)
 
-class ElementList(list):
-    def addElement(self, *a, name=None):
-        res = Element(*a, name=name)
-        self.append(res)
-        return res
-
-    def addAttribute(self, name, val):
-        if not len(self):
-            self.addElement()
-        self[-1].addAttribute(name, val)
-
-    def __str__(self):
-        return "{}".format([str(x) for x in self])
 
 def parseusfm(infilename, parser):
     with open(infilename, encoding="utf-8") as inf:
@@ -440,7 +432,7 @@ class UsfmParserBackend:
 
     def __init__(self):
         self.references = {}
-        self.elements = ElementList()
+        self.elements = []
         self.nodes = []
         self.defines = {}
         self.defstack = []
@@ -459,7 +451,9 @@ class UsfmParserBackend:
 # --- Parser backend API
 
     def attrib_start(self, parser, e, context, name, **kw):
-        group = Group(name=name, parent=context, mode="&", result=(lambda r: Attribute(name, r)), **self.get_nodename())
+        group = Group(name=name, parent=context, mode="&",
+                        result=(lambda r,s: Attribute(name, r, kw.get('name-override', None))),
+                        **self.get_nodename())
         self.nodes.append(group)
         return group
 
@@ -468,7 +462,9 @@ class UsfmParserBackend:
         return context
 
     def elem_start(self, parser, e, context, name, **kw):
-        group = Group(name=name, parent=context, mode="&", result=(lambda r:Element(r, name=name)), **self.get_nodename())
+        group = Group(name=name, parent=context, mode="&",
+                    result=(lambda r,s: Element(r, name=name, propmap=s.propmap.copy())),
+                    **self.get_nodename())
         self.nodes.append(group)
         return group
 

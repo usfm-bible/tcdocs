@@ -896,7 +896,7 @@
                 <usfm:match match="&#x27;|&#x27;" dump="true"/>
                 <choice>
                   <attribute>
-                    <usfm:match match="/[^\\=]*(?&gt;!\s*=)/"/>
+                    <usfm:match match="/[^\\=]*(?!\s*=)/"/>
                     <name ns="">_default</name>
                     <data type="string"/>
                   </attribute>
@@ -1038,8 +1038,8 @@
         <group>
           <usfm:match match="&#x27;|&#x27;" dump="true"/>
           <choice>
-            <attribute>
-              <usfm:match match="/[^\\=]*(?&gt;!\s*=)/"/>
+            <attribute usfm:name-override="style">
+              <usfm:match match="/[^\\=]*(?=\\)/"/>
               <name ns="">_default</name>
               <data type="string"/>
             </attribute>
@@ -1078,14 +1078,14 @@
         <group usfm:order="3">
           <usfm:match match="&#x27;|&#x27;"/>
           <choice>
-            <attribute>
-              <usfm:match match="/[^\\=]*/"/>
+            <attribute usfm:name-override="style">
+              <usfm:match match="/[^\\=]*(?=\\)/"/>
               <anyName/>
               <data type="string"/>
             </attribute>
             <oneOrMore>
               <attribute>
-                <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&#x27;&quot;" second="/[^\\&quot;]+/" after="/&quot;\s*/"/>
+                <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]+/" after="/&quot;\s*/"/>
                 <anyName/>
                 <data type="string"/>
               </attribute>
@@ -1103,8 +1103,8 @@
   </define>
   <define name="CharWithAttrib.enum">
     <choice>
-      <value>w</value>
-      <value>rb</value>
+      <value usfm:propval="lemma">w</value>
+      <value usfm:propval="alt">rb</value>
     </choice>
   </define>
   <define name="char.link">
@@ -1151,7 +1151,7 @@
       <element>
         <name ns="">ms</name>
         <attribute>
-          <usfm:tag after="/(?=[\\|])/"/>
+          <usfm:tag after="/\s?(?=[\\|])/"/>
           <name ns="">style</name>
           <data type="string">
             <param name="pattern">[a-z][a-z0-9-]*</param>
@@ -1175,23 +1175,20 @@
         </optional>
         <optional>
           <group>
-            <usfm:match match="&#x27;|&#x27;"/>
+            <usfm:match match="&#x27;|&#x27;" dump="true"/>
             <choice>
-              <attribute>
-                <usfm:match match="/[^\\=]*/"/>
+              <attribute usfm:name-override="style">
+                <usfm:match match="/[^\\=]*(?=\\)/"/>
                 <anyName/>
                 <data type="string"/>
               </attribute>
-              <group>
-                <usfm:properties between="WS"/>
-                <oneOrMore>
-                  <attribute>
-                    <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&#x27;&quot;" second="/[^\\&quot;]+/" after="&#x27;&quot;&#x27;"/>
-                    <anyName/>
-                    <data type="string"/>
-                  </attribute>
-                </oneOrMore>
-              </group>
+              <oneOrMore>
+                <attribute>
+                  <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]+/" after="/&quot;\s*/"/>
+                  <anyName/>
+                  <data type="string"/>
+                </attribute>
+              </oneOrMore>
             </choice>
           </group>
         </optional>

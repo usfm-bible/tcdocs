@@ -31,7 +31,7 @@ class UsfmParser:
         self.groups = []
         self.ids = {}
         self.groupings = []
-        self.elemnodes = []
+        self.elementlist = []
 
     def parseRef(self, name, flattens=set(), flattenall=False):
         self.flattens = flattens
@@ -44,7 +44,6 @@ class UsfmParser:
         self.groups = [name]
         self.idcount = 1
         self.attribnodes = [None]
-        self.elemnodes = [None]
         res = self.proc_children(e, self.curr, False)
         self.groups.pop()
         return res
@@ -87,13 +86,6 @@ class UsfmParser:
                         break
         return res
 
-    def push_element(self, elemnode):
-        """ Pushes an element or attribute capture context """
-        self.elemnodes.append(elemnode)
-
-    def pop_element(self):
-        self.elemnodes.pop()
-
 # ---- Tag methods ---
 
     def alias(self, e, res, **kw):
@@ -118,7 +110,11 @@ class UsfmParser:
 
     def attribute(self, e, res, **kw):
         name = e.findtext(f"./{relaxns}name") or "*"
-        res = self.back.attrib_start(self, e, res, name)
+        parms = {}
+        nover = e.get(f'{usfmns}name-override', None)
+        if nover is not None:
+            parms['name-override'] = nover
+        res = self.back.attrib_start(self, e, res, name, **parms)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
         self.proc_children(e, res)
@@ -131,8 +127,10 @@ class UsfmParser:
         res = self.back.elem_start(self, e, res, name)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
+        self.elementlist.append(res)
         self.proc_children(e, res, False)
         res = self.back.elem_end(self, e, res)
+        self.elementlist.pop()
         self.groupings.pop()
         return res
 
@@ -211,6 +209,10 @@ class UsfmParser:
         return self.proc_children(e, res, **kw)
 
     def value(self, e, res, **kw):
+        pv = e.get(f'{usfmns}propval', None)
+        if pv is not None:
+            pe = self.elementlist[-1]
+            pe.propmap[e.text] = pv
         return self.back.match('"'+e.text+'"', res)
 
     def ref(self, e, res, **kw):
@@ -229,9 +231,13 @@ class UsfmParser:
             r = self.get_ref(n)
             newres = self.back.add_define(n, r, **kw)
             self.defines[n] = newres
+            self.elementlist.append(newres)
             self.groups.append(n)
             self.proc_children(r, newres, **kw)
             self.groups.pop()
+            self.elementlist.pop()
+        if len(self.elementlist):
+            self.elementlist[-1].propmap.update(self.defines[n].propmap)
         return self.back.ref(n, res, **kw)
 
     def data(self, e, res, **kw):
