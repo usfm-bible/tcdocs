@@ -39,10 +39,12 @@ TextProperties:: paragraph publishable vernacular
 == Diagram
 
 === USFM
-image::schema/fig_rail.svg[]
+Image file is currently missing.
+// image::schema/fig_rail.svg[]
 
 === USX
-image::schema/fig_usx.svg[]
+Image file is currently missing.
+// image::schema/fig_usx.svg[]
 
 == Examples
 
