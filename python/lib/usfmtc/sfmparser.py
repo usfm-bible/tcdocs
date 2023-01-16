@@ -21,10 +21,12 @@ class GlobalState:
 
     def capture(self, index, txt):
         self._ensure(index)
+        logger.debug(f"Capture[{index}] = '{self.captures[index]}' + '{txt}'")
         self.captures[index] += txt
 
     def init(self, index, txt):
         self._ensure(index)
+        logger.debug(f"Init capture[{index}]")
         self.captures[index] = ""
 
     def getcapture(self, index):
@@ -90,8 +92,6 @@ class Parser:
             def lastof(l):
                 return l[-1] if len(l) else ""
             def runfn(s, **kw):
-                if not len(s()):
-                    raise NoParseError("<EOF>", s)
                 try:
                     res = f(s)
                     good = True
@@ -304,7 +304,7 @@ class Group(Parser):
                 break
             res = res[0]
         final = self.result(res, self) if self.result is not None else res
-        if self.capture:
+        if self.capture and final is not None:
             s.gs.capture(self.capture, final)
         return final
 

@@ -12,7 +12,7 @@ import xml.etree.ElementTree as et
 
 allpartypes = {
     'Section': """ms mse ms1 ms2 ms2e ms3 ms3e mr s s1 s2 s3 s4 s1e s2e s3e s4e sr r sp
-                    sd1 sd2 sd3 sd4 periph"""
+                    sd1 sd2 sd3 sd4 periph iex"""
 }
 
 partypes = {e: k for k, v in allpartypes.items() for e in v.split()}
@@ -73,19 +73,22 @@ def getnext(base):
     i, parent = getindex(base)
     return parent[i+1] if i < len(parent) - 1 else None
 
-def addvids(lastp, endp, v, atend=False):
+def addvids(lastp, endp, base, v, endv, atend=False):
     res = lastp
     lastp = getnext(lastp)
     pending = []
     while lastp is not None:
+        if lastp.tag == "chapter":
+            break
         if lastp.tag not in ('para', 'table', 'row', 'cell'):
             if id(lastp) == id(endp):
                 break
             lastp = getnext(lastp)
             continue
-        if lastp.tag == 'para' and partypes.get(lastp.get('style', None), None) == "Section":
+        if lastp.tag == 'para' and partypes.get(lastp.get('style', None), None) == "Section" \
+                or (not len(lastp) and (lastp.text is None or lastp.text.strip() == "")):
             pending.append(lastp)
-        elif id(lastp) != id(endp) or atend:
+        elif id(lastp) != id(endp) or atend or endp[0].tag != "verse" or (endp.text is not None and endp.text.strip() != ""):
             for p in pending:
                 p.set('vid', v)
             pending = []
@@ -94,6 +97,10 @@ def addvids(lastp, endp, v, atend=False):
         if id(lastp) == id(endp):
             break
         lastp = getnext(lastp)
+    if id(res) == id(endp) and base is not None:
+        addprevious(base, endv)
+    else:
+        res.append(endv)
     return res
 
 def addesids(root):
@@ -127,14 +134,12 @@ def addesids(root):
         if id(pv) == id(pl):
             addprevious(v, ev) 
         else:
-            endp = addvids(pl, pv, eid)
-            endp.append(ev)
+            endp = addvids(pl, pv, v, eid, ev)
         lastv = v
     if lastv is not None and lastp is not None:
         eid = lastv.get('sid', None)
-        addvids(lastv.get(' parent'), lastp, eid, atend=True)
         ev = lastv.makeelement('verse', {'eid': eid or ''})
-        lastp.append(ev)
+        addvids(lastv.get(' parent'), lastp, None, eid, ev, atend=True)
 
     lastc = None
     for c in root.findall('.//chapter'):
@@ -200,7 +205,7 @@ def strnormal(s, t):
         return s.strip()
 
 def attribnorm(d):
-    banned = ('closed',)
+    banned = ('closed', 'status')
     return {k:v for k, v in d.items() if k not in banned and not k.startswith(" ")}
 
 def etCmp(a, b):

@@ -6,7 +6,7 @@ namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 namespace usfm = "http://usfm.bible/parse/2023"
 
-usfm:terminal [name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A)/"]
+usfm:terminal [name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A|$)/"]
 usfm:terminal [name="WSS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*/"]
 usfm:terminal [name="TAGEND" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+|(?=[\\|]|$))/"]
 usfm:terminal [name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\]|$)/"]
@@ -324,6 +324,9 @@ BookIntroduction.para.style.enum = (
     | "imt2" # Introduction major title, level 2
     | "imt3" # Introduction major title, level 3
     | "imt4" # Introduction major title, level 4 (usually within parenthesis)
+    | "imte1" # Introduction major title at introduction end, level 1 (if multiple levels)
+    | "imte2" # Introduction major title at introduction end, level 2
+    | "imte" # Introduction major title at introduction end, level 1 (if single level)
     | "imt" # Introduction major title, level 1 - (if single level)
     | "ib" # Introduction blank line
     | "ie" # Introduction ending marker
@@ -350,9 +353,6 @@ BookIntroduction.para.style.enum = (
     | "is1" # Introduction section heading, level 1 (if multiple levels)
     | "is2" # Introduction section heading, level 2
     | "is" # Introduction section heading, level 1 (if single level)
-    | "imte1" # Introduction major title at introduction end, level 1 (if multiple levels)
-    | "imte2" # Introduction major title at introduction end, level 2
-    | "imte" # Introduction major title at introduction end, level 1 (if single level)
     | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
     | "rem" # Remark
     )
@@ -363,11 +363,11 @@ BookIntroductionEndTitles =
         (Footnote | CrossReference | Char | Milestone | Break | [usfm:match[ahead="'\'"]] text)*
     }
 BookIntroductionEndTitles.para.style.enum = (
-      "mt" # The main title of the book (if single level)
-    | "mt1" # The main title of the book (if multiple levels)
+      "mt1" # The main title of the book (if multiple levels)
     | "mt2" # A secondary title usually occurring before the main title
     | "mt3" # A tertiary title occurring after the main title
     | "mt4" # A small secondary title sometimes occuring within parentheses
+    |  "mt" # The main title of the book (if single level)
     | "imt" # Introduction major title, level 1 (if single level)
     | "imt1" # Introduction major title, level 1 (if multiple levels)
     | "imt2" # Introduction major title, level 2
@@ -381,7 +381,7 @@ Para =
     element para {
         [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)+
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
 Para.para.style.enum = (
       "restore" # Comment about when text was restored
@@ -460,7 +460,7 @@ List =
     element para {
         [usfm:grouping="8" usfm:tag[]] attribute style { List.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | ListChar | Milestone | Verse | Break | [usfm:text[]]text)+
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | ListChar | Milestone | Verse | Break | [usfm:text[]]text)*
     }
 List.para.style.enum = (
       "lh" # List header (introductory remark)
@@ -468,13 +468,13 @@ List.para.style.enum = (
     | "li2" # A list entry, level 2
     | "li3" # A list entry, level 3
     | "li4" # A list entry, level 4
-    | "li" # A list entry, level 1 (if single level)
-    | "lf" # List footer (introductory remark)
     | "lim1" # An embedded list entry, level 1 (if multiple levels)
     | "lim2" # An embedded list entry, level 2
     | "lim3" # An embedded list entry, level 3
     | "lim4" # An embedded list entry, level 4
     | "lim" # An embedded list entry, level 1 (if single level)
+    | "li" # A list entry, level 1 (if single level)
+    | "lf" # List footer (introductory remark)
     )
 
 Table = 
@@ -521,6 +521,15 @@ CharContent = (
     [usfm:ignore="true"]char.closed?,
     [usfm:text[]] text,
     ([usfm:ignore="true"] Reference | CharEmbed | Milestone | Footnote | Break |
+        [usfm:match[match="TEXTATTRIB" after="ATTRIBTEXTEND"]] text)* # Nested character <char> markup
+    )
+
+NoteCharContent = (
+    [usfm:order="2"]
+    char.link?,
+    [usfm:ignore="true"]char.closed?,
+    [usfm:text[]] text,
+    ([usfm:ignore="true"] Reference | NoteCharEmbed | Milestone | Break |
         [usfm:match[match="TEXTATTRIB" after="ATTRIBTEXTEND"]] text)* # Nested character <char> markup
     )
 
@@ -588,13 +597,21 @@ CharEmbed = (
     | CharEmbedWithAttrib
     )
 
+NoteCharEmbed = (
+    element char {
+        [usfm:stacked="true" usfm:grouping="9" usfm:tag[id="a" before="'\+'" usfm:seq="true"]] attribute style { Char.char.style.enum },
+        NoteCharContent
+        >> usfm:endtag[usfm:order="3" before="'\+'"]
+    }
+    | CharEmbedWithAttrib
+    )
+
 ListChar = (
     element char {
         [usfm:tag[id="a"]] attribute style { ListChar.char.style.enum },
         char.link?,
         char.closed?,
-        text,
-        ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | text)* # Nested character <char> markup
+        ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | Break | [usfm:text[]] text)* # Nested character <char> markup
         >> usfm:endtag[usfm:many="?"]
     }
     )
@@ -636,6 +653,7 @@ CharEmbedWithAttrib =
 CharWithAttrib.enum = (
       [usfm:propval="lemma"] "w"
     | [usfm:propval="alt"] "rb"
+    | "fig"
 )
         
 char.link =
@@ -724,9 +742,9 @@ VerseStart =
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="WS"]]
         attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
-        [usfm:tag["va"] usfm:text[] usfm:endtag["va"]]
+        [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*\s*/" "va"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
-        [usfm:tag["vp"] usfm:text[] usfm:endtag["vp"]]
+        [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*\s*/" "vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]
         attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*" } },
@@ -760,15 +778,15 @@ FootnoteChar =
         char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | CharEmbed | FootnoteVerse | [usfm:text[]] text)+
+        ([usfm:ignore="true"] Reference | NoteCharEmbed | FootnoteVerse | [usfm:text[]] text)+
         >> usfm:endtag[usfm:many="?"]
     }
 FootnoteChar.char.style.enum = (
       "fr" # The origin reference for the footnote
     | "ft" # Footnote text, Protocanon
     | "fk" # A footnote keyword
-    | "fq" # A footnote scripture quote or alternate rendering
     | "fqa" # A footnote alternate rendering for a portion of scripture text
+    | "fq" # A footnote scripture quote or alternate rendering
     | "fl" # A footnote label text item, for marking or "labelling" the type or alternate translation being provided in the note.
     | "fw" # A footnote witness list, for distinguishing a list of sigla representing witnesses in critical editions.
     | "fp" # A Footnote additional paragraph marker
@@ -830,7 +848,7 @@ Sidebar =
         attribute style { "esb" },
         category?,
         (Para | List | Table | Footnote | CrossReference)+
-        >> usfm:tag["esbe"]
+        >> usfm:tag[dump="true" "esbe"]
     }
 
 category =

@@ -4,7 +4,7 @@
          xmlns:usfm="http://usfm.bible/parse/2023"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <usfm:terminal name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A)/"/>
+  <usfm:terminal name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A|$)/"/>
   <usfm:terminal name="WSS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*/"/>
   <usfm:terminal name="TAGEND" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+|(?=[\\|]|$))/"/>
   <usfm:terminal name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\]|$)/"/>
@@ -510,6 +510,9 @@
       <value>imt2</value>
       <value>imt3</value>
       <value>imt4</value>
+      <value>imte1</value>
+      <value>imte2</value>
+      <value>imte</value>
       <value>imt</value>
       <value>ib</value>
       <value>ie</value>
@@ -536,9 +539,6 @@
       <value>is1</value>
       <value>is2</value>
       <value>is</value>
-      <value>imte1</value>
-      <value>imte2</value>
-      <value>imte</value>
       <value>iex</value>
       <value>rem</value>
     </choice>
@@ -567,11 +567,11 @@
   </define>
   <define name="BookIntroductionEndTitles.para.style.enum">
     <choice>
-      <value>mt</value>
       <value>mt1</value>
       <value>mt2</value>
       <value>mt3</value>
       <value>mt4</value>
+      <value>mt</value>
       <value>imt</value>
       <value>imt1</value>
       <value>imt2</value>
@@ -615,7 +615,7 @@
           </data>
         </attribute>
       </optional>
-      <oneOrMore>
+      <zeroOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
           <ref name="Footnote"/>
@@ -628,7 +628,7 @@
             <usfm:text/>
           </text>
         </choice>
-      </oneOrMore>
+      </zeroOrMore>
     </element>
   </define>
   <define name="Para.para.style.enum">
@@ -721,7 +721,7 @@
           </data>
         </attribute>
       </optional>
-      <oneOrMore>
+      <zeroOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
           <ref name="Footnote"/>
@@ -735,7 +735,7 @@
             <usfm:text/>
           </text>
         </choice>
-      </oneOrMore>
+      </zeroOrMore>
     </element>
   </define>
   <define name="List.para.style.enum">
@@ -745,13 +745,13 @@
       <value>li2</value>
       <value>li3</value>
       <value>li4</value>
-      <value>li</value>
-      <value>lf</value>
       <value>lim1</value>
       <value>lim2</value>
       <value>lim3</value>
       <value>lim4</value>
       <value>lim</value>
+      <value>li</value>
+      <value>lf</value>
     </choice>
   </define>
   <define name="Table">
@@ -882,6 +882,30 @@
       </zeroOrMore>
     </group>
   </define>
+  <define name="NoteCharContent">
+    <group>
+      <optional>
+        <ref name="char.link" usfm:order="2"/>
+      </optional>
+      <optional>
+        <ref name="char.closed" usfm:ignore="true"/>
+      </optional>
+      <text>
+        <usfm:text/>
+      </text>
+      <zeroOrMore>
+        <choice>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="NoteCharEmbed"/>
+          <ref name="Milestone"/>
+          <ref name="Break"/>
+          <text>
+            <usfm:match match="TEXTATTRIB" after="ATTRIBTEXTEND"/>
+          </text>
+        </choice>
+      </zeroOrMore>
+    </group>
+  </define>
   <define name="Char">
     <choice>
       <element usfm:stacked="true">
@@ -985,6 +1009,21 @@
       <ref name="CharEmbedWithAttrib"/>
     </choice>
   </define>
+  <define name="NoteCharEmbed">
+    <choice>
+      <element>
+        <name ns="">char</name>
+        <attribute usfm:stacked="true" usfm:grouping="9">
+          <usfm:tag id="a" before="&#x27;\+&#x27;" usfm:seq="true"/>
+          <name ns="">style</name>
+          <ref name="Char.char.style.enum"/>
+        </attribute>
+        <ref name="NoteCharContent"/>
+        <usfm:endtag usfm:order="3" before="&#x27;\+&#x27;"/>
+      </element>
+      <ref name="CharEmbedWithAttrib"/>
+    </choice>
+  </define>
   <define name="ListChar">
     <element>
       <name ns="">char</name>
@@ -999,7 +1038,6 @@
       <optional>
         <ref name="char.closed"/>
       </optional>
-      <text/>
       <zeroOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
@@ -1007,7 +1045,9 @@
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="Break"/>
-          <text/>
+          <text>
+            <usfm:text/>
+          </text>
         </choice>
       </zeroOrMore>
       <usfm:endtag usfm:many="?"/>
@@ -1107,6 +1147,7 @@
     <choice>
       <value usfm:propval="lemma">w</value>
       <value usfm:propval="alt">rb</value>
+      <value>fig</value>
     </choice>
   </define>
   <define name="char.link">
@@ -1315,9 +1356,9 @@
       </attribute>
       <optional>
         <attribute>
-          <usfm:tag>va</usfm:tag>
+          <usfm:tag dump="true">va</usfm:tag>
           <usfm:text/>
-          <usfm:endtag>va</usfm:endtag>
+          <usfm:endtag after="/\*\s*/">va</usfm:endtag>
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
@@ -1327,9 +1368,9 @@
       </optional>
       <optional>
         <attribute>
-          <usfm:tag>vp</usfm:tag>
+          <usfm:tag dump="true">vp</usfm:tag>
           <usfm:text/>
-          <usfm:endtag>vp</usfm:endtag>
+          <usfm:endtag after="/\*\s*/">vp</usfm:endtag>
           <name ns="">pubnumber</name>
           <data type="string">
             <param name="minLength">1</param>
@@ -1400,7 +1441,7 @@
       <oneOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
-          <ref name="CharEmbed"/>
+          <ref name="NoteCharEmbed"/>
           <ref name="FootnoteVerse"/>
           <text>
             <usfm:text/>
@@ -1415,8 +1456,8 @@
       <value>fr</value>
       <value>ft</value>
       <value>fk</value>
-      <value>fq</value>
       <value>fqa</value>
+      <value>fq</value>
       <value>fl</value>
       <value>fw</value>
       <value>fp</value>
@@ -1525,7 +1566,7 @@
           <ref name="CrossReference"/>
         </choice>
       </oneOrMore>
-      <usfm:tag>esbe</usfm:tag>
+      <usfm:tag dump="true">esbe</usfm:tag>
     </element>
   </define>
   <define name="category">
