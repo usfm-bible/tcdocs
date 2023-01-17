@@ -26,6 +26,7 @@ class UsfmParser:
         self.back = backend
         self.doc = doc
         self.defines = {}
+        self.vars = {}
         self.parse()
         self.idcount = 1
         self.groups = []
@@ -64,6 +65,11 @@ class UsfmParser:
             elif e.tag == relaxns+"start":
                 self.start = e
 
+    def expandvars(self, s):
+        if s is None:
+            return None
+        return re.sub(r"\$\{(.*?)\}", lambda m:self.vars.get(m.group(1), "'"+m.group(1)+"'")[1:-1], s)
+
     def proc_children(self, e, res, skip=True, start=0, parent=None, index=0, **kw):
         for i, c in enumerate(sorted(e, key=lambda x:int(x.get(f"{usfmns}order", 0)))):
             if i < start:
@@ -73,7 +79,7 @@ class UsfmParser:
                 base = self.aliases[t]
                 newe = c.makeelement(base.tag, base.attrib.copy())
                 for k, v in c.attrib.items():
-                    newe.set(k, v)
+                    newe.set(k, self.expandvars(v))
                 if c.text is not None and len(c.text) and hasattr(base, 'default'):
                     newe.set(base.default, c.text)
                 c = newe
@@ -111,9 +117,11 @@ class UsfmParser:
     def terminal(self, e, res, **kw):
         n = e.get('name', None)
         v = e.get('value', None)
+        val = self.expandvars(v)
         if n is None or v is None:
             return res
-        self.back.add_terminal(n, v, res)
+        self.vars[n] = val
+        self.back.add_terminal(n, val, res)
 
     def attribute(self, e, res, **kw):
         name = e.findtext(f"./{relaxns}name") or "*"
@@ -145,7 +153,7 @@ class UsfmParser:
         res = self.back.append_seq(res, forced=e.get(f"{usfmns}seq", "false") in ("true", "1"))
         cont = True
         for a in ('before', 'match', 'after'):
-            v = e.get(a, None)
+            v = self.expandvars(e.get(a, None))
             if a == "match":
                 dump = e.get('dump', 'false') in ("true", "1")
                 capture = None
@@ -186,7 +194,7 @@ class UsfmParser:
     def matchpair(self, e, res, **kw):
         res = self.back.append_seq(res, forced=e.get(f"{usfmns}seq", "false") in ("true", "1"))
         for a in ('before', 'first', 'between', 'second', 'after'):
-            v = e.get(a, None)
+            v = self.expandvars(e.get(a, None))
             if v is not None:
                 res = self.back.match(v, res, dump=a not in ('first', 'second'))
         return res

@@ -6,14 +6,18 @@ namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 namespace usfm = "http://usfm.bible/parse/2023"
 
-usfm:terminal [name="WS" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]|\u000D\u000A|$)/"]
-usfm:terminal [name="WSS" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*/"]
-usfm:terminal [name="TAGEND" value="/(?:[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]+|(?=[\\|]|$))/"]
-usfm:terminal [name="TEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\]|$)/"]
-usfm:terminal [name="ATTRIBTEXTEND" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*(?=[\\|])/"]
-usfm:terminal [name="NL" value="/\u000D?\u000A|\u000D/"]
+usfm:terminal [name="ws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"]
+usfm:terminal [name="wsnnl" value="/[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"]
+usfm:terminal [name="nl" value="/\u000D?\u000A/"]
+usfm:terminal [name="NL" value="/${nl}|\u000D/"]
+usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"]
+usfm:terminal [name="WSS" value="/${ws}*/"]
+usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"]
+usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"]
+usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"]
 usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
 usfm:terminal [name="TEXTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"]
+usfm:terminal [name="PIPE" value="/${WSS}\|${WSS}/"]
 usfm:alias [name="usfm:tag" def="match" usfm:match [before="'\'" after="TAGEND"]]
 usfm:alias [name="usfm:endtag" def="match" usfm:match [before="'\'" matchref="a" after="'*'" dump="true"]]
 usfm:alias [name="usfm:text" def="match" usfm:match[match="TEXT" after="TEXTEND"]]
@@ -70,9 +74,9 @@ BookIdentification =
     element book {
         [usfm:grouping="13" usfm:order="-1" usfm:match[]]
         attribute code { BookIdentification.book.code.enum }, # e.g. code="GEN"
-        [usfm:order="-2" usfm:tag[usfm:seq="true"]]
+        [usfm:order="-2" usfm:tag[before="/${ws}*\\/" usfm:seq="true"]]
         attribute style { "id" },
-        [usfm:seq="true"]([usfm:match[before="/[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*/" match="/[^\\\n\r]*/"]]
+        [usfm:seq="true"]([usfm:match[before="/${wsnnl}*/" match="/[^\\\n\r]*/"]]
         (text)? # Brief description of the project (optional)
         >> usfm:match[match="NL" dump="true"])
     }
@@ -218,7 +222,7 @@ PeripheralDivision =
     [usfm:stacked="true" usfm:match[usfm:order="-3" before="'\periph '"]]
     element periph {
         [usfm:match[match="TEXT" after="ATTRIBTEXTEND" usfm:seq="true"]] attribute alt { text }?,
-        [usfm:grouping="15" usfm:match[before="'|'" after="NL" usfm:seq="true"]]
+        [usfm:grouping="15" usfm:match[before="PIPE" after="NL" usfm:seq="true"]]
         attribute id { 
               Peripheral.FRT.periph.id.enum
             | Peripheral.INT.periph.id.enum
@@ -535,8 +539,8 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (( [usfm:match[match="'|'" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
-            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
+        (( [usfm:match[match="PIPE" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
+            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
             )?,
            [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
@@ -629,9 +633,10 @@ CharWithAttrib =
     element char {
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:match[match="'|'" dump="true"]] ( [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
-            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
+        [usfm:match[match="PIPE" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
@@ -641,9 +646,10 @@ Figure =
     element figure {
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { "fig" },
         char.closed?,
-        [usfm:match[match="'|'" dump="true"]] ( [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
-            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
+        [usfm:match[match="PIPE" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
@@ -651,12 +657,14 @@ Figure =
 
 CharEmbedWithAttrib =
     element char {
-        [usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
+        [usfm:order="-2" usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:order="3" usfm:match[match="'|'"]] ( [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute * {xsd:string}
-            | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]] attribute * {xsd:string})+
+        [usfm:order="3" usfm:match[match="PIPE" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+                attribute * {xsd:string})+
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
         )?,
-        [usfm:text[]] text? # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4" before="'\+'"]
     }
 
@@ -666,7 +674,7 @@ CharWithAttrib.enum = (
 )
         
 char.link =
-    [usfm:match[match="'|'"] usfm:properties[interleave_between="WS"]]
+    [usfm:match[match="PIPE" dump="true"] usfm:properties[interleave_between="WS"]]
     ([usfm:match[before="'href=&quot;'" after="'&quot;'"]]attribute link-href { xsd:string 
         { pattern = "(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)" } }? # The resource being linked to as a URI
     & [usfm:match[before="'title=&quot;'" after="'&quot;'"]]
@@ -680,13 +688,13 @@ char.closed =
 Milestone = (
     (element ms {
         # [usfm:tag[after="/\s?(?=[\\|])/"]] attribute style { xsd:string {pattern="[a-z][a-z0-9-]*" }},
-        [usfm:tag[after="/\s?(?=[\\|])/"]] attribute style { Milestone.enum },
+        [usfm:tag[after="/${ws}?(?=[\\|])/"]] attribute style { Milestone.enum },
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
-        [usfm:match[match="'|'" dump="true"]]
-        (  [usfm:name-override="style" usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
-         | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;\s*/"]]
-             attribute * {xsd:string})+
+        [usfm:match[match="PIPE" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+                attribute * {xsd:string})+
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
         )?,
         empty
     }
@@ -711,6 +719,8 @@ Milestone.enum = (
     | "qt5-e"
     | [usfm:propval="who"] "qts"
     | "qte"
+    | [usfm:propval="who"] "qt-s"
+    | "qt-e"
 )
 
 Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
@@ -755,9 +765,9 @@ VerseStart =
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="WS"]]
         attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
-        [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*\s*/" "va"]]
+        [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" "va"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
-        [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*\s*/" "vp"]]
+        [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*${WSS}/" "vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]
         attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*" } },

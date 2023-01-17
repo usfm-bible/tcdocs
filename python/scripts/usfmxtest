@@ -61,14 +61,14 @@ def prettyxml(node, last=None, indent="", width=2):
     if node.tag in ('para', 'sidebar', 'table', 'chapter', 'usx', 'book'):
         if last is not None:
             last.tail = (last.tail or "").rstrip() + "\n" + indent
-        if len(node):
-            node[-1].tail = (node[-1].tail or "").rstrip() + "\n" + indent
-        elif node.text:
-            node.text = (node.text or "").rstrip() + "\n" + indent
+#        if len(node):
+#            node[-1].tail = (node[-1].tail or "").rstrip() + "\n" + indent
+#        elif node.text:
+#            node.text = (node.text or "").rstrip() + "\n" + indent
         #node.tail = "\n" + indent + (node.tail or "").lstrip()
         indent += " " * width
-        if len(node) or (node.text is not None and len(node.text)):
-            node.text = "\n" + indent + (node.text or "").lstrip()
+        #if len(node) or (node.text is not None and len(node.text)):
+        #    node.text = "\n" + indent + (node.text or "").lstrip()
     last = None
     for e in node:
         prettyxml(e, last=last, indent=indent, width=width)
@@ -210,7 +210,7 @@ def cleanup(node):
             if node[i].tail is not None:
                 node[i].tail = node[i].tail.rstrip()
         elif node.text is not None:
-            node.text = node.text.strip()
+            node.text = re.sub(r"^[ \t\n]*(.*?)[ \t\n]*$", r"\1", node.text)
     elif node.tag in ('chapter', 'verse'):
         node.text = None
     elif node.tag == "figure":
