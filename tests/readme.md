@@ -34,5 +34,8 @@ included in a file. The following keys are considered to have meaning.
   is `fail` then the data is expected to not pass validation and if there is only a
   origin.sfm and no origin.xml, then the origin.sfm is not expected to parse
   correctly. If it is empty then the result is indeterminate. But ideally it should be set.
- - **tags**. A space separated list of single word tags to allow
-   subcategorisation of tests.
+ - **tags**. A space separated list of single word tags to allow sub-categorisation of tests.
+   Currently, the defined tags are:
+   - `exemplar`: short example if use of a marker within a particular context or not.
+   - `stress`: Indicates lots of data; trying to break things.
+   - `sample`: A complete book or chapters. Denotes non-truncated real world examples.
