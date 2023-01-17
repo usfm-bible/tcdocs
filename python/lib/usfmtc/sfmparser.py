@@ -514,7 +514,7 @@ class UsfmParserBackend:
         context.append(res)
         return context
 
-    def add_terminal(self, name, value, **kw):
+    def add_terminal(self, name, value, context, **kw):
         if value[0] in "\"'":
             res = lambda **kw: String(regex.escape(value[1:-1]), **kw)
         elif value[0].startswith("/"):

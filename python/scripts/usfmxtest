@@ -57,21 +57,41 @@ def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwar
     if elem.tail:
         write(et._escape_cdata(elem.tail))
 
+def prettyxml(node, last=None, indent="", width=2):
+    if node.tag in ('para', 'sidebar', 'table', 'chapter', 'usx', 'book'):
+        if last is not None:
+            last.tail = (last.tail or "").rstrip() + "\n" + indent
+        if len(node):
+            node[-1].tail = (node[-1].tail or "").rstrip() + "\n" + indent
+        elif node.text:
+            node.text = (node.text or "").rstrip() + "\n" + indent
+        #node.tail = "\n" + indent + (node.tail or "").lstrip()
+        indent += " " * width
+        if len(node) or (node.text is not None and len(node.text)):
+            node.text = "\n" + indent + (node.text or "").lstrip()
+    last = None
+    for e in node:
+        prettyxml(e, last=last, indent=indent, width=width)
+        last = e
+
 def getindex(base):
     parent = base.get(' parent')
+    if parent is None:
+        return -1, None
     return list(parent).index(base), parent
 
 def getprevious(base):
     i, parent = getindex(base)
-    return parent[i-1] if i > 0 else None
+    return parent[i-1] if parent is not None and i > 0 else None
 
 def addprevious(base, el):
     i, parent = getindex(base)
-    parent.insert(i, el)
+    if parent is not None:
+        parent.insert(i, el)
 
 def getnext(base):
     i, parent = getindex(base)
-    return parent[i+1] if i < len(parent) - 1 else None
+    return parent[i+1] if parent is not None and i < len(parent) - 1 else None
 
 def addvids(lastp, endp, base, v, endv, atend=False):
     res = lastp
@@ -191,6 +211,8 @@ def cleanup(node):
                 node[i].tail = node[i].tail.rstrip()
         elif node.text is not None:
             node.text = node.text.strip()
+    elif node.tag in ('chapter', 'verse'):
+        node.text = None
     for c in node:
         cleanup(c)
 
@@ -226,10 +248,13 @@ def etCmp(a, b):
 
 def proconedir(d, sfmp, args):
     meta = {}
-    print(f"{d}: ", end='', flush=True)
     doc = et.parse(os.path.join(d, "metadata.xml"))
     for e in doc.getroot():
         meta[e.tag] = e.text
+    tags = set((meta.get('tags', "") or "").split())
+    if (not len(args.exclude) or tags & args.exclude) and (not len(tags) or not tags & args.include):
+        return
+    print(f"{d}: ", end='', flush=True)
     try:
         result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
     except NoParseError:
@@ -241,11 +266,12 @@ def proconedir(d, sfmp, args):
         addesids(xml)
         cell_aligns(xml)
         cleanup(xml)
-        if args.print:
-            writexml(sys.stdout, xml)
         if os.path.exists(os.path.join(d, "origin.xml")):
             testxml = et.parse(os.path.join(d, "origin.xml"))
             passed = etCmp(xml, testxml.getroot())
+        if args.print:
+            prettyxml(xml)
+            writexml(sys.stdout, xml)
     else:
         passed = False
     expected = meta.get('validated', 'pass') == 'pass'
@@ -257,10 +283,17 @@ parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
+parser.add_argument("-x","--exclude",action="append",default=[],help="Exclude test if tag present")
+parser.add_argument("-i","--include",action="append",default=[],help="Override excludes to include test if tag present")
 parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
 parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
 parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree")
 args = parser.parse_args()
+
+if "clarify" not in args.include:
+    args.exclude.append("clarify")
+args.exclude = set(args.exclude)
+args.include = set(args.include)
 
 if args.logging:
     try:
