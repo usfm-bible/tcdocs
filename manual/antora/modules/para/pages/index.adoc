@@ -4,28 +4,32 @@
 
 Description:: Paragraph-level container.
 Syntax::
-* *USFM:* `+\[para@style]_{content}+`
-* *USX:* `+<para style="[para@style]" vid="{vid}">{content}</para>+`
-`para@style`::: Paragraph type
+* *USFM:* `+\{para.style}_{content}+`
+* *USX:* `+<para style="{para.style}" vid="{vid}">{content}</para>+`
+`para.style`:::
 include::../nav.adoc[tag=nav-topcat]
-`vid`::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be one of `[bookCode]`. Chapter:verse separator is always a colon '`:`'.
+`vid`::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. The Chapter + verse separator is always a colon '`:`'.
 *** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 `content`::: Paragraph content
 
-== Diagram
+== Diagrams
 
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/p_rail.svg[]
-
-=== USX
+USX::
++
 image:schema/p_usx.svg[]
+======
 
 == Child Elements
 
 * xref:note:index.adoc[Notes]
-** Footnotes - [xref:note:footnote/index.adoc[Footnote]]
-** Cross References - [xref:note:crossref/index.adoc[CrossReference]]
-* Characters - [xref:char:index.adoc[Char]]
-* Milestones
-* Figures - [xref:fig:fig.adoc[Figure]]
-* Verses - [xref:cv:v.adoc[Verse]]
+** xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
+** xref:note:crossref/index.adoc[Cross References] `[CrossReference]`
+* xref:char:index.adoc[Characters] `[Char]`
+* xref:ms:index.adoc[Milestones] `[Milestone]`
+* xref:fig:fig.adoc[Figures] `[Figure]`
+* xref:cv:v.adoc[Verses] `[Verse]`

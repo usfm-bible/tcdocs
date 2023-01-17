@@ -20,19 +20,14 @@ Syntax::
 Added:: 2.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Acts 15.24 (CEV)
-[source#src-para-pmo_1,usfm,highlight=4]
+[source#src-usfm-para-pmo_1,usfm,highlight=6]
 ----
 \p
 \v 22 The apostles, the leaders, and all the church members decided to send 
@@ -45,13 +40,39 @@ who are followers of the Lord in Antioch, Syria, and Cilicia.
 \v 24 We have heard that some people from here have terribly upset you by what 
 they said. But we did not send them!
 ----
+USX::
++
+.Acts 15.24 (CEV)
+[source#src-usx-para-pmo_1,xml,highlight=8]
+----
+<para style="p">
+  <verse number="22" style="v" sid="ACT 15:22"/>The apostles, the leaders, and all
+  the church members decided to send some men to Antioch along with Paul and
+  Barnabas. They chose Silas and Judas Barsabbas, who were two leaders of the
+  Lord's followers. <verse eid="ACT 15:22"/>
+  <verse number="23" style="v" sid="ACT 15:23"/>They wrote a letter that said:
+  </para>
+<para style="pmo" vid="ACT 15:23">We apostles and leaders send friendly greetings
+  to all of you Gentiles who are followers of the Lord in Antioch, Syria, and
+  Cilicia.<verse eid="ACT 15:23"/></para>
+<para style="pm">
+  <verse number="24" style="v" sid="ACT 15:24"/>We have heard that some people
+  from here have terribly upset you by what they said. But we did not send them!
+  <verse eid="ACT 15:24"/></para>
+----
+======
 
 image::para/pmo_1.jpg[Acts 15.24 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

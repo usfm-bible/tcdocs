@@ -21,19 +21,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Revelation 17.5 (CEV)
-[source#src-para-pc_1,usfm,highlight=3]
+[source#src-usfm-para-pc_1,usfm,highlight=3]
 ----
 \v 4 The woman was dressed in purple and scarlet robes, and she wore jewelry 
 made of gold, precious stones, and pearls. In her hand she held a gold cup 
@@ -45,13 +40,37 @@ THING ON EARTH.
 \v 6 I could tell that the woman was drunk on the blood of God's people who 
 had given their lives for Jesus. This surprising sight amazed me, ...
 ----
+USX::
++
+.Revelation 17.5 (CEV)
+[source#src-usx-para-pc_1,xml,highlight=7]
+----
+  ...
+  <verse number="4" style="v" sid="REV 17:4"/>The woman was dressed in purple and
+  scarlet robes, and she wore jewelry made of gold, precious stones, and pearls.
+  In her hand she held a gold cup filled with the filthy and nasty things she had
+  done. <verse eid="REV 17:4"/><verse number="5" style="v" sid="REV 17:5"/>On her
+  forehead a mysterious name was written:</para>
+<para style="pc" vid="REV 17:5">I AM THE GREAT CITY OF BABYLON, THE MOTHER OF
+  EVERY IMMORAL AND FILTHY THING ON EARTH.<verse eid="REV 17:5"/></para>
+<para style="m">
+  <verse number="6" style="v" sid="REV 17:6"/>I could tell that the woman was
+  drunk on the blood of God's people who had given their lives for Jesus. This
+  surprising sight amazed me, ...<verse eid="REV 17:6"/></para>
+----
+======
 
 image::para/pc_1.jpg[Revelation 17.5 (CEV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

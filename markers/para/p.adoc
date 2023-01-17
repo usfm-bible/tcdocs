@@ -13,7 +13,6 @@ endif::[]
 
 == Summary
 
-Type of:: xref:para:index.adoc[Paragraph]
 Description:: Regular paragraph.
 // tag::spec[]
 Added:: 1.0
@@ -22,8 +21,8 @@ Syntax::
 * *USFM:* `+\p_{content}+`
 * *USX:* `+<para style="p">{content}</para>+`
 
-
 == Examples
+
 [tabs]
 ======
 USFM::
@@ -81,6 +80,7 @@ image::para/p_1.jpg[Mark 1.1-4 (GNT),300]
 
 == Properties
 
+StyleType:: xref:para:index.adoc[Paragraph]
 OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular

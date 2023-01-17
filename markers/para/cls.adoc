@@ -20,32 +20,44 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Colossians 4.18 (GNT)
-[source#src-para-cls_1,usfm,highlight=3]
+[source#src-usfm-para-cls_1,usfm,highlight=4]
 ----
 \p
 \v 18 With my own hand I write this: \sig Greetings from Paul\sig*. Do not 
 forget my chains!
 \cls May God's grace be with you.
 ----
+USX::
++
+.Colossians 4.18 (GNT)
+[source#src-usx-para-cls_1,xml,highlight=4]
+----
+<para style="p">
+  <verse number="18" style="v" sid="COL 4:18"/>With my own hand I write this: 
+  <char style="sig">Greetings from Paul</char>. Do not forget my chains!</para>
+<para style="cls" vid="COL 4:18">May God's grace be with you.
+  <verse eid="COL 4:18"/></para>
+----
+======
 
 image::para/cls_1.jpg[Colossians 4.18 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Act 15.24-27,28-29 (CEV)
-[source#src-para-pm_1,usfm,highlight=2;6]
+[source#src-usfm-para-pm_1,usfm,highlight=3;11]
 ----
 \pmo We apostles and leaders send friendly greetings to all of you Gentiles 
 who are followers of the Lord in Antioch, Syria, and Cilicia.
@@ -48,13 +43,41 @@ same things that we are writing.
 \v 28 The Holy Spirit has shown us that we should not place any extra burden 
 on you...
 ----
+USX::
++
+.Act 15.24-27,28-29 (CEV)
+[source#src-usx-para-pm_1,xml,highlight=3;14]
+----
+<para style="pmo">We apostles and leaders send friendly greetings to all of you
+  Gentiles who are followers of the Lord in Antioch, Syria, and Cilicia.</para>
+<para style="pm">
+  <verse number="24" style="v" sid="ACT 15:24"/>We have heard that some people
+  from here have terribly upset you by what they said. But we did not send them! 
+  <verse eid="ACT 15:24"/><verse number="25" style="v" sid="ACT 15:25"/>So we met
+  together and decided to choose some men and to send them to you along with our
+  good friends Barnabas and Paul. <verse eid="ACT 15:25"/>
+  <verse number="26" style="v" sid="ACT 15:26"/>These men have risked their lives 
+  for our Lord Jesus Christ. <verse eid="ACT 15:26"/>
+  <verse number="27" style="v" sid="ACT 15:27"/>We are also sending Judas and Silas, 
+  who will tell you in person the same things that we are writing.
+  <verse eid="ACT 15:27"/></para>
+<para style="pm">
+  <verse number="28" style="v" sid="ACT 15:28"/>The Holy Spirit has shown us that
+  we should not place any extra burden on you...<verse eid="ACT 15:28"/></para>
+----
+======
 
 image::para/pm_1.jpg[15.24-27 and 28-29 (CEV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -1,3 +1,3 @@
-= Paragraph types
+= Body Paragraphs
 
 include::../../nav.adoc[tag=nav-paragraphs]

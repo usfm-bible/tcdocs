@@ -12,7 +12,6 @@ endif::[]
 
 == Summary
 
-Type of:: xref:para:index.adoc[Paragraph]
 Description:: Letter opening.
 // tag::spec[]
 Added:: 3.0
@@ -57,8 +56,9 @@ USX::
   <verse eid="ROM 1:1" /></para>
 <para style="p">
   <verse number="2" style="v" sid="ROM 1:2" />The Good News was promised long 
-  ago by God through his prophets, as written in the Holy Scriptures. ... 
+  ago by God through his prophets, as written in the Holy Scriptures. 
   <verse eid="ROM 1:2" />
+  ...
   <verse number="6" style="v" sid="ROM 1:6" />This also includes you who are 
   in Rome, whom God has called to belong to Jesus Christ.<verse eid="ROM 1:6" />
   </para>
@@ -74,6 +74,7 @@ image::para/po_1.jpg[Romans 1.1 and 7 (GNT),600]
 
 == Properties
 
+StyleType:: xref:para:index.adoc[Paragraph]
 OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
