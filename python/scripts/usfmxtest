@@ -213,6 +213,11 @@ def cleanup(node):
             node.text = node.text.strip()
     elif node.tag in ('chapter', 'verse'):
         node.text = None
+    elif node.tag == "figure":
+        src = node.get("src", None)
+        if src is not None:
+            del node.attrib['src']
+            node.set('file', src)
     for c in node:
         cleanup(c)
 
