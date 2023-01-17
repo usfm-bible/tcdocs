@@ -18,7 +18,6 @@ alljobs = {
     #"Figure":               ("fig",),
     "Footnote":             ("f", tuple(), ("category", )),
     "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
-    "FootnoteReference":    ("ref",),
     "List":                 ("list", ("List.para.style.enum",)),
     "ListChar":             ("listchar", ("+char.closed", "ListChar.char.style.enum",)),
     "Milestone":            ("ms", ("MilestoneWithAttrib.enum", "MilestoneWithAttrib.ms.style.qt")),

@@ -32,6 +32,7 @@ class UsfmParser:
         self.ids = {}
         self.groupings = []
         self.elementlist = []
+        self.nodes = []
 
     def parseRef(self, name, flattens=set(), flattenall=False):
         self.flattens = flattens
@@ -86,6 +87,12 @@ class UsfmParser:
                         break
         return res
 
+    def push_element(self, val):
+        self.nodes.append(val)
+
+    def pop_element(self):
+        return self.nodes.pop()
+
 # ---- Tag methods ---
 
     def alias(self, e, res, **kw):
@@ -106,7 +113,7 @@ class UsfmParser:
         v = e.get('value', None)
         if n is None or v is None:
             return res
-        self.back.add_terminal(n, v)
+        self.back.add_terminal(n, v, res)
 
     def attribute(self, e, res, **kw):
         name = e.findtext(f"./{relaxns}name") or "*"
@@ -425,6 +432,7 @@ CSS_STYLE = '''
 class RailRoad:
     def __init__(self):
         self.terminals = {}
+        self.defines = {}
 
     class WrappedRail:
         def __init__(self, content, parent):
@@ -447,6 +455,8 @@ class RailRoad:
             self.swap = swap
             self.forced = forced
             self.kw = kw
+            self.propmap = {}
+
         def asRail(self):
             content = []
             for x in self:
@@ -550,7 +560,7 @@ class RailRoad:
         context.append(self.WrappedRail(rr.Terminal(txt), context))
         return context
 
-    def terminal(self, name,  value, **kw):
+    def terminal(self, name,  context, **kw):
         context.append(self.WrappedRail(rr.NonTerminal(name), context))
         return context
 
@@ -558,7 +568,7 @@ class RailRoad:
         context.append(self.WrappedRail(rr.Terminal("\u21D0 {}".format(chr(0x278A + index))), context))
         return context
 
-    def add_terminal(self, name, value, **kw):
+    def add_terminal(self, name, value, context, **kw):
         self.terminals[name] = value
 
     def add_define(self, e, name, **kw):
@@ -567,7 +577,7 @@ class RailRoad:
         return res
 
     def ref(self, name, res, **kw):
-        return self.terminal(n, res)
+        return self.terminal(name, res)
 
     def end_ref(self, e, name, **kw):
         pass
