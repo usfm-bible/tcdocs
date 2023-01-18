@@ -14,9 +14,7 @@ endif::[]
 
 Description:: Indented paragraph. Used in some texts for discourse sections.
 * The variable `#` represents the level of indent.
-ifdef::env-antora[]
 - See also: xref:para:paragraphs/pm.adoc[pm]
-endif::env-antora[]
 Syntax::
 * *USFM:* `+\pi#_{content}+`
 * *USX:* `+<para style="pi#">{content}</para>+`
@@ -24,19 +22,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew 13.37-39 (CEV)
-[source#src-para-pi_1,usfm,highlight=6]
+[source#src-usfm-para-pi_1,usfm,highlight=7]
 ----
 \s1 Jesus Explains the Story about the Weeds
 \p
@@ -50,13 +43,39 @@ the kingdom. The weed seeds are those who belong to the evil one,
 \v 39 and the one who scattered them is the devil. The harvest is the end of 
 time, and angels are the ones who bring in the harvest.
 ----
+USX::
++
+.Matthew 13.37-39 (CEV)
+[source#src-usx-para-pi_1,xml,highlight=8]
+----
+<para style="s1">Jesus Explains the Story about the Weeds</para>
+<para style="p">
+  <verse number="36" style="v" sid="MAT 13:36"/>After Jesus left the crowd and
+  went inside, his disciples came to him and said, “Explain to us the story about
+  the weeds in the wheat field.”<verse eid="MAT 13:36"/></para>
+<para style="p">
+  <verse number="37" style="v" sid="MAT 13:37"/>Jesus answered:</para>
+<para style="pi" vid="MAT 13:37">The one who scattered the good seed is the Son of
+  Man. <verse eid="MAT 13:37"/><verse number="38" style="v" sid="MAT 13:38"/>The
+  field is the world, and the good seeds are the people who belong to the kingdom.
+  The weed seeds are those who belong to the evil one, <verse eid="MAT 13:38"/>
+  <verse number="39" style="v" sid="MAT 13:39"/>and the one who scattered them is 
+  the devil. The harvest is the end of time, and angels are the ones who bring in 
+  the harvest.<verse eid="MAT 13:39"/></para>
+----
+======
 
 image::para/pi_1.jpg[Matthew 13.37-39 (CEV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

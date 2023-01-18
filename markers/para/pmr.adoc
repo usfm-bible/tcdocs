@@ -20,29 +20,37 @@ Syntax::
 Added:: 2.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
-.MissingExample
-[source#src-para-pmr_1,usfm,highlight=1]
+[tabs]
+======
+USFM::
++
+.Missing
+[source#src-usfm-para-pmr_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-para-pmr_1,usfm,highlight=1]
+----
+Missing
+----
+======
 
 image::para/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

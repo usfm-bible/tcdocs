@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: No break. Indicates that “no-break” should occur with previous paragraph (regardless of previous paragraph type). Commonly used in cases where the previous paragraph spans the chapter boundary.
+Description:: No break. Indicates that the paragraph is a continuation of the previous paragraph (regardless of previous paragraph type). Commonly used in cases where the previous paragraph spans the chapter boundary.
 Syntax::
 * *USFM:* `+\nb_{content}+`
 * *USX:* `+<para style="nb">{content}</para>+`
@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .John 7.53–8.2 (CEV)
-[source#src-para-nb_1,usfm,highlight=7]
+[source#src-usfm-para-nb_1,usfm,highlight=8]
 ----
 \p
 \v 52 Then they said, “Nicodemus, you must be from Galilee! Read the 
@@ -46,13 +41,40 @@ Scriptures, and you will find that no prophet is to come from Galilee.”
 \v 2 Then early the next morning he went to the temple. The people came 
 to him, and he sat down and started teaching them.
 ----
+USX::
++
+.John 7.53–8.2 (CEV)
+[source#src-usx-para-nb_1,xml,highlight=11]
+----
+<para style="p">
+  <verse number="52" style="v" sid="JHN 7:52"/>Then they said, “Nicodemus, you
+  must be from Galilee! Read the Scriptures, and you will find that no prophet is
+  to come from Galilee.”<verse eid="JHN 7:52"/></para>
+<para style="s1">A Woman Caught in Sin</para>
+<para style="p">
+  <verse number="53" style="v" sid="JHN 7:53"/>Everyone else went home,<verse
+    eid="JHN 7:53"/></para>
+<chapter eid="JHN 7"/>
+<chapter number="8" style="c" sid="JHN 8"/>
+<para style="nb">
+  <verse number="1" style="v" sid="JHN 8:1"/>but Jesus walked out to the Mount of
+  Olives. <verse eid="JHN 8:1"/><verse number="2" style="v" sid="JHN 8:2"/>Then
+  early the next morning he went to the temple. The people came to him, and he sat
+  down and started teaching them.<verse eid="JHN 8:2"/></para>
+----
+======
 
 image::para/nb_1.jpg[John 7.53–8.2 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

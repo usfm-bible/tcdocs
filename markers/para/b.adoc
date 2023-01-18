@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Diagram
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Psalm 3 (GNT)
-[source#src-para-b_1,usfm,highlight=9;17]
+[source#src-usfm-para-b_1,usfm,highlight=9;17]
 ----
 \c 3
 \s1 Morning Prayer for Help
@@ -58,11 +53,55 @@ TextProperties:: paragraph, publishable, vernacular
 \v 6 I am not afraid of the thousands of enemies
 \q2 who surround me on every side.
 ----
+USX::
++
+.Psalm 3 (GNT)
+[source#src-usx-para-b_1,xml,highlight=12;24]
+----
+<chapter number="3" style="c" sid="PSA 3"/>
+<para style="s1">Morning Prayer for Help</para>
+<para style="q1">
+  <verse number="1" style="v" sid="PSA 3:1"/>I have so many enemies, 
+  <char style="nd">Lord</char>,</para>
+<para style="q2" vid="PSA 3:1">so many who turn against me!<verse eid="PSA 3:1"/>
+  </para>
+<para style="q1">
+  <verse number="2" style="v" sid="PSA 3:2"/>They talk about me and say,</para>
+<para style="q2" vid="PSA 3:2">“God will not help him.”<verse eid="PSA 3:2"/>
+  </para>
+<para style="b"/>
+<para style="q1">
+  <verse number="3" style="v" sid="PSA 3:3"/>But you, O <char style="nd">Lord
+  </char>,are always my shield from danger;</para>
+<para style="q2" vid="PSA 3:3">you give me victory</para>
+<para style="q2" vid="PSA 3:3">and restore my courage.<verse eid="PSA 3:3"/>
+  </para>
+<para style="q1">
+  <verse number="4" style="v" sid="PSA 3:4"/>I call to the <char style="nd">Lord
+  </char>for help,</para>
+<para style="q2" vid="PSA 3:4">and from his sacred hill he answers me.
+  <verse eid="PSA 3:4"/></para>
+<para style="b"/>
+<para style="q1">
+  <verse number="5" style="v" sid="PSA 3:5"/>I lie down and sleep,</para>
+<para style="q2" vid="PSA 3:5">and all night long the <char style="nd">Lord
+  </char>protects me.<verse eid="PSA 3:5"/></para>
+<para style="q1">
+  <verse number="6" style="v" sid="PSA 3:6"/>I am not afraid of the thousands of
+  enemies</para>
+<para style="q2" vid="PSA 3:6">who surround me on every side.
+  <verse eid="PSA 3:6"/></para>
+----
+======
 
 image::para/b_1.jpg[Psalm 3 (GNT),300]
 
+[tabs]
+======
+USFM::
++
 .Habakkuk 3.1 (GNT)
-[source#src-para-b_2,usfm,highlight=5]
+[source#src-usfm-para-b_2,usfm,highlight=5]
 ----
 \c 3
 \s1 A Prayer of Habakkuk
@@ -73,13 +112,36 @@ image::para/b_1.jpg[Psalm 3 (GNT),300]
 \v 2 O \nd Lord\nd*, I have heard of what you have done,
 \q2 and I am filled with awe.
 ----
+USX::
++
+.Habakkuk 3.1 (GNT)
+[source#src-usx-para-b_2,xml,highlight=6]
+----
+<chapter number="3" style="c" sid="HAB 3"/>
+<para style="s1">A Prayer of Habakkuk</para>
+<para style="p">
+  <verse number="1" style="v" sid="HAB 3:1"/>This is a prayer of the prophet
+  Habakkuk:<verse eid="HAB 3:1"/></para>
+<para style="b"/>
+<para style="q1">
+  <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
+  I have heard of what you have done,</para>
+<para style="q2" vid="HAB 3:2">and I am filled with awe.<verse eid="HAB 3:2"/>
+  </para>
+----
+======
 
 image::para/b_2.jpg[Habakkuk 3.1 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
