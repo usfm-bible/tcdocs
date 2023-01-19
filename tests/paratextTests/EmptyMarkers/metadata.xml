@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <test-metadata>
-        <description>EmptyMarkers. From paratext test suite</description>
-        <validated>fail</validated>
+        <description>EmptyMarkers. From paratext MarkerCheck test suite. The marker check will find errors, but syntactically the data should pass.</description>
+        <validated>pass</validated>
         <tags></tags>
 </test-metadata>
