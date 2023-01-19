@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: List footer. Some lists include an introductory (lh) and concluding remark. They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
+Description:: List footer. Some lists include an introductory (xref:para:lists/lh.adoc[lh]) and concluding remark. They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
 Syntax::
 * *USFM:* `+\lf_{content}+`
 * *USX:* `+<para style="lf">{content}</para>+`
@@ -20,45 +20,46 @@ Syntax::
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-para-lf_1,usfm,highlight=17]
+[source#src-usfm-para-lf_1,usfm,highlight=5]
 ----
-\s1 Administration of the Tribes of Israel
-\lh
-\v 16-22 This is the list of the administrators of the tribes of Israel:
-\li1 Reuben - Eliezer son of Zichri
-\li1 Simeon - Shephatiah son of Maacah
-\li1 Levi - Hashabiah son of Kemuel
-\li1 Aaron - Zadok
-\li1 Judah - Elihu, one of King David's brothers
-\li1 Issachar - Omri son of Michael
-\li1 Zebulun - Ishmaiah son of Obadiah
-\li1 Naphtali - Jeremoth son of Azriel
-\li1 Ephraim - Hoshea son of Azaziah
-\li1 West Manasseh - Joel son of Pedaiah
+...
 \li1 East Manasseh - Iddo son of Zechariah
 \li1 Benjamin - Jaasiel son of Abner
 \li1 Dan - Azarel son of Jeroham
 \lf This was the list of the administrators of the tribes of Israel.
 ----
+USX::
++
+.1 Chronicles 27:16-22 (GNT - markup adapted)
+[source#src-usx-para-lf_1,xml,highlight=5]
+----
+...
+<para style="li1" vid="1CH 27:16-22">East Manasseh - Iddo son of Zechariah</para>
+<para style="li1" vid="1CH 27:16-22">Benjamin - Jaasiel son of Abner</para>
+<para style="li1" vid="1CH 27:16-22">Dan - Azarel son of Jeroham</para>
+<para style="lf" vid="1CH 27:16-22">This was the list of the administrators of the
+  tribes of Israel.<verse eid="1CH 27:16-22"/></para>
+----
+======
 
 image::para/lf_1.jpg[1 Chronicles 27:16-22 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

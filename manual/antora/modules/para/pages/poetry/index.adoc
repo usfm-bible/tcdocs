@@ -3,5 +3,5 @@
 include::../../nav.adoc[tag=nav-poetry]
 
 == Child Elements
-** Character Types for Poetry - [xref:char:poetry/index.adoc[PoetryChar]]
+** xref:char:poetry/index.adoc[Character Types for Poetry] `[PoetryChar]`
 include::para:/poetry/xref-char.adoc[tag=xrefs-only]

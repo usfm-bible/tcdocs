@@ -13,10 +13,8 @@ endif::[]
 == Summary
 
 Description:: Parallel passage reference(s). A list of references to parallel passages, usually added under a section heading.
-- (r) is not equivalent to (sr) which is used to mark references indicating the scope of the section.
-ifdef::env-antora[]
-- See also: xref:para:titles-sections/mr.adoc[mr], xref:para:titles-sections/sr.adoc[mr]
-endif::env-antora[]
+- xref:para:titles-sections/r.adoc[r] is not equivalent to xref:para:titles-sections/sr.adoc[sr] which is used to mark references indicating the scope of the following section.
+- See also: xref:para:titles-sections/mr.adoc[mr], xref:para:titles-sections/sr.adoc[sr]
 Syntax::
 * *USFM:* `+\sr_{content}+`
 * *USX:* `+<para style="sr">{content}</para>+`
@@ -24,19 +22,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
-TextType:: Section
-TextProperties:: paragraph, publishable, vernacular, level_#
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew 3.1 (GNT)
-[source#src-para-r_1,usfm,highlight=3]
+[source#src-usfm-para-r_1,usfm,highlight=3]
 ----
 \c 3
 \s1 The Preaching of John the Baptist
@@ -46,13 +39,33 @@ TextProperties:: paragraph, publishable, vernacular, level_#
 started preaching.
 \v 2 “Turn away from your sins,” he said, ...
 ----
+USX::
++
+.Matthew 3.1 (GNT)
+[source#src-usx-para-r_1,xml,highlight=3]
+----
+<chapter number="3" style="c" sid="MAT 3"/>
+<para style="s1">The Preaching of John the Baptist</para>
+<para style="r">(Mark 1.1-8; Luke 3.1-18; John 1.19-28)</para>
+<para style="p">
+  <verse number="1" style="v" sid="MAT 3:1"/>At that time John the Baptist came 
+  to the desert of Judea and started preaching. <verse eid="MAT 3:1"/>
+  <verse number="2" style="v" sid="MAT 3:2"/>“Turn away from your sins,” he 
+  said, ...<verse eid="MAT 3:2"/></para>
+----
+======
 
 image::para/r_1.jpg[Matthew 3.1 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular, level_#
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

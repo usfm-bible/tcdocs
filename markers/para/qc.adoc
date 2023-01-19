@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular, poetic
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Psalm 72.19 (GNT)
-[source#src-para-qc_1,usfm,highlight=8]
+[source#src-usfm-para-qc_1,usfm,highlight=8]
 ----
 \q1
 \v 18 Praise the \nd Lord\nd*, the God of Israel!
@@ -46,13 +41,42 @@ TextProperties:: paragraph, publishable, vernacular, poetic
 \q1
 \v 20 This is the end of the prayers of David son of Jesse.
 ----
+USX::
++
+.Psalm 72.19 (GNT)
+[source#src-usx-para-qc_1,xml,highlight=11]
+----
+<para style="q1">
+  <verse number="18" style="v" sid="PSA 72:18"/>Praise the 
+  <char style="nd">Lord</char>, the God of Israel!</para>
+<para style="q1" vid="PSA 72:18">He alone does these wonderful things.
+  <verse eid="PSA 72:18"/></para>
+<para style="q1">
+  <verse number="19" style="v" sid="PSA 72:19"/>Praise his glorious name 
+  forever!</para>
+<para style="q1" vid="PSA 72:19">May his glory fill the whole world.</para>
+<para style="b" vid="PSA 72:19"/>
+<para style="qc" vid="PSA 72:19">Amen! Amen!<verse eid="PSA 72:19"/></para>
+<para style="b"/>
+<para style="q1">
+  <verse number="20" style="v" sid="PSA 72:20"/>This is the end of the prayers of
+  David son of Jesse.</para>
+<para style="qr" vid="PSA 72:20">God's love never fails.<verse eid="PSA 72:20"/>
+  </para>
+----
+======
 
 image::para/qc_1.jpg[Psalm 72.19 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

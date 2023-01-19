@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: List entry. May be used to mark the entries of a structure such as the days within the creation account, or the decalogue (10 commandments).
+Description:: List entry. May be used to mark the individual entries of a list, such as the days within the creation account, the 10 commandments, or a list of offerings etc..
 * The variable `#` represents the level of indent.
 Syntax::
 * *USFM:* `+\li#_{content}+`
@@ -21,33 +21,57 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Numbers 7.84-88 (GNT)
-[source#src-para-li_1,usfm,highlight=6]
+[source#src-usfm-para-li_1,usfm,highlight=4..10]
 ----
 \p
 \v 84-88 The totals of the offerings brought by the twelve leaders for the 
 dedication of the altar were as follows:
-\li –twelve silver bowls and twelve silver basins weighing a total of 60 pounds
-\li –twelve gold dishes weighing a total of 48 ounces, filled with incense
-\li –twelve bulls, twelve rams, and twelve one-year-old lambs, plus the grain 
+\li1 –twelve silver bowls and twelve silver basins weighing a total of 60 pounds
+\li1 –twelve gold dishes weighing a total of 48 ounces, filled with incense
+\li1 –twelve bulls, twelve rams, and twelve one-year-old lambs, plus the grain 
 offerings that go with them, for the burnt offerings
-\li –twelve goats for the sin offerings
-\li –twenty-four bulls, sixty rams, sixty goats, sixty one-year-old lambs, for 
+\li1 –twelve goats for the sin offerings
+\li1 –twenty-four bulls, sixty rams, sixty goats, sixty one-year-old lambs, for 
 the fellowship offerings
 ----
+USX::
++
+.Numbers 7.84-88 (GNT)
+[source#src-usx-para-li_1,xml,highlight=5..15]
+----
+<para style="p">
+  <verse number="84-88" style="v" sid="NUM 7:84-88"/>The totals of the offerings
+  brought by the twelve leaders for the dedication of the altar were as follows:
+  </para>
+<para style="li1" vid="NUM 7:84-88">–twelve silver bowls and twelve silver basins
+  weighing a total of 60 pounds</para>
+<para style="li1" vid="NUM 7:84-88">–twelve gold dishes weighing a total of 48
+  ounces, filled with incense</para>
+<para style="li1" vid="NUM 7:84-88">–twelve bulls, twelve rams, and twelve
+  one-year-old lambs, plus the grain offerings that go with them, for the burnt
+  offerings</para>
+<para style="li1" vid="NUM 7:84-88">–twelve goats for the sin offerings</para>
+<para style="li1" vid="NUM 7:84-88">–twenty-four bulls, sixty rams, sixty goats,
+  sixty one-year-old lambs, for the fellowship offerings<verse eid="NUM 7:84-88"/>
+  </para>
+----
+======
 
 image::para/li_1.jpg[Numbers 7.84-88 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
@@ -56,5 +80,3 @@ image::para/li_1.jpg[Numbers 7.84-88 (GNT),300]
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

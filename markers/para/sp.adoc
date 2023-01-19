@@ -20,37 +20,54 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`
-TextType:: Section
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Job 3.1 (GNT)
-[source#src-para-d_1,usfm,highlight=5]
+[source#src-usfm-para-d_1,usfm,highlight=6]
 ----
 \c 3
 \s1 Job's Complaint to God
 \p
-\v 1 Finally Job broke the silence and cursed the day on which he had 
-been born.
+\v 1 Finally Job broke the silence and cursed the day on which he had been born.
 \sp Job
 \q1
 \v 2-3 O God, put a curse on the day I was born;
 \q2 put a curse on the night when I was conceived!
 ----
+USX::
++
+.Job 3.1 (GNT)
+[source#src-usx-para-d_1,xml,highlight=6]
+----
+<chapter number="3" style="c" sid="JOB 3"/>
+<para style="s1">Job's Complaint to God</para>
+<para style="p">
+  <verse number="1" style="v" sid="JOB 3:1"/>Finally Job broke the silence and
+  cursed the day on which he had been born.<verse eid="JOB 3:1"/></para>
+<para style="sp">Job</para>
+<para style="q1">
+  <verse number="2-3" style="v" sid="JOB 3:2-3"/>O God, put a curse on the day I
+  was born;</para>
+<para style="q2" vid="JOB 3:2-3">put a curse on the night when I was conceived!
+  <verse eid="JOB 3:2-3"/></para>
+----
+======
 
 image::para/sp_1.jpg[Job 3.1 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

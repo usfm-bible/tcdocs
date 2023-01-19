@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Descriptive title ("Hebrew subtitle"). Sometimes found in Psalms under a section heading (s) (e.g. “For the director of Music”).
+Description:: Descriptive title ("Hebrew subtitle"). Sometimes found in Psalms under a section heading (xref:para:titles-sections/s.adoc[s]) (e.g. “For the director of Music”).
 Syntax::
 * *USFM:* `+\d_{content}+`
 * *USX:* `+<para style="d">{content}</para>+`
@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Psalm 3.1 (NRSV)
-[source#src-para-d_1,usfm,highlight=3]
+[source#src-usfm-para-d_1,usfm,highlight=3]
 ----
 \c 3
 \s1 Trust in God under Adversity
@@ -44,13 +39,37 @@ TextProperties:: paragraph, publishable, vernacular
 \v 2 many are saying to me,
 \q2 “There is no help for you in God.” \qs Selah\qs*
 ----
+USX::
++
+.Psalm 3.1 (NRSV)
+[source#src-usx-para-d_1,xml,highlight=3]
+----
+<chapter number="3" style="c" sid="PSA 3"/>
+<para style="s1">Trust in God under Adversity</para>
+<para style="d">A Psalm of David, when he fled from his son Absalom.</para>
+<para style="q1">
+  <verse number="1" style="v" sid="PSA 3:1"/>O <char style="nd">Lord</char>, how
+  many are my foes!</para>
+<para style="q2" vid="PSA 3:1">Many are rising against me;<verse eid="PSA 3:1"/>
+  </para>
+<para style="q1">
+  <verse number="2" style="v" sid="PSA 3:2"/>many are saying to me,</para>
+<para style="q2" vid="PSA 3:2">“There is no help for you in God.” 
+  <char style="qs">Selah</char><verse eid="PSA 3:2"/></para>
+----
+======
 
 image::para/d_1.jpg[Psalm 3.1 (NRSV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Hebrew note. A Hebrew musical performance comment similar in content to the Hebrew Psalm descriptive titles (d), but placed at the end of the poetic section.
+Description:: Hebrew note. A Hebrew musical performance comment similar in content to the Hebrew Psalm descriptive titles (xref:para:titles-sections/d.adoc[d]), but placed at the end of the poetic section.
 Syntax::
 * *USFM:* `+\qd_{content}+`
 * *USX:* `+<para style="qd">{content}</para>+`
@@ -20,19 +20,14 @@ Syntax::
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular, poetic
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Habakkuk 3:19 (NIV)
-[source#src-para-qd_1,usfm,highlight=9]
+[source#src-usfm-para-qd_1,usfm,highlight=9]
 ----
 \q1
 \v 18 yet I will rejoice in the \nd Lord\nd*,
@@ -44,13 +39,40 @@ TextProperties:: paragraph, publishable, vernacular, poetic
 \b
 \qd For the director of music. On my stringed instruments.
 ----
+USX::
++
+.Habakkuk 3:19 (NIV)
+[source#src-usx-para-qd_1,xml,highlight=13]
+----
+<para style="q1">
+  <verse number="18" style="v" sid="HAB 3:18"/>yet I will rejoice in the 
+  <char style="nd">Lord</char>,</para>
+<para style="q2" vid="HAB 3:18">I will be joyful in God my Savior.<verse
+    eid="HAB 3:18"/></para>
+<para style="b"/>
+<para style="q1">
+  <verse number="19" style="v" sid="HAB 3:19"/>The Sovereign <char style="nd">Lord
+  </char>is my strength;</para>
+<para style="q2" vid="HAB 3:19">he makes my feet like the feet of a deer,</para>
+<para style="q2" vid="HAB 3:19">he enables me to tread on the heights.</para>
+<para style="b" vid="HAB 3:19"/>
+<para style="qd" vid="HAB 3:19">For the director of music. On my stringed
+  instruments.<verse eid="HAB 3:19"/></para>
+----
+======
 
 image::para/qd_1.jpg[Habakkuk 3:19 (NIV),300]
+
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

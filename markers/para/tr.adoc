@@ -13,13 +13,11 @@ endif::[]
 == Summary
 
 Description:: Table row start.
-ifdef::env-antora[]
 [NOTE]
 .Syntax notes
 ====
 In *USFM*, a table is composed by a series of paragraphs marked with `\tr`. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container. See xref:para:tables/index.adoc[Tables].
 ====
-endif::env-antora[]
 Syntax::
 * *USFM:* `+\tr_{content}+`
 * *USX:* `+<table><row style="tr" vid="{vid}">{content}</row>...</table>+`
@@ -30,23 +28,19 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
+== Examples
+
+See the examples provided in the xref:char:tables/index.adoc[character/cell types for table rows] descriptions.
+
 == Properties
 
-StyleType:: Paragraph
+StyleType:: xref:para:index.adoc[Paragraph]
 OccursUnder:: `[BookIntroductionContent]`, `[ChapterContent]`, `[SidebarContent]`, `[PeripheralContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
-== Examples
-
-See examples provided in the xref:char:tables/index.adoc[character/cell types for table rows] descriptions.
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

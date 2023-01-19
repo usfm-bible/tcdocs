@@ -13,13 +13,11 @@ endif::[]
 == Summary
 
 Description:: USFM/USX version specification. Identifies the USFM/USX version which an editor or processor must support to sucessfully handle markup within the file.
-ifdef::env-antora[]
 [NOTE]
 .USX syntax note
 ====
 USX represents most USFM xref:para:index.adoc[paragraph] types a corresponding <para> element. For `\usfm`, the `+{version}+` number becomes the `+@version+` attribute value for the `+<usx>+` root element.
 ====
-endif::env-antora[]
 Syntax::
 * *USFM:* `+\usfm_{version}+`
 * *USX:* `+<usx version="{version}">+`

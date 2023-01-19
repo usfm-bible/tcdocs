@@ -13,10 +13,8 @@ endif::[]
 == Summary
 
 Description:: Section reference range. References added under a section heading to indicate the scope of the section.
-- (sr) is not equivalent to (r) which is used to mark parallel references.
-ifdef::env-antora[]
+- xref:para:titles-sections/sr.adoc[sr] is not equivalent to xref:para:titles-sections/r.adoc[r] which is used to mark parallel references.
 - See also: xref:para:titles-sections/mr.adoc[mr]
-endif::env-antora[]
 Syntax::
 * *USFM:* `+\sr_{content}+`
 * *USX:* `+<para style="sr">{content}</para>+`
@@ -24,19 +22,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
-TextType:: Section
-TextProperties:: paragraph, publishable, vernacular, level_#
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Proverbs 22.17 (GNT - markup adapted)
-[source#src-para-sr_1,usfm,highlight=2]
+[source#src-usfm-para-sr_1,usfm,highlight=2]
 ----
 \s1 The Thirty Wise Sayings
 \sr (22.17--24.22)
@@ -44,13 +37,30 @@ TextProperties:: paragraph, publishable, vernacular, level_#
 \v 17 Listen, and I will teach you what the wise have said. 
 Study their teachings, ...
 ----
+USX::
++
+.Proverbs 22.17 (GNT - markup adapted)
+[source#src-usx-para-sr_1,xml,highlight=2]
+----
+<para style="s1">The Thirty Wise Sayings</para>
+<para style="sr">(22.17--24.22)</para>
+<para style="p">
+  <verse number="17" style="v" sid="PRO 22:17"/>Listen, and I will teach you what
+  the wise have said. Study their teachings, ...<verse eid="PRO 22:17"/></para>
+----
+======
 
 image::para/sr_1.jpg[Proverbs 22.17 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular, level_#
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

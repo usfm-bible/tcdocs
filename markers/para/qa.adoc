@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular, poetic
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Psalm 119 (NIV)
-[source#src-para-qa_1,usfm,highlight=2;7]
+[source#src-usfm-para-qa_1,usfm,highlight=2;7]
 ----
 \c 119
 \qa Aleph
@@ -45,13 +40,39 @@ TextProperties:: paragraph, publishable, vernacular, poetic
 \v 9 How can a young man keep his way pure?
 \q2 By living according to your word.
 ----
+USX::
++
+.Psalm 119 (NIV)
+[source#src-usx-para-qa_1,xml,highlight=2;9]
+----
+<chapter number="119" style="c" sid="PSA 119"/>
+<para style="qa">Aleph</para>
+<para style="q1">
+  <verse number="1" style="v" sid="PSA 119:1"/>Blessed are they whose ways are
+  blameless,</para>
+<para style="q2" vid="PSA 119:1">who walk according to the law of the
+  <char style="nd">Lord</char>.<verse eid="PSA 119:1"/></para>
+...
+<para style="qa">Beth</para>
+<para style="q1">
+  <verse number="9" style="v" sid="PSA 119:9"/>How can a young man keep his way
+  pure?</para>
+<para style="q2" vid="PSA 119:9">By living according to your word.
+  <verse eid="PSA 119:9"/></para>
+----
+======
 
 image::para/qa_1.jpg[Psalm 119 (NIV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

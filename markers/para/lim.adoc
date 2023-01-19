@@ -21,19 +21,14 @@ Syntax::
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Nehemiah 7.4-25 (NIV)
-[source#src-para-lim_1,usfm,highlight=6]
+[source#src-usfm-para-lim_1,usfm,highlight=19;21;23;25;27;29;31]
 ----
 \s1 The List of the Exiles Who Returned
 \p
@@ -69,8 +64,64 @@ Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):
 \v 14 of Zaccai - 760
 ...
 ----
+USX::
++
+.Nehemiah 7.4-25 (NIV)
+[source#src-usx-para-lim_1,xml,highlight=22;25;28;31;34;37;40]
+----
+<para style="s1">The List of the Exiles Who Returned</para>
+<para style="p">
+  <verse number="4" style="v" sid="NEH 7:4"/>Now the city was large and spacious,
+  but there were few people in it, and the houses had not yet been rebuilt. 
+  <verse eid="NEH 7:4"/><verse number="5" style="v" sid="NEH 7:5"/>So my God put 
+  it into my heart to assemble the nobles, the officials and the common people for
+  registration by families. I found the genealogical record of those who had been
+  the first to return. This is what I found written there:<verse eid="NEH 7:5"/>
+  </para>
+<para style="b"/>
+<para style="pm">
+  <verse number="6" style="v" sid="NEH 7:6"/>These are the people of the province
+  who came up from the captivity of the exiles whom Nebuchadnezzar king of Babylon
+  had taken captive (they returned to Jerusalem and Judah, each to his own town, 
+  <verse eid="NEH 7:6"/><verse number="7" style="v" sid="NEH 7:7"/>in company with
+  Zerubbabel, Jeshua, Nehemiah, Azariah, Raamiah, Nahamani, Mordecai, Bilshan,
+  Mispereth, Bigvai, Nehum and Baanah):</para>
+<para style="b" vid="NEH 7:7"/>
+<para style="pm" vid="NEH 7:7">The list of the men of Israel:<verse eid="NEH 7:7"/>
+  </para>
+<para style="b"/>
+<para style="lim1">
+  <verse number="8" style="v" sid="NEH 7:8"/>the descendants of Parosh - 2,172
+  <verse eid="NEH 7:8"/></para>
+<para style="lim1">
+  <verse number="9" style="v" sid="NEH 7:9"/>of Shephatiah - 372
+  <verse eid="NEH 7:9"/></para>
+<para style="lim1">
+  <verse number="10" style="v" sid="NEH 7:10"/>of Arah - 652
+  <verse eid="NEH 7:10"/></para>
+<para style="lim1">
+  <verse number="11" style="v" sid="NEH 7:11"/>of Pahath-Moab (through the line of
+  Jeshua and Joab) - 2,818<verse eid="NEH 7:11"/></para>
+<para style="lim1">
+  <verse number="12" style="v" sid="NEH 7:12"/>of Elam - 1,254
+  <verse eid="NEH 7:12"/></para>
+<para style="lim1">
+  <verse number="13" style="v" sid="NEH 7:13"/>of Zattu - 845
+  <verse eid="NEH 7:13"/></para>
+<para style="lim1">
+  <verse number="14" style="v" sid="NEH 7:14"/>of Zaccai - 760
+  <verse eid="NEH 7:14"/></para>
+----
+======
 
 image::para/lim_1.jpg[Nehemiah 7.4-25 (NIV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
@@ -79,5 +130,3 @@ image::para/lim_1.jpg[Nehemiah 7.4-25 (NIV),300]
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

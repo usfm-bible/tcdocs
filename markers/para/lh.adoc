@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: List header. Some lists include an introductory and concluding remark (lf). They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
+Description:: List header. Some lists include an introductory and concluding remark (xref:para:lists/lf.adoc[lf]). They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
 Syntax::
 * *USFM:* `+\lh_{content}+`
 * *USX:* `+<para style="lh">{content}</para>+`
@@ -20,19 +20,14 @@ Syntax::
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-para-lh_1,usfm,highlight=2]
+[source#src-usfm-para-lh_1,usfm,highlight=2]
 ----
 \s1 Administration of the Tribes of Israel
 \lh
@@ -40,25 +35,35 @@ TextProperties:: paragraph, publishable, vernacular
 \li1 Reuben - Eliezer son of Zichri
 \li1 Simeon - Shephatiah son of Maacah
 \li1 Levi - Hashabiah son of Kemuel
-\li1 Aaron - Zadok
-\li1 Judah - Elihu, one of King David's brothers
-\li1 Issachar - Omri son of Michael
-\li1 Zebulun - Ishmaiah son of Obadiah
-\li1 Naphtali - Jeremoth son of Azriel
-\li1 Ephraim - Hoshea son of Azaziah
-\li1 West Manasseh - Joel son of Pedaiah
-\li1 East Manasseh - Iddo son of Zechariah
-\li1 Benjamin - Jaasiel son of Abner
-\li1 Dan - Azarel son of Jeroham
-\lf This was the list of the administrators of the tribes of Israel.
+...
 ----
+USX::
++
+.1 Chronicles 27:16-22 (GNT - markup adapted)
+[source#src-usx-para-lh_1,xml,highlight=2]
+----
+<para style="s1">Administration of the Tribes of Israel</para>
+<para style="lh">
+  <verse number="16-22" style="v" sid="1CH 27:16-22"/>This is the list of the
+  administrators of the tribes of Israel:</para>
+<para style="li1" vid="1CH 27:16-22">Reuben - Eliezer son of Zichri</para>
+<para style="li1" vid="1CH 27:16-22">Simeon - Shephatiah son of Maacah</para>
+<para style="li1" vid="1CH 27:16-22">Levi - Hashabiah son of Kemuel</para>
+...
+----
+======
 
 image::para/lh_1.jpg[1 Chronicles 27:16-22 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

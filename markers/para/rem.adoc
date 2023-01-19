@@ -13,12 +13,10 @@ endif::[]
 == Summary
 
 Description:: Remarks/comments. For adding brief comments by a translator, consultant, or supporter. This content is not a type of footnote, and is not intended for publication. When `+\rem+` is used, it is often found at the top of a file together with other xref:para:identification/index.adoc[identification] content. However, `+\rem+` can be used for adding non-publishable remarks/comments anywhere within a text.
-ifdef::env-antora[]
 [CAUTION]
 ====
 Adding names of individuals, initials, or other personal information directly within scripture text files is strongly discouraged.
 ====
-endif::env-antora[]
 Syntax::
 * *USFM:* `+\rem_{content}+`
 * *USX:* `+<para style="rem">{content}</para>+`

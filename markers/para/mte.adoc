@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily idential to the main title (mt).
+Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily idential to the main title (xref:para:titles-sections/mt.adoc[mt]).
 * The variable `#` represents the level of division.
 Syntax::
 * *USFM:* `+\mte#_{content}+`
@@ -21,29 +21,37 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Title
-TextProperties:: paragraph, publishable, vernacular, level_#
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-para-mte_1,usfm,highlight=1]
+[source#src-usfm-para-mte_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-para-mte_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::para/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Title
+TextProperties:: paragraph, publishable, vernacular, level_#
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

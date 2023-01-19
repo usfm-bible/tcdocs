@@ -21,19 +21,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
-TextType:: VerseText
-TextProperties:: paragraph, publishable, vernacular, poetic, level_#
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Habakkuk 3.1-2 (GNT)
-[source#src-para-q1_1,usfm,highlight=6;9;11]
+[source#src-usfm-para-q1_1,usfm,highlight=6;9;11]
 ----
 \c 3
 \s1 A Prayer of Habakkuk
@@ -47,11 +42,36 @@ TextProperties:: paragraph, publishable, vernacular, poetic, level_#
 \q2 the great deeds you used to do.
 \q1 Be merciful, even when you are angry.
 ----
+USX::
++
+.Habakkuk 3.1-2 (GNT)
+[source#src-usx-para-q1_1,xml,highlight=7;11;13]
+----
+<chapter number="3" style="c" sid="HAB 3"/>
+<para style="s1">A Prayer of Habakkuk</para>
+<para style="p">
+  <verse number="1" style="v" sid="HAB 3:1"/>This is a prayer of the prophet
+  Habakkuk:<verse eid="HAB 3:1"/></para>
+<para style="b"/>
+<para style="q1">
+  <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
+  I have heard of what you have done,</para>
+<para style="q2" vid="HAB 3:2">and I am filled with awe.</para>
+<para style="q1" vid="HAB 3:2">Now do again in our times</para>
+<para style="q2" vid="HAB 3:2">the great deeds you used to do.</para>
+<para style="q1" vid="HAB 3:2">Be merciful, even when you are angry.
+  <verse eid="HAB 3:2"/></para>
+----
+======
 
 image::para/q1_1.jpg[Habakkuk 3.1 (GNT),300]
 
+[tabs]
+======
+USFM::
++
 .Habakkuk 3.1-2 (GNT)
-[source#src-para-q2_1,usfm,highlight=3;5]
+[source#src-usfm-para-q2_1,usfm,highlight=3;5]
 ----
 \q1
 \v 2 O \nd Lord\nd*, I have heard of what you have done,
@@ -60,13 +80,33 @@ image::para/q1_1.jpg[Habakkuk 3.1 (GNT),300]
 \q2 the great deeds you used to do.
 \q1 Be merciful, even when you are angry.
 ----
+USX::
++
+.Habakkuk 3.1-2 (GNT)
+[source#src-usx-para-q2_1,xml,highlight=4;6]
+----
+<para style="q1">
+  <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
+  I have heard of what you have done,</para>
+<para style="q2" vid="HAB 3:2">and I am filled with awe.</para>
+<para style="q1" vid="HAB 3:2">Now do again in our times</para>
+<para style="q2" vid="HAB 3:2">the great deeds you used to do.</para>
+<para style="q1" vid="HAB 3:2">Be merciful, even when you are angry.
+  <verse eid="HAB 3:2"/></para>
+----
+======
 
 image::para/q2_1.jpg[Habakkuk 3.2 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular, poetic, level_#
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
