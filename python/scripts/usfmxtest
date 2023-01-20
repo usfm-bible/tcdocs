@@ -260,9 +260,11 @@ def proconedir(d, sfmp, args):
     if (not len(args.exclude) or tags & args.exclude) and (not len(tags) or not tags & args.include):
         return
     print(f"{d}: ", end='', flush=True)
+    imsg = ""
     try:
         result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
-    except NoParseError:
+    except NoParseError as e:
+        imsg = " {} at {}".format(e.msg, e.state.pos)
         result = None
     if result is not None:
         if (args.debug & 1) != 0:
@@ -281,7 +283,7 @@ def proconedir(d, sfmp, args):
         passed = False
     expected = meta.get('validated', 'pass') == 'pass'
     res = passed == expected
-    print("{} ({} {})".format("Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail"))
+    print("{} ({} {}){}".format("Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg))
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")

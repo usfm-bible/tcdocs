@@ -99,10 +99,11 @@ class Parser:
                 except NoParseError as e:
                     good = False
                     rese = e
-                logger.debug('{}ing[{}/{}:{}.{}{}->{}] {} at {} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
+                    res = None
+                logger.debug('{}ing[{}/{}:{}.{}{}->{}] {} at {}->{} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
                         self.to, self.index, kw.get('index', ""), s.gs.cstack, repr(self),
                         getattr(self, 'name', 'UNK'),
-                        s.pos, s()[:10].replace("\n", "\\n")))
+                        s.pos, (res[1].pos if res is not None else "?"), s()[:10].replace("\n", "\\n")))
                 if rese is not None:
                     raise(rese)
                 return res
@@ -120,11 +121,18 @@ class Parser:
     def parse(self, s):
         """State -> b"""
         try:
-            (tree, _) = self.run(s)
+            (tree, finals) = self.run(s)
         except NoParseError as e:
             if len(s()):
-                tok = s()
+                end = e.state().find("\n")
+                if end == 0:
+                    end = e.state()[1:].find("\n") + 1
+                tok = e.state()[:end] if end >= 0 else e.state()
                 raise NoParseError('%s: %s' % (e.msg, tok), e.state)
+        if len(finals()):
+            end = finals().find("\n")
+            tok = finals()[:end] if end >= 0 else finals()
+            raise NoParseError("Incomplete match: {}".format(tok), finals)
         return tree
 
     def asstr(self, **kw):

@@ -371,7 +371,7 @@ BookIntroductionEndTitles.para.style.enum = (
     | "mt2" # A secondary title usually occurring before the main title
     | "mt3" # A tertiary title occurring after the main title
     | "mt4" # A small secondary title sometimes occuring within parentheses
-    |  "mt" # The main title of the book (if single level)
+    | "mt"  # The main title of the book (if single level)
     | "imt" # Introduction major title, level 1 (if single level)
     | "imt1" # Introduction major title, level 1 (if multiple levels)
     | "imt2" # Introduction major title, level 2
@@ -801,7 +801,7 @@ FootnoteChar =
         char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | NoteCharEmbed | FootnoteVerse | [usfm:text[]] text)+
+        ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)+
         >> usfm:endtag[usfm:many="?"]
     }
 FootnoteChar.char.style.enum = (
@@ -822,15 +822,6 @@ FootnoteChar.char.style.enum = (
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text; abbreviations
     )
-
-FootnoteVerse =
-    element char {
-        [usfm:tag[id="b"]]
-        attribute style { "fv" },
-        [usfm:text[]]
-        text
-        >> usfm:endtag[matchref="b"]
-    }
 
 CrossReference =
     element note {
