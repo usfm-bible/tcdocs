@@ -14,6 +14,7 @@ class GlobalState:
         self.refs = {}
         self.defstack = []
         self.cstack = []
+        self.lasterror = None
 
     def _ensure(self, index):
         if index >= len(self.captures):
@@ -120,19 +121,25 @@ class Parser:
 
     def parse(self, s):
         """State -> b"""
+        def getcontext(s):
+            end = s.find("\n")
+            if end == 0:
+                end = s[1:].find("\n") + 1
+            tok = s[:end] if end >= 0 else s
+            return tok
         try:
             (tree, finals) = self.run(s)
         except NoParseError as e:
             if len(s()):
-                end = e.state().find("\n")
-                if end == 0:
-                    end = e.state()[1:].find("\n") + 1
-                tok = e.state()[:end] if end >= 0 else e.state()
+                tok = getcontext(e.state())
                 raise NoParseError('%s: %s' % (e.msg, tok), e.state)
         if len(finals()):
-            end = finals().find("\n")
-            tok = finals()[:end] if end >= 0 else finals()
-            raise NoParseError("Incomplete match: {}".format(tok), finals)
+            if finals.gs.lasterror is not None:
+                tok = getcontext(finals.gs.lasterror.state())
+                raise NoParseError("{}: {}".format(finals.gs.lasterror.msg, tok), finals.gs.lasterror.state)
+            else:
+                tok = getcontext(finals())
+                raise NoParseError("Incomplete match: {}".format(tok), finals)
         return tree
 
     def asstr(self, **kw):
@@ -255,6 +262,7 @@ class Group(Parser):
                         break
                     else:
                         s.gs.cstack.pop()
+                        s.gs.lasterror = e
                         raise e
                 if n is not None:
                     s.gs.defstack.pop()
