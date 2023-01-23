@@ -122,7 +122,8 @@ def addesids(root):
     if root.get('version', None) is None:
         root.set('version', '3.0')
     bkel = root.find('./book')
-    bk = bkel.get('code', 'UNK')
+    bk = bkel.get('code', 'UNK').upper()
+    bkel.set('code', bk)
     currchap = 0
     lastp = None
     for v in list(root.iter()):
@@ -362,6 +363,8 @@ if len(args.marker):
             v = et.Element('value')
             v.text = m.strip()
             e.insert(0, v)
+            if ty == 'para':
+                partypes[m] = 'Section'
 
 backendsfm = UsfmParserBackend()
 sfmproc = UsfmParser(rdoc, backendsfm)
