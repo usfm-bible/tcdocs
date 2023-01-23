@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import argparse, os, sys, logging, re
+import argparse, os, sys, logging, re, itertools
+from multiprocessing import Pool
 
 try:
     from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
@@ -61,14 +62,7 @@ def prettyxml(node, last=None, indent="", width=2):
     if node.tag in ('para', 'sidebar', 'table', 'chapter', 'usx', 'book'):
         if last is not None:
             last.tail = (last.tail or "").rstrip() + "\n" + indent
-#        if len(node):
-#            node[-1].tail = (node[-1].tail or "").rstrip() + "\n" + indent
-#        elif node.text:
-#            node.text = (node.text or "").rstrip() + "\n" + indent
-        #node.tail = "\n" + indent + (node.tail or "").lstrip()
         indent += " " * width
-        #if len(node) or (node.text is not None and len(node.text)):
-        #    node.text = "\n" + indent + (node.text or "").lstrip()
     last = None
     for e in node:
         prettyxml(e, last=last, indent=indent, width=width)
@@ -235,19 +229,19 @@ def attribnorm(d):
     banned = ('closed', 'status')
     return {k:v for k, v in d.items() if k not in banned and not k.startswith(" ")}
 
-def etCmp(a, b):
+def etCmp(a, b, at=None, bt=None):
     aattrib = attribnorm(a.attrib)
     battrib = attribnorm(b.attrib)
     if a.tag != b.tag or aattrib != battrib:
         return False
     if strnormal(a.text, a.tag) != strnormal(b.text, b.tag):
         return False
-    if strnormal(a.tail, a.tag) != strnormal(b.tail, b.tag):
+    if strnormal(a.tail, at) != strnormal(b.tail, bt):
         return False
     if len(a) != len(b):
         return False
     for ac, bc in zip(a, b):
-        if not etCmp(ac, bc):
+        if not etCmp(ac, bc, a.tag if a is not None else None, b.tag if b is not None else None):
             return False
     return True
 
@@ -257,9 +251,9 @@ def proconedir(d, sfmp, args):
     for e in doc.getroot():
         meta[e.tag] = e.text
     tags = set((meta.get('tags', "") or "").split())
-    if (not len(args.exclude) or tags & args.exclude) and (not len(tags) or not tags & args.include):
+    if len(args.exclude) and tags & args.exclude and (not len(tags) or not tags & args.include):
         return
-    print(f"{d}: ", end='', flush=True)
+    # print(f"{d}: ", end='', flush=True)
     imsg = ""
     try:
         result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
@@ -283,18 +277,21 @@ def proconedir(d, sfmp, args):
         passed = False
     expected = meta.get('validated', 'pass') == 'pass'
     res = passed == expected
-    print("{} ({} {}){}".format("Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg))
+    print("{}: {} ({} {}){}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg))
+    return res
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
+parser.add_argument("-m","--marker",action='append',default=[],help='type=mkr,mka,mkb')
+parser.add_argument("-j","--jobs",type=int,default=-1,help="Parallel jobs")
 parser.add_argument("-x","--exclude",action="append",default=[],help="Exclude test if tag present")
 parser.add_argument("-i","--include",action="append",default=[],help="Override excludes to include test if tag present")
 parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
 parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
-parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree")
+parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree, 2-alt multiproc")
 args = parser.parse_args()
 
 if "clarify" not in args.include:
@@ -323,13 +320,78 @@ for dp, dns, fns in os.walk(args.directory):
         st = os.stat(os.path.join(dp, "origin.usfm"))
         if st.st_size > args.size * 1024:
             continue
-        jobs.append(dp)
+        jobs.append((dp, st.st_size))
+
+if len(jobs) == 1:
+    args.exclude = []
+
+relaxns = "{http://relaxng.org/ns/structure/1.0}"
+enums = {
+    'bookidentification': 'BookIdentification.book.code',
+    'peripheralbookidentification': 'PeripheralBookIdentification.book.code',
+    'periperhaldividedbookidentification': 'PeripheralDividedBookIdentification.book.code',
+    'frt': 'Peripheral.FRT.periph.id',
+    'int': 'Peripheral.INT.periph.id',
+    'bak': 'Peripheral.BAK.periph.id',
+    'oth': 'Peripheral.OTH.periph.id',
+    'bookheader': 'BookHeaders.para.style',
+    'booktitles': 'BookTitle.para.style',
+    'bookintroduction': 'BookIntroduction.para.style',
+    'bookintroductionendtitles': 'BookIntroductionEndTitles.para.style',
+    'para': 'Para.para.style',
+    'list': 'List.para.style',
+    'cellalign': 'Cell.align',
+    'introchar': 'IntroChar.char.style',
+    'char': 'Char.char.style',
+    'listchar': 'ListChar.char.style',
+    'ms': 'Milestone',
+    'footnotechar': 'FootnoteChar.char.style',
+    'crossrefchar': 'CrossReferenceChar.char.style',
+}
 
 rdoc = et.parse(args.grammar)
+if len(args.marker):
+    for s in args.marker:
+        t, r = s.split('=')
+        mks = re.split(r'[,;\s]\s*', r)
+        ty = t.strip()
+        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, enums[ty]))
+        if e is None:
+            continue
+        for m in mks:
+            v = et.Element('value')
+            v.text = m.strip()
+            e.insert(0, v)
+
 backendsfm = UsfmParserBackend()
 sfmproc = UsfmParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
 
-for j in jobs:
-    proconedir(j, sfmproc.curr, args)
+if args.jobs > -1:
+    if args.jobs == 0:
+        args.jobs = os.cpu_count()
+    def doprocone(arg):
+        if arg is None:
+            return
+        return proconedir(arg, sfmproc.curr, args)
+    pool = Pool()
+    nchunks = args.jobs * 4
+    chunksize = len(jobs) // nchunks
+    chunksize += 1 if len(jobs) % nchunks else 0
+    tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
+    dojobs = []
+    for i in range(nchunks):
+        if args.debug & 2 == 0:
+            lj = [x for x in itertools.chain(*itertools.zip_longest(
+                    tjobs[i::2*nchunks], tjobs[2*nchunks-i-1::2*nchunks])) if x is not None]
+        #dojobs.extend(x for x in itertools.chain(*zip(tjobs[i::2*nchunks]+[None], tjobs[2*nchunks-i-1::2*nchunks]+[None])))
+        else:
+            lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
+        dojobs.extend(lj + ([None] * (chunksize - len(lj))))
+    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
+    results = pool.map_async(doprocone, dojobs, chunksize=chunksize)
+    results.get()
+else:
+    for j in jobs:
+        proconedir(j[0], sfmproc.curr, args)
 
