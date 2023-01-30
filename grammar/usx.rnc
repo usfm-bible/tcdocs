@@ -539,7 +539,7 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (( [usfm:match[match="PIPE" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
+        (( [usfm:match[match="PIPE" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute * {xsd:string}
             | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
             )?,
@@ -636,7 +636,7 @@ CharWithAttrib =
         [usfm:match[match="PIPE" dump="true"]]
         ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
@@ -649,7 +649,7 @@ Figure =
         [usfm:match[match="PIPE" dump="true"]]
         ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
@@ -662,7 +662,7 @@ CharEmbedWithAttrib =
         [usfm:order="3" usfm:match[match="PIPE" dump="true"]]
         ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4" before="'\+'"]
@@ -694,7 +694,7 @@ Milestone = (
         [usfm:match[match="PIPE" dump="true"]]
         ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         empty
     }

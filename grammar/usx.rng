@@ -923,7 +923,7 @@
                 <choice>
                   <attribute>
                     <usfm:match match="/[^\\=]*(?=\\)/"/>
-                    <name ns="">_default</name>
+                    <anyName/>
                     <data type="string"/>
                   </attribute>
                   <oneOrMore>
@@ -1093,7 +1093,7 @@
             <optional>
               <attribute usfm:name-override="style">
                 <usfm:match match="/[^\\=]+(?=\\)/"/>
-                <name ns="">_default</name>
+                <anyName/>
                 <data type="string"/>
               </attribute>
             </optional>
@@ -1135,7 +1135,7 @@
             <optional>
               <attribute usfm:name-override="style">
                 <usfm:match match="/[^\\=]+(?=\\)/"/>
-                <name ns="">_default</name>
+                <anyName/>
                 <data type="string"/>
               </attribute>
             </optional>
@@ -1177,7 +1177,7 @@
             <optional>
               <attribute usfm:name-override="style">
                 <usfm:match match="/[^\\=]+(?=\\)/"/>
-                <name ns="">_default</name>
+                <anyName/>
                 <data type="string"/>
               </attribute>
             </optional>
@@ -1278,7 +1278,7 @@
               <optional>
                 <attribute usfm:name-override="style">
                   <usfm:match match="/[^\\=]+(?=\\)/"/>
-                  <name ns="">_default</name>
+                  <anyName/>
                   <data type="string"/>
                 </attribute>
               </optional>
@@ -1503,22 +1503,15 @@
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
-      <choice>
-        <oneOrMore>
-          <choice>
-            <ref name="Reference" usfm:ignore="true"/>
-            <ref name="NoteCharEmbed"/>
-            <text>
-              <usfm:text/>
-            </text>
-          </choice>
-        </oneOrMore>
-        <optional>
+      <oneOrMore>
+        <choice>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="NoteCharEmbed"/>
           <text>
             <usfm:text/>
           </text>
-        </optional>
-      </choice>
+        </choice>
+      </oneOrMore>
       <usfm:endtag usfm:many="?"/>
     </element>
   </define>

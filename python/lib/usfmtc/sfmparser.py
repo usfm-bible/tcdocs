@@ -467,6 +467,8 @@ class UsfmParserBackend:
 # --- Parser backend API
 
     def attrib_start(self, parser, e, context, name, **kw):
+        if name == "*":
+            name = "_default"
         group = Group(name=name, parent=context, mode="&",
                         result=(lambda r,s: Attribute(name, r, kw.get('name-override', None))),
                         **self.get_nodename())
