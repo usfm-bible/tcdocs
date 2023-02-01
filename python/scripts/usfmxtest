@@ -8,7 +8,7 @@ try:
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
     from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
-from usfmtc.parser import UsfmParser, XmlParser
+from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
 import xml.etree.ElementTree as et
 
 allpartypes = {
@@ -367,7 +367,7 @@ if len(args.marker):
                 partypes[m] = 'Section'
 
 backendsfm = UsfmParserBackend()
-sfmproc = UsfmParser(rdoc, backendsfm)
+sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
 
 if args.jobs > -1:
