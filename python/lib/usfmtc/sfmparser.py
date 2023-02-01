@@ -41,6 +41,7 @@ class GlobalState:
     def getref(self, name):
         return self.refs.get(name)
 
+
 class State:
     def __init__(self, gs, pos=0):
         self.gs = gs
@@ -52,10 +53,13 @@ class State:
     def extend(self, offset):
         return State(self.gs, pos=self.pos + offset)
 
+
 class Group(usfmp.Group):
 
     def _returnRes(self, res, s):
         res = super()._returnRes(res, s)
+        if res is None:
+            return None
         while res is not None and len(res) == 1:
             if isinstance(res, (str, Attribute, Element)):
                 break

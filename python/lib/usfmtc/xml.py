@@ -1,9 +1,7 @@
 
 import xml.etree.ElementTree as et
 
-
 class ParentElement(et.Element):
-
     def __init__(self, tag, attrib=None, parent=None):
         et.Element.__init__(self, tag, attrib)
         self.parent = parent
