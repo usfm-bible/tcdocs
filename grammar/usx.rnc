@@ -9,7 +9,7 @@ namespace usfm = "http://usfm.bible/parse/2023"
 usfm:terminal [name="ws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"]
 usfm:terminal [name="wsnnl" value="/[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"]
 usfm:terminal [name="nl" value="/\u000D?\u000A/"]
-usfm:terminal [name="NL" value="/${nl}|\u000D/"]
+usfm:terminal [name="NL" value="/(?:${nl}|\u000D)+/"]
 usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"]
 usfm:terminal [name="WSS" value="/${ws}*/"]
 usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"]
@@ -371,7 +371,7 @@ BookIntroductionEndTitles.para.style.enum = (
     | "mt2" # A secondary title usually occurring before the main title
     | "mt3" # A tertiary title occurring after the main title
     | "mt4" # A small secondary title sometimes occuring within parentheses
-    |  "mt" # The main title of the book (if single level)
+    | "mt"  # The main title of the book (if single level)
     | "imt" # Introduction major title, level 1 (if single level)
     | "imt1" # Introduction major title, level 1 (if multiple levels)
     | "imt2" # Introduction major title, level 2
@@ -434,6 +434,9 @@ Para.para.style.enum = (
     | "ms" # A major section division heading, level 1 (if single level)
     | "mr" # A major section division references range heading
     | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
+    | "mte1" # The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
+    | "mte2" # A secondary title occurring before or after the 'ending' main title
+    | "mte" # The main title of the book repeated at the end of the book, level 1 (if single level)
     | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "r" # Parallel reference(s)
     | "s1" # A section heading, level 1 (if multiple levels)
@@ -452,9 +455,6 @@ Para.para.style.enum = (
     | "cp" # Published chapter number
     | "cl" # Chapter label used for translations that add a word such as "Chapter"
     | "cd" # Chapter Description (Publishing option D, e.g. in Russian Bibles)
-    | "mte1" # The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
-    | "mte2" # A secondary title occurring before or after the 'ending' main title
-    | "mte" # The main title of the book repeated at the end of the book, level 1 (if single level)
     | "k1" # Concordance main entry text or keyword, level 1
     | "k2" # Concordance main entry text or keyword, level 2
     | "rem" # Remark
@@ -539,7 +539,7 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (( [usfm:match[match="PIPE" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute _default {xsd:string}
+        (( [usfm:match[match="PIPE" dump="true"]] ( [usfm:match[match="/[^\\=]*(?=\\)/"]] attribute * {xsd:string}
             | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
             )?,
@@ -634,9 +634,9 @@ CharWithAttrib =
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
         [usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
@@ -647,9 +647,9 @@ Figure =
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { "fig" },
         char.closed?,
         [usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
@@ -660,9 +660,9 @@ CharEmbedWithAttrib =
         [usfm:order="-2" usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
         [usfm:order="3" usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4" before="'\+'"]
@@ -692,9 +692,9 @@ Milestone = (
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
         [usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute _default {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         empty
     }
@@ -752,7 +752,7 @@ BookChapterLabel =
     element para { 
         [usfm:tag[]]
         attribute style { "cl" }, # Chapter label for book, specified once prior to chapter 1
-        [usfm:match[ahead="/(\u000D?\u000A|\u000D)*(?=[\\][^+])"]]
+        [usfm:match[match="/[^\\]+(?=${NL})/" after="NL"]]
         text
     }
 
@@ -789,7 +789,9 @@ Footnote =
         [usfm:match[match="/\S+/" after="WS"]]
         attribute caller { text },
         category?,
-        FootnoteChar*
+        [usfm:text[]] text?,
+        FootnoteChar*,
+        [usfm:text[]] text?
         >> usfm:endtag[]
     }
 
@@ -801,7 +803,7 @@ FootnoteChar =
         char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | NoteCharEmbed | FootnoteVerse | [usfm:text[]] text)+
+        ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)+
         >> usfm:endtag[usfm:many="?"]
     }
 FootnoteChar.char.style.enum = (
@@ -822,15 +824,6 @@ FootnoteChar.char.style.enum = (
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text; abbreviations
     )
-
-FootnoteVerse =
-    element char {
-        [usfm:tag[id="b"]]
-        attribute style { "fv" },
-        [usfm:text[]]
-        text
-        >> usfm:endtag[matchref="b"]
-    }
 
 CrossReference =
     element note {

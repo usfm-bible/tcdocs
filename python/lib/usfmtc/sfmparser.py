@@ -14,6 +14,7 @@ class GlobalState:
         self.refs = {}
         self.defstack = []
         self.cstack = []
+        self.lasterror = None
 
     def _ensure(self, index):
         if index >= len(self.captures):
@@ -99,10 +100,11 @@ class Parser:
                 except NoParseError as e:
                     good = False
                     rese = e
-                logger.debug('{}ing[{}/{}:{}.{}{}->{}] {} at {} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
+                    res = None
+                logger.debug('{}ing[{}/{}:{}.{}{}->{}] {} at {}->{} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
                         self.to, self.index, kw.get('index', ""), s.gs.cstack, repr(self),
                         getattr(self, 'name', 'UNK'),
-                        s.pos, s()[:10].replace("\n", "\\n")))
+                        s.pos, (res[1].pos if res is not None else "?"), s()[:10].replace("\n", "\\n")))
                 if rese is not None:
                     raise(rese)
                 return res
@@ -119,12 +121,25 @@ class Parser:
 
     def parse(self, s):
         """State -> b"""
+        def getcontext(s):
+            end = s.find("\n")
+            if end == 0:
+                end = s[1:].find("\n") + 1
+            tok = s[:end] if end >= 0 else s
+            return tok
         try:
-            (tree, _) = self.run(s)
+            (tree, finals) = self.run(s)
         except NoParseError as e:
             if len(s()):
-                tok = s()
+                tok = getcontext(e.state())
                 raise NoParseError('%s: %s' % (e.msg, tok), e.state)
+        if len(finals()):
+            if finals.gs.lasterror is not None:
+                tok = getcontext(finals.gs.lasterror.state())
+                raise NoParseError("{}: {}".format(finals.gs.lasterror.msg, tok), finals.gs.lasterror.state)
+            else:
+                tok = getcontext(finals())
+                raise NoParseError("Incomplete match: {}".format(tok), finals)
         return tree
 
     def asstr(self, **kw):
@@ -247,6 +262,7 @@ class Group(Parser):
                         break
                     else:
                         s.gs.cstack.pop()
+                        s.gs.lasterror = e
                         raise e
                 if n is not None:
                     s.gs.defstack.pop()
@@ -451,6 +467,8 @@ class UsfmParserBackend:
 # --- Parser backend API
 
     def attrib_start(self, parser, e, context, name, **kw):
+        if name == "*":
+            name = "_default"
         group = Group(name=name, parent=context, mode="&",
                         result=(lambda r,s: Attribute(name, r, kw.get('name-override', None))),
                         **self.get_nodename())
