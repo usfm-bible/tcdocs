@@ -21,19 +21,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to Titus (CEV)
-[source#src-para-iq_1,usfm,highlight=3..9]
+[source#src-usfm-para-iq_1,usfm,highlight=3..9]
 ----
 \ip Paul also tells how we are saved:
 \ib
@@ -46,13 +41,35 @@ TextProperties:: paragraph, publishable, vernacular
 \iq2 that we have done.
 \ipr (3.4,5a)
 ----
+USX::
++
+.Introduction to Titus (CEV)
+[source#src-usx-para-iq_1,xml,highlight=3..9]
+----
+<para style="ip">Paul also tells how we are saved:</para>
+<para style="ib"/>
+<para style="iq1">God our Savior showed us</para>
+<para style="iq2">how good and kind he is.</para>
+<para style="iq1">He saved us because</para>
+<para style="iq2">of his mercy,</para>
+<para style="iq1">and not because</para>
+<para style="iq2">of any good things</para>
+<para style="iq2">that we have done.</para>
+<para style="ipr">(3.4,5a)</para>
+----
+======
 
 image::para/iq_1.jpg[Introduction to Titus (CEV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

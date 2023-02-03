@@ -2,7 +2,6 @@
 :description: Regular paragraph
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/p.adoc
 :noindex:
-:noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
@@ -14,12 +13,12 @@ endif::[]
 == Summary
 
 Description:: Regular paragraph.
-// tag::spec[]
-Added:: 1.0
-// end::spec[]
 Syntax::
 * *USFM:* `+\p_{content}+`
 * *USX:* `+<para style="p">{content}</para>+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
 
 == Examples
 
@@ -90,4 +89,3 @@ TextProperties:: paragraph, publishable, vernacular
 // end::public[]
 
 == Discussion
-

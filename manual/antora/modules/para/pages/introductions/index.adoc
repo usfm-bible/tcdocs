@@ -2,14 +2,18 @@
 
 include::../../nav.adoc[tag=nav-introductions]
 
-== Diagram
+== Diagrams
 
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/bkintro_rail.svg[]
-
-=== USX
+USX::
++
 image::schema/bkintro_usx.svg[]
+======
 
 == Child Elements
-** xref:char:introductions/index.adoc[]
+** xref:char:introductions/index.adoc[Character Types for Introductions] `[IntroChar]`
 include::para:/introductions/xref-char.adoc[tag=xrefs-only]

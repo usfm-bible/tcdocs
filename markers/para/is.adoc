@@ -21,19 +21,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: paragraph publishable vernacular level_#
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to Mark (RVE)
-[source#src-para-is_1,usfm,highlight=5]
+[source#src-usfm-para-is_1,usfm,highlight=5]
 ----
 \h SAN MARCOS
 \mt2 Evangelio según
@@ -43,13 +38,33 @@ TextProperties:: paragraph publishable vernacular level_#
 \ip Este evangelio, segundo de los libros del NT, contiene poco material que no 
 aparezca igualmente en \bk Mateo\bk* y \bk Lucas\bk*.
 ----
+USX::
++
+.Introduction to Mark (RVE)
+[source#src-usx-para-is_1,xml,highlight=5]
+----
+<para style="h">SAN MARCOS</para>
+<para style="mt2">Evangelio según</para>
+<para style="mt1">SAN MARCOS</para>
+<para style="imt1">INTRODUCCIÓN</para>
+<para style="is1">Importancia del evangelio de Marcos</para>
+<para style="ip">Este evangelio, segundo de los libros del NT, contiene poco
+  material que no aparezca igualmente en <char style="bk">Mateo</char> y 
+  <char style="bk">Lucas.</char></para>
+----
+======
 
 image::para/is_1.jpg[Introduction to Mark (RVE),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular level_#
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

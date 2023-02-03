@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Introduction outline entry. Outline entries usually end with a range of references, sometimes in parentheses. These references can be marked with the character type xref:char:introductions/ior.adoc[\ior ...\ior*].
+Description:: Introduction outline entry. Outline entries usually end with a range of references, sometimes in parentheses. These references can be marked with the character type xref:char:introductions/ior.adoc[ior].
 * The variable `#` represents the outline level.
 Syntax::
 * *USFM:* `+\io#_{content}+`
@@ -21,19 +21,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to Mark (GNT)
-[source#src-para-io_1,usfm,highlight=4..9]
+[source#src-usfm-para-io_1,usfm,highlight=4..9]
 ----
 \ip The two endings to the Gospel, which are enclosed in brackets, are 
 generally regarded as written by someone other than the author of \bk Mark\bk*
@@ -50,13 +45,41 @@ generally regarded as written by someone other than the author of \bk Mark\bk*
 \p
 \v 1 This is the Good News about Jesus Christ
 ----
+USX::
++
+.Introduction to Mark (GNT)
+[source#src-usx-para-io_1,xml,highlight=5..10]
+----
+<para style="ip">The two endings to the Gospel, which are enclosed in brackets,
+  are generally regarded as written by someone other than the author of 
+  <char style="bk">Mark</char></para>
+<para style="iot">Outline of Contents</para>
+<para style="io1">The beginning of the gospel (1.1-13)</para>
+<para style="io1">Jesus' public ministry in Galilee (1.14–9.50)</para>
+<para style="io1">From Galilee to Jerusalem (10.1-52)</para>
+<para style="io1">The last week in and near Jerusalem (11.1–15.47)</para>
+<para style="io1">The resurrection of Jesus (16.1-8)</para>
+<para style="io1">The appearances and ascension of the risen Lord (16.9-20)</para>
+<chapter number="1" style="c" sid="MRK 1"/>
+<para style="s">The Preaching of John the Baptist</para>
+<para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
+<para style="p">
+  <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
+  Christ<verse eid="MRK 1:1"/></para>
+----
+======
 
 image::para/io_1.jpg[Introduction to Mark (GNT),400]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

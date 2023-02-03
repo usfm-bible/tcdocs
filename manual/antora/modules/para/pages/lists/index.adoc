@@ -2,15 +2,19 @@
 
 include::../../nav.adoc[tag=nav-lists]
 
-== Diagram
+== Diagrams
 
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/list_rail.svg[]
 image::schema/listchar_rail.svg[]
-
-=== USX
+USX::
++
 image::schema/list_usx.svg[]
 image::schema/listchar_usx.svg[]
+======
 
 == Child Elements
 ** xref:char:lists/index.adoc[Character Types for Lists] `[ListChar]`

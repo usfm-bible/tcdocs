@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
-.Introduction to the Deuterocanonicals/Apocrypha (GCEV)
-[source#src-para-ipi_1,usfm,highlight=3;6]
+[tabs]
+======
+USFM::
++
+.Introduction to the Deuterocanonicals/Apocrypha (CEV)
+[source#src-usfm-para-ipi_1,usfm,highlight=3;6]
 ----
 \ip The following lists summarize each Christian tradition’s views of the 
 books here designated as Deuterocanonicals/Apocrypha.
@@ -43,13 +38,33 @@ in the CEV) ...
 of equal status with all other books of the Old Testament: Tobit, Judith, 
 Greek Esther ...
 ----
+USX::
++
+.Introduction to the Deuterocanonicals/Apocrypha (CEV)
+[source#src-usx-para-ipi_1,xml,highlight=3;6]
+----
+<para style="ip">The following lists summarize each Christian tradition’s views of
+  the books here designated as Deuterocanonicals/Apocrypha.</para>
+<para style="ipi">Many Protestants consider the following books to be Apocrypha as
+  defined above: Tobit, Judith, additions to Esther (as found in Greek Esther in
+  the CEV) ...</para>
+<para style="ipi">Roman Catholics consider the following books to be
+  Deuterocanonical and of equal status with all other books of the Old Testament:
+  Tobit, Judith, Greek Esther ...</para>
+----
+======
 
 image::para/ipi_1.jpg[Introduction to the Deuterocanonicals/Apocrypha (GCEV),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -21,31 +21,43 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[ChapterContent]`
-TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .After Romans 16 (KJV54 - BFBS)
-[source#src-para-iex_1,usfm,highlight=2]
+[source#src-usfm-para-iex_1,usfm,highlight=2]
 ----
 \v 27 to God only wise, \add be\add* glory through Jesus Christ for ever. Amen.
 \iex Written to the Romans from Corinthus, and sent by Phebe servant of the 
 church at Cenchrea.
 ----
+USX::
++
+.After Romans 16 (KJV54 - BFBS)
+[source#src-usx-para-iex_1,xml,highlight=4]
+----
+<para style="p">... <verse number="27" style="v" sid="ROM 16:27"/>to God only
+  wise, <char style="add">be</char> glory through Jesus Christ for ever. Amen.
+  <verse eid="ROM 16:27"/></para>
+<para style="iex">Written to the Romans from Corinthus, and sent by Phebe servant
+  of the church at Cenchrea.</para>
+----
+======
 
 image::para/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

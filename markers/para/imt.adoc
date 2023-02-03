@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Intoduction major title.
-* _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[\is]) when the introduction text contains numerous sub-divisions.
+* _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[is]) when the introduction text contains numerous sub-divisions.
 * The variable `#` represents the level of division.
 Syntax::
 * *USFM:* `+\imt#_{content}+`
@@ -22,19 +22,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: paragraph publishable vernacular level_#
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to Mark (RVE)
-[source#src-para-imt_1,usfm,highlight=4]
+[source#src-usfm-para-imt_1,usfm,highlight=4]
 ----
 \h SAN MARCOS
 \mt2 Evangelio según
@@ -44,13 +39,33 @@ TextProperties:: paragraph publishable vernacular level_#
 \ip Este evangelio, segundo de los libros del NT, contiene poco material que no 
 aparezca igualmente en \bk Mateo\bk* y \bk Lucas.\bk*
 ----
+USX::
++
+.Introduction to Mark (RVE)
+[source#src-usx-para-imt_1,xml,highlight=4]
+----
+<para style="h">SAN MARCOS</para>
+<para style="mt2">Evangelio según</para>
+<para style="mt1">SAN MARCOS</para>
+<para style="imt1">INTRODUCCIÓN</para>
+<para style="is1">Importancia del evangelio de Marcos</para>
+<para style="ip">Este evangelio, segundo de los libros del NT, contiene poco
+  material que no aparezca igualmente en <char style="bk">Mateo</char> y 
+  <char style="bk">Lucas.</char></para>
+----
+======
 
 image::para/imt_1.jpg[Introduction to Mark (RVE),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular level_#
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

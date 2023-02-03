@@ -20,19 +20,14 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to the GCEV
-[source#src-para-imi_1,usfm,highlight=3]
+[source#src-usfm-para-imi_1,usfm,highlight=3]
 ----
 \imt1 Preface:
 \is1 A Word about the Contemporary English Version
@@ -44,13 +39,36 @@ James Version, 1611).
 \im The most important document in the history of the English language is the 
 \bk King James Version\bk* of the Bible...
 ----
+USX::
++
+.Introduction to the GCEV
+[source#src-usx-para-imi_1,xml,highlight=3]
+----
+<para style="imt1">Preface:</para>
+<para style="is1">A Word about the Contemporary English Version</para>
+<para style="imi">
+  <char style="em">Translation it is that opens the window, to let in the light;
+  that breaks the shell, that we may eat the kernel; that puts aside the curtain,
+  that we may look into the most holy place; that removes the cover of the well,
+  that we may come by the water.</char> (“The Translators to the Reader,” King
+  James Version, 1611).</para>
+<para style="im">The most important document in the history of the English
+  language is the <char style="bk">King James Version</char> of the Bible...
+  </para>
+----
+======
 
 image::para/imi_1.jpg[Introduction to the GCEV,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

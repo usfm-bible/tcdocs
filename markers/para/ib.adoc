@@ -20,34 +20,48 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Introduction to Genesis (CEV)
+[source#src-usfm-para-ib_1,usfm,highlight=3]
+----
+\ip ... One of these brothers, Joseph, had become the governor of Egypt. But 
+Joseph knew that God would someday keep his promise to his people:
+\ib
+\imq Before Joseph died, he told his brothers, “I won't live much longer. 
+But God will take care of you and lead you out of Egypt to the land he 
+promised Abraham, Isaac, and Jacob.”
+----
+USX::
++
+.Introduction to Genesis (CEV)
+[source#src-usx-para-ib_1,xml,highlight=4]
+----
+<para style="ip">... One of these brothers, Joseph, had become the governor of
+  Egypt. But Joseph knew that God would someday keep his promise to his people:
+  </para>
+<para style="ib"/>
+<para style="imq">Before Joseph died, he told his brothers, “I won't live much
+  longer. But God will take care of you and lead you out of Egypt to the land he
+  promised Abraham, Isaac, and Jacob.”</para>
+----
+======
+
+image::para/missing.jpg[,300]
+
 == Properties
 
-StyleType:: Paragraph
+StyleType:: xref:para:index.adoc[Paragraph]
 OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
-
-== Structure
-
-== Examples
-
-.Introduction to Genesis (CEV)
-[source#src-para-ib_1,usfm,highlight=3]
-----
-... One of these brothers, Joseph, had become the governor of Egypt. But Joseph 
-knew that God would someday keep his promise to his people:
-\ib
-\imq Before Joseph died, he told his brothers, “I won't live much longer. But 
-God will take care of you and lead you out of Egypt to the land he promised 
-Abraham, Isaac, and Jacob.”
-----
-
-image::para/missing.jpg[,300]
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
