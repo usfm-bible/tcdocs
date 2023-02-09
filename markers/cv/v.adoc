@@ -14,39 +14,39 @@ endif::[]
 
 Description:: Verse number (milestone).
 Syntax::
-* *USFM:* `+\v_{vnum}_+`
-* *USX:* `+<verse style="v" number="{vnum}" [@altnumber,pubnumber,sid,eid]" />+`
-`vnum`::: Verse number
-Additional attributes:::
-** `altnumber` - Verse number for an alternate versification scheme.
-** `pubnumber` - Published verse character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential verse number used within the translation editing environment.
-** `sid`^*^ - Verse start identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse start milestone._
-*** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
-** `eid`^*^ - Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
-*** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+* *USFM:* `+\v_{number}_+`
+* *USX:* `+<verse style="v" number="{number}" @altnumber @pubnumber @sid @eid/>+`
+`number`::: Verse number
+`altnumber`::: Verse number for an alternate versification scheme.
+`pubnumber`::: Published verse character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential verse number used within the translation editing environment.
+`sid` *::: Verse start identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse start milestone._
+** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+`eid` *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
+** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
 
-== Properties
+== Diagrams
 
-StyleType:: Character
-OccursUnder:: `[ParaWithVerse]`
-TextType:: VerseNumber
-TextProperties:: verse
-
-== Diagram
-
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/verse_rail.svg[]
-
-=== USX
+USX::
++
 image:schema/verse_usx.svg[]
+======
 
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew 1.18,19 (GNT)
-[source#src-cv-v_1,usfm,highlight=4;5]
+[source#src-usfm-cv-v_1,usfm,highlight=4;7]
 ----
 \s1 The Birth of Jesus Christ
 \r (Luke 2.1-7)
@@ -57,13 +57,35 @@ going to have a baby by the Holy Spirit.
 \v 19 Joseph was a man who always did what was right, but he did not want to 
 disgrace Mary publicly; so he made plans to break the engagement privately.
 ----
+USX::
++
+.Matthew 1.18,19 (GNT)
+[source#src-usx-cv-v_1,xml,highlight=4;7;10]
+----
+<para style="s1">The Birth of Jesus Christ</para>
+<para style="r">(Luke 2.1-7)</para>
+<para style="p">
+  <verse number="18" style="v" sid="MAT 1:18"/>This was how the birth of Jesus
+  Christ took place. His mother Mary was engaged to Joseph, but before they were
+  married, she found out that she was going to have a baby by the Holy Spirit.
+  <verse eid="MAT 1:18"/><verse number="19" style="v" sid="MAT 1:19"/>Joseph was 
+  a man who always did what was right, but he did not want to disgrace Mary 
+  publicly; so he made plans to break the engagement privately.
+  <verse eid="MAT 1:19"/></para>
+----
+======
 
 image::cv/v_1.jpg[Matthew 1.18-19,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ParaWithVerse]`
+TextType:: VerseNumber
+TextProperties:: verse
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

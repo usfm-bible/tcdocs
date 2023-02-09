@@ -6,19 +6,25 @@ USFM 3 provides a general syntax for adding named attributes to character marker
 
 *In USFM*, within a character marker span an attributes list is separated from the text content by a vertical bar `|`. Attributes are listed as pairs of name and corresponding value using the syntax: `attribute="value"`. The attribute name is a single ASCII string. The value is wrapped in quotes.
 
-.USFM: Glossary word with `lemma` attribute
-[source#src-char-w-attrib,usfm]
+*In USX*, attributes are applied to elements in the standard XML syntax: `attribute="value"`.
+
+[tabs]
+======
+USFM::
++
+.Glossary word with `lemma` attribute
+[source#src-usfm-char-w-attrib,usfm]
 ----
 \w gracious|lemma="grace"\w*
 ----
-
-*In USX*, attributes are applied to elements in the standard XML syntax: `attribute="value"`.
-
-.USX: Glossary word with `lemma` attribute
+USX::
++
+.Glossary word with `lemma` attribute
 [source#src-usx-char-w-attrib_1,xml]
 ----
 <char style="w" lemma="grace">
 ----
+======
 
 Nearly all USX elements contain a required `style` attribute. For xref:para:index.adoc[<para>] and xref:char:index.adoc[<char>] elements, the `style` attribute defines the xref:para:index.adoc[paragraph] or xref:char:index.adoc[character] type.
 

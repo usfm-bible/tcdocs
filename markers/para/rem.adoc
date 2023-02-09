@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Remarks/comments. For adding brief comments by a translator, consultant, or supporter. This content is not a type of footnote, and is not intended for publication. When `+\rem+` is used, it is often found at the top of a file together with other xref:para:identification/index.adoc[identification] content. However, `+\rem+` can be used for adding non-publishable remarks/comments anywhere within a text.
+Description:: Remarks/comments. For adding brief comments by a translator, consultant, or supporter. This content is not a type of footnote, and is not intended for publication. When xref:para:identification/rem.adoc[rem] is used, it is often found at the top of a file together with other xref:para:identification/index.adoc[identification] content. However, xref:para:identification/rem.adoc[rem] can be used for adding non-publishable remarks/comments anywhere within a text.
 [CAUTION]
 ====
 Adding names of individuals, initials, or other personal information directly within scripture text files is strongly discouraged.
@@ -24,29 +24,37 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookHeaders]`
-TextType:: Other
-TextProperties:: paragraph, nonpublishable, nonvernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Any project
-[source#src-para-rem_1,usfm,highlight=1]
+[source#src-usfm-para-rem_1,usfm,highlight=1]
 ----
 \rem First draft complete, waiting for checks.
 ----
+USX::
++
+.Any project
+[source#src-usx-para-rem_1,xml,highlight=1]
+----
+<para style="rem">First draft complete, waiting for checks.</para>
+----
+======
 
 image::para/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

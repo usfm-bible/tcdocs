@@ -22,29 +22,37 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookHeaders]`
-TextType:: Other
-TextProperties:: paragraph, nonpublishable, nonvernacular, book
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew (GNT)
-[source#src-para-id_1,usfm,highlight=1]
+[source#src-usfm-para-id_1,usfm,highlight=1]
 ----
 \id MAT 41MATGNT92.SFM, Good News Translation, June 2003
 ----
+USFM::
++
+.Matthew (GNT)
+[source#src-usx-para-id_1,xml,highlight=1]
+----
+<book code="MAT" style="id">41MATGNT92.SFM, Good News Translation, June 2003</book>
+----
+======
 
 image::para/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular, book
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

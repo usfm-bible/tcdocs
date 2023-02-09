@@ -4,21 +4,25 @@
 
 Description:: Character-level container.
 Syntax::
-* *USFM:* `+\[char@style]_{content}\[char@style]*+`
-* *USX:* `+<char style="[char@style]">{content}</char>+`
-`char@style`::: Character type
+* *USFM:* `+\[@style]_{content}\[@style]*+`
+* *USX:* `+<char style="[@style]">{content}</char>+`
+`style`::: Character type
 include::../nav.adoc[tag=nav-topcat]
 `content`::: Character content
 
-== Diagram
+== Diagrams
 
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/char_rail.svg[]
-
-=== USX
+USX::
++
 image::schema/char_usx.svg[]
+======
 
 == Child Elements
 
-* Footnotes - [xref:note:footnote/index.adoc[Footnote]]
-* Characters - [xref:char:index.adoc[CharEmbed]]
+* xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
+* xref:char:index.adoc[Characters] `[Char]`

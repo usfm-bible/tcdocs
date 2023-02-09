@@ -14,39 +14,39 @@ endif::[]
 
 Description:: Chapter number (milestone).
 Syntax::
-* *USFM:* `+\c_{cnum}+`
-* *USX:* `+<chapter style="c" number="{cnum}" [@altnumber,pubnumber,sid,eid]" />+`
-`cnum`::: Chapter number
-Additional attributes:::
-** `altnumber` - Chapter number for an alternate versification scheme.
-** `pubnumber` - Published chapter character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential chapter number used within the translation editing environment.
-** `sid`^*^ - Chapter start identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter start milestone._
-*** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
-** `eid`^*^ - Chapter end identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter end milestone._
-*** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+* *USFM:* `+\c_{number}+`
+* *USX:* `+<chapter style="c" number="{number}" @altnumber @pubnumber @sid @eid/>+`
+`number` *::: Chapter number
+`altnumber`::: Chapter number for an alternate versification scheme.
+`pubnumber`::: Published chapter character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential chapter number used within the translation editing environment.
+`sid` *::: Chapter start identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter start milestone._
+** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+`eid` *::: Chapter end identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter end milestone._
+** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
 
-== Properties
+== Diagrams
 
-StyleType:: Paragraph
-OccursUnder:: `[Scripture]`
-TextType:: ChapterNumber
-TextProperties:: chapter
-
-== Diagram
-
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/chapter_rail.svg[]
-
-=== USX
+USX::
++
 image:schema/chapter_usx.svg[]
+======
 
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew 1 (GNT)
-[source#src-cv-c_1,usfm,highlight=3]
+[source#src-usfm-cv-c_1,usfm,highlight=3]
 ----
 \io1 The last week in and near Jerusalem (21.1–27.66)
 \io1 The resurrection and appearances of the Lord (28.1-20)
@@ -57,8 +57,33 @@ image:schema/chapter_usx.svg[]
 \v 1 This is the list of the ancestors of Jesus Christ, a descendant of David, 
 who was a descendant of Abraham.
 ----
+USX::
++
+.Matthew 1 (GNT)
+[source#src-usx-cv-c_1,xml,highlight=3;11]
+----
+<para style="io1">The last week in and near Jerusalem (21.1–27.66)</para>
+<para style="io1">The resurrection and appearances of the Lord (28.1-20)</para>
+<chapter number="1" style="c" sid="MAT 1"/>
+<para style="s1">The Ancestors of Jesus Christ</para>
+<para style="r">(Luke 3.23-38)</para>
+<para style="p">
+  <verse number="1" style="v" sid="MAT 1:1"/>This is the list of the ancestors of
+  Jesus Christ, a descendant of David, who was a descendant of Abraham.
+  <verse eid="MAT 1:1"/></para>
+  ...
+<chapter eid="MAT 1"/>
+----
+======
 
 image::cv/c_1.jpg[Matthew 1 (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[Scripture]`
+TextType:: ChapterNumber
+TextProperties:: chapter
 
 == Publication Issues
 

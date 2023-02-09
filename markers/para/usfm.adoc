@@ -16,7 +16,7 @@ Description:: USFM/USX version specification. Identifies the USFM/USX version wh
 [NOTE]
 .USX syntax note
 ====
-USX represents most USFM xref:para:index.adoc[paragraph] types a corresponding <para> element. For `\usfm`, the `+{version}+` number becomes the `+@version+` attribute value for the `+<usx>+` root element.
+USX represents most USFM xref:para:index.adoc[paragraph] types as a xref:para:index.adoc[<para>] element. In the case of `\usfm`, the `+{version}+` number is related to the `+{version}+` attribute value for the USX root element `+<usx>+`.
 ====
 Syntax::
 * *USFM:* `+\usfm_{version}+`
@@ -26,30 +26,41 @@ Syntax::
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookHeaders]`
-TextType:: Other
-TextProperties:: paragraph, nonpublishable, nonvernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew (GNT)
-[source#src-para-usfm_1,usfm,highlight=2]
+[source#src-usfm-para-usfm_1,usfm,highlight=2]
 ----
 \id MAT 41MATGNT92.SFM, Good News Translation, June 2003
 \usfm 3.0
 ----
+USX::
++
+.Matthew (GNT)
+[source#src-usx-para-usfm_1,xml,highlight=1]
+----
+<usx version="3.0">
+  <book code="MAT" style="id">41MATGNT92.SFM, Good News Translation, June 2003</book>
+  ...
+</usx>
+----
+======
 
 image::para/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, nonpublishable, nonvernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

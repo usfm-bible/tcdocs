@@ -19,32 +19,40 @@ Syntax::
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0
-* *Deprecated* the use of a numbered variable syntax `+\h#_{content}+`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
+* *Deprecated* the use of a numbered variable syntax `+h#+`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
 // end::spec[]
-
-== Properties
-
-StyleType:: Paragraph
-OccursUnder:: `[BookHeaders]`
-TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
-
-== Structure
 
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew (GNT)
-[source#src-para-h_1,usfm,highlight=1]
+[source#src-usfm-para-h_1,usfm,highlight=1]
 ----
 \h Matthew
 ----
+USX::
++
+.Matthew (GNT)
+[source#src-usx-para-h_1,xml,highlight=1]
+----
+<para style="h">Matthew</para>
+----
+======
 
 image::para/h_1.jpg[Matthew (GNT),300]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[BookHeaders]`
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
