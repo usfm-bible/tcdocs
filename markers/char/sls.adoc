@@ -50,12 +50,12 @@ Perse. Le texte de la lettre fut écrit en araméen, traduit en araméen.
 <para style="p">
   <verse number="8" style="v" sid="EZR 4:8"/>
   <char style="sls">Rehoum, chancelier, et Shimshaï, secrétaire, écrivirent au roi
-    Artaxerxès la lettre suivante concernant Jérusalem, savoir:</char>
+  Artaxerxès la lettre suivante concernant Jérusalem, savoir:</char>
   <verse eid="EZR 4:8"/>
   <verse number="9" style="v" sid="EZR 4:9"/><char style="sls">«Rehoum, 
-    chancelier, Shimshaï, secrétaire, et le reste de leurs collègues, ceux de Dîn, 
-    d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de Babylone, de Suse, de Déha, 
-    d'Elam,</char><verse eid="EZR 4:9"/></para>
+  chancelier, Shimshaï, secrétaire, et le reste de leurs collègues, ceux de Dîn, 
+  d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de Babylone, de Suse, de Déha, 
+  d'Elam,</char><verse eid="EZR 4:9"/></para>
 ...
 ----
 ======

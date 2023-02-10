@@ -28,7 +28,7 @@ Added:: 3.0
 USFM::
 +
 .Matthew 13.51-54 (NIV “Books of the Bible”).
-[source#src-usfm-para-s1_1,usfm,highlight=8]
+[source#src-usfm-para-sd_1,usfm,highlight=8]
 ----
 \m
 \v 51 “Have you understood all these things?” Jesus asked.
@@ -47,7 +47,7 @@ powers?” they asked.
 USX::
 +
 .Matthew 13.51-54 (NIV “Books of the Bible”).
-[source#src-usx-para-s1_1,xml,highlight=11]
+[source#src-usx-para-sd_1,xml,highlight=11]
 ----
 <para style="m">
   <verse number="51" style="v" sid="MAT 13:51"/>“Have you understood all these
@@ -62,10 +62,11 @@ USX::
 <para style="sd2"/>
 <para style="p">
   <verse number="53" style="v" sid="MAT 13:53"/>When Jesus had finished these
-  parables, he moved on from there. <verse eid="MAT 13:53"/><verse number="54"
-    style="v" sid="MAT 13:54"/>Coming to his hometown, he began teaching the
-  people in their synagogue, and they were amazed. “Where did this man get this
-  wisdom and these miraculous powers?” they asked.<verse eid="MAT 13:54"/></para>
+  parables, he moved on from there. <verse eid="MAT 13:53"/>
+  <verse number="54" style="v" sid="MAT 13:54"/>Coming to his hometown, he began 
+  teaching the people in their synagogue, and they were amazed. “Where did this 
+  man get this wisdom and these miraculous powers?” they asked.
+  <verse eid="MAT 13:54"/></para>
 ----
 ======
 

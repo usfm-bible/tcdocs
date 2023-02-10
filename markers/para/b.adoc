@@ -71,21 +71,21 @@ USX::
   </para>
 <para style="b"/>
 <para style="q1">
-  <verse number="3" style="v" sid="PSA 3:3"/>But you, O <char style="nd">Lord
-  </char>,are always my shield from danger;</para>
+  <verse number="3" style="v" sid="PSA 3:3"/>But you, O 
+  <char style="nd">Lord</char>, are always my shield from danger;</para>
 <para style="q2" vid="PSA 3:3">you give me victory</para>
 <para style="q2" vid="PSA 3:3">and restore my courage.<verse eid="PSA 3:3"/>
   </para>
 <para style="q1">
-  <verse number="4" style="v" sid="PSA 3:4"/>I call to the <char style="nd">Lord
-  </char>for help,</para>
+  <verse number="4" style="v" sid="PSA 3:4"/>I call to the 
+  <char style="nd">Lord</char>for help,</para>
 <para style="q2" vid="PSA 3:4">and from his sacred hill he answers me.
   <verse eid="PSA 3:4"/></para>
 <para style="b"/>
 <para style="q1">
   <verse number="5" style="v" sid="PSA 3:5"/>I lie down and sleep,</para>
-<para style="q2" vid="PSA 3:5">and all night long the <char style="nd">Lord
-  </char>protects me.<verse eid="PSA 3:5"/></para>
+<para style="q2" vid="PSA 3:5">and all night long the 
+  <char style="nd">Lord</char>protects me.<verse eid="PSA 3:5"/></para>
 <para style="q1">
   <verse number="6" style="v" sid="PSA 3:6"/>I am not afraid of the thousands of
   enemies</para>

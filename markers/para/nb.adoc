@@ -52,8 +52,8 @@ USX::
   to come from Galilee.”<verse eid="JHN 7:52"/></para>
 <para style="s1">A Woman Caught in Sin</para>
 <para style="p">
-  <verse number="53" style="v" sid="JHN 7:53"/>Everyone else went home,<verse
-    eid="JHN 7:53"/></para>
+  <verse number="53" style="v" sid="JHN 7:53"/>Everyone else went home,
+  <verse eid="JHN 7:53"/></para>
 <chapter eid="JHN 7"/>
 <chapter number="8" style="c" sid="JHN 8"/>
 <para style="nb">
