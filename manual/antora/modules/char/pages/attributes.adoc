@@ -1,10 +1,10 @@
 = Character Level Attributes
 
-USFM 3 provides a general syntax for adding named attributes to character markers. Attributes define additional properties for the marked content, and are a means of extending the meta-information contained within in a USFM text. USFM _formally_ defines attributes for a <<chars-with-attrib,selected set>> of current xref:char:index.adoc[character] markers.
+USFM and USX 3 provide a syntax for adding named attributes to character markers. Attributes define additional properties for the marked content, and are a means of extending the meta-information contained within in a text. USFM _formally_ defines attributes for a <<chars-with-attrib,selected set>> of current xref:char:index.adoc[character] types.
 
 == General Syntax
 
-*In USFM*, within a character marker span an attributes list is separated from the text content by a vertical bar `|`. Attributes are listed as pairs of name and corresponding value using the syntax: `attribute="value"`. The attribute name is a single ASCII string. The value is wrapped in quotes.
+*In USFM*, within a character marker span an attributes list is separated from the text content by a vertical bar `|`. Attributes are listed as pairs of name + corresponding value using the syntax: `attribute="value"`. The attribute name is a single ASCII string. The value is wrapped in quotes.
 
 *In USX*, attributes are applied to elements in the standard XML syntax: `attribute="value"`.
 
@@ -22,78 +22,103 @@ USX::
 .Glossary word with `lemma` attribute
 [source#src-usx-char-w-attrib_1,xml]
 ----
-<char style="w" lemma="grace">
+<char style="w" lemma="grace">gracious</char>
 ----
 ======
 
+[NOTE]
+====
 Nearly all USX elements contain a required `style` attribute. For xref:para:index.adoc[<para>] and xref:char:index.adoc[<char>] elements, the `style` attribute defines the xref:para:index.adoc[paragraph] or xref:char:index.adoc[character] type.
+====
 
 == Default Attribute
 
-*In USFM*, when content is supplied in the position of a marker attribute, but without an explicit attribute name, the USFM specification defines a single default. 
+*In USFM*, when content is supplied in the position of an attribute, but without an explicit attribute name, the specification defines a single default. This allows a commonly used attribute (the default) to be added with as little additional markup in the text as possible.
 
+The concept of a "default attribute" is only valid in USFM. *In USX*, attributes always need to be expressed fully as `attribute="value"` together.
+
+[tabs]
+======
+USFM::
++
 .Glossary word with un-named default `lemma` attribute
-[source#src-char-w-attrib-default,usfm]
+[source#src-usfm-char-w-attrib-default,usfm]
 ----
 \w gracious|grace\w*
 ----
-
-This allows a commonly used attribute (the default) to be expressed with as little additional markup as possible within the text.
-
-The concept of a "default attribute" is only valid in USFM. *In USX*, XML attributes are always expressed as `attribute="value"` together.
-
+USX::
++
 .USX: Glossary word with `lemma` attribute
 [source#src-usx-char-w-attrib_2,xml]
 ----
-<char style="w" lemma="grace">
+<char style="w" lemma="grace">gracious</char>
 ----
+======
 
 == Multiple Attribute Values
 
-In cases where more than one value is needed for an attribute key, the author should provide a comma separated list within the value string. Leading and trailing whitespace adjacent to the comma separators are ignored.
+In cases where more than one value is needed for an attribute key, use a comma separated list within the value string. Whitespace adjacent to the comma separators is ignored.
 
+[tabs]
+======
+USFM::
++
 .Glossary word with multiple `strong` values
-[source#src-char-w-attrib-strong,usfm]
+[source#src-usfm-char-w-attrib-strong,usfm]
 ----
 \w gracious|strong="H1234,G5485"\w*
 ----
+USX::
++
+.Glossary word with multiple `strong` values
+[source#src-usx-char-w-attrib-strong,xml]
+----
+<char style="w" strong="H1234,G5485">gracious</char>
+----
+======
 
-See the attributes for xref:char:features/w.adoc[wordlist/glossary entry] for additional examples.
+See the attributes for xref:char:features/w.adoc[wordlist/glossary entry] for other examples.
 
 == Multiple Attribute Parts
 
-In cases where an attribute value is composed of multiple parts (e.g. a compound word or phrase), the author can separate the parts using a colon `:` within the value string.
+In cases where an attribute value is composed of multiple parts (e.g. a compound word or phrase), separate the parts using a colon `:` within the value string.
 
 See the `gloss` attribute for xref:char:features/w.adoc[ruby glosses] for an example of the use of this syntax.
 
 == Backward Compatibility
 
-Pre-existing markers which formally provide attributes in USFM 3 (or newer) may continue to be used without attributes. `+\w gracious\w*+`(no attributes) remains valid USFM content.
+Pre-existing markers which formally provide attributes in USFM/USX 3 (or newer) may continue to be used without attributes. `+\w gracious\w*+` (no attributes) and `+<char style="w">gracious</char>+` remain valid.
 
 == User Defined Attributes
 
-Using the general syntax, attributes may be added to any character markers beyond the formalized set for the current version of USFM. These will not be considered strictly USFM compliant, and there is no assurance that they will be supported by compliant software tools or processes. Future versions of USFM may formally provide additional attributes.
+Using the general syntax above, attributes may be added to any character markers beyond the formalized set in the current version of the USFM/USX specification. These will not be considered strictly canonical, and software supporting USFM/USX may not process user-deined attributes. (Future versions of USFM may formally provide additional attributes within the specification.)
 
-Any user defined attributes must begin with the prefix `+x-+`.
+User defined attributes must begin with the prefix `+x-+`.
 
-.USFM: Glossary word with user defined attribute
-[source#src-char-w-attrib-user,usfm]
+[tabs]
+======
+USFM::
++
+.Glossary word with user defined attribute
+[source#src-usfm-char-w-attrib-user,usfm]
 ----
-\w gracious|x-myattr="metadata"\w*
-\w gracious|lemma="grace" x-myattr="metadata"\w*
+\w gracious|x-myattr="value"\w*
+\w gracious|lemma="grace" x-myattr="value"\w*
 ----
-
-.USX: Glossary word with user defined attribute
+USX::
++
+.Glossary word with user defined attribute
 [source#src-usx-char-w-attrib-user,xml]
 ----
-<char style="w" x-myattr="metadata">gracious</char>
-<char style="w" lemma="grace" x-myattr="metadata">gracious</char>
+<char style="w" x-myattr="value">gracious</char>
+<char style="w" lemma="grace" x-myattr="value">gracious</char>
 ----
+======
 
 [#chars-with-attrib]
-== Characters Types Providing Attributes
+== Characters Types with Attributes in USFM/USX 3.0
 
 * xref:char:features/w.adoc[w] -- `lemma`, `strong`, `srcloc`
 * xref:char:features/rb.adoc[rb] -- `gloss`
 * xref:char:notes/crossref/xt.adoc[xt] -- `link-href` (a linking attribute)
-* xref:fig:fig.adoc[figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref` (harmonizing the USFM 2.x syntax for this marker with the USFM 3 attribute specification)
+* xref:fig:fig.adoc[figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref` (harmonizing the 2.x syntax for this marker with the USFM/USX 3.x attribute specification)
