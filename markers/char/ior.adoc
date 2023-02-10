@@ -18,19 +18,14 @@ Syntax::
 * *USX:* `+<char style="ior">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent] > [IntroOutlinePara]`
-TextType:: Other
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to Mark (GNT)
-[source#src-char-ior_1,usfm,highlight=1..6]
+[source#src-usfm-char-ior_1,usfm,highlight=1..6]
 ----
 \io1 The beginning of the gospel \ior (1.1-13)\ior*
 \io1 Jesus' public ministry in Galilee \ior (1.14–9.50)\ior*
@@ -39,13 +34,37 @@ TextProperties:: publishable, vernacular
 \io1 The resurrection of Jesus \ior (16.1-8)\ior*
 \io1 The appearances and ascension of the risen Lord \ior (16.9-20)\ior*
 ----
+USX::
++
+.Introduction to Mark (GNT)
+[source#src-usx-char-ior_1,xml,highlight=2;4;6;8;10;12]
+----
+<para style="io1">The beginning of the gospel 
+  <char style="ior">(<ref loc="MRK 1:1-13">1.1-13</ref>)</char></para>
+<para style="io1">Jesus' public ministry in Galilee 
+  <char style="ior">(<ref loc="MRK 1:14-9:50">1.14–9.50</ref>)</char></para>
+<para style="io1">From Galilee to Jerusalem 
+  <char style="ior">(<ref loc="MRK 10:1-52">10.1-52</ref>)</char></para>
+<para style="io1">The last week in and near Jerusalem 
+  <char style="ior">(<ref loc="MRK 11:1-15:47">11.1–15.47</ref>)</char></para>
+<para style="io1">The resurrection of Jesus 
+  <char style="ior">(<ref loc="MRK 16:1-8">16.1-8</ref>)</char></para>
+<para style="io1">The appearances and ascension of the risen Lord 
+  <char style="ior">(<ref loc="MRK 16:9-20">16.9-20</ref>)</char></para>
+----
+======
 
 image::char/ior_1.jpg[Introduction to Mark (GNT),400]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent] > [IntroOutlinePara]`
+TextType:: Other
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

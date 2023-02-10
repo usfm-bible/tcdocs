@@ -18,29 +18,37 @@ Syntax::
 * *USX:* `+<char style="iqt">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent]`
-TextType:: Other
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-ior_1,usfm]
+[source#src-usfm-char-iqt_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-iqt_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent]`
+TextType:: Other
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
