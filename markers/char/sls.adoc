@@ -18,19 +18,14 @@ Syntax::
 * *USX:* `+<char style="sls">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Ezra 4.8—6.18 (French - NBS - Nouvelle Bible Segond)
-[source#src-char-sls_1,usfm,highlight=5..9]
+[source#src-usfm-char-sls_1,usfm,highlight=5..9]
 ----
 \v 7 Et aux jours d'Artaxerxès, Bishlam, Mitredath, Tabéel et le reste de leurs
 collègues écrivirent à Artaxerxès, roi de Perse. Le texte de la lettre fut 
@@ -43,13 +38,39 @@ collègues, ceux de Dîn, d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de
 Babylone, de Suse, de Déha, d'Elam,\sls*
 ...
 ----
+USX::
++
+.Ezra 4.8—6.18 (French - NBS - Nouvelle Bible Segond)
+[source#src-usx-char-sls_1,xml,highlight=7..8;10..13]
+----
+<verse number="7" style="v" sid="EZR 4:7"/>Et aux jours d'Artaxerxès, Bishlam,
+Mitredath, Tabéel et le reste de leurs collègues écrivirent à Artaxerxès, roi de
+Perse. Le texte de la lettre fut écrit en araméen, traduit en araméen.
+<verse eid="EZR 4:7"/></para>
+<para style="p">
+  <verse number="8" style="v" sid="EZR 4:8"/>
+  <char style="sls">Rehoum, chancelier, et Shimshaï, secrétaire, écrivirent au roi
+    Artaxerxès la lettre suivante concernant Jérusalem, savoir:</char>
+  <verse eid="EZR 4:8"/>
+  <verse number="9" style="v" sid="EZR 4:9"/><char style="sls">«Rehoum, 
+    chancelier, Shimshaï, secrétaire, et le reste de leurs collègues, ceux de Dîn, 
+    d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de Babylone, de Suse, de Déha, 
+    d'Elam,</char><verse eid="EZR 4:9"/></para>
+...
+----
+======
 
 image::char/sls_1.jpg[Ezra 4.8 to 6.18 (French - NBS - Nouvelle Bible Segond),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -18,21 +18,16 @@ Syntax::
 * *USX:* `+<char style="bk">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Introduction to Mark (GNT)
-[source#src-char-bk_1,usfm,highlight=4..5]
+[source#src-usfm-char-bk_1,usfm,highlight=4..5]
 ----
-\mt1 THE ACTS
+\mt1 The Acts
 \mt2 of the Apostles
 \is Introduction
 \ip \bk The Acts of the Apostles\bk* is a continuation of \bk The Gospel 
@@ -40,8 +35,31 @@ according to Luke\bk* Its chief purpose is to tell how Jesus' early followers,
 led by the Holy Spirit, spread the Good News about him “in Jerusalem, in all 
 of Judea and Samaria, and to the ends of the earth” (1.8).
 ----
+USX::
++
+.Introduction to Mark (GNT)
+[source#src-usx-char-bk_1,xml,highlight=5..6]
+----
+<para style="mt1">The Acts</para>
+<para style="mt2">of the Apostles</para>
+<para style="is">Introduction</para>
+<para style="ip">
+  <char style="bk">The Acts of the Apostles</char> is a continuation of 
+  <char style="bk">The Gospel according to Luke</char> Its chief purpose is to tell
+  how Jesus' early followers, led by the Holy Spirit, spread the Good News about
+  him “in Jerusalem, in all of Judea and Samaria, and to the ends of the earth”
+  (1.8).</para>
+----
+======
 
 image::char/bk_1.jpg[Introduction to Mark (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 

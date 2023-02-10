@@ -18,19 +18,14 @@ Syntax::
 * *USX:* `+<char style="nd">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Exodus 3.15 (GNT)
-[source#src-char-nd_1,usfm,highlight=3]
+[source#src-usfm-char-nd_1,usfm,highlight=4]
 ----
 \p
 \v 14 God said, “I am who I am. You must tell them: ‘The one who is called 
@@ -39,13 +34,33 @@ I AM has sent me to you.’
 the God of Abraham, Isaac, and Jacob, have sent you to them. This is my name 
 forever; this is what all future generations are to call me.
 ----
+USX::
++
+.Exodus 3.15 (GNT)
+[source#src-usx-char-nd_1,xml,highlight=5]
+----
+<para style="p">
+  <verse number="14" style="v" sid="EXO 3:14"/>God said, “I am who I am. You must
+  tell them: ‘The one who is called I AM has sent me to you.’ 
+  <verse eid="EXO 3:14"/><verse number="15" style="v" sid="EXO 3:15"/>Tell the
+  Israelites that I, the <char style="nd">Lord</char>, the God of their ancestors,
+  the God of Abraham, Isaac, and Jacob, have sent you to them. This is my name
+  forever; this is what all future generations are to call me.
+  <verse eid="EXO 3:15"/>
+----
+======
 
 image::char/nd_1.jpg[Exodus 3.15 (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

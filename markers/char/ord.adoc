@@ -18,29 +18,37 @@ Syntax::
 * *USX:* `+<char style="ord">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [CrossReferenceContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .1st
-[source#src-char-ord_1,usfm,highlight=1]
+[source#src-usfm-char-ord_1,usfm,highlight=1]
 ----
 1\ord st\ord
 ----
+USX::
++
+.1st
+[source#src-usx-char-ord_1,xml,highlight=1]
+----
+1<char style="ord">st</char>
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [CrossReferenceContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -21,8 +21,8 @@
 *** xref:features/tl.adoc[tl - Transliterated words]
 *** xref:features/w.adoc[w - Wordlist entry]
 *** xref:features/wa.adoc[wa - Aramaic wordlist entry]
-*** xref:features/wh.adoc[wg - Hebrew wordlist entry]
-*** xref:features/wg.adoc[wh - Greek wordlist entry]
+*** xref:features/wg.adoc[wg - Greek wordlist entry]
+*** xref:features/wh.adoc[wh - Hebrew wordlist entry]
 *** xref:features/wj.adoc[wj - Words of Jesus]
 *** _Deprecated_
 **** xref:features/addpn.adoc[addpn - Addition + name]

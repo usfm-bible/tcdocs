@@ -18,29 +18,37 @@ Syntax::
 * *USX:* `+<char style="wg">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-wg_1,usfm,highlight=1]
+[source#src-usfm-char-wg_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-wg_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

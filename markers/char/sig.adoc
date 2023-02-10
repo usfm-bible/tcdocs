@@ -18,27 +18,41 @@ Syntax::
 * *USX:* `+<char style="sig">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Colossians 4.18 (GNT)
-[source#src-char-sig_1,usfm,highlight=2]
+[source#src-usfm-char-sig_1,usfm,highlight=2]
 ----
 \p
 \v 18 With my own hand I write this: \sig Greetings from Paul\sig*. 
 Do not forget my chains!
 \cls May God's grace be with you.
 ----
+USX::
++
+.Colossians 4.18 (GNT)
+[source#src-usx-char-sig_1,xml,highlight=2]
+----
+<para style="p">
+  <verse number="18" style="v" sid="COL 4:18"/>With my own hand I write this: 
+  <char style="sig">Greetings from Paul</char>. Do not forget my chains!</para>
+<para style="cls" vid="COL 4:18">May God's grace be with you.
+  <verse eid="COL 4:18"/></para>
+----
+======
 
 image::char/sig_1.jpg[Colossians 4.18 (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 

@@ -18,20 +18,16 @@ Syntax::
 * *USX:* `+<char style="dc">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [CrossReferenceContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Hebrews 1.3 (Spanish DHE - footnote)
-[source#src-char-dc_1,usfm,highlight=2..3]
+[source#src-usfm-char-dc_1,usfm,highlight=3..4]
 ----
+\p ...
 \v 3 Él es el resplandor glorioso de Dios,\f c \fr 1.3: \fk Resplandor: \ft Cf.
 Jn 1.4-9,14\+dc ; también Sab 7.25-26, donde algo parecido se dice de la 
 sabiduría\+dc*.\f* la imagen misma de lo que Dios es y el que sostiene todas 
@@ -39,12 +35,37 @@ las cosas con su palabra poderosa. Después de limpiarnos de nuestros pecados,
 se ha sentado en el cielo, a la derecha del trono de Dios,
 \v 4 y ha llegado a ser superior a los ángeles, pues ha recibido en herencia un 
 título mucho más importante que el de ellos.
+...
 ----
+USX::
++
+.Hebrews 1.3 (Spanish DHE - footnote)
+[source#src-usx-char-dc_1,xml,highlight=5..6]
+----
+<para style="p">... <verse number="3" style="v" sid="HEB 1:3"/>Él es el resplandor
+  glorioso de Dios,<note caller="c" style="f">
+    <char style="fr" closed="false">1.3: </char>
+    <char style="fk" closed="false">Resplandor: </char>
+    <char style="ft" closed="false">Cf. Jn 1.4-9,14<char style="dc">; también Sab
+  7.25-26, donde algo parecido se dice de la sabiduría</char>.</char>
+  </note> la imagen misma de lo que Dios es y el que sostiene todas las cosas con 
+  su palabra poderosa. Después de limpiarnos de nuestros pecados, se ha sentado en el 
+  cielo, a la derecha del trono de Dios, <verse eid="HEB 1:3"/>
+  <verse number="4" style="v" sid="HEB 1:4"/>y ha llegado a ser superior a los ángeles, 
+  pues ha recibido en herencia un título mucho más importante que el de ellos.
+  <verse eid="HEB 1:4"/>
+  ...
+----
+======
 
 image::char/missing.jpg[,300]
 
+[tabs]
+======
+USFM::
++
 .Psalm 115.3-4 (GNT - cross references)
-[source#src-char-dc_2,usfm,highlight=5]
+[source#src-usfm-char-dc_2,usfm,highlight=5]
 ----
 \q1
 \v 3 Our God is in heaven;
@@ -54,11 +75,36 @@ image::char/missing.jpg[,300]
 9.20.\x* Their gods are made of silver and gold,
 \q2 formed by human hands.
 ----
+USX::
++
+.Psalm 115.3-4 (GNT - cross references)
+[source#src-usx-char-dc_2,xml,highlight=10]
+----
+<para style="q1">
+  <verse number="3" style="v" sid="PSA 115:3"/>Our God is in heaven;</para>
+<para style="q2" vid="PSA 115:3">he does whatever he wishes.
+  <verse eid="PSA 115:3"/></para>
+<para style="q1">
+  <verse number="4" style="v" sid="PSA 115:4"/>
+  <note caller="-" style="x">
+    <char style="xo" closed="false">115.4-8: </char>
+    <char style="xt" closed="false">Ps 135.15-18; 
+      <char style="dc">Ltj Jr 4-73; </char></char>
+    <char style="xt" closed="false">Rev 9.20.</char>
+  </note> Their gods are made of silver and gold,</para>
+<para style="q2" vid="PSA 115:4">formed by human hands.<verse eid="PSA 115:4"/>
+  </para>
+----
+======
 
 image::char/missing.jpg[,300]
 
+[tabs]
+======
+USFM::
++
 .1 Corinthians 15.51-52 (GNT - cross reference)
-[source#src-char-dc_3,usfm,highlight=2]
+[source#src-usfm-char-dc_3,usfm,highlight=2]
 ----
 \p
 \v 51-52 \x - \xo 15.51,52: \xt \+dc 2Es 6.23; \+dc*1Th 4.15-17.\x* Listen to 
@@ -67,13 +113,35 @@ shall all be changed in an instant, as quickly as the blinking of an eye. For
 when the trumpet sounds, the dead will be raised, never to die again, and we 
 shall all be changed.
 ----
+USX::
++
+.1 Corinthians 15.51-52 (GNT - cross reference)
+[source#src-usx-char-dc_3,xml,highlight=2]
+----
+<para style="p">
+  <verse number="51-52" style="v" sid="1CO 15:51-52"/>
+  <note caller="-" style="x">
+    <char style="xo" closed="false">15.51,52: </char>
+    <char style="xt" closed="false">
+      <char style="dc">2Es 6.23; </char>1Th 4.15-17.</char>
+  </note> Listen to this secret truth: we shall not all die, but when the last 
+  trumpet sounds, we shall all be changed in an instant, as quickly as the blinking 
+  of an eye. For when the trumpet sounds, the dead will be raised, never to die 
+  again, and we shall all be changed.<verse eid="1CO 15:51-52"/>
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [CrossReferenceContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

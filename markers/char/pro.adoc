@@ -22,24 +22,34 @@ Deprecated:: 3.0
 // end::spec[]
 * _Recommended alternate:_ xref:char:features/rb.adoc[rb - Ruby gloss].
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-pro_1,usfm,highlight=1]
+[source#src-usfm-char-pro_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-pro_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 

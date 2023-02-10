@@ -18,24 +18,34 @@ Syntax::
 * *USX:* `+<char style="pn">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-pn_1,usfm,highlight=1]
+[source#src-usfm-char-pn_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-pn_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 

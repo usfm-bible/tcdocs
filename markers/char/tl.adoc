@@ -18,19 +18,14 @@ Syntax::
 * *USX:* `+<char style="tl">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Matthew 27.46 (GNT)
-[source#src-char-tl_1,usfm,highlight=6..7]
+[source#src-usfm-char-tl_1,usfm,highlight=6..7]
 ----
 \s1 The Death of Jesus
 \r (Mark 15.33-41; Luke 23.44-49; John 19.28-30)
@@ -40,13 +35,34 @@ three hours.
 \v 46 At about three o'clock Jesus cried out with a loud shout, \tl “Eli, Eli, 
 lema sabachthani?”\tl* which means, “My God, my God, why did you abandon me?”
 ----
+USX::
++
+.Matthew 27.46 (GNT)
+[source#src-usx-char-tl_1,xml,highlight=7..8]
+----
+<para style="s1">The Death of Jesus</para>
+<para style="r">(Mark 15.33-41; Luke 23.44-49; John 19.28-30)</para>
+<para style="p">
+  <verse number="45" style="v" sid="MAT 27:45"/>At noon the whole country was
+  covered with darkness, which lasted for three hours. 
+  <verse eid="MAT 27:45"/><verse number="46" style="v" sid="MAT 27:46"/>At about 
+  three o'clock Jesus cried out with a loud shout, <char style="tl">“Eli, Eli, 
+  lema sabachthani?”</char> which means, “My God, my God, why did you abandon me?”
+  <verse eid="MAT 27:46"/></para>
+----
+======
 
 image::char/tl_1.jpg[Matthew 27.46 (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

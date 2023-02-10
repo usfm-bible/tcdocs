@@ -18,31 +18,42 @@ Syntax::
 * *USX:* `+<char style="add">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Genesis 5.29 (Russian Synodal)
-[source#src-char-add_1,usfm,highlight=3]
+[source#src-usfm-char-add_1,usfm,highlight=3]
 ----
 \p
 \v 29 И нарек ему имя: Ной, сказав: он утешит нас в работе нашей и в трудах рук
 наших при \add возделывании\add* земли, которую проклял Господь.
 ----
+USX::
++
+.Genesis 5.29 (Russian Synodal)
+[source#src-usx-char-add_1,xml,highlight=3]
+----
+<para style="p">
+  <verse number="29" style="v" sid="GEN 5:29"/>И нарек ему имя: Ной, сказав: он
+  утешит нас в работе нашей и в трудах рук наших при <char style="add">
+  возделывании</char> земли, которую проклял Господь.<verse eid="GEN 5:29"/></para>
+----
+======
 
 image::char/add_1.jpg[Genesis 5.29 (Russian Synodal),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
