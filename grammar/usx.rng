@@ -584,6 +584,7 @@
   <define name="ChapterContent">
     <choice>
       <ref name="Chapter"/>
+      <ref name="Section"/>
       <ref name="Para"/>
       <ref name="List"/>
       <ref name="Table"/>
@@ -595,12 +596,72 @@
   <define name="PeripheralContent">
     <choice>
       <ref name="Chapter"/>
+      <ref name="Section"/>
       <ref name="Para"/>
       <ref name="List"/>
       <ref name="Table"/>
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
       <ref name="Sidebar"/>
+    </choice>
+  </define>
+  <define name="Section">
+    <element>
+      <name ns="">para</name>
+      <attribute usfm:grouping="15">
+        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"/>
+        <name ns="">style</name>
+        <ref name="Section.para.style.enum"/>
+      </attribute>
+      <optional>
+        <attribute>
+          <name ns="">vid</name>
+          <data type="string">
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*</param>
+          </data>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <choice>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Break"/>
+          <text>
+            <usfm:text/>
+          </text>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="Section.para.style.enum">
+    <choice>
+      <value>restore</value>
+      <value>iex</value>
+      <value>ip</value>
+      <value>ms1</value>
+      <value>ms2</value>
+      <value>ms3</value>
+      <value>ms</value>
+      <value>mr</value>
+      <value>mte1</value>
+      <value>mte2</value>
+      <value>mte</value>
+      <value>r</value>
+      <value>s1</value>
+      <value>s2</value>
+      <value>sr</value>
+      <value>sp</value>
+      <value>sd1</value>
+      <value>sd2</value>
+      <value>sd3</value>
+      <value>sd4</value>
+      <value>sd</value>
+      <value>s</value>
+      <value>cl</value>
+      <value>cd</value>
     </choice>
   </define>
   <define name="Para">
@@ -637,10 +698,7 @@
   </define>
   <define name="Para.para.style.enum">
     <choice>
-      <value>restore</value>
       <value>cls</value>
-      <value>iex</value>
-      <value>ip</value>
       <value>lit</value>
       <value>nb</value>
       <value>pb</value>
@@ -677,33 +735,11 @@
       <value>q</value>
       <value>b</value>
       <value>d</value>
-      <value>ms1</value>
-      <value>ms2</value>
-      <value>ms3</value>
-      <value>ms</value>
-      <value>mr</value>
       <value>mi</value>
-      <value>mte1</value>
-      <value>mte2</value>
-      <value>mte</value>
       <value>m</value>
-      <value>r</value>
-      <value>s1</value>
-      <value>s2</value>
       <value>s3</value>
       <value>s4</value>
-      <value>sr</value>
-      <value>sp</value>
-      <value>sd1</value>
-      <value>sd2</value>
-      <value>sd3</value>
-      <value>sd4</value>
-      <value>sd</value>
-      <value>s</value>
       <value>ts</value>
-      <value>cp</value>
-      <value>cl</value>
-      <value>cd</value>
       <value>k1</value>
       <value>k2</value>
       <value>rem</value>
@@ -1101,11 +1137,14 @@
         </group>
       </optional>
       <group usfm:order="-1">
-        <optional>
-          <text>
-            <usfm:match match="TEXTATTRIB"/>
-          </text>
-        </optional>
+        <choice>
+          <ref name="CharEmbed"/>
+          <optional>
+            <text>
+              <usfm:match match="TEXTATTRIB"/>
+            </text>
+          </optional>
+        </choice>
       </group>
       <usfm:endtag usfm:order="4"/>
     </element>
@@ -1185,11 +1224,14 @@
         </group>
       </optional>
       <group usfm:order="-1">
-        <optional>
-          <text>
-            <usfm:match match="TEXTATTRIB"/>
-          </text>
-        </optional>
+        <choice>
+          <ref name="CharEmbed"/>
+          <optional>
+            <text>
+              <usfm:match match="TEXTATTRIB"/>
+            </text>
+          </optional>
+        </choice>
       </group>
       <usfm:endtag usfm:order="4" before="&#x27;\+&#x27;"/>
     </element>
@@ -1328,7 +1370,7 @@
         <value>c</value>
       </attribute>
       <attribute>
-        <usfm:match after="WS" usfm:seq="true"/>
+        <usfm:match after="/${WS}|(?=\\)/" usfm:seq="true"/>
         <name ns="">number</name>
         <data type="integer"/>
       </attribute>
@@ -1402,7 +1444,7 @@
         <value>v</value>
       </attribute>
       <attribute>
-        <usfm:match usfm:seq="true" after="WS"/>
+        <usfm:match usfm:seq="true" after="/${WS}|(?=\\)/"/>
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
@@ -1466,7 +1508,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/\S+/" after="WS"/>
+        <usfm:match match="/\S+/" after="/${WS}|(?=\\)/"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
@@ -1547,7 +1589,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/\S+/" after="WS"/>
+        <usfm:match match="/\S+/" after="/${WS}|(?=\\)/"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
@@ -1609,6 +1651,7 @@
       </optional>
       <oneOrMore>
         <choice>
+          <ref name="Section"/>
           <ref name="Para"/>
           <ref name="List"/>
           <ref name="Table"/>

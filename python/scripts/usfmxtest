@@ -7,244 +7,12 @@ try:
     from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
-from usfmtc.parser import UsfmParser, XmlParser
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+from usfmtc.parser import NoParseError
+from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
+from usfmtc.xml import parsexml, writexml, prettyxml
+from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup
 import xml.etree.ElementTree as et
-
-allpartypes = {
-    'Section': """ms mse ms1 ms2 ms2e ms3 ms3e mr s s1 s2 s3 s4 s1e s2e s3e s4e sr r sp
-                    sd1 sd2 sd3 sd4 periph iex"""
-}
-
-partypes = {e: k for k, v in allpartypes.items() for e in v.split()}
-
-def writexml(outf, root):
-    outf.write('<?xml version="1.0" encoding="utf-8"?>\n')
-    qnames, ns = et._namespaces(root, None)
-    _serialize_xml(outf.write, root, qnames, ns, True)
-    outf.write("\n")
-
-def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwargs):
-    tag = elem.tag
-    text = elem.text
-    tag = qnames[tag]
-    if tag is None:
-        if text:
-            write(et._escape_cdata(text))
-        for e in elem:
-            _serialize_xml(write, e, qnames, None, short_empty_elements)
-    else:
-        write("<" + tag)
-        items = list(elem.items())
-        if items or namespaces:
-            if namespaces:
-                for v, k in sorted(namespaces.items(), key=lambda x: x[1]):  # sort on prefix
-                    if k:
-                        k = ":" + k
-                    write(" xmlns%s=\"%s\"" % (k, et._escape_attrib(v)))
-            for k, v in items:
-                if not k.startswith(" ") and v is not None:
-                    v = et._escape_attrib(v)
-                    write(" %s=\"%s\"" % (qnames[k], v))
-        if text or len(elem) or not short_empty_elements:
-            write(">")
-            if text:
-                write(et._escape_cdata(text))
-            for e in elem:
-                _serialize_xml(write, e, qnames, None, short_empty_elements)
-            write("</" + tag + ">")
-        else:
-            write(" />")
-    if elem.tail:
-        write(et._escape_cdata(elem.tail))
-
-def prettyxml(node, last=None, indent="", width=2):
-    if node.tag in ('para', 'sidebar', 'table', 'chapter', 'usx', 'book'):
-        if last is not None:
-            last.tail = (last.tail or "").rstrip() + "\n" + indent
-        indent += " " * width
-    last = None
-    for e in node:
-        prettyxml(e, last=last, indent=indent, width=width)
-        last = e
-
-def getindex(base):
-    parent = base.get(' parent')
-    if parent is None:
-        return -1, None
-    return list(parent).index(base), parent
-
-def getprevious(base):
-    i, parent = getindex(base)
-    return parent[i-1] if parent is not None and i > 0 else None
-
-def addprevious(base, el):
-    i, parent = getindex(base)
-    if parent is not None:
-        parent.insert(i, el)
-
-def getnext(base):
-    i, parent = getindex(base)
-    return parent[i+1] if parent is not None and i < len(parent) - 1 else None
-
-def addvids(lastp, endp, base, v, endv, atend=False):
-    res = lastp
-    lastp = getnext(lastp)
-    pending = []
-    while lastp is not None:
-        if lastp.tag == "chapter":
-            break
-        if lastp.tag not in ('para', 'table', 'row', 'cell'):
-            if id(lastp) == id(endp):
-                break
-            lastp = getnext(lastp)
-            continue
-        if lastp.tag == 'para' and partypes.get(lastp.get('style', None), None) == "Section" \
-                or (not len(lastp) and (lastp.text is None or lastp.text.strip() == "")):
-            pending.append(lastp)
-        elif id(lastp) != id(endp) or atend or endp[0].tag != "verse" or (endp.text is not None and endp.text.strip() != ""):
-            for p in pending:
-                p.set('vid', v)
-            pending = []
-            lastp.set('vid', v)
-            res = lastp
-        if id(lastp) == id(endp):
-            break
-        lastp = getnext(lastp)
-    if id(res) == id(endp) and base is not None:
-        addprevious(base, endv)
-    else:
-        res.append(endv)
-    return res
-
-def addesids(root):
-    lastv = None
-    if root.get('version', None) is None:
-        root.set('version', '3.0')
-    bkel = root.find('./book')
-    bk = bkel.get('code', 'UNK').upper()
-    bkel.set('code', bk)
-    currchap = 0
-    lastp = None
-    for v in list(root.iter()):
-        if v.tag == "chapter":
-            currchap = v.get('number')
-            currverse = 0
-            v.set('sid', "{} {}".format(bk, currchap))
-            continue
-        elif v.tag == "para":
-            lastp = v
-            continue
-        elif v.tag != "verse" or v.get('eid', None) is not None:
-            continue
-        currverse = v.get('number')
-        v.set('sid', "{} {}:{}".format(bk, currchap, currverse))
-        if lastv is None:
-            lastv = v
-            continue
-        eid = lastv.get('sid', None)
-        ev = v.makeelement('verse', {'eid': eid or ""})
-        pv = v.get(' parent')
-        pl = lastv.get(' parent')
-        if id(pv) == id(pl):
-            addprevious(v, ev) 
-        else:
-            endp = addvids(pl, pv, v, eid, ev)
-        lastv = v
-    if lastv is not None and lastp is not None:
-        eid = lastv.get('sid', None)
-        ev = lastv.makeelement('verse', {'eid': eid or ''})
-        addvids(lastv.get(' parent'), lastp, None, eid, ev, atend=True)
-
-    lastc = None
-    for c in root.findall('.//chapter'):
-        if lastc is not None:
-            cel = c.makeelement('chapter', {'eid': lastc.get('sid', '')})
-            addprevious(c, cel)
-        lastc = c
-    if lastc is not None:
-        root.append(lastc.makeelement('chapter', {'eid': lastc.get('sid', '')}))
-
-    for r in root.findall('.//row'):
-        p = getprevious(r)
-        if p is not None and p.tag == 'row':
-            newp = p.get(' parent')
-            i, oldp = getindex(r)
-            oldp[i] = newp
-        else:
-            # there's a bug here, surely newp is never attached
-            i, oldp = getindex(r)
-            newp = r.makeelement('table', {})
-            oldp.remove(r)
-            oldp.insert(i, newp)
-            r.set(' parent', newp)
-        newp.set(' parent', oldp)
-        newp.append(r)
-    return root
-
-aligns = { "": "start", "r": "end", "c": "center" }
-def cell_aligns(root):
-    for e in root.findall('.//cell'):
-        if e.get('align', None) is not None:
-            continue
-        s = e.get('style', None)
-        if s is None:
-            continue
-        v = re.match(r"^t[ch](.?)\d+", s)
-        if v is None:
-            continue
-        a = aligns[v.group(1)]
-        e.set('align', a)
-
-def cleanup(node):
-    if node.tag == 'para':
-        i = -1
-        if len(node) and node[i].tag == 'verse' and node[i].get('eid', None) is not None:
-            i -= 1
-        if len(node) >= -i:
-            if node[i].tail is not None:
-                node[i].tail = node[i].tail.rstrip()
-        elif node.text is not None:
-            node.text = re.sub(r"^[ \t\n]*(.*?)[ \t\n]*$", r"\1", node.text)
-    elif node.tag in ('chapter', 'verse'):
-        node.text = None
-    elif node.tag == "figure":
-        src = node.get("src", None)
-        if src is not None:
-            del node.attrib['src']
-            node.set('file', src)
-    for c in node:
-        cleanup(c)
-
-def strnormal(s, t):
-    if s is None:
-        return ""
-    if not len(s.strip()):
-        return ""
-    if t in ('para', 'char'):
-        return re.sub("[\n\s]+", " ", s)
-    else:
-        return s.strip()
-
-def attribnorm(d):
-    banned = ('closed', 'status')
-    return {k:v for k, v in d.items() if k not in banned and not k.startswith(" ")}
-
-def etCmp(a, b, at=None, bt=None):
-    aattrib = attribnorm(a.attrib)
-    battrib = attribnorm(b.attrib)
-    if a.tag != b.tag or aattrib != battrib:
-        return False
-    if strnormal(a.text, a.tag) != strnormal(b.text, b.tag):
-        return False
-    if strnormal(a.tail, at) != strnormal(b.tail, bt):
-        return False
-    if len(a) != len(b):
-        return False
-    for ac, bc in zip(a, b):
-        if not etCmp(ac, bc, a.tag if a is not None else None, b.tag if b is not None else None):
-            return False
-    return True
 
 def proconedir(d, sfmp, args):
     meta = {}
@@ -259,7 +27,7 @@ def proconedir(d, sfmp, args):
     try:
         result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
     except NoParseError as e:
-        imsg = " {} at {}".format(e.msg, e.state.pos)
+        imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
     if result is not None:
         if (args.debug & 1) != 0:
@@ -269,7 +37,7 @@ def proconedir(d, sfmp, args):
         cell_aligns(xml)
         cleanup(xml)
         if os.path.exists(os.path.join(d, "origin.xml")):
-            testxml = et.parse(os.path.join(d, "origin.xml"))
+            testxml = parsexml(os.path.join(d, "origin.xml"))
             passed = etCmp(xml, testxml.getroot())
         if args.print:
             prettyxml(xml)
@@ -280,6 +48,22 @@ def proconedir(d, sfmp, args):
     res = passed == expected
     print("{}: {} ({} {}){}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg))
     return res
+
+def chunkjobs(jobs, nchunks):
+    chunksize = len(jobs) // nchunks
+    chunksize += 1 if len(jobs) % nchunks else 0
+    tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
+    dojobs = []
+    for i in range(nchunks):
+        if args.debug & 2 == 0:
+            lj = [x for x in itertools.chain(*itertools.zip_longest(
+                    tjobs[i::2*nchunks], tjobs[2*nchunks-i-1::2*nchunks])) if x is not None]
+        #dojobs.extend(x for x in itertools.chain(*zip(tjobs[i::2*nchunks]+[None], tjobs[2*nchunks-i-1::2*nchunks]+[None])))
+        else:
+            lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
+        dojobs.extend(lj + ([None] * (chunksize - len(lj))))
+    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
+    return dojobs
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
@@ -340,6 +124,7 @@ enums = {
     'bookintroduction': 'BookIntroduction.para.style',
     'bookintroductionendtitles': 'BookIntroductionEndTitles.para.style',
     'para': 'Para.para.style',
+    'section': 'Section.para.style',
     'list': 'List.para.style',
     'cellalign': 'Cell.align',
     'introchar': 'IntroChar.char.style',
@@ -367,10 +152,10 @@ if len(args.marker):
                 partypes[m] = 'Section'
 
 backendsfm = UsfmParserBackend()
-sfmproc = UsfmParser(rdoc, backendsfm)
+sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
 
-if args.jobs > -1:
+if args.jobs > -1 and len(jobs) > 1:
     if args.jobs == 0:
         args.jobs = os.cpu_count()
     def doprocone(arg):
@@ -379,19 +164,7 @@ if args.jobs > -1:
         return proconedir(arg, sfmproc.curr, args)
     pool = Pool()
     nchunks = args.jobs * 4
-    chunksize = len(jobs) // nchunks
-    chunksize += 1 if len(jobs) % nchunks else 0
-    tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
-    dojobs = []
-    for i in range(nchunks):
-        if args.debug & 2 == 0:
-            lj = [x for x in itertools.chain(*itertools.zip_longest(
-                    tjobs[i::2*nchunks], tjobs[2*nchunks-i-1::2*nchunks])) if x is not None]
-        #dojobs.extend(x for x in itertools.chain(*zip(tjobs[i::2*nchunks]+[None], tjobs[2*nchunks-i-1::2*nchunks]+[None])))
-        else:
-            lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
-        dojobs.extend(lj + ([None] * (chunksize - len(lj))))
-    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
+    dojobs = chunkjobs(jobs, nchunks)
     results = pool.map_async(doprocone, dojobs, chunksize=chunksize)
     results.get()
 else:

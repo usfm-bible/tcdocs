@@ -2,11 +2,12 @@
 
 import os, sys, argparse
 try:
-    from usfmtc.parser import UsfmParser, XmlParser, RailRoad, XMLRailRoad
+    from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
 except ImportError:
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.parser import UsfmParser, XmlParser, RailRoad, XMLRailRoad
+    from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
 from usfmtc.usxgrammar import alljobs
+from usfmtc.diagrams import UsfmRailRoad, XmlRailRoad
 import xml.etree.ElementTree as et
 
 parser = argparse.ArgumentParser()
@@ -18,10 +19,10 @@ parser.add_argument("-z","--debug",type=int,default=0,help="bit 0 - print job na
 args = parser.parse_args()
 
 rdoc = et.parse(args.grammar)
-backendsfm = RailRoad()
-backendxml = XMLRailRoad()
-sfmproc = UsfmParser(rdoc, backendsfm)
-xmlproc = XmlParser(rdoc, backendxml)
+backendsfm = UsfmRailRoad()
+backendxml = XmlRailRoad()
+sfmproc = UsfmGrammarParser(rdoc, backendsfm)
+xmlproc = XmlGrammarParser(rdoc, backendxml)
 
 if args.node:
     jobs = {args.node: alljobs[args.node]}

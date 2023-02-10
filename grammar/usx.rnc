@@ -377,9 +377,44 @@ BookIntroductionEndTitles.para.style.enum = (
     | "imt2" # Introduction major title, level 2
     )
 
-ChapterContent = (Chapter | Para | List | Table | Footnote | CrossReference | Sidebar)
+ChapterContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar)
 
-PeripheralContent = (Chapter | Para | List | Table | Footnote | CrossReference | Sidebar)
+PeripheralContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar)
+
+Section =
+    element para {
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"]]
+        attribute style { Section.para.style.enum },
+        attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Break | [usfm:text[]] text)*
+    }
+
+Section.para.style.enum = (
+      "restore" # Comment about when text was restored
+    | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
+    | "ip" # Division or Section introductory paragraph (study Bible)
+    | "ms1" # A major section division heading, level 1 (if multiple levels)
+    | "ms2" # A major section division heading, level 2
+    | "ms3" # A major section division heading, level 3
+    | "ms" # A major section division heading, level 1 (if single level)
+    | "mr" # A major section division references range heading
+    | "mte1" # The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
+    | "mte2" # A secondary title occurring before or after the 'ending' main title
+    | "mte" # The main title of the book repeated at the end of the book, level 1 (if single level)
+    | "r" # Parallel reference(s)
+    | "s1" # A section heading, level 1 (if multiple levels)
+    | "s2" # A section heading, level 2 (e.g. Proverbs 22-24)
+    | "sr" # A section division references range heading
+    | "sp" # A heading, to identify the speaker (e.g. Job)
+    | "sd1" # Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)
+    | "sd2" # Semantic division location (vertical space used to divide the text into sections), level 2
+    | "sd3" # Semantic division location (vertical space used to divide the text into sections), level 3
+    | "sd4" # Semantic division location (vertical space used to divide the text into sections), level 4
+    | "sd" # Vertical space used to divide the text into sections, level 1 (if single level)
+    | "s" # A section heading, level 1 (if single level)
+    | "cl" # Chapter label used for translations that add a word such as "Chapter"
+    | "cd" # Chapter Description (Publishing option D, e.g. in Russian Bibles)
+    )
 
 Para =
     element para {
@@ -387,11 +422,9 @@ Para =
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
+
 Para.para.style.enum = (
-      "restore" # Comment about when text was restored
-    | "cls" # Closure of an Epistle
-    | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
-    | "ip" # Division or Section introductory paragraph (study Bible)
+    "cls" # Closure of an Epistle
     | "lit" # For a comment or note inserted for liturgical use
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
     | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
@@ -428,33 +461,11 @@ Para.para.style.enum = (
     | "q" # Poetry text, level 1 indent (if single level)
     | "b" # Poetry text stanza break (e.g. stanza break)
     | "d" # A Hebrew text heading, to provide description (e.g. Psalms)
-    | "ms1" # A major section division heading, level 1 (if multiple levels)
-    | "ms2" # A major section division heading, level 2
-    | "ms3" # A major section division heading, level 3
-    | "ms" # A major section division heading, level 1 (if single level)
-    | "mr" # A major section division references range heading
     | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
-    | "mte1" # The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
-    | "mte2" # A secondary title occurring before or after the 'ending' main title
-    | "mte" # The main title of the book repeated at the end of the book, level 1 (if single level)
     | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
-    | "r" # Parallel reference(s)
-    | "s1" # A section heading, level 1 (if multiple levels)
-    | "s2" # A section heading, level 2 (e.g. Proverbs 22-24)
-    | "s3" # A section heading, level 3 (e.g. Genesis "The First Day")
+    | "s3" # A section heading, level 3 (e.g. Genesis "The First Day") (\s3 can take a \v!)
     | "s4" # A section heading, level 4
-    | "sr" # A section division references range heading
-    | "sp" # A heading, to identify the speaker (e.g. Job)
-    | "sd1" # Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)
-    | "sd2" # Semantic division location (vertical space used to divide the text into sections), level 2
-    | "sd3" # Semantic division location (vertical space used to divide the text into sections), level 3
-    | "sd4" # Semantic division location (vertical space used to divide the text into sections), level 4
-    | "sd" # Vertical space used to divide the text into sections, level 1 (if single level)
-    | "s" # A section heading, level 1 (if single level)
     | "ts" # Translator's chunk (to identify chunks of text suitable for translating at one time)
-    | "cp" # Published chapter number
-    | "cl" # Chapter label used for translations that add a word such as "Chapter"
-    | "cd" # Chapter Description (Publishing option D, e.g. in Russian Bibles)
     | "k1" # Concordance main entry text or keyword, level 1
     | "k2" # Concordance main entry text or keyword, level 2
     | "rem" # Remark
@@ -638,7 +649,7 @@ CharWithAttrib =
                 attribute * {xsd:string})+
          | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
-        [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTATTRIB"]] text?)
         >> usfm:endtag[usfm:order="4"]
     }
 
@@ -664,7 +675,7 @@ CharEmbedWithAttrib =
                 attribute * {xsd:string})+
          | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
-        [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTATTRIB"]] text?)
         >> usfm:endtag[usfm:order="4" before="'\+'"]
     }
 
@@ -730,7 +741,7 @@ ChapterStart =
     element chapter { # Start of new chapter
         [usfm:tag[usfm:seq="true"]]
         attribute style { "c" },
-        [usfm:match[after="WS" usfm:seq="true"]]
+        [usfm:match[after="/${WS}|(?=\\)/" usfm:seq="true"]]
         attribute number { xsd:integer },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
@@ -763,7 +774,7 @@ VerseStart =
     element verse {
         [usfm:tag[usfm:seq="true"]]
         attribute style { "v" },
-        [usfm:match[usfm:seq="true" after="WS"]]
+        [usfm:match[usfm:seq="true" after="/${WS}|(?=\\)/"]]
         attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
         [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" "va"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
@@ -786,7 +797,7 @@ Footnote =
     element note {
         [usfm:tag[id="a"]]
         attribute style { "f" | "fe" | "ef" },
-        [usfm:match[match="/\S+/" after="WS"]]
+        [usfm:match[match="/\S+/" after="/${WS}|(?=\\)/"]]
         attribute caller { text },
         category?,
         [usfm:text[]] text?,
@@ -829,7 +840,7 @@ CrossReference =
     element note {
         [usfm:tag[id="a"]]
         attribute style { "x" | "ex" },
-        [usfm:match[match="/\S+/" after="WS"]]
+        [usfm:match[match="/\S+/" after="/${WS}|(?=\\)/"]]
         attribute caller { text },
         CrossReferenceChar*
         >> usfm:endtag[]
@@ -863,7 +874,7 @@ Sidebar =
         [usfm:tag[]]
         attribute style { "esb" },
         category?,
-        (Para | List | Table | Footnote | CrossReference)+
+        (Section | Para | List | Table | Footnote | CrossReference)+
         >> usfm:tag[dump="true" "esbe"]
     }
 
