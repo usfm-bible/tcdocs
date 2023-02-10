@@ -3,6 +3,69 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+class GlobalState:
+    def __init__(self):
+        self.defstack = []
+        self.cstack = []
+        self.lasterror = None
+
+    def __call__(self):
+        return self
+
+    def __getitem__(self, key):
+        raise NotImplementedError("Indexing not implemented")
+
+
+class State:
+    def __init__(self, gs, pos=0):
+        self.gs = gs
+        self.pos = pos
+
+    def copy(self):
+        return self.__class__(self.gs, self.pos)
+
+    # Assumes gs is string like somewhat
+    def __call__(self):
+        return self.gs[self.pos:]
+
+    def extend(self, offset):
+        res = self.copy()
+        res.pos = self.pos + offset
+        return res
+
+    def atend(self):
+        return len(self.gs()) - self.pos == 0
+
+    # Definitely expects gs to 'be' a string
+    def getcontext(self):
+        s = self.gs()
+        end = s.find("\n", self.pos)
+        if end == 0:
+            end = s[self.pos + 1:].find("\n") + 1
+        tok = s[self.pos:end] if end >= 0 else s[self.pos:]
+        return tok
+
+    def debug(self, good, to, index, kwindex, rep, name, respos):
+        return '{}ing[{}/{}:{}.{}{}->{}] {} at {}->{} = "{}"...'.format("match" if good else "fail", self.defstack,
+                    to, index, kwindex, self.cstack, rep, name, self.pos, respos, self()[:10].replace("\n", "\\n"))
+
+    @property
+    def lasterror(self):
+        return self.gs.lasterror
+
+    @lasterror.setter
+    def lasterror(self, val):
+        self.gs.lasterror = val
+
+    @property
+    def cstack(self):
+        return self.gs.cstack
+
+    @property
+    def defstack(self):
+        return self.gs.defstack
+
+
 class PrintContext:
     def __init__(self):
         self.indent = 0
@@ -43,27 +106,21 @@ class Parser:
     def define(self, p):
         f = getattr(p, 'run', p)
         if self.debug:
-            def lastof(l):
-                return l[-1] if len(l) else ""
             def runfn(s, **kw):
                 try:
                     res = f(s)
-                    good = True
                     rese = None
                 except NoParseError as e:
-                    good = False
-                    rese = e
                     res = None
-                logger.debug('{}ing[{}/{}:{}.{}{}->{}] {} at {}->{} = "{}"...'.format("match" if good else "fail", s.gs.defstack,
-                        self.to, self.index, kw.get('index', ""), s.gs.cstack, repr(self),
-                        getattr(self, 'name', 'UNK'),
-                        s.pos, (res[1].pos if res is not None else "?"), s()[:10].replace("\n", "\\n")))
+                    rese = e
+                logger.debug(s.debug(rese is None, self.to, self.index, kw.get('index', ''), repr(self), getattr(self, 'name', 'UNK'),
+                                     (res[1].pos if res is not None else "?")))
                 if rese is not None:
                     raise(rese)
                 return res
         else:
             def runfn(s, **kw):
-                if not len(s()):
+                if s.atend():
                     raise NoParseError("<EOF>", s)
                 return f(s)
         setattr(self, 'run', runfn)
@@ -74,24 +131,18 @@ class Parser:
 
     def parse(self, s):
         """State -> b"""
-        def getcontext(s):
-            end = s.find("\n")
-            if end == 0:
-                end = s[1:].find("\n") + 1
-            tok = s[:end] if end >= 0 else s
-            return tok
         try:
             (tree, finals) = self.run(s)
         except NoParseError as e:
-            if len(s()):
-                tok = getcontext(e.state())
+            if not s.atend():
+                tok = e.state.getcontext()
                 raise NoParseError('%s: %s' % (e.msg, tok), e.state)
-        if len(finals()):
-            if finals.gs.lasterror is not None:
-                tok = getcontext(finals.gs.lasterror.state())
-                raise NoParseError("{}: {}".format(finals.gs.lasterror.msg, tok), finals.gs.lasterror.state)
+        if not finals.atend():
+            if finals.lasterror is not None:
+                tok = finals.lasterror.state.getcontext()
+                raise NoParseError("{}: {}".format(finals.lasterror.msg, tok), finals.lasterror.state)
             else:
-                tok = getcontext(finals())
+                tok = finals.getcontext()
                 raise NoParseError("Incomplete match: {}".format(tok), finals)
         return tree
 
@@ -153,7 +204,7 @@ class Group(Parser):
                 c.mc = False
         if self.capture:
             s.gs.init(self.capture, "")
-        s.gs.cstack.append(0)
+        s.cstack.append(0)
         while self._loop(i):
             subres = []
             nohit = True
@@ -162,8 +213,8 @@ class Group(Parser):
                     matched = c.mc
                 news = cuts
                 if (n := getattr(c, "inref", None)) is not None:
-                    s.gs.defstack.append(n)
-                s.gs.cstack[-1] += 1
+                    s.defstack.append(n)
+                s.cstack[-1] += 1
                 try:
                     (newv, news) = c.run(cuts, index=j)
                 except NoParseError as e:
@@ -175,14 +226,14 @@ class Group(Parser):
                         done = True
                         break
                     else:
-                        s.gs.cstack.pop()
-                        s.gs.lasterror = e
+                        s.cstack.pop()
+                        s.lasterror = e
                         raise e
                 if n is not None:
-                    s.gs.defstack.pop()
+                    s.defstack.pop()
                 if self.mode == "|+":
                     if matched and c.mc:
-                        s.gs.cstack.pop()
+                        s.cstack.pop()
                         raise NoParseError(f'Interleave multiply matched {c} in {self}', s)
                     elif cuts.pos != news.pos:  # real match
                         c.mc = True
@@ -206,7 +257,7 @@ class Group(Parser):
             if self.mode in '?|':
                 break
             i += 1
-        s.gs.cstack.pop()
+        s.cstack.pop()
         return (self._returnRes(res, s), s)
 
     def append(self, parser):

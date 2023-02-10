@@ -27,7 +27,7 @@ def proconedir(d, sfmp, args):
     try:
         result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
     except NoParseError as e:
-        imsg = " {} at {}".format(e.msg, e.state.pos)
+        imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
     if result is not None:
         if (args.debug & 1) != 0:
@@ -124,6 +124,7 @@ enums = {
     'bookintroduction': 'BookIntroduction.para.style',
     'bookintroductionendtitles': 'BookIntroductionEndTitles.para.style',
     'para': 'Para.para.style',
+    'section': 'Section.para.style',
     'list': 'List.para.style',
     'cellalign': 'Cell.align',
     'introchar': 'IntroChar.char.style',
@@ -154,7 +155,7 @@ backendsfm = UsfmParserBackend()
 sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
 
-if args.jobs > -1:
+if args.jobs > -1 and len(jobs) > 1:
     if args.jobs == 0:
         args.jobs = os.cpu_count()
     def doprocone(arg):

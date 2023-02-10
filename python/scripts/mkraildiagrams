@@ -7,7 +7,7 @@ except ImportError:
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
     from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
 from usfmtc.usxgrammar import alljobs
-from usfmtc.diagrams import UsfmRailRoad, XMLRailRoad
+from usfmtc.diagrams import UsfmRailRoad, XmlRailRoad
 import xml.etree.ElementTree as et
 
 parser = argparse.ArgumentParser()
@@ -20,7 +20,7 @@ args = parser.parse_args()
 
 rdoc = et.parse(args.grammar)
 backendsfm = UsfmRailRoad()
-backendxml = XMLRailRoad()
+backendxml = XmlRailRoad()
 sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 xmlproc = XmlGrammarParser(rdoc, backendxml)
 

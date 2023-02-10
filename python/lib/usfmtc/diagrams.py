@@ -190,7 +190,7 @@ class UsfmRailRoad:
         pass
 
 
-class XMLRailRoad(RailRoad):
+class XmlRailRoad(UsfmRailRoad):
 
     def elem_start(self, parser, e, context, name, **kw):
         seq = self.append_type(context, rr.Sequence, forced=True)

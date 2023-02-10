@@ -13,6 +13,7 @@ class AttribElement:
         self.tag = tag
         self.attrib = attrib
 
+
 class UsfmGrammarParser:
 
     _manies = {

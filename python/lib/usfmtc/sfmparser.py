@@ -9,14 +9,19 @@ from usfmtc.xml import ParentElement
 
 logger = logging.getLogger("sfmparser")
 
-class GlobalState:
+class GlobalState(usfmp.GlobalState):
+    ''' text based global state '''
     def __init__(self, txt):
+        super().__init__()
         self.str = txt
         self.captures = []
         self.refs = {}
-        self.defstack = []
-        self.cstack = []
-        self.lasterror = None
+
+    def __getitem__(self, key):
+        return self.str[key]
+
+    def __call__(self):
+        return self.str
 
     def _ensure(self, index):
         if index >= len(self.captures):
@@ -42,18 +47,6 @@ class GlobalState:
         return self.refs.get(name)
 
 
-class State:
-    def __init__(self, gs, pos=0):
-        self.gs = gs
-        self.pos = pos
-
-    def __call__(self):
-        return self.gs.str[self.pos:]
-
-    def extend(self, offset):
-        return State(self.gs, pos=self.pos + offset)
-
-
 class Group(usfmp.Group):
 
     def _returnRes(self, res, s):
@@ -74,11 +67,12 @@ class String(usfmp.Parser):
     def __init__(self, reg, dump=False, **kw):
         self.keep = not dump
         def text(s):
-            m = regex.match(self.re, s())
+            m = regex.match(self.re, s.gs(), pos=s.pos)
             if not m:
                 raise usfmp.NoParseError(f'String ({self.re}) not found', s)
-            return (m.group(1) if self.keep else None, s.extend(m.end()))
+            return (m.group(1) if self.keep else None, s.extend(m.end()-s.pos))
         super().__init__(text, **kw)
+        reg = re.sub(r"\\u([0-9a-fA-F]{4})", lambda m:chr(int(m.group(1), 16)), reg)
         self.re = reg if dump else "(" + reg + ")"
         self.name = "/" + reg + "/"
 
@@ -114,7 +108,7 @@ class Reference(usfmp.Parser):
         self.backref = index
         def test(s):
             v = s.gs.getcapture(self.backref)
-            if s().startswith(v):
+            if s.gs().startswith(v, s.pos):
                 return(v if not kw.get('dump', False) else None, s.extend(len(v)))
             else:
                 raise usfmp.NoParseError(f'String from backref (v) not found', s)
@@ -205,7 +199,7 @@ def parseusfm(infilename, parser):
     with open(infilename, encoding="utf-8") as inf:
         dat = inf.read()
     gs = GlobalState(dat)
-    return parser.parse(State(gs))
+    return parser.parse(usfmp.State(gs))
     
         
 class UsfmParserBackend:
