@@ -2,7 +2,7 @@
 
 [CAUTION]
 ====
-The use of formatting oriented character markup is strongly discouraged. Please search for the appropriate USFM element to markup content, wherever possible.
+The use of formatting oriented character markup is strongly discouraged. Please search for the appropriate xref:char:index.adoc[character type] to markup content, wherever possible.
 ====
 
 include::../../nav.adoc[tag=nav-format]

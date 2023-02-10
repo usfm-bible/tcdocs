@@ -18,21 +18,25 @@ Syntax::
 * *USX:* `+<char style="it">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-it_1,usfm]
+[source#src-usfm-char-it_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-it_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
 
@@ -41,5 +45,3 @@ image::char/missing.jpg[,300]
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

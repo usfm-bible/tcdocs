@@ -20,19 +20,29 @@ Added:: 1.0
 
 == Properties
 
-StyleType:: Character
+StyleType:: xref:char:index.adoc[Character]
 OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
 TextProperties:: publishable, vernacular
 
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-bd_1,usfm]
+[source#src-usfm-char-bd_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-bd_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
 
@@ -41,5 +51,3 @@ image::char/missing.jpg[,300]
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
