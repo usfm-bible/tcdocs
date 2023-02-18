@@ -12,25 +12,20 @@ endif::[]
 
 == Summary
 
-Description:: List entry 'value' content.
+Description:: xref:para:lists/index.adoc[List] entry 'value' content.
 Syntax::
 * *USFM:* `+\liv_{content}\liv*+`
 * *USX:* `+<char style="liv">{content}</char>+`
 Added:: 3.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[ChapterContent] > [ListPara]`, `[SidebarContent] > [ListPara]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-char-lik_1,usfm,highlight=4..16]
+[source#src-usfm-char-lik_1,usfm,highlight=4..16]
 ----
 \s1 Administration of the Tribes of Israel
 \lh
@@ -50,13 +45,83 @@ TextProperties:: publishable, vernacular
 \li1 \lik Dan\lik* \liv1 Azarel son of Jeroham\liv1*
 \lf This was the list of the administrators of the tribes of Israel.
 ----
+USFM::
++
+.1 Chronicles 27:16-22 (GNT - markup adapted)
+[source#src-usx-char-lik_1,xml,highlight=7;11;15;19;23;27;31;35;39;43;47;51;55]
+----
+<para style="s1">Administration of the Tribes of Israel</para>
+<para style="lh">
+  <verse number="16-22" style="v" sid="1CH 27:16-22"/>This is the list of 
+  the administrators of the tribes of Israel:</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Reuben</char>
+  <char style="liv1">Eliezer son of Zichri</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Simeon</char>
+  <char style="liv1">Shephatiah son of Maacah</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Levi</char>
+  <char style="liv1">Hashabiah son of Kemuel</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Aaron</char>
+  <char style="liv1">Zadok</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Judah</char>
+  <char style="liv1">Elihu, one of King David's brothers</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Issachar</char>
+  <char style="liv1">Omri son of Michael</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Zebulun</char>
+  <char style="liv1">Ishmaiah son of Obadiah</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Naphtali</char>
+  <char style="liv1">Jeremoth son of Azriel</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Ephraim</char>
+  <char style="liv1">Hoshea son of Azaziah</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">West Manasseh</char>
+  <char style="liv1">Joel son of Pedaiah</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">East Manasseh</char>
+  <char style="liv1">Iddo son of Zechariah</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Benjamin</char>
+  <char style="liv1">Jaasiel son of Abner</char>
+</para>
+<para style="li1" vid="1CH 27:16-22">
+  <char style="lik">Dan</char>
+  <char style="liv1">Azarel son of Jeroham</char>
+</para>
+<para style="lf" vid="1CH 27:16-22">This was the list of the administrators of 
+  the tribes of Israel.<verse eid="1CH 27:16-22"/></para>
+----
+======
 
 image::char/lik_liv_1.jpg[1 Chronicles 27:16-22 (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ChapterContent] > [ListPara]`, `[SidebarContent] > [ListPara]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -18,19 +18,14 @@ Syntax::
 * *USX:* `+<char style="qs">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[ChapterContent] > [PoeticPara]`, `[SidebarContent] > [PoeticPara]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular, poetic
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Psalm 3.2 (NRSV)
-[source#src-char-qs_1,usfm,highlight=9]
+[source#src-usfm-char-qs_1,usfm,highlight=9]
 ----
 \c 3
 \s1 Trust in God under Adversity
@@ -42,8 +37,34 @@ TextProperties:: publishable, vernacular, poetic
 \v 2 many are saying to me,
 \q2 “There is no help for you \qs Selah\qs*
 ----
+USX::
++
+.Psalm 3.2 (NRSV)
+[source#src-usx-char-qs_1,xml,highlight=12]
+----
+<chapter number="3" style="c" sid="PSA 3"/>
+<para style="s1">Trust in God under Adversity</para>
+<para style="d">A Psalm of David, when he fled from his son Absalom.</para>
+<para style="q1">
+  <verse number="1" style="v" sid="PSA 3:1"/>O <char style="nd">Lord</char>, 
+  how many are my foes!</para>
+<para style="q2" vid="PSA 3:1">Many are rising against me;
+  <verse eid="PSA 3:1"/></para>
+<para style="q1">
+  <verse number="2" style="v" sid="PSA 3:2"/>many are saying to me,</para>
+<para style="q2" vid="PSA 3:2">“There is no help for you 
+  <char style="qs">Selah</char><verse eid="PSA 3:2"/></para>
+----
+======
 
 image::char/qs_1.jpg[Exodus 3.15 (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ChapterContent] > [PoeticPara]`, `[SidebarContent] > [PoeticPara]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular, poetic
 
 == Publication Issues
 
@@ -52,5 +73,3 @@ image::char/qs_1.jpg[Exodus 3.15 (GNT),300]
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

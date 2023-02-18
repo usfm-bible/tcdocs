@@ -14,38 +14,33 @@ endif::[]
 
 Description:: Table cell - right aligned.
 * The variable `#` represents the table column number.
-ifdef::env-antora[]
 [NOTE]
 .Syntax notes
 ====
-In *USFM*, a table is composed by a series of paragraphs marked with `\tr`, and the content for cells is marked with xref:char:tables/index.adoc[character types for table cells], such as `\tcr#`. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` containing `+<row>+`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
+In *USFM*, a table is composed by a series of paragraphs marked with xref:para:tables/tr.adoc[\tr]. The content for cells is marked with xref:char:tables/index.adoc[character types for table cells], such as xref:char:tables/th.adoc[\th#].
+
+In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing `<row>`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
 ====
-endif::env-antora[]
 Syntax::
 * *USFM:* `+\tcr#_{content}+`
 ** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\tcr1-2`
-* *USX:* `+<cell style="tcr#" colspan="{columns} align="{alignment}">{content}</cell>+`
-`columns`::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="tcr1" colspan="2" align="right">+`
-`alignment`::: Cell alignment = `start` | `center` | `end`. Represents "left", "center", and "right" respectively in left-to-right direction texts, and "right", "center", "left" in right-to-left direction texts.
+* *USX:* `+<cell style="tcr#" @colspan @align>{content}</cell>+`
+`colspan.`::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="tcr1" colspan="2" align="start">+`
+`align`::: Cell alignment = `start` | `center` | `end`. Represents 'left', 'center', and 'right' respectively in left-to-right direction texts, and 'right', 'center', 'left' in right-to-left direction texts.
 `content`::: The cell text.
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[TableRow]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular
-
-== Structure
-
 == Examples
 
-.Numbers 2.10-16 (GNT)
-[source#src-char-tc_1,usfm,highlight=5..8]
+[tabs]
+======
+USFM::
++
+.Numbers 2.3-9 (GNT)
+[source#src-usfm-char-tcr_1,usfm,highlight=5..8]
 ----
 \p
-\v 10-16 On the east side, those under the banner of the division of Judah 
+\v 3-9 On the east side, those under the banner of the division of Judah 
 shall camp in their groups, under their leaders, as follows:
 \tr \th1 Tribe \th2 Leader \thr3 Number
 \tr \tc1 Judah \tc2 Nahshon son of Amminadab \tcr3 74,600
@@ -53,13 +48,56 @@ shall camp in their groups, under their leaders, as follows:
 \tr \tc1 Zebulun \tc2 Eliab son of Helon \tcr3 57,400
 \tr \tcr1-2 Total: \tcr3 186,400
 ----
+USX::
++
+.Numbers 2.3-9 (GNT)
+[source#src-usx-char-tcr_1,xml,highlight=14;19;24;27..28]
+----
+<para style="p">
+  <verse number="3-9" style="v" sid="NUM 2:3-9"/>On the east side, those under the
+  banner of the division of Judah shall camp in their groups, under their leaders,
+  as follows:</para>
+<table>
+  <row style="tr">
+    <cell style="th1" align="start">Tribe </cell>
+    <cell style="th2" align="start">Leader </cell>
+    <cell style="thr3" align="end">Number</cell>
+  </row>
+  <row style="tr">
+    <cell style="tc1" align="start">Judah </cell>
+    <cell style="tc2" align="start">Nahshon son of Amminadab </cell>
+    <cell style="tcr3" align="end">74,600</cell>
+  </row>
+  <row style="tr">
+    <cell style="tc1" align="start">Issachar </cell>
+    <cell style="tc2" align="start">Nethanel son of Zuar </cell>
+    <cell style="tcr3" align="end">54,400</cell>
+  </row>
+  <row style="tr">
+    <cell style="tc1" align="start">Zebulun </cell>
+    <cell style="tc2" align="start">Eliab son of Helon </cell>
+    <cell style="tcr3" align="end">57,400</cell>
+  </row>
+  <row style="tr">
+    <cell style="tcr1" align="end" colspan="2">Total: </cell>
+    <cell style="tcr3" align="end">186,400</cell>
+  </row>
+  ...
+</table>
+----
+======
 
 image::char/tc_1.jpg[Numbers 2.10-16 (GNT),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[TableRow]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

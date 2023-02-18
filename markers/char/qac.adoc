@@ -18,19 +18,14 @@ Syntax::
 * *USX:* `+<char style="qac">{content}</char>+`
 Added:: 1.0
 
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[ChapterContent] > [PoeticPara]`, `[SidebarContent] > [PoeticPara]`
-TextType:: VerseText
-TextProperties:: publishable, vernacular, poetic
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Lamentations 1.1-2 (Spanish TLA)
-[source#src-char-qac_1,usfm,highlight=5;15]
+[source#src-usfm-char-qac_1,usfm,highlight=5;15]
 ----
 \c 1
 \s1 Primer lamento acróstico
@@ -53,13 +48,49 @@ TextProperties:: publishable, vernacular, poetic
 \q1 Los que se decían tus amigos
 \q1 hoy son tus enemigos.
 ----
+USX::
++
+.Lamentations 1.1-2 (Spanish TLA)
+[source#src-usx-char-qac_1,xml,highlight=5;18]
+----
+<chapter number="1" style="c" sid="LAM 1"/>
+<para style="s1">Primer lamento acróstico</para>
+<para style="s2">El profeta</para>
+<para style="q1">
+  <verse number="1" style="v" sid="LAM 1:1"/>¡<char style="qac">P</char>obrecita
+  de ti, Jerusalén!</para>
+<para style="q1" vid="LAM 1:1">Antes eras la más famosa</para>
+<para style="q1" vid="LAM 1:1">de todas las ciudades.</para>
+<para style="q1" vid="LAM 1:1">¡Antes estabas llena de gente,</para>
+<para style="q1" vid="LAM 1:1">pero te has quedado muy sola,</para>
+<para style="q1" vid="LAM 1:1">te has quedado viuda!</para>
+<para style="q1" vid="LAM 1:1">¡Fuiste la reina de las naciones,</para>
+<para style="q1" vid="LAM 1:1">pero hoy eres esclava de ellas!
+  <verse eid="LAM 1:1"/></para>
+<para style="b"/>
+<para style="q1">
+  <verse number="2" style="v" sid="LAM 1:2"/>
+  <char style="qac">O</char>lvidada y
+  bañada en lágrimas</para>
+<para style="q1" vid="LAM 1:2">pasas todas las noches.</para>
+<para style="q1" vid="LAM 1:2">Muchos decían que te amaban,</para>
+<para style="q1" vid="LAM 1:2">pero hoy nadie te consuela.</para>
+<para style="q1" vid="LAM 1:2">Los que se decían tus amigos</para>
+<para style="q1" vid="LAM 1:2">hoy son tus enemigos.<verse eid="LAM 1:2"/></para>
+----
+======
 
 image::char/qac_1.jpg[Lamentations 1.1-2 (Spanish TLA),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ChapterContent] > [PoeticPara]`, `[SidebarContent] > [PoeticPara]`
+TextType:: VerseText
+TextProperties:: publishable, vernacular, poetic
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
