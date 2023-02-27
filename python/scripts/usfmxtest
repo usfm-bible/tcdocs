@@ -1,15 +1,16 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S python3 -u
 
 import argparse, os, sys, logging, re, itertools
 from multiprocessing import Pool
 
 try:
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm, NoParseError
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
     from usfmtc.sfmparser import UsfmParserBackend, parseusfm
 from usfmtc.parser import NoParseError
 from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
+from usfmtc.usxgrammar import usxenums
 from usfmtc.xml import parsexml, writexml, prettyxml
 from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup
 import xml.etree.ElementTree as et
@@ -111,29 +112,6 @@ if len(jobs) == 1:
     args.exclude = []
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
-enums = {
-    'bookidentification': 'BookIdentification.book.code',
-    'peripheralbookidentification': 'PeripheralBookIdentification.book.code',
-    'periperhaldividedbookidentification': 'PeripheralDividedBookIdentification.book.code',
-    'frt': 'Peripheral.FRT.periph.id',
-    'int': 'Peripheral.INT.periph.id',
-    'bak': 'Peripheral.BAK.periph.id',
-    'oth': 'Peripheral.OTH.periph.id',
-    'bookheader': 'BookHeaders.para.style',
-    'booktitles': 'BookTitle.para.style',
-    'bookintroduction': 'BookIntroduction.para.style',
-    'bookintroductionendtitles': 'BookIntroductionEndTitles.para.style',
-    'para': 'Para.para.style',
-    'section': 'Section.para.style',
-    'list': 'List.para.style',
-    'cellalign': 'Cell.align',
-    'introchar': 'IntroChar.char.style',
-    'char': 'Char.char.style',
-    'listchar': 'ListChar.char.style',
-    'ms': 'Milestone',
-    'footnotechar': 'FootnoteChar.char.style',
-    'crossrefchar': 'CrossReferenceChar.char.style',
-}
 
 rdoc = et.parse(args.grammar)
 if len(args.marker):
@@ -141,7 +119,7 @@ if len(args.marker):
         t, r = s.split('=')
         mks = re.split(r'[,;\s]\s*', r)
         ty = t.strip()
-        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, enums[ty]))
+        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
         if e is None:
             continue
         for m in mks:
@@ -164,6 +142,7 @@ if args.jobs > -1 and len(jobs) > 1:
         return proconedir(arg, sfmproc.curr, args)
     pool = Pool()
     nchunks = args.jobs * 4
+    chunksize = len(jobs) // nchunks
     dojobs = chunkjobs(jobs, nchunks)
     results = pool.map_async(doprocone, dojobs, chunksize=chunksize)
     results.get()

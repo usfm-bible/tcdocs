@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+
+import argparse, zipfile, os, sys, itertools, re
+from multiprocessing import Pool
+from math import sqrt
+import logging
+import logging.config
+
+try:
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+except ImportError:
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
+    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+from usfmtc.parser import NoParseError, Parser
+from usfmtc.grammar import UsfmGrammarParser
+from usfmtc.usxgrammar import usxenums
+import xml.etree.ElementTree as et
+
+def proconezip(fpath, sfmp, log, args):
+    if not args.quiet:
+        log.debug(f"{fpath}: started")
+    try:
+        zipf = zipfile.ZipFile(fpath)
+    except OSError:
+        log.info(f"{fpath}: Skipped")
+        return (fpath, None)
+    try:
+        fh = zipf.open("source/source.zip")
+    except (KeyError, OSError):
+        zipf.close()
+        log.info(f"{fpath}: Skipped (no source)")
+        return (fpath, None)
+    szip = zipfile.ZipFile(fh)
+    results = []
+    for f in szip.namelist():
+        if f.lower().endswith('sfm'):
+            m = re.match(r'(\d{2})', f)
+            if m is None or not (0 < int(m.group(1)) < 68):
+                continue
+        else:
+            continue
+        sfmfh = szip.open(f)
+        try:
+            result = parseusfm(sfmfh, sfmp)
+        except NoParseError as e:
+            imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
+            results.append(imsg)
+            log.debug(f"{fpath}: {imsg}")
+            if args.oneerror:
+                break
+    szip.close()
+    zipf.close()
+    log.info("{}: {}".format(fpath, "Passed" if not len(results) else "Failed"))
+    return (fpath, results)
+
+def chunkjobs(jobs, nchunks):
+    chunksize = len(jobs) // nchunks
+    chunksize += 1 if len(jobs) % nchunks else 0
+    tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
+    dojobs = []
+    for i in range(nchunks):
+        if args.debug & 2 == 0:
+            lj = [x for x in itertools.chain(*itertools.zip_longest(
+                    tjobs[i::2*nchunks], tjobs[2*nchunks-i-1::2*nchunks])) if x is not None]
+        #dojobs.extend(x for x in itertools.chain(*zip(tjobs[i::2*nchunks]+[None], tjobs[2*nchunks-i-1::2*nchunks]+[None])))
+        else:
+            lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
+        dojobs.extend(lj + ([None] * (chunksize - len(lj))))
+    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
+    return dojobs
+
+parser = argparse.ArgumentParser()
+parser.add_argument("directory",help="A single or tree of test directories")
+parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
+parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
+parser.add_argument("-m","--marker",action='append',default=[],help='type=mkr,mka,mkb')
+parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
+parser.add_argument("-M","--match",help="Constrain input files to match regex")
+parser.add_argument("-O","--oneerror",action="store_true",help="Bail on a zip after the first faulty sfm file")
+parser.add_argument("-j","--jobs",type=int,default=0,help="Parallel jobs, single=1")
+parser.add_argument("-C","--chunks",type=int,help="Size of parallel chunks")
+parser.add_argument("-v","--verbose",action="store_true",help="Print things like error messages")
+parser.add_argument("-q","--quiet",action="store_true",help="Don't report progress")
+parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
+parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree, 2-alt multiproc")
+args = parser.parse_args()
+
+Parser.debug=False
+if args.logging:
+    try:
+        loglevel = int(args.logging)
+    except ValueError:
+        loglevel = getattr(logging, args.logging.upper(), None)
+    if isinstance(loglevel, int):
+        parms = {'level': loglevel, 'datefmt': '%d/%b/%Y %H:%M:%S',
+                 'format': '%(asctime)s.%(msecs)03d %(levelname)s:%(module)s(%(lineno)d) %(message)s'}
+        logfh = open("usfmtestdbl.log", "w", encoding="utf-8")
+        parms.update(stream=logfh, filemode="w") #, encoding="utf-8")
+        try:
+            logging.basicConfig(**parms)
+        except FileNotFoundError as e:      # no write access to the log
+            print("Exception", e)
+    logging.config.dictConfig({'version': 1, 'disable_existing_loggers': True})
+    log = logging.getLogger('usfmtestdbl')
+
+relaxns = "{http://relaxng.org/ns/structure/1.0}"
+
+rdoc = et.parse(args.grammar)
+if len(args.marker):
+    for s in args.marker:
+        t, r = s.split('=')
+        mks = re.split(r'[,;\s]\s*', r)
+        ty = t.strip()
+        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
+        if e is None:
+            continue
+        for m in mks:
+            v = et.Element('value')
+            v.text = m.strip()
+            e.insert(0, v)
+            if ty == 'para':
+                partypes[m] = 'Section'
+
+backendsfm = UsfmParserBackend()
+sfmproc = UsfmGrammarParser(rdoc, backendsfm)
+sfmproc.parseRef(args.start)
+
+jobs = []
+for dp, dns, fns in os.walk(args.directory):
+    for f in fns:
+        if not f.lower().endswith(".zip"):
+            continue
+        if args.match and not re.match(args.match, f, re.I):
+            continue
+        st = os.stat(os.path.join(dp, f))
+        if st.st_size > args.size * 1024:
+            continue
+        jobs.append((os.path.join(dp, f), st.st_size))
+
+if args.jobs != 1 and len(jobs) > 1:
+    if args.jobs == 0:
+        args.jobs = os.cpu_count()
+    def doprocone(arg):
+        if arg is None:
+            return
+        return proconezip(arg, sfmproc.curr, log, args)
+    pool = Pool()
+    if args.chunks:
+        chunksize = args.chunks
+        nchunks = len(jobs) // chunksize
+    else:
+        nchunks = args.jobs * 4
+        chunksize = len(jobs) // nchunks
+    dojobs = chunkjobs(jobs, nchunks)
+    mapresults = pool.map_async(doprocone, dojobs, chunksize=chunksize)
+    results = mapresults.get()
+else:
+    results = []
+    for j in jobs:
+        results.append(proconezip(j[0], sfmproc.curr, log, args))
+
+failed = 0
+passed = 0
+skipped = 0
+for r in results:
+    if r[1] is None:
+        skipped += 1
+    elif len(r[1]) == 0:
+        passed += 1
+    else:
+        failed += 1
+        if args.verbose:
+            print("{}:\n    {}".format(r[0], "    \n".join(r[1])))
+total = failed + passed + skipped
+print(f"{passed=}, {failed=}, {skipped=}, {total=}")
+

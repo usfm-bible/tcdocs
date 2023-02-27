@@ -29,3 +29,28 @@ alljobs = {
     "category":             ("cat",),
     "char.link":            ("link",),
 }
+
+usxenums = {
+    'bookidentification': 'BookIdentification.book.code',
+    'peripheralbookidentification': 'PeripheralBookIdentification.book.code',
+    'periperhaldividedbookidentification': 'PeripheralDividedBookIdentification.book.code',
+    'frt': 'Peripheral.FRT.periph.id',
+    'int': 'Peripheral.INT.periph.id',
+    'bak': 'Peripheral.BAK.periph.id',
+    'oth': 'Peripheral.OTH.periph.id',
+    'bookheader': 'BookHeaders.para.style',
+    'booktitles': 'BookTitle.para.style',
+    'bookintroduction': 'BookIntroduction.para.style',
+    'bookintroductionendtitles': 'BookIntroductionEndTitles.para.style',
+    'para': 'Para.para.style',
+    'section': 'Section.para.style',
+    'list': 'List.para.style',
+    'cellalign': 'Cell.align',
+    'introchar': 'IntroChar.char.style',
+    'char': 'Char.char.style',
+    'listchar': 'ListChar.char.style',
+    'ms': 'Milestone',
+    'footnotechar': 'FootnoteChar.char.style',
+    'crossrefchar': 'CrossReferenceChar.char.style',
+}
+

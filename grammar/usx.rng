@@ -906,7 +906,7 @@
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
-      <zeroOrMore>
+      <oneOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
           <ref name="CharEmbed"/>
@@ -918,7 +918,7 @@
             <usfm:match match="TEXTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
         </choice>
-      </zeroOrMore>
+      </oneOrMore>
     </group>
   </define>
   <define name="NoteCharContent">
@@ -953,32 +953,24 @@
         </attribute>
         <choice>
           <group>
-            <optional>
-              <group>
-                <usfm:match match="PIPE" dump="true"/>
-                <choice>
+            <group>
+              <usfm:match match="PIPE" dump="true"/>
+              <choice>
+                <attribute>
+                  <usfm:match match="/[^\\=]+(?=\\)/"/>
+                  <anyName/>
+                  <data type="string"/>
+                </attribute>
+                <oneOrMore>
                   <attribute>
-                    <usfm:match match="/[^\\=]*(?=\\)/"/>
+                    <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"/>
                     <anyName/>
                     <data type="string"/>
                   </attribute>
-                  <oneOrMore>
-                    <attribute>
-                      <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"/>
-                      <anyName/>
-                      <data type="string"/>
-                    </attribute>
-                  </oneOrMore>
-                </choice>
-              </group>
-            </optional>
-            <group usfm:order="-1">
-              <optional>
-                <text>
-                  <usfm:match match="TEXTATTRIB"/>
-                </text>
-              </optional>
+                </oneOrMore>
+              </choice>
             </group>
+            <ref name="CharContent" usfm:order="-1"/>
             <usfm:endtag usfm:order="4"/>
           </group>
           <group>
@@ -1041,7 +1033,7 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="CharContent"/>
-        <usfm:endtag usfm:order="3" before="&#x27;\+&#x27;"/>
+        <usfm:endtag usfm:many="?" usfm:order="3" before="&#x27;\+&#x27;"/>
       </element>
       <ref name="CharEmbedWithAttrib"/>
       <ref name="Figure"/>
@@ -1057,7 +1049,7 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
-        <usfm:endtag usfm:order="3" before="&#x27;\+&#x27;"/>
+        <usfm:endtag usfm:many="?" usfm:order="3" before="&#x27;\+&#x27;"/>
       </element>
       <ref name="CharEmbedWithAttrib"/>
     </choice>
@@ -1126,25 +1118,23 @@
                 <data type="string"/>
               </attribute>
             </oneOrMore>
-            <optional>
-              <attribute usfm:name-override="style">
-                <usfm:match match="/[^\\=]+(?=\\)/"/>
-                <anyName/>
-                <data type="string"/>
-              </attribute>
-            </optional>
+            <attribute usfm:name-override="style">
+              <usfm:match match="/[^\\=]+(?=\\)/"/>
+              <anyName/>
+              <data type="string"/>
+            </attribute>
           </choice>
         </group>
       </optional>
       <group usfm:order="-1">
-        <choice>
-          <ref name="CharEmbed"/>
-          <optional>
+        <zeroOrMore>
+          <choice>
+            <ref name="CharEmbed"/>
             <text>
               <usfm:match match="TEXTATTRIB"/>
             </text>
-          </optional>
-        </choice>
+          </choice>
+        </zeroOrMore>
       </group>
       <usfm:endtag usfm:order="4"/>
     </element>
@@ -1213,25 +1203,23 @@
                 <data type="string"/>
               </attribute>
             </oneOrMore>
-            <optional>
-              <attribute usfm:name-override="style">
-                <usfm:match match="/[^\\=]+(?=\\)/"/>
-                <anyName/>
-                <data type="string"/>
-              </attribute>
-            </optional>
+            <attribute usfm:name-override="style">
+              <usfm:match match="/[^\\=]+(?=\\)/"/>
+              <anyName/>
+              <data type="string"/>
+            </attribute>
           </choice>
         </group>
       </optional>
       <group usfm:order="-1">
-        <choice>
-          <ref name="CharEmbed"/>
-          <optional>
+        <zeroOrMore>
+          <choice>
+            <ref name="CharEmbed"/>
             <text>
               <usfm:match match="TEXTATTRIB"/>
             </text>
-          </optional>
-        </choice>
+          </choice>
+        </zeroOrMore>
       </group>
       <usfm:endtag usfm:order="4" before="&#x27;\+&#x27;"/>
     </element>
@@ -1508,7 +1496,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/\S+/" after="/${WS}|(?=\\)/"/>
+        <usfm:match match="/[^\\\s]+/" after="/${WSS}/"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
@@ -1589,7 +1577,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/\S+/" after="/${WS}|(?=\\)/"/>
+        <usfm:match match="/[^\\\s]+/" after="/${WSS}/"/>
         <name ns="">caller</name>
         <text/>
       </attribute>

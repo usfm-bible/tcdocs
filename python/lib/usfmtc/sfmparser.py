@@ -196,8 +196,11 @@ class Element(list):
 
 
 def parseusfm(infilename, parser):
-    with open(infilename, encoding="utf-8") as inf:
-        dat = inf.read()
+    if hasattr(infilename, 'read'):
+        dat = infilename.read().decode("utf-8")
+    else:
+        with open(infilename, encoding="utf-8") as inf:
+            dat = inf.read()
     gs = GlobalState(dat)
     return parser.parse(usfmp.State(gs))
     
