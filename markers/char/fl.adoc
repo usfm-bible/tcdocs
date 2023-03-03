@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Label text. Use for marking words used consistently across translation notes (such as the words “Or” in an alternative translation note, “Others”, “Heb.”, “LXX” etc.).
+Description:: xref:note:footnote/f.adoc[Footnote] - Label text. Use for marking structural words or abbreviations used consistently in many translation notes (such as the words “Or” in an alternative translation note, “Others”, “Heb.”, “LXX” etc.).
 Syntax::
 * *USFM:* `+\fl_{content}+`
 * *USX:* `+<char style="fl">{content}</char>+`
@@ -20,33 +20,37 @@ Syntax::
 Added:: 2.03
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:footnote/f.adoc[Footnote]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[FootnoteContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-fl_1,usfm]
+[source#src-usfm-char-fl_1,usfm]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-fl_1,xml]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

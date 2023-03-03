@@ -13,4 +13,4 @@ include::../nav.adoc[tag=nav-topcat]
 ** `-` - No caller.
 ** `?` - Where  `?` represents the specific character to be used for the caller.
 `category`::: Note category.
-`content`::: The note type-specific character style elements and note text.
+`content`::: Character types for xref:char:notes/footnote/index.adoc[footnotes] or xref:char:notes/crossref/index.adoc[cross references].

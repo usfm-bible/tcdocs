@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Alternate translation. Used to distinguish between a quotation of the current scripture translation (marked with xref:char:notes/footnote/fq.adoc[fq]) and an alternate translation.
+Description:: xref:note:footnote/f.adoc[Footnote] - Alternate translation. Used to distinguish between a quotation of the current scripture translation (marked with xref:char:notes/footnote/fq.adoc[fq]) and an alternate translation.
 Syntax::
 * *USFM:* `+\fqa_{content}+`
 * *USX:* `+<char style="fqa">{content}</char>+`
@@ -20,33 +20,62 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:footnote/f.adoc[Footnote]
-endif::env-antora[]
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Mark 1.1; 1.4 (GNT)
+[source#src-usfm-char-fqa_1,usfm,highlight=8]
+----
+\p
+\v 1 This is the Good News about Jesus Christ, the Son of God.\f + \fr 1.1: 
+\ft Some manuscripts do not have \fq the Son of God.\f*
+...
+\p
+\v 4 So John appeared in the desert, baptizing and preaching.\f + \fr 1.4: 
+\fq John appeared in the desert, baptizing and preaching; \ft some manuscripts 
+have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away 
+from your sins and be baptized,” he told the people, “and God will forgive 
+your sins.”
+----
+USX::
++
+.Mark 1.1; 1.4 (GNT)
+[source#src-usx-char-fqa_1,xml,highlight=15]
+----
+<para style="p">
+  <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
+  Christ, the Son of God.<note caller="+" style="f">
+    <char style="fr">1.1: </char>
+    <char style="ft">Some manuscripts do not have </char>
+    <char style="fq">the Son of God.</char></note>
+  <verse eid="MRK 1:1"/></para>
+...
+<para style="p">
+  <verse number="4" style="v" sid="MRK 1:4"/>So John appeared in the desert,
+  baptizing and preaching.<note caller="+" style="f">
+    <char style="fr">1.4: </char>
+    <char style="fq">John appeared in the desert, baptizing and preaching; </char>
+    <char style="ft">some manuscripts have </char>
+    <char style="fqa">John the Baptist appeared in the desert, preaching.</char>
+    </note> “Turn away from your sins and be baptized,” he told the people, 
+  “and God will forgive your sins.”<verse eid="MRK 1:4"/></para>
+----
+======
+
+image::char/fqa_1.jpg[Mark 1.1 and 1.4 (GNT),600]
 
 == Properties
 
-StyleType:: Character
+StyleType:: xref:char:index.adoc[Character]
 OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
-
-== Structure
-
-== Examples
-
-.Missing
-[source#src-char-fqa_1,usfm]
-----
-Missing
-----
-
-image::char/missing.jpg[,300]
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

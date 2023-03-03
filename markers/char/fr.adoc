@@ -12,32 +12,23 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Origin reference.
+Description:: xref:note:footnote/f.adoc[Footnote] - Origin reference.
 Syntax::
-* *USFM:* `+\fr_{C#:V#:}+`
-* *USX:* `+<char style="fr">{C#:V#:}</char>+`
-`C#:V#:`::: Chapter-verse origin reference. The chapter-verse separator and end-of-reference punctuation are text specific.
+* *USFM:* `+\fr_{cv-reference}+`
+* *USX:* `+<char style="fr">{cv-reference}</char>+`
+`cv-reference`::: Chapter + verse origin reference. The separator character between chapter and verse is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation after the reference is optional.
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:footnote/f.adoc[Footnote]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[FootnoteContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Mark 1.4 (GNT)
-[source#src-char-fr_1,usfm,highlight=2;6]
+[source#src-usfm-char-fr_1,usfm,highlight=2;6]
 ----
 \p
 \v 1 This is the Good News about Jesus Christ, the Son of God. \f + \fr 1.1: 
@@ -50,13 +41,42 @@ have \fqa John the Baptist appeared in the desert, preaching.\f* “Turn away
 from your sins and be baptized,” he told the people, “and God will forgive 
 your sins.”
 ----
+USX::
++
+.Mark 1.4 (GNT)
+[source#src-usx-char-fr_1,xml,highlight=4;12]
+----
+<para style="p">
+  <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
+  Christ, the Son of God. <note caller="+" style="f">
+    <char style="fr">1.1: </char>
+    <char style="ft">Some manuscripts do not have </char>
+    <char style="fq">the Son of God.</char></note>
+  <verse eid="MRK 1:1"/></para>
+...
+<para style="p">
+  <verse number="4" style="v" sid="MRK 1:4"/>So John appeared in the desert,
+  baptizing and preaching.<note caller="+" style="f">
+    <char style="fr">1.4: </char>
+    <char style="fq">John appeared in the desert, baptizing and preaching; </char>
+    <char style="ft">some manuscripts have </char>
+    <char style="fqa">John the Baptist appeared in the desert, preaching.</char>
+    </note> “Turn away from your sins and be baptized,” he told the people, 
+  “and God will forgive your sins.”<verse eid="MRK 1:4"/></para>
+----
+======
 
 image::char/fr_1.jpg[Mark 1.1 and 1.4 (GNT),600]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

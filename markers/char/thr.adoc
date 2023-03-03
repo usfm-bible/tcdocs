@@ -17,7 +17,7 @@ Description:: Table column heading cell - right aligned.
 [NOTE]
 .Syntax notes
 ====
-In *USFM*, a table is composed by a series of paragraphs marked with xref:para:tables/tr.adoc[\tr]. The content for cells is marked with xref:char:tables/index.adoc[character types for table cells], such as xref:char:tables/th.adoc[\th#].
+In *USFM*, a table is composed by a series of paragraphs marked with xref:para:tables/tr.adoc[\tr]. The content for cells is marked with xref:char:tables/index.adoc[character types for tables], such as xref:char:tables/th.adoc[\th#].
 
 In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing `<row>`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
 ====

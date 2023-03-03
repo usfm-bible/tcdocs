@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Keyword. The footnote relates to this specific keyword quoted from the text.
+Description:: xref:note:footnote/f.adoc[Footnote] - Keyword. The footnote relates to a specific keyword quoted from the text.
 Syntax::
 * *USFM:* `+\fk_{content}+`
 * *USX:* `+<char style="fk">{content}</char>+`
@@ -20,39 +20,57 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:footnote/f.adoc[Footnote]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[FootnoteContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Genesis 3.20 (GNT)
-[source#src-char-fk_1,usfm,highlight=2..5]
+[source#src-usfm-char-fk_1,usfm,highlight=2;3]
 ----
 \p
-\v 20 Adam \f + \fr 3.20: \fk Adam: \ft This name in Hebrew means “all human 
-beings.”\f* named his wife Eve, \f + \fr 3.20: \fk Eve: \ft This name sounds 
+\v 20 Adam\f + \fr 3.20: \fk Adam: \ft This name in Hebrew means “all human 
+beings.”\f* named his wife Eve,\f + \fr 3.20: \fk Eve: \ft This name sounds 
 similar to the Hebrew word for “living,” which is rendered in this context 
 as “human beings.”\f* because she was the mother of all human beings.
 \v 21 And the \nd Lord\nd* God made clothes out of animal skins for Adam and 
 his wife, and he clothed them.
 ----
+USX::
++
+.Genesis 3.20 (GNT)
+[source#src-usx-char-fk_1,xml,highlight=4;8]
+----
+<para style="p">
+  <verse number="20" style="v" sid="GEN 1:20"/>Adam<note caller="+" style="f">
+    <char style="fr">3.20: </char>
+    <char style="fk">Adam: </char>
+    <char style="ft">This name in Hebrew means “all human beings.”</char></note>
+  named his wife Eve,<note caller="+" style="f">
+    <char style="fr">3.20: </char>
+    <char style="fk">Eve: </char>
+    <char style="ft">This name sounds similar to the Hebrew word
+    for “living,” which is rendered in this context as “human beings.”</char>
+    </note>
+  because she was the mother of all human beings.<verse eid="GEN 1:20"/>
+  <verse number="21" style="v" sid="GEN 1:21"/>And the <char style="nd">Lord</char>
+  God made clothes out of animal skins for Adam and his wife, and he clothed them.
+  <verse eid="GEN 1:21"/></para>
+----
+======
 
 image::char/fk_1.jpg[Genesis 3.20 (GNT),600]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

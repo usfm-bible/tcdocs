@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Verse number. A verse number occuring in a xref:char:notes/footnote/fq.adoc[fq - text quotation] or xref:char:notes/footnote/fqa.adoc[fqa - alternative translation].
+Description:: xref:note:footnote/f.adoc[Footnote] - Verse number. A verse number occuring in a text quotation (xref:char:notes/footnote/fq.adoc[fq]) or alternative translation (xref:char:notes/footnote/fqa.adoc[fqa]).
 Syntax::
 * *USFM:* `+\fv_{content}\fv*+`
 * *USX:* `+<char style="fv">{content}</char>+`
@@ -22,26 +22,17 @@ Added:: 1.0
 
 [NOTE]
 ====
-This marker is normally xref:char:nesting.adoc[nested] within another footnote character type (e.g. xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/fqa.adoc[fqa]).
+This marker is normally xref:char:nesting.adoc[nested] within another footnote character type (e.g. xref:char:notes/footnote/fq.adoc[fq], or xref:char:notes/footnote/fqa.adoc[fqa]).
 ====
-
-ifdef::env-antora[]
-See also: xref:note:footnote/f.adoc[Footnote]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[FootnoteContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
 
 == Examples
 
+[tabs]
+======
+USFM::
++
 .John 7.38 (GNT)
-[source#src-char-fv_1,usfm,highlight=7]
+[source#src-usfm-char-fv_1,usfm,highlight=7]
 ----
 \p
 \v 37 On the last and most important day of the festival Jesus stood up and 
@@ -52,13 +43,38 @@ words in verses 37-38 may be translated: \fqa “Whoever is thirsty should come
 to me and drink. \+fv 38\+fv* As the scripture says, ‘Streams of life-giving 
 water will pour out from within anyone who believes in me.’”\f*
 ----
+USX::
++
+.John 7.38 (GNT)
+[source#src-usx-char-fv_1,xml,highlight=11]
+----
+<para style="p">
+  <verse number="37" style="v" sid="JHN 7:37"/>On the last and most important day
+  of the festival Jesus stood up and said in a loud voice, “Whoever is thirsty
+  should come to me, and<verse eid="JHN 7:37"/>
+  <verse number="38" style="v" sid="JHN 7:38"/>whoever believes in me should drink.
+  As the scripture says, ‘Streams of life-giving water will pour out from his
+  side.’” <note caller="+" style="f">
+    <char style="fr">7.38: </char>
+    <char style="ft">Jesus' words in verses 37-38 may be translated: </char>
+    <char style="fqa">“Whoever is thirsty should come to me and drink.
+      <char style="fv">38</char> As the scripture says, ‘Streams of life-giving 
+    water will pour out from within anyone who believes in me.’”</char></note>
+  <verse eid="JHN 7:38"/></para>
+----
+======
 
 image::char/fv_1.jpg[John 7.38 (GNT),600]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

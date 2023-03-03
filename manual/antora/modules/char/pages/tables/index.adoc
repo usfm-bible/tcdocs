@@ -1,4 +1,4 @@
-= Character Types for Table Cells
+= Character Types for Tables
 
 include::../../nav.adoc[tag=nav-tables]
 

@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Footnote - Additional paragraph. Use to indicate the start of a new paragraph within a footnote (uncommon).
+Description:: xref:note:footnote/f.adoc[Footnote] - Additional paragraph. Use to indicate the start of a new paragraph within a footnote (uncommon).
 Syntax::
 * *USFM:* `+\fp_{content}+`
 * *USX:* `+<char style="fp">{content}</char>+`
@@ -20,33 +20,37 @@ Syntax::
 Added:: 2.03
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:footnote/f.adoc[Footnote]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[FootnoteContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-fp_1,usfm]
+[source#src-usfm-char-pl_1,usfm]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-fp_1,xml]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[FootnoteContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

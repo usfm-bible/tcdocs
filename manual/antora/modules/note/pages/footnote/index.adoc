@@ -1,7 +1,5 @@
 = Footnotes
 
-Footnotes are a type of xref:note:index.adoc[Note].
-
 include::../../nav.adoc[tag=nav-footnotes]
 
 == Diagram
@@ -18,5 +16,5 @@ image::schema/cat_usx.svg[]
 
 == Child Elements
 
-** Character Types for Footnotes - [xref:char:notes/footnote/index.adoc[FootnoteChar]]
+** xref:char:notes/footnote/index.adoc[Character Types for Footnotes] `[FootnoteChar]`
 include::note:/footnote/xref-char.adoc[tag=xrefs-only]
