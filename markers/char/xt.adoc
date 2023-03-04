@@ -12,38 +12,27 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - Target references. A list of scripture references commonly given as book abbreviation, chapter, and verse(s). The punctuation used between chapter and verse, reference ranges, and between target references is consistent within a translation text, but differs among texts.
+Description:: xref:note:crossref/index.adoc[Cross Reference] - Target references. A list of scripture references normally written as book abbreviation + chapter + verse(s). The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation at the end of a list of references is optional.
 Syntax::
 * *USFM:* `+\xt_{content}+`
-* *USX:* `+<char style="xt">{content}</char>+`
-Attributes:::
-** `link-href` - Unambiguously identifies the scripture target reference using a standard scripture reference format. _(default)_
-*** Book names must be one a standard xref:para:identification/books.adoc[book identifier]. Chapter verse separator is always a colon `:`. A string of pattern `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
-*** In some scenarios a target reference is written in a format which cannot be accurately parsed and identified. Providing the `link-href` attribute allows greater flexibility in the use of xref:char:notes/crossref/xt.adoc[xt].
-*** In this context, `link-href` should only target scripture references for the current text (i.e. references to other project texts or non-scripture URIs are not allowed).
-*** When adding `link-href`, the explicit attribute name is not required since it is defined in USFM as the default for xref:char:notes/crossref/xt.adoc[xt].
+* *USX:* `+<char style="xt" [@link-href]>{content}</char>+`
+`link-href`::: Unambiguously identifies the scripture target reference using a standard scripture reference format. _(default attribute)_
+** Book names must be one a standard xref:para:identification/books.adoc[book identifier]. Chapter + verse separator is always a colon `:`. A string of pattern `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
+** In some scenarios a target reference is written in a format which cannot be accurately parsed and identified. Providing the `link-href` attribute allows greater flexibility in the use of xref:char:notes/crossref/xt.adoc[xt].
+** In this context (xref:char:notes/crossref/xt.adoc[xt]), `link-href` should only target scripture references for the current text (i.e. references to other project texts or non-scripture URIs are not allowed).
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (attributes)
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Typical Cross Reference - Matthew 2.23 (GNT)
-[source#src-char-xt_1,usfm,highlight=5]
+[source#src-usfm-char-xt_1,usfm,highlight=5]
 ----
 \p
 \v 22 But when Joseph heard that Archelaus had succeeded his father Herod as 
@@ -53,11 +42,33 @@ dream, so he went to the province of Galilee
 in a town named Nazareth. And so what the prophets had said came true: “He 
 will be called a Nazarene.”
 ----
+USX::
++
+.Typical Cross Reference - Matthew 2.23 (GNT)
+[source#src-usx-char-xt_1,xml,highlight=8..9]
+----
+<para style="p">
+  <verse number="22" style="v" sid="MAT 2:22"/>But when Joseph heard that
+  Archelaus had succeeded his father Herod as king of Judea, he was afraid to go
+  there. He was given more instructions in a dream, so he went to the province of
+  Galilee<verse eid="MAT 2:22"/>
+  <verse number="23" style="v" sid="MAT 2:23"/><note caller="-" style="x">
+    <char style="xo" closed="false">2.23: </char>
+    <char style="xt" closed="false"><ref loc="MRK 1:24">Mk 1.24</ref>; 
+    <ref loc="LUK 2:39">Lk 2.39</ref>; <ref loc="JHN 1:45">Jn 1.45</ref>.</char>
+  </note>and made his home in a town named Nazareth. And so what the prophets had 
+  said came true: “He will be called a Nazarene.”<verse eid="MAT 2:23"/></para>
+----
+======
 
 image::char/xt_1.jpg[Matthew 2.23 (GNT),600]
 
+[tabs]
+======
+USFM::
++
 .Multiple Origin Parts - Mark 10.19 (GNT)
-[source#src-char-xt_2,usfm,highlight=4;6]
+[source#src-usfm-char-xt_2,usfm,highlight=4;6]
 ----
 \p
 \v 18 “Why do you call me good?” Jesus asked him. “No one is good except 
@@ -68,13 +79,47 @@ Deu 5.18; \xo c \xt Exo 20.15; Deu 5.19; \xo d \xt Exo 20.16; Deu 5.20;
 murder; do not commit adultery; do not steal; do not accuse anyone falsely; 
 do not cheat; respect your father and your mother.’”
 ----
+USX::
++
+.Multiple Origin Parts - Mark 10.19 (GNT)
+[source#src-usx-char-xt_2,xml,highlight=6..7;9..10;12..13;15..16;18..19]
+----
+<para style="p">
+  <verse number="18" style="v" sid="MRK 10:18"/>“Why do you call me good?” Jesus
+  asked him. “No one is good except God alone.<verse eid="MRK 10:18"/>
+  <verse number="19" style="v" sid="MRK 10:19"/><note caller="-" style="x">
+    <char style="xo">10.19: a </char>
+    <char style="xt"><ref loc="EXO 20:13">Ex 20.13</ref>; 
+    <ref loc="DEU 5:17">Dt 5.17</ref>; </char>
+    <char style="xo">b </char>
+    <char style="xt"><ref loc="EXO 20:14">Ex 20.14</ref>; 
+    <ref loc="DEU 5:18">Dt 5.18</ref>; </char>
+    <char style="xo">c </char>
+    <char style="xt"><ref loc="EXO 20:15">Ex 20.15</ref>; 
+    <ref loc="DEU 5:19">Dt 5.19</ref>; </char>
+    <char style="xo">d </char>
+    <char style="xt"><ref loc="EXO 20:16">Ex 20.16</ref>;
+    <ref loc="DEU 5:20">Dt 5.20</ref>; </char>
+    <char style="xo">e </char>
+    <char style="xt"><ref loc="EXO 20:12">Ex 20.12</ref>; 
+    <ref loc="DEU 5:16">Dt 5.16</ref>.</char></note>You know the commandments:
+  ‘Do not commit murder; do not commit adultery; do not steal; do not accuse
+  anyone falsely; do not cheat; respect your father and your mother.’”
+  <verse eid="MRK 10:19"/></para>
+----
+======
 
-image::char/xt_2.jpg[Mark 10.19 (GNT),600]
+image::char/xt_2.jpg[Mark 10.19 (GNT),560]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

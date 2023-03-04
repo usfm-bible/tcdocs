@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - OT target references. The marked xref:notes:crossref/xt[target references] are relevant for publications which include Old Testament (OT) books.
+Description:: xref:note:crossref/index.adoc[Cross Reference] - OT target references. The marked target references (xref:notes:crossref/xt[xt]) are relevant for publications which include Old Testament (OT) books.
 Syntax::
 * *USFM:* `+\xot_{content}\xot*+`
 * *USX:* `+<char style="xot">{content}</char>+`
@@ -20,33 +20,37 @@ Syntax::
 Added:: 2.2
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-xot_1,usfm,highlight=1]
+[source#src-usfm-char-xot_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-xot_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

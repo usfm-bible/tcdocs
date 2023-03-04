@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: xref:note:footnote/f.adoc[Footnote] - Translation quotation.
+Description:: xref:note:footnote/index.adoc[Footnote] - Translation quotation.
 Syntax::
 * *USFM:* `+\fq_{content}+`
 * *USX:* `+<char style="fq">{content}</char>+`

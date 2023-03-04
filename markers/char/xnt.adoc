@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - NT target references. The marked xref:notes:crossref/xt[target references] are relevant for publications which include New Testament (NT) books.
+Description:: xref:note:crossref/index.adoc[Cross Reference] - NT target references. The marked target references (xref:notes:crossref/xt[xt]) are relevant for publications which include New Testament (NT) books.
 Syntax::
 * *USFM:* `+\xnt_{content}\xnt*+`
 * *USX:* `+<char style="xnt">{content}</char>+`
@@ -20,28 +20,34 @@ Syntax::
 Added:: 2.2
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-xnt_1,usfm,highlight=1]
+[source#src-usfm-char-xnt_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-xnt_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 

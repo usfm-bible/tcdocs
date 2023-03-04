@@ -12,10 +12,10 @@ endif::[]
 
 == Summary
 
-Description:: Chapter number (milestone).
+Description:: Chapter number.
 Syntax::
 * *USFM:* `+\c_{number}+`
-* *USX:* `+<chapter style="c" number="{number}" @altnumber @pubnumber @sid @eid/>+`
+* *USX:* `+<chapter style="c" [@number,altnumber,pubnumber,sid,eid]/>+`
 `number` *::: Chapter number
 `altnumber`::: Chapter number for an alternate versification scheme.
 `pubnumber`::: Published chapter character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential chapter number used within the translation editing environment.

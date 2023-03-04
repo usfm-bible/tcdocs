@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - Translation quotation. Use of a quotation can help a reader to identify the portion of text which the xref:notes:crossref/xt[target references] are provided for.
+Description:: xref:note:crossref/index.adoc[Cross Reference] - Translation quotation. Use of a quotation can help a reader to identify the portion of text which the target references (xref:notes:crossref/xt[xt]) are provided for.
 Syntax::
 * *USFM:* `+\xq_{content}+`
 * *USX:* `+<char style="xq">{content}</char>+`
@@ -20,33 +20,37 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-xq_1,usfm,highlight=1]
+[source#src-usfm-char-xq_1,usfm,highlight=1]
 ----
 Missing
 ----
+USFM::
++
+.Missing
+[source#src-usx-char-xq_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

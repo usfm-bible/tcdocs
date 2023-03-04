@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - Published origin text. In some cases the text to be published in the position of the cross reference origin (xref:char:notes/crossref/xo.adoc[xo]) does not follow the usual chapter, verse pattern. A standard origin reference following this pattern is required for validation of the cross reference location. xref:char:notes/crossref/xop.adoc[xop] can be used to supply the content intended for publishing, which is similar to the application of [cp] (published chapter character) and [vp] (published verse character).
+Description:: xref:note:crossref/index.adoc[Cross Reference] - Published origin text. In some cases the text to be published in the position of the cross reference origin (xref:char:notes/crossref/xo.adoc[xo]) does not follow the usual chapter, verse pattern. A standard origin reference following this pattern is required for validation of the cross reference location. xref:char:notes/crossref/xop.adoc[xop] can be used to supply the content intended for publishing, which is similar to the application of [cp] (published chapter character) and [vp] (published verse character).
 Syntax::
 * *USFM:* `+\xop_{content}\xop*+`
 * *USX:* `+<char style="xop">{content}</char>+`
@@ -20,23 +20,14 @@ Syntax::
 Added:: 3.0
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Jonah 1.1-5 (Bulgarian Orthodox Bible)
-[source#src-char-xop_1,usfm,highlight=2;4;10;13]
+[source#src-usfm-char-xop_1,usfm,highlight=2;4;10;13]
 ----
 \p
 \v 1 \x - \xo 1:1 \xop Гл 1. (1)\xop* \xt 4 Царств. 14:25.\x*И биде слово 
@@ -55,13 +46,54 @@ TextProperties:: publishable, vernacular, note
 товара от кораба, за да му олекне от него; а Иона бе слязъл в дъното на 
 кораба, бе легнал и дълбоко заспал.
 ----
+USX::
++
+.Jonah 1.1-5 (Bulgarian Orthodox Bible)
+[source#src-usx-char-xop_1,xml,highlight=4;9;18;24]
+----
+<para style="p">
+  <verse number="1" style="v" sid="JON 1:1"/><note caller="-" style="x">
+    <char style="xo">1:1 </char>
+    <char style="xop">Гл 1. (1)</char>
+    <char style="xt">4 Царств. 14:25.</char></note>И биде слово Господне към
+  Иона, син Аматиев: <verse eid="JON 1:1"/>
+  <verse number="2" style="v" sid="JON 1:2"/><note caller="-" style="x">
+    <char style="xo">1:2 </char>
+    <char style="xop">(2)</char>
+    <char style="xt">Бит. 10:11. Иона 3:3.</char></note>„стани, иди в Ниневия,
+  град голям, и проповядвай в него, защото злодеянията му достигнаха 
+  до Мене“.<verse eid="JON 1:2"/>
+  <verse number="3" style="v" sid="JON 1:3"/>И стана Иона да побегне в Тарсис 
+  от лицето Господне; дойде в Иопия и намери кораб, който отиваше за Тарсис, 
+  плати за превоз и влезе в него, за да отплува с тях в Тарсис от лицето 
+  Господне.<verse eid="JON 1:3"/>
+  <verse number="4" style="v" sid="JON 1:4"/><note caller="-" style="x">
+    <char style="xo">1:4 </char>
+    <char style="xop">(4)</char>
+    <char style="xt">Пс. 106:25.</char></note>Но Господ подигна в морето 
+  силен вятър, и стана в морето голяма буря, и корабът насмалко оставаше да 
+  се разбие.<verse eid="JON 1:4"/>
+  <verse number="5" style="v" sid="JON 1:5"/><note caller="-" style="x">
+    <char style="xo">1:5 </char>
+    <char style="xop">(5)</char>
+    <char style="xt">4 Царств. 17:29.</char></note>Уплашиха се корабниците; 
+  те викаха всеки към своя бог и почнаха да хвърлят в морето товара от кораба, 
+  за да му олекне от него; а Иона бе слязъл в дъното на кораба, бе легнал и 
+  дълбоко заспал.<verse eid="JON 1:5"/></para>
+----
+======
 
 image::char/xop_1.jpg[Jonah 1.1-5 (Bulgarian Orthodox Bible),600]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

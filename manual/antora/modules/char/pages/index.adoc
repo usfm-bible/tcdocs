@@ -4,9 +4,9 @@
 
 Description:: Character-level container.
 Syntax::
-* *USFM:* `+\[@style]_{content}\[@style]*+`
-* *USX:* `+<char style="[@style]">{content}</char>+`
-`style`::: Character type
+* *USFM:* `+\[style]_{content}\[style]*+`
+* *USX:* `+<char style="[style]">{content}</char>+`
+`style` *::: Character type
 include::../nav.adoc[tag=nav-topcat]
 `content`::: Character content
 

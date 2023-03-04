@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: xref:note:footnote/f.adoc[Footnote] - Note text.
+Description:: xref:note:footnote/index.adoc[Footnote] - Note text.
 Syntax::
 * *USFM:* `+\ft_{content}+`
 * *USX:* `+<char style="ft">{content}</char>+`

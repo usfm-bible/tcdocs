@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - DC target references. The marked xref:notes:crossref/xt[target references] are relevant for publications which include Deuterocanonlical (DC) books.
+Description:: xref:note:crossref/index.adoc[Cross Reference] - DC target references. The marked target references (xref:notes:crossref/xt[xt]) are relevant for publications which include Deuterocanonlical (DC) books.
 Syntax::
 * *USFM:* `+\xdc_{content}\xdc*+`
 * *USX:* `+<char style="xdc">{content}</char>+`
@@ -22,37 +22,55 @@ Deprecated:: 3.0
 // end::spec[]
 * _Recommended alternate:_ xref:char:nesting.adoc[Nested] xref:char:features/dc.adoc[dc - Deuterocanonical content]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Psalm 115.3-4 (GNT - cross references)
-[source#src-char-xdc_1,usfm,highlight=5]
+[source#src-usfm-char-xdc_1,usfm,highlight=5]
 ----
 \q1
 \v 3 Our God is in heaven;
 \q2 he does whatever he wishes.
 \q1
-\v 4 \x - \xo 115.4-8: \xt Ps 135.15-18; \xdc Ltj Jr 4-73; \xt Rev 9.20.\x* 
+\v 4 \x - \xo 115.4-8: \xt Ps 135.15-18; \xdc Ltj Jr 4-73; \xt Rev 9.20.\x*
 Their gods are made of silver and gold,
 \q2 formed by human hands.
 ----
+USX::
++
+.Psalm 115.3-4 (GNT - cross references)
+[source#src-usx-char-xdc_1,xml,highlight=11]
+----
+<para style="q1">
+  <verse number="3" style="v" sid="PSA 115:3"/>Our God is in heaven;</para>
+<para style="q2" vid="PSA 115:3">he does whatever 
+  he wishes.<verse eid="PSA 115:3"/></para>
+<para style="q1">
+  <verse number="4" style="v" sid="PSA 115:4"/>
+  <note caller="-" style="x">
+    <char style="xo">115.4-8: </char>
+    <char style="xt">
+      <ref loc="PSA 135:15-18">Ps 135.15-18</ref>; </char>
+    <char style="xdc">Ltj Jr 4-73; </char>
+    <char style="xt">
+      <ref loc="REV 9:20">Rev 9.20</ref>.</char></note> Their gods are made of 
+  silver and gold,</para>
+<para style="q2" vid="PSA 115:4">formed by human hands.
+  <verse eid="PSA 115:4"/></para>
+----
+======
 
-image::char/missing.jpg[,300]
+image::char/missing.jpg[Psalm 115.3-4 (GNT - cross references),300]
 
+[tabs]
+======
+USFM::
++
 .1 Corinthians 15.51-52 (GNT - cross reference)
-[source#src-char-xdc_2,usfm,highlight=5]
+[source#src-usfm-char-xdc_2,usfm,highlight=2]
 ----
 \p
 \v 51-52 \x - \xo 15.51,52: \xdc 2Es 6.23; \xt 1Th 4.15-17.\x* Listen to this 
@@ -61,13 +79,35 @@ shall all be changed in an instant, as quickly as the blinking of an eye. For
 when the trumpet sounds, the dead will be raised, never to die again, and we 
 shall all be changed.
 ----
+USX::
++
+.1 Corinthians 15.51-52 (GNT - cross reference)
+[source#src-usx-char-xdc_2,xml,highlight=5]
+----
+<para style="p">
+  <verse number="51-52" style="v" sid="1CO 15:51-52"/>
+  <note caller="-" style="x">
+    <char style="xo">15.51,52: </char>
+    <char style="xdc">2Es 6.23; </char>
+    <char style="xt">1Th 4.15-17.</char></note> Listen to this secret truth: we
+  shall not all die, but when the last trumpet sounds, we shall all be changed in
+  an instant, as quickly as the blinking of an eye. For when the trumpet sounds,
+  the dead will be raised, never to die again, and we shall all be changed.
+  <verse eid="1CO 15:51-52"/></para>
+----
+======
 
-image::char/missing.jpg[,300]
+image::char/missing.jpg[1 Corinthians 15.51-52 (GNT - cross reference),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: xref:note:footnote/f.adoc[Footnote] - Label text. Use for marking structural words or abbreviations used consistently in many translation notes (such as the words “Or” in an alternative translation note, “Others”, “Heb.”, “LXX” etc.).
+Description:: xref:note:footnote/index.adoc[Footnote] - Label text. Use for marking structural words or abbreviations used consistently in many translation notes (such as the words “Or” in an alternative translation note, “Others”, “Heb.”, “LXX” etc.).
 Syntax::
 * *USFM:* `+\fl_{content}+`
 * *USX:* `+<char style="fl">{content}</char>+`

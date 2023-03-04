@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Cross Reference - Keyword. The xref:notes:crossref/xt[target references] relate to this specific keyword quoted from the text.
+Description:: Cross Reference - Keyword. The target references (xref:notes:crossref/xt[xt]) relate to this specific keyword quoted from the text.
 Syntax::
 * *USFM:* `+\xk_{content}+`
 * *USX:* `+<char style="xk">{content}</char>+`
@@ -20,33 +20,37 @@ Syntax::
 Added:: 1.0
 // end::spec[]
 
-ifdef::env-antora[]
-See also: xref:note:crossref/x.adoc[Cross Reference]
-endif::env-antora[]
-
-== Properties
-
-StyleType:: Character
-OccursUnder:: `[CrossReferenceContent]`
-TextType:: NoteText
-TextProperties:: publishable, vernacular, note
-
-== Structure
-
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Missing
-[source#src-char-xk_1,usfm,highlight=1]
+[source#src-usfm-char-xk_1,usfm,highlight=1]
 ----
 Missing
 ----
+USX::
++
+.Missing
+[source#src-usx-char-xk_1,xml,highlight=1]
+----
+Missing
+----
+======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[CrossReferenceContent]`
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

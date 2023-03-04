@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: xref:note:footnote/f.adoc[Footnote] - Deuterocanonical content. The marked content is relevant for publications which include Deuterocanonlical (DC) books.
+Description:: xref:note:footnote/index.adoc[Footnote] - Deuterocanonical content. The marked content is relevant for publications which include Deuterocanonlical (DC) books.
 Syntax::
 * *USFM:* `+\fdc_{content}+`
 * *USX:* `+<char style="fdc">{content}</char>+`

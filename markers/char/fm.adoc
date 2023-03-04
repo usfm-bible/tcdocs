@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: xref:note:footnote/f.adoc[Footnote] - Reference mark. Use where multiple locations in the scripture text refer to a common footnote text.
+Description:: xref:note:footnote/index.adoc[Footnote] - Reference mark. Use where multiple locations in the scripture text refer to a common footnote text.
 Syntax::
 * *USFM:* `+\fm_{content}\fm*+`
 * *USX:* `+<char style="fm">{content}</char>+`
