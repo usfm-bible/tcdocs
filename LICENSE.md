@@ -11,6 +11,10 @@ All specifications, documentation, schemas, and data are licensed under Creative
 
 https://creativecommons.org/licenses/by/4.0/
 
-All code in our repository is licensed under the MIT license:
+All code in this project is licensed under the MIT license:
 
 https://opensource.org/license/mit/
+
+This code can be found in the following directories:
+
+- python
