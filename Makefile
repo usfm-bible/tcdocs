@@ -1,8 +1,9 @@
 
 unknown:
 	@- echo "There are various useful targets:"
-	@- echo "diagrams    All the svg and png syntax diagrams"
-	@- echo "tests       Run all the tests"
+	@- echo "diagrams   All the svg and png syntax diagrams"
+	@- echo "tests      Run all the tests"
+	@- echo "dbl        Set DBLDIR and test against dbl zips"
 
 diagrams: markers/images/schema/p_rail.svg
 
@@ -20,3 +21,5 @@ testresults.log : grammar/usx.rng
 grammar/usx.rng : grammar/usx.rnc
 	python/scripts/urnc2rng $< $@
 
+dbl: grammar/usx.rng
+	python/scripts/usfmtestdbl -g $< --oneerror -v ${DBLDIR} | tee dbltest.log

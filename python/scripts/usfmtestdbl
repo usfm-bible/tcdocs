@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S python3 -u
 
 import argparse, zipfile, os, sys, itertools, re
 from multiprocessing import Pool
@@ -21,16 +21,20 @@ def proconezip(fpath, sfmp, log, args):
         log.debug(f"{fpath}: started")
     try:
         zipf = zipfile.ZipFile(fpath)
-    except OSError:
-        log.info(f"{fpath}: Skipped")
+    except OSError as e:
+        log.info(f"{fpath}: Skipped {e}")
         return (fpath, None)
     try:
         fh = zipf.open("source/source.zip")
-    except (KeyError, OSError):
+    except (KeyError, OSError) as e:
         zipf.close()
-        log.info(f"{fpath}: Skipped (no source)")
+        log.info(f"{fpath}: Skipped (no source) {e}")
         return (fpath, None)
-    szip = zipfile.ZipFile(fh)
+    try:
+        szip = zipfile.ZipFile(fh)
+    except zipfile.BadZipFile as e:
+        log.info(f"{fpath}: Bad Zip file {e}")
+        return (fpath, None)
     results = []
     for f in szip.namelist():
         if f.lower().endswith('sfm'):
@@ -81,7 +85,7 @@ parser.add_argument("-j","--jobs",type=int,default=0,help="Parallel jobs, single
 parser.add_argument("-C","--chunks",type=int,help="Size of parallel chunks")
 parser.add_argument("-v","--verbose",action="store_true",help="Print things like error messages")
 parser.add_argument("-q","--quiet",action="store_true",help="Don't report progress")
-parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
+parser.add_argument("-l","--logging",default="error",help="Set logging level to usfmxtest.log")
 parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree, 2-alt multiproc")
 args = parser.parse_args()
 

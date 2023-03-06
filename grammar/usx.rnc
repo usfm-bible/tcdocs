@@ -558,7 +558,7 @@ Char = (
              ([usfm:order="-1"] CharContent)
             >> usfm:endtag[usfm:order="4"])
          | (CharContent
-           >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]))  # required if not followed by Char or Para
+           >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:seq="true"]))  # required
     }
     | CharWithAttrib | Figure
     )

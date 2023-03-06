@@ -975,7 +975,7 @@
           </group>
           <group>
             <ref name="CharContent"/>
-            <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
+            <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:seq="true"/>
           </group>
         </choice>
       </element>
