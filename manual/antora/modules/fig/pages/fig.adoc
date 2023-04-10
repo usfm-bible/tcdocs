@@ -1,4 +1,5 @@
-= Figures
+= fig - Figures
+:env-antora:
 
 [CAUTION]
 .Significant syntax change in USFM/USX 3.x

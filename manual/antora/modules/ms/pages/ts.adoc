@@ -1,3 +1,4 @@
 = ts-s / ts-e
+:env-antora:
 
 include::markers:ms/ts.adoc[tag=public]

@@ -14,10 +14,9 @@ endif::[]
 
 Description:: Ruby gloss. Used to annotate the base text with ruby characters.
 Syntax::
-* *USFM:* `+\rb_{content}|gloss={glosses}\rb*+`
-* *USX:* `+<char style="rb" gloss={glosses}>{content}</char>+`
-`gloss`::: Ruby glosses _(default attribute)_
-`glosses`::: Ruby gloss characters.
+* *USFM:* `+\rb_{content}|[@gloss]\rb*+`
+* *USX:* `+<char style="rb" [@gloss]>{content}</char>+`
+`gloss`::: Ruby gloss characters _(default attribute)_
 ** If the base text being glossed (`B`) is a _phrase_ of multiple Han characters, then the ruby gloss text (`gg`) may contain multiple elements, one for glossing each of the base text characters making up the phrase. Use a colon `:` to separate multiple glossing characters. Parts of a phrase gloss may be left empty. Example: `+\rb BB|"gg:gg"\rb*+` or `+\rb BBBB|gg1::gg3:\rb*+`.
 // tag::spec[]
 Added:: 3.0
