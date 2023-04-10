@@ -15,30 +15,22 @@ endif::[]
 Description:: Quotation start and end milestones. Typically used for indicating the speaker of the text.
 * The variable `#` represents the level of nesting of the quotation being marked (i.e. a quote within a quote).
 Syntax::
-* *USFM:*
-** `+\qt#-s |[@sid,who]\*+`
-** `+\qt#-e |[@eid]\*+`
-* *USX:*
-** `+<ms style="qt#-s" [@sid,who]/>+`
-** `+<ms style="qt#-e" [@eid]/>+`
-Attributes:::
-** `sid`, `eid` - See the xref:ms:index.adoc#_attributes[attributes for any milestone].
-** `who` - The speak of the quotation _(default)_
+* *USFM:* `+\qt#-s |[@sid,who]\*+` / `+\qt#-e |@eid\*+`
+* *USX:* `+<ms style="qt#-s" [@sid,who]/>+` / `+<ms style="qt#-e" @eid/>+`
+`sid`, `eid`::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
+`who`::: The speaker of the quotation _(default attribute)_
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Milestone
-OccursUnder:: `[ChapterContent]`
-
-== Structure
-
 == Examples
 
-.USFM: Mark 15.2 (GNT) - no levels
-[source#src-ms-qt_1,usfm,highlight=5..8]
+[tabs]
+======
+USFM::
++
+.Mark 15.2 (GNT) - no levels
+[source#src-usfm-ms-qt_1,usfm,highlight=5..8]
 ----
 \p
 \v 1 Early in the morning the chief priests met hurriedly with the elders,
@@ -49,8 +41,9 @@ the king of the Jews?”\qt-e |eid="qt.MRK.15:2.1"\*
 \p Jesus answered, \qt-s |sid="qt.MRK.15:2.2" who="Jesus"\*“So you say.”
 \qt-e |eid="qt.MRK.15:2.2"\*
 ----
-
-.USX: Mark 15.2 (GNT) - no levels
+USX::
++
+.Mark 15.2 (GNT) - no levels
 [source#src-usx-ms-qt_1,xml,highlight=7;8;11;12]
 ----
 <para style="p">
@@ -67,9 +60,14 @@ the king of the Jews?”\qt-e |eid="qt.MRK.15:2.1"\*
   say.”<ms style="qt-e" eid="qt.MRK.15:2.2"/><verse eid="MRK 15:2"/>
 </para>
 ----
+======
 
-.USFM: Acts 17.22-31 (GNT) - 2 levels
-[source#src-ms-qt_2,usfm,highlight=2;9;11;16]
+[tabs]
+======
+USFM::
++
+.Acts 17.22-31 (GNT) - 2 levels
+[source#src-usfm-ms-qt_2,usfm,highlight=2;9;11;16]
 ----
 \p
 \v 22 Paul stood up in front of the city council and said, 
@@ -106,8 +104,9 @@ commands all of them everywhere to turn away from their evil ways.
 justice by means of a man he has chosen. He has given proof of this to 
 everyone by raising that man from death!”\qt1-e |eid="qt1_ACT_17:22.1"\*
 ----
-
-.USX: Acts 17.22-31 (GNT) - 2 levels
+USX::
++
+.Acts 17.22-31 (GNT) - 2 levels
 [source#src-usx-ms-qt_2,xml,highlight=4;26;27;32;33;46]
 ----
 <para style="p">
@@ -158,11 +157,15 @@ everyone by raising that man from death!”\qt1-e |eid="qt1_ACT_17:22.1"\*
   death!”<ms style="qt1-e" eid="qt1_ACT_17:22.1"/><verse eid="GEN 7:31"/>
 </para>
 ----
+======
+
+== Properties
+
+StyleType:: xref:ms:index.adoc[Milestone]
+OccursUnder:: `[ChapterContent]`
 
 == Publication Issues
 
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues

@@ -41,7 +41,7 @@ image::schema/esb_usx.svg[]
 USFM::
 +
 .Mark 1 (CEV Learning Bible)
-[source#src-usfm-sbar-esb_1,usfm,highlight=2;17]
+[source#src-usfm-sbar-esb_1,usfm,highlight=2..17]
 ----
 \v 18 At once they left their nets and went with him.
 \esb \cat History\cat*
@@ -67,7 +67,7 @@ the sons of Zebedee.
 USX::
 +
 .Mark 1 (CEV Learning Bible)
-[source#src-usx-sbar-esb_1,xml,highlight=2;17]
+[source#src-usx-sbar-esb_1,xml,highlight=5..21]
 ----
 <para style="p">
   ...

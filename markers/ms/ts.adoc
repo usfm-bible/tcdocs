@@ -14,29 +14,21 @@ endif::[]
 
 Description:: Translator's section start and end milestones. For identifying a section (chunk) of text suitable for translating at one time.
 Syntax::
-* *USFM:*
-** `+\ts-s |[@sid]\*+`
-** `+\ts-e |[@eid]\*+`
-* *USX:*
-** `+<ms style="ts-s" [@sid]/>+`
-** `+<ms style="ts-e" [@eid]/>+`
-Attributes:::
-** `sid`, `eid` - See the xref:ms:index.adoc#_attributes[attributes for any milestone].
+* *USFM:* `+\ts-s |@sid\*+` / `+\ts-e |@eid\*+`
+* *USX:* `+<ms style="ts-s" @sid/>+` / `+<ms style="ts-e" @eid/>+`
+`sid`, `eid`::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
 
-== Properties
-
-StyleType:: Milestone
-OccursUnder:: `[ChapterContent]`
-
-== Structure
-
 == Examples
 
-.USFM: Jude 5-8 (ULB) - standalone milestones
-[source#src-ms-ts_1,usfm,highlight=]
+[tabs]
+======
+USFM::
++
+.Jude 5-8 (ULB) - standalone milestones
+[source#src-usfm-ms-ts_1,usfm,highlight=1;9;17]
 ----
 \ts\*
 \p
@@ -55,10 +47,12 @@ eternal fire.
 \v 8 Yet in the same way these also pollute their bodies in their dreams, and 
 they reject authority, and they say evil things about the glorious ones.
 \ts\*
+...
 ----
-
-.USX: Jude 5-8 (ULB) - standalone milestones
-[source#src-usx-ts-qt_1,xml,highlight=]
+USX::
++
+.Jude 5-8 (ULB) - standalone milestones
+[source#src-usx-ts-qt_1,xml,highlight=1;11;22]
 ----
 <ms style="ts"/>
 <para style="p">
@@ -69,7 +63,8 @@ they reject authority, and they say evil things about the glorious ones.
   <verse number="6" style="v" sid="JUD 1:6"/>And angels who did not keep 
   to their own principality, but left their proper dwelling place—God has 
   kept them in everlasting chains in darkness for the judgment of the 
-  great day.<verse eid="JUD 1:6"/><ms style="ts"/>
+  great day.<verse eid="JUD 1:6"/>
+  <ms style="ts"/>
   <verse number="7" style="v" sid="JUD 1:7"/>It is just like Sodom and 
   Gomorrah and the cities around them, which in a similar way gave 
   themselves over to fornication and pursued unnatural desires. They were 
@@ -81,10 +76,16 @@ they reject authority, and they say evil things about the glorious ones.
   the same way these also pollute their bodies in their dreams, and they 
   reject authority, and they say evil things about the glorious ones.
   <ms style="ts"/>
+  ...
 ----
+======
 
-.USFM: Jude 5-8 (ULB) - milestone pairs
-[source#src-ms-ts_2,usfm,highlight=]
+[tabs]
+======
+USFM::
++
+.Jude 5-8 (ULB) - milestone pairs
+[source#src-usfm-ms-ts_2,usfm,highlight=1;9;10;18]
 ----
 \ts |sid="ts.JUD.5-6"\*
 \p
@@ -104,10 +105,12 @@ eternal fire.
 \v 8 Yet in the same way these also pollute their bodies in their dreams, and 
 they reject authority, and they say evil things about the glorious ones.
 \ts-e |eid="ts.JUD.7-8"\*
+...
 ----
-
-.USX: Jude 5-8 (ULB) - milestone pairs
-[source#src-usx-ts-qt_2,xml,highlight=]
+USX::
++
+.Jude 5-8 (ULB) - milestone pairs
+[source#src-usx-ts-qt_2,xml,highlight=1;11;12;23]
 ----
 <ms style="ts-s" sid="ts.JUD.5-6"/>
 <para style="p">
@@ -133,6 +136,12 @@ they reject authority, and they say evil things about the glorious ones.
   reject authority, and they say evil things about the glorious ones.
   <ms style="ts-e" eid="ts.JUD.7-8"/>
 ----
+======
+
+== Properties
+
+StyleType:: xref:ms:index.adoc[Milestone]
+OccursUnder:: `[ChapterContent]`
 
 == Publication Issues
 
