@@ -118,5 +118,3 @@ TextProperties:: publishable, vernacular
 // end::public[]
 
 == Discussion
-
-Links to open repository Issues
