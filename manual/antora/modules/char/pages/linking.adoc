@@ -1,0 +1,184 @@
+= Linking Attributes
+
+== General Syntax
+
+Following the general syntax for xref:char:attributes.adoc[character-level attributes], USFM and USX 3 provide a set of attributes for assigning linking properties to marked text. Linking attributes are included with any other xref:char:attributes.adoc[character-level attributes] added to the same marker. The order of attributes is not significant, although assist readability if linking attributes are grouped together. Names for linking attribute begin with `link-`.
+
+[NOTE]
+====
+When a link requires a standard scripture reference, follow the pattern: `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
+
+* Book names must be a standard 3-character scripture xref:para:identification/books.adoc[book identifier].
+* The chapter + verse separator is always a colon `:`.
+* Verse ranges are indicated using a hyphen.
+
+Example: `MAT 3:1-4`
+====
+
+== Attributes
+
+`link-href`::: Identifies the resource being linked to as a URI.
+** A user-defined URI prefix can be used to help identify the target resource. For example: `x-prj:` might identify another scripture translation project available within the current editing environment, like `x-prj:RSV52 MAT 3:1-4`.
+** User defined URI prefixes must begin with the prefix `x-`.
+`link-title`::: Plain text describing the resource being linked to (for example - to display in a tooltip when hovering over the link).
+`link-id`::: A unique identifier for a specific content location (i.e. an anchor).
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Link to other project text
+[source#src-usfm-char-jmp_1,usfm,highlight=2]
+----
+The traditional translation of verse 1, as given in
+\jmp RSV|link-href="x-prj:RSV52 GEN 1:1" link-title="Revised Standard 
+Version"\jmp*, may be appropriate.
+----
+USX::
++
+.Link to other project text
+[source#src-usx-char-jmp_1,xml,highlight=2..3]
+----
+The traditional translation of verse 1, as given in
+<char style="jmp" link-href="x-prj:RSV52 GEN 1:1" link-title="Revised Standard 
+Version">RSV</char>, may be quite appropriate.
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Link to illustration / media
+[source#src-usfm-char-jmp_2,usfm,highlight=3..4]
+----
+\p Storehouses, as used here, refers to large buildings with walls and roof, 
+where grain was kept until needed. (See illustration: 
+\jmp Storehouse|link-href="figures/storehouse.png" 
+link-title="Ancient storehouse"\jmp*)
+----
+USX::
++
+.Link to other project text
+[source#src-usx-char-jmp_2,xml,highlight=3..4]
+----
+<para style="p">Storehouses, as used here, refers to large buildings with 
+walls and roof, where grain was kept until needed. (See illustration: 
+<char style="jmp" link-href="figures/storehouse.png" 
+link-title="Ancient storehouse">Storehouse</char>)
+...</para>
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Assigning an identifier (anchor)
+[source#src-usfm-char-jmp_3,usfm,highlight=4]
+----
+\q1 “Someone is shouting in the desert,
+\q2 ‘Prepare a road for the Lord;
+\q2 make a straight path for him to travel!’ ”
+\esb \cat People\cat*\jmp |link-id="article-john_the_baptist"\jmp*
+\ms John the Baptist
+\p John is sometimes called the last “Old Testament prophet” because of the 
+warnings he brought about God's judgment and because he announced the coming 
+of God's “Chosen One” (Messiah).
+...
+\esbe
+----
+USX::
++
+.Assigning an identifier (anchor)
+[source#src-usx-char-jmp_3,xml,highlight=5]
+----
+<para style="q1">“Someone is shouting in the desert,</para>
+<para style="q2">‘Prepare a road for the Lord;</para>
+<para style="q2">make a straight path for him to travel!’ ”</para>
+<sidebar style="esb" category="people">
+  <para style="ms"><char style="jmp" link-id="article-john_the_baptist" />John the 
+    Baptist</para>
+  <para style="p">John is sometimes called the last “Old Testament prophet” 
+    because of the warnings he  brought about God's judgment and because he 
+    announced the coming of God's “Chosen One” (Messiah).</para>
+  ...
+</sidebar>
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Glossary entry including a link reference to an external URL
+[source#src-usfm-char-jmp_4,usfm,highlight=1]
+----
+\w gracious|link-href="http://bibles.org/search/grace/eng-GNTD/all"\w*
+----
+USX::
++
+.Glossary entry including a link reference to an external URL
+[source#src-usx-char-jmp_4,xml,highlight=2]
+----
+<char style="w" 
+  link-href="http://bibles.org/search/grace/eng-GNTD/all">gracious</char>
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Reference to named target within the same project
+[source#src-usfm-char-jmp_5,usfm,highlight=5]
+----
+\p
+\v 2-6a From Abraham to King David, the following ancestors are listed: Abraham,
+Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was 
+Tamar*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab*), 
+Obed (his mother was \jmp Ruth|link-href="#article-Ruth"\jmp*), Jesse, and King 
+David.
+----
+USX::
++
+.Reference to named target within the same project
+[source#src-usx-char-jmp_5,xml,highlight=6]
+----
+<para style="p">
+  <verse number="2-6a" style="v" sid="MAT 1:2-6a" />From Abraham to King David,
+  the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his 
+  brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, 
+  Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was 
+  <char style="jmp" link-href="#article-Ruth">Ruth</char>), Jesse, and King 
+  David.<verse eid="MAT 1:2-6a"/>
+</para>
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Nested within extended footnote text.
+[source#src-usfm-char-jmp_6,usfm,highlight=3]
+----
+\ef - \fr 1.2-6a: \fq Ruth: \ft A Moabite (Ruth 1.4). Only outstanding
+women were normally included in Jewish genealogical lists. See article
+on \+jmp Ruth|link-href="#article-Ruth"\+jmp*\ef*
+----
+USX::
++
+.Reference to named target within the same project
+[source#src-usx-char-jmp_6,xml,highlight=4..5]
+----
+<note caller="-" style="ef">
+  <char style="fr">1.2-6a: </char><char style="fq">Ruth: </char>
+  <char style="ft">A Moabite. Only outstanding women were normally included in 
+  Jewish genealogical lists. See article on <char style="jmp" 
+  link-href="#article-Ruth">Ruth</char>
+</note>
+----
+======
