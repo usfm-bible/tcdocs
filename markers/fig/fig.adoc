@@ -14,42 +14,42 @@ endif::[]
 
 Description:: Figure / illustration.
 Syntax::
-* *USFM:* `+\fig_{caption}|src="{filename} size="{size}" ref="{reference} [@alt,loc,copy]"\fig*+`
-* *USX:* `+<figure style="fig" file="{filename}" size="{size}" ref="{reference}" [@alt,loc,copy]>{caption}</figure>+`
-Attributes:::
-** `alt` - Short, free-form description of image.
-** `src`^*^ - Filename
-** `size`^*^ - Illustration relative size. Options are `col` (illustration should be inserted inline within the current text column) or `span` (illustration should be inserted across -- 'spanning' -- text columns).
-** `loc` - Location / range. Specify a range of references at which the illustration might be inserted.
-** `copy` - Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
-** `ref`^*^ - Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
-caption::: Illustration cxaption text.
+* *USFM:* `+\fig_{caption}|[@src,size,ref,alt,loc,copy]"\fig*+`
+* *USX:* `+<figure style="fig" [@file,size,ref,alt,loc,copy]>{caption}</figure>+`
+`src` (USFM) / `file` (USX) *::: Filename
+`size` *::: Illustration relative size. Options are `col` (illustration should be inserted inline within the current text column) or `span` (illustration should be inserted across – 'spanning' – text columns).
+`ref` *::: Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
+`alt`::: Short, free-form description of image.
+`loc`::: Location / range. Specify a range of references at which the illustration might be inserted.
+`copy`::: Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
+`caption`::: Illustration caption text.
 // tag::spec[]
 Added:: 1.0
-Updated:: 3.0 (xref:char:attributes.adoc[attributes])
+Updated:: 3.0 (xref:char:attributes.adoc[attributes] syntax)
 // end::spec[]
 
-== Properties
+== Diagrams
 
-StyleType:: Character
-OccursUnder:: `[ParaWithFig]`
-TextType:: Other
-TextProperties:: paragraph publishable vernacular
-
-== Diagram
-
-=== USFM
+[tabs]
+======
+USFM::
++
+USFM
 Image file is currently missing.
 // image::schema/fig_rail.svg[]
-
-=== USX
+USX::
 Image file is currently missing.
 // image::schema/fig_usx.svg[]
+======
 
 == Examples
 
+[tabs]
+======
+USFM::
++
 .Spanning Columns - Mark 1.18 (GNT)
-[source#src-note-fig_1,usfm,highlight=5;6]
+[source#src-usfm-fig_1,usfm,highlight=5..6]
 ----
 \p
 \v 16 As Jesus walked along the shore of Lake Galilee, he saw two fishermen,
@@ -58,11 +58,32 @@ Simon and his brother Andrew, catching fish with a net.
 \v 18 At once they left their nets and went with him. \fig At once they left
 their nets.|src="avnt016.jpg" size="span" ref="1.18"\fig*
 ----
+USX::
++
+.Spanning Columns - Mark 1.18 (GNT)
+[source#src-usx-fig_1,xml,highlight=9..10]
+----
+<para style="p">
+  ...
+  <verse number="16" style="v" sid="MRK 1:16"/>As Jesus walked along the shore of
+  Lake Galilee, he saw two fishermen, Simon and his brother Andrew, catching fish
+  with a net.<verse eid="MRK 1:16"/>
+  <verse number="17" style="v" sid="MRK 1:17"/>Jesus said to them, “Come with me, 
+  and I will teach you to catch people.”<verse eid="MRK 1:17"/>
+  <verse number="18" style="v" sid="MRK 1:18"/>At once they left their nets and 
+  went with him.<figure style="fig" file="avnt016.jpg" size="span" ref="1.18">At 
+    once they left their nets.</figure><verse eid="MRK 1:18"/></para>
+----
+======
 
 image::fig/fig_1.jpg[Mark 1.18 (GNT),600]
 
+[tabs]
+======
+USFM::
++
 .Current Column - Mark 1.31 (GNT)
-[source#src-note-fig_2,usfm,highlight=4;5]
+[source#src-usfm-fig_2,usfm,highlight=4..5]
 ----
 \v 30 Simon's mother-in-law was sick in bed with a fever, and as soon as Jesus
 arrived, he was told about her.
@@ -72,8 +93,34 @@ left her.|src="avnt017.tif" size="col" ref="1.31"\fig*
 \p
 \v 32 After the sun had set and evening had come ...
 ----
+USX::
++
+.Current Column - Mark 1.31 (GNT)
+[source#src-usx-fig_2,xml,highlight=8..9]
+----
+<para style="p">
+  ...
+  <verse number="30" style="v" sid="MRK 1:30"/>Simon's mother-in-law was 
+  sick in bed with a fever, and as soon as Jesus arrived, he was told 
+  about her.<verse eid="MRK 1:30"/>
+  <verse number="31" style="v" sid="MRK 1:31"/>He went to her, took her by the 
+  hand, and helped her up. The fever left her, and she began to wait on them.
+  <figure style="fig" file="avnt017.tif" size="col" ref="1.31">Took her by the 
+  hand, and...the fever left her.</figure><verse eid="MRK 1:31"/></para>
+<para style="p">
+  <verse number="32" style="v" sid="MRK 1:32"/>After the sun had set and evening
+  had come ...</para>
+----
+======
 
 image::fig/fig_2.jpg[Mark 1.31 (GNT),550]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ParaWithFig]`
+TextType:: Other
+TextProperties:: paragraph publishable vernacular
 
 == Publication Issues
 

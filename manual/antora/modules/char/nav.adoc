@@ -1,5 +1,6 @@
 * xref:index.adoc[]
 ** xref:attributes.adoc[Attributes]
+** xref:linking.adoc[Linking]
 ** xref:nesting.adoc[Nesting]
 // ** Features
 // tag::nav-topcat[]

@@ -1,3 +1,4 @@
 = qt#-s / qt#-e
+:env-antora:
 
 include::markers:ms/qt.adoc[tag=public]
