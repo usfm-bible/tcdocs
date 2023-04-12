@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <test-metadata>
         <description>InvalidFigureAttributesReported. From paratext MarkerCheck test suite. USFM is syntactically valid, but marker check will report attributes not defined in the style sheet.</description>
-        <validated>pass</validated>
+        <validated>fail</validated>
         <tags></tags>
 </test-metadata>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <test-metadata>
         <description>GlossaryCitationFormContainsNonWordformingPunctuation. From paratext test suite</description>
-        <validated>fail</validated>
+        <validated>pass</validated>
         <tags>clarify</tags>
 </test-metadata>
