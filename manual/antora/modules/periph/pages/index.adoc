@@ -1,0 +1,15 @@
+= Peripherals
+
+The following strategy should be used for marking project peripheral contents.
+
+Content should be created in separate book files according to the general groupings shown in the list of xref:periph:books-divs.adoc[peripheral book and division IDs].
+
+*In USFM:* An xref:para:identification/id.adoc[id] paragraph identifies the overall content of the peripheral file. Within each book, divisions (sub-sections) of content are denoted using a xref:periph:periph.adoc[periph] marker.
+
+*In USX:* A xref:para:identification/id.adoc[book] element identifies the overall content of the peripheral file. Within each peripheral file, divisions (sub-sections) of content are contained within a xref:periph:periph.adoc[periph] element.
+
+Content is added to books and divisions using the most appropriate existing USFM/USX xref:para:index.adoc[paragraph], xref:char:index.adoc[character], xref:para:tables/index.adoc[table] or xref:note:index.adoc[note] markup.
+
+Some back matter content is large enough that it is most practical to maintain it within its own book file (Concordance, Glossary, Topical Index, Names Index). These contents do not require a xref:periph:periph.adoc[periph] division identifier.
+
+include::../nav.adoc[tag=nav-topcat]

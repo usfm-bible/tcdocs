@@ -1,4 +1,4 @@
-= fig - Figures
+= fig
 :env-antora:
 
 [CAUTION]

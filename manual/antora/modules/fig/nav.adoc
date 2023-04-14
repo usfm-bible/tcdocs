@@ -1,1 +1,4 @@
-* xref:fig.adoc[Figures]
+* xref:index.adoc[]
+// tag::nav-topcat[]
+** xref:fig.adoc[fig - Figure]
+// end::nav-topcat[]

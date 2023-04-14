@@ -1,0 +1,4 @@
+= periph
+:env-antora:
+
+include::markers:periph/periph.adoc[tag=public]

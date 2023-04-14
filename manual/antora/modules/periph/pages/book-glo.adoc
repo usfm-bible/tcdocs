@@ -1,0 +1,3 @@
+= Glossary
+
+The `GLO` xref:para:identification/books.adoc[book] 

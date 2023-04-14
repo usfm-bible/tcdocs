@@ -14,5 +14,6 @@ nav:
 - modules/char/nav.adoc
 - modules/ms/nav.adoc
 - modules/note/nav.adoc
-- modules/fig/nav.adoc
 - modules/sbar/nav.adoc
+- modules/fig/nav.adoc
+- modules/periph/nav.adoc

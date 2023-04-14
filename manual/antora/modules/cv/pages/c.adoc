@@ -1,4 +1,4 @@
-= Chapters
+= c
 :env-antora:
 
 include::markers:cv/c.adoc[tag=public]

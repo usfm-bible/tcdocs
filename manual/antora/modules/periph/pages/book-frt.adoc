@@ -1,0 +1,360 @@
+= Front Matter
+
+The `FRT` xref:para:identification/books.adoc[book] and its divisions can be used for adding content which is normally presented at the start of a publication, before the first book of scripture.
+
+[#periph-frt-title]
+== Title Page
+
+`id`:: `title`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:paragraphs/pc.adoc[pc - Paragraph - Cenetered]
+* xref:fig:fig.adoc[fig - Figure]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-frt-title_1,usfm,highlight=3]
+----
+\id FRT
+...
+\periph Title Page|id="title"
+\mt1 Holy Bible
+\mt3 with
+\mt2 Deuterocanonicals/Apocrypha
+\pc Good News Translation
+\pc \fig |gntLogo.jpg|span||||\fig*
+\pc \fig |absLogo.jpg|span||||\fig*
+\pc American Bible Society
+----
+USX::
++
+[source#src-usx-periph-frt-title_1,xml,highlight=4;18]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="FRT" style="id" />
+  <periph alt="Title Page" id="title">
+    <para style="mt1">Holy Bible</para>
+    <para style="mt3">with</para>
+    <para style="mt2">Deuterocanonicals/Apocrypha</para>
+    <para style="pc">Good News Translation</para>
+    <para style="pc">
+        <figure style="fig" desc="GNT Logo" file="gntLogo.jpg" size="span" 
+        loc="" copy="" ref="" />
+    </para>
+    <para style="pc">
+        <figure style="fig" desc="ABS Logo" file="absLogo.jpg" size="span" 
+        loc="" copy="" ref="" />
+    </para>
+    <para style="pc">American Bible Society</para>
+  </periph>
+</usx>
+----
+======
+
+[#periph-frt-halftitle]
+== Half Title Page
+
+`id`:: `halftitle`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:paragraphs/pc.adoc[pc - Paragraph - Centered]
+* xref:fig:fig.adoc[fig - Figure]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-frt-halftitle_1,usfm,highlight=3]
+----
+\id FRT
+...
+\periph Half Title Page
+\mt1 Holy Bible
+\pc Good News Translation
+\pc \fig |gntLogo.jpg|span||||\fig*
+----
+USX::
++
+[source#src-usx-periph-frt-halftitle_1,xml,highlight=4;11]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="FRT" style="id" />
+  <periph alt="Half Title Page" id="halftitle">
+    <para style="mt1">Holy Bible</para>
+    <para style="pc">Good News Translation</para>
+    <para style="pc">
+        <figure style="fig" desc="GNT Logo" file="gntLogo.jpg" size="span" 
+        loc="" copy="" ref="" />
+    </para>
+  </periph>
+</usx>
+----
+======
+
+[#periph-frt-promo]
+== Promotional Page
+
+`id`:: `promo`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:titles-sections/s.adoc[s - Section heading]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:para:paragraphs/m.adoc[m - Continuation (margin)]
+* xref:para:paragraphs/pi.adoc[pi# - Indented]
+* xref:para:lists/li.adoc[li# - List entry]
+* xref:para:poetry/q.adoc[q# - Poetic line]
+
+[#periph-frt-imprimatur]
+== Imprimatur
+
+`id`:: `imprimatur`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:paragraphs/pc.adoc[pc - Paragraph - Cenetered]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:para:tables/index.adoc[Tables]
+* xref:fig:fig.adoc[fig - Figure]
+
+[#periph-frt-pubdata]
+== Publication Data
+
+`id`:: `pubdata`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:paragraphs/pc.adoc[pc - Paragraph - Cenetered]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:para:tables/index.adoc[Tables]
+* xref:fig:fig.adoc[fig - Figure]
+
+[#periph-frt-foreword]
+== Foreword
+
+`id`:: `foreword`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:titles-sections/s.adoc[s - Section heading]
+* xref:para:paragraphs/m.adoc[m - Continuation (margin)]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:para:paragraphs/pi.adoc[pi# - Indented]
+* xref:para:poetry/q.adoc[q# - Poetic line]
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+* xref:char:features/bk.adoc[], xref:char:features/qt.adoc[], xref:char:features/tl.adoc[] or other xref:char:index.adoc[character types].
+* xref:fig:fig.adoc[fig - Figure]
+
+[#periph-frt-preface]
+== Preface
+
+`id`:: `preface`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:paragraphs/m.adoc[m - Continuation (margin)]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:para:paragraphs/pi.adoc[pi# - Indented]
+* xref:para:poetry/q.adoc[q# - Poetic line]
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+* xref:char:features/bk.adoc[], xref:char:features/qt.adoc[], xref:char:features/tl.adoc[] or other xref:char:index.adoc[character types].
+* xref:fig:fig.adoc[fig - Figure]
+
+[#periph-frt-contents]
+== Table of Contents
+
+`id`:: `contents`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:tables/index.adoc[Tables]
+* xref:para:lists/index.adoc[Lists]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-frt-contents_1,usfm,highlight=3]
+----
+\id FRT
+...
+\periph Table of Contents
+\mt Contents
+\s Old Testament
+\tr  \th1 Name  \thr2 Page \th3 Name \thr4 Page
+\tr \tc1 Genesis \tcr2 # \tc3 Ecclesiastes \tcr4 #
+\tr \tc1 Exodus \tcr2 # \tc3 Song of Songs \tcr4 #
+\tr \tc1 Leviticus \tcr2 # \tc3 Isaiah \tcr4 #
+...
+\s New Testament
+\tr  \th1 Name  \thr2 Page \th3 Name \thr4 Page
+\tr \tc1 Matthew \tcr2 # \tc3 1 Timothy \tcr4 #
+----
+USX::
++
+[source#src-usx-periph-frt-contents_1,xml,highlight=4;50]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="FRT" style="id" />
+  <periph alt="Table of Contents" id="contents">
+    <para style="mt1">Contents</para>
+    <para style="s1">Old Testament</para>
+    <table>
+      <row style="tr">
+        <cell style="th1" align="start">Name</cell>
+        <cell style="th2" align="end">Page</cell>
+        <cell style="th3" align="start">Name</cell>
+        <cell style="th4" align="end">Page</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Genesis</cell>
+        <cell style="th2" align="end">#</cell>
+        <cell style="th3" align="start">Ecclesiastes</cell>
+        <cell style="th4" align="end">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Exodus</cell>
+        <cell style="th2" align="end">#</cell>
+        <cell style="th3" align="start">Song of Songs</cell>
+        <cell style="th4" align="end">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Leviticus</cell>
+        <cell style="th2" align="end">#</cell>
+        <cell style="th3" align="start">Isaiah</cell>
+        <cell style="th4" align="end">#</cell>
+      </row>
+      ...
+    </table>
+    <para style="s1">New Testament</para>
+    <table>
+      <row style="tr">
+        <cell style="th1" align="start">Name</cell>
+        <cell style="th2" align="end">Page</cell>
+        <cell style="th3" align="start">Name</cell>
+        <cell style="th4" align="end">Page</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Matthew</cell>
+        <cell style="th2" align="end">#</cell>
+        <cell style="th3" align="start">1 Timothy</cell>
+        <cell style="th4" align="end">#</cell>
+      </row>
+      ...
+    </table>
+  </periph>
+</usx>
+----
+======
+
+[#periph-frt-alphacontents]
+== Alphabetical Contents
+
+`id`:: `alphacontents`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:tables/index.adoc[Tables]
+* xref:para:lists/index.adoc[Lists]
+
+[#periph-frt-abbreviations]
+== Table of Abbreviations
+
+`id`:: `abbreviations`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:tables/index.adoc[Tables]
+* xref:para:lists/index.adoc[Lists]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-frt-abbreviations_1,usfm,highlight=3]
+----
+\id FRT
+...
+\periph Table of Abbreviations
+\mt1 Alphabetical List of Biblical Books and Abbreviations
+\tr  \th1 Name \th2 Abbrev.  \thr3 Page
+\tr  \tc1 Acts \tc2 Ac \tcr3 #
+\tr  \tc1 Amos \tc2 Am \tcr3 #
+\tr  \tc1 1 Chronicles \tc2 1Ch \tcr3 #
+\tr  \tc1 2 Chronicles \tc2 2Ch \tcr3 #
+\tr  \tc1 Colossians \tc2 Col \tcr3 #
+\tr  \tc1 1 Corinthians \tc2 1Co \tcr3 #
+\tr  \tc1 2 Corinthians \tc2 2Co \tcr3 #
+\tr  \tc1 Daniel \tc2 Dn \tcr3 #
+\tr  \tc1 Deuteronomy \tc2 Dt \tcr3 #
+\tr  \tc1 Ecclesiastes \tc2 Ec \tcr3 #
+\tr  \tc1 Ephesians \tc2 Eph \tcr3 #
+\tr  \tc1 Esther \tc2 Es \tcr3 #
+...
+\s1 Other Abbreviations
+\tr  \tc1 Circa (around) \tc2 c \tc3 #
+\tr  \tc1 Old Testament \tc2 OT \tc3 #
+\tr  \tc1 New Testament \tc2 NT \tc3 #
+\tr  \tc1 Septuagint \tc2 LXX \tc3 #
+----
+USX::
++
+[source#src-usx-periph-frt-abbreviations_1,xml,highlight=4;43]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="FRT" style="id" />
+  <periph alt="Table of Abbreviations" id="abbreviations">
+    <para style="mt1">Alphabetical List of Biblical Books and Abbreviations</para>
+    <table>
+      <row style="tr">
+        <cell style="th1" align="start">Name</cell>
+        <cell style="th2" align="start">Abbrev.</cell>
+        <cell style="th3" align="end">Page</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Acts</cell>
+        <cell style="th2" align="start">Ac</cell>
+        <cell style="th3" align="end">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Amos</cell>
+        <cell style="th2" align="start">Am</cell>
+        <cell style="th3" align="end">#</cell>
+      </row>
+      ...
+    </table>
+    <para style="s1">Other Abbreviations</para>
+    <table>
+      <row style="tr">
+        <cell style="th1" align="start">Term</cell>
+        <cell style="th2" align="start">Abbrev.</cell>
+        <cell style="th3" align="end">Page</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Circa (around)</cell>
+        <cell style="th2" align="start">c</cell>
+        <cell style="th3" align="end">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="th1" align="start">Old Testament</cell>
+        <cell style="th2" align="start">OT</cell>
+        <cell style="th3" align="end">#</cell>
+      </row>
+      ...
+    </table>
+  </periph>
+</usx>
+----
+======

@@ -116,7 +116,7 @@ USX::
 ======
 
 [#chars-with-attrib]
-== Characters Types with Attributes in USFM/USX 3.0
+== Characters Types with Attributes
 
 * xref:char:features/w.adoc[w] -- `lemma`, `strong`, `srcloc`
 * xref:char:features/rb.adoc[rb] -- `gloss`

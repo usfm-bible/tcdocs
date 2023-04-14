@@ -1,0 +1,125 @@
+= periph
+:description: Peripheral division identifier
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/sbar/esb.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Peripheral division identifier.
+Syntax::
+* *USFM:* `+\periph_{title}|{id}+` followed by `+{content}+`
+* *USX:* `+<periph alt="{title}" id="{id}">{content}</periph>+`
+`title` *::: Peripheral division title. May be expressed in the vernacular language.
+`id`::: A unique xref:periph:books-divs.adoc[peripheral division identifier]. A standard set of identifiers allows processors to easily select content for recognized peripheral divisions.
+`content`::: Peripheral content.
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
+
+== Diagrams
+[tabs]
+======
+USFM::
++
+image::schema/periph_rail.svg[]
+USX::
++
+image::schema/periph_usx.svg[]
+======
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Front Matter (GNT)
+[source#src-usfm-periph_1,usfm,highlight=1;14]
+----
+\id FRT
+...
+\periph Title Page|id="title"
+\mt1 Holy Bible
+\mt3 with
+\mt2 Deuterocanonicals/Apocrypha
+...
+\periph Foreword|id="foreword"
+\h Foreword
+\mt1 Foreword
+\p The \bk Good News Translation\bk* of the Bible is a translation which seeks to 
+state clearly and accurately the meaning of the original texts in words and forms 
+that are widely accepted by people who use English as a means of communication.
+...
+\periph Table of Contents|id="contents"
+\h Table of Contents
+\mt Contents
+\s Old Testament
+\tr  \th1 Name  \thr2 Page \th3 Name \thr4 Page
+\tr \tc1 Genesis \tcr2 # \tc3 Ecclesiastes \tcr4 #
+...
+----
+USX::
++
+.Front Matter (GNT)
+[source#src-usx-periph_1,xml,highlight=1;14]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="FRT" style="id">Good News Translation Front Matter</book>
+    <periph alt="Title Page" id="title">
+      <para style="mt1">Holy Bible</para>
+      <para style="mt3">with</para>
+      <para style="mt2">Deuterocanonicals/Apocrypha</para>
+    </periph>
+    <periph alt="Foreword" id="foreword">
+      <para style="h">Foreword</para>
+      <para style="mt1">Foreword</para>
+      <para style="p">The <char style="bk">Good News Translation</char> of the 
+      Bible is a translation which seeks to state clearly and accurately the 
+      meaning of the original texts in words and forms that are widely accepted
+      by people who use English as a means of communication.</para>
+    </periph>
+    <periph alt="Table of Contents" id="contents">
+      <para style="h">Contents</para>
+      <para style="mt1">Contents</para>
+      <para style="s">Old Testament</para>
+      <table>
+        <row style="tr">
+          <cell style="th1" align="start">Name</cell>
+          <cell style="th2" align="start">Page</cell>
+          <cell style="th3" align="start">Name</cell>
+          <cell style="th3" align="start">Page</cell>
+        </row>
+        <row style="tr">
+          <cell style="th1" align="start">Genesis</cell>
+          <cell style="th2" align="start">#</cell>
+          <cell style="th3" align="start">Ecclesiastes</cell>
+          <cell style="th3" align="start">#</cell>
+        </row>
+        ...
+      </table>
+      ...
+    </periph>
+</usx>
+----
+======
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[Peripheral]`
+TextType:: Section
+TextProperties:: paragraph, publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

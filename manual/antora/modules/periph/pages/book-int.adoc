@@ -1,0 +1,120 @@
+= Introductions
+
+The `INT` xref:para:identification/books.adoc[book] and its divisions can be used for adding introductory content related to groupings of books within a scripture publication.
+
+== Summary
+
+[#periph-int-all]
+
+`id`::
+*One of:*
+* Bible Introduction - `title`
+* Old Testament Introduction `intot`
+* Pentateuch Introduction - `intpent`
+* History Introduction - `inthistory`
+* Poetry Introduction - `intpoetry`
+* Prophecy Introduction - `intprophesy`
+* Deuterocanon Introduction - `intdc`
+* New Testament Introduction - `intnt`
+* Gospels Introduction - `intgospels`
+* Epistles Introduction - `intepistles`
+* Letters Introduction - `intletters`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:paragraphs/m.adoc[m - Continuation (margin)]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:para:paragraphs/pi.adoc[pi# - Indented]
+* xref:para:poetry/q.adoc[q# - Poetic line]
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+* xref:char:features/bk.adoc[], xref:char:features/qt.adoc[], xref:char:features/tl.adoc[] or other xref:char:index.adoc[character types].
+* xref:fig:fig.adoc[fig - Figure]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-int-all_1,usfm,highlight=2;9;14;20]
+----
+\id INT
+\periph Old Testament Introduction|id="intot"
+\mt1 Introduction to the Old Testament
+\p The Old Testament is a record of Israel's experience of what God is like and what
+the people who worship God should be like. It proclaims the LORD God as the creator of
+the world and it tells how God blesses people and establishes relations with people
+through special agreements called covenants.
+...
+\periph Pentateuch Introduction|id="intpent"
+\s1 The Pentateuch
+\p “Pentateuch” is a term that means “five scrolls (books)” and is used to describe the
+five books that are positioned at the beginning of both Jewish and Christian Bibles.
+...
+\periph Deuterocanon Introduction|id="intdc"
+\mt1 Deuterocanonicals/Apocrypha
+\p Most of the books gathered in this section were part of an ancient translation of
+the Hebrew Scriptures into Greek called the Septuagint which was widely read by
+Christians in the early church.
+...
+\periph New Testament Introduction|id="intnt"
+\mt1 New Testament
+\p The books of the New Testament were written by the followers of Jesus Christ.
+...
+----
+USX::
++
+[source#src-usx-periph-int-all_1,xml,highlight=4;12;18;24;30;36;42;47]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="INT" style="id" />
+  <periph alt="Old testament Introduction" id="intot">
+    <para style="mt1">Introduction to the Old Testament</para>
+    <para style="p">The Old Testament is a record of Israel's experience of what 
+      God is like and what the people who worship God should be like. It proclaims 
+      the LORD God as the creator of the world and it tells how God blesses people 
+      and establishes relations with people through special agreements called 
+      covenants.</para>
+    ...
+  </periph>
+</usx>
+...
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="INT" style="id" />
+  <periph alt="Pentateuch Introduction" id="intpent">
+    <para style="mt1">The Pentateuch</para>
+    <para style="p">“Pentateuch” is a term that means “five scrolls (books)” and 
+      is used to describe the five books that are positioned at the beginning of 
+      both Jewish and Christian Bibles.</para>
+    ...
+  </periph>
+</usx>
+...
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="INT" style="id" />
+  <periph alt="Deuterocanon Introduction" id="intdc">
+    <para style="mt1">Deuterocanonicals/Apocrypha</para>
+    <para style="p">Most of the books gathered in this section were part of an 
+      ancient translation of the Hebrew Scriptures into Greek called the 
+      Septuagint which was widely read by Christians in the early church.</para>
+    ...
+  </periph>
+</usx>
+...
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="INT" style="id" />
+  <periph alt="New Testament Introduction" id="intnt">
+    <para style="mt1">Introduction to the New Testament</para>
+    <para style="p">The books of the New Testament were written by the followers 
+      of Jesus Christ...</para>
+    ...
+  </periph>
+</usx>
+...
+----
+======

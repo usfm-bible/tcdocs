@@ -1,0 +1,58 @@
+= Peripheral Books and Divisions
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+== Front Matter
+
+`FRT` xref:para:identification/books.adoc[book] 
+
+* xref:book-frt.adoc#periph-frt-title[Title Page] - `title`
+* xref:book-frt.adoc#periph-frt-halftitle[Half Title Page] - `halftitle`
+* xref:book-frt.adoc#periph-frt-promo[Promotional Page] - `promo`
+* xref:book-frt.adoc#periph-frt-imprimatur[Imprimatur] - `imprimatur`
+* xref:book-frt.adoc#periph-frt-pubdata[Publication Data] - `pubdata`
+* xref:book-frt.adoc#periph-frt-foreword[Foreword] - `foreword`
+* xref:book-frt.adoc#periph-frt-preface[Preface] - `preface`
+* xref:book-frt.adoc#periph-frt-contents[Contents] - `contents`
+* xref:book-frt.adoc#periph-frt-alphacontents[Alphabetical Contents] - `alphacontents`
+* xref:book-frt.adoc#periph-frt-abbreviations[Table of Abbreviations] - `abbreviations`
+
+== Introductions
+
+`INT` xref:para:identification/books.adoc[book] 
+
+* xref:book-int.adoc#periph-int-all[Bible Introduction] - `title`
+* xref:book-int.adoc#periph-int-all[Old Testament Introduction] `intot`
+* xref:book-int.adoc#periph-int-all[Pentateuch Introduction] - `intpent`
+* xref:book-int.adoc#periph-int-all[History Introduction] - `inthistory`
+* xref:book-int.adoc#periph-int-all[Poetry Introduction] - `intpoetry`
+* xref:book-int.adoc#periph-int-all[Prophecy Introduction] - `intprophesy`
+* xref:book-int.adoc#periph-int-all[Deuterocanon Introduction] - `intdc`
+* xref:book-int.adoc#periph-int-all[New Testament Introduction] - `intnt`
+* xref:book-int.adoc#periph-int-all[Gospels Introduction] - `intgospels`
+* xref:book-int.adoc#periph-int-all[Epistles Introduction] - `intepistles`
+* xref:book-int.adoc#periph-int-all[Letters Introduction] - `intletters`
+
+== Back Matter
+
+`BAK` xref:para:identification/books.adoc[book] 
+
+* xref:book-bak.adoc#periph-bak-chron[Chronology] - `chron`
+* xref:book-bak.adoc#periph-bak-measures[Weights and Measures] - `measures`
+* xref:book-bak.adoc#periph-bak-maps[Map Index] - `maps`
+* xref:book-bak.adoc#periph-bak-maps[Map Index] - `maps`
+
+Some back matter content is large enough that it is most practical to maintain it within its own book file. These contents do not use a xref:periph:periph.adoc[periph] division identifier.
+
+* `CNC` xref:para:identification/books.adoc[book] - xref:book-cnc.adoc[Concordance]
+* `GLO` xref:para:identification/books.adoc[book] - xref:book-glo.adoc[Glossary]
+* `TDX` xref:para:identification/books.adoc[book] - xref:book-tdx.adoc[Topical Index]
+* `NDX` xref:para:identification/books.adoc[book] - xref:book-ndx.adoc[Names Index]
+* `OTH` xref:para:identification/books.adoc[book] - xref:book-oth.adoc[Other]
+
+== User Defined Peripheral Divisions
+
+If a project adds content for peripheral division which is not defined in the table above, a user-defined division ID should be added which begins with the prefix `x-`.

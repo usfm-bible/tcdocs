@@ -1,4 +1,4 @@
-= Verses
+= v
 :env-antora:
 
 include::markers:cv/v.adoc[tag=public]

@@ -1,0 +1,237 @@
+= Back Matter
+
+The `BAK` xref:para:identification/books.adoc[book] and its divisions can be used for adding which is normally presented at the end of a scripture publication.
+
+[#periph-bak-chron]
+== Chronology
+
+`id`:: `chron`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+
+[#periph-bak-measures]
+== Weights and Measures
+
+`id`:: `measures`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+
+[#periph-bak-maps]
+== Map Index
+
+`id`:: `maps`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+* xref:char:notes/crossref/xt.adoc[xt - Target references]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-bak-maps_1,usfm,highlight=3]
+----
+\id BAK
+...
+\periph Map Index
+\mt1 Map Index
+\ip This atlas contains the following maps. Since a number of these maps are 
+especially helpful when reading specific books of the Bible, some have also 
+been placed within the text of the Bible. The page number indicated below will 
+help you find these maps both within the text and within this atlas.
+\tr \th1 Map \thr2 Page
+\tr \tc1 Ancient World \tcr2 #
+\tr \tc1 Egypt and Sinai \tcr2 #
+\tr \tc1 Division of Canaan \tcr2 #
+\tr \tc1 United Israelite Kingdom \tcr2 #
+\tr \tc1 The Assyrian Empire \tcr2 #
+\tr \tc1 Jerusalem in Old Testament Times \tcr2 #
+\tr \tc1 The Kingdoms of Israel and Judah \tcr2 #
+\tr \tc1 Palestine in the Time of the Maccabees \tcr2 #
+\tr \tc1 Palestine in the Time of Jesus \tcr2 #
+\tr \tc1 Palestine and Syria \tcr2 #
+\tr \tc1 Paul's First and Second Journeys \tcr2 #
+\tr \tc1 Paul's Third Journey \tcr2 #
+\tr \tc1 Paul's Journey to Rome \tcr2 #
+\tr \tc1 Jerusalem in New Testament Times \tcr2 #
+\tr \tc1 The World of the New Testament \tcr2 #
+\s1 Index to Places
+\s2 A
+\tr \th1 Place \tc2 Map \tcr3 Page
+\tr \tc1 Abel \tc2 United Israelite Kingdom \tcr3 #
+\tr \tc1 Abila \tc2 Palestine in the Time of Jesus\tcr3 #
+\tr \tc1 Abilene \tc2 Palestine in the Time of Jesus\tcr3 #
+\tr \tc1 Accad \tc2 Ancient World\tcr3 #
+...
+\s2 B
+\tr \tc1 Baal Zephon \tc2 Egypt and Sinai \tcr3 #
+\tr \tc1 Babylon \tc2 The Assyrian Empire \tcr3 #
+\tr \tc1 Babylonia \tc2 The Assyrian Empire \tcr3 #
+...
+----
+USX::
++
+[source#src-usx-periph-bak-maps_1,xml,highlight=4;85]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="BAK" style="id">English: Good News Translation 2nd Ed. 1992</book>
+  <periph alt="Map Index" id="maps">
+    <para style="mt1">Map Index</para>
+    ...
+    <para style="ip">This atlas contains the following maps. Since a number of 
+      these maps are especially helpful when reading specific books of the Bible, 
+      some have also been placed within the text of the Bible. The page number 
+      indicated below will help you find these maps both within the text and within 
+      this atlas.</para>
+    <table>
+      <row style="tr">
+        <cell style="th1" align="start">Map </cell>
+        <cell style="thr2" align="end">Page </cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Ancient World </cell>
+        <cell style="tc2" align="start"># </cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Egypt and Sinai </cell>
+        <cell style="tc2" align="start"># </cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Division of Canaan </cell>
+        <cell style="tc2" align="start"># </cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">United Israelite Kingdom </cell>
+        <cell style="tc2" align="start"># </cell>
+      </row>
+      ...
+    </table>
+    <para style="s1">Index to Places</para>
+    <para style="s2">A</para>
+    <table>
+      <row style="tr">
+        <cell style="th1" align="start">Place</cell>
+        <cell style="th2" align="start">Map</cell>
+        <cell style="th3" align="start">Page</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Abel</cell>
+        <cell style="tc2" align="start">United Israelite Kingdom</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Abila</cell>
+        <cell style="tc2" align="start">Palestine in the Time of Jesus</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Abilene</cell>
+        <cell style="tc2" align="start">Palestine in the Time of Jesus</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Accad</cell>
+        <cell style="tc2" align="start">Ancient World</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      ...
+    </table>
+    <para style="s2">B</para>
+    <table>
+      <row style="tr">
+        <cell style="tc1" align="start">Baal Zephon</cell>
+        <cell style="tc2" align="start">Egypt and Sinai</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Babylon</cell>
+        <cell style="tc2" align="start">The Assyrian Empire</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Babylonia</cell>
+        <cell style="tc2" align="start">The Assyrian Empire</cell>
+        <cell style="tc3" align="start">#</cell>
+      </row>
+      ...
+    </table>
+    ...
+  </periph>
+</usx>
+----
+======
+
+[#periph-bak-lxxquotes]
+== NT Quotes from LXX
+
+`id`:: `lxxquotes`
+`content`::
+* xref:para:titles-sections/mt.adoc[mt# - Main Title]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading]
+* xref:para:paragraphs/p.adoc[p - Paragraph]
+* xref:char:features/k.adoc[k - Keyword/keyterm]
+
+=== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-bak-lxxquotes_1,usfm,highlight=3]
+----
+\id BAK
+...
+\periph NT Quotes from LXX
+\ip The writers of the New Testament generally quoted or paraphrased the ancient 
+Greek translation of the Old Testament, commonly known as the Septuagint Version 
+(LXX), made some two hundred years before the time of Christ.
+...
+\p \k Matthew 1.23\k* (Isaiah 7.14) A virgin will become pregnant and have a son.
+\p \k Matthew 3.3\k* (Isaiah 40.3) Someone is shouting in the desert, “Prepare a 
+road for the Lord; make a straight path for our God to travel!”
+\p \k Matthew 12.21\k* (Isaiah 42.4) And on him all people will put their hope.
+...
+----
+USX::
++
+[source#src-usx-periph-bak-lxxquotes_1,xml,highlight=4;18]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="BAK" style="id">English: Good News Translation 2nd Ed. 1992</book>
+  <periph alt="Map Index" id="maps">
+    <para style="ip">The writers of the New Testament generally quoted or 
+      paraphrased the ancient Greek translation of the Old Testament, commonly 
+      known as the Septuagint Version (LXX), made some two hundred years before 
+      the time of Christ.</para>
+    ...
+    <para style="p"><char style="k">Matthew 1.23</char> (Isaiah 7.14) A virgin 
+      will become pregnant and have a son.</para>
+    <para style="p"><char style="k">Matthew 3.3</char> (Isaiah 40.3) Someone is 
+      shouting in the desert, “Prepare a road for the Lord; make a straight path 
+      for our God to travel!”</para>
+    <para style="p"><char style="k">Matthew 12.21</char> (Isaiah 42.4) And on him 
+      all people will put their hope.</para>
+    ...
+  </periph>
+</usx>
+----
+======

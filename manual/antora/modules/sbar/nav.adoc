@@ -1,1 +1,4 @@
-* xref:esb.adoc[Sidebars]
+* xref:index.adoc[]
+// tag::nav-topcat[]
+** xref:esb.adoc[esb - Sidebar]
+// end::nav-topcat[]
