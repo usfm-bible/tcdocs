@@ -15,9 +15,9 @@
   <usfm:terminal name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"/>
   <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/"/>
   <usfm:terminal name="TEXTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"/>
-  <usfm:terminal name="PIPE" value="/${WSS}\|${WSS}/"/>
+  <usfm:terminal name="PIPE" value="/${ws}*(?&lt;!\\)\|${ws}*/"/>
   <usfm:alias name="usfm:tag" def="match">
-    <usfm:match before="&#x27;\&#x27;" after="TAGEND"/>
+    <usfm:match before="&#x27;\&#x27;" after="TAGEND" afterout="&#x27; &#x27;"/>
   </usfm:alias>
   <usfm:alias name="usfm:endtag" def="match">
     <usfm:match before="&#x27;\&#x27;" matchref="a" after="&#x27;*&#x27;" dump="true"/>
@@ -134,18 +134,18 @@
         <ref name="BookIdentification.book.code.enum"/>
       </attribute>
       <attribute usfm:order="-2">
-        <usfm:tag before="/${ws}*\\/" usfm:seq="true"/>
+        <usfm:tag before="/${ws}*\\/" beforeout="&#x27;\\&#x27;" usfm:seq="true"/>
         <name ns="">style</name>
         <value>id</value>
       </attribute>
       <group usfm:seq="true">
         <optional>
           <group>
-            <usfm:match before="/${wsnnl}*/" match="/[^\\\n\r]*/"/>
+            <usfm:match before="/${wsnnl}*/" beforeout="&#x27; &#x27;" match="/[^\\\n\r]*/"/>
             <text/>
           </group>
         </optional>
-        <usfm:match match="NL" dump="true"/>
+        <usfm:match match="NL" matchout="&#x27;\n&#x27;" dump="true"/>
       </group>
     </element>
   </define>
@@ -325,7 +325,7 @@
         </attribute>
       </optional>
       <attribute usfm:grouping="15">
-        <usfm:match before="PIPE" after="NL" usfm:seq="true"/>
+        <usfm:match before="PIPE" beforeout="&#x27;|&#x27;" after="NL" afterout="&#x27;\n&#x27;" usfm:seq="true"/>
         <name ns="">id</name>
         <choice>
           <ref name="Peripheral.FRT.periph.id.enum"/>
@@ -609,7 +609,7 @@
     <element>
       <name ns="">para</name>
       <attribute usfm:grouping="15">
-        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"/>
+        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n&#x27;"/>
         <name ns="">style</name>
         <ref name="Section.para.style.enum"/>
       </attribute>
@@ -668,7 +668,7 @@
     <element>
       <name ns="">para</name>
       <attribute usfm:grouping="15">
-        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"/>
+        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n&#x27;"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -954,16 +954,16 @@
         <choice>
           <group>
             <group>
-              <usfm:match match="PIPE" dump="true"/>
+              <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
               <choice>
                 <attribute>
-                  <usfm:match match="/[^\\=]+(?=\\)/"/>
+                  <usfm:match match="/[^\\=\n]+(?=\\)/"/>
                   <anyName/>
                   <data type="string"/>
                 </attribute>
                 <oneOrMore>
                   <attribute>
-                    <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"/>
+                    <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]+/" after="/&quot;${WSS}/"/>
                     <anyName/>
                     <data type="string"/>
                   </attribute>
@@ -1109,17 +1109,17 @@
       </optional>
       <optional>
         <group>
-          <usfm:match match="PIPE" dump="true"/>
+          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <choice>
             <oneOrMore>
               <attribute>
-                <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"/>
+                <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/"/>
                 <anyName/>
                 <data type="string"/>
               </attribute>
             </oneOrMore>
             <attribute usfm:name-override="style">
-              <usfm:match match="/[^\\=]+(?=\\)/"/>
+              <usfm:match match="/[^\\\n=]+(?=\\)/"/>
               <anyName/>
               <data type="string"/>
             </attribute>
@@ -1152,7 +1152,7 @@
       </optional>
       <optional>
         <group>
-          <usfm:match match="PIPE" dump="true"/>
+          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <choice>
             <oneOrMore>
               <attribute>
@@ -1194,17 +1194,17 @@
       </optional>
       <optional>
         <group usfm:order="3">
-          <usfm:match match="PIPE" dump="true"/>
+          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <choice>
             <oneOrMore>
               <attribute>
-                <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"/>
+                <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/"/>
                 <anyName/>
                 <data type="string"/>
               </attribute>
             </oneOrMore>
             <attribute usfm:name-override="style">
-              <usfm:match match="/[^\\=]+(?=\\)/"/>
+              <usfm:match match="/[^\\\n=]+(?=\\)/"/>
               <anyName/>
               <data type="string"/>
             </attribute>
@@ -1232,7 +1232,7 @@
   </define>
   <define name="char.link">
     <group>
-      <usfm:match match="PIPE" dump="true"/>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
       <usfm:properties interleave_between="WS"/>
       <interleave>
         <optional>
@@ -1274,7 +1274,7 @@
       <element>
         <name ns="">ms</name>
         <attribute>
-          <usfm:tag after="/${ws}?(?=[\\|])/"/>
+          <usfm:tag after="/${ws}?(?=[\\|])/" afterout=""/>
           <name ns="">style</name>
           <ref name="Milestone.enum"/>
         </attribute>
@@ -1296,18 +1296,18 @@
         </optional>
         <optional>
           <group>
-            <usfm:match match="PIPE" dump="true"/>
+            <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
             <choice>
               <oneOrMore>
                 <attribute>
-                  <usfm:matchpair first="/[^\\=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"/>
+                  <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/"/>
                   <anyName/>
                   <data type="string"/>
                 </attribute>
               </oneOrMore>
               <optional>
                 <attribute usfm:name-override="style">
-                  <usfm:match match="/[^\\=]+(?=\\)/"/>
+                  <usfm:match match="/[^\\\n=]+(?=\\)/"/>
                   <anyName/>
                   <data type="string"/>
                 </attribute>
@@ -1358,7 +1358,7 @@
         <value>c</value>
       </attribute>
       <attribute>
-        <usfm:match after="/${WS}|(?=\\)/" usfm:seq="true"/>
+        <usfm:match after="/${WS}|(?=\\)/" afterout="&#x27; &#x27;" usfm:seq="true"/>
         <name ns="">number</name>
         <data type="integer"/>
       </attribute>
@@ -1413,7 +1413,7 @@
         <value>cl</value>
       </attribute>
       <text>
-        <usfm:match match="/[^\\]+(?=${NL})/" after="NL"/>
+        <usfm:match match="/[^\\]+(?=${NL})/" after="NL" afterout="&#x27;\n&#x27;"/>
       </text>
     </element>
   </define>
@@ -1432,7 +1432,7 @@
         <value>v</value>
       </attribute>
       <attribute>
-        <usfm:match usfm:seq="true" after="/${WS}|(?=\\)/"/>
+        <usfm:match usfm:seq="true" after="/${WS}|(?=\\)/" afterout="&#x27; &#x27;"/>
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
@@ -1443,7 +1443,7 @@
         <attribute>
           <usfm:tag dump="true">va</usfm:tag>
           <usfm:text/>
-          <usfm:endtag after="/\*${WSS}/">va</usfm:endtag>
+          <usfm:endtag after="/\*${WSS}/" afterout="&#x27;\* &#x27;">va</usfm:endtag>
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
@@ -1455,7 +1455,7 @@
         <attribute>
           <usfm:tag dump="true">vp</usfm:tag>
           <usfm:text/>
-          <usfm:endtag after="/\*${WSS}/">vp</usfm:endtag>
+          <usfm:endtag after="/\*${WSS}/" afterout="&#x27;\* &#x27;">vp</usfm:endtag>
           <name ns="">pubnumber</name>
           <data type="string">
             <param name="minLength">1</param>
@@ -1496,26 +1496,22 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/[^\\\s]+/" after="/${WSS}/"/>
+        <usfm:match match="/[^\\\s]+/" after="/${WSS}/" afterout="&#x27; &#x27;"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
       <optional>
         <ref name="category"/>
       </optional>
-      <optional>
-        <text>
-          <usfm:text/>
-        </text>
-      </optional>
+      <ref name="FootnoteChar"/>
       <zeroOrMore>
-        <ref name="FootnoteChar"/>
+        <choice>
+          <ref name="FootnoteChar"/>
+          <text>
+            <usfm:text/>
+          </text>
+        </choice>
       </zeroOrMore>
-      <optional>
-        <text>
-          <usfm:text/>
-        </text>
-      </optional>
       <usfm:endtag/>
     </element>
   </define>
@@ -1533,7 +1529,7 @@
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
-      <oneOrMore>
+      <zeroOrMore>
         <choice>
           <ref name="Reference" usfm:ignore="true"/>
           <ref name="NoteCharEmbed"/>
@@ -1541,7 +1537,7 @@
             <usfm:text/>
           </text>
         </choice>
-      </oneOrMore>
+      </zeroOrMore>
       <usfm:endtag usfm:many="?"/>
     </element>
   </define>
@@ -1577,7 +1573,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/[^\\\s]+/" after="/${WSS}/"/>
+        <usfm:match match="/[^\\\s]+/" after="/${WSS}/" afterout="&#x27; &#x27;"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
@@ -1647,7 +1643,7 @@
           <ref name="CrossReference"/>
         </choice>
       </oneOrMore>
-      <usfm:tag dump="true">esbe</usfm:tag>
+      <usfm:tag dump="true" afterout="&#x27;\n&#x27;">esbe</usfm:tag>
     </element>
   </define>
   <define name="category">

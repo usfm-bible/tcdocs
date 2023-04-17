@@ -133,7 +133,7 @@ class UsfmRailRoad:
     def append_opt(self, context=None, **kw):
         return self.append_type(context, rr.Choice, 0, rr.Skip())
 
-    def append_or(self, context=None, groupby=None, **kw):
+    def append_or(self, context=None, groupby=0, **kw):
         return self.append_type(context, rr.Choice, 0, groupby=groupby)
 
     def append_plus(self, context=None, **kw):
@@ -165,8 +165,13 @@ class UsfmRailRoad:
         context.append(res)
         return res
 
-    def match(self, txt, context, **kw):
-        context.append(self.WrappedRail(rr.Terminal(txt), context))
+    def match(self, txt, context, alt=None, **kw):
+        if alt is None or not len(alt):
+            lcontext = context
+        else:
+            lcontext = self.append_or(context)
+            lcontext.append(self.WrappedRail(rr.Terminal(alt), lcontext))
+        lcontext.append(self.WrappedRail(rr.Terminal(txt), lcontext))
         return context
 
     def terminal(self, name,  context, **kw):

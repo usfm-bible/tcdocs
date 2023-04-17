@@ -174,7 +174,7 @@ class UsfmGrammarParser:
                 if v is not None and len(v):
                     if a == "match" and v != v.upper() and v[0] not in "'/":
                         v = "'{}'".format(v)
-                    res = self.back.match(v, res, dump=dump)
+                    res = self.back.match(v, res, dump=dump, alt=self.expandvars(e.get(a+"out", None)))
                 elif (r := e.get('matchref', None)) not in (None, ""):
                     for j in range(len(self.groups) - 1, -1, -1):
                         k = (self.groups[j], r)
@@ -188,7 +188,7 @@ class UsfmGrammarParser:
                 if d is not None:
                     res = lastres
             elif v is not None:
-                res = self.back.match(v, res, dump=True)
+                res = self.back.match(v, res, dump=True, alt=self.expandvars(e.get(a+"out", None)))
         # this needs more work: @ahead
         return res if cont else None
 

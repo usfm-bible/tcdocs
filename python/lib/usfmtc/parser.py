@@ -1,13 +1,14 @@
 
-import logging
+import logging, time
 
 logger = logging.getLogger(__name__)
 
 class GlobalState:
-    def __init__(self):
+    def __init__(self, timeout=1e7):
         self.defstack = []
         self.cstack = []
         self.lasterror = None
+        self.time = time.time() + timeout
 
     def __call__(self):
         return self
@@ -115,6 +116,8 @@ class Parser:
                     rese = e
                 logger.debug(s.debug(rese is None, self.to, self.index, kw.get('index', ''), repr(self), getattr(self, 'name', 'UNK'),
                                      (res[1].pos if res is not None else "?")))
+                if time.time() > s.gs.time:
+                    raise TimeoutError()
                 if rese is not None:
                     raise(rese)
                 return res

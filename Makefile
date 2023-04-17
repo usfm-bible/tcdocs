@@ -1,4 +1,6 @@
 
+CHUNKSIZE ?= 0
+
 unknown:
 	@- echo "There are various useful targets:"
 	@- echo "diagrams   All the svg and png syntax diagrams"
@@ -22,4 +24,4 @@ grammar/usx.rng : grammar/usx.rnc
 	python/scripts/urnc2rng $< $@
 
 dbl: grammar/usx.rng
-	python/scripts/usfmtestdbl -g $< --oneerror -v ${DBLDIR} | tee dbltest.log
+	python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug ${DBLDIR} | tee dbltest.log

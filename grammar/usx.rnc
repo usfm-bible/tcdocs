@@ -17,8 +17,8 @@ usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"]
 usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"]
 usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
 usfm:terminal [name="TEXTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"]
-usfm:terminal [name="PIPE" value="/${WSS}\|${WSS}/"]
-usfm:alias [name="usfm:tag" def="match" usfm:match [before="'\'" after="TAGEND"]]
+usfm:terminal [name="PIPE" value="/${ws}*(?<!\\)\|${ws}*/"]
+usfm:alias [name="usfm:tag" def="match" usfm:match [before="'\'" after="TAGEND" afterout="' '"]]
 usfm:alias [name="usfm:endtag" def="match" usfm:match [before="'\'" matchref="a" after="'*'" dump="true"]]
 usfm:alias [name="usfm:text" def="match" usfm:match[match="TEXT" after="TEXTEND"]]
 
@@ -74,11 +74,11 @@ BookIdentification =
     element book {
         [usfm:grouping="13" usfm:order="-1" usfm:match[]]
         attribute code { BookIdentification.book.code.enum }, # e.g. code="GEN"
-        [usfm:order="-2" usfm:tag[before="/${ws}*\\/" usfm:seq="true"]]
+        [usfm:order="-2" usfm:tag[before="/${ws}*\\/" beforeout="'\\'" usfm:seq="true"]]
         attribute style { "id" },
-        [usfm:seq="true"]([usfm:match[before="/${wsnnl}*/" match="/[^\\\n\r]*/"]]
+        [usfm:seq="true"]([usfm:match[before="/${wsnnl}*/" beforeout="' '" match="/[^\\\n\r]*/"]]
         (text)? # Brief description of the project (optional)
-        >> usfm:match[match="NL" dump="true"])
+        >> usfm:match[match="NL" matchout="'\n'" dump="true"])
     }
 BookIdentification.book.code.enum = (
        "GEN" # Genesis
@@ -222,7 +222,7 @@ PeripheralDivision =
     [usfm:stacked="true" usfm:match[usfm:order="-3" before="'\periph '"]]
     element periph {
         [usfm:match[match="TEXT" after="ATTRIBTEXTEND" usfm:seq="true"]] attribute alt { text }?,
-        [usfm:grouping="15" usfm:match[before="PIPE" after="NL" usfm:seq="true"]]
+        [usfm:grouping="15" usfm:match[before="PIPE" beforeout="'|'" after="NL" afterout="'\n'" usfm:seq="true"]]
         attribute id { 
               Peripheral.FRT.periph.id.enum
             | Peripheral.INT.periph.id.enum
@@ -383,7 +383,7 @@ PeripheralContent = (Chapter | Section | Para | List | Table | Footnote | CrossR
 
 Section =
     element para {
-        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"]]
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n'"]]
         attribute style { Section.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Break | [usfm:text[]] text)*
@@ -418,7 +418,7 @@ Section.para.style.enum = (
 
 Para =
     element para {
-        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/"]] attribute style { Para.para.style.enum },
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n'"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
@@ -550,9 +550,9 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (  ( [usfm:match[match="PIPE" dump="true"]]
-             (   [usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}
-              | ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]+/" after="/&quot;${WSS}/"]]
+        (  ( [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+             (   [usfm:match[match="/[^\\=\n]+(?=\\)/"]] attribute * {xsd:string}
+              | ([usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'" second="/[^\\\n&quot;]+/" after="/&quot;${WSS}/"]]
                  attribute * {xsd:string})+
              ),
              ([usfm:order="-1"] CharContent)
@@ -645,10 +645,10 @@ CharWithAttrib =
     element char {
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
+        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}
+         | [usfm:name-override="style" usfm:match[match="/[^\\\n=]+(?=\\)/"]] attribute * {xsd:string}
         )?,
         [usfm:order="-1"] ((CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*)
         >> usfm:endtag[usfm:order="4"]
@@ -658,7 +658,7 @@ Figure =
     element figure {
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { "fig" },
         char.closed?,
-        [usfm:match[match="PIPE" dump="true"]]
+        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
         ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
          | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
@@ -671,10 +671,10 @@ CharEmbedWithAttrib =
     element char {
         [usfm:order="-2" usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:order="3" usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
+        [usfm:order="3" usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}
+         | [usfm:name-override="style" usfm:match[match="/[^\\\n=]+(?=\\)/"]] attribute * {xsd:string}
         )?,
         [usfm:order="-1"] ((CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*)
         >> usfm:endtag[usfm:order="4" before="'\+'"]
@@ -686,7 +686,7 @@ CharWithAttrib.enum = (
 )
         
 char.link =
-    [usfm:match[match="PIPE" dump="true"] usfm:properties[interleave_between="WS"]]
+    [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:properties[interleave_between="WS"]]
     ([usfm:match[before="'href=&quot;'" after="'&quot;'"]]attribute link-href { xsd:string 
         { pattern = "(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)" } }? # The resource being linked to as a URI
     & [usfm:match[before="'title=&quot;'" after="'&quot;'"]]
@@ -700,13 +700,13 @@ char.closed =
 Milestone = (
     (element ms {
         # [usfm:tag[after="/\s?(?=[\\|])/"]] attribute style { xsd:string {pattern="[a-z][a-z0-9-]*" }},
-        [usfm:tag[after="/${ws}?(?=[\\|])/"]] attribute style { Milestone.enum },
+        [usfm:tag[after="/${ws}?(?=[\\|])/" afterout=""]] attribute style { Milestone.enum },
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
-        [usfm:match[match="PIPE" dump="true"]]
-        ( ([usfm:matchpair[first="/[^\\=&quot;]+/" between="'=&quot;'" second="/[^\\&quot;]*/" after="/&quot;${WSS}/"]]
+        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+        ( ([usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/"]]
                 attribute * {xsd:string})+
-         | [usfm:name-override="style" usfm:match[match="/[^\\=]+(?=\\)/"]] attribute * {xsd:string}?
+         | [usfm:name-override="style" usfm:match[match="/[^\\\n=]+(?=\\)/"]] attribute * {xsd:string}?
         )?,
         empty
     }
@@ -742,7 +742,7 @@ ChapterStart =
     element chapter { # Start of new chapter
         [usfm:tag[usfm:seq="true"]]
         attribute style { "c" },
-        [usfm:match[after="/${WS}|(?=\\)/" usfm:seq="true"]]
+        [usfm:match[after="/${WS}|(?=\\)/" afterout="' '" usfm:seq="true"]]
         attribute number { xsd:integer },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
@@ -764,7 +764,7 @@ BookChapterLabel =
     element para { 
         [usfm:tag[]]
         attribute style { "cl" }, # Chapter label for book, specified once prior to chapter 1
-        [usfm:match[match="/[^\\]+(?=${NL})/" after="NL"]]
+        [usfm:match[match="/[^\\]+(?=${NL})/" after="NL" afterout="'\n'"]]
         text
     }
 
@@ -775,11 +775,11 @@ VerseStart =
     element verse {
         [usfm:tag[usfm:seq="true"]]
         attribute style { "v" },
-        [usfm:match[usfm:seq="true" after="/${WS}|(?=\\)/"]]
+        [usfm:match[usfm:seq="true" after="/${WS}|(?=\\)/" afterout="' '"]]
         attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
-        [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" "va"]]
+        [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "va"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
-        [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*${WSS}/" "vp"]]
+        [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]
         attribute sid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*" } },
@@ -798,12 +798,11 @@ Footnote =
     element note {
         [usfm:tag[id="a"]]
         attribute style { "f" | "fe" | "ef" },
-        [usfm:match[match="/[^\\\s]+/" after="/${WSS}/"]]
+        [usfm:match[match="/[^\\\s]+/" after="/${WSS}/" afterout="' '"]]
         attribute caller { text },
         category?,
-        [usfm:text[]] text?,
-        FootnoteChar*,
-        [usfm:text[]] text?
+        FootnoteChar, 
+        (FootnoteChar | [usfm:text[]] text)*
         >> usfm:endtag[]
     }
 
@@ -815,7 +814,7 @@ FootnoteChar =
         char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)+
+        ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)*
         >> usfm:endtag[usfm:many="?"]
     }
 FootnoteChar.char.style.enum = (
@@ -841,7 +840,7 @@ CrossReference =
     element note {
         [usfm:tag[id="a"]]
         attribute style { "x" | "ex" },
-        [usfm:match[match="/[^\\\s]+/" after="/${WSS}/"]]
+        [usfm:match[match="/[^\\\s]+/" after="/${WSS}/" afterout="' '"]]
         attribute caller { text },
         CrossReferenceChar*
         >> usfm:endtag[]
@@ -876,7 +875,7 @@ Sidebar =
         attribute style { "esb" },
         category?,
         (Section | Para | List | Table | Footnote | CrossReference)+
-        >> usfm:tag[dump="true" "esbe"]
+        >> usfm:tag[dump="true" afterout="'\n'" "esbe"]
     }
 
 category =
