@@ -11,8 +11,8 @@ logger = logging.getLogger("sfmparser")
 
 class GlobalState(usfmp.GlobalState):
     ''' text based global state '''
-    def __init__(self, txt):
-        super().__init__()
+    def __init__(self, txt, timeout=1e7):
+        super().__init__(timeout=timeout)
         self.str = txt
         self.captures = []
         self.refs = {}
@@ -195,13 +195,13 @@ class Element(list):
         return str(self)
 
 
-def parseusfm(infilename, parser):
+def parseusfm(infilename, parser, timeout=1e7):
     if hasattr(infilename, 'read'):
         dat = infilename.read().decode("utf-8")
     else:
         with open(infilename, encoding="utf-8") as inf:
             dat = inf.read()
-    gs = GlobalState(dat)
+    gs = GlobalState(dat, timeout=timeout)
     return parser.parse(usfmp.State(gs))
     
         

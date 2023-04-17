@@ -1,10 +1,15 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S python3 -u
 
 import argparse, zipfile, os, sys, itertools, re
 from multiprocessing import Pool
 from math import sqrt
 import logging
 import logging.config
+
+def lognprint(s, q, level=logging.DEBUG):
+    log.log(level, s)
+    if not q:
+        print(s, flush=True)
 
 try:
     from usfmtc.sfmparser import UsfmParserBackend, parseusfm
@@ -17,20 +22,23 @@ from usfmtc.usxgrammar import usxenums
 import xml.etree.ElementTree as et
 
 def proconezip(fpath, sfmp, log, args):
-    if not args.quiet:
-        log.debug(f"{fpath}: started")
+    lognprint(f"{fpath}: started", args.quiet)
     try:
         zipf = zipfile.ZipFile(fpath)
-    except OSError:
-        log.info(f"{fpath}: Skipped")
+    except (OSError, zipfile.BadZipFile) as e:
+        lognprint(f"{fpath}: Skipped {e}", args.quiet, logging.INFO)
         return (fpath, None)
     try:
         fh = zipf.open("source/source.zip")
-    except (KeyError, OSError):
+    except (KeyError, OSError) as e:
         zipf.close()
-        log.info(f"{fpath}: Skipped (no source)")
+        lognprint(f"{fpath}: Skipped (no source) {e}", args.quiet, logging.INFO)
         return (fpath, None)
-    szip = zipfile.ZipFile(fh)
+    try:
+        szip = zipfile.ZipFile(fh)
+    except zipfile.BadZipFile as e:
+        lognprint(f"{fpath}: Skipped. Bad Zip file source/source.zip {e}", args.quiet, logging.INFO)
+        return (fpath, None)
     results = []
     for f in szip.namelist():
         if f.lower().endswith('sfm'):
@@ -39,18 +47,30 @@ def proconezip(fpath, sfmp, log, args):
                 continue
         else:
             continue
+        if args.verbose:
+            lognprint(f"{fpath}/{f}", args.quiet)
         sfmfh = szip.open(f)
         try:
-            result = parseusfm(sfmfh, sfmp)
+            result = parseusfm(sfmfh, sfmp, timeout=args.timeout or 3600)
         except NoParseError as e:
             imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
             results.append(imsg)
-            log.debug(f"{fpath}: {imsg}")
+            lognprint(f"{fpath}: {imsg}", args.quiet)
+            if args.oneerror:
+                break
+        except TimeoutError:
+            lognprint(f"{fpath}: Timed out", args.quiet, logging.INFO)
+            results.append("Timed out")
+            if args.oneerror:
+                break
+        except UnicodeError:
+            lognprint(f"{fpath}: Skipped. Encoding error, probably latin-1?", args.quiet, logging.INFO)
+            results.append("Encoding error")
             if args.oneerror:
                 break
     szip.close()
     zipf.close()
-    log.info("{}: {}".format(fpath, "Passed" if not len(results) else "Failed"))
+    lognprint("{}: {}".format(fpath, "Passed" if not len(results) else "Failed"), args.quiet, logging.INFO)
     return (fpath, results)
 
 def chunkjobs(jobs, nchunks):
@@ -76,16 +96,19 @@ parser.add_argument("-S","--start",default="Scripture",help="Starting node for p
 parser.add_argument("-m","--marker",action='append',default=[],help='type=mkr,mka,mkb')
 parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
 parser.add_argument("-M","--match",help="Constrain input files to match regex")
+parser.add_argument("--skipfile",help="Logfile name and skip all jobs skipped and passed in that file")
 parser.add_argument("-O","--oneerror",action="store_true",help="Bail on a zip after the first faulty sfm file")
-parser.add_argument("-j","--jobs",type=int,default=0,help="Parallel jobs, single=1")
+parser.add_argument("-T","--timeout",type=int,help="Maximum time to process a file in seconds")
+parser.add_argument("-j","--jobs",default=0,help="Parallel jobs, single=1")
 parser.add_argument("-C","--chunks",type=int,help="Size of parallel chunks")
 parser.add_argument("-v","--verbose",action="store_true",help="Print things like error messages")
 parser.add_argument("-q","--quiet",action="store_true",help="Don't report progress")
-parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
+parser.add_argument("-l","--logging",default="error",help="Set logging level to usfmxtest.log")
+parser.add_argument("--logfile",default="usfmtestdbl.log",help="Out log to file")
+parser.add_argument("--logparse",action="store_true",help="Log the parsing as well")
 parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree, 2-alt multiproc")
 args = parser.parse_args()
 
-Parser.debug=False
 if args.logging:
     try:
         loglevel = int(args.logging)
@@ -94,16 +117,28 @@ if args.logging:
     if isinstance(loglevel, int):
         parms = {'level': loglevel, 'datefmt': '%d/%b/%Y %H:%M:%S',
                  'format': '%(asctime)s.%(msecs)03d %(levelname)s:%(module)s(%(lineno)d) %(message)s'}
-        logfh = open("usfmtestdbl.log", "w", encoding="utf-8")
+        logfh = open(args.logfile, "w", encoding="utf-8")
         parms.update(stream=logfh, filemode="w") #, encoding="utf-8")
         try:
             logging.basicConfig(**parms)
         except FileNotFoundError as e:      # no write access to the log
             print("Exception", e)
-    logging.config.dictConfig({'version': 1, 'disable_existing_loggers': True})
+    if not args.logparse:
+        logging.config.dictConfig({'version': 1, 'disable_existing_loggers': True})
+        if args.timeout is None:
+            Parser.debug=False
     log = logging.getLogger('usfmtestdbl')
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
+
+skips = {}
+if args.skipfile and os.path.exists(args.skipfile):
+    with open(args.skipfile, encoding="utf-8") as inf:
+        for l in inf.readlines():
+            m = re.match(r"^(.*): (\S+)(?:\s+\((Passed)\))?", l)
+            if m is not None:
+                if m.group(2) in ("Passed", "Skipped"):
+                    skips[m.group(1)] = m.group(3) or m.group(2)
 
 rdoc = et.parse(args.grammar)
 if len(args.marker):
@@ -126,6 +161,7 @@ sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
 
 jobs = []
+skipcount = 0
 for dp, dns, fns in os.walk(args.directory):
     for f in fns:
         if not f.lower().endswith(".zip"):
@@ -135,7 +171,15 @@ for dp, dns, fns in os.walk(args.directory):
         st = os.stat(os.path.join(dp, f))
         if st.st_size > args.size * 1024:
             continue
-        jobs.append((os.path.join(dp, f), st.st_size))
+        jobname = os.path.join(dp, f)
+        if jobname in skips:
+            log.info(f"{jobname}: Skipped ({skips[jobname]})")
+            skipcount += 1
+        else:
+            jobs.append((jobname, st.st_size))
+
+if not args.quiet:
+    print(f"Skipping {skipcount} jobs")
 
 if args.jobs != 1 and len(jobs) > 1:
     if args.jobs == 0:
@@ -163,7 +207,7 @@ failed = 0
 passed = 0
 skipped = 0
 for r in results:
-    if r[1] is None:
+    if r is None or r[1] is None:
         skipped += 1
     elif len(r[1]) == 0:
         passed += 1
