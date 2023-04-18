@@ -3,7 +3,7 @@
 <style>/* <![CDATA[ */
 
     svg.railroad-diagram {
-        background-color:hsl(30,20%,95%);
+        background-color: hsl(30,20%,95%);
     }
     svg.railroad-diagram path {
         stroke-width: 2;
@@ -24,7 +24,7 @@
     }
     svg.railroad-diagram rect{
         stroke-width: 2;
-        stroke:black;
+        stroke: black;
         fill: rgb(210, 255, 210);
     }
     svg.railroad-diagram rect.group-box {
@@ -34,6 +34,9 @@
     }
     .terminal {
         font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram g.altterminal rect {
+        fill: rgb(251, 252, 207)
     }
 
 /* ]]> */
@@ -45,12 +48,12 @@
 <path d="M 453.75 41 h 0.0"></path><path d="M 499.25 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="453.75" y="30"></rect><text x="476.5" y="45">'\'</text></g><path d="M 499.25 41 h 10"></path><path d="M 509.25 41 h 10"></path><g class="terminal ">
 <path d="M 519.25 41 h 0.0"></path><path d="M 564.75 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="519.25" y="30"></rect><text x="542.0" y="45">"c"</text></g><path d="M 564.75 41 h 10"></path><path d="M 574.75 41 h 10"></path><g>
 <path d="M 584.75 41 h 0.0"></path><path d="M 695.75 41 h 0.0"></path><path d="M 584.75 41 h 20"></path><g class="terminal ">
-<path d="M 604.75 41 h 12.75"></path><path d="M 663.0 41 h 12.75"></path><rect height="22" rx="10" ry="10" width="45.5" x="617.5" y="30"></rect><text x="640.25" y="45">' '</text></g><path d="M 675.75 41 h 20"></path><path d="M 584.75 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 604.75 41 h 12.75"></path><path d="M 663.0 41 h 12.75"></path><rect height="22" rx="10" ry="10" width="45.5" x="617.5" y="30"></rect><text x="640.25" y="45">' '</text></g><path d="M 675.75 41 h 20"></path><path d="M 584.75 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
 <path d="M 604.75 71 h 0.0"></path><path d="M 675.75 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="71.0" x="604.75" y="60"></rect><text x="640.25" y="75">TAGEND</text></g><path d="M 675.75 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g></g><path d="M 1089.5 41 a 10 10 0 0 1 10 10 v 39 a 10 10 0 0 1 -10 10 h -1029.5 a 10 10 0 0 0 -10 10 v 9 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 60.0 129 h 10.0"></path><path d="M 1079.5 129 h 10.0"></path><g class="terminal ">
 <path d="M 70.0 129 h 0.0"></path><path d="M 158.0 129 h 0.0"></path><rect height="22" rx="10" ry="10" width="88.0" x="70.0" y="118"></rect><text x="114.0" y="133">/&#91;0-9&#93;+/</text></g><path d="M 158.0 129 h 10"></path><path d="M 168.0 129 h 10"></path><g>
 <path d="M 178.0 129 h 0.0"></path><path d="M 1079.5 129 h 0.0"></path><path d="M 178.0 129 h 20"></path><g class="terminal ">
-<path d="M 198.0 129 h 408.0"></path><path d="M 651.5 129 h 408.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="606.0" y="118"></rect><text x="628.75" y="133">' '</text></g><path d="M 1059.5 129 h 20"></path><path d="M 178.0 129 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 198.0 129 h 408.0"></path><path d="M 651.5 129 h 408.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="606.0" y="118"></rect><text x="628.75" y="133">' '</text></g><path d="M 1059.5 129 h 20"></path><path d="M 178.0 129 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
 <path d="M 198.0 159 h 0.0"></path><path d="M 1059.5 159 h 0.0"></path><rect height="22" rx="10" ry="10" width="861.5" x="198.0" y="148"></rect><text x="628.75" y="163">/(?:&#91;\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F&#93;|\u000D?\u000A|$)|(?=\\)/</text></g><path d="M 1059.5 159 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g></g><path d="M 1089.5 129 a 10 10 0 0 1 10 10 v 39 a 10 10 0 0 1 -10 10 h -1029.5 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 60.0 208 h 219.5"></path><path d="M 870.0 208 h 219.5"></path><path d="M 279.5 208 h 20"></path><g>
 <path d="M 299.5 208 h 550.5"></path></g><path d="M 850.0 208 h 20"></path><path d="M 279.5 208 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g>

@@ -3,7 +3,7 @@
 <style>/* <![CDATA[ */
 
     svg.railroad-diagram {
-        background-color:hsl(30,20%,95%);
+        background-color: hsl(30,20%,95%);
     }
     svg.railroad-diagram path {
         stroke-width: 2;
@@ -24,7 +24,7 @@
     }
     svg.railroad-diagram rect{
         stroke-width: 2;
-        stroke:black;
+        stroke: black;
         fill: rgb(210, 255, 210);
     }
     svg.railroad-diagram rect.group-box {
@@ -35,13 +35,16 @@
     .terminal {
         font-family: DejaVu Sans;
     }
+    svg.railroad-diagram g.altterminal rect {
+        fill: rgb(251, 252, 207)
+    }
 
 /* ]]> */
 </style><g>
 <path d="M 20 31 v 20 m 0 -10 h 20"></path></g><path d="M 40 41 h 10"></path><g>
 <path d="M 50 41 h 0.0"></path><path d="M 1193.0 41 h 0.0"></path><g>
 <path d="M 50.0 41 h 0.0"></path><path d="M 144.0 41 h 0.0"></path><path d="M 50.0 41 h 20"></path><g class="terminal ">
-<path d="M 70.0 41 h 4.25"></path><path d="M 119.75 41 h 4.25"></path><rect height="22" rx="10" ry="10" width="45.5" x="74.25" y="30"></rect><text x="97.0" y="45">'|'</text></g><path d="M 124.0 41 h 20"></path><path d="M 50.0 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 70.0 41 h 4.25"></path><path d="M 119.75 41 h 4.25"></path><rect height="22" rx="10" ry="10" width="45.5" x="74.25" y="30"></rect><text x="97.0" y="45">'|'</text></g><path d="M 124.0 41 h 20"></path><path d="M 50.0 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
 <path d="M 70.0 71 h 0.0"></path><path d="M 124.0 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="70.0" y="60"></rect><text x="97.0" y="75">PIPE</text></g><path d="M 124.0 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g><path d="M 144.0 41 h 10"></path><path d="M 154.0 41 h 10"></path><g>
 <path d="M 164.0 41 h 0.0"></path><path d="M 1193.0 41 h 0.0"></path><path d="M 164.0 41 h 10"></path><g>
 <path d="M 174.0 41 h 0.0"></path><path d="M 1183.0 41 h 0.0"></path><path d="M 204.0 41 h 10"></path><g>

@@ -563,7 +563,7 @@
           <ref name="Milestone"/>
           <ref name="Break"/>
           <text>
-            <usfm:match ahead="&#x27;\&#x27;"/>
+            <usfm:text ahead="&#x27;\&#x27;"/>
           </text>
         </choice>
       </zeroOrMore>
@@ -668,7 +668,7 @@
     <element>
       <name ns="">para</name>
       <attribute usfm:grouping="15">
-        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n&#x27;"/>
+        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n\\&#x27;"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -1496,7 +1496,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/[^\\\s]+/" after="/${WSS}/" afterout="&#x27; &#x27;"/>
+        <usfm:match match="/[^\\\s]+/" after="/WSS/" afterout="&#x27; &#x27;"/>
         <name ns="">caller</name>
         <text/>
       </attribute>

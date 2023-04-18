@@ -17,7 +17,7 @@ alljobs = {
     "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
     "List":                 ("list", ("List.para.style.enum",)),
     "ListChar":             ("listchar", ("+char.closed", "ListChar.char.style.enum",)),
-    "Milestone":            ("ms", ("MilestoneWithAttrib.enum", "MilestoneWithAttrib.ms.style.qt")),
+    "Milestone":            ("ms", ("MilestoneWithAttrib.enum", "MilestoneWithAttrib.ms.style.qt", "Milestone.enum")),
     "Para":                 ("p", ("Para.para.style.enum", "Break")),
     "PeripheralDivision":   ("periph", ("Peripheral.FRT.periph.id.enum", "Peripheral.INT.periph.id.enum",
                                         "Peripheral.BAK.periph.id.enum", "Peripheral.OTH.periph.id.enum", "PeripheralContent")),
