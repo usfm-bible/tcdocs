@@ -11,6 +11,7 @@
   <usfm:terminal name="WS" value="/(?:${ws}|${nl}|$)/"/>
   <usfm:terminal name="WSS" value="/${ws}*/"/>
   <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"/>
+  <usfm:terminal name="TAGPARMEND" value="/${wsnnl}+/"/>
   <usfm:terminal name="TEXTEND" value="/${ws}*(?=[\\]|$)/"/>
   <usfm:terminal name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"/>
   <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/"/>
@@ -280,6 +281,10 @@
       <value>GLO</value>
       <value>TDX</value>
       <value>NDX</value>
+      <data type="string">
+        <usfm:match/>
+        <param name="pattern">\S{3}</param>
+      </data>
     </choice>
   </define>
   <define name="PeripheralDividedBookIdentification">
@@ -311,6 +316,10 @@
       <value>BAK</value>
       <value>OTH</value>
       <value>INT</value>
+      <data type="string">
+        <usfm:match/>
+        <param name="pattern">\S{3}</param>
+      </data>
     </choice>
   </define>
   <define name="PeripheralDivision">
@@ -395,6 +404,9 @@
     <choice>
       <value>cover</value>
       <value>spine</value>
+      <data type="string">
+        <usfm:match/>
+      </data>
     </choice>
   </define>
   <define name="PeripheralOther">
@@ -1353,12 +1365,12 @@
     <element usfm:stacked="true">
       <name ns="">chapter</name>
       <attribute>
-        <usfm:tag usfm:seq="true"/>
+        <usfm:tag usfm:seq="true" after="TAGPARMEND"/>
         <name ns="">style</name>
         <value>c</value>
       </attribute>
       <attribute>
-        <usfm:match after="/${WS}|(?=\\)/" afterout="&#x27; &#x27;" usfm:seq="true"/>
+        <usfm:match after="/${WS}+|(?=\\)/" afterout="&#x27; &#x27;" usfm:seq="true"/>
         <name ns="">number</name>
         <data type="integer"/>
       </attribute>

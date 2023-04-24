@@ -13,6 +13,7 @@ usfm:terminal [name="NL" value="/(?:${nl}|\u000D)+/"]
 usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"]
 usfm:terminal [name="WSS" value="/${ws}*/"]
 usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"]
+usfm:terminal [name="TAGPARMEND" value="/${wsnnl}+/"]
 usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"]
 usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"]
 usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
@@ -196,6 +197,7 @@ PeripheralBookIdentification.book.code.enum = (
      | "GLO" # Glossary
      | "TDX" # Topical Index
      | "NDX" # Names Index
+     | [usfm:match[]] xsd:string { pattern = "\S{3}" }
      )
 
 PeripheralDividedBookIdentification =
@@ -216,6 +218,7 @@ PeripheralDividedBookIdentification.book.code.enum = (
      | "BAK" # Back Matter
      | "OTH" # Other Matter
      | "INT" # Introduction
+     | [usfm:match[]] xsd:string { pattern = "\S{3}" }
      )
 
 PeripheralDivision =
@@ -269,6 +272,7 @@ Peripheral.BAK.periph.id.enum = (
 Peripheral.OTH.periph.id.enum = (
       "cover"
     | "spine"
+    | [usfm:match[]] xsd:string 
     )
 
 PeripheralOther = (
@@ -740,9 +744,9 @@ Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
 ChapterStart =
     [usfm:stacked="true"]
     element chapter { # Start of new chapter
-        [usfm:tag[usfm:seq="true"]]
+        [usfm:tag[usfm:seq="true" after="TAGPARMEND"]]
         attribute style { "c" },
-        [usfm:match[after="/${WS}|(?=\\)/" afterout="' '" usfm:seq="true"]]
+        [usfm:match[after="/${WS}+|(?=\\)/" afterout="' '" usfm:seq="true"]]
         attribute number { xsd:integer },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
