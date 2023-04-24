@@ -12,7 +12,7 @@ from usfmtc.parser import NoParseError
 from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
 from usfmtc.usxgrammar import usxenums
 from usfmtc.xml import parsexml, writexml, prettyxml
-from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup
+from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup, partypes
 import xml.etree.ElementTree as et
 
 def proconedir(d, sfmp, args):
