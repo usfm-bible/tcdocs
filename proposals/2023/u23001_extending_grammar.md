@@ -13,7 +13,7 @@ M. Hosken
 ## Executive Summary
 
 This proposal adds a mechanism for USFM files to self describe user defined
-markers. The result of this proposal is the addition of a new marker: `\\def'
+markers. The result of this proposal is the addition of a new marker: `\\defmarker'
 that may only occur before any book headers.
 
 ## Introduction
@@ -42,18 +42,18 @@ costs.
 
 ## Proposal
 
-The proposed added marker is `\def`. Since the information following the marker
+The proposed added marker is `\defmarker`. Since the information following the marker
 changes the parsing of the rest of the file, such markers must occur before any
-content markers including book headers like `\h`. `\def` is followed by
+content markers including book headers like `\h`. `\defmarker` is followed by
 structured text that is delimited by a newline. The structure of the content of
-a \\def is:
+a \\defmarker is a space separated list of elements:
 
-`\def` _marker_  _category_ *space separated parameters*
+`\defmarker` _marker_  _category_ _space separated parameters_
 
 For example:
 
 ```
-\def z-aln charwithattrib lemma
+\defmarker z-aln charwithattrib lemma
 ```
 
 The marker is the marker being defined. The category is one of a closed set of
@@ -86,6 +86,20 @@ at various points. The current list is:
 | Para |     | Paragraph styles including \\p \\q \\m \\b \\s3 |
 | Section |     | Section header styles including \\s1 \\r \\ip \\cl |
 
+## Examples
+
+```
+\defmarker zaln-s Milestone
+\defmarker zaln-e Milestone
+\defmarker zthumbtab Para
+\defmarker zfiga Milestone id
+```
+
+Notice that the first two have no default attribute. Not specifying a default
+attribute is allowed. It just means that any use of that milestone will require
+any parameters to be fully identified.
+
+
 ## Discussion
 
 There are many options as to the structure and definition of this marker.
@@ -100,11 +114,4 @@ extend it include:
 
 The latter would mean the category list to no longer has to define the
 parameter list structure.
-
-### Marker name
-
-`\def` is problematic for TeX since it is an important keyword in TeX. While
-not a serious problem, it does mean TeX based systems have to be careful and
-preprocess USFM files to remove the `\def`. It may be more convenient to use a
-different marker.
 
