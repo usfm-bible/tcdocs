@@ -1249,7 +1249,7 @@
       <interleave>
         <optional>
           <attribute>
-            <usfm:match before="&#x27;href=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
+            <usfm:match before="&#x27;link-href=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
             <name ns="">link-href</name>
             <data type="string">
               <param name="pattern">(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)</param>
@@ -1258,14 +1258,14 @@
         </optional>
         <optional>
           <attribute>
-            <usfm:match before="&#x27;title=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
+            <usfm:match before="&#x27;link-title=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
             <name ns="">link-title</name>
             <data type="string"/>
           </attribute>
         </optional>
         <optional>
           <attribute>
-            <usfm:match before="&#x27;id=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
+            <usfm:match before="&#x27;link-id=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
             <name ns="">link-id</name>
             <data type="string">
               <param name="pattern">[\p{L}\d_\-\.:]+</param>

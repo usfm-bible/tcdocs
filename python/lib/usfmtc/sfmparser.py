@@ -109,8 +109,6 @@ class Reference(usfmp.Parser):
         self.backref = index
         def test(s):
             v = s.gs.getcapture(self.backref)
-            if v == "xop":
-                import pdb; pdb.set_trace()
             if s.gs().startswith(v, s.pos):
                 return(v if not kw.get('dump', False) else None, s.extend(len(v)))
             else:

@@ -691,11 +691,11 @@ CharWithAttrib.enum = (
         
 char.link =
     [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:properties[interleave_between="WS"]]
-    ([usfm:match[before="'href=&quot;'" after="'&quot;'"]]attribute link-href { xsd:string 
+    ([usfm:match[before="'link-href=&quot;'" after="'&quot;'"]]attribute link-href { xsd:string
         { pattern = "(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)" } }? # The resource being linked to as a URI
-    & [usfm:match[before="'title=&quot;'" after="'&quot;'"]]
+    & [usfm:match[before="'link-title=&quot;'" after="'&quot;'"]]
     attribute link-title { xsd:string }? # Plain text describing the remote resource such as might be shown in a tooltip
-    & [usfm:match[before="'id=&quot;'" after="'&quot;'"]]
+    & [usfm:match[before="'link-id=&quot;'" after="'&quot;'"]]
     attribute link-id { xsd:string { pattern = "[\p{L}\d_\-\.:]+" } }?) # Unique identifier for this location in the text
 
 char.closed =

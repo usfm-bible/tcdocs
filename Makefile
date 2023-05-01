@@ -1,7 +1,7 @@
 
 PYTHON ?= python
 CHUNKSIZE ?= 0
-JOBS ?= 1
+JOBS ?= -1
 
 unknown:
 	@- echo "There are various useful targets:"
