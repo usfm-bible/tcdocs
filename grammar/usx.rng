@@ -1508,7 +1508,7 @@
         </choice>
       </attribute>
       <attribute>
-        <usfm:match match="/[^\\\s]+/" after="/WSS/" afterout="&#x27; &#x27;"/>
+        <usfm:match match="/[^\\\s]+/" after="/${WSS}/" afterout="&#x27; &#x27;"/>
         <name ns="">caller</name>
         <text/>
       </attribute>

@@ -34,6 +34,9 @@ def addvids(lastp, endp, base, v, endv, atend=False):
         lastp = lastp.getnext()
     if id(res) == id(endp) and base is not None:
         base.addprevious(endv)
+    elif res.tag == "table":
+        if len(res):
+            res[-1].append(endv)
     else:
         res.append(endv)
     return res
@@ -86,21 +89,25 @@ def addesids(root):
     if lastc is not None:
         root.append(lastc.makeelement('chapter', {'eid': lastc.get('sid', '')}))
 
-    for r in root.findall('.//row'):
-        p = r.getprevious()
-        if p is not None and p.tag == 'row':
-            newp = p.get(' parent')
-            i, oldp = r.getindex()
-            oldp[i] = newp
-        else:
-            # there's a bug here, surely newp is never attached
-            i, oldp = r.getindex()
-            newp = r.makeelement('table', {})
-            oldp.remove(r)
-            oldp.insert(i, newp)
-            r.parent = newp
-        newp.parent = oldp
-        newp.append(r)
+    if 0:
+        for r in root.findall('.//row'):
+            p = r.getprevious()
+            if r.parent is not None and r.parent.tag == "table":
+                continue
+            if p is not None and p.tag == 'table':
+                i, oldp = r.getindex()
+                p.append(r)
+                oldp.remove(r)
+                r.parent = p
+            else:
+                # there's a bug here, surely newp is never attached
+                i, oldp = r.getindex()
+                newp = r.makeelement('table', {})
+                oldp.remove(r)
+                oldp.insert(i, newp)
+                r.parent = newp
+            newp.parent = oldp
+            newp.append(r)
     return root
 
 aligns = { "": "start", "r": "end", "c": "center" }

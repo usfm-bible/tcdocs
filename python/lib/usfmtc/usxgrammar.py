@@ -38,7 +38,7 @@ usxenums = {
     'int': 'Peripheral.INT.periph.id',
     'bak': 'Peripheral.BAK.periph.id',
     'oth': 'Peripheral.OTH.periph.id',
-    'bookheader': 'BookHeaders.para.style',
+    'bkhdr': 'BookHeaders.para.style',
     'booktitles': 'BookTitle.para.style',
     'bookintroduction': 'BookIntroduction.para.style',
     'bookintroductionendtitles': 'BookIntroductionEndTitles.para.style',

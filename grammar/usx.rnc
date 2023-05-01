@@ -802,7 +802,7 @@ Footnote =
     element note {
         [usfm:tag[id="a"]]
         attribute style { "f" | "fe" | "ef" },
-        [usfm:match[match="/[^\\\s]+/" after="/WSS/" afterout="' '"]]
+        [usfm:match[match="/[^\\\s]+/" after="/${WSS}/" afterout="' '"]]
         attribute caller { text },
         category?,
         FootnoteChar, 
