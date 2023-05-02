@@ -49,12 +49,12 @@ Examples of the two markup approaches for notes is provided below:
 [source,usfm]
 .Implicit closure
 ----
-`+\f + \fk Issac: \ft In Hebrew means "laughter"\f*+`
+`\f + \fk Issac: \ft In Hebrew means "laughter"\f*`
 ----
 [source,usfm]
 .Explicit end marker
 ----
-`+\f + \fk Issac:\fk* \ft In Hebrew means "laughter"\ft*\f*+`
+`\f + \fk Issac:\fk* \ft In Hebrew means "laughter"\ft*\f*`
 ----
 ====
 
