@@ -4,7 +4,7 @@ usfmns = "{http://usfm.bible/parse/2023}"
 
 CSS_STYLE = '''
     svg.railroad-diagram {{
-        background-color:hsl(30,20%,95%);
+        background-color: hsl(30,20%,95%);
     }}
     svg.railroad-diagram path {{
         stroke-width: {line-width};
@@ -25,7 +25,7 @@ CSS_STYLE = '''
     }}
     svg.railroad-diagram rect{{
         stroke-width: {line-width};
-        stroke:black;
+        stroke: black;
         fill: {color};
     }}
     svg.railroad-diagram rect.group-box {{
@@ -35,6 +35,9 @@ CSS_STYLE = '''
     }}
     .terminal {{
         font-family: {font};
+    }}
+    svg.railroad-diagram g.altterminal rect {{
+        fill: {altcolor}
     }}
 '''
 
@@ -93,6 +96,7 @@ class UsfmRailRoad:
             'text-size': '12px',
             'comment-size': '14px',
             'color': 'rgb(210, 255, 210)',
+            'altcolor': 'rgb(251, 252, 207)',
             'line-width': '2'}
         defaults.update(kw)
         return rr.Diagram(top.asRail(), type='complex', css=CSS_STYLE.format(**defaults))
@@ -166,12 +170,14 @@ class UsfmRailRoad:
         return res
 
     def match(self, txt, context, alt=None, **kw):
+        cls = {}
         if alt is None or not len(alt):
             lcontext = context
         else:
             lcontext = self.append_or(context)
             lcontext.append(self.WrappedRail(rr.Terminal(alt), lcontext))
-        lcontext.append(self.WrappedRail(rr.Terminal(txt), lcontext))
+            cls = {"cls": "altterminal"}
+        lcontext.append(self.WrappedRail(rr.Terminal(txt, **cls), lcontext))
         return context
 
     def terminal(self, name,  context, **kw):

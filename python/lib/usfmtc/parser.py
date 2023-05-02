@@ -1,5 +1,5 @@
 
-import logging, time
+import logging, time, re
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +48,7 @@ class State:
 
     def debug(self, good, to, index, kwindex, rep, name, respos):
         return '{}ing[{}/{}:{}.{}{}->{}] {} at {}->{} = "{}"...'.format("match" if good else "fail", self.defstack,
-                    to, index, kwindex, self.cstack, rep, name, self.pos, respos, self()[:10].replace("\n", "\\n"))
+                    to, index, kwindex, "["+",".join(map(str, self.cstack))+"]", rep, name, self.pos, respos, self()[:10].replace("\n", "\\n"))
 
     @property
     def lasterror(self):

@@ -3,7 +3,7 @@
 <style>/* <![CDATA[ */
 
     svg.railroad-diagram {
-        background-color:hsl(30,20%,95%);
+        background-color: hsl(30,20%,95%);
     }
     svg.railroad-diagram path {
         stroke-width: 2;
@@ -24,7 +24,7 @@
     }
     svg.railroad-diagram rect{
         stroke-width: 2;
-        stroke:black;
+        stroke: black;
         fill: rgb(210, 210, 255);
     }
     svg.railroad-diagram rect.group-box {
@@ -34,6 +34,9 @@
     }
     .terminal {
         font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram g.altterminal rect {
+        fill: rgb(251, 252, 207)
     }
 
 /* ]]> */
@@ -78,7 +81,8 @@
 <path d="M 471.0 329 h 0.0"></path><path d="M 584.5 329 h 0.0"></path><rect height="22" rx="10" ry="10" width="113.5" x="471.0" y="318"></rect><text x="527.75" y="333">"lxxquotes"</text></g><path d="M 451.0 149 a 10 10 0 0 1 10 10 v 190 a 10 10 0 0 0 10 10"></path><g class="terminal ">
 <path d="M 471.0 359 h 0.0"></path><path d="M 550.5 359 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="471.0" y="348"></rect><text x="510.75" y="363">"cover"</text></g><path d="M 451.0 149 a 10 10 0 0 1 10 10 v 220 a 10 10 0 0 0 10 10"></path><g class="terminal ">
 <path d="M 471.0 389 h 0.0"></path><path d="M 550.5 389 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="471.0" y="378"></rect><text x="510.75" y="393">"spine"</text></g><path d="M 451.0 149 a 10 10 0 0 1 10 10 v 250 a 10 10 0 0 0 10 10"></path><g class="terminal ">
-<path d="M 471.0 419 h 0.0"></path><path d="M 652.5 419 h 0.0"></path><rect height="22" rx="10" ry="10" width="181.5" x="471.0" y="408"></rect><text x="561.75" y="423">/x\-&#91;\p{L}&#95;\-\.:&#93;+/</text></g></g></g></g><path d="M 158.0 568 h 20"></path><g>
+<path d="M 471.0 419 h 0.0"></path><path d="M 525.0 419 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="471.0" y="408"></rect><text x="498.0" y="423">TEXT</text></g><path d="M 451.0 149 a 10 10 0 0 1 10 10 v 280 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 471.0 449 h 0.0"></path><path d="M 652.5 449 h 0.0"></path><rect height="22" rx="10" ry="10" width="181.5" x="471.0" y="438"></rect><text x="561.75" y="453">/x\-&#91;\p{L}&#95;\-\.:&#93;+/</text></g></g></g></g><path d="M 158.0 568 h 20"></path><g>
 <path d="M 178.0 568 h 185.5"></path><path d="M 537.0 568 h 185.5"></path><path d="M 363.5 568 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
 <path d="M 383.5 548 h 133.5"></path></g><path d="M 517.0 548 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 363.5 568 h 20"></path><g>
 <path d="M 383.5 568 h 0.0"></path><path d="M 517.0 568 h 0.0"></path><path d="M 383.5 568 h 10"></path><g class="non-terminal ">

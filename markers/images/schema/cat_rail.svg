@@ -3,7 +3,7 @@
 <style>/* <![CDATA[ */
 
     svg.railroad-diagram {
-        background-color:hsl(30,20%,95%);
+        background-color: hsl(30,20%,95%);
     }
     svg.railroad-diagram path {
         stroke-width: 2;
@@ -24,7 +24,7 @@
     }
     svg.railroad-diagram rect{
         stroke-width: 2;
-        stroke:black;
+        stroke: black;
         fill: rgb(210, 255, 210);
     }
     svg.railroad-diagram rect.group-box {
@@ -35,6 +35,9 @@
     .terminal {
         font-family: DejaVu Sans;
     }
+    svg.railroad-diagram g.altterminal rect {
+        fill: rgb(251, 252, 207)
+    }
 
 /* ]]> */
 </style><g>
@@ -43,7 +46,7 @@
 <path d="M 50.0 41 h 0.0"></path><path d="M 95.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="50.0" y="30"></rect><text x="72.75" y="45">'\'</text></g><path d="M 95.5 41 h 10"></path><path d="M 105.5 41 h 10"></path><g class="terminal ">
 <path d="M 115.5 41 h 0.0"></path><path d="M 178.0 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="115.5" y="30"></rect><text x="146.75" y="45">'cat'</text></g><path d="M 178.0 41 h 10"></path><path d="M 188.0 41 h 10"></path><g>
 <path d="M 198.0 41 h 0.0"></path><path d="M 309.0 41 h 0.0"></path><path d="M 198.0 41 h 20"></path><g class="terminal ">
-<path d="M 218.0 41 h 12.75"></path><path d="M 276.25 41 h 12.75"></path><rect height="22" rx="10" ry="10" width="45.5" x="230.75" y="30"></rect><text x="253.5" y="45">' '</text></g><path d="M 289.0 41 h 20"></path><path d="M 198.0 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal ">
+<path d="M 218.0 41 h 12.75"></path><path d="M 276.25 41 h 12.75"></path><rect height="22" rx="10" ry="10" width="45.5" x="230.75" y="30"></rect><text x="253.5" y="45">' '</text></g><path d="M 289.0 41 h 20"></path><path d="M 198.0 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
 <path d="M 218.0 71 h 0.0"></path><path d="M 289.0 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="71.0" x="218.0" y="60"></rect><text x="253.5" y="75">TAGEND</text></g><path d="M 289.0 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g><path d="M 309.0 41 h 10"></path><path d="M 319.0 41 h 10"></path><g class="terminal ">
 <path d="M 329.0 41 h 0.0"></path><path d="M 383.0 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="329.0" y="30"></rect><text x="356.0" y="45">TEXT</text></g><path d="M 383.0 41 h 10"></path><path d="M 393.0 41 h 10"></path><g class="terminal ">
 <path d="M 403.0 41 h 0.0"></path><path d="M 482.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="403.0" y="30"></rect><text x="442.75" y="45">TEXTEND</text></g><path d="M 482.5 41 h 10"></path><path d="M 492.5 41 h 10"></path><g class="terminal ">

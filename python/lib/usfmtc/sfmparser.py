@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import xml.etree.ElementTree as et
 import regex
 import usfmtc.parser as usfmp
-from usfmtc.xml import ParentElement
+from usfmtc.xmlutils import ParentElement
 
 logger = logging.getLogger("sfmparser")
 
@@ -38,6 +38,7 @@ class GlobalState(usfmp.GlobalState):
         self.captures[index] = ""
 
     def getcapture(self, index):
+        logger.debug(f"Get capture[{index}] = '{self.captures[index]}'")
         return self.captures[index]
 
     def pop(self):

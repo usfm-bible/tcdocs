@@ -13,6 +13,7 @@ usfm:terminal [name="NL" value="/(?:${nl}|\u000D)+/"]
 usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"]
 usfm:terminal [name="WSS" value="/${ws}*/"]
 usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"]
+usfm:terminal [name="TAGPARMEND" value="/${wsnnl}+/"]
 usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"]
 usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"]
 usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
@@ -196,6 +197,7 @@ PeripheralBookIdentification.book.code.enum = (
      | "GLO" # Glossary
      | "TDX" # Topical Index
      | "NDX" # Names Index
+     | [usfm:match[]] xsd:string { pattern = "\S{3}" }
      )
 
 PeripheralDividedBookIdentification =
@@ -216,6 +218,7 @@ PeripheralDividedBookIdentification.book.code.enum = (
      | "BAK" # Back Matter
      | "OTH" # Other Matter
      | "INT" # Introduction
+     | [usfm:match[]] xsd:string { pattern = "\S{3}" }
      )
 
 PeripheralDivision =
@@ -269,6 +272,7 @@ Peripheral.BAK.periph.id.enum = (
 Peripheral.OTH.periph.id.enum = (
       "cover"
     | "spine"
+    | [usfm:match[]] xsd:string 
     )
 
 PeripheralOther = (
@@ -364,7 +368,7 @@ BookIntroduction.para.style.enum = (
 BookIntroductionEndTitles =
     element para {
         [usfm:tag[]] attribute style { BookIntroductionEndTitles.para.style.enum },
-        (Footnote | CrossReference | Char | Milestone | Break | [usfm:match[ahead="'\'"]] text)*
+        (Footnote | CrossReference | Char | Milestone | Break | [usfm:text[ahead="'\'"]] text)*
     }
 BookIntroductionEndTitles.para.style.enum = (
       "mt1" # The main title of the book (if multiple levels)
@@ -418,7 +422,7 @@ Section.para.style.enum = (
 
 Para =
     element para {
-        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n'"]] attribute style { Para.para.style.enum },
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
@@ -687,11 +691,11 @@ CharWithAttrib.enum = (
         
 char.link =
     [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:properties[interleave_between="WS"]]
-    ([usfm:match[before="'href=&quot;'" after="'&quot;'"]]attribute link-href { xsd:string 
+    ([usfm:match[before="'link-href=&quot;'" after="'&quot;'"]]attribute link-href { xsd:string
         { pattern = "(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)" } }? # The resource being linked to as a URI
-    & [usfm:match[before="'title=&quot;'" after="'&quot;'"]]
+    & [usfm:match[before="'link-title=&quot;'" after="'&quot;'"]]
     attribute link-title { xsd:string }? # Plain text describing the remote resource such as might be shown in a tooltip
-    & [usfm:match[before="'id=&quot;'" after="'&quot;'"]]
+    & [usfm:match[before="'link-id=&quot;'" after="'&quot;'"]]
     attribute link-id { xsd:string { pattern = "[\p{L}\d_\-\.:]+" } }?) # Unique identifier for this location in the text
 
 char.closed =
@@ -740,9 +744,9 @@ Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
 ChapterStart =
     [usfm:stacked="true"]
     element chapter { # Start of new chapter
-        [usfm:tag[usfm:seq="true"]]
+        [usfm:tag[usfm:seq="true" after="TAGPARMEND"]]
         attribute style { "c" },
-        [usfm:match[after="/${WS}|(?=\\)/" afterout="' '" usfm:seq="true"]]
+        [usfm:match[after="/${WS}+|(?=\\)/" afterout="' '" usfm:seq="true"]]
         attribute number { xsd:integer },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]

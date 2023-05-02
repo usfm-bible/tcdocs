@@ -11,6 +11,7 @@
   <usfm:terminal name="WS" value="/(?:${ws}|${nl}|$)/"/>
   <usfm:terminal name="WSS" value="/${ws}*/"/>
   <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"/>
+  <usfm:terminal name="TAGPARMEND" value="/${wsnnl}+/"/>
   <usfm:terminal name="TEXTEND" value="/${ws}*(?=[\\]|$)/"/>
   <usfm:terminal name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"/>
   <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/"/>
@@ -280,6 +281,10 @@
       <value>GLO</value>
       <value>TDX</value>
       <value>NDX</value>
+      <data type="string">
+        <usfm:match/>
+        <param name="pattern">\S{3}</param>
+      </data>
     </choice>
   </define>
   <define name="PeripheralDividedBookIdentification">
@@ -311,6 +316,10 @@
       <value>BAK</value>
       <value>OTH</value>
       <value>INT</value>
+      <data type="string">
+        <usfm:match/>
+        <param name="pattern">\S{3}</param>
+      </data>
     </choice>
   </define>
   <define name="PeripheralDivision">
@@ -395,6 +404,9 @@
     <choice>
       <value>cover</value>
       <value>spine</value>
+      <data type="string">
+        <usfm:match/>
+      </data>
     </choice>
   </define>
   <define name="PeripheralOther">
@@ -563,7 +575,7 @@
           <ref name="Milestone"/>
           <ref name="Break"/>
           <text>
-            <usfm:match ahead="&#x27;\&#x27;"/>
+            <usfm:text ahead="&#x27;\&#x27;"/>
           </text>
         </choice>
       </zeroOrMore>
@@ -668,7 +680,7 @@
     <element>
       <name ns="">para</name>
       <attribute usfm:grouping="15">
-        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n&#x27;"/>
+        <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n\\&#x27;"/>
         <name ns="">style</name>
         <ref name="Para.para.style.enum"/>
       </attribute>
@@ -1237,7 +1249,7 @@
       <interleave>
         <optional>
           <attribute>
-            <usfm:match before="&#x27;href=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
+            <usfm:match before="&#x27;link-href=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
             <name ns="">link-href</name>
             <data type="string">
               <param name="pattern">(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)</param>
@@ -1246,14 +1258,14 @@
         </optional>
         <optional>
           <attribute>
-            <usfm:match before="&#x27;title=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
+            <usfm:match before="&#x27;link-title=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
             <name ns="">link-title</name>
             <data type="string"/>
           </attribute>
         </optional>
         <optional>
           <attribute>
-            <usfm:match before="&#x27;id=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
+            <usfm:match before="&#x27;link-id=&quot;&#x27;" after="&#x27;&quot;&#x27;"/>
             <name ns="">link-id</name>
             <data type="string">
               <param name="pattern">[\p{L}\d_\-\.:]+</param>
@@ -1353,12 +1365,12 @@
     <element usfm:stacked="true">
       <name ns="">chapter</name>
       <attribute>
-        <usfm:tag usfm:seq="true"/>
+        <usfm:tag usfm:seq="true" after="TAGPARMEND"/>
         <name ns="">style</name>
         <value>c</value>
       </attribute>
       <attribute>
-        <usfm:match after="/${WS}|(?=\\)/" afterout="&#x27; &#x27;" usfm:seq="true"/>
+        <usfm:match after="/${WS}+|(?=\\)/" afterout="&#x27; &#x27;" usfm:seq="true"/>
         <name ns="">number</name>
         <data type="integer"/>
       </attribute>
