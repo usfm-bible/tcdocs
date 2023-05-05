@@ -34,57 +34,89 @@ A specific numbered marker should not be used to indicate a specific occurrence 
 ====
 
 == Endmarkers in Footnotes and Cross References
-The boundaries of footnote or cross reference text are defined by an opening and closing marker, as in the following footnote syntax example:
 
-[source#src-noteSyntax_1,usfm]
-----
-\f_+_(\fr_REF_)footnote content\f*
-----
-
-Elements which make up the footnote or cross reference content are character level markers, which means that they each define a start and a end marker. Some USFM editors interpret the presence of a new character marker as an implicit closure of any preceding character level marker. As a result, most scripture translation projects working with USFM have adopted the approach of authoring footnotes or cross references without supplying the explicit end marker, since this reduces the amount of markup within the notes, and is somewhat easier to read and interpret.
+Elements which make up xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content are xref:char:index.adoc[character] level markers, which means that they define a start and end marker. Some USFM editors interpret the presence of a new character marker as an implicit closure of any preceding character level marker. The majority of scripture translation projects working with USFM have followed this syntax for footnotes or cross references (not supplying the explicit end marker) since this reduces the amount of markup within the notes text, making it easier to read as a result.
 
 Examples of the two markup approaches for notes is provided below:
 
-====
+[tabs]
+======
+USFM (implicit closure)::
++
 [source,usfm]
-.Implicit closure
 ----
 \f + \fk Issac: \ft In Hebrew means "laughter"\f*
 ----
+USFM (explicit closure)::
++
 [source,usfm]
-.Explicit end marker
 ----
-\f + \fk Issac:\fk* \ft In Hebrew means "laughter"\ft*\f*
+\f + \fk Issac: \fk*\ft In Hebrew means "laughter"\ft*\f*
 ----
-====
+USX::
++
+[source,xml]
+----
+<note caller="+" style="f">
+  <char style="fk">Issac: </char>
+  <char style="ft">In Hebrew means "laughter"</char>
+</note>
+----
+======
 
-====
+[tabs]
+======
+USFM (implicit closure)::
++
 [source,usfm]
-.Immplicit closure
 ----
 \f + \fr 1.14 \fq religious festivals; \ft or \fqa seasons.\f*
 ----
+USFM (explicit closure)::
++
 [source,usfm]
-.Explicit end marker
 ----
-\f + \fr 1.14\fr* \fq religious festivals;\fq* or \fqa seasons.\fqa*\f*
+\f + \fr 1.14 \fr*\fq religious festivals; \fq*\ft or \ft*\fqa seasons.\fqa*\f*
 ----
-====
+USX::
++
+[source,xml]
+----
+<note caller="+" style="f">
+  <char style="fr">1.14 </char>
+  <char style="fq">religious festivals; </char>
+  <char style="ft">or </char>
+  <char style="fqa">seasons.</char>
+</note>
+----
+======
 
-====
+[tabs]
+======
+USFM (implicit closure)::
++
 [source,usfm]
-.Implicit closure
 ----
-\f + \fr 2.4 \fk The \+nd Lord\+nd*: \ft See \+nd Lord\+nd* in 
-Word List.\f*
+\f + \fr 2.4 \fk The \+nd Lord\+nd*: \ft See \+nd Lord\+nd* in Word List.\f*
 ----
+USFM (explicit closure)::
++
 [source,usfm]
-.Explicit end marker
 ----
-\f + \fr 2.4\fr* \fk The \+nd Lord\+nd*:\fk* \ft See \+nd Lord\+nd* in 
+\f + \fr 2.4 \fr*\fk The \+nd Lord\+nd*: \fk*\ft See \+nd Lord\+nd* in 
 Word List.\ft*\f*
 ----
-====
+USX::
++
+[source,xml]
+----
+<note caller="+" style="f">
+  <char style="fr">2.4 </char>
+  <char style="fk">The <char style="nd">Lord</char>: </char>
+  <char style="ft">See <char style="nd">Lord</char> in Word List.</char>
+</note>
+----
+======
 
 [NOTE]
 ====
