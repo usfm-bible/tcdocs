@@ -560,37 +560,37 @@ This table lists the standard USFM/USX 3-character book identifiers.
 |
 
 |94
-|A
+|XXA
 |Extra material
 |
 
 |95
-|B
+|XXB
 |Extra material
 |
 
 |96
-|C
+|XXC
 |Extra material
 |
 
 |97
-|D
+|XXD
 |Extra material
 |
 
 |98
-|E
+|XXE
 |Extra material
 |
 
 |99
-|F
+|XXF
 |Extra material
 |
 
 |100
-|G
+|XXG
 |Extra material
 |
 

@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Chapter number.
 Syntax::
-* *USFM:* `+\c_{number}+`
+* *USFM:* `+\c␣{number}+`
 * *USX:* `+<chapter style="c" [@number,altnumber,pubnumber,sid,eid]/>+`
 `number` *::: Chapter number
 `altnumber`::: Chapter number for an alternate versification scheme.
