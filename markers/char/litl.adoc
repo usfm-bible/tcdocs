@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:para:lists/index.adoc[List] entry total. Use in accounting lists for identifying the _total_ component of a list entry (xref:para:lists/li.adoc[li]). An alternative form to using a xref:para:tables/index.adoc[table] for the same content.
 Syntax::
-* *USFM:* `+\litl_{content}\litl*+`
-* *USX:* `+<char style="litl">{content}</char>+`
+* *USFM:* ``++\litl ++``#__content__#``++\litl*++``
+* *USX:* ``++<char style="litl">++``#__content__#``++</char>++``
 Added:: 3.0
 
 == Examples

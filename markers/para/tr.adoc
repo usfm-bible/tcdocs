@@ -19,11 +19,11 @@ Description:: Table row start.
 In *USFM*, a table is composed by a series of paragraphs marked with `\tr`. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container. See xref:para:tables/index.adoc[Tables].
 ====
 Syntax::
-* *USFM:* `+\tr_{content}+`
-* *USX:* `+<table><row style="tr" vid="{vid}">{content}</row>...</table>+`
-`vid`::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`.
+* *USFM:* ``++\tr ++``#__content__#
+* *USX:* ``++<table><row style="tr" ++``#__@vid__#``++>++``#__content__#``++</row>++``#__...__#``++</table>++``
+#vid#::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`.
 *** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
-`content`::: xref:char:tables/index.adoc[Character Types for Tables].
+#content#::: xref:char:tables/index.adoc[Character Types for Tables].
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

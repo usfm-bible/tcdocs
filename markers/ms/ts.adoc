@@ -14,9 +14,9 @@ endif::[]
 
 Description:: Translator's section start and end milestones. For identifying a section (chunk) of text suitable for translating at one time.
 Syntax::
-* *USFM:* `+\ts-s |@sid\*+` / `+\ts-e |@eid\*+`
-* *USX:* `+<ms style="ts-s" @sid/>+` / `+<ms style="ts-e" @eid/>+`
-`sid`, `eid`::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
+* *USFM:* ``++\ts-s |++``#__@sid__#``++\*++`` / ``++\ts-e |++``#__@eid__#``++\*++``
+* *USX:* ``++<ms style="ts-s" ++``#__@sid__#``++/>++`` / ``++<ms style="ts-e" ++``#__@eid__#``++/>++``
+#sid#, #eid#::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

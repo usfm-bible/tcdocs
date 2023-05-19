@@ -14,8 +14,8 @@ endif::[]
 
 Description:: List header. Some lists include an introductory and concluding remark (xref:para:lists/lf.adoc[lf]). They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
 Syntax::
-* *USFM:* `+\lh_{content}+`
-* *USX:* `+<para style="lh">{content}</para>+`
+* *USFM:* ``++\lh ++``#__content__#
+* *USX:* ``++<para style="lh">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

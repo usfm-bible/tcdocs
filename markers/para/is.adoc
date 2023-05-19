@@ -15,8 +15,8 @@ endif::[]
 Description:: Intoduction section heading.
 * The variable `#` represents the level of division.
 Syntax::
-* *USFM:* `+\is#_{content}+`
-* *USX:* `+<para style="is#">{content}</para>+`
+* *USFM:* ``++\is# ++``#__content__#
+* *USX:* ``++<para style="is#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

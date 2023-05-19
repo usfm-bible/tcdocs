@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Translator's addition. Words supplied by the translator in order to make the meaning of the original language clear.
 Syntax::
-* *USFM:* `+\add_{content}\add*+`
-* *USX:* `+<char style="add">{content}</char>+`
+* *USFM:* ``++\add ++``#__content__#``++\add*++``
+* *USX:* ``++<char style="add">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

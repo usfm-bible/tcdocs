@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:para:lists/index.adoc[List] entry 'value' content.
 Syntax::
-* *USFM:* `+\liv_{content}\liv*+`
-* *USX:* `+<char style="liv">{content}</char>+`
+* *USFM:* ``++\liv ++``#__content__#``++\liv*++``
+* *USX:* ``++<char style="liv">++``#__content__#``++</char>++``
 Added:: 3.0
 
 == Examples

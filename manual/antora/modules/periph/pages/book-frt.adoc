@@ -5,8 +5,8 @@ The `FRT` xref:para:identification/books.adoc[book] and its divisions can be use
 [#periph-frt-title]
 == Title Page
 
-`id`:: `title`
-`content`::
+#id#:: `title`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:paragraphs/pc.adoc[pc - Paragraph - Cenetered]
 * xref:fig:fig.adoc[fig - Figure]
@@ -59,8 +59,8 @@ USX::
 [#periph-frt-halftitle]
 == Half Title Page
 
-`id`:: `halftitle`
-`content`::
+#id#:: `halftitle`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:paragraphs/pc.adoc[pc - Paragraph - Centered]
 * xref:fig:fig.adoc[fig - Figure]
@@ -102,8 +102,8 @@ USX::
 [#periph-frt-promo]
 == Promotional Page
 
-`id`:: `promo`
-`content`::
+#id#:: `promo`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:titles-sections/s.adoc[s - Section heading]
 * xref:para:paragraphs/p.adoc[p - Paragraph]
@@ -115,8 +115,8 @@ USX::
 [#periph-frt-imprimatur]
 == Imprimatur
 
-`id`:: `imprimatur`
-`content`::
+#id#:: `imprimatur`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:paragraphs/pc.adoc[pc - Paragraph - Cenetered]
 * xref:para:paragraphs/p.adoc[p - Paragraph]
@@ -126,8 +126,8 @@ USX::
 [#periph-frt-pubdata]
 == Publication Data
 
-`id`:: `pubdata`
-`content`::
+#id#:: `pubdata`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:paragraphs/pc.adoc[pc - Paragraph - Cenetered]
 * xref:para:paragraphs/p.adoc[p - Paragraph]
@@ -137,8 +137,8 @@ USX::
 [#periph-frt-foreword]
 == Foreword
 
-`id`:: `foreword`
-`content`::
+#id#:: `foreword`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:titles-sections/s.adoc[s - Section heading]
 * xref:para:paragraphs/m.adoc[m - Continuation (margin)]
@@ -153,8 +153,8 @@ USX::
 [#periph-frt-preface]
 == Preface
 
-`id`:: `preface`
-`content`::
+#id#:: `preface`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:titles-sections/s.adoc[s# - Section heading]
 * xref:para:paragraphs/m.adoc[m - Continuation (margin)]
@@ -169,8 +169,8 @@ USX::
 [#periph-frt-contents]
 == Table of Contents
 
-`id`:: `contents`
-`content`::
+#id#:: `contents`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:titles-sections/s.adoc[s# - Section heading]
 * xref:para:tables/index.adoc[Tables]
@@ -259,8 +259,8 @@ USX::
 [#periph-frt-alphacontents]
 == Alphabetical Contents
 
-`id`:: `alphacontents`
-`content`::
+#id#:: `alphacontents`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:titles-sections/s.adoc[s# - Section heading]
 * xref:para:tables/index.adoc[Tables]
@@ -269,8 +269,8 @@ USX::
 [#periph-frt-abbreviations]
 == Table of Abbreviations
 
-`id`:: `abbreviations`
-`content`::
+#id#:: `abbreviations`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:titles-sections/s.adoc[s# - Section heading]
 * xref:para:tables/index.adoc[Tables]

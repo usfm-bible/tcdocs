@@ -18,8 +18,8 @@ Description:: Alternate language book name texts. Used to specify an alternate s
 ** `toca2` - Short book name.
 ** `toca3` - Book abbreviation.
 Syntax::
-* *USFM:* `+\toca#_{content}+`
-* *USX:* `+<para style="toca#">{content}</para>+`
+* *USFM:* ``++\toca# ++``#__content__#
+* *USX:* ``++<para style="toca#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

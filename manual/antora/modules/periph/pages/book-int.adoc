@@ -6,7 +6,7 @@ The `INT` xref:para:identification/books.adoc[book] and its divisions can be use
 
 [#periph-int-all]
 
-`id`::
+#id#::
 *One of:*
 * Bible Introduction - `title`
 * Old Testament Introduction `intot`
@@ -19,7 +19,7 @@ The `INT` xref:para:identification/books.adoc[book] and its divisions can be use
 * Gospels Introduction - `intgospels`
 * Epistles Introduction - `intepistles`
 * Letters Introduction - `intletters`
-`content`::
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:titles-sections/s.adoc[s# - Section heading]
 * xref:para:paragraphs/m.adoc[m - Continuation (margin)]

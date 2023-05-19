@@ -15,8 +15,8 @@ endif::[]
 Description:: List entry. May be used to mark the individual entries of a list, such as the days within the creation account, the 10 commandments, or a list of offerings etc..
 * The variable `#` represents the level of indent.
 Syntax::
-* *USFM:* `+\li#_{content}+`
-* *USX:* `+<para style="li#">{content}</para>+`
+* *USFM:* ``++\li# ++``#__content__#
+* *USX:* ``++<para style="li#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

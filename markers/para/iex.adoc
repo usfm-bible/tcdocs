@@ -15,8 +15,8 @@ endif::[]
 Description:: Introduction explanatory or bridge text.
 * _Recommended use:_ Explanation of missing book or section in a short Old Testament, or for attribution sentences found at the end of the 14 Pauline Epistles.
 Syntax::
-* *USFM:* `+\iex_{content}+`
-* *USX:* `+<para style="iex">{content}</para>+`
+* *USFM:* ``++\iex ++``#__content__#
+* *USX:* ``++<para style="iex">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

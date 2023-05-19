@@ -4,13 +4,13 @@
 
 Description:: Paragraph-level container.
 Syntax::
-* *USFM:* `+\[style]_{content}+`
-* *USX:* `+<para style="[style]" @vid>{content}</para>+`
-`style` *::: Paragraph type
+* *USFM:* ``++\++``#__style__#``++ ++``#__content__#
+* *USX:* ``++<para style="++``#__style__#``++" ++``#__@vid__#``++>++``#__content__#``++</para>++``
+#style# *::: Paragraph type
 include::../nav.adoc[tag=nav-topcat]
-`vid`::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. The Chapter + verse separator is always a colon '`:`'.
+#vid#::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. The Chapter + verse separator is always a colon '`:`'.
 *** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
-`content`::: Paragraph content
+#content#::: Paragraph content
 
 == Diagrams
 

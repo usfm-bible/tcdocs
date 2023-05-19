@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Cross Reference - Keyword. The target references (xref:notes:crossref/xt[xt]) relate to this specific keyword quoted from the text.
 Syntax::
-* *USFM:* `+\xk_{content}+`
-* *USX:* `+<char style="xk">{content}</char>+`
+* *USFM:* ``++\xk ++``#__content__#
+* *USX:* ``++<char style="xk">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

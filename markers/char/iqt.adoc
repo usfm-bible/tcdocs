@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction quoted text. Inline scripture quotations, or other quoted text, appearing within the introduction.
 Syntax::
-* *USFM:* `+\iqt_{content}\iqt*+`
-* *USX:* `+<char style="iqt">{content}</char>+`
+* *USFM:* ``++\iqt ++``#__content__#``++\iqt*++``
+* *USX:* ``++<char style="iqt">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

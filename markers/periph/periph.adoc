@@ -14,11 +14,11 @@ endif::[]
 
 Description:: Peripheral division identifier.
 Syntax::
-* *USFM:* `+\periph_{title}|{id}+` followed by `+{content}+`
-* *USX:* `+<periph alt="{title}" id="{id}">{content}</periph>+`
-`title` *::: Peripheral division title. May be expressed in the vernacular language.
-`id`::: A unique xref:periph:books-divs.adoc[peripheral division identifier]. A standard set of identifiers allows processors to easily select content for recognized peripheral divisions.
-`content`::: Peripheral content.
+* *USFM:* ``++\periph ++``#__title__#``++|++``#__id__# followed by #__content__#
+* *USX:* ``++<periph alt="++``#__title__#``++" ++``#__id__#``++">++``#__content__#``++</periph>++``
+#title# *::: Peripheral division title. May be expressed in the vernacular language.
+#id#::: A unique xref:periph:books-divs.adoc[peripheral division identifier]. A standard set of identifiers allows processors to easily select content for recognized peripheral divisions.
+#content#::: Peripheral content.
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

@@ -14,10 +14,10 @@ endif::[]
 
 Description:: Sidebar container.
 Syntax::
-* *USFM:* `+\esb_\cat_{category}\cat*{content}\esbe+`
-* *USX:* `+<sidebar style="esb" @category">{content}</sidebar>+`
-`category`::: Sidebar category.
-`content`::: The sidebar paragraph elements and text.
+* *USFM:* ``++\esb \cat ++``#__category__#``++\cat*++``#__content__#``++\esbe++``
+* *USX:* ``++<sidebar style="esb" ++``#__@category__#``++">++``#__content__#``++</sidebar>++``
+#category#::: Sidebar category.
+#content#::: The sidebar paragraph elements and text.
 // tag::spec[]
 Added:: 2.1
 // end::spec[]

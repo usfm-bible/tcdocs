@@ -5,8 +5,8 @@ The `BAK` xref:para:identification/books.adoc[book] and its divisions can be use
 [#periph-bak-chron]
 == Chronology
 
-`id`:: `chron`
-`content`::
+#id#:: `chron`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]
 * xref:para:introductions/ip.adoc[ip - Intro paragraph]
@@ -17,8 +17,8 @@ The `BAK` xref:para:identification/books.adoc[book] and its divisions can be use
 [#periph-bak-measures]
 == Weights and Measures
 
-`id`:: `measures`
-`content`::
+#id#:: `measures`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]
 * xref:para:introductions/ip.adoc[ip - Intro paragraph]
@@ -29,8 +29,8 @@ The `BAK` xref:para:identification/books.adoc[book] and its divisions can be use
 [#periph-bak-maps]
 == Map Index
 
-`id`:: `maps`
-`content`::
+#id#:: `maps`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]
 * xref:para:introductions/ip.adoc[ip - Intro paragraph]
@@ -181,8 +181,8 @@ USX::
 [#periph-bak-lxxquotes]
 == NT Quotes from LXX
 
-`id`:: `lxxquotes`
-`content`::
+#id#:: `lxxquotes`
+#content#::
 * xref:para:titles-sections/mt.adoc[mt# - Main Title]
 * xref:para:introductions/ip.adoc[ip - Intro paragraph]
 * xref:para:titles-sections/s.adoc[s# - Section heading]

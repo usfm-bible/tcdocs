@@ -15,8 +15,8 @@ endif::[]
 Description:: Centered paragraph.
 * _Recommended use:_ Inscriptions
 Syntax::
-* *USFM:* `+\pc_{content}+`
-* *USX:* `+<para style="pc">{content}</para>+`
+* *USFM:* ``++\pc ++``#__content__#
+* *USX:* ``++<para style="pc">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

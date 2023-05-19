@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Embedded text paragraph.
 Syntax::
-* *USFM:* `+\pm_{content}+`
-* *USX:* `+<para style="pm">{content}</para>+`
+* *USFM:* ``++\pm ++``#__content__#
+* *USX:* ``++<para style="pm">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Witness list. For distinguishing a list of sigla representing witnesses in critical editions.
 Syntax::
-* *USFM:* `+\fw_{content}+`
-* *USX:* `+<char style="fw">{content}</char>+`
+* *USFM:* ``++\fw ++``#__content__#
+* *USX:* ``++<char style="fw">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

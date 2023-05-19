@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Translation quotation.
 Syntax::
-* *USFM:* `+\fq_{content}+`
-* *USX:* `+<char style="fq">{content}</char>+`
+* *USFM:* ``++\fq ++``#__content__#
+* *USX:* ``++<char style="fq">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

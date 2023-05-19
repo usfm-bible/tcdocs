@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Alternate translation. Used to distinguish between a quotation of the current scripture translation (marked with xref:char:notes/footnote/fq.adoc[fq]) and an alternate translation.
 Syntax::
-* *USFM:* `+\fqa_{content}+`
-* *USX:* `+<char style="fqa">{content}</char>+`
+* *USFM:* ``++\fqa ++``#__content__#
+* *USX:* ``++<char style="fqa">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

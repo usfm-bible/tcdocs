@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Aramaic wordist entry.
 Syntax::
-* *USFM:* `+\wa_{content}\wa*+`
-* *USX:* `+<char style="wa">{content}</char>+`
+* *USFM:* ``++\wa ++``#__content__#``++\wa*++``
+* *USX:* ``++<char style="wa">++``#__content__#``++</char>++``
 Added:: 3.0
 
 == Examples

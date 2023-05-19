@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Deuterocanonical content. The marked content is relevant for publications which include Deuterocanonlical (DC) books. 
 Syntax::
-* *USFM:* `+\dc_{content}\dc*+`
-* *USX:* `+<char style="dc">{content}</char>+`
+* *USFM:* ``++\dc ++``#__content__#``++\dc*++``
+* *USX:* ``++<char style="dc">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

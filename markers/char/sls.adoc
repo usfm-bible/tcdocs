@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Secondary language source. Passage of text based on a secondary language or alternate text source. For example: The French NBS02 has large sections of text in EZR and DAN in italics, to represent where the original text is in Aramaic, not Hebrew.
 Syntax::
-* *USFM:* `+\sls_{content}\sls*+`
-* *USX:* `+<char style="sls">{content}</char>+`
+* *USFM:* ``++\sls ++``#__content__#``++\sls*++``
+* *USX:* ``++<char style="sls">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Hebrew note. A Hebrew musical performance comment similar in content to the Hebrew Psalm descriptive titles (xref:para:titles-sections/d.adoc[d]), but placed at the end of the poetic section.
 Syntax::
-* *USFM:* `+\qd_{content}+`
-* *USX:* `+<para style="qd">{content}</para>+`
+* *USFM:* ``++\qd ++``#__content__#
+* *USX:* ``++<para style="qd">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

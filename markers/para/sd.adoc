@@ -15,8 +15,8 @@ endif::[]
 Description:: Semantic division (semantic space). Vertical space used to divide the text into sections, in a manner similar to the structure added through a sequence of heading texts with xref:para:titles-sections/ms.adoc[ms] or xref:para:titles-sections/s.adoc[s]. The purpose of xref:para:titles-sections/sd.adoc[sd] is distinct from xref:para:paragraphs/b.adoc[b] which primarily denotes whitespace (in particular at poetic stanza breaks) and does not imply a hierarchy or division.
 * The variable `#` represents the level of division be marked.
 Syntax::
-* *USFM:* `+\sd#_{content}+`
-* *USX:* `+<para style="sd#">{content}</para>+`
+* *USFM:* ``++\sd# ++``#__content__#
+* *USX:* ``++<para style="sd#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

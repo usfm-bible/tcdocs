@@ -15,8 +15,8 @@ endif::[]
 Description:: Indented paragraph with hanging indent.
 * The variable `#` represents the level of overall paragraph indent.
 Syntax::
-* *USFM:* `+\ph#_{content}+`
-* *USX:* `+<para style="ph#">{content}</para>+`
+* *USFM:* ``++\ph# ++``#__content__#
+* *USX:* ``++<para style="ph#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 Deprecated:: 3.0

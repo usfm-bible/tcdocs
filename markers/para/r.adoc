@@ -16,8 +16,8 @@ Description:: Parallel passage reference(s). A list of references to parallel pa
 - xref:para:titles-sections/r.adoc[r] is not equivalent to xref:para:titles-sections/sr.adoc[sr] which is used to mark references indicating the scope of the following section.
 - See also: xref:para:titles-sections/mr.adoc[mr], xref:para:titles-sections/sr.adoc[sr]
 Syntax::
-* *USFM:* `+\sr_{content}+`
-* *USX:* `+<para style="sr">{content}</para>+`
+* *USFM:* ``++\r ++``#__content__#
+* *USX:* ``++<para style="r">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

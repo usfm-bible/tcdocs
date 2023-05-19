@@ -15,8 +15,8 @@ endif::[]
 Description:: Major section heading.
 * The variable `#` represents the level of division.
 Syntax::
-* *USFM:* `+\ms#_{content}+`
-* *USX:* `+<para style="ms#">{content}</para>+`
+* *USFM:* ``++\ms# ++``#__content__#
+* *USX:* ``++<para style="ms#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

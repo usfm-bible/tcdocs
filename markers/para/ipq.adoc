@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction quote from text paragraph.
 Syntax::
-* *USFM:* `+\ipq_{content}+`
-* *USX:* `+<para style="ipq">{content}</para>+`
+* *USFM:* ``++\ipq ++``#__content__#
+* *USX:* ``++<para style="ipq">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Letter closing.
 Syntax::
-* *USFM:* `+\cls_{content}+`
-* *USX:* `+<para style="cls">{content}</para>+`
+* *USFM:* ``++\cls ++``#__content__#
+* *USX:* ``++<para style="cls">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

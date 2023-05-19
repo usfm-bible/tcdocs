@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - OT target references. The marked target references (xref:notes:crossref/xt[xt]) are relevant for publications which include Old Testament (OT) books.
 Syntax::
-* *USFM:* `+\xot_{content}\xot*+`
-* *USX:* `+<char style="xot">{content}</char>+`
+* *USFM:* ``++\xot ++``#__content__#``++\xot*++``
+* *USX:* ``++<char style="xot">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 2.2
 // end::spec[]

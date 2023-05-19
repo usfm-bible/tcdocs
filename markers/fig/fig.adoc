@@ -14,15 +14,15 @@ endif::[]
 
 Description:: Figure / illustration.
 Syntax::
-* *USFM:* `+\fig_{caption}|[@src,size,ref,alt,loc,copy]"\fig*+`
-* *USX:* `+<figure style="fig" [@file,size,ref,alt,loc,copy]>{caption}</figure>+`
+* *USFM:* ``++\fig ++``#__caption__#``++|++``#__@src @size @ref @alt @loc @copy__#``++\fig*++``
+* *USX:* ``++<figure style="fig" ++``#__@file @size @ref @alt @loc @copy__#``++>++``#__caption__#``++</figure>++``
 `src` (USFM) / `file` (USX) *::: Filename
-`size` *::: Illustration relative size. Options are `col` (illustration should be inserted inline within the current text column) or `span` (illustration should be inserted across – 'spanning' – text columns).
-`ref` *::: Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
-`alt`::: Short, free-form description of image.
-`loc`::: Location / range. Specify a range of references at which the illustration might be inserted.
-`copy`::: Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
-`caption`::: Illustration caption text.
+#size# *::: Illustration relative size. Options are `col` (illustration should be inserted inline within the current text column) or `span` (illustration should be inserted across – 'spanning' – text columns).
+#ref# *::: Scripture reference (e.g. Luke 19.5). This text may (optionally) be published together with the illustration caption.
+#alt#::: Short, free-form description of image.
+#loc#::: Location / range. Specify a range of references at which the illustration might be inserted.
+#copy#::: Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
+#caption#::: Illustration caption text.
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (xref:char:attributes.adoc[attributes] syntax)

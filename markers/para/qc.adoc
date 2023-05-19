@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Centered poetic line.
 Syntax::
-* *USFM:* `+\qc_{content}+`
-* *USX:* `+<para style="qc">{content}</para>+`
+* *USFM:* ``++\qc ++``#__content__#
+* *USX:* ``++<para style="qc">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

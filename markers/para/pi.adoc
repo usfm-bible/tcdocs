@@ -16,8 +16,8 @@ Description:: Indented paragraph. Used in some texts for discourse sections.
 * The variable `#` represents the level of indent.
 - See also: xref:para:paragraphs/pm.adoc[pm]
 Syntax::
-* *USFM:* `+\pi#_{content}+`
-* *USX:* `+<para style="pi#">{content}</para>+`
+* *USFM:* ``++\pi# ++``#__content__#
+* *USX:* ``++<para style="pi#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

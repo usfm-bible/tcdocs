@@ -14,9 +14,9 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Origin reference.
 Syntax::
-* *USFM:* `+\fr_{cv-reference}+`
-* *USX:* `+<char style="fr">{cv-reference}</char>+`
-`cv-reference`::: Chapter + verse origin reference. The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation after the reference is optional.
+* *USFM:* ``++\fr ++``#__cv-reference__#
+* *USX:* ``++<char style="fr">++``#__cv-reference__#``++</char>++``
+#cv-reference#::: Chapter + verse origin reference. The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation after the reference is optional.
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

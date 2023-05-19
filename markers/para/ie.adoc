@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction end. Explicitly indicate the end of the introduction material _(optional)_.
 Syntax::
-* *USFM:* `+\ie+`
-* *USX:* `+<para style="ie"/>+`
+* *USFM:* ``++\ie++``
+* *USX:* ``++<para style="ie"/>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

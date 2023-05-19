@@ -15,8 +15,8 @@ endif::[]
 Description:: Introduction list entry.
 * The variable `#` represents the level of indent.
 Syntax::
-* *USFM:* `+\ili#_{content}+`
-* *USX:* `+<para style="ili#">{content}</para>+`
+* *USFM:* ``++\ili# ++``#__content__#
+* *USX:* ``++<para style="ili#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Smallcap text.
 Syntax::
-* *USFM:* `+\sc_{content}\sc*+`
-* *USX:* `+<char style="sc">{content}</char>+`
+* *USFM:* ``++\sc ++``#__content__#``++\sc*++``
+* *USX:* ``++<char style="sc">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

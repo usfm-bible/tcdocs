@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction blank line.
 Syntax::
-* *USFM:* `+\ib+`
-* *USX:* `+<para style="ib"/>+`
+* *USFM:* ``++\ib++``
+* *USX:* ``++<para style="ib"/>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

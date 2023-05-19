@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - Origin reference. This is the chapter and verse(s) which the target references xref:notes:crossref/xt[(xt)] are provided for. The punctuation used between chapter and verse should be the same as for the target references xref:notes:crossref/xt[(xt)].
 Syntax::
-* *USFM:* `+\xo_{content}+`
-* *USX:* `+<char style="xo">{content}</char>+`
+* *USFM:* ``++\xo ++``#__content__#
+* *USX:* ``++<char style="xo">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

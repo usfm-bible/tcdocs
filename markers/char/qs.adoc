@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Used to mark the expression “Selah”. Commonly found in Psalms and Habakkuk.
 Syntax::
-* *USFM:* `+\qs_{content}\qs*+`
-* *USX:* `+<char style="qs">{content}</char>+`
+* *USFM:* ``++\qs ++``#__content__#``++\qs*++``
+* *USX:* ``++<char style="qs">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

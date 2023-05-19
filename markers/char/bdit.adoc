@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Bold + italic text.
 Syntax::
-* *USFM:* `+\bdit_{content}\bdit*+`
-* *USX:* `+<char style="bdit">{content}</char>+`
+* *USFM:* ``++\bdit ++``#__content__#``++\bdit*++``
+* *USX:* ``++<char style="bdit">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

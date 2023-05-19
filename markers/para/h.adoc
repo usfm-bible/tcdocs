@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Running header text.
 Syntax::
-* *USFM:* `+\h_{content}+`
-* *USX:* `+<para style="h">{content}</para>+`
+* *USFM:* ``++\h ++``#__content__#
+* *USX:* ``++<para style="h">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0

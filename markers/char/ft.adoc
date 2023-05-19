@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Note text.
 Syntax::
-* *USFM:* `+\ft_{content}+`
-* *USX:* `+<char style="ft">{content}</char>+`
+* *USFM:* ``++\ft ++``#__content__#
+* *USX:* ``++<char style="ft">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

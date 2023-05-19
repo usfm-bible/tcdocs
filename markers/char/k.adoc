@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Keyword/keyterm.
 Syntax::
-* *USFM:* `+\k_{content}\k*+`
-* *USX:* `+<char style="k">{content}</char>+`
+* *USFM:* ``++\k ++``#__content__#``++\k*++``
+* *USX:* ``++<char style="k">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

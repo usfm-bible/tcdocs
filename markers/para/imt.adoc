@@ -16,8 +16,8 @@ Description:: Intoduction major title.
 * _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[is]) when the introduction text contains numerous sub-divisions.
 * The variable `#` represents the level of division.
 Syntax::
-* *USFM:* `+\imt#_{content}+`
-* *USX:* `+<para style="imt#">{content}</para>+`
+* *USFM:* ``++\imt# ++``#__content__#
+* *USX:* ``++<para style="imt#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

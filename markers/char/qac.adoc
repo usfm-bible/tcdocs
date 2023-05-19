@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Acrostic character. Used to mark the acrostic letter within a poetic line.
 Syntax::
-* *USFM:* `+\qac_{content}\qac*+`
-* *USX:* `+<char style="qac">{content}</char>+`
+* *USFM:* ``++\qac ++``#__content__#``++\qac*++``
+* *USX:* ``++<char style="qac">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

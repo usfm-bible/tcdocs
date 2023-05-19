@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Acrostic heading.
 Syntax::
-* *USFM:* `+\qa_{content}+`
-* *USX:* `+<para style="qa">{content}</para>+`
+* *USFM:* ``++\qa ++``#__content__#
+* *USX:* ``++<para style="qa">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

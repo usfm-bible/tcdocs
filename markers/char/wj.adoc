@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Words of Jesus.
 Syntax::
-* *USFM:* `+\wj_{content}\wj*+`
-* *USX:* `+<char style="wj">{content}</char>+`
+* *USFM:* ``++\wj ++``#__content__#``++\wj*++``
+* *USX:* ``++<char style="wj">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

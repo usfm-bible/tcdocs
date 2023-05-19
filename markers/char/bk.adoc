@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Quoted book title.
 Syntax::
-* *USFM:* `+\bk_{content}\bk*+`
-* *USX:* `+<char style="bk">{content}</char>+`
+* *USFM:* ``++\bk ++``#__content__#``++\bk*++``
+* *USX:* ``++<char style="bk">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

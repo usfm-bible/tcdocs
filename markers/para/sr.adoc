@@ -16,8 +16,8 @@ Description:: Section reference range. References added under a section heading 
 - xref:para:titles-sections/sr.adoc[sr] is not equivalent to xref:para:titles-sections/r.adoc[r] which is used to mark parallel references.
 - See also: xref:para:titles-sections/mr.adoc[mr]
 Syntax::
-* *USFM:* `+\sr_{content}+`
-* *USX:* `+<para style="sr">{content}</para>+`
+* *USFM:* ``++\sr ++``#__content__#
+* *USX:* ``++<para style="sr">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

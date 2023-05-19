@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Deuterocanonical content. The marked content is relevant for publications which include Deuterocanonlical (DC) books.
 Syntax::
-* *USFM:* `+\fdc_{content}+`
-* *USX:* `+<char style="fdc">{content}</char>+`
+* *USFM:* ``++\fdc ++``#__content__#
+* *USX:* ``++<char style="fdc">++``#__content__#``++</char>++`
 // tag::spec[]
 Added:: 1.0
 Deprecated:: 3.0

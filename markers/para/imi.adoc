@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction indented continuation (margin) paragraph.
 Syntax::
-* *USFM:* `+\imi_{content}+`
-* *USX:* `+<para style="imi">{content}</para>+`
+* *USFM:* ``++\imi ++``#__content__#
+* *USX:* ``++<para style="imi">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

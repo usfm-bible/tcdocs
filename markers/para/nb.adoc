@@ -14,8 +14,8 @@ endif::[]
 
 Description:: No break. Indicates that the paragraph is a continuation of the previous paragraph (regardless of previous paragraph type). Commonly used in cases where the previous paragraph spans the chapter boundary.
 Syntax::
-* *USFM:* `+\nb_{content}+`
-* *USX:* `+<para style="nb">{content}</para>+`
+* *USFM:* ``++\nb ++``#__content__#
+* *USX:* ``++<para style="nb">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

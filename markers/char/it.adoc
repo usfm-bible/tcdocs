@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Italic text.
 Syntax::
-* *USFM:* `+\it_{content}\it*+`
-* *USX:* `+<char style="it">{content}</char>+`
+* *USFM:* ``++\it ++``#__content__#``++\it*++``
+* *USX:* ``++<char style="it">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

@@ -14,13 +14,13 @@ endif::[]
 
 Description:: Wordlist / glossary / dictionary entry. Surround a word or phrase with this markup to indicate that it should appear in the glossary.
 Syntax::
-* *USFM:* `+\w_{content}|[@lemma,strong,srcloc]\w*+`
-* *USX:* `+<char style="w" [@lemma,strong,srcloc]>{content}</char>+`
-`lemma`::: Citation form for the term in the glossary _(default attribute)_
-`strong`::: Strong’s ID in the form `+H####+` (Hebrew) or `+G####+` (Greek)
+* *USFM:* ``++\w ++``#__content__#``++|++``#__@lemma @strong @srcloc__#``++\w*++``
+* *USX:* ``++<char style="w" ++``#__@lemma @strong @srcloc__#``++>++``#__content__#``++</char>++``
+#lemma#::: Citation form for the term in the glossary _(default attribute)_
+#strong#::: Strong’s ID in the form `+H####+` (Hebrew) or `+G####+` (Greek)
 ** A strong’s ID augmentation identifier, if required, should be separated from the strong value by a colon `:`. An augmentation is a method of extending Strong’s by aligning it to another lexicon (e.g. Brown-Driver-Briggs). This requires dividing some words into two or more separate words.
 ** There are instances where more than one word may need to be included within xref:char:features/w.adoc[w] because of how Hebrew and Greek use word repetitions (e.g. for a superlative). Exodus 29:37 repeats the word ‘holy’ as the superlative form.
-`srcloc`::: Location of the word in the source text; Example: GNT version 5 text, book 51, chapter 1, verse 2, word 1.
+#srcloc#::: Location of the word in the source text; Example: GNT version 5 text, book 51, chapter 1, verse 2, word 1.
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (attributes)

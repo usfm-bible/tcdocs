@@ -15,10 +15,10 @@ endif::[]
 Description:: Quotation start and end milestones. Typically used for indicating the speaker of the text.
 * The variable `#` represents the level of nesting of the quotation being marked (i.e. a quote within a quote).
 Syntax::
-* *USFM:* `+\qt#-s |[@sid,who]\*+` / `+\qt#-e |@eid\*+`
-* *USX:* `+<ms style="qt#-s" [@sid,who]/>+` / `+<ms style="qt#-e" @eid/>+`
-`sid`, `eid`::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
-`who`::: The speaker of the quotation _(default attribute)_
+* *USFM:* ``++\qt#-s |++``#__@sid @who__#``++\*++`` / ``++\qt#-e |++``#__@eid__#``++\*++``
+* *USX:* ``++<ms style="qt#-s" ++``#__@sid @who__#``++/>++`` / ``++<ms style="qt#-e" ++``#__@eid__#``++/>++``
+#sid#, #eid#::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
+#who#::: The speaker of the quotation _(default attribute)_
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

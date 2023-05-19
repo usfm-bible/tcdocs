@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction paragraph.
 Syntax::
-* *USFM:* `+\ip_{content}+`
-* *USX:* `+<para style="ip">{content}</para>+`
+* *USFM:* ``++\ip ++``#__content__#
+* *USX:* ``++<para style="ip">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

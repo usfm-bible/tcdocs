@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Bold text.
 Syntax::
-* *USFM:* `+\bd_{content}\bd*+`
-* *USX:* `+<char style="bd">{content}</char>+`
+* *USFM:* ``++\bd ++``#__content__#``++\bd*++``
+* *USX:* ``++<char style="bd">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Properties

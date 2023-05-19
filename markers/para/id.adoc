@@ -14,10 +14,10 @@ endif::[]
 
 Description:: Scripture book identification.
 Syntax::
-* *USFM:* `+\id_{code}_{content}+`
-* *USX:* `+<book style="id" @code>{content}</book>+`
-`code` *::: A standard 3-character scripture xref:para:identification/books.adoc[book identifier].
-`content`::: Additional description _(optional)_
+* *USFM:* ``++\id ++``#__code__#``++ ++``#__content__#
+* *USX:* ``++<book style="id" ++``@code``++>++``#__content__#``++</book>++``
+#code# *::: A standard 3-character scripture xref:para:identification/books.adoc[book identifier].
+#content#::: Additional description _(optional)_
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

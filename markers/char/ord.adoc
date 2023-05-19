@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Ordinal number ending.
 Syntax::
-* *USFM:* `+\ord_{content}\ord*+`
-* *USX:* `+<char style="ord">{content}</char>+`
+* *USFM:* ``++\ord ++``#__content__#``++\ord*++``
+* *USX:* ``++<char style="ord">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

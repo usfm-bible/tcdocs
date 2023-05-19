@@ -17,11 +17,11 @@ Example: `MAT 3:1-4`
 
 == Attributes
 
-`link-href`::: Identifies the resource being linked to as a URI.
+#link-href#::: Identifies the resource being linked to as a URI.
 ** A user-defined URI prefix can be used to help identify the target resource. For example: `x-prj:` might identify another scripture translation project available within the current editing environment, like `x-prj:RSV52 MAT 3:1-4`.
 ** User defined URI prefixes must begin with the prefix `x-`.
-`link-title`::: Plain text describing the resource being linked to (for example - to display in a tooltip when hovering over the link).
-`link-id`::: A unique identifier for a specific content location (i.e. an anchor).
+#link-title#::: Plain text describing the resource being linked to (for example - to display in a tooltip when hovering over the link).
+#link-id#::: A unique identifier for a specific content location (i.e. an anchor).
 
 == Examples
 

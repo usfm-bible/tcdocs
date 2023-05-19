@@ -17,8 +17,8 @@ Description:: Continuation (margin) paragraph. Commonly used to resume prose at 
 Added:: 1.0
 // end::spec[]
 Syntax::
-* *USFM:* `+\m_{content}+`
-* *USX:* `+<para style="m">{content}</para>+`
+* *USFM:* ``++\m ++``#__content__#
+* *USX:* ``++<para style="m">++``#__content__#``++</para>++``
 
 == Examples
 [tabs]

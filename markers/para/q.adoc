@@ -15,8 +15,8 @@ endif::[]
 Description:: Poetic line.
 * The variable `#` represents the level of indent.
 Syntax::
-* *USFM:* `+\q#_{content}+`
-* *USX:* `+<para style="q#">{content}</para>+`
+* *USFM:* ``++\q# ++``#__content__#
+* *USX:* ``++<para style="q#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

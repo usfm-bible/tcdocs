@@ -15,8 +15,8 @@ endif::[]
 Description:: Main title.
 * The variable `#` represents the level of division.
 Syntax::
-* *USFM:* `+\mt#_{content}+`
-* *USX:* `+<para style="mt#">{content}</para>+`
+* *USFM:* ``++\mt# ++``#__content__#
+* *USX:* ``++<para style="mt#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

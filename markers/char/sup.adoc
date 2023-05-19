@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Superscript text. Typically for use in critical edition footnotes.
 Syntax::
-* *USFM:* `+\sc_{content}\sc*+`
-* *USX:* `+<char style="sc">{content}</char>+`
+* *USFM:* ``++\sc ++``#__content__#``++\sc*++``
+* *USX:* ``++<char style="sc">++``#__content__#``++</char>++``
 Added:: 3.0
 
 == Examples

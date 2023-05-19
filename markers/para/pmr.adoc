@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Embedded text refrain.
 Syntax::
-* *USFM:* `+\pmr_{content}+`
-* *USX:* `+<para style="pmr">{content}</para>+`
+* *USFM:* ``++\pmr ++``#__content__#
+* *USX:* ``++<para style="pmr">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 2.0
 // end::spec[]

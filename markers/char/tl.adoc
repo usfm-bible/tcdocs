@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Transliterated words.
 Syntax::
-* *USFM:* `+\tl_{content}\tl*+`
-* *USX:* `+<char style="tl">{content}</char>+`
+* *USFM:* ``++\tl ++``#__content__#``++\tl*++``
+* *USX:* ``++<char style="tl">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

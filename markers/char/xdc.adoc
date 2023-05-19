@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - DC target references. The marked target references (xref:notes:crossref/xt[xt]) are relevant for publications which include Deuterocanonlical (DC) books.
 Syntax::
-* *USFM:* `+\xdc_{content}\xdc*+`
-* *USX:* `+<char style="xdc">{content}</char>+`
+* *USFM:* ``++\xdc ++``#__content__#``++\xdc*++``
+* *USX:* ``++<char style="xdc">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 2.2
 Deprecated:: 3.0

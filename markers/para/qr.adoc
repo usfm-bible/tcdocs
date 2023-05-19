@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Right-aligned poetic line. Commonly used for a poetic refrain.
 Syntax::
-* *USFM:* `+\qr_{content}+`
-* *USX:* `+<para style="qr">{content}</para>+`
+* *USFM:* ``++\qr ++``#__content__#
+* *USX:* ``++<para style="qr">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

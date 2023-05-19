@@ -11,8 +11,8 @@
 Description:: Right-aligned paragraph.
 * _Recommended use:_ Text refrain
 Syntax::
-* *USFM:* `+\pr_{content}+`
-* *USX:* `+<para style="pr">{content}</para>+`
+* *USFM:* ``++\pr ++``#__content__#
+* *USX:* ``++<para style="pr">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

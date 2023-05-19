@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Name of God.
 Syntax::
-* *USFM:* `+\nd_{content}\nd*+`
-* *USX:* `+<char style="nd">{content}</char>+`
+* *USFM:* ``++\nd ++``#__content__#``++\nd*++``
+* *USX:* ``++<char style="nd">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

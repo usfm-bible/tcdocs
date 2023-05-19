@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Proper name within translator's addition.
 Syntax::
-* *USFM:* `+\addpn_{content}\addpn*+`
-* *USX:* `+<char style="addpn">{content}</char>+`
+* *USFM:* ``++\addpn ++``#__content__#``++\addpn*++``
+* *USX:* ``++<char style="addpn">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 Deprecated:: 3.0

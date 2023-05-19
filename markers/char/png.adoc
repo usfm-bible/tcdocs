@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Geographic proper name. Some publications visually distinguish between proper names of people and proper names of geographic places.
 Syntax::
-* *USFM:* `+\png_{content}\png*+`
-* *USX:* `+<char style="png">{content}</char>+`
+* *USFM:* ``++\png ++``#__content__#``++\png*++``
+* *USX:* ``++<char style="png">++``#__content__#``++</char>++``
 Added:: 3.0
 
 == Examples

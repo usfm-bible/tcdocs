@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Keyword. The footnote relates to a specific keyword quoted from the text.
 Syntax::
-* *USFM:* `+\fk_{content}+`
-* *USX:* `+<char style="fk">{content}</char>+`
+* *USFM:* ``++\fk ++``#__content__#
+* *USX:* ``++<char style="fk">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

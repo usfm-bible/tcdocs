@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction outline references.
 Syntax::
-* *USFM:* `+\ior_{content}\ior*+`
-* *USX:* `+<char style="ior">{content}</char>+`
+* *USFM:* ``++\ior ++``#__content__#``++\ior*++``
+* *USX:* ``++<char style="ior">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

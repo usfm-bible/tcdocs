@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Reference mark. Use where multiple locations in the scripture text refer to a common footnote text.
 Syntax::
-* *USFM:* `+\fm_{content}\fm*+`
-* *USX:* `+<char style="fm">{content}</char>+`
+* *USFM:* ``++\fm ++``#__content__#``++\fm*++``
+* *USX:* ``++<char style="fm">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

@@ -4,9 +4,9 @@
 
 Description:: Milestone marker.
 Syntax::
-* *USFM:* `+\[style]\*+`
-* *USX:* `+<ms style="[style]"/>+`
-`style` *::: Milestone type
+* *USFM:* ``++\++``#__style__#``++\*++``
+* *USX:* ``++<ms style="++``#__style__#``++"/>++``
+#style# *::: Milestone type
 include::../nav.adoc[tag=nav-topcat]
 
 == Diagrams

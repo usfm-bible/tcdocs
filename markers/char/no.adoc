@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Normal text.
 Syntax::
-* *USFM:* `+\no_{content}\no*+`
-* *USX:* `+<char style="no">{content}</char>+`
+* *USFM:* ``++\no ++``#__content__#``++\no*++``
+* *USX:* ``++<char style="no">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

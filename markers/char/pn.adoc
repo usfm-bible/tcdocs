@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Proper name.
 Syntax::
-* *USFM:* `+\pn_{content}\pn*+`
-* *USX:* `+<char style="pn">{content}</char>+`
+* *USFM:* ``++\pn ++``#__content__#``++\pn*++``
+* *USX:* ``++<char style="pn">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

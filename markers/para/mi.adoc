@@ -15,8 +15,8 @@ endif::[]
 Description:: Regular paragraph.
 - See also: xref:para:paragraphs/pmo.adoc[pmo], xref:para:paragraphs/pmc.adoc[pmc]
 Syntax::
-* *USFM:* `+\mi_{content}+`
-* *USX:* `+<para style="mi">{content}</para>+`
+* *USFM:* ``++\mi ++``#__content__#
+* *USX:* ``++<para style="mi">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

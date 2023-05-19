@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction indented paragraph.
 Syntax::
-* *USFM:* `+\ipi_{content}+`
-* *USX:* `+<para style="ipi">{content}</para>+`
+* *USFM:* ``++\ipi ++``#__content__#
+* *USX:* ``++<para style="ipi">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

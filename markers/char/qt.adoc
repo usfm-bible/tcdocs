@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Quoted text. Old Testament quotations in the New Testament, or other quotations.
 Syntax::
-* *USFM:* `+\qt_{content}\qt*+`
-* *USX:* `+<char style="qt">{content}</char>+`
+* *USFM:* ``++\qt ++``#__content__#``++\qt*++``
+* *USX:* ``++<char style="qt">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

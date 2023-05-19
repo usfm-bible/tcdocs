@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Emphasis text.
 Syntax::
-* *USFM:* `+\em_{content}\em*+`
-* *USX:* `+<char style="em">{content}</char>+`
+* *USFM:* ``++\em ++``#__content__#``++\em*++``
+* *USX:* ``++<char style="em">++``#__content__#``++</char>++``
 Added:: 2.0
 
 == Examples

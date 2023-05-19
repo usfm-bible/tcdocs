@@ -15,8 +15,8 @@ endif::[]
 Description:: Intoduction major title ending. Used to mark a major title indicating the end of the introduction.
 * The variable `#` represents the level of division.
 Syntax::
-* *USFM:* `+\imte#_{content}+`
-* *USX:* `+<para style="imte#">{content}</para>+`
+* *USFM:* ``++\imte# ++``#__content__#
+* *USX:* ``++<para style="imte#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

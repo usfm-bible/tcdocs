@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Greek wordist entry.
 Syntax::
-* *USFM:* `+\wg_{content}\wg*+`
-* *USX:* `+<char style="wg">{content}</char>+`
+* *USFM:* ``++\wg ++``#__content__#``++\wg*++``
+* *USX:* ``++<char style="wg">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples

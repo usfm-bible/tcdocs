@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Introduction right-aligned paragraph.
 Syntax::
-* *USFM:* `+\ipr_{content}+`
-* *USX:* `+<para style="ipr">{content}</para>+`
+* *USFM:* ``++\ipr ++``#__content__#
+* *USX:* ``++<para style="ipr">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

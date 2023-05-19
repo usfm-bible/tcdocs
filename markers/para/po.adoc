@@ -17,8 +17,8 @@ Description:: Letter opening.
 Added:: 3.0
 // end::spec[]
 Syntax::
-* *USFM:* `+\po_{content}+`
-* *USX:* `+<para style="po">{content}</para>+`
+* *USFM:* ``++\po ++``#__content__#
+* *USX:* ``++<para style="po">++``#__content__#``++</para>++``
 
 == Examples
 

@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Additional paragraph. Use to indicate the start of a new paragraph within a footnote (uncommon).
 Syntax::
-* *USFM:* `+\fp_{content}+`
-* *USX:* `+<char style="fp">{content}</char>+`
+* *USFM:* ``++\fp ++``#__content__#
+* *USX:* ``++<char style="fp">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 2.03
 // end::spec[]

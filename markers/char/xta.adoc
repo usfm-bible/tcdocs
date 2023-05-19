@@ -14,8 +14,8 @@ endif::[]
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - Target references added text. Used for marking additional publishable text within in the list of target references (xref:notes:crossref/xt[xt]) which can be ignored when identifying references or generating links.
 Syntax::
-* *USFM:* `+\xta_{content}+`
-* *USX:* `+<char style="xta">{content}</char>+`
+* *USFM:* ``++\xta ++``#__content__#
+* *USX:* ``++<char style="xta">++``#__content__#``++</char>++``
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

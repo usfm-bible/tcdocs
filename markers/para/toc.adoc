@@ -18,8 +18,8 @@ Description:: Book name texts. One common use of these texts is for composing a 
 ** `toc2` - Short book name.
 ** `toc3` - Book abbreviation.
 Syntax::
-* *USFM:* `+\toc#_{content}+`
-* *USX:* `+<para style="toc#">{content}</para>+`
+* *USFM:* ``++\toc# ++``#__content__#
+* *USX:* ``++<para style="toc#">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 2.0
 // end::spec[]

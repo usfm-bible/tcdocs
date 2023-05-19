@@ -22,12 +22,12 @@ In *USFM*, a table is composed by a series of paragraphs marked with xref:para:t
 In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing `<row>`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
 ====
 Syntax::
-* *USFM:* `+\th#_{content}+`
+* *USFM:* ``++\th# ++``#__content__#
 ** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\th1-2`
-* *USX:* `+<cell style="th#" @colspan @align>{content}</cell>+`
-`colspan.`::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="th1" colspan="2" align="start">+`
-`align`::: Cell alignment = `start` | `center` | `end`. Represents 'left', 'center', and 'right' respectively in left-to-right direction texts, and 'right', 'center', 'left' in right-to-left direction texts.
-`content`::: The cell text.
+* *USX:* ``++<cell style="th#" ++``#__@colspan @align__#``++>++``#__content__#``++</cell>++``
+#colspan#::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="th1" colspan="2" align="start">+`
+#align#::: Cell alignment = `start` | `center` | `end`. Represents 'left', 'center', and 'right' respectively in left-to-right direction texts, and 'right', 'center', 'left' in right-to-left direction texts.
+#content#::: The cell text.
 Added:: 1.0
 
 == Examples

@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Autrhor's signature. Signature of the author of a letter or epistle.
 Syntax::
-* *USFM:* `+\sig_{content}\sig*+`
-* *USX:* `+<char style="sig">{content}</char>+`
+* *USFM:* ``++\sig ++``#__content__#``++\sig*++``
+* *USX:* ``++<char style="sig">++``#__content__#``++</char>++``
 Added:: 1.0
 
 == Examples
