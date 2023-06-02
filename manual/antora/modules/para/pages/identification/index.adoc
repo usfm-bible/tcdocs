@@ -4,8 +4,12 @@ include::../../nav.adoc[tag=nav-identification]
 
 == Diagram
 
-=== USFM
+[tabs]
+======
+USFM::
++
 image::schema/bkhdrs_rail.svg[]
-
-=== USX
+USX::
++
 image::schema/bkhdrs_usx.svg[]
+======

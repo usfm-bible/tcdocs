@@ -1,1 +1,114 @@
 = Document Structure
+:experimental:
+
+A USFM or USX document consists of valid elements for <<scripture,Scripture>> or <<peripheral,Peripheral>> content organized within a sequence of divisions.
+
+[#scripture]
+== Scripture
+
+* <<doc-book-identification,Book Identification>> `[BookIdentification]`
+* <<doc-book-headers,Book Headers>> `[BookHeaders]`
+* <<doc-book-titles,Book Titles>> `[BookTitles]`
+* <<doc-book-intro,Book Introduction>> `[BookIntroduction]`
+* <<doc-book-intro-end-titles,Book Introduction End Titles>> `[BookIntroductionEndTitles]`
+* <<doc-chapter-label,Book Chapter Label>> `[BookChapterLabel]`
+* <<doc-book-chapter-content,Chapter Content>> `[Chapter]`
+
+[#doc-book-identification]
+[tabs]
+======
+USFM::
++
+image::schema/id_rail.svg[]
+USX::
++
+image::schema/id_usx.svg[]
+======
+
+* menu:Paragraphs[Identification > ] xref:para:identification/id.adoc[]
+
+[#doc-book-headers]
+=== Book Headers
+
+[tabs]
+======
+USFM::
++
+image::schema/bkhdrs_rail.svg[]
+USX::
++
+image::schema/bkhdrs_usx.svg[]
+======
+
+An optional collection of one or more xref:para:index.adoc[paragraph] elements for book name and abbreviation texts.
+
+* menu:Paragraphs[Identification > ] xref:para:identification/ide.adoc[], xref:para:identification/h.adoc[], xref:para:identification/toc.adoc[], xref:para:identification/toca.adoc[], xref:para:identification/rem.adoc[], xref:para:identification/usfm.adoc[] 
+
+[#doc-book-titles]
+=== Book Titles
+
+[tabs]
+======
+USFM::
++
+image::schema/bktitles_rail.svg[]
+USX::
++
+image::schema/bktitles_usx.svg[]
+======
+
+A collection of one or more xref:para:index.adoc[paragraph] elements for book main titles.
+
+* menu:Paragraphs[Titles and Sections > ] xref:para:titles-sections/mt.adoc[]
+* menu:Paragraphs[Introductions > ] xref:para:introductions/imt.adoc[]
+* menu:Paragraphs[Identification > ] xref:para:identification/rem.adoc[]
+* xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
+* xref:note:crossref/index.adoc[Cross References] `[CrossReference]`
+* xref:char:index.adoc[Characters] `[Char]`
+
+[#doc-book-intro]
+=== Book Introduction
+
+[tabs]
+======
+USFM::
++
+image::schema/bkintro_rail.svg[]
+USX::
++
+image::schema/bkintro_usx.svg[]
+======
+
+An optional collection of xref:para:index.adoc[paragraph] and xref:para:tables/index.adoc[table] elements for book introductions.
+
+* menu:Paragraphs[Introductions > ] xref:para:introductions/imt.adoc[], xref:para:introductions/imte.adoc[], xref:para:introductions/ib.adoc[], xref:para:introductions/ie.adoc[], xref:para:introductions/ili.adoc[], xref:para:introductions/imi.adoc[], xref:para:introductions/imq.adoc[], xref:para:introductions/im.adoc[], xref:para:introductions/io.adoc[], xref:para:introductions/iot.adoc[], xref:para:introductions/ipi.adoc[], xref:para:introductions/ipq.adoc[], xref:para:introductions/ipr.adoc[], xref:para:introductions/ip.adoc[], xref:para:introductions/iq.adoc[], xref:para:introductions/is.adoc[], xref:para:introductions/iex.adoc[], xref:para:identification/rem.adoc[]
+* xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
+* xref:note:crossref/index.adoc[Cross References] `[CrossReference]`
+* xref:char:index.adoc[Characters] `[Char]`
+* xref:char:introductions/index.adoc[Introduction Characters] `[IntroChar]`
+* xref:ms:index.adoc[Milestones] `[Milestone]`
+
+[#doc-book-intro-end-titles]
+=== Book Introduction End Titles
+
+[tabs]
+======
+USFM::
++
+image::schema/bkintroend_rail.svg[]
+USX::
++
+image::schema/bkintroend_usx.svg[]
+======
+
+[#doc-book-chapter-label]
+=== Book Chapter Label
+
+[#doc-book-chapter-content]
+=== Chapter Content
+
+[#peripheral]
+== Peripheral
+
+* Peripheral Book
+* Peripheral Divided Book
