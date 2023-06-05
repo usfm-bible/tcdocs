@@ -21,7 +21,8 @@ _See also:_
 * xref:note:index.adoc[Note] markers also occur in pairs, marking the start and end of the xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content.
 
 == Numbered Markers
-Some USFM markers include an optional numeric variable, which is represented in this documentation by a hash character `#`. In USFM the number indicates:
+Some USFM markers include an optional numeric variable, which is represented in this documentation by a hash character `+#+`. In USFM the number indicates:
+
 * A portion of a complete element, or relative weighting of the "pieces" of the elements, such as `\mt1`, `\mt2`, `\mt3` which are parts of a major title.
 * The level of the division or section (hierarchy).
 * The level of indentation relative to other like elements, as in poetry (xref:para:poetry/q.adoc[\q#]) or lists (xref:para:lists/li.adoc[\li#]) or outlines (\io#).
