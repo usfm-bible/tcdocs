@@ -301,6 +301,7 @@ BookHeaders.para.style.enum = (
     | "toca2" # Alternative language short table of contents text
     | "toca3" # Alternative language book Abbreviation
     | "rem" # Remark
+    | "sts" # Status
     | "usfm" # USFM markup version information (may occur if USX was generated from USFM)
     )
 
@@ -473,6 +474,7 @@ Para.para.style.enum = (
     | "k1" # Concordance main entry text or keyword, level 1
     | "k2" # Concordance main entry text or keyword, level 2
     | "rem" # Remark
+    | "sts" # Remark
     )
 
 List =
