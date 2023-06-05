@@ -15,7 +15,7 @@ A USFM or USX document consists of valid elements for <<scripture,Scripture>> or
 * <<doc-book-chapter-content,Chapter Content>> `[Chapter]`
 
 [#doc-book-identification]
-== Book Identification
+=== Book Identification
 [tabs]
 ======
 USFM::
