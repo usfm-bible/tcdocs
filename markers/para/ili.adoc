@@ -33,7 +33,7 @@ USFM::
 \ip However, he is more than a teacher, healer, or \w miracle\w*-worker. He is 
 also the Messiah, the Son of God, the Son of Man. These three titles express 
 the first Christians' understanding of who Jesus is.
-\ili 1 \k The Messiah\k* is the one promised by God, the one who would come and 
+\ili1 1 \k The Messiah\k* is the one promised by God, the one who would come and 
 free God's people. By the time \bk The Gospel of Mark\bk* appeared, the title 
 "Messiah" (in Greek, "\w christ\w*") had become a proper name, so that the 
 Gospel opens with "the Good News about Jesus Christ" (and not "Jesus the 
@@ -41,10 +41,10 @@ Christ"). Peter's confession (8.29) marks a turning-point in the ministry of
 Jesus. The title "\w son of  david\w* " (10.46-48) also identifies Jesus as the 
 Messiah, who would restore to Israel the power and glory it enjoyed under 
 David's reign (also 12.35-37).
-\ili 2 \k The Son of God\k* is the title by which the heavenly voice addresses 
+\ili1 2 \k The Son of God\k* is the title by which the heavenly voice addresses 
 Jesus at his baptism (1.11) and his transfiguration (9.7). And at Jesus' death 
 the Roman officer confesses that Jesus is the Son of God (15.39).
-\ili 3 \k The Son of Man\k* is the title most often used of Jesus, and it 
+\ili1 3 \k The Son of Man\k* is the title most often used of Jesus, and it 
 appears only on the lips of Jesus. This enigmatic title appears in \bk The Book 
 of Daniel\bk* (Dan 7.13n), where it is applied to the exalted figure to whom 
 God gives universal dominion. In \bk Mark\bk* the title is used of Jesus in 
@@ -61,7 +61,7 @@ USX::
   miracle</char>-worker. He is also the Messiah, the Son of God, the Son of Man.
   These three titles express the first Christians' understanding of who Jesus is.
   </para>
-<para style="ili">1 <char style="k">The Messiah</char> is the one promised by God,
+<para style="ili1">1 <char style="k">The Messiah</char> is the one promised by God,
   the one who would come and free God's people. By the time <char style="bk">The
   Gospel of Mark</char> appeared, the title "Messiah" (in Greek, "<char style="w">
   christ</char>") had become a proper name, so that the Gospel opens with "the
@@ -70,11 +70,11 @@ USX::
   "<char style="w">son of david</char> " (10.46-48) also identifies Jesus as the
   Messiah, who would restore to Israel the power and glory it enjoyed under
   David's reign (also 12.35-37).</para>
-<para style="ili">2 <char style="k">The Son of God</char> is the title by which
+<para style="ili1">2 <char style="k">The Son of God</char> is the title by which
   the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration
   (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of
   God (15.39).</para>
-<para style="ili">3 <char style="k">The Son of Man</char> is the title most often
+<para style="ili1">3 <char style="k">The Son of Man</char> is the title most often
   used of Jesus, and it appears only on the lips of Jesus. This enigmatic title
   appears in <char style="bk">The Book of Daniel</char> (Dan 7.13n), where it is
   applied to the exalted figure to whom God gives universal dominion. In 
