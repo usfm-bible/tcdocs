@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Main title.
-* The variable `#` represents the level of division.
+* The variable `#` represents the level of division. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\mt# ++``#__content__#
 * *USX:* ``++<para style="mt#">++``#__content__#``++</para>++``
