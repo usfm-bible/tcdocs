@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Alternate language book name texts. Used to specify an alternate set of books name texts in a language of wider communication.
-* The variable `#` represents the book name form.
+* The variable `#` represents the book name form. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 ** `toca1` - Long book name.
 ** `toca2` - Short book name.
 ** `toca3` - Book abbreviation.

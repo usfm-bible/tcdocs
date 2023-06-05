@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Embedded text poetic line.
-* The variable `#` represents the level of indent.
+* The variable `#` represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\qm# ++``#__content__#
 * *USX:* ``++<para style="qm#">++``#__content__#``++</para>++``

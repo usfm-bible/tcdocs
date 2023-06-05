@@ -27,7 +27,7 @@ Added:: 1.0
 USFM::
 +
 .Job 3.1 (GNT)
-[source#src-usfm-para-d_1,usfm,highlight=6]
+[source#src-usfm-para-sp_1,usfm,highlight=6]
 ----
 \c 3
 \s1 Job's Complaint to God
@@ -41,7 +41,7 @@ USFM::
 USX::
 +
 .Job 3.1 (GNT)
-[source#src-usx-para-d_1,xml,highlight=6]
+[source#src-usx-para-sp_1,xml,highlight=6]
 ----
 <chapter number="3" style="c" sid="JOB 3"/>
 <para style="s1">Job's Complaint to God</para>

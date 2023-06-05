@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Book name texts. One common use of these texts is for composing a table of contents. They are also a record of names used in scripture references texts, such as xref:para:titles-sections/r.adoc[r] or xref:char:notes/crossref/xt.adoc[xt].
-* The variable `#` represents the book name form.
+* The variable `#` represents the book name form. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 ** `toc1` - Long book name.
 ** `toc2` - Short book name.
 ** `toc3` - Book abbreviation.

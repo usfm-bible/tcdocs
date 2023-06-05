@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Intoduction major title ending. Used to mark a major title indicating the end of the introduction.
-* The variable `#` represents the level of division.
+* The variable `#` represents the level of division. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\imte# ++``#__content__#
 * *USX:* ``++<para style="imte#">++``#__content__#``++</para>++``

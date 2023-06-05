@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Descriptive title ("Hebrew subtitle"). Sometimes found in Psalms under a section heading (xref:para:titles-sections/s.adoc[s]) (e.g. “For the director of Music”).
 Syntax::
-* *USFM:* ``++\d ++`#__content__#
+* *USFM:* ``++\d ++``#__content__#
 * *USX:* ``++<para style="d">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
