@@ -235,7 +235,7 @@ class Group(Parser):
                 if n is not None:
                     s.defstack.pop()
                 if self.mode == "|+":
-                    if matched and c.mc:
+                    if cuts.pos != news.pos and matched and c.mc:
                         s.cstack.pop()
                         raise NoParseError(f'Interleave multiply matched {c} in {self}', s)
                     elif cuts.pos != news.pos:  # real match

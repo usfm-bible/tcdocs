@@ -13,7 +13,11 @@ endif::[]
 == Summary
 
 Description:: Poetic line.
+<<<<<<< HEAD
 * The variable `#` represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
+=======
+* The variable `#` (1-4) represents the level of indent.
+>>>>>>> 7528d29 (Refactor USX RNC to be more RNG conformant)
 Syntax::
 * *USFM:* ``++\q# ++``#__content__#
 * *USX:* ``++<para style="q#">++``#__content__#``++</para>++``

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction outline entry. Outline entries usually end with a range of references, sometimes in parentheses. These references can be marked with the character type xref:char:introductions/ior.adoc[ior].
-* The variable `#` represents the outline level.
+* The variable `#` (1-4) represents the outline level.
 Syntax::
 * *USFM:* ``++\io# ++``#__content__#
 * *USX:* ``++<para style="io#">++``#__content__#``++</para>++``

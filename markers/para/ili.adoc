@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction list entry.
-* The variable `#` represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
+* The variable `#` (1-2) represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\ili# ++``#__content__#
 * *USX:* ``++<para style="ili#">++``#__content__#``++</para>++``

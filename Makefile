@@ -17,12 +17,15 @@ markers/images/schema/p_rail.svg : grammar/usx.rng python/scripts/mkraildiagrams
 	- $(PYTHON) python/scripts/mkraildiagrams -g $< -o markers/images/schema -z 1
 	- cd markers/images/schema; for f in *.svg; do inkscape -d 300 -o "pngs/$${f%.svg}.png" $$f; done
 
+short: TESTEXCLUDES := -x stress
+short: tests
+
 tests: testresults.log
 	@- echo "`grep 'Passed' $< | wc -l` Tests passed"
 	@- echo "`grep 'Failed' $< | wc -l` Tests failed"
 
 testresults.log : grammar/usx.rng
-	$(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -j ${JOBS} -g $< tests | tee $@
+	$(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} -g $< tests | tee $@
 
 grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@

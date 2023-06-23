@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Embedded list entry.
-* The variable `#` represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
+* The variable `#` (1-4) represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\lim# ++``#__content__#
 * *USX:* ``++<para style="lim#">++``#__content__#``++</para>++``

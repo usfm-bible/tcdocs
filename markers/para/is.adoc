@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Intoduction section heading.
-* The variable `#` represents the level of division. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
+* The variable `#` (1-2) represents the level of division. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\is# ++``#__content__#
 * *USX:* ``++<para style="is#">++``#__content__#``++</para>++``

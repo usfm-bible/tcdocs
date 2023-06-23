@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: List entry. May be used to mark the individual entries of a list, such as the days within the creation account, the 10 commandments, or a list of offerings etc..
-* The variable `#` represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
+* The variable `#` (1-4) represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
 Syntax::
 * *USFM:* ``++\li# ++``#__content__#
 * *USX:* ``++<para style="li#">++``#__content__#``++</para>++``

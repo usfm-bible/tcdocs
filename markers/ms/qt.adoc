@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Quotation start and end milestones. Typically used for indicating the speaker of the text.
-* The variable `#` represents the level of nesting of the quotation being marked (i.e. a quote within a quote).
+* The variable `#` (1-5) represents the level of nesting of the quotation being marked (i.e. a quote within a quote).
 Syntax::
 * *USFM:* ``++\qt#-s |++``#__@sid @who__#``++\*++`` / ``++\qt#-e |++``#__@eid__#``++\*++``
 * *USX:* ``++<ms style="qt#-s" ++``#__@sid @who__#``++/>++`` / ``++<ms style="qt#-e" ++``#__@eid__#``++/>++``

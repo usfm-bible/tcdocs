@@ -156,7 +156,7 @@ class Element(list):
 
     def _append(self, e):
         if isinstance(e, Attribute):
-            if self.propmap is not None and e.override is not None:
+            if self.propmap is not None and e.override is not None and e.name == "_default":
                 self.attributes[self.propmap.get(self.attributes[e.override], e.name)] = e.value
             else:
                 self.attributes[e.name] = e.value
@@ -244,7 +244,7 @@ class UsfmParserBackend:
         if name == "*":
             name = "_default"
         group = Group(name=name, parent=context, mode="&",
-                        result=(lambda r,s: Attribute(name, r, kw.get('name-override', None))),
+                        result=(lambda r,s: Attribute(name, r, kw.get('fallback-from', None))),
                         **self.get_nodename())
         self.nodes.append(group)
         return group

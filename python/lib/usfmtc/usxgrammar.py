@@ -4,6 +4,7 @@ alljobs = {
     "BookTitles":           ("bktitles", ("BookTitles.para.style.enum",)),
     "BookIntroduction":     ("bkintro", ('BookIntroduction.para.style.enum',)),
     "BookIntroductionEndTitles": ("bkintroend", ("BookIntroductionEndTitles.para.style.enum",)),
+    "ChapterContent":       ("chaptercontent", ),
     "ChapterStart":         ("chapter",),
     "ChapterEnd":           ("chapterend",),
     "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Break",

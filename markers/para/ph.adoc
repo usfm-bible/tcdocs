@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Indented paragraph with hanging indent.
-* The variable `#` represents the level of overall paragraph indent.
+* The variable `#` (1-3) represents the level of overall paragraph indent.
 Syntax::
 * *USFM:* ``++\ph# ++``#__content__#
 * *USX:* ``++<para style="ph#">++``#__content__#``++</para>++``

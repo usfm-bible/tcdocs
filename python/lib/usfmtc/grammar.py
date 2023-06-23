@@ -127,9 +127,9 @@ class UsfmGrammarParser:
     def attribute(self, e, res, **kw):
         name = e.findtext(f"./{relaxns}name") or "*"
         parms = {}
-        nover = e.get(f'{usfmns}name-override', None)
+        nover = e.get(f'{usfmns}fallback-from', None)
         if nover is not None:
-            parms['name-override'] = nover
+            parms['fallback-from'] = nover
         res = self.back.attrib_start(self, e, res, name, **parms)
         g = int(e.get(f"{usfmns}grouping", 0))
         self.groupings.append(g)
@@ -193,6 +193,10 @@ class UsfmGrammarParser:
         return res if cont else None
 
     def matchpair(self, e, res, **kw):
+        fb = self.expandvars(e.get('fallback', None))
+        if fb is not None:
+            res = self.back.append_or(res)
+            self.back.match(fb, res)
         res = self.back.append_seq(res, forced=e.get(f"{usfmns}seq", "false") in ("true", "1"))
         for a in ('before', 'first', 'between', 'second', 'after'):
             v = self.expandvars(e.get(a, None))
