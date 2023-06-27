@@ -556,15 +556,12 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        (  ( [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ( ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
+        CharContent,
+        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+           ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
                     second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
-            attribute * {xsd:string})+
-        )?,
-         ([usfm:order="-1"] CharContent)
-            >> usfm:endtag[usfm:order="4"])
-         | (CharContent
-           >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:seq="true"]))  # required
+            attribute * - (style | closed| link-href | link-title | link-id) {xsd:string}+)?
+        >> usfm:endtag[ahead="/[^\\]/" usfm:seq="true"]  # required
     }
     | CharWithAttrib | Figure
     )
@@ -652,11 +649,10 @@ CharWithAttrib =
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
         [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ( ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
+        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
                     second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
-            attribute * {xsd:string})+
-        )?,
-        [usfm:order="-1"] ((CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*)
+            attribute * - (style | closed) {xsd:string}+)?,
+        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*
         >> usfm:endtag[usfm:order="4"]
     }
 
@@ -665,10 +661,9 @@ Figure =
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { "fig" },
         char.closed?,
         [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ( ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
+        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
                     second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
-            attribute * {xsd:string})+
-        )?,
+            attribute * - (style | closed) {xsd:string}+)?,
         [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4"]
     }
@@ -677,12 +672,11 @@ CharEmbedWithAttrib =
     element char {
         [usfm:order="-2" usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
-        [usfm:order="3" usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ( ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
+        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
                     second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
-            attribute * {xsd:string})+
-        )?,
-        [usfm:order="-1"] ((CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*)
+            attribute * - (style | closed) {xsd:string}+)?,
+        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*
         >> usfm:endtag[usfm:order="4" before="'\+'"]
     }
 
@@ -711,10 +705,9 @@ Milestone = (
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
         [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ( ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
+        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
                     second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
-            attribute * {xsd:string})+
-        )?,
+            attribute * - (style | closed | sid | eid) {xsd:string}+)?,
         empty
     }
     >> usfm:endtag[matchref=""])
@@ -753,7 +746,7 @@ ChapterStart =
         attribute number { xsd:integer },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(\u200F?[\-,][0-9]+\p{L}?)*" } }?,
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
         [usfm:match [before="'\cp '" after="'\cp*'"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
@@ -783,9 +776,9 @@ VerseStart =
         [usfm:tag[usfm:seq="true"]]
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="/${WS}|(?=\\)/" afterout="' '"]]
-        attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
+        attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
         [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "va"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(\u200F?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
         [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]

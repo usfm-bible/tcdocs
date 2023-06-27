@@ -965,28 +965,30 @@
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
-        <choice>
+        <ref name="CharContent"/>
+        <optional>
           <group>
-            <optional>
-              <group>
-                <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-                <oneOrMore>
-                  <attribute usfm:fallback-from="style">
-                    <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
-                    <anyName/>
-                    <data type="string"/>
-                  </attribute>
-                </oneOrMore>
-              </group>
-            </optional>
-            <ref name="CharContent" usfm:order="-1"/>
-            <usfm:endtag usfm:order="4"/>
+            <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+            <oneOrMore>
+              <attribute usfm:fallback-from="style">
+                <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
+                <anyName>
+                  <except>
+                    <choice>
+                      <name ns="">style</name>
+                      <name ns="">closed</name>
+                      <name ns="">link-href</name>
+                      <name ns="">link-title</name>
+                      <name ns="">link-id</name>
+                    </choice>
+                  </except>
+                </anyName>
+                <data type="string"/>
+              </attribute>
+            </oneOrMore>
           </group>
-          <group>
-            <ref name="CharContent"/>
-            <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:seq="true"/>
-          </group>
-        </choice>
+        </optional>
+        <usfm:endtag ahead="/[^\\]/" usfm:seq="true"/>
       </element>
       <ref name="CharWithAttrib"/>
       <ref name="Figure"/>
@@ -1117,24 +1119,34 @@
         <ref name="char.closed"/>
       </optional>
       <optional>
+        <group>
+          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
               <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
-              <anyName/>
+              <anyName>
+                <except>
+                  <choice>
+                    <name ns="">style</name>
+                    <name ns="">closed</name>
+                  </choice>
+                </except>
+              </anyName>
               <data type="string"/>
             </attribute>
           </oneOrMore>
+        </group>
       </optional>
-      <group usfm:order="-1">
-        <zeroOrMore>
+      <zeroOrMore>
+        <group usfm:order="-1">
           <choice>
             <ref name="CharEmbed"/>
             <text>
               <usfm:match match="TEXTATTRIB"/>
             </text>
           </choice>
-        </zeroOrMore>
-      </group>
+        </group>
+      </zeroOrMore>
       <usfm:endtag usfm:order="4"/>
     </element>
   </define>
@@ -1150,14 +1162,23 @@
         <ref name="char.closed"/>
       </optional>
       <optional>
+        <group>
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
               <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
-              <anyName/>
+              <anyName>
+                <except>
+                  <choice>
+                    <name ns="">style</name>
+                    <name ns="">closed</name>
+                  </choice>
+                </except>
+              </anyName>
               <data type="string"/>
             </attribute>
           </oneOrMore>
+        </group>
       </optional>
       <group usfm:order="-1">
         <optional>
@@ -1178,28 +1199,37 @@
         <ref name="CharWithAttrib.enum"/>
       </attribute>
       <optional>
+        <ref name="char.closed"/>
+      </optional>
+      <optional>
+        <group>
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
               <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
-              <anyName/>
+              <anyName>
+                <except>
+                  <choice>
+                    <name ns="">style</name>
+                    <name ns="">closed</name>
+                  </choice>
+                </except>
+              </anyName>
               <data type="string"/>
             </attribute>
           </oneOrMore>
+        </group>
       </optional>
-      <optional>
-        <ref name="char.closed"/>
-      </optional>
-      <group usfm:order="-1">
-        <zeroOrMore>
+      <zeroOrMore>
+        <group usfm:order="-1">
           <choice>
             <ref name="CharEmbed"/>
             <text>
               <usfm:match match="TEXTATTRIB"/>
             </text>
           </choice>
-        </zeroOrMore>
-      </group>
+        </group>
+      </zeroOrMore>
       <usfm:endtag usfm:order="4" before="&#x27;\+&#x27;"/>
     </element>
   </define>
@@ -1280,7 +1310,16 @@
             <oneOrMore>
               <attribute usfm:fallback-from="style">
                 <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
-                <anyName/>
+                <anyName>
+                  <except>
+                    <choice>
+                      <name ns="">style</name>
+                      <name ns="">closed</name>
+                      <name ns="">sid</name>
+                      <name ns="">eid</name>
+                    </choice>
+                  </except>
+                </anyName>
                 <data type="string"/>
               </attribute>
             </oneOrMore>
@@ -1346,7 +1385,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+\p{L}?(\u200F?[\-,][0-9]+\p{L}?)*</param>
+            <param name="pattern">[0-9]+\p{L}?(‏?[\-,][0-9]+\p{L}?)*</param>
           </data>
         </attribute>
       </optional>
@@ -1407,7 +1446,7 @@
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
-          <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
+          <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
         </data>
       </attribute>
       <optional>
@@ -1418,7 +1457,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(\x{200F}?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
+            <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(‏?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
           </data>
         </attribute>
       </optional>

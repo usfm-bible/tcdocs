@@ -151,6 +151,10 @@ class UsfmGrammarParser:
         return res
 
     def match(self, e, res, **kw):
+        attrib = e.get('{usfmns}attrib', None)
+        if attrib is not None:
+            print(f"{attrib=}")
+            res = self.back.attrib_start(self, e, res, attrib)
         res = self.back.append_seq(res, forced=e.get(f"{usfmns}seq", "false") in ("true", "1"))
         cont = True
         for a in ('before', 'match', 'after'):
@@ -190,6 +194,8 @@ class UsfmGrammarParser:
             elif v is not None:
                 res = self.back.match(v, res, dump=True, alt=self.expandvars(e.get(a+"out", None)))
         # this needs more work: @ahead
+        if attrib is not None:
+            res = self.back.attrib_end(self, e, res)
         return res if cont else None
 
     def matchpair(self, e, res, **kw):
