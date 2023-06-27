@@ -22,7 +22,7 @@ short: tests
 
 tests: testresults.log
 	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `cat testresults.log | wc -l`"
-	@ $(PYTHON) python/scripts/lxmltest.py -q -g grammar/usx.rng tests
+	@ $(PYTHON) python/scripts/lxmltest.py -q -g grammar/usx.rng -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" tests
 
 testresults.log : grammar/usx.rng
 	$(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} -g $< tests | tee $@
