@@ -158,7 +158,7 @@ def attribnorm(d):
     banned = ('closed', 'status')
     return {k:v for k, v in d.items() if k not in banned and not k.startswith(" ")}
 
-def etCmp(a, b, at=None, bt=None):
+def etCmp(a, b, at=None, bt=None, verbose=False):
     aattrib = attribnorm(a.attrib)
     battrib = attribnorm(b.attrib)
     if a.tag != b.tag or aattrib != battrib:
@@ -170,7 +170,9 @@ def etCmp(a, b, at=None, bt=None):
     if len(a) != len(b):
         return False
     for ac, bc in zip(a, b):
-        if not etCmp(ac, bc, a.tag if a is not None else None, b.tag if b is not None else None):
+        if not etCmp(ac, bc, a.tag if a is not None else None, b.tag if b is not None else None, verbose=verbose):
+            if verbose:
+                print(ac, bc)
             return False
     return True
 

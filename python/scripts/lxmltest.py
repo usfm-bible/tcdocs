@@ -31,14 +31,14 @@ else:
             ty = t.strip()
             e = usxdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
             if e is None:
+                print(f"Can't find an enum for {ty}. Tried {usxenums[ty]}")
                 continue
             for m in mks:
                 v = etree.Element('value')
                 v.text = m.strip()
                 e.insert(0, v)
-                if ty == 'para':
-                    partypes[m] = 'Section'
-    usxrng = etree.RelaxNG(etree=usxdoc)
+    newdoc = etree.fromstring(etree.tostring(usxdoc))
+    usxrng = etree.RelaxNG(etree=newdoc)
 
 jobfiles = []
 if os.path.isdir(args.infile):

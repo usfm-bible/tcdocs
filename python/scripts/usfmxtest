@@ -39,7 +39,7 @@ def proconedir(d, sfmp, args):
         cleanup(xml)
         if os.path.exists(os.path.join(d, "origin.xml")):
             testxml = parsexml(os.path.join(d, "origin.xml"))
-            passed = etCmp(xml, testxml.getroot())
+            passed = etCmp(xml, testxml.getroot(), verbose=args.print)
         if args.print:
             prettyxml(xml)
             writexml(sys.stdout, xml)
