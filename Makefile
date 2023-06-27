@@ -21,8 +21,8 @@ short: TESTEXCLUDES := -x stress
 short: tests
 
 tests: testresults.log
-	@- echo "`grep 'Passed' $< | wc -l` Tests passed"
-	@- echo "`grep 'Failed' $< | wc -l` Tests failed"
+	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `cat testresults.log | wc -l`"
+	@ $(PYTHON) python/scripts/lxmltest.py -q -g grammar/usx.rng tests
 
 testresults.log : grammar/usx.rng
 	$(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} -g $< tests | tee $@

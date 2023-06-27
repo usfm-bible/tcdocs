@@ -6,6 +6,7 @@ import argparse, os
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input XML file")
 parser.add_argument("-g","--grammar",help="Input rnc or rng grammar")
+parser.add_argument("-q","--quiet",action="store_true",help="Only output final results")
 args = parser.parse_args()
 
 with open(args.grammar, encoding="utf-8") as inf:
@@ -27,7 +28,8 @@ failed = 0
 for f in jobfiles:
     doc = etree.parse(f)
     if not usxrng.validate(doc):
-        print(f"{f} failed")
+        if not args.quiet:
+            print(f"{f} failed")
         failed += 1
 total = len(jobfiles)
-print(f"{total-failed} passed / {total} => {failed} failed")
+print(f"lxmltest on {args.infile}: {total-failed} passed / {total} => {failed} failed")
