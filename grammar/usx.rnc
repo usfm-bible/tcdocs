@@ -391,7 +391,7 @@ Section =
         [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n'"]]
         attribute style { Section.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Break | [usfm:text[]] text)*
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | [usfm:ignore="true"] VerseEnd | Break | [usfm:text[]] text)*
     }
 
 Section.para.style.enum = (
@@ -879,7 +879,7 @@ Sidebar =
     }
 
 category =
-    [usfm:tag["cat"] usfm:text[] usfm:endtag["cat"]]
+    [usfm:tag[dump="true" "cat"] usfm:text[] usfm:endtag[dump="true" "cat"]]
     attribute category { text }
 
 Reference =

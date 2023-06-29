@@ -14,8 +14,9 @@ from usfmtc.usxgrammar import usxenums
 from usfmtc.xmlutils import parsexml, writexml, prettyxml
 from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup, partypes
 import xml.etree.ElementTree as et
+from lxml import etree
 
-def proconedir(d, sfmp, args):
+def proconedir(d, sfmp, relax, args):
     meta = {}
     doc = et.parse(os.path.join(d, "metadata.xml"))
     for e in doc.getroot():
@@ -25,6 +26,7 @@ def proconedir(d, sfmp, args):
         return
     # print(f"{d}: ", end='', flush=True)
     imsg = ""
+    xmsg = ""
     try:
         result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
     except NoParseError as e:
@@ -43,14 +45,18 @@ def proconedir(d, sfmp, args):
         if args.print:
             prettyxml(xml)
             writexml(sys.stdout, xml)
+        etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
+        if not relax.validate(etreexml):
+            xmsg = str(relax.error_log.last_error)
     else:
         passed = False
     expected = meta.get('validated', 'pass') == 'pass'
     res = passed == expected
-    print("{}: {} ({} {}){}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg))
-    return res
+    if not args.quiet:
+        print("{}: {} ({} {}){} | {}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg, xmsg))
+    return (res, d, imsg, xmsg)
 
-def chunkjobs(jobs, nchunks):
+def chunkjobs(jobs, nchunks, args):
     chunksize = len(jobs) // nchunks
     chunksize += 1 if len(jobs) % nchunks else 0
     tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
@@ -63,7 +69,8 @@ def chunkjobs(jobs, nchunks):
         else:
             lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
         dojobs.extend(lj + ([None] * (chunksize - len(lj))))
-    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
+    if not args.quiet:
+        sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
     return dojobs
 
 parser = argparse.ArgumentParser()
@@ -71,6 +78,8 @@ parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
+parser.add_argument("-q","--quiet",action="store_true",help="Don't output error reports, just stats")
+parser.add_argument("-o","--output",help="Output error reports to this file")
 parser.add_argument("-m","--marker",action='append',default=[],help='type=mkr,mka,mkb')
 parser.add_argument("-j","--jobs",type=int,default=-1,help="Parallel jobs")
 parser.add_argument("-x","--exclude",action="append",default=[],help="Exclude test if tag present")
@@ -121,9 +130,10 @@ if len(args.marker):
         ty = t.strip()
         e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
         if e is None:
+            print(f"Can't find an enum for {ty}. Tried {usxenums[ty]}")
             continue
         for m in mks:
-            v = et.Element('value')
+            v = et.Element(f'{relaxns}value')
             v.text = m.strip()
             e.insert(0, v)
             if ty == 'para':
@@ -132,21 +142,41 @@ if len(args.marker):
 backendsfm = UsfmParserBackend()
 sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
+newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
+usxrng = etree.RelaxNG(etree=newdoc)
 
-if args.jobs > -1 and len(jobs) > 1:
+if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
     if args.jobs == 0:
         args.jobs = os.cpu_count()
     def doprocone(arg):
         if arg is None:
             return
-        return proconedir(arg, sfmproc.curr, args)
+        return proconedir(arg, sfmproc.curr, usxrng, args)
     pool = Pool()
     nchunks = args.jobs * 4
     chunksize = len(jobs) // nchunks
-    dojobs = chunkjobs(jobs, nchunks)
-    results = pool.map_async(doprocone, dojobs, chunksize=chunksize)
-    results.get()
+    dojobs = chunkjobs(jobs, nchunks, args)
+    poolresults = pool.map_async(doprocone, dojobs, chunksize=chunksize)
+    results = list(poolresults.get())
 else:
+    results = []
     for j in jobs:
-        proconedir(j[0], sfmproc.curr, args)
+        results.append(proconedir(j[0], sfmproc.curr, usxrng, args))
+
+ifailed = 0
+xfailed = 0
+if args.output:
+    outf = open(args.output, "w", encoding="utf-8")
+total = 0
+for r in results:
+    if r is None:
+        continue
+    if not r[0]:
+        ifailed += 1
+    if len(r[3]):
+        xfailed += 1
+    total += 1
+    if args.output:
+        outf.write(f"{r[1]}: {'Passed' if r[0] else 'Failed'}. {r[2]} {'|xml>'+r[3] if r[3] else ''}\n")
+print(f"Total: {total}, usfm_failed: {ifailed}, xml_failed {xfailed}")
 

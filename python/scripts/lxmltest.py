@@ -16,6 +16,8 @@ parser.add_argument("infile",help="Input XML file")
 parser.add_argument("-g","--grammar",help="Input rnc or rng grammar")
 parser.add_argument("-m","--marker",action='append',default=[],help='type=mkr,mka,mkb')
 parser.add_argument("-q","--quiet",action="store_true",help="Only output final results")
+parser.add_argument("-o","--output",help="Output error reports to this file")
+parser.add_argument("-A","--append",action="store_true",help="Append error reports")
 args = parser.parse_args()
 
 if args.grammar.endswith(".rnc"):
@@ -34,7 +36,7 @@ else:
                 print(f"Can't find an enum for {ty}. Tried {usxenums[ty]}")
                 continue
             for m in mks:
-                v = etree.Element('value')
+                v = etree.Element(f'{relaxns}value')
                 v.text = m.strip()
                 e.insert(0, v)
     newdoc = etree.fromstring(etree.tostring(usxdoc))
@@ -49,12 +51,17 @@ else:
     jobfiles = [args.infile]
 
 failed = 0
+if args.output:
+    outfile = open(args.output, "a" if args.append else "w", encoding="utf-8")
+    myprint = lambda s: outfile.write(s+"\n")
+else:
+    myprint = print
 for f in jobfiles:
     doc = etree.parse(f)
     if not usxrng.validate(doc):
         if not args.quiet:
             log = usxrng.error_log
-            print(f"{f} failed: {log.last_error}")
+            myprint(f"XML: {f} failed: {log.last_error}")
         failed += 1
 total = len(jobfiles)
 print(f"lxmltest on {args.infile}: {total-failed} passed / {total} => {failed} failed")

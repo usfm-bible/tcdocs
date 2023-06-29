@@ -1,7 +1,7 @@
 
 PYTHON ?= python
 CHUNKSIZE ?= 0
-JOBS ?= -1
+JOBS ?= 0
 
 unknown:
 	@- echo "There are various useful targets:"
@@ -21,11 +21,11 @@ short: TESTEXCLUDES := -x stress
 short: tests
 
 tests: testresults.log
-	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `cat testresults.log | wc -l`"
-	@ $(PYTHON) python/scripts/lxmltest.py -q -g grammar/usx.rng -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" tests
+#	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `head -n -1 testresults.log | grep -v '^XML:' | wc -l`"
 
 testresults.log : grammar/usx.rng
-	$(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} -g $< tests | tee $@
+	@- $(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} -q -o $@ -g $< tests
+	@- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -o $@ -A tests
 
 grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@
