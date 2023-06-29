@@ -18,17 +18,21 @@ from lxml import etree
 
 def proconedir(d, sfmp, relax, args):
     meta = {}
-    doc = et.parse(os.path.join(d, "metadata.xml"))
-    for e in doc.getroot():
-        meta[e.tag] = e.text
-    tags = set((meta.get('tags', "") or "").split())
-    if len(args.exclude) and tags & args.exclude and (not len(tags) or not tags & args.include):
-        return
+    if os.path.isdir(d):
+        doc = et.parse(os.path.join(d, "metadata.xml"))
+        for e in doc.getroot():
+            meta[e.tag] = e.text
+        tags = set((meta.get('tags', "") or "").split())
+        if len(args.exclude) and tags & args.exclude and (not len(tags) or not tags & args.include):
+            return
     # print(f"{d}: ", end='', flush=True)
     imsg = ""
     xmsg = ""
     try:
-        result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+        if os.path.isdir(d):
+            result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+        else:
+            result = parseusfm(d, sfmp)
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
@@ -39,8 +43,12 @@ def proconedir(d, sfmp, relax, args):
         addesids(xml)
         cell_aligns(xml)
         cleanup(xml)
+        testxml = None
+        if not os.path.isdir(d) and args.base and os.path.exists(args.base):
+            testxml = parsexml(args.base)
         if os.path.exists(os.path.join(d, "origin.xml")):
             testxml = parsexml(os.path.join(d, "origin.xml"))
+        if testxml:
             passed = etCmp(xml, testxml.getroot(), verbose=args.print)
         if args.print:
             prettyxml(xml)
@@ -76,6 +84,7 @@ def chunkjobs(jobs, nchunks, args):
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
+parser.add_argument("-b","--base",help="Base USX file to compare against for direct file tests")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
 parser.add_argument("-q","--quiet",action="store_true",help="Don't output error reports, just stats")
@@ -110,12 +119,16 @@ if args.logging:
     log = logging.getLogger('usfmxtest')
 
 jobs = []
-for dp, dns, fns in os.walk(args.directory):
-    if 'metadata.xml' in fns:
-        st = os.stat(os.path.join(dp, "origin.usfm"))
-        if st.st_size > args.size * 1024:
-            continue
-        jobs.append((dp, st.st_size))
+if os.path.isdir(args.directory):
+    for dp, dns, fns in os.walk(args.directory):
+        if 'metadata.xml' in fns:
+            st = os.stat(os.path.join(dp, "origin.usfm"))
+            if st.st_size > args.size * 1024:
+                continue
+            jobs.append((dp, st.st_size))
+else:
+    st = os.stat(args.directory)
+    jobs = [(args.directory, st.st_size)]
 
 if len(jobs) == 1:
     args.exclude = []
