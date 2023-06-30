@@ -1,7 +1,7 @@
 #!/usr/bin/env -S python3 -u
 
 import argparse, zipfile, os, sys, itertools, re
-from multiprocessing import Pool
+from multiprocessing import Pool, get_context, current_process
 from math import sqrt
 import logging
 import logging.config
@@ -78,12 +78,12 @@ def proconezip(fpath, sfmp, log, relax, args):
                 cleanup(xml)
                 etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
                 if not relax.validate(etreexml):
-                    xmsg = str(relax.error_log.last_error)
+                    #xmsg = str(relax.error_log.last_error)
                     if failed:
-                        results[-1] += " |xml> " + xmsg
+                        results[-1] += f" |xml>"
                     else:
-                        results.append(f"{fpath}/{f} |xml> {xmsg}")
-                    lognprint(f"{fpath}/{f}: XML| {xmsg}", args.quiet, logging.INFO)
+                        results.append(f"{fpath}/{f} |xml>")
+                    lognprint(f"{fpath}/{f}: XML|", args.quiet, logging.INFO)
             anyfailed |= failed
             if failed and args.oneerror:
                 break
@@ -93,9 +93,9 @@ def proconezip(fpath, sfmp, log, relax, args):
         for ausx in usxjobs:
             with zipf.open(ausx) as xf:
                 doc = etree.parse(xf)
-                if not relax.valide(doc):
-                    xmsg = str(relax.error_log.last_error)
-                    err = f"{fpath}/{ausx} XML: {xmsg}"
+                if not relax.validate(doc):
+                    #xmsg = str(relax.error_log.last_error)
+                    err = f"{fpath}/{ausx} XML"
                     results.append(err)
                     lognprint(err, args.quiet, logging.INFO)
                     anyfailed = True
@@ -105,21 +105,6 @@ def proconezip(fpath, sfmp, log, relax, args):
     lognprint("{}: {}".format(fpath, "Passed" if not anyfailed else "Failed"), args.quiet, logging.INFO)
     return (fpath, results)
 
-def chunkjobs(jobs, nchunks):
-    chunksize = len(jobs) // nchunks
-    chunksize += 1 if len(jobs) % nchunks else 0
-    tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
-    dojobs = []
-    for i in range(nchunks):
-        if args.debug & 2 == 0:
-            lj = [x for x in itertools.chain(*itertools.zip_longest(
-                    tjobs[i::2*nchunks], tjobs[2*nchunks-i-1::2*nchunks])) if x is not None]
-        #dojobs.extend(x for x in itertools.chain(*zip(tjobs[i::2*nchunks]+[None], tjobs[2*nchunks-i-1::2*nchunks]+[None])))
-        else:
-            lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
-        dojobs.extend(lj + ([None] * (chunksize - len(lj))))
-    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
-    return dojobs
 
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
@@ -141,6 +126,22 @@ parser.add_argument("--logfile",default="usfmtestdbl.log",help="Out log to file"
 parser.add_argument("--logparse",action="store_true",help="Log the parsing as well")
 parser.add_argument("-z","--debug",type=int,default=0,help="1=print tree, 2-alt multiproc")
 args = parser.parse_args()
+
+def chunkjobs(jobs, nchunks):
+    chunksize = len(jobs) // nchunks
+    chunksize += 1 if len(jobs) % nchunks else 0
+    tjobs = [j[0] for j in sorted(jobs, key=lambda x:(-x[1], x[0]))]
+    dojobs = []
+    for i in range(nchunks):
+        if args.debug & 2 == 0:
+            lj = [x for x in itertools.chain(*itertools.zip_longest(
+                    tjobs[i::2*nchunks], tjobs[2*nchunks-i-1::2*nchunks])) if x is not None]
+        #dojobs.extend(x for x in itertools.chain(*zip(tjobs[i::2*nchunks]+[None], tjobs[2*nchunks-i-1::2*nchunks]+[None])))
+        else:
+            lj = tjobs[i::2*nchunks] + tjobs[2*nchunks-i-1::2*nchunks]
+        dojobs.extend(lj + ([None] * (chunksize - len(lj))))
+    sys.stderr.write(f"{len(dojobs)} jobs from {len(jobs)}, {chunksize=}, {nchunks=}\n".format(len(dojobs)))
+    return dojobs
 
 if args.logging:
     try:
@@ -192,8 +193,7 @@ if len(args.marker):
 backendsfm = UsfmParserBackend()
 sfmproc = UsfmGrammarParser(rdoc, backendsfm)
 sfmproc.parseRef(args.start)
-newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
-usxrng = etree.RelaxNG(etree=newdoc)
+newdoctxt = et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True)
 
 jobs = []
 skipcount = 0
@@ -219,11 +219,19 @@ if not args.quiet:
 if args.jobs != 1 and len(jobs) > 1:
     if args.jobs == 0:
         args.jobs = os.cpu_count()
+
+    def initproc(newdoctxt):
+        proc = current_process()
+        newdoc = etree.fromstring(newdoctxt)
+        proc.usxrng = etree.RelaxNG(etree=newdoc)
     def doprocone(arg):
         if arg is None:
             return
-        return proconezip(arg, sfmproc.curr, log, usxrng, args)
-    pool = Pool()
+        proc = current_process()
+        res = proconezip(arg, sfmproc.curr, log, proc.usxrng, args)
+        return (str(res[0]), [str(x) for x in res[1]])
+    #pool = get_context('spawn').Pool()
+    pool = Pool(initializer=initproc, initargs=(newdoctxt,))
     if args.chunks:
         chunksize = args.chunks
         nchunks = len(jobs) // chunksize
@@ -234,6 +242,8 @@ if args.jobs != 1 and len(jobs) > 1:
     mapresults = pool.map_async(doprocone, dojobs, chunksize=chunksize)
     results = mapresults.get()
 else:
+    newdoc = etree.fromstring(newdoctxt)
+    usxrng = etree.RelaxNG(etree=newdoc)
     results = []
     for j in jobs:
         results.append(proconezip(j[0], sfmproc.curr, log, usxrng, args))
