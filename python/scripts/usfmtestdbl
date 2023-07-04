@@ -83,7 +83,7 @@ def proconezip(fpath, sfmp, log, relax, args):
                         results[-1] += f" |xml>"
                     else:
                         results.append(f"{fpath}/{f} |xml>")
-                    lognprint(f"{fpath}/{f}: XML|", args.quiet, logging.INFO)
+                    lognprint(f"{fpath}/{f}: XML| generated xml invalid", args.quiet, logging.INFO)
             anyfailed |= failed
             if failed and args.oneerror:
                 break
@@ -95,7 +95,7 @@ def proconezip(fpath, sfmp, log, relax, args):
                 doc = etree.parse(xf)
                 if not relax.validate(doc):
                     #xmsg = str(relax.error_log.last_error)
-                    err = f"{fpath}/{ausx} XML"
+                    err = f"{fpath}/{ausx} XML, USX xml invalid"
                     results.append(err)
                     lognprint(err, args.quiet, logging.INFO)
                     anyfailed = True

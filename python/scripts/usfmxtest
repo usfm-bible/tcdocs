@@ -37,6 +37,7 @@ def proconedir(d, sfmp, relax, args):
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
     if result is not None:
+        passed = True
         if (args.debug & 1) != 0:
             print(result)
         xml = result.asEt()

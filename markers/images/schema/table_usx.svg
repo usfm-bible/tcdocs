@@ -46,9 +46,9 @@
 <path d="M 50.0 121 h 0.0"></path><path d="M 762.0 121 h 0.0"></path><g class="terminal ">
 <path d="M 50.0 121 h 0.0"></path><path d="M 129.5 121 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="50.0" y="110"></rect><text x="89.75" y="125">&#60;table></text></g><path d="M 129.5 121 h 10"></path><path d="M 139.5 121 h 10"></path><g>
 <path d="M 149.5 121 h 0.0"></path><path d="M 762.0 121 h 0.0"></path><path d="M 149.5 121 a 10 10 0 0 0 10 -10 v -60 a 10 10 0 0 1 10 -10"></path><g>
-<path d="M 169.5 41 h 0.0"></path><path d="M 586.5 41 h 0.0"></path><g class="terminal ">
+<path d="M 169.5 41 h 0.0"></path><path d="M 629.0 41 h 0.0"></path><g class="terminal ">
 <path d="M 169.5 41 h 0.0"></path><path d="M 223.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="169.5" y="30"></rect><text x="196.5" y="45">@vid</text></g><path d="M 223.5 41 h 10"></path><path d="M 233.5 41 h 10"></path><g class="terminal ">
-<path d="M 243.5 41 h 0.0"></path><path d="M 586.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="343.0" x="243.5" y="30"></rect><text x="415.0" y="45">/&#91;A-Z1-4&#93;{3} ?&#91;a-z0-9\-:\p{L}\p{Mn}&#93;&#42;/</text></g></g><path d="M 149.5 121 h 20"></path><g>
+<path d="M 243.5 41 h 0.0"></path><path d="M 629.0 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="385.5" x="243.5" y="30"></rect><text x="436.25" y="45">/&#91;A-Z1-4&#93;{3} ?&#91;a-z0-9\-:&#93;&#42;(‏?&#91;\-,&#93;&#91;0-9&#93;+)&#42;/</text></g></g><path d="M 149.5 121 h 20"></path><g>
 <path d="M 169.5 121 h 0.0"></path><path d="M 742.0 121 h 0.0"></path><path d="M 169.5 121 h 10"></path><g>
 <path d="M 179.5 121 h 0.0"></path><path d="M 732.0 121 h 0.0"></path><g class="terminal ">
 <path d="M 179.5 121 h 0.0"></path><path d="M 242.0 121 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="179.5" y="110"></rect><text x="210.75" y="125">&#60;row></text></g><path d="M 242.0 121 h 10"></path><path d="M 252.0 121 h 10"></path><g>

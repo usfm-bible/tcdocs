@@ -36,3 +36,6 @@ dbl: grammar/usx.rng
 single: grammar/usx.rng $(TEST)/origin.usfm
 	$(PYTHON) python/scripts/usfmxtest -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" -l debug -P -g $< $(TEST)
 	$(PYTHON) python/scripts/lxmltest.py -g $< -m "ms=zaln-s,zaln-e,k-s,zms" -m "section=s5" -m "bkhdr=sts" $(TEST)/origin.xml
+
+singledbl: grammar/usx.rng
+	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}

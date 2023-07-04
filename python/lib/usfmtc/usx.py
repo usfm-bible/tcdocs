@@ -15,7 +15,7 @@ def addvids(lastp, endp, base, v, endv, atend=False):
     while lastp is not None:
         if lastp.tag == "chapter":
             break
-        if lastp.tag not in ('para', 'table', 'row', 'cell'):
+        if lastp.tag not in ('para', 'table', 'row'):
             if id(lastp) == id(endp):
                 break
             lastp = lastp.getnext()

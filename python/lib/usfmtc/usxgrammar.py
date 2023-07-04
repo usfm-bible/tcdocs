@@ -14,6 +14,7 @@ alljobs = {
     "CharWithAttrib":       ("charattrib", ("CharWithAttrib.enum")),
     "CrossReference":       ("crossref",),
     "CrossReferenceChar":   ("xchar",("CrossReferenceChar.char.style.enum", "+char.closed")),
+    "Figure":               ("fig",("FigureTwo", "FigureThree")),
     "Footnote":             ("f", tuple(), ("category", )),
     "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
     "List":                 ("list", ("List.para.style.enum",)),

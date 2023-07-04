@@ -71,8 +71,16 @@ class UsfmGrammarParser:
             return None
         return re.sub(r"\$\{(.*?)\}", lambda m:self.vars.get(m.group(1), "'"+m.group(1)+"'")[1:-1], s)
 
+    def getorder(self, e):
+        if f'{usfmns}order' not in e.attrib and \
+                e.tag in (f'{relaxns}optional', '{relaxns}oneOrMore', '{relaxns}zeroOrMore', '{relaxns}group') and \
+                len(e) == 1 and e[0].tag == f"{relaxns}group" and f'{usfmns}order' in e[0].attrib:
+            return int(e[0].get(f'{usfmns}order', 0))
+        else:
+            return int(e.get(f'{usfmns}order', 0))
+
     def proc_children(self, e, res, skip=True, start=0, parent=None, index=0, **kw):
-        for i, c in enumerate(sorted(e, key=lambda x:int(x.get(f"{usfmns}order", 0)))):
+        for i, c in enumerate(sorted(e, key=lambda x:self.getorder(x))):
             if i < start:
                 continue
             t = re.sub(r"^\{.*\}", "", c.tag)
@@ -242,7 +250,15 @@ class UsfmGrammarParser:
         return self.back.match('"'+e.text+'"', res)
 
     def ref(self, e, res, **kw):
-        n = e.get('name', None)
+        if e is None and 'name' in kw:
+            n = kw['name']
+            del kw['name']
+        else:
+            alt = e.get(f'{usfmns}alt', None)
+            if alt is not None:
+                res = self.back.append_or(res)
+                self.ref(None, res, name=alt, **kw)
+            n = e.get('name', None)
         if n is None:
             return res
         elif n in self.flattens or self.flattenall:

@@ -135,7 +135,7 @@
         <ref name="BookIdentification.book.code.enum"/>
       </attribute>
       <attribute usfm:order="-2">
-        <usfm:tag before="/${ws}*\\/" beforeout="&#x27;\\&#x27;" usfm:seq="true"/>
+        <usfm:tag before="/﻿?${ws}*\\/" beforeout="&#x27;\\&#x27;" usfm:seq="true"/>
         <name ns="">style</name>
         <value>id</value>
       </attribute>
@@ -630,7 +630,7 @@
         <attribute>
           <name ns="">vid</name>
           <data type="string">
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*([\-,][0-9]+)*</param>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
           </data>
         </attribute>
       </optional>
@@ -692,7 +692,7 @@
         <attribute>
           <name ns="">vid</name>
           <data type="string">
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*([\-,][0-9]+)*</param>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
           </data>
         </attribute>
       </optional>
@@ -772,7 +772,7 @@
         <attribute>
           <name ns="">vid</name>
           <data type="string">
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*([\-,][0-9]+)*</param>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
           </data>
         </attribute>
       </optional>
@@ -816,7 +816,7 @@
         <attribute>
           <name ns="">vid</name>
           <data type="string">
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*([\-,][0-9]+)*</param>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
           </data>
         </attribute>
       </optional>
@@ -1120,7 +1120,7 @@
         <ref name="char.closed"/>
       </optional>
       <optional>
-        <group>
+        <group usfm:order="2">
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
@@ -1152,6 +1152,9 @@
     </element>
   </define>
   <define name="Figure">
+    <ref name="FigureThree" usfm:alt="FigureTwo"/>
+  </define>
+  <define name="FigureThree">
     <element>
       <name ns="">figure</name>
       <attribute usfm:order="-2">
@@ -1162,6 +1165,13 @@
       <optional>
         <ref name="char.closed"/>
       </optional>
+      <group usfm:order="-1">
+        <optional>
+          <text>
+            <usfm:match match="TEXTATTRIB"/>
+          </text>
+        </optional>
+      </group>
       <optional>
         <group>
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
@@ -1181,14 +1191,56 @@
           </oneOrMore>
         </group>
       </optional>
-      <group usfm:order="-1">
-        <optional>
-          <text>
-            <usfm:match match="TEXTATTRIB"/>
-          </text>
-        </optional>
-      </group>
       <usfm:endtag usfm:order="4"/>
+    </element>
+  </define>
+  <define name="FigureTwo">
+    <element>
+      <name ns="">figure</name>
+      <attribute>
+        <usfm:tag id="a"/>
+        <name ns="">style</name>
+        <value>fig</value>
+      </attribute>
+      <optional>
+        <ref name="char.closed"/>
+      </optional>
+      <attribute>
+        <usfm:match match="TEXTATTRIB"/>
+        <name ns="">alt</name>
+        <data type="string"/>
+      </attribute>
+      <attribute>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <name ns="">src</name>
+        <data type="string"/>
+      </attribute>
+      <attribute>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <name ns="">size</name>
+        <data type="string"/>
+      </attribute>
+      <attribute>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <name ns="">loc</name>
+        <data type="string"/>
+      </attribute>
+      <attribute>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <name ns="">copy</name>
+        <data type="string"/>
+      </attribute>
+      <attribute>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <name ns="">alt</name>
+        <data type="string"/>
+      </attribute>
+      <attribute>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <name ns="">ref</name>
+        <data type="string"/>
+      </attribute>
+      <usfm:endtag/>
     </element>
   </define>
   <define name="CharEmbedWithAttrib">
@@ -1203,7 +1255,7 @@
         <ref name="char.closed"/>
       </optional>
       <optional>
-        <group>
+        <group usfm:order="2">
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
@@ -1369,7 +1421,7 @@
         <value>c</value>
       </attribute>
       <attribute>
-        <usfm:match after="/${WS}+|(?=\\)/" afterout="&#x27; &#x27;" usfm:seq="true"/>
+        <usfm:match after="/(${WS}+|(?=\\))/" afterout="&#x27; &#x27;" usfm:seq="true"/>
         <name ns="">number</name>
         <data type="integer"/>
       </attribute>
@@ -1443,7 +1495,7 @@
         <value>v</value>
       </attribute>
       <attribute>
-        <usfm:match usfm:seq="true" after="/${WS}|(?=\\)/" afterout="&#x27; &#x27;"/>
+        <usfm:match usfm:seq="true" after="/(${WS}|(?=\\))/" afterout="&#x27; &#x27;"/>
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
@@ -1476,7 +1528,7 @@
       <attribute usfm:ignore="true">
         <name ns="">sid</name>
         <data type="string">
-          <param name="pattern">[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*</param>
+          <param name="pattern">[A-Z1-4]{3} ?[‏a-z0-9,\-:\p{L}\p{Mn}]*</param>
         </data>
       </attribute>
       <empty/>
@@ -1488,7 +1540,7 @@
       <attribute>
         <name ns="">eid</name>
         <data type="string">
-          <param name="pattern">[A-Z1-4]{3} ?[a-z0-9,\-:\p{L}\p{Mn}]*</param>
+          <param name="pattern">[A-Z1-4]{3} ?[‏a-z0-9,\-:\p{L}\p{Mn}]*</param>
         </data>
       </attribute>
       <empty/>
@@ -1501,8 +1553,8 @@
         <usfm:tag id="a"/>
         <name ns="">style</name>
         <choice>
-          <value>f</value>
           <value>fe</value>
+          <value>f</value>
           <value>ef</value>
         </choice>
       </attribute>
@@ -1549,7 +1601,7 @@
           </text>
         </choice>
       </zeroOrMore>
-      <usfm:endtag usfm:many="?"/>
+      <usfm:endtag usfm:many="?" after="/\*${ws}*/"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">
@@ -1617,7 +1669,7 @@
           </text>
         </choice>
       </oneOrMore>
-      <usfm:endtag usfm:many="?"/>
+      <usfm:endtag usfm:many="?" after="/\*${ws}*/"/>
     </element>
   </define>
   <define name="CrossReferenceChar.char.style.enum">
