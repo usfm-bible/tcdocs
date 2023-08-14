@@ -51,12 +51,19 @@ def proconedir(d, sfmp, relax, args):
             testxml = parsexml(os.path.join(d, "origin.xml"))
         if testxml:
             passed = etCmp(xml, testxml.getroot(), verbose=args.print)
+            if not passed:
+                xmsg = "USX generated not same as origin.xml!"
         if args.print:
             prettyxml(xml)
             writexml(sys.stdout, xml)
-        etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
-        if not relax.validate(etreexml):
-            xmsg = str(relax.error_log.last_error)
+        try:
+            etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
+            if not relax.validate(etreexml):
+                xmsg = str(relax.error_log.last_error)
+                passed = False
+        except Exception as e:
+            xmsg = str(e)
+            passed=False
     else:
         passed = False
     expected = meta.get('validated', 'pass') == 'pass'
@@ -185,7 +192,7 @@ total = 0
 for r in results:
     if r is None:
         continue
-    if not r[0]:
+    if len(r[2]):
         ifailed += 1
     if len(r[3]):
         xfailed += 1
