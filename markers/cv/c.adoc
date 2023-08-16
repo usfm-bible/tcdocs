@@ -37,7 +37,8 @@ USFM::
 image::schema/chapter_rail.svg[]
 USX::
 +
-image:schema/chapter_usx.svg[]
+image::schema/chapter_usx.svg[]
+image::schema/chapterend_usx.svg[]
 ======
 
 == Examples
