@@ -42,6 +42,14 @@
 *** xref:format/sc.adoc[sc - Smallcap text]
 *** xref:format/sup.adoc[sup - Smallcap text]
 // end::nav-format[]
+// ** Text Formatting
+// tag::nav-topcat[]
+** xref:breaks/index.adoc[Breaks]
+// end::nav-topcat[]
+// tag::nav-breaks[]
+*** xref:breaks/optbreak.adoc[// - Optional line break]
+*** xref:breaks/pb.adoc[pb - Page break]
+// end::nav-breaks[]
 // ** Introductions
 // tag::nav-topcat[]
 ** xref:introductions/index.adoc[Introductions]

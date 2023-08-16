@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Verse number.
 Syntax::
-* *USFM:* ``++\v ++``#__number__#
+* *USFM:* ``++\v ++``#__number__#`` ++\va ++``#__altnumber__#``++\va*++`` _(see: xref:cv:va.adoc[])_ `` ++\vp ++``#__altnumber__#``++\vp*++`` _(see: xref:cv:vp.adoc[])_
 * *USX:* ``++<verse style="v" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
 #number# *::: Verse number
 #altnumber#::: Verse number for an alternate versification scheme.

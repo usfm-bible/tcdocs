@@ -1,0 +1,8 @@
+= pb
+
+[WARNING]
+====
+`pb` is a xref:para:index.adoc[paragraph] marker, although it is presented here together with character types for breaks.
+====
+
+include::markers:para/pb.adoc[tag=public]

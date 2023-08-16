@@ -1,0 +1,4 @@
+= va
+:env-antora:
+
+include::markers:cv/va.adoc[tag=public]

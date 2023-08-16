@@ -52,6 +52,7 @@
 *** xref:titles-sections/d.adoc[d - Descriptive title]
 *** xref:titles-sections/sp.adoc[sp - Descriptive title]
 *** xref:titles-sections/sd.adoc[sd# - Semantic division]
+*** xref:titles-sections/cl.adoc[cl - Chapter label]
 // end::nav-titles-sections[]
 // ** Paragraphs
 // tag::nav-topcat[]

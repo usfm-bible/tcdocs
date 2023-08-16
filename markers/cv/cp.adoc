@@ -1,6 +1,6 @@
-= c
-:description: Chapter number
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/c.adoc
+= cp
+:description: Published chapter number
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/cp.adoc
 :noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
@@ -12,10 +12,10 @@ endif::[]
 
 == Summary
 
-Description:: Chapter number.
+Description:: Published chapter number. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential xref:cv:c.adoc[chapter number] used within the translation editing environment.
 Syntax::
-* *USFM:* ``++\c ++``#__number__#`` ++\ca ++``#__altnumber__#``++\ca*++`` _(see: xref:cv:ca.adoc[])_
-** ``++\cp ++``#__pubnumber__# _(see: xref:cv:cp.adoc[])_
+* *USFM:* ``++\c ++``#__number__# _(see: xref:cv:c.adoc[])_ ``++ \ca ++``#__altnumber__#``++\ca*++`` _(see: xref:cv:ca.adoc[])_
+** ``++\cp ++``#__pubnumber__#
 * *USX:* ``++<chapter style="c" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
 #number# *::: Chapter number
 #altnumber#::: Chapter number for an alternate versification scheme.
@@ -46,45 +46,41 @@ image:schema/chapter_usx.svg[]
 ======
 USFM::
 +
-.Matthew 1 (GNT)
-[source#src-usfm-cv-c_1,usfm,highlight=3]
+.Esther-Greek 1 ('A') (GNT)
+[source#src-usfm-cv-cp_1,usfm,highlight=2]
 ----
-\io1 The last week in and near Jerusalem (21.1–27.66)
-\io1 The resurrection and appearances of the Lord (28.1-20)
 \c 1
-\s1 The Ancestors of Jesus Christ
-\r (Luke 3.23-38)
+\cp A
+\s1 Mordecai's Strange Dream
 \p
-\v 1 This is the list of the ancestors of Jesus Christ, a descendant of David, 
-who was a descendant of Abraham.
+\v 1-3 \va 2-4\va* Mordecai, a Jew who belonged to the tribe of Benjamin, was 
+taken into exile, along with King Jehoiachin of Judah, when King Nebuchadnezzar 
+of Babylonia captured Jerusalem.
+...
 ----
 USX::
 +
-.Matthew 1 (GNT)
-[source#src-usx-cv-c_1,xml,highlight=3;11]
+.Esther-Greek 1 ('A') (GNT)
+[source#src-usx-cv-cp_1,xml,highlight=3;11]
 ----
-<para style="io1">The last week in and near Jerusalem (21.1–27.66)</para>
-<para style="io1">The resurrection and appearances of the Lord (28.1-20)</para>
-<chapter number="1" style="c" sid="MAT 1"/>
-<para style="s1">The Ancestors of Jesus Christ</para>
-<para style="r">(Luke 3.23-38)</para>
+<chapter number="54" style="c" pubnumber="A" sid="XXA 54"/>
+<para style="s1">Mordecai's Strange Dream</para>
 <para style="p">
-  <verse number="1" style="v" sid="MAT 1:1"/>This is the list of the ancestors of
-  Jesus Christ, a descendant of David, who was a descendant of Abraham.
-  <verse eid="MAT 1:1"/></para>
-  ...
-<chapter eid="MAT 1"/>
+  <verse number="1-3" style="v" altnumber="2-4" sid="XXA 54:1-3"/> Mordecai, a Jew
+  who belonged to the tribe of Benjamin, was taken into exile, along with King
+  Jehoiachin of Judah, when King Nebuchadnezzar of Babylonia captured Jerusalem.
+  ...<verse eid="XXA 54:1-3"/></para>
 ----
 ======
 
-image::cv/c_1.jpg[Matthew 1 (GNT),300]
+image::cv/cp_1.jpg[.Esther-Greek 1 ('A') (GNT),300]
 
 == Properties
 
 StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[Scripture]`
-TextType:: ChapterNumber
-TextProperties:: chapter
+OccursUnder:: `[ChapterContent]`
+TextType:: Other
+TextProperties:: paragraph
 
 == Publication Issues
 

@@ -1,0 +1,57 @@
+= //
+:description: Discretionary line break
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/optbreak.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Discretionary (optional) line break.
+Syntax::
+* *USFM:* ``++//++``
+* *USX:* ``++<optbreak/>++``
+Added:: 1.0
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[BookTitles], [BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
+TextProperties:: publishable
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Matthew 9.1 (GNT)
+[source#src-usfm-char-optbreak_1,usfm,highlight=2]
+----
+\c 9
+\s1 Jesus Heals a Man // Who Could Not Walk
+\r (Mark 2.1-12; Luke 5.17-26)
+----
+USX::
++
+.Matthew 9.1 (GNT)
+[source#src-usx-char-optbreak_1,xml,highlight=2]
+----
+<chapter number="9" style="c" sid="MAT 9"/>
+<para style="s1">Jesus Heals a Man <optbreak/> Who Could Not Walk</para>
+<para style="r">(Mark 2.1-12; Luke 5.17-26)</para>
+----
+======
+
+image::char/optbreak_1.jpg[Matthew 9.1 (GNT),300]
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

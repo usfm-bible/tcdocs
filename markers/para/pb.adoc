@@ -1,0 +1,34 @@
+= pb
+:description: Explicit page break
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/pb.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Explicit page break.
+Syntax::
+* *USFM:* ``++\pb++``
+* *USX:* ``++<para style="pb"/>++``
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Properties
+
+StyleType:: xref:para:index.adoc[Paragraph]
+OccursUnder:: `[ChapterContent]`
+TextType:: Other
+TextProperties:: paragraph
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

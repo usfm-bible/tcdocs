@@ -1,0 +1,3 @@
+= cp
+
+include::markers:cv/cp.adoc[tag=public]

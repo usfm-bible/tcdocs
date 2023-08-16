@@ -1,0 +1,98 @@
+= ca
+:description: Alternate chapter number
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/ca.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Alternate chapter number. This is required when 2 versification traditions are identified in the same text. Used for providing and marking the chapter number used in the alternate versification scheme.
+Syntax::
+* *USFM:* ``++\c ++``#__number__# _(see: xref:cv:c.adoc[])_ ``++ \ca ++``#__altnumber__#``++\ca*++``
+** ``++\cp ++``#__pubnumber__# (see: xref:cv:cp.adoc[])
+* *USX:* ``++<chapter style="c" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
+#number# *::: Chapter number
+#altnumber#::: Chapter number for an alternate versification scheme.
+#pubnumber#::: Published chapter character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential chapter number used within the translation editing environment.
+#sid# *::: Chapter start identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter start milestone._
+** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+#eid# *::: Chapter end identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter end milestone._
+** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Diagrams
+
+[tabs]
+======
+USFM::
++
+image::schema/chapter_rail.svg[]
+USX::
++
+image:schema/chapter_usx.svg[]
+======
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Psalm 54 (GNT - _markup adapted_)
+[source#src-usfm-cv-ca_1,usfm,highlight=1]
+----
+\c 54 \ca 53\ca*
+\s1 A Prayer for Protection from Enemies
+\d \va 1\va* A poem by David, \va 2\va* after the men from Ziph went to Saul and 
+told him that David was hiding in their territory.
+\q1
+\v 1 \va 3\va* Save me by your power, O God;
+\q2 set me free by your might!
+\q1
+\v 2 \va 4\va* Hear my prayer, O God;
+\q2 listen to my words!
+----
+USX::
++
+.Psalm 54 (GNT - _markup adapted_)
+[source#src-usx-cv-ca_1,xml,highlight=1]
+----
+<chapter number="54" style="c" altnumber="53" sid="PSA 54"/>
+<para style="s1">A Prayer for Protection from Enemies</para>
+<para style="d">
+  <char style="va">1</char> A poem by David, <char style="va">2</char> after the
+  men from Ziph went to Saul and told him that David was hiding in their
+  territory.</para>
+<para style="q1">
+  <verse number="1" style="v" altnumber="3" sid="PSA 54:1"/> Save me by your
+  power, O God;</para>
+<para style="q2" vid="PSA 54:1">set me free by your might!<verse eid="PSA 54:1"/>
+  </para>
+<para style="q1">
+  <verse number="2" style="v" altnumber="4" sid="PSA 54:2"/> Hear my prayer, O
+  God;</para>
+<para style="q2" vid="PSA 54:2">listen to my words!<verse eid="PSA 54:2"/></para>
+----
+======
+
+image::cv/ca_1.jpg[Psalm 54 (GNT - markup adapted),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[Chapter]`
+TextType:: Other
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

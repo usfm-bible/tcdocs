@@ -1,0 +1,4 @@
+= vp
+:env-antora:
+
+include::markers:cv/vp.adoc[tag=public]

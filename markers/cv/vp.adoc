@@ -1,0 +1,101 @@
+= vp
+:description: Published verse number
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/vp.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Published verse number. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential xref:cv:v.adoc[verse number] used within the translation editing environment.
+Syntax::
+* *USFM:* ``++\v ++``#__number__# _(see: xref:cv:v.adoc[])_ `` ++\va ++``#__altnumber__#``++\va*++`` _(see: xref:cv:va.adoc[])_ ``++\vp ++``#__pubnumber__#``++\vp*++``
+* *USX:* ``++<verse style="v" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
+#number# *::: Verse number
+#altnumber#::: Verse number for an alternate versification scheme.
+#pubnumber#::: Published verse character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential verse number used within the translation editing environment.
+#sid# *::: Verse start identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse start milestone._
+** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+#eid# *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
+** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Diagrams
+
+[tabs]
+======
+USFM::
++
+image::schema/verse_rail.svg[]
+USX::
++
+image:schema/verse_usx.svg[]
+======
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Esther-Greek 3.14,15 ('Addition B') (CEV - _adapted_)
+[source#src-usfm-cv-vp_1,usfm,highlight=5;9]
+----
+...
+\ms1 Addition B
+\cp B
+\s1 A Copy of the Letter 
+\p
+\v 14 \vp 1b\vp* This is a copy of the letter:
+\pmo From Artaxerxes, the Great King, to the governors and officials of my one 
+hundred twenty-seven provinces from India to Ethiopia.
+\pm
+\v 15 \vp 2b\vp* I rule many nations, and I am the most powerful king in the 
+world. But I have never used my power in a proud or arrogant way. Instead, I have 
+always been reasonable and kind to the people in my kingdom. I know they want peace, 
+and so I have decided to make every part of my kingdom peaceful and safe for travel.
+----
+USX::
++
+.Esther-Greek 3.14,15 ('Addition B') (CEV - _adapted_)
+[source#src-usx-cv-vp_1,xml,highlight=]
+----
+<para style="ms1">Addition B</para>
+<para style="cp">B</para>
+<para style="s1">A Copy of the Letter</para>
+<para style="p">
+  <verse number="14" style="v" pubnumber="1b" sid="XXA 1:14"/> This is a copy of
+  the letter:</para>
+<para style="pmo" vid="XXA 1:14">From Artaxerxes, the Great King, to the governors
+  and officials of my one hundred twenty-seven provinces from India to Ethiopia.
+  <verse eid="XXA 1:14"/></para>
+<para style="pm">
+  <verse number="15" style="v" pubnumber="2b" sid="XXA 1:15"/> I rule many
+  nations, and I am the most powerful king in the world. But I have never used my
+  power in a proud or arrogant way. Instead, I have always been reasonable and
+  kind to the people in my kingdom. I know they want peace, and so I have decided
+  to make every part of my kingdom peaceful and safe for travel.
+  <verse eid="XXA 1:15"/></para>
+----
+======
+
+image::cv/vp_1.jpg[Esther-Greek 3.14-15 ('Addition B') (CEV - adapted),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ParaWithVerse]`
+TextType:: Other
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

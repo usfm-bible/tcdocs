@@ -1,0 +1,97 @@
+= va
+:description: Alternate verse number
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cv/va.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Alternate Verse number. This is required when 2 versification traditions are identified in the same text. Used for providing and marking the verse number used in the alternate versification scheme.
+Syntax::
+* *USFM:* ``++\v ++``#__number__# _(see: xref:cv:v.adoc[])_ `` ++\va ++``#__altnumber__#``++\va*\vp ++``#__altnumber__#``++\vp*++`` _(see: xref:cv:vp.adoc[])_
+* *USX:* ``++<verse style="v" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
+#number# *::: Verse number
+#altnumber#::: Verse number for an alternate versification scheme.
+#pubnumber#::: Published verse character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential verse number used within the translation editing environment.
+#sid# *::: Verse start identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse start milestone._
+** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+#eid# *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
+** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Diagrams
+
+[tabs]
+======
+USFM::
++
+image::schema/verse_rail.svg[]
+USX::
++
+image:schema/verse_usx.svg[]
+======
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Psalm 54 (GNT - _markup adapted_)
+[source#src-usfm-cv-va_1,usfm,highlight=3;6;9]
+----
+\c 54 \ca 53\ca*
+\s1 A Prayer for Protection from Enemies
+\d \va 1\va* A poem by David, \va 2\va* after the men from Ziph went to Saul and 
+told him that David was hiding in their territory.
+\q1
+\v 1 \va 3\va* Save me by your power, O God;
+\q2 set me free by your might!
+\q1
+\v 2 \va 4\va* Hear my prayer, O God;
+\q2 listen to my words!
+----
+USX::
++
+.Psalm 54 (GNT - _markup adapted_)
+[source#src-usx-cv-va_1,xml,highlight=4;8;13]
+----
+<chapter number="54" style="c" altnumber="53" sid="PSA 54"/>
+<para style="s1">A Prayer for Protection from Enemies</para>
+<para style="d">
+  <char style="va">1</char> A poem by David, <char style="va">2</char> after the
+  men from Ziph went to Saul and told him that David was hiding in their
+  territory.</para>
+<para style="q1">
+  <verse number="1" style="v" altnumber="3" sid="PSA 54:1"/> Save me by your
+  power, O God;</para>
+<para style="q2" vid="PSA 54:1">set me free by your might!<verse eid="PSA 54:1"/>
+  </para>
+<para style="q1">
+  <verse number="2" style="v" altnumber="4" sid="PSA 54:2"/> Hear my prayer, O
+  God;</para>
+<para style="q2" vid="PSA 54:2">listen to my words!<verse eid="PSA 54:2"/></para>
+----
+======
+
+image::cv/va_1.jpg[Psalm 54 (GNT - markup adapted),300]
+
+== Properties
+
+StyleType:: xref:char:index.adoc[Character]
+OccursUnder:: `[ParaWithVerse]`
+TextType:: Other
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
