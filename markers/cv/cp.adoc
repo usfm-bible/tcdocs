@@ -63,13 +63,13 @@ USX::
 .Esther-Greek 1 ('A') (GNT)
 [source#src-usx-cv-cp_1,xml,highlight=3;11]
 ----
-<chapter number="54" style="c" pubnumber="A" sid="XXA 54"/>
+<chapter number="1" style="c" pubnumber="A" sid="ESG 1"/>
 <para style="s1">Mordecai's Strange Dream</para>
 <para style="p">
-  <verse number="1-3" style="v" altnumber="2-4" sid="XXA 54:1-3"/> Mordecai, a Jew
+  <verse number="1-3" style="v" altnumber="2-4" sid="ESG 1:1-3"/> Mordecai, a Jew
   who belonged to the tribe of Benjamin, was taken into exile, along with King
   Jehoiachin of Judah, when King Nebuchadnezzar of Babylonia captured Jerusalem.
-  ...<verse eid="XXA 54:1-3"/></para>
+  ...<verse eid="ESG 1:1-3"/></para>
 ----
 ======
 

@@ -1,5 +1,5 @@
 = cl
-:description: Running header text
+:description: Chapter label text
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/cl.adoc
 :noindex:
 ifndef::localdir[]
@@ -12,14 +12,17 @@ endif::[]
 
 == Summary
 
-Description:: Running header text.
+Description:: Chapter label text.
+[NOTE]
+.Usage note
+====
+If `cl` is added to a text once _before_ xref:cv:c.adoc[chapter] `1` it represents the label text for “Chapter” to be used throughout the current book. If `cl` is used _after each_ individual xref:cv:c.adoc[chapter], it represents the specific label text to be used for the display of the current chapter (e.g. if numbers are being presented as words, not numerals).
+====
 Syntax::
-* *USFM:* ``++\h ++``#__content__#
-* *USX:* ``++<para style="h">++``#__content__#``++</para>++``
+* *USFM:* ``++\cl ++``#__content__#
+* *USX:* ``++<para style="cl">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
-Updated:: 3.0
-* *Deprecated:* `h#` syntax. It is no longer recommended to use the numbered variable syntax `h#`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
 // end::spec[]
 
 == Examples
@@ -28,28 +31,69 @@ Updated:: 3.0
 ======
 USFM::
 +
-.Matthew (GNT)
-[source#src-usfm-para-h_1,usfm,highlight=1]
+.Psalm 1 (GNT - markup adapted - general chapter label)
+[source#src-usfm-para-cl_1,usfm,highlight=1]
 ----
-\h Matthew
+\cl Psalm
+\c 1
+\q1
+\v 1 Happy are those
+\q2 who reject the advice of evil people,
 ----
 USX::
 +
-.Matthew (GNT)
-[source#src-usx-para-h_1,xml,highlight=1]
+.Psalm 1 (GNT - markup adapted - general chapter label)
+[source#src-usx-para-cl_1,xml,highlight=1]
 ----
-<para style="h">Matthew</para>
+<para style="cl">Psalm</para>
+<chapter number="1" style="c" sid="PSA 1"/>
+<para style="q1">
+  <verse number="1" style="v" sid="PSA 1:1"/>Happy are those</para>
+<para style="q2" vid="PSA 1:1">who reject the advice of evil people,
+  ...
+  <verse eid="PSA 1:1"/></para>
 ----
 ======
 
-image::para/h_1.jpg[Matthew (GNT),300]
+image::para/cl_1.jpg[Psalm 1 (GNT - markup adapted - general chapter label),300]
+
+[tabs]
+======
+USFM::
++
+.Psalm 1 (GNT - markup adapted - specific chapter label)
+[source#src-usfm-para-cl_2,usfm,highlight=2]
+----
+\c 1
+\cl Psalm One
+\q1
+\v 1 Happy are those
+\q2 who reject the advice of evil people,
+----
+USX::
++
+.Psalm 1 (GNT - markup adapted - specific chapter label)
+[source#src-usx-para-cl_2,xml,highlight=1]
+----
+<chapter number="1" style="c" sid="PSA 1"/>
+<para style="cl">Psalm One</para>
+<para style="s">True Happiness</para>
+<para style="q1">
+  <verse number="1" style="v" sid="PSA 1:1" />Happy are those</para>
+<para style="q2" vid="PSA 1:1">who reject the advice of evil people,
+  ...
+  <verse eid="PSA 1:1"/></para>
+----
+======
+
+image::para/cl_2.jpg[Psalm 1 (GNT - markup adapted - specific chapter label),300]
 
 == Properties
 
 StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
+OccursUnder:: `[ChapterContent]`
 TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
+TextProperties:: paragraph
 
 == Publication Issues
 

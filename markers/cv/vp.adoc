@@ -45,7 +45,7 @@ image:schema/verse_usx.svg[]
 ======
 USFM::
 +
-.Esther-Greek 3.14,15 ('Addition B') (CEV - _adapted_)
+.Esther-Greek 3.14-15 ('Addition B') (CEV - _adapted_)
 [source#src-usfm-cv-vp_1,usfm,highlight=5;9]
 ----
 ...
@@ -64,25 +64,25 @@ and so I have decided to make every part of my kingdom peaceful and safe for tra
 ----
 USX::
 +
-.Esther-Greek 3.14,15 ('Addition B') (CEV - _adapted_)
+.Esther-Greek 3.14-15 ('Addition B') (CEV - _adapted_)
 [source#src-usx-cv-vp_1,xml,highlight=]
 ----
 <para style="ms1">Addition B</para>
 <para style="cp">B</para>
 <para style="s1">A Copy of the Letter</para>
 <para style="p">
-  <verse number="14" style="v" pubnumber="1b" sid="XXA 1:14"/> This is a copy of
+  <verse number="14" style="v" pubnumber="1b" sid="ESG 3:14"/> This is a copy of
   the letter:</para>
-<para style="pmo" vid="XXA 1:14">From Artaxerxes, the Great King, to the governors
+<para style="pmo" vid="ESG 3:14">From Artaxerxes, the Great King, to the governors
   and officials of my one hundred twenty-seven provinces from India to Ethiopia.
-  <verse eid="XXA 1:14"/></para>
+  <verse eid="ESG 3:14"/></para>
 <para style="pm">
-  <verse number="15" style="v" pubnumber="2b" sid="XXA 1:15"/> I rule many
+  <verse number="15" style="v" pubnumber="2b" sid="ESG 3:15"/> I rule many
   nations, and I am the most powerful king in the world. But I have never used my
   power in a proud or arrogant way. Instead, I have always been reasonable and
   kind to the people in my kingdom. I know they want peace, and so I have decided
   to make every part of my kingdom peaceful and safe for travel.
-  <verse eid="XXA 1:15"/></para>
+  <verse eid="ESG 3:15"/></para>
 ----
 ======
 
