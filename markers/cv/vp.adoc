@@ -90,7 +90,7 @@ image::cv/vp_1.jpg[Esther-Greek 3.14-15 ('Addition B') (CEV - adapted),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
+StyleType (USFM):: xref:char:index.adoc[Character]
 OccursUnder:: `[ParaWithVerse]`
 TextType:: Other
 

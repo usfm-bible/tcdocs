@@ -87,7 +87,7 @@ image::cv/ca_1.jpg[Psalm 54 (GNT - markup adapted),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
+StyleType (USFM):: xref:char:index.adoc[Character]
 OccursUnder:: `[Chapter]`
 TextType:: Other
 
