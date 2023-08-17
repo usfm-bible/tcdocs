@@ -5,6 +5,7 @@ A USFM or USX document consists of valid elements for <<scripture,Scripture>> or
 
 [#scripture]
 == Scripture
+`[Scripture]`
 
 * `[BookIdentification]` — <<doc-book-identification,Book Identification>>
 * `[BookHeaders]` — <<doc-book-headers,Book Headers>>
@@ -12,7 +13,7 @@ A USFM or USX document consists of valid elements for <<scripture,Scripture>> or
 * `[BookIntroduction]` — <<doc-book-intro,Book Introduction>>
 * `[BookIntroductionEndTitles]` — <<doc-book-intro-end-titles,Book Introduction End Titles>>
 * `[BookChapterLabel]` — <<doc-chapter-label,Book Chapter Label>>
-* `[Chapter]` — <<doc-book-chapter-content,Chapter Content>>
+* `[ChapterContent]` — <<doc-book-chapter-content,Chapter Content>>
 
 [tabs]
 ======
@@ -24,13 +25,19 @@ USX::
 image::schema/id_usx.svg[]
 ======
 
+'''
+
 [#doc-book-identification]
 === Book Identification
+`[BookIdentification]`
 
-* menu:Paragraphs[Identification > ] xref:para:identification/id.adoc[]
+* *Paragraphs > Identification >* xref:para:identification/id.adoc[]
+
+'''
 
 [#doc-book-headers]
 === Book Headers
+`[BookHeaders]`
 
 [tabs]
 ======
@@ -44,10 +51,13 @@ image::schema/bkhdrs_usx.svg[]
 
 An optional collection of one or more xref:para:index.adoc[paragraph] elements for book name and abbreviation texts.
 
-* *Paragraphs > Identification >a* xref:para:identification/ide.adoc[], xref:para:identification/h.adoc[], xref:para:identification/toc.adoc[], xref:para:identification/toca.adoc[], xref:para:identification/rem.adoc[], xref:para:identification/usfm.adoc[] 
+* *Paragraphs > Identification >* xref:para:identification/ide.adoc[], xref:para:identification/h.adoc[], xref:para:identification/toc.adoc[], xref:para:identification/toca.adoc[], xref:para:identification/rem.adoc[], xref:para:identification/usfm.adoc[] 
+
+'''
 
 [#doc-book-titles]
 === Book Titles
+`[BookTitles]`
 
 [tabs]
 ======
@@ -65,15 +75,18 @@ image::schema/bktitles_usx.svg[]
 ** *Paragraphs > Introductions >* xref:para:introductions/imt.adoc[]
 ** *Paragraphs > Identification >* xref:para:identification/rem.adoc[]
 
-* An optional collection of one or more embedded elements.
+* An optional collection of one or more child elements.
 
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
 ** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
 ** `[Char]` — xref:char:index.adoc[Characters]
 ** `[Break]` — xref:char:breaks/optbreak.adoc[Optional line break]
 
+'''
+
 [#doc-book-intro]
 === Book Introduction
+`[BookIntroduction]`
 
 [tabs]
 ======
@@ -87,10 +100,10 @@ image::schema/bkintro_usx.svg[]
 
 * An optional collection of xref:para:index.adoc[paragraph] and xref:para:tables/index.adoc[table] elements for book introductions.
 
-** menu:Paragraphs[Introductions > ] xref:para:introductions/imt.adoc[], xref:para:introductions/imte.adoc[], xref:para:introductions/ib.adoc[], xref:para:introductions/ie.adoc[], xref:para:introductions/ili.adoc[], xref:para:introductions/imi.adoc[], xref:para:introductions/imq.adoc[], xref:para:introductions/im.adoc[], xref:para:introductions/io.adoc[], xref:para:introductions/iot.adoc[], xref:para:introductions/ipi.adoc[], xref:para:introductions/ipq.adoc[], xref:para:introductions/ipr.adoc[], xref:para:introductions/ip.adoc[], xref:para:introductions/iq.adoc[], xref:para:introductions/is.adoc[], xref:para:introductions/iex.adoc[], xref:para:identification/rem.adoc[]
-** menu:Paragraphs xref:para:tables/index.adoc[],
+** *Paragraphs > Introductions >* xref:para:introductions/imt.adoc[], xref:para:introductions/imte.adoc[], xref:para:introductions/ib.adoc[], xref:para:introductions/ie.adoc[], xref:para:introductions/ili.adoc[], xref:para:introductions/imi.adoc[], xref:para:introductions/imq.adoc[], xref:para:introductions/im.adoc[], xref:para:introductions/io.adoc[], xref:para:introductions/iot.adoc[], xref:para:introductions/ipi.adoc[], xref:para:introductions/ipq.adoc[], xref:para:introductions/ipr.adoc[], xref:para:introductions/ip.adoc[], xref:para:introductions/iq.adoc[], xref:para:introductions/is.adoc[], xref:para:introductions/iex.adoc[], xref:para:identification/rem.adoc[]
+** `[Table]`` — *Paragraphs* xref:para:tables/index.adoc[]
 
-* An optional collection of one or more embedded elements.
+* An optional collection of one or more child elements.
 
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
 ** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
@@ -98,8 +111,11 @@ image::schema/bkintro_usx.svg[]
 ** `[IntroChar]` xref:char:introductions/index.adoc[Introduction Characters]
 ** `[Milestone]` — xref:ms:index.adoc[Milestones]
 
+'''
+
 [#doc-book-intro-end-titles]
 === Book Introduction End Titles
+`[BookIntroductionEndTitles]`
 
 [tabs]
 ======
@@ -113,10 +129,10 @@ image::schema/bkintroend_usx.svg[]
 
 * An optional collection of one or more xref:para:index.adoc[paragraph] elements for book titles occurring at the end of the book introduction.
 
-** menu:Paragraphs[Introductions > ] xref:para:introductions/imt.adoc[]
-** menu:Paragraphs[Titles and Sections > ] xref:para:titles-sections/mt.adoc[]
+** *Paragraphs > Introductions >* xref:para:introductions/imt.adoc[]
+** *Paragraphs > Titles and Sections >* xref:para:titles-sections/mt.adoc[]
 
-* An optional collection of one or more embedded elements.
+* An optional collection of one or more child elements.
 
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
 ** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
@@ -124,15 +140,21 @@ image::schema/bkintroend_usx.svg[]
 ** `[Milestone]` — xref:ms:index.adoc[Milestones]
 ** `[Break]` — xref:char:breaks/optbreak.adoc[Optional line break]
 
+'''
+
 [#doc-book-chapter-label]
 === Book Chapter Label
+`[BookChapterLabel]`
 
 * An optional xref:para:index.adoc[paragraph] element used for providing a chapter heading text which may be applied when formatting all chapters as headings.
 
-** menu:Paragraphs[Identification > ] xref:para:titles-sections/cl.adoc[]
+** *Paragraphs > Identification >* xref:para:titles-sections/cl.adoc[]
+
+'''
 
 [#doc-book-chapter-content]
 === Chapter Content
+`[ChapterContent]`
 
 [tabs]
 ======
@@ -148,14 +170,13 @@ image::schema/chaptercontent_usx.svg[]
 
 ** `[Chapter]` — *Chapters and Verses >* xref:cv:c.adoc[c]
 ** `[Section]` — *Paragraphs > Titles and Sections >* xref:para:titles-sections/cd.adoc[], xref:para:titles-sections/cl.adoc[], xref:para:introductions/iex.adoc[], xref:para:introductions/ip.adoc[], xref:para:titles-sections/mr.adoc[], xref:para:titles-sections/ms.adoc[], xref:para:titles-sections/mte.adoc[], xref:para:titles-sections/r.adoc[], xref:para:titles-sections/s.adoc[], xref:para:titles-sections/sp.adoc[], xref:para:titles-sections/sd.adoc[], xref:para:titles-sections/sr.adoc[]
-** `[Para]` —
-*** *Paragraphs > Body Paragraphs >* xref:para:paragraphs/b.adoc[], xref:para:paragraphs/cls.adoc[], xref:para:paragraphs/m.adoc[], xref:para:paragraphs/mi.adoc[], xref:para:paragraphs/nb.adoc[], xref:para:paragraphs/p.adoc[], xref:para:paragraphs/pc.adoc[], xref:para:paragraphs/ph.adoc[], xref:para:paragraphs/pi.adoc[], xref:para:paragraphs/pm.adoc[], xref:para:paragraphs/pmc.adoc[], xref:para:paragraphs/pmo.adoc[], xref:para:paragraphs/pmr.adoc[], xref:para:paragraphs/po.adoc[], xref:para:paragraphs/pr.adoc[]
+** `[Para]` — *Paragraphs > Body Paragraphs >* xref:para:paragraphs/b.adoc[], xref:para:paragraphs/cls.adoc[], xref:para:paragraphs/m.adoc[], xref:para:paragraphs/mi.adoc[], xref:para:paragraphs/nb.adoc[], xref:para:paragraphs/p.adoc[], xref:para:paragraphs/pc.adoc[], xref:para:paragraphs/ph.adoc[], xref:para:paragraphs/pi.adoc[], xref:para:paragraphs/pm.adoc[], xref:para:paragraphs/pmc.adoc[], xref:para:paragraphs/pmo.adoc[], xref:para:paragraphs/pmr.adoc[], xref:para:paragraphs/po.adoc[], xref:para:paragraphs/pr.adoc[]
 *** *Paragraphs > Poetry >* xref:para:poetry/b.adoc[], xref:para:poetry/q.adoc[], xref:para:poetry/qa.adoc[], xref:para:poetry/qc.adoc[], xref:para:poetry/qd.adoc[], xref:para:poetry/qm.adoc[], xref:para:poetry/qr.adoc[]
 ** `[List]` — *Paragraphs > Lists >* xref:para:lists/lf.adoc[], xref:para:lists/lh.adoc[], xref:para:lists/li.adoc[], xref:para:lists/lim.adoc[]
 ** `[Table]` — *Paragraphs >* xref:para:tables/index.adoc[Tables]
 ** `[Sidebar]` — xref:sbar:index.adoc[Sidebars]
 
-* An optional collection of one or more embedded elements.
+* An optional collection of one or more child elements.
 
 ** `[Verse]` — xref:cv:v.adoc[v]
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
@@ -166,6 +187,12 @@ image::schema/chaptercontent_usx.svg[]
 
 [#peripheral]
 == Peripheral
+`[Peripheral]`
 
-* Peripheral Book
-* Peripheral Divided Book
+=== Peripheral Book
+
+=== Peripheral Divided Book
+
+[#doc-periphbook-periph-content]
+==== Peripheral Content
+`[PeripheralContent]`

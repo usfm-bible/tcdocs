@@ -20,6 +20,8 @@ Description:: Book name texts. One common use of these texts is for composing a 
 Syntax::
 * *USFM:* ``++\toc# ++``#__content__#
 * *USX:* ``++<para style="toc#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 2.0
 // end::spec[]
@@ -54,8 +56,6 @@ image::para/toc_1.jpg[Matthew (GNT),550]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

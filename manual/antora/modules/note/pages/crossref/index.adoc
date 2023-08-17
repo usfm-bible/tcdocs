@@ -18,5 +18,5 @@ image:schema/xchar_usx.svg[]
 
 == Child Elements
 
-** xref:char:notes/crossref/index.adoc[Character Types for Cross References] `[CrossReferenceChar]`
+** `[CrossReferenceChar]` – xref:char:notes/crossref/index.adoc[Character Types for Cross References]
 include::note:/crossref/xref-char.adoc[tag=xrefs-only]

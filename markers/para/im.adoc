@@ -16,6 +16,8 @@ Description:: Introduction continuation (margin) paragraph.
 Syntax::
 * *USFM:* ``++\im ++``#__content__#
 * *USX:* ``++<para style="im">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -62,8 +64,6 @@ image::para/im_1.jpg[Introduction to the GCEV,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

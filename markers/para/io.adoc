@@ -17,6 +17,8 @@ Description:: Introduction outline entry. Outline entries usually end with a ran
 Syntax::
 * *USFM:* ``++\io# ++``#__content__#
 * *USX:* ``++<para style="io#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -73,8 +75,6 @@ image::para/io_1.jpg[Introduction to Mark (GNT),400]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

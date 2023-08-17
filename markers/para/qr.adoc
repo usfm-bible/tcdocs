@@ -16,6 +16,8 @@ Description:: Right-aligned poetic line. Commonly used for a poetic refrain.
 Syntax::
 * *USFM:* ``++\qr ++``#__content__#
 * *USX:* ``++<para style="qr">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -68,8 +70,6 @@ image::para/qr_1.jpg[Psalm 136.1-3 (CEV),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular, poetic
 

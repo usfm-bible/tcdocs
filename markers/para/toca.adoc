@@ -20,6 +20,8 @@ Description:: Alternate language book name texts. Used to specify an alternate s
 Syntax::
 * *USFM:* ``++\toca# ++``#__content__#
 * *USX:* ``++<para style="toca#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -48,8 +50,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

@@ -13,12 +13,14 @@ endif::[]
 == Summary
 
 Description:: Continuation (margin) paragraph. Commonly used to resume prose at the margin (without indent) after poetic text or quotation.
-// tag::spec[]
-Added:: 1.0
-// end::spec[]
 Syntax::
 * *USFM:* ``++\m ++``#__content__#
 * *USX:* ``++<para style="m">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
 
 == Examples
 [tabs]
@@ -66,8 +68,6 @@ image::para/m_1.jpg[Mark 12.37 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

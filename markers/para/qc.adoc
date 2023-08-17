@@ -16,6 +16,8 @@ Description:: Centered poetic line.
 Syntax::
 * *USFM:* ``++\qc ++``#__content__#
 * *USX:* ``++<para style="qc">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -70,8 +72,6 @@ image::para/qc_1.jpg[Psalm 72.19 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular, poetic
 

@@ -17,6 +17,8 @@ Syntax::
 * *USFM:* ``++\ide ++``#__encoding__#
 * *USX:* ``++<para style="ide">++``#__encoding__#``++</para>++``
 #encoding#::: Character encoding scheme (e.g. `CP-1252`, `CP-1251`, `UTF-8`, `UTF-16LE`, `UTF-16BE`, `UTF-32LE`, `UTF-32BE`, or `Custom`). _Texts which rely upon a custom encoding and font solution should be converted to Unicode, if at all possible._
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -45,8 +47,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, nonpublishable, nonvernacular
 

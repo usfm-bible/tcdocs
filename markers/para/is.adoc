@@ -17,6 +17,8 @@ Description:: Intoduction section heading.
 Syntax::
 * *USFM:* ``++\is# ++``#__content__#
 * *USX:* ``++<para style="is#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

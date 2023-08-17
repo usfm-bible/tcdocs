@@ -17,6 +17,8 @@ Description:: Semantic division (semantic space). Vertical space used to divide 
 Syntax::
 * *USFM:* ``++\sd# ++``#__content__#
 * *USX:* ``++<para style="sd#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]` > `[Section]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -76,8 +78,6 @@ image::para/sd_1.jpg[Matthew 13.51-54 (NIV “Books of the Bible”),500]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: Section
 TextProperties:: paragraph, publishable, level_#
 

@@ -16,6 +16,8 @@ Description:: Introduction quote from text paragraph.
 Syntax::
 * *USFM:* ``++\ipq ++``#__content__#
 * *USX:* ``++<para style="ipq">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -61,8 +63,6 @@ image::para/ipq_1.jpg[Introduction to Genesis (CEV),400]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

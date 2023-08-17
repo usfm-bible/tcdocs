@@ -17,6 +17,8 @@ Description:: Poetic line.
 Syntax::
 * *USFM:* ``++\q# ++``#__content__#
 * *USX:* ``++<para style="q#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -100,8 +102,6 @@ image::para/q2_1.jpg[Habakkuk 3.2 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular, poetic, level_#
 

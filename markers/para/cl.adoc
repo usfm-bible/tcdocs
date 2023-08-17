@@ -21,6 +21,8 @@ If `cl` is added to a text once _before_ xref:cv:c.adoc[chapter] `1` it represen
 Syntax::
 * *USFM:* ``++\cl ++``#__content__#
 * *USX:* ``++<para style="cl">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]` > `[Section]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -90,8 +92,6 @@ image::para/cl_2.jpg[Psalm 1 (GNT - markup adapted - specific chapter label),300
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: Other
 TextProperties:: paragraph
 

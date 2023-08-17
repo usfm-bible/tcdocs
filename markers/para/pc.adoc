@@ -17,6 +17,8 @@ Description:: Centered paragraph.
 Syntax::
 * *USFM:* ``++\pc ++``#__content__#
 * *USX:* ``++<para style="pc">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -64,8 +66,6 @@ image::para/pc_1.jpg[Revelation 17.5 (CEV),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

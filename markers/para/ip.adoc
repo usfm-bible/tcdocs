@@ -16,6 +16,8 @@ Description:: Introduction paragraph.
 Syntax::
 * *USFM:* ``++\ip ++``#__content__#
 * *USX:* ``++<para style="ip">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]` (Study Bible)
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -61,8 +63,6 @@ image::para/ip_1.jpg[Introduction to Mark (GNT),400]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

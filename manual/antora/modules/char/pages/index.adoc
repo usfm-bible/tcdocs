@@ -24,5 +24,5 @@ image::schema/char_usx.svg[]
 
 == Child Elements
 
-* xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
-* xref:char:index.adoc[Characters] `[Char]`
+* `[Footnote]` – xref:note:footnote/index.adoc[Footnotes]
+* `[Char]` – xref:char:index.adoc[Characters]

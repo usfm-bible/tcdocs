@@ -17,6 +17,8 @@ Description:: Main title at introduction end. May be used to repeat the main tit
 Syntax::
 * *USFM:* ``++\mte# ++``#__content__#
 * *USX:* ``++<para style="mte#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

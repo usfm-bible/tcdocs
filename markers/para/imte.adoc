@@ -17,6 +17,8 @@ Description:: Intoduction major title ending. Used to mark a major title indicat
 Syntax::
 * *USFM:* ``++\imte# ++``#__content__#
 * *USX:* ``++<para style="imte#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -45,8 +47,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph publishable vernacular level_#
 

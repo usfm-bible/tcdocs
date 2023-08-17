@@ -17,6 +17,8 @@ Description:: Section heading.
 Syntax::
 * *USFM:* ``++\s# ++``#__content__#
 * *USX:* ``++<para style="s#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]` > `[Section]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -125,8 +127,6 @@ image::para/s2_1.jpg[Proverbs 22.22-24 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular, level_#
 

@@ -69,8 +69,6 @@ image::para/pi_1.jpg[Matthew 13.37-39 (CEV),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

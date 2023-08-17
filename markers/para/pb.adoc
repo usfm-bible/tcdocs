@@ -16,14 +16,14 @@ Description:: Explicit page break.
 Syntax::
 * *USFM:* ``++\pb++``
 * *USX:* ``++<para style="pb"/>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: Other
 TextProperties:: paragraph
 

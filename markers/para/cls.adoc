@@ -16,6 +16,8 @@ Description:: Letter closing.
 Syntax::
 * *USFM:* ``++\cls ++``#__content__#
 * *USX:* ``++<para style="cls">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -51,8 +53,6 @@ image::para/cls_1.jpg[Colossians 4.18 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

@@ -16,6 +16,8 @@ Description:: No break. Indicates that the paragraph is a continuation of the pr
 Syntax::
 * *USFM:* ``++\nb ++``#__content__#
 * *USX:* ``++<para style="nb">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -68,8 +70,6 @@ image::para/nb_1.jpg[John 7.53–8.2 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

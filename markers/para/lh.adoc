@@ -16,6 +16,8 @@ Description:: List header. Some lists include an introductory and concluding rem
 Syntax::
 * *USFM:* ``++\lh ++``#__content__#
 * *USX:* ``++<para style="lh">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -57,8 +59,6 @@ image::para/lh_1.jpg[1 Chronicles 27:16-22 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

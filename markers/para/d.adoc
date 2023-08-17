@@ -63,8 +63,6 @@ image::para/d_1.jpg[Psalm 3.1 (NRSV),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

@@ -18,6 +18,8 @@ Syntax::
 * *USX:* ``++<book style="id" ++``@code``++>++``#__content__#``++</book>++``
 #code# *::: A standard 3-character scripture xref:para:identification/books.adoc[book identifier].
 #content#::: Additional description _(optional)_
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -46,8 +48,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, nonpublishable, nonvernacular, book
 

@@ -13,6 +13,8 @@ Description:: Right-aligned paragraph.
 Syntax::
 * *USFM:* ``++\pr ++``#__content__#
 * *USX:* ``++<para style="pr">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -65,8 +67,6 @@ image::para/pr_1.jpg[Deuteronomy 27.15-17 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

@@ -13,12 +13,14 @@ endif::[]
 == Summary
 
 Description:: Letter opening.
-// tag::spec[]
-Added:: 3.0
-// end::spec[]
 Syntax::
 * *USFM:* ``++\po ++``#__content__#
 * *USX:* ``++<para style="po">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
+// tag::spec[]
+Added:: 3.0
+// end::spec[]
 
 == Examples
 
@@ -74,8 +76,6 @@ image::para/po_1.jpg[Romans 1.1 and 7 (GNT),600]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

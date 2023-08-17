@@ -24,6 +24,8 @@ Syntax::
 #vid#::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`.
 *** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 #content#::: xref:char:tables/index.adoc[Character Types for Tables].
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -34,8 +36,6 @@ See the examples provided in the xref:char:tables/index.adoc[character/cell type
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`, `[ChapterContent]`, `[SidebarContent]`, `[PeripheralContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

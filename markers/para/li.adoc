@@ -13,10 +13,12 @@ endif::[]
 == Summary
 
 Description:: List entry. May be used to mark the individual entries of a list, such as the days within the creation account, the 10 commandments, or a list of offerings etc..
-* The variable `#` (1-4) represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
+* The variable `#` (1-4) represents the level of indent.
 Syntax::
 * *USFM:* ``++\li# ++``#__content__#
 * *USX:* ``++<para style="li#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -68,8 +70,6 @@ image::para/li_1.jpg[Numbers 7.84-88 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`, `[SidebarContent]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

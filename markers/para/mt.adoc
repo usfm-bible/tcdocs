@@ -17,6 +17,8 @@ Description:: Main title.
 Syntax::
 * *USFM:* ``++\mt# ++``#__content__#
 * *USX:* ``++<para style="mt#">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -92,8 +94,6 @@ image::para/mt_2.jpg[Introduction to John (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookTitlesContent]`
 TextType:: Title
 TextProperties:: paragraph, publishable, vernacular, level_#
 

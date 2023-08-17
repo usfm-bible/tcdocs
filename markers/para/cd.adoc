@@ -16,6 +16,8 @@ Description:: Chapter description. A brief description of chapter content – si
 Syntax::
 * *USFM:* ``++\cd ++``#__content__#
 * *USX:* ``++<para style="cd">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]` > `[Section]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -61,8 +63,6 @@ image::para/cd_1.jpg[Genesis 2 (Russian Synodal Protestant Version),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph
 

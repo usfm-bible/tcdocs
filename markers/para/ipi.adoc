@@ -16,6 +16,8 @@ Description:: Introduction indented paragraph.
 Syntax::
 * *USFM:* ``++\ipi ++``#__content__#
 * *USX:* ``++<para style="ipi">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -58,8 +60,6 @@ image::para/ipi_1.jpg[Introduction to the Deuterocanonicals/Apocrypha (GCEV),300
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

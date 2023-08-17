@@ -16,6 +16,8 @@ Description:: Embedded text paragraph.
 Syntax::
 * *USFM:* ``++\pm ++``#__content__#
 * *USX:* ``++<para style="pm">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -71,8 +73,6 @@ image::para/pm_1.jpg[15.24-27 and 28-29 (CEV),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent] > [ParaWithEmbed]`, `[SidebarContent] > [ParaWithEmbed]`
 TextType:: VerseText
 TextProperties:: paragraph, publishable, vernacular
 

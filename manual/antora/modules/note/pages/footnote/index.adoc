@@ -20,5 +20,5 @@ image::schema/cat_usx.svg[]
 
 == Child Elements
 
-** xref:char:notes/footnote/index.adoc[Character Types for Footnotes] `[FootnoteChar]`
+** `[FootnoteChar]` – xref:char:notes/footnote/index.adoc[Character Types for Footnotes]
 include::note:/footnote/xref-char.adoc[tag=xrefs-only]

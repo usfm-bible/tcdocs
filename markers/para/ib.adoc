@@ -16,6 +16,8 @@ Description:: Introduction blank line.
 Syntax::
 * *USFM:* ``++\ib++``
 * *USX:* ``++<para style="ib"/>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -55,8 +57,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

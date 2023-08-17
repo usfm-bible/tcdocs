@@ -18,6 +18,8 @@ Description:: Parallel passage reference(s). A list of references to parallel pa
 Syntax::
 * *USFM:* ``++\r ++``#__content__#
 * *USX:* ``++<para style="r">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]` > `[Section]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -59,8 +61,6 @@ image::para/r_1.jpg[Matthew 3.1 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular, level_#
 

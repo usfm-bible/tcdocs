@@ -27,9 +27,9 @@ image:schema/p_usx.svg[]
 == Child Elements
 
 * xref:note:index.adoc[Notes]
-** xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
-** xref:note:crossref/index.adoc[Cross References] `[CrossReference]`
-* xref:char:index.adoc[Characters] `[Char]`
-* xref:ms:index.adoc[Milestones] `[Milestone]`
-* xref:fig:fig.adoc[Figures] `[Figure]`
-* xref:cv:v.adoc[Verses] `[Verse]`
+** `[Footnote]` – xref:note:footnote/index.adoc[Footnotes]
+** `[CrossReference]` – xref:note:crossref/index.adoc[Cross References]
+* `[Char]` – xref:char:index.adoc[Characters]
+* `[Milestone]` – xref:ms:index.adoc[Milestones]
+* `[Figure]` – xref:fig:fig.adoc[Figures]
+* `[Verse]` – xref:cv:v.adoc[Verses]

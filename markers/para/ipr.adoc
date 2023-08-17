@@ -16,6 +16,8 @@ Description:: Introduction right-aligned paragraph.
 Syntax::
 * *USFM:* ``++\ipr ++``#__content__#
 * *USX:* ``++<para style="ipr">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -61,8 +63,6 @@ image::para/ipr_1.jpg[Introduction to Genesis (CEV),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

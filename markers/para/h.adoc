@@ -16,6 +16,8 @@ Description:: Running header text.
 Syntax::
 * *USFM:* ``++\h ++``#__content__#
 * *USX:* ``++<para style="h">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0
@@ -46,8 +48,6 @@ image::para/h_1.jpg[Matthew (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, publishable, vernacular
 

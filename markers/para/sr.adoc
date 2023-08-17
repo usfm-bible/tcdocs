@@ -18,6 +18,8 @@ Description:: Section reference range. References added under a section heading 
 Syntax::
 * *USFM:* ``++\sr ++``#__content__#
 * *USX:* ``++<para style="sr">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]` > `[Section]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -54,8 +56,6 @@ image::para/sr_1.jpg[Proverbs 22.17 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent] > [SectionPara]`, `[SidebarContent] > [SectionPara]`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular, level_#
 

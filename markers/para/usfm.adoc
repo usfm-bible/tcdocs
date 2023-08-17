@@ -22,6 +22,8 @@ Syntax::
 * *USFM:* ``++\usfm ++``#__version__#
 * *USX:* ``++<usx version="++``#__version__#``++">++``
 #version#::: USFM/USX version number.
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -54,8 +56,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, nonpublishable, nonvernacular
 

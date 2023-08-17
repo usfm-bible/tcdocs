@@ -17,6 +17,8 @@ Syntax::
 * *USFM:* ``++\sts ++``#__content__#
 * *USX:* ``++<para style="sts">++``#__content__#``++</para>++``
 #content#::: The content of the status marker can be defined by the downstream system being used to track project status. For example: A project management approach which identifies 4 stages for a scripture translation's development might record numbers `1`, `2`, `3`, or `4` for xref:para:identification/sts.adoc[sts] content.
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -45,8 +47,6 @@ image::para/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookHeaders]`
 TextType:: Other
 TextProperties:: paragraph, nonpublishable, nonvernacular
 

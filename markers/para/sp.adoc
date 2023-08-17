@@ -16,6 +16,8 @@ Description:: Speaker identification.
 Syntax::
 * *USFM:* ``++\sp ++``#__content__#
 * *USX:* ``++<para style="sp">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]` > `[Section]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -61,8 +63,6 @@ image::para/sp_1.jpg[Job 3.1 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[ChapterContent]`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular
 
