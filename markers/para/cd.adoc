@@ -1,5 +1,5 @@
 = cd
-:description: Running header text
+:description: Chapter description
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/cd.adoc
 :noindex:
 ifndef::localdir[]
@@ -12,14 +12,12 @@ endif::[]
 
 == Summary
 
-Description:: Running header text.
+Description:: Chapter description. A brief description of chapter content – similar to xref:para:titles-sections/d.adoc[] (descriptive heading), or xref:para:introductions/iex.adoc[] (introduction explanatory or bridge text).
 Syntax::
-* *USFM:* ``++\h ++``#__content__#
-* *USX:* ``++<para style="h">++``#__content__#``++</para>++``
+* *USFM:* ``++\cd ++``#__content__#
+* *USX:* ``++<para style="cd">++``#__content__#``++</para>++``
 // tag::spec[]
 Added:: 1.0
-Updated:: 3.0
-* *Deprecated:* `h#` syntax. It is no longer recommended to use the numbered variable syntax `h#`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
 // end::spec[]
 
 == Examples
@@ -28,28 +26,45 @@ Updated:: 3.0
 ======
 USFM::
 +
-.Matthew (GNT)
-[source#src-usfm-para-h_1,usfm,highlight=1]
+.Genesis 2 (Russian Synodal Protestant Version)
+[source#src-usfm-para-cd_1,usfm,highlight=2..3]
 ----
-\h Matthew
+\c 2
+\cd 1 Бог благословляет седьмой день; 8 человек в раю Едемском; четыре реки; дерево
+познания добра и зла. 18 Человек дает названия животным. 21 Создание женщины.
+\p
+\v 1 Так совершены небо и земля и все воинство их.
+\p
+\v 2 И совершил Бог к седьмому дню дела Свои, которые Он делал, и почил в день 
+седьмой от всех дел Своих, которые делал.
 ----
 USX::
 +
-.Matthew (GNT)
-[source#src-usx-para-h_1,xml,highlight=1]
+.Genesis 2 (Russian Synodal Protestant Version)
+[source#src-usx-para-cd_1,xml,highlight=2..4]
 ----
-<para style="h">Matthew</para>
+<chapter number="2" style="c" sid="GEN 2"/>
+<para style="cd">1 Бог благословляет седьмой день; 8 человек в раю Едемском;
+  четыре реки; дерево познания добра и зла. 18 Человек дает названия животным. 
+  21 Создание женщины.</para>
+<para style="p">
+  <verse number="1" style="v" sid="GEN 2:1"/>Так совершены небо и земля и все
+  воинство их.<verse eid="GEN 2:1"/></para>
+<para style="p">
+  <verse number="2" style="v" sid="GEN 2:2"/>И совершил Бог к седьмому дню дела
+  Свои, которые Он делал, и почил в день седьмой от всех дел Своих, которые делал.
+  <verse eid="GEN 2:2"/></para>
 ----
 ======
 
-image::para/h_1.jpg[Matthew (GNT),300]
+image::para/cd_1.jpg[Genesis 2 (Russian Synodal Protestant Version),300]
 
 == Properties
 
 StyleType:: xref:para:index.adoc[Paragraph]
 OccursUnder:: `[BookHeaders]`
 TextType:: Other
-TextProperties:: paragraph, publishable, vernacular
+TextProperties:: paragraph
 
 == Publication Issues
 
