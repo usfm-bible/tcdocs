@@ -20,6 +20,8 @@ Syntax::
 ** Book names must be one a standard xref:para:identification/books.adoc[book identifier]. Chapter + verse separator is always a colon `:`. A string of pattern `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
 ** In some scenarios a target reference is written in a format which cannot be accurately parsed and identified. Providing the `link-href` attribute allows greater flexibility in the use of xref:char:notes/crossref/xt.adoc[xt].
 ** In this context (xref:char:notes/crossref/xt.adoc[xt]), `link-href` should only target scripture references for the current text (i.e. references to other project texts or non-scripture URIs are not allowed).
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`, `[xref:note:footnote/index.adoc[Footnote]]`, `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (attributes)
@@ -113,8 +115,6 @@ image::char/xt_2.jpg[Mark 10.19 (GNT),560]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

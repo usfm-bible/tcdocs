@@ -16,6 +16,8 @@ Description:: xref:note:footnote/index.adoc[Footnote] - Witness list. For distin
 Syntax::
 * *USFM:* ``++\fw ++``#__content__#
 * *USX:* ``++<char style="fw">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -53,8 +55,6 @@ image::char/fw_1.jpg[Matthew 28.14 (Nestle-Aland 29),500]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

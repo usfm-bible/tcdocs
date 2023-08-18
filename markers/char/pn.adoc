@@ -16,6 +16,8 @@ Description:: Proper name.
 Syntax::
 * *USFM:* ``++\pn ++``#__content__#``++\pn*++``
 * *USX:* ``++<char style="pn">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 Added:: 1.0
 
 == Examples
@@ -42,8 +44,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

@@ -16,7 +16,11 @@ Description:: Quoted text. Old Testament quotations in the New Testament, or oth
 Syntax::
 * *USFM:* ``++\qt ++``#__content__#``++\qt*++``
 * *USX:* ``++<char style="qt">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Examples
 
@@ -124,8 +128,6 @@ image::char/qt_1.jpg[Mark 1.2-3 (GNT),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

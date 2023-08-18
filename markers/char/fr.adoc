@@ -17,6 +17,8 @@ Syntax::
 * *USFM:* ``++\fr ++``#__cv-reference__#
 * *USX:* ``++<char style="fr">++``#__cv-reference__#``++</char>++``
 #cv-reference#::: Chapter + verse origin reference. The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation after the reference is optional.
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -70,8 +72,6 @@ image::char/fr_1.jpg[Mark 1.1 and 1.4 (GNT),600]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

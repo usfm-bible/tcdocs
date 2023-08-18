@@ -16,6 +16,8 @@ Description:: xref:note:crossref/index.adoc[Cross Reference] - Target references
 Syntax::
 * *USFM:* ``++\xta ++``#__content__#
 * *USX:* ``++<char style="xta">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -60,8 +62,6 @@ image::char/xta_1.jpg[Matthew 3.0 (GNT - text and markup adapted),500]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

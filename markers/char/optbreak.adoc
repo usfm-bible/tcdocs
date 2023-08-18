@@ -16,13 +16,8 @@ Description:: Discretionary (optional) line break.
 Syntax::
 * *USFM:* ``++//++``
 * *USX:* ``++<optbreak/>++``
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`, `[xref:note:footnote/index.adoc[Footnote]]`
 Added:: 1.0
-
-== Properties
-
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[BookTitles], [BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
-TextProperties:: publishable
 
 == Examples
 
@@ -49,6 +44,10 @@ USX::
 ======
 
 image::char/optbreak_1.jpg[Matthew 9.1 (GNT),300]
+
+== Properties
+
+TextProperties:: publishable
 
 == Publication Issues
 

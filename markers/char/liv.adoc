@@ -16,6 +16,8 @@ Description:: xref:para:lists/index.adoc[List] entry 'value' content.
 Syntax::
 * *USFM:* ``++\liv ++``#__content__#``++\liv*++``
 * *USX:* ``++<char style="liv">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:para:lists/index.adoc[List]]`
 Added:: 3.0
 
 == Examples
@@ -115,8 +117,6 @@ image::char/lik_liv_1.jpg[1 Chronicles 27:16-22 (GNT),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[ChapterContent] > [ListPara]`, `[SidebarContent] > [ListPara]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

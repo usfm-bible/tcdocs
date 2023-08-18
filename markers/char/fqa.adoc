@@ -16,6 +16,8 @@ Description:: xref:note:footnote/index.adoc[Footnote] - Alternate translation. U
 Syntax::
 * *USFM:* ``++\fqa ++``#__content__#
 * *USX:* ``++<char style="fqa">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -69,8 +71,6 @@ image::char/fqa_1.jpg[Mark 1.1 and 1.4 (GNT),600]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

@@ -16,6 +16,8 @@ Description:: Acrostic character. Used to mark the acrostic letter within a poet
 Syntax::
 * *USFM:* ``++\qac ++``#__content__#``++\qac*++``
 * *USX:* ``++<char style="qac">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[Para]` (xref:para:poetry/index.adoc[Poetry])
 Added:: 1.0
 
 == Examples

@@ -75,7 +75,7 @@ image::schema/bktitles_usx.svg[]
 ** *Paragraphs > Introductions >* xref:para:introductions/imt.adoc[]
 ** *Paragraphs > Identification >* xref:para:identification/rem.adoc[]
 
-* An optional collection of one or more child elements.
+* An optional collection of one or more embedded elements.
 
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
 ** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
@@ -103,7 +103,7 @@ image::schema/bkintro_usx.svg[]
 ** *Paragraphs > Introductions >* xref:para:introductions/imt.adoc[], xref:para:introductions/imte.adoc[], xref:para:introductions/ib.adoc[], xref:para:introductions/ie.adoc[], xref:para:introductions/ili.adoc[], xref:para:introductions/imi.adoc[], xref:para:introductions/imq.adoc[], xref:para:introductions/im.adoc[], xref:para:introductions/io.adoc[], xref:para:introductions/iot.adoc[], xref:para:introductions/ipi.adoc[], xref:para:introductions/ipq.adoc[], xref:para:introductions/ipr.adoc[], xref:para:introductions/ip.adoc[], xref:para:introductions/iq.adoc[], xref:para:introductions/is.adoc[], xref:para:introductions/iex.adoc[], xref:para:identification/rem.adoc[]
 ** `[Table]`` — *Paragraphs* xref:para:tables/index.adoc[]
 
-* An optional collection of one or more child elements.
+* An optional collection of one or more embedded elements.
 
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
 ** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
@@ -132,7 +132,7 @@ image::schema/bkintroend_usx.svg[]
 ** *Paragraphs > Introductions >* xref:para:introductions/imt.adoc[]
 ** *Paragraphs > Titles and Sections >* xref:para:titles-sections/mt.adoc[]
 
-* An optional collection of one or more child elements.
+* An optional collection of one or more embedded elements.
 
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
 ** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
@@ -176,7 +176,7 @@ image::schema/chaptercontent_usx.svg[]
 ** `[Table]` — *Paragraphs >* xref:para:tables/index.adoc[Tables]
 ** `[Sidebar]` — xref:sbar:index.adoc[Sidebars]
 
-* An optional collection of one or more child elements.
+* An optional collection of one or more embedded elements.
 
 ** `[Verse]` — xref:cv:v.adoc[v]
 ** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]

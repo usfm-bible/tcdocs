@@ -16,6 +16,8 @@ Description:: Introduction outline references.
 Syntax::
 * *USFM:* ``++\ior ++``#__content__#``++\ior*++``
 * *USX:* ``++<char style="ior">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`
 Added:: 1.0
 
 == Examples
@@ -58,8 +60,6 @@ image::char/ior_1.jpg[Introduction to Mark (GNT),400]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[BookIntroductionContent] > [IntroOutlinePara]`
 TextType:: Other
 TextProperties:: publishable, vernacular
 

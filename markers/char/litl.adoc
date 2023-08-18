@@ -16,6 +16,8 @@ Description:: xref:para:lists/index.adoc[List] entry total. Use in accounting li
 Syntax::
 * *USFM:* ``++\litl ++``#__content__#``++\litl*++``
 * *USX:* ``++<char style="litl">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:para:lists/index.adoc[List]]`
 Added:: 3.0
 
 == Examples
@@ -98,8 +100,6 @@ image::char/litl_1.jpg[Nehemiah 7.6-14 (GNT),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[ChapterContent] > [ListPara]`, `[SidebarContent] > [ListPara]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

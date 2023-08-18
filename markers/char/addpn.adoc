@@ -16,6 +16,8 @@ Description:: Proper name within translator's addition.
 Syntax::
 * *USFM:* ``++\addpn ++``#__content__#``++\addpn*++``
 * *USX:* ``++<char style="addpn">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 1.0
 Deprecated:: 3.0
@@ -46,8 +48,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

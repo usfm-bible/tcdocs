@@ -106,7 +106,7 @@ OccursUnder:: `[BookIntroductionContent], [ChapterContent]`
 TextType:: Other
 TextProperties:: publishable, vernacular, note
 
-== Child Elements
+== Embedded Elements
 
 * xref:para:paragraphs/index.adoc[Paragraphs] `[Para]`
 * xref:para:lists/index.adoc[Lists] `[List]`

@@ -16,6 +16,8 @@ Description:: xref:note:footnote/index.adoc[Footnote] - Verse number. A verse nu
 Syntax::
 * *USFM:* ``++\fv ++``#__content__#``++\fv*++``
 * *USX:* ``++<char style="fv">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -68,8 +70,6 @@ image::char/fv_1.jpg[John 7.38 (GNT),600]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

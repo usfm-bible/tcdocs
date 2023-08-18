@@ -24,6 +24,7 @@ Syntax::
 ** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
 #eid# *::: Chapter end identifier. A standard book + chapter scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. _Required at chapter end milestone._
 ** Pattern: `+[A-Z1-4]{3} ?[0-9]++`
+Valid In:: `[xref:doc:index.adoc#scripture[Scripture]]` > `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -82,8 +83,6 @@ image::cv/c_1.jpg[Matthew 1 (GNT),300]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[Scripture]`
 TextType:: ChapterNumber
 TextProperties:: chapter
 

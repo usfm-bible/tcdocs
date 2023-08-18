@@ -16,6 +16,8 @@ Description:: Cross Reference - Keyword. The target references (xref:notes:cross
 Syntax::
 * *USFM:* ``++\xk ++``#__content__#
 * *USX:* ``++<char style="xk">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -44,8 +46,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

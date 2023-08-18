@@ -24,7 +24,7 @@ USX::
 image:schema/p_usx.svg[]
 ======
 
-== Child Elements
+== Embedded Elements
 
 * xref:note:index.adoc[Notes]
 ** `[Footnote]` – xref:note:footnote/index.adoc[Footnotes]

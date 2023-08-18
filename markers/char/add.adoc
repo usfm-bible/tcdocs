@@ -16,6 +16,8 @@ Description:: Translator's addition. Words supplied by the translator in order t
 Syntax::
 * *USFM:* ``++\add ++``#__content__#``++\add*++``
 * *USX:* ``++<char style="add">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 Added:: 1.0
 
 == Examples
@@ -47,8 +49,6 @@ image::char/add_1.jpg[Genesis 5.29 (Russian Synodal),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[ChapterContent] > [ParaWithVerse]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

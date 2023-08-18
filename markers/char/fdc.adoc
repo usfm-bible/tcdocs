@@ -16,6 +16,8 @@ Description:: xref:note:footnote/index.adoc[Footnote] - Deuterocanonical content
 Syntax::
 * *USFM:* ``++\fdc ++``#__content__#
 * *USX:* ``++<char style="fdc">++``#__content__#``++</char>++`
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`
 // tag::spec[]
 Added:: 1.0
 Deprecated:: 3.0
@@ -58,8 +60,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

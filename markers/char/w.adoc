@@ -21,6 +21,8 @@ Syntax::
 ** A strong’s ID augmentation identifier, if required, should be separated from the strong value by a colon `:`. An augmentation is a method of extending Strong’s by aligning it to another lexicon (e.g. Brown-Driver-Briggs). This requires dividing some words into two or more separate words.
 ** There are instances where more than one word may need to be included within xref:char:features/w.adoc[w] because of how Hebrew and Greek use word repetitions (e.g. for a superlative). Exodus 29:37 repeats the word ‘holy’ as the superlative form.
 #srcloc#::: Location of the word in the source text; Example: GNT version 5 text, book 51, chapter 1, verse 2, word 1.
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (attributes)
@@ -108,8 +110,6 @@ USFM::
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[BookIntroductionContent], [ChapterContent], [SidebarContent], [FootnoteContent], [PeripheralContent]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

@@ -16,6 +16,8 @@ Description:: Introduction quoted text. Inline scripture quotations, or other qu
 Syntax::
 * *USFM:* ``++\iqt ++``#__content__#``++\iqt*++``
 * *USX:* ``++<char style="iqt">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`
 Added:: 1.0
 
 == Examples
@@ -42,8 +44,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[BookIntroductionContent]`
 TextType:: Other
 TextProperties:: publishable, vernacular
 

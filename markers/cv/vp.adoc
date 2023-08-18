@@ -23,6 +23,8 @@ Syntax::
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 #eid# *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:cv:v.adoc[Verse]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -90,8 +92,6 @@ image::cv/vp_1.jpg[Esther-Greek 3.14-15 ('Addition B') (CEV - adapted),300]
 
 == Properties
 
-StyleType (USFM):: xref:char:index.adoc[Character]
-OccursUnder:: `[ParaWithVerse]`
 TextType:: Other
 
 == Publication Issues

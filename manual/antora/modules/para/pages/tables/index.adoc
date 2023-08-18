@@ -55,6 +55,6 @@ USX::
 image::schema/table_usx.svg[]
 ======
 
-== Child Elements
-** xref:char:tables/index.adoc[character types for tables] `[TableContent]`
+== Embedded Elements
+** `[TableContent]` — xref:char:tables/index.adoc[Character Types for Tables]
 include::para:/tables/xref-char.adoc[tag=xrefs-only]

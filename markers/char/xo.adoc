@@ -16,6 +16,8 @@ Description:: xref:note:crossref/index.adoc[Cross Reference] - Origin reference.
 Syntax::
 * *USFM:* ``++\xo ++``#__content__#
 * *USX:* ``++<char style="xo">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -108,8 +110,6 @@ image::char/xo_2.jpg[Mark 10.19 (multiple origin parts) (GNT),560]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

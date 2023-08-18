@@ -22,7 +22,7 @@ USX::
 image::schema/char_usx.svg[]
 ======
 
-== Child Elements
+== Embedded Elements
 
 * `[Footnote]` – xref:note:footnote/index.adoc[Footnotes]
 * `[Char]` – xref:char:index.adoc[Characters]

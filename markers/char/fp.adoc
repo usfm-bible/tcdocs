@@ -16,6 +16,8 @@ Description:: xref:note:footnote/index.adoc[Footnote] - Additional paragraph. Us
 Syntax::
 * *USFM:* ``++\fp ++``#__content__#
 * *USX:* ``++<char style="fp">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`
 // tag::spec[]
 Added:: 2.03
 // end::spec[]
@@ -44,8 +46,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[FootnoteContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

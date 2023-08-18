@@ -16,6 +16,8 @@ Description:: xref:note:crossref/index.adoc[Cross Reference] - DC target referen
 Syntax::
 * *USFM:* ``++\xdc ++``#__content__#``++\xdc*++``
 * *USX:* ``++<char style="xdc">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 2.2
 Deprecated:: 3.0
@@ -101,8 +103,6 @@ image::char/missing.jpg[1 Corinthians 15.51-52 (GNT - cross reference),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

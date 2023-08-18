@@ -1,7 +1,7 @@
 == Character Styles for Cross References
 
 // tag::xrefs-only[]
-* xref:char:notes/crossref/xt.adoc[xo - Origin reference]
+* xref:char:notes/crossref/xo.adoc[xo - Origin reference]
 * xref:char:notes/crossref/xop.adoc[xop - Published origin text]
 * xref:char:notes/crossref/xk.adoc[xk - Keyword]
 * xref:char:notes/crossref/xq.adoc[xq - Translation quote]

@@ -16,6 +16,8 @@ Description:: Used to mark the expression “Selah”. Commonly found in Psalms 
 Syntax::
 * *USFM:* ``++\qs ++``#__content__#``++\qs*++``
 * *USX:* ``++<char style="qs">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[Para]` (xref:para:poetry/index.adoc[Poetry])
 Added:: 1.0
 
 == Examples
@@ -61,8 +63,6 @@ image::char/qs_1.jpg[Exodus 3.15 (GNT),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[ChapterContent] > [PoeticPara]`, `[SidebarContent] > [PoeticPara]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular, poetic
 

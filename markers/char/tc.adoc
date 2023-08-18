@@ -28,6 +28,8 @@ Syntax::
 #colspan#::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="tc1" colspan="2" align="start">+`
 #align#::: Cell alignment = `start` | `center` | `end`. Represents 'left', 'center', and 'right' respectively in left-to-right direction texts, and 'right', 'center', 'left' in right-to-left direction texts.
 #content#::: The cell text.
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:para:tables/index.adoc[Table]]`
 Added:: 1.0
 
 == Examples
@@ -91,8 +93,6 @@ image::char/tc_1.jpg[Numbers 2.10-16 (GNT),300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[TableRow]`
 TextType:: VerseText
 TextProperties:: publishable, vernacular
 

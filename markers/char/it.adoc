@@ -16,6 +16,8 @@ Description:: Italic text.
 Syntax::
 * *USFM:* ``++\it ++``#__content__#``++\it*++``
 * *USX:* ``++<char style="it">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`, `[xref:note:footnote/index.adoc[Footnote]]`
 Added:: 1.0
 
 == Examples
@@ -39,6 +41,10 @@ Missing
 ======
 
 image::char/missing.jpg[,300]
+
+== Properties
+
+TextProperties:: publishable, vernacular
 
 == Publication Issues
 

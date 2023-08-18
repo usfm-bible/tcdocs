@@ -16,6 +16,8 @@ Description:: xref:note:crossref/index.adoc[Cross Reference] - OT target referen
 Syntax::
 * *USFM:* ``++\xot ++``#__content__#``++\xot*++``
 * *USX:* ``++<char style="xot">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 2.2
 // end::spec[]
@@ -44,8 +46,6 @@ image::char/missing.jpg[,300]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

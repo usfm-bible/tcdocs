@@ -16,6 +16,8 @@ Description:: xref:note:crossref/index.adoc[Cross Reference] - Published origin 
 Syntax::
 * *USFM:* ``++\xop ++``#__content__#``++\xop*++``
 * *USX:* ``++<char style="xop">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -87,8 +89,6 @@ image::char/xop_1.jpg[Jonah 1.1-5 (Bulgarian Orthodox Bible),600]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[CrossReferenceContent]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
