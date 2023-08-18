@@ -18,7 +18,9 @@ Syntax::
 * *USX:* ``++<char style="ior">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Examples
 

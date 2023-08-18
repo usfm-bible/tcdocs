@@ -18,7 +18,9 @@ Syntax::
 * *USX:* ``++<char style="qs">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[Para]` (xref:para:poetry/index.adoc[Poetry])
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Examples
 

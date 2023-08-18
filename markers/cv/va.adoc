@@ -25,7 +25,6 @@ Syntax::
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 Style Type (in USFM):: xref:char:index.adoc[Character]
 Valid In:: `[xref:cv:v.adoc[Verse]]`
-
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

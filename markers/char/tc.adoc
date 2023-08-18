@@ -30,7 +30,9 @@ Syntax::
 #content#::: The cell text.
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
 Added:: 1.0
+// end::spec[]
 
 == Examples
 
