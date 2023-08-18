@@ -19,6 +19,8 @@ Syntax::
 * *USX:* ``++<ms style="qt#-s" ++``#__@sid @who__#``++/>++`` / ``++<ms style="qt#-e" ++``#__@eid__#``++/>++``
 #sid#, #eid#::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
 #who#::: The speaker of the quotation _(default attribute)_
+Style Type:: xref:ms:index.adoc[Milestone]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -160,9 +162,6 @@ USX::
 ======
 
 == Properties
-
-StyleType:: xref:ms:index.adoc[Milestone]
-OccursUnder:: `[ChapterContent]`
 
 == Publication Issues
 

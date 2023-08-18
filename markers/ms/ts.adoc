@@ -17,6 +17,8 @@ Syntax::
 * *USFM:* ``++\ts-s |++``#__@sid__#``++\*++`` / ``++\ts-e |++``#__@eid__#``++\*++``
 * *USX:* ``++<ms style="ts-s" ++``#__@sid__#``++/>++`` / ``++<ms style="ts-e" ++``#__@eid__#``++/>++``
 #sid#, #eid#::: See xref:ms:index.adoc#_attributes[attributes for any milestone].
+Style Type:: xref:ms:index.adoc[Milestone]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
