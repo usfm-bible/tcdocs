@@ -21,6 +21,8 @@ Syntax::
 ** `-` - No caller.
 ** `?` - Where  `?` represents the specific character to be used for the caller.
 #content#::: xref:char:notes/crossref/index.adoc[Character types for cross references].
+Style Type:: xref:note:index.adoc[Note]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`, `[xref:doc:index.adoc#doc-periphbook-periph-content[PeripheralContent]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -113,8 +115,6 @@ image::note/x_2.jpg[Mark 10.19 (multiple origin parts) (GNT),560]
 
 == Properties
 
-StyleType:: xref:note:index.adoc[Note]
-OccursUnder:: `[ParaWithNote]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 

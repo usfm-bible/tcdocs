@@ -17,7 +17,7 @@ Syntax::
 * *USFM:* ``++\ior ++``#__content__#``++\ior*++``
 * *USX:* ``++<char style="ior">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]
-Valid In:: `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

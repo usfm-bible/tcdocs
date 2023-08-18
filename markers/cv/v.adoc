@@ -23,7 +23,7 @@ Syntax::
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 #eid# *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
-Valid In:: `[xref:doc:index.adoc#scripture[Scripture]]` > `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+Valid In:: `[xref:doc:index.adoc#scripture[Scripture]]` > `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

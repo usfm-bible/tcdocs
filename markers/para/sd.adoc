@@ -18,7 +18,7 @@ Syntax::
 * *USFM:* ``++\sd# ++``#__content__#
 * *USX:* ``++<para style="sd#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]
-Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]` > `[Section]`
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]` > `[Section]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

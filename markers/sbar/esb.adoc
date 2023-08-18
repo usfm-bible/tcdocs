@@ -18,6 +18,8 @@ Syntax::
 * *USX:* ``++<sidebar style="esb" ++``#__@category__#``++">++``#__content__#``++</sidebar>++``
 #category#::: Sidebar category.
 #content#::: The sidebar paragraph elements and text.
+StyleType:: xref:para:index.adoc[Paragraph]
+valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`, `[xref:doc:index.adoc#doc-periphbook-periph-content[PeripheralContent]]`
 // tag::spec[]
 Added:: 2.1
 // end::spec[]
@@ -101,19 +103,17 @@ image::sbar/esb_1.jpg[Mark 1 (CEV Learning Bible),550]
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[BookIntroductionContent], [ChapterContent]`
 TextType:: Other
 TextProperties:: publishable, vernacular, note
 
 == Embedded Elements
 
-* xref:para:paragraphs/index.adoc[Paragraphs] `[Para]`
-* xref:para:lists/index.adoc[Lists] `[List]`
-* xref:para:tables/index.adoc[Tables] `[Table]`
-* xref:note:footnote/index.adoc[Footnotes] `[Footnote]`
-* xref:note:crossref/index.adoc[Cross References] `[CrossReference]`
-* xref:char:index.adoc[Characters] `[Char]`
+* `[Para]` — xref:para:paragraphs/index.adoc[Paragraphs], xref:para:poetry/index.adoc[Poetry]
+* `[List]` — xref:para:lists/index.adoc[Lists]
+* `[Table]` — xref:para:tables/index.adoc[Tables]
+* `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
+* `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
+* `[Char]` — xref:char:index.adoc[Characters]
 
 == Publication Issues
 

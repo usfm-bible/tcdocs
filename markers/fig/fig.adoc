@@ -23,6 +23,8 @@ Syntax::
 #loc#::: Location / range. Specify a range of references at which the illustration might be inserted.
 #copy#::: Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
 #caption#::: Illustration caption text.
+Style Type:: xref:fig:index.adoc[Figure]
+Valid In:: 
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (xref:char:attributes.adoc[attributes] syntax)
@@ -117,8 +119,6 @@ image::fig/fig_2.jpg[Mark 1.31 (GNT),550]
 
 == Properties
 
-StyleType:: xref:char:index.adoc[Character]
-OccursUnder:: `[ParaWithFig]`
 TextType:: Other
 TextProperties:: paragraph publishable vernacular
 

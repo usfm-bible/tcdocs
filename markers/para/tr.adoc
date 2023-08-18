@@ -25,7 +25,7 @@ Syntax::
 *** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 #content#::: xref:char:tables/index.adoc[Character Types for Tables].
 Style Type:: xref:para:index.adoc[Paragraph]
-Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[Chapter Content]]`
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]

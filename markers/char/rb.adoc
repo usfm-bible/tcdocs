@@ -19,7 +19,7 @@ Syntax::
 #gloss#::: Ruby gloss characters _(default attribute)_
 ** If the base text being glossed (`B`) is a _phrase_ of multiple Han characters, then the ruby gloss text (`gg`) may contain multiple elements, one for glossing each of the base text characters making up the phrase. Use a colon `:` to separate multiple glossing characters. Parts of a phrase gloss may be left empty. Example: `+\rb BB|"gg:gg"\rb*+` or `+\rb BBBB|gg1::gg3:\rb*+`.
 Style Type:: xref:char:index.adoc[Character]
-Valid In:: `[xref:doc:index.adoc#doc-book-titles[Book Titles]]`, `[xref:doc:index.adoc#doc-book-intro[Book Introduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[Book Introduction End Titles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]

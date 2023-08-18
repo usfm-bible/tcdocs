@@ -21,6 +21,8 @@ Syntax::
 ** `-` - No caller.
 ** `?` - Where  `?` represents the specific character to be used for the caller.
 #content#::: xref:char:notes/footnote/index.adoc[Character types for footnotes].
+Style Type:: xref:note:index.adoc[Note]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`, `[xref:doc:index.adoc#doc-periphbook-periph-content[PeripheralContent]]`
 // tag::spec[]
 Added:: 1.0
 // end::spec[]
@@ -78,8 +80,6 @@ image::note/f_2.jpg[Mark 1.1 and 1.4 (note text) (GNT),600]
 
 == Properties
 
-StyleType:: xref:note:index.adoc[Note]
-OccursUnder:: `[ParaWithNote]`
 TextType:: NoteText
 TextProperties:: publishable, vernacular, note
 
