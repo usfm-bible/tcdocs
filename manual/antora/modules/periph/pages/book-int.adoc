@@ -42,20 +42,21 @@ USFM::
 \id INT
 \periph Old Testament Introduction|id="intot"
 \mt1 Introduction to the Old Testament
-\p The Old Testament is a record of Israel's experience of what God is like and what
-the people who worship God should be like. It proclaims the LORD God as the creator of
-the world and it tells how God blesses people and establishes relations with people
-through special agreements called covenants.
+\p The Old Testament is a record of Israel's experience of what God is like and 
+what the people who worship God should be like. It proclaims the LORD God as the 
+creator of the world and it tells how God blesses people and establishes relations 
+with people through special agreements called covenants.
 ...
 \periph Pentateuch Introduction|id="intpent"
 \s1 The Pentateuch
-\p “Pentateuch” is a term that means “five scrolls (books)” and is used to describe the
-five books that are positioned at the beginning of both Jewish and Christian Bibles.
+\p “Pentateuch” is a term that means “five scrolls (books)” and is used to 
+describe the five books that are positioned at the beginning of both Jewish and 
+Christian Bibles.
 ...
 \periph Deuterocanon Introduction|id="intdc"
 \mt1 Deuterocanonicals/Apocrypha
-\p Most of the books gathered in this section were part of an ancient translation of
-the Hebrew Scriptures into Greek called the Septuagint which was widely read by
+\p Most of the books gathered in this section were part of an ancient translation 
+of the Hebrew Scriptures into Greek called the Septuagint which was widely read by
 Christians in the early church.
 ...
 \periph New Testament Introduction|id="intnt"
