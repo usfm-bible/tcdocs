@@ -1,3 +1,75 @@
 = Topical Index
 
-The `TDX` xref:para:identification/books.adoc[book] 
+The `TDX` xref:para:identification/books.adoc[book] can be used for adding a topical index.
+
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading] - Possible use: Headings of alphabetical divisions - 'A', 'B', 'C' etc.
+* xref:para:paragraphs/p.adoc[p - Paragraph] - Main entry _(required)_. May also be used for any additional paragraphs in the definition entry (optional).
+* xref:char:features/k.adoc[k - Keyword/keyterm] - Main entry keyword. _(required)_
+* xref:char:notes/crossref/xt.adoc[xt - Target references] - Entry target reference(s). _(required)_. More than one xref:char:notes/crossref/xt.adoc[xt] entry can be provided to create logical groupings of references (per chapter; per book etc.).
+* xref:para:paragraphs/pi.adoc[pi - Indented paragraph] - Sub-entries, or secondary paragraph(s), if indentation is preferred.
+* xref:para:lists/index.adoc[Lists]
+* xref:para:tables/index.adoc[Tables]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-tdx_1,usfm]
+----
+\id TDX
+\mt Subject Index
+\ip Introductory paragraph(s)
+...
+\s A
+\p \k Aaron\k*
+\xt Act 7.40
+\xt Heb 5.4; 7.11; 9.4
+...
+\p \k Angels\k*
+\pi (a) messengers and agents of God
+\xt Mat 1.20-24; 4.11; 13.39,41,49; 16.27; 34.31; 25.31; 28.2-7
+\xt Luk 1.11-19; 26-38; 2.9-21
+\xt Jhn 1.51
+...
+\pi (b) in heaven
+\xt Mat 22.30
+\xt Luk 12.8-9; 15.10; 20.36
+...
+----
+USX::
++
+[source#src-usx-periph-tdx_1,xml]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="XXA" style="id"/>
+  <para style="mt">Subject Index</para>
+  <para style="ip">Introductory paragraph(s) ...</para>
+  <para style="s">A</para>
+  <para style="p">
+    <char style="k">Aaron</char>
+    <char style="xt">Act 7.40 </char>
+    <char style="xt">Heb 5.4; 7.11; 9.4</char>
+    </para>
+  ...
+  <para style="p">
+    <char style="k">Angels</char>
+  </para>
+  <para style="pi">(a) messengers and agents of God 
+    <char style="xt">Mat 1.20-24; 4.11; 13.39,41,49; 16.27; 34.31; 25.31; 
+      28.2-7</char>
+    <char style="xt">Luk 1.11-19; 26-38; 2.9-21</char>
+    <char style="xt" Jhn 1.51</char>
+    ...</para>
+  <para style="pi">(b) in heaven
+    <char style="xt">Mat 22.30 </char>
+    <char style="xt">Luk 12.8-9; 15.10; 20.36</char>
+    ...</para>
+</usx>
+----
+======
