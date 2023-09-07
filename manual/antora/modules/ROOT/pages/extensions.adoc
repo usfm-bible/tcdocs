@@ -1,8 +1,8 @@
-= z Namespace
+= User Extensions ('z' namespace)
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
 
-If private-use markup extensions are required, it is recommended that any user additions begin with `+\z+` (e.g. `+\zMyMarker+`). Markers in this `+\z+` namespace are not considered part of the USFM standard. USFM processors cannot be expected to handle `+\z+` markup or associated text, and are free to ignore this markup when it is encountered in a text. It will be the application or user's responsibility to support `+\z+` markup in ways which meet a local need. Please consider this carefully before introducing non-standard USFM markup within a scripture translation project text.
+Any 'private-use' marker/style extensions should begin with `+z+`. Example: `+\zMyPara+` or `+<para style="zMyPara">+`. Markers/styles in the `+z+` namespace are not considered part of the USFM/USX standard. An application or processor may provided support for `+z+` extensions, but are not expected to handle the markup or its associated text in any particular way, and are also free to ignore this markup when it is encountered in a text.

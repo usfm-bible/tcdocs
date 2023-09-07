@@ -1,4 +1,4 @@
-= Documentation Syntax Notes
+= Documentation Syntax
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../

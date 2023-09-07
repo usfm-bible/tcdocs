@@ -3,7 +3,7 @@
 IMPORTANT: Presently *this is a development site only*. Current USFM and USX documentation sites are available at https://ubsicap.github.io/usfm[] and https://ubsicap.github.io/usx[]
 
 * xref:ROOT:release-notes.adoc[Release Notes]
-* xref:ROOT:syntax.adoc[Syntax Notes]
+* xref:ROOT:introduction.adoc[Introduction]
 * xref:doc:index.adoc[Document Structure]
 * xref:cv:index.adoc[Chapters and Verses]
 * xref:para:index.adoc[Paragraphs]

@@ -1,44 +1,59 @@
-= Syntax Notes
+= General Syntax
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
 
-_See also:_
+There are five general categories of USFM/USX markup:
 
-* xref:whitespace.adoc[Whitespace]
-* xref:extensions.adoc[Extensions]
-* xref:syntax-docs.adoc[Docs Syntax Notes]
+* xref:para:index.adoc[Paragraphs]
+* xref:char:index.adoc[Characters]
+* xref:note:index.adoc[Notes]
+* xref:ms:index.adoc[Milestones]
+* xref:cv:index.adoc[Chapters and Verses]
 
-== General Syntax (USFM)
+== USFM
 
-* There are three broad categories of USFM markup - xref:para:index.adoc[paragraph], xref:char:index.adoc[character], and xref:note:index.adoc[note] types.
-* All USFM markers begin with a backslash character `\`.
-* xref:para:index.adoc[Paragraph] markers, and the opening marker for xref:char:index.adoc[characters] and xref:note:index.adoc[notes] are followed by whitespace.
-* xref:char:index.adoc[Character] markers occur in pairs, marking a span of text within a paragraph.
-** The closing marker character is the same as the opening marker, but ends with an asterisk character `+*+`. Example: `+\w grace\w*+`.
+In *USFM*, all markers begin with a backslash character `\`.
+
+* xref:para:index.adoc[Paragraph] markers, and the opening marker for xref:char:index.adoc[characters] and xref:note:index.adoc[notes] are followed by a space. Example: ``++\p ++``.
+* xref:char:index.adoc[Character] markers occur in pairs, marking a span of text within a paragraph. The closing marker is identical to the opening marker, terminated with an asterisk character `+*+`. Example: `+\w grace\w*+`.
 * xref:note:index.adoc[Note] markers also occur in pairs, marking the start and end of the xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content.
+* xref:ms:index.adoc[Milestone] markers follow a syntax similar to xref:char:index.adoc[character markers], but using a self-closing syntax which immediately terminates the marker with a second backslash plus asterisk `\*`. Example: `+\\qt-s\*+`
+* xref:cv:c.adoc[Chapters] and xref:cv:v.adoc[verses] are unique elements. Their syntax is similar to a paragraph marker. The chapter or verse number itself is added after the marker and its space. Chapter and verses are also like milestones because they identify the location for the start of a chapter or verse. In USFM there is no marker to indicate the end of a chapter or verse.
 
-== Numbered Markers
-Some USFM markers include an optional numeric variable, which is represented in this documentation by a hash character `+#+`. In USFM the number indicates:
+== USX
 
-* A portion of a complete element, or relative weighting of the "pieces" of the elements, such as `\mt1`, `\mt2`, `\mt3` which are parts of a major title.
-* The level of the division or section (hierarchy).
-* The level of indentation relative to other like elements, as in poetry (xref:para:poetry/q.adoc[\q#]) or lists (xref:para:lists/li.adoc[\li#]) or outlines (\io#).
+*USX* follows the https://www.w3.org/TR/xml/[standard syntax] for XML documents.
 
-*marker = marker1* — The _unnumbered_ version of a marker should only be used when only one level of this marker exists within the text. _Numbered_ markers should always be used when more than one level of the marker exists within the text.
+* xref:para:index.adoc[Paragraphs] occur within a `+<para>+` element.
+* xref:char:index.adoc[Character] spans occur within a `+<char>+` element.
+* xref:note:index.adoc[Notes] occur within a `+<note>+` element.
+* xref:ms:index.adoc[Milestones] occur as an `+<ms/>+` element.
+* xref:cv:c.adoc[Chapters] and xref:cv:v.adoc[verses] occur as as pairs of 'milestone-like' self-closing `+<chapter/>+` or `+<verse/>+` elements, which identify the start and end positions for a chapter or verse.
+
+Different _types_ of paragraph, character, note, or milestones are identified by a `+style+` attribute. The `+style+` attribute is the value which associates the element with its corresponding USFM marker.
+
+== Numbered Markers/Styles
+Some markers or styles include an optional numeric variable, which is represented in this documentation by a hash character `+#+`. The number indicates:
+
+* A portion of a larger text, or relative weighting of the components of the text, such as `mt1`, `mt2`, `mt3` which are parts of a xref:para:titles-sections/mt.adoc[main title].
+* The level of a division or section (hierarchy).
+* The level of indentation relative to other like elements, as in poetry (xref:para:poetry/q.adoc[q#]) or lists (xref:para:lists/li.adoc[li#]) or outlines (xref:para:introductions/io.adoc[io#]).
+
+*marker = marker1* — The _unnumbered_ version of a marker or style should only be used when one level of this marker exists within the text (only). _Numbered_ markers should always be used when more than one level of the marker exists within the text.
 
 [CAUTION]
 ====
-A specific numbered marker should not be used to indicate a specific occurrence of the element type (e.g. you should not use `\s3` to represent the the particular section heading occuring before the "Story of Creation" in Genesis 1.)
+A specific numbered marker or style should not be used to indicate a specific occurrence of the element type (i.e. you should not use `s3` to represent the the particular section heading occuring before the "Story of Creation" in Genesis 1.)
 ====
 
-== Endmarkers in Footnotes and Cross References
+== USFM Endmarkers in Footnotes and Cross References
 
-Elements which make up xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content are xref:char:index.adoc[character] level markers, which means that they define a start and end marker. Some USFM editors interpret the presence of a new character marker as an implicit closure of any preceding character level marker. The majority of scripture translation projects working with USFM have followed this syntax for footnotes or cross references (not supplying the explicit end marker) since this reduces the amount of markup within the notes text, making it easier to read as a result.
+Elements which make up xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content are xref:char:index.adoc[character] level markers, which means that they are defined with a start and end marker. The majority of scripture translation projects working with USFM have followed a syntax for editing footnotes or cross references which does not require the explicit end marker. This was done in order to reduces the amount of markup within the notes text, making it easier to read.
 
-Examples of the two markup approaches for notes is provided below:
+Examples of the two markup approaches for notes are given below. Both of these are syntactically acceptable in USFM.
 
 [tabs]
 ======
@@ -121,5 +136,5 @@ USX::
 
 [NOTE]
 ====
-xref:char:nesting.adoc[Nested] character markers within notes _always_ require explicit opening and closing markers, and must use the syntax for xref:char:nesting.adoc[character marker nesting].
+xref:char:nesting.adoc[Nested] character markers within notes _always_ require explicit opening and closing markers.
 ====
