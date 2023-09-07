@@ -6,7 +6,7 @@ The `CNC` xref:para:identification/books.adoc[book] can be used for adding a con
 * xref:para:introductions/is.adoc[is# - Intro section heading]
 * xref:para:introductions/ip.adoc[ip - Intro paragraph]
 * xref:para:titles-sections/s.adoc[s# - Section heading] - Possible use: Headings of alphabetical divisions - 'A', 'B', 'C' etc.
-* xref:para:paragraphs/p.adoc[p - Paragraph] - Main enttry + example 'cut string'. _(required)_
+* xref:para:paragraphs/p.adoc[p - Paragraph] - Main entry + example 'cut string'. _(required)_
 * xref:char:features/k.adoc[k - Keyword/keyterm] - Main entry keyword. _(required)_
 * xref:char:notes/crossref/xt.adoc[xt - Target references] - Entry target reference(s). _(required)_ 
 * xref:char:format/bd.adoc[bd - Bold text] - Highlight of the main entry within the cut string (in bold).

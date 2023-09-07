@@ -1,3 +1,60 @@
 = Glossary
 
-The `GLO` xref:para:identification/books.adoc[book] 
+The `GLO` xref:para:identification/books.adoc[book] can be used for adding a glossary.
+
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading] - Possible use: Headings of alphabetical divisions - 'A', 'B', 'C' etc.
+* xref:para:paragraphs/p.adoc[p - Paragraph] - Main entry _(required)_. May also be used for any additional paragraphs in the definition entry (optional).
+* xref:char:features/k.adoc[k - Keyword/keyterm] - Main entry keyword. _(required)_
+* xref:para:paragraphs/pi.adoc[pi - Indented paragraph] - Sub-entries, or secondary paragraph(s), if indentation is preferred.
+* xref:char:features/tl.adoc[tl - Transliterated words] - National idiom word(s).
+* xref:para:lists/index.adoc[Lists]
+
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-glo_1,usfm]
+----
+\id GLO
+\mt Glossary
+\ip This dictionary is divided into 21 sections. The indexes below list all of 
+the sections, and all of the entries in alphabetical order, so that you can find 
+what you are looking for more easily.
+\p \k Angel\k* A supernatural being who tells God's messages to people or protects 
+those who belong to God.
+...
+\p \k Council\k* (1) A group of leaders who meet and make decisions for their 
+people.
+\pi (2) The Old Testament refers to God's council as a group of angels who meet 
+and talk with God in heaven.
+...
+----
+USX::
++
+[source#src-usx-periph-glo_1,xml]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="GLO" style="id" />
+  <para style="mt">Glossary</para>
+  <para style="ip">This dictionary is divided into 21 sections. The indexes below
+    list all of the sections, and all of the entries in alphabetical order, so
+    that you can find what you are looking for more easily.</para>
+  <para style="p">
+    <char style="k">Angel</char> A supernatural being who tells God's messages to
+    people or protects those who belong to God. ...</para>
+  <para style="p">
+    <char style="k">Council</char> (1) A group of leaders who meet and make
+    decisions for their people.</para>
+  <para style="pi">(2) The Old Testament refers to God's council as a group of
+    angels who meet and talk with God in heaven.</para>
+  ...
+</usx>
+----
+======
