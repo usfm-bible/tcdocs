@@ -1,3 +1,70 @@
 = Names Index
 
-The `NDX` xref:para:identification/books.adoc[book] 
+The `NDX` xref:para:identification/books.adoc[book] can be used for adding a names index.
+
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading] - Possible use: Headings of alphabetical divisions - 'A', 'B', 'C' etc.
+* xref:para:paragraphs/p.adoc[p - Paragraph] - Main entry _(required)_. May also be used for any additional paragraphs in the definition entry (optional).
+* xref:char:features/k.adoc[k - Keyword/keyterm] - Main entry keyword. _(required)_
+* xref:char:notes/crossref/xt.adoc[xt - Target references] - Entry target reference(s). _(required)_. More than one xref:char:notes/crossref/xt.adoc[xt] entry can be provided to create logical groupings of references (per chapter; per book etc.).
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-ndx_1,usfm]
+----
+\id NDX
+\mt Names Index
+\ip Introductory paragraph(s) ...
+...
+\s A
+\p \k Aaron\k*
+\xt Exo 4.14-30 (x5)
+\xt Exo 5.1-21 (x5)
+...
+\p \k Abraham\k*
+\p See Also Abram
+\xt Gen 17.5-27 (x8)
+\xt Gen 18.1-33 (x15)
+...
+\s B
+\p \k Baal\k*
+\xt Num 22.41
+\xt Num 25.3-5 (x2)
+...
+----
+USX::
++
+[source#src-usx-periph-ndx_1,xml]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="NDX" style="id" />
+  <para style="mt">Names Index</para>
+  <para style="ip">Introductory paragraph(s) ...</para>
+  <para style="s">A</para>
+  <para style="p">
+    <char style="k">Aaron</char>
+    <char style="xt" >Exo 4.14-30 (x5)</char>
+    <char style="xt" >Exo 5.1-21 (x5)</char></para>
+  ...
+  <para style="p">
+    <char style="k">Abraham</char></para>
+  <para style="p">See Also Abram
+    <char style="xt">Gen 17.5-27 (x8)</char>
+    <char style="xt">Gen 18.1-33 (x15)</char></para>
+  ...
+  <para style="s">B</para>
+  <para style="p">
+    <char style="k">Baal</char>
+    <char style="xt">Num 22.41</char>
+    <char style="xt">Num 25.3-5 (x2)</char></para>
+  ...
+</usx>
+----
+======
