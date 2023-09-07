@@ -1,6 +1,6 @@
 = Back Matter
 
-The `BAK` xref:para:identification/books.adoc[book] and its divisions can be used for adding content which is normally presented at the end of a scripture publication.
+The `BAK` xref:para:identification/books.adoc[book] and its xref:periph:periph.adoc[divisions] can be used for adding content which is normally presented at the end of a scripture publication.
 
 [#periph-bak-chron]
 == Chronology

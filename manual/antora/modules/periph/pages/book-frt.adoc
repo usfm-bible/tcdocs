@@ -1,6 +1,6 @@
 = Front Matter
 
-The `FRT` xref:para:identification/books.adoc[book] and its divisions can be used for adding content which is normally presented at the start of a publication, before the first book of scripture.
+The `FRT` xref:para:identification/books.adoc[book] and its xref:periph:periph.adoc[divisions] can be used for adding content which is normally presented at the start of a publication, before the first book of scripture.
 
 [#periph-frt-title]
 == Title Page

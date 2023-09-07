@@ -1,6 +1,6 @@
 = Other
 
-The `OTH` xref:para:identification/books.adoc[book] and its divisions can be used for adding miscellaneous content which is not properly categorized in any other peripheral book or section .
+The `OTH` xref:para:identification/books.adoc[book] and its xref:periph:periph.adoc[divisions] can be used for adding miscellaneous content which is not properly categorized in any other peripheral book or section .
 
 [#periph-oth-cover]
 == Cover

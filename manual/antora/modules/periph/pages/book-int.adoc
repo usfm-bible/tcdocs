@@ -1,6 +1,6 @@
 = Introductions
 
-The `INT` xref:para:identification/books.adoc[book] and its divisions can be used for adding introductory content related to groupings of books within a scripture publication.
+The `INT` xref:para:identification/books.adoc[book] and its xref:periph:periph.adoc[divisions] can be used for adding introductory content related to groupings of books within a scripture publication.
 
 == Summary
 
