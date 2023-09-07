@@ -12,7 +12,6 @@ The `GLO` xref:para:identification/books.adoc[book] can be used for adding a glo
 * xref:char:features/tl.adoc[tl - Transliterated words] - National idiom word(s).
 * xref:para:lists/index.adoc[Lists]
 
-
 == Examples
 
 [tabs]
