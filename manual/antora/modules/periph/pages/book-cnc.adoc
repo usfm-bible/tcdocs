@@ -1,3 +1,90 @@
 = Concordance
 
-The `CNC` xref:para:identification/books.adoc[book] 
+The `CNC` xref:para:identification/books.adoc[book] can be used for adding a concordance.
+
+* xref:para:titles-sections/mt.adoc[mt# - Main title]
+* xref:para:introductions/is.adoc[is# - Intro section heading]
+* xref:para:introductions/ip.adoc[ip - Intro paragraph]
+* xref:para:titles-sections/s.adoc[s# - Section heading] - Possible use: Headings of alphabetical divisions - 'A', 'B', 'C' etc.
+* xref:para:paragraphs/p.adoc[p - Paragraph] - Main enttry + example 'cut string'. _(required)_
+* xref:char:features/k.adoc[k - Keyword/keyterm] - Main entry keyword. _(required)_
+* xref:char:notes/crossref/xt.adoc[xt - Target references] - Entry target reference(s). _(required)_ 
+* xref:char:format/bd.adoc[bd - Bold text] - Highlight of the main entry within the cut string (in bold).
+* xref:para:paragraphs/pi.adoc[pi - Indented paragraph] - Sub-entries, or secondary paragraph(s), if indentation is preferred.
+* xref:char:features/add.adoc[add - Translator addition] - Grammar abbreviation (optional).
+* xref:para:tables/index.adoc[Tables]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+[source#src-usfm-periph-cnc_1,usfm]
+----
+\id CNC
+\mt Concordance
+\ip The entries in this concordance have been carefully selected by a team of 
+editors. They have aimed to include all of the verses most likely to be looked up.
+\ip A concordance of this size cannot include every occurrence of each individual 
+word.
+...
+\s A
+\p \k Abandon\k*
+\p \xt Lev 19.4\xt* Do not \bd abandon\bd* me and worship idols.
+\p \xt Deu 31.6\xt* He will not fail you or \bd abandon\bd* you.”
+\p \xt Deu 32.15\xt* They \bd abandoned\bd* God their Creator
+...
+\p \k Able\k*
+\p \xt Exo 31.3\xt* understanding, skill, and \bd ability\bd*
+\p \xt Dan 3.17\xt* If the God whom we serve is \bd able\bd*
+\p \xt Mat 26.61\xt* and said, “This man said, ‘I am \bd able\bd*
+...
+\s B
+...
+----
+USX::
++
+[source#src-usx-periph-cnc_1,xml]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0">
+  <book code="CNC" style="id"/>
+  <para style="mt">Concordance</para>
+  <para style="ip">The entries in this concordance have been carefully selected by 
+    a team of editors. They have aimed to include all of the verses most likely to 
+    be looked up.</para>
+  <para style="ip">A concordance of this size cannot include every occurrence of 
+    each individual word. ...</para>
+  <para style="s">A</para>
+  <para style="p">
+    <char style="k">Abandon</char>
+  </para>
+  <para style="p">
+    <char style="xt">Lev 19.4</char> Do not <char style="bd">abandon</char> me and
+    worship idols.</para>
+  <para style="p">
+    <char style="xt">Deu 31.6</char> He will not fail you or 
+    <char style="bd">abandon</char> you.”</para>
+  <para style="p">
+    <char style="xt">Deu 32.15</char> They <char style="bd">abandoned</char>
+    God their Creator</para>
+  ...
+  <para style="p">
+    <char style="k">Able</char>
+  </para>
+  <para style="p">
+    <char style="xt">Exo 31.3</char> understanding, skill, and 
+    <char style="bd">ability</char></para>
+  <para style="p">
+    <char style="xt">Dan 3.17</char> If the God whom we serve is 
+    <char style="bd">able</char></para>
+  <para style="p">
+    <char style="xt">Mat 26.61</char> and said, “This man said, ‘I am 
+    <char style="bd">able</char>
+    ...</para>
+  <para style="s">B</para>
+  ...
+</usx>
+----
+======
