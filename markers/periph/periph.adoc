@@ -1,6 +1,6 @@
 = periph
 :description: Peripheral division identifier
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/sbar/esb.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/sbar/periph.adoc
 :noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
@@ -19,6 +19,8 @@ Syntax::
 #title# *::: Peripheral division title. May be expressed in the vernacular language.
 #id#::: A unique xref:periph:books-divs.adoc[peripheral division identifier]. A standard set of identifiers allows processors to easily select content for recognized peripheral divisions.
 #content#::: Peripheral content.
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#peripheral[Peripheral]]`
 // tag::spec[]
 Added:: 3.0
 // end::spec[]
@@ -113,8 +115,6 @@ USX::
 
 == Properties
 
-StyleType:: xref:para:index.adoc[Paragraph]
-OccursUnder:: `[Peripheral]`
 TextType:: Section
 TextProperties:: paragraph, publishable, vernacular
 
