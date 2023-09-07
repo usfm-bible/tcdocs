@@ -47,7 +47,7 @@ USX::
 ----
 <?xml version="1.0" encoding="utf-8"?>
 <usx version="3.0">
-  <book code="XXA" style="id"/>
+  <book code="TDX" style="id" />
   <para style="mt">Subject Index</para>
   <para style="ip">Introductory paragraph(s) ...</para>
   <para style="s">A</para>
