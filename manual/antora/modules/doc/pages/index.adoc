@@ -189,10 +189,86 @@ image::schema/chaptercontent_usx.svg[]
 == Peripheral
 `[Peripheral]`
 
-=== Peripheral Book
+[NOTE]
+====
+See the documentation section on xref:periph:index.adoc[peripherals] for more detail on the strategy for marking project peripheral contents.
+====
 
+* `[PeripheralBook]` — <<doc-periphbook-periph-book,Peripheral Book>> - Standalone peripheral book.
+* `[PeripheralDividedBook]` — <<doc-periphbook-periph-dividedBook,Peripheral Divided Book>> - Peripheral book with optional xref:periph:periph.adoc[divisions].
+
+'''
+
+[#doc-periphbook-standaloneBook]
+=== Peripheral Book (Standalone)
+`[PeripheralBook]`
+
+* `[BookHeaders]` — <<doc-book-headers,Book Headers>>
+* `[BookTitles]` — <<doc-book-titles,Book Titles>>
+* `[BookIntroduction]` — <<doc-book-intro,Book Introduction>>
+* `[BookIntroductionEndTitles]` — <<doc-book-intro-end-titles,Book Introduction End Titles>>
+* `[PeripheralContent]` — <<doc-periphbook-periph-content,Peripheral Content>>
+
+'''
+
+[#doc-periphbook-dividedBook]
 === Peripheral Divided Book
+`[PeripheralDividedBook]`
+
+* `[PeripheralDivision]` — <<doc-periphbook-periph-division,Peripheral Division>>
+
+[#doc-periphbook-periph-division]
+==== Peripheral Division
+`[PeripheralDivision]`
+
+[tabs]
+======
+USFM::
++
+image::schema/periph_rail.svg[]
+USX::
++
+image::schema/periph_usx.svg[]
+======
+
+* *Peripherals >* xref:periph:periph.adoc[periph - Peripheral division identifier]
+** `[BookHeaders]` — <<doc-book-headers,Book Headers>>
+** `[BookTitles]` — <<doc-book-titles,Book Titles>>
+** `[BookIntroduction]` — <<doc-book-intro,Book Introduction>>
+** `[BookIntroductionEndTitles]` — <<doc-book-intro-end-titles,Book Introduction End Titles>>
+** `[PeripheralContent]` — <<doc-periphbook-periph-content,Peripheral Content>>
+
+'''
 
 [#doc-periphbook-periph-content]
-==== Peripheral Content
+=== Peripheral Content
 `[PeripheralContent]`
+
+[tabs]
+======
+USFM::
++
+image::schema/chaptercontent_rail.svg[]
+USX::
++
+image::schema/chaptercontent_usx.svg[]
+======
+
+* An optional collection of xref:cv:c.adoc[chapter], xref:para:titles-sections/index.adoc[section], xref:para:index.adoc[paragraph/poetry], xref:para:lists/index.adoc[list], xref:para:tables/index.adoc[table], or xref:sbar:index.adoc[sidebar] elements for the main content of a scripture book.
+
+** `[Chapter]` — *Chapters and Verses >* xref:cv:c.adoc[c]
+** `[Section]` — *Paragraphs > Titles and Sections >* xref:para:titles-sections/cd.adoc[], xref:para:titles-sections/cl.adoc[], xref:para:introductions/iex.adoc[], xref:para:introductions/ip.adoc[], xref:para:titles-sections/mr.adoc[], xref:para:titles-sections/ms.adoc[], xref:para:titles-sections/mte.adoc[], xref:para:titles-sections/r.adoc[], xref:para:titles-sections/s.adoc[], xref:para:titles-sections/sp.adoc[], xref:para:titles-sections/sd.adoc[], xref:para:titles-sections/sr.adoc[]
+** `[Para]` — *Paragraphs > Body Paragraphs >* xref:para:paragraphs/b.adoc[], xref:para:paragraphs/cls.adoc[], xref:para:paragraphs/m.adoc[], xref:para:paragraphs/mi.adoc[], xref:para:paragraphs/nb.adoc[], xref:para:paragraphs/p.adoc[], xref:para:paragraphs/pc.adoc[], xref:para:paragraphs/ph.adoc[], xref:para:paragraphs/pi.adoc[], xref:para:paragraphs/pm.adoc[], xref:para:paragraphs/pmc.adoc[], xref:para:paragraphs/pmo.adoc[], xref:para:paragraphs/pmr.adoc[], xref:para:paragraphs/po.adoc[], xref:para:paragraphs/pr.adoc[]
+*** *Paragraphs > Poetry >* xref:para:poetry/b.adoc[], xref:para:poetry/q.adoc[], xref:para:poetry/qa.adoc[], xref:para:poetry/qc.adoc[], xref:para:poetry/qd.adoc[], xref:para:poetry/qm.adoc[], xref:para:poetry/qr.adoc[]
+** `[List]` — *Paragraphs > Lists >* xref:para:lists/lf.adoc[], xref:para:lists/lh.adoc[], xref:para:lists/li.adoc[], xref:para:lists/lim.adoc[]
+** `[Table]` — *Paragraphs >* xref:para:tables/index.adoc[Tables]
+** `[Sidebar]` — xref:sbar:index.adoc[Sidebars]
+
+* An optional collection of one or more embedded elements.
+
+** `[Verse]` — xref:cv:v.adoc[v]
+** `[Footnote]` — xref:note:footnote/index.adoc[Footnotes]
+** `[CrossReference]` — xref:note:crossref/index.adoc[Cross References]
+** `[Char]` — xref:char:index.adoc[Characters]
+** `[Milestone]` — xref:ms:index.adoc[Milestones]
+** `[Break]` — xref:char:breaks/optbreak.adoc[Optional line break]

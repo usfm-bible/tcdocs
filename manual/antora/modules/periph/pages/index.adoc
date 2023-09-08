@@ -10,6 +10,6 @@ Content should be created in separate book files according to the general groupi
 
 Content is added to books and divisions using the most appropriate existing USFM/USX xref:para:index.adoc[paragraph], xref:char:index.adoc[character], xref:para:tables/index.adoc[table] or xref:note:index.adoc[note] markup.
 
-Some back matter content is large enough that it is most practical to maintain it within its own book file (Concordance, Glossary, Topical Index, Names Index). These contents do not require a xref:periph:periph.adoc[periph] division identifier.
+Some larger back matter content is maintained it within its own book file (Concordance, Glossary, Topical Index, Names Index). These contents do not require a xref:periph:periph.adoc[periph] division identifier.
 
 include::../nav.adoc[tag=nav-topcat]

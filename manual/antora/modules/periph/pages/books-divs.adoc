@@ -5,6 +5,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
+[#periph-book-frt]
 == Front Matter
 
 `FRT` xref:para:identification/books.adoc[book] 
@@ -20,6 +21,7 @@ endif::[]
 * xref:book-frt.adoc#periph-frt-alphacontents[Alphabetical Contents] - `alphacontents`
 * xref:book-frt.adoc#periph-frt-abbreviations[Table of Abbreviations] - `abbreviations`
 
+[#periph-book-int]
 == Introductions
 
 `INT` xref:para:identification/books.adoc[book] 
@@ -36,6 +38,7 @@ endif::[]
 * xref:book-int.adoc#periph-int-all[Epistles Introduction] - `intepistles`
 * xref:book-int.adoc#periph-int-all[Letters Introduction] - `intletters`
 
+[#periph-book-bak]
 == Back Matter
 
 `BAK` xref:para:identification/books.adoc[book] 
@@ -45,14 +48,25 @@ endif::[]
 * xref:book-bak.adoc#periph-bak-maps[Map Index] - `maps`
 * xref:book-bak.adoc#periph-bak-maps[Map Index] - `maps`
 
-Some back matter content is large enough that it is most practical to maintain it within its own book file. These contents do not use a xref:periph:periph.adoc[periph] division identifier.
+[#periph-book-standalone]
+== Back Matter (Standalone)
+
+Some larger back matter content is maintained it within its own book file. These contents do not use a xref:periph:periph.adoc[periph] division identifier.
 
 * `CNC` xref:para:identification/books.adoc[book] - xref:book-cnc.adoc[Concordance]
 * `GLO` xref:para:identification/books.adoc[book] - xref:book-glo.adoc[Glossary]
 * `TDX` xref:para:identification/books.adoc[book] - xref:book-tdx.adoc[Topical Index]
 * `NDX` xref:para:identification/books.adoc[book] - xref:book-ndx.adoc[Names Index]
-* `OTH` xref:para:identification/books.adoc[book] - xref:book-oth.adoc[Other]
 
+[#periph-book-oth]
+== Other
+
+`OTH` xref:para:identification/books.adoc[book]
+
+* xref:book-oth.adoc#periph-oth-cover[Cover] - `cover`
+* xref:book-oth.adoc#periph-oth-spine[Spine] - `spine`
+
+[#periph-userDefined]
 == User Defined Peripheral Divisions
 
 If a project adds content for peripheral division which is not defined in the table above, a user-defined division ID should be added which begins with the prefix `x-`.

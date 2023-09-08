@@ -1,6 +1,6 @@
-= USFM and USX Documentation
+= USFM and USX 3.0 Documentation
 
-IMPORTANT: Presently *this is a development site only*. Current USFM and USX documentation sites are available at https://ubsicap.github.io/usfm[] and https://ubsicap.github.io/usx[]
+== Contents
 
 * xref:ROOT:release-notes.adoc[Release Notes]
 * xref:ROOT:introduction.adoc[Introduction]
@@ -13,3 +13,12 @@ IMPORTANT: Presently *this is a development site only*. Current USFM and USX doc
 * xref:sbar:esb.adoc[Sidebars]
 * xref:fig:fig.adoc[Figures]
 * xref:periph:index.adoc[Peripherals]
+
+== Status
+
+Version::
+
+[NOTE]
+====
+This documentation is *under development*. Until further notice, the current stable USFM and USX documentation sites remain available at https://ubsicap.github.io/usfm[] and https://ubsicap.github.io/usx[]
+====

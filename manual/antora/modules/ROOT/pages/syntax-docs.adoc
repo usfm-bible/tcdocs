@@ -1,7 +1,8 @@
-= Documentation Syntax
+= Documentation Syntax Notes
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
 
+* Throughout the documentation, texts shown between square brackets, with a grey background, in `[monospacedFont]` are names used for various types of definitions within the USFM/USX RNG schema. These names correspond to labels shown in the schema diagrams thoughout the documentation.
