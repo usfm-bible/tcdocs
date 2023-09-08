@@ -2,7 +2,7 @@
 * xref:introduction.adoc[Introduction]
 // tag::nav-topcat[]
 ** xref:syntax.adoc[General Syntax]
-** xref:bidirectional.adoc[Bidirectional Text]
+// ** xref:bidirectional.adoc[Bidirectional Text]
 ** xref:extensions.adoc[User Extensions]
 ** xref:normalization.adoc[Normalization]
 ** xref:glossary.adoc[Glossary of Terms]
