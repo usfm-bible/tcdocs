@@ -594,7 +594,7 @@ Char.char.style.enum = (
     | "wh" # A Hebrew wordlist text item
     | "wa" # An Aramaic wordlist text item
     | "wj" # For marking the words of Jesus
-    | "xt" # A target reference(s)
+    | [usfm:propval="link-href"] "xt" # A target reference(s)
     | "jmp" # For associating linking attributes to a span of text
     | "no" # A character style, use normal text
     | "it" # A character style, use italic text

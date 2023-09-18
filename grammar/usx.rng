@@ -1024,7 +1024,7 @@
       <value>wh</value>
       <value>wa</value>
       <value>wj</value>
-      <value>xt</value>
+      <value usfm:propval="link-href">xt</value>
       <value>jmp</value>
       <value>no</value>
       <value>it</value>
