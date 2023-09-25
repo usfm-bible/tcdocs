@@ -16,8 +16,10 @@ usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"]
 usfm:terminal [name="TAGPARMEND" value="/${wsnnl}+/"]
 usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"]
 usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"]
+usfm:terminal [name="ATTRIBTEXT" value="/(?:\\['&quot;\\]|[^\\])+?/"]
+usfm:terminal [name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"]
 usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
-usfm:terminal [name="TEXTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"]
+usfm:terminal [name="TEXTNOTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"]
 usfm:terminal [name="PIPE" value="/${ws}*(?<!\\)\|${ws}*/"]
 usfm:alias [name="usfm:tag" def="match" usfm:match [before="'\'" after="TAGEND" afterout="' '"]]
 usfm:alias [name="usfm:endtag" def="match" usfm:match [before="'\'" matchref="a" after="'*'" dump="true"]]
@@ -541,7 +543,7 @@ CharContent = (
     char.link?,
     [usfm:ignore="true"]char.closed?,
     ([usfm:ignore="true"] Reference | CharEmbed | Milestone | Footnote | CrossReference | Break |
-        [usfm:match[match="TEXTATTRIB" after="ATTRIBTEXTEND"]] text)+ # Nested character <char> markup
+        [usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text)+ # Nested character <char> markup
     )
 
 NoteCharContent = (
@@ -549,7 +551,7 @@ NoteCharContent = (
     char.link?,
     [usfm:ignore="true"]char.closed?,
     ([usfm:ignore="true"] Reference | NoteCharEmbed | Milestone | Break |
-        [usfm:match[match="TEXTATTRIB" after="ATTRIBTEXTEND"]] text)* # Nested character <char> markup
+        [usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text)* # Nested character <char> markup
     )
 
 Char = (
@@ -558,8 +560,8 @@ Char = (
         [usfm:grouping="12" usfm:tag[id="a" usfm:seq="true"]] attribute style { Char.char.style.enum },
         CharContent,
         [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-           ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
-                    second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
+           ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                    second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed| link-href | link-title | link-id) {xsd:string}+)?
         >> usfm:endtag[ahead="/[^\\]/" usfm:seq="true"]  # required
     }
@@ -649,10 +651,10 @@ CharWithAttrib =
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
         [usfm:order="2" usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
-                    second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
+        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                    second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed) {xsd:string}+)?,
-        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*
+        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTNOTATTRIB"]] text)*
         >> usfm:endtag[usfm:order="4"]
     }
 
@@ -662,10 +664,10 @@ FigureThree =
     element figure {
         [usfm:order="-2" usfm:tag [id="a"]] attribute style { "fig" },
         char.closed?,
-        [usfm:order="-1"] ([usfm:match[match="TEXTATTRIB"]] text?), # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        [usfm:order="-1"] ([usfm:match[match="TEXTNOTATTRIB"]] text?), # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
-                    second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
+        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                    second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed) {xsd:string}+)?
         >> usfm:endtag[usfm:order="4"]
     }
@@ -674,13 +676,13 @@ FigureTwo =
     element figure {
         [usfm:tag [id="a"]] attribute style { "fig" },
         char.closed?,
-        [usfm:match[match="TEXTATTRIB"]] attribute alt {xsd:string},
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTATTRIB"]] attribute src {xsd:string},
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTATTRIB"]] attribute size {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTATTRIB"]] attribute loc {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTATTRIB"]] attribute copy {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTATTRIB"]] attribute alt {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTATTRIB"]] attribute ref {xsd:string}
+        [usfm:match[match="TEXTNOTATTRIB"]] attribute alt {xsd:string},
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute src {xsd:string},
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute size {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute loc {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute copy {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute alt {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute ref {xsd:string}
         >> usfm:endtag[]
     }
 
@@ -689,10 +691,10 @@ CharEmbedWithAttrib =
         [usfm:order="-2" usfm:tag [before="'\+'" id="a"]] attribute style { CharWithAttrib.enum },
         char.closed?,
         [usfm:order="2" usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
-                    second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
+        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                    second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed) {xsd:string}+)?,
-        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTATTRIB"]] text)*
+        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTNOTATTRIB"]] text)*
         >> usfm:endtag[usfm:order="4" before="'\+'"]
     }
 
@@ -721,8 +723,8 @@ Milestone = (
         attribute sid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # optional milestone start id (digits, letters, underscore)
         attribute eid { xsd:string { pattern="[\p{L}\d_\-\.:]+" } }?, # milestone end id (digits, letters, underscore) - required with sid
         [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="/[^\\\n=&quot;]+/" between="'=&quot;'"
-                    second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
+        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                    second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed | sid | eid) {xsd:string}+)?,
         empty
     }

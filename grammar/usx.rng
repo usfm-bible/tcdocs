@@ -14,8 +14,10 @@
   <usfm:terminal name="TAGPARMEND" value="/${wsnnl}+/"/>
   <usfm:terminal name="TEXTEND" value="/${ws}*(?=[\\]|$)/"/>
   <usfm:terminal name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"/>
+  <usfm:terminal name="ATTRIBTEXT" value="/(?:\\[&#x27;&quot;\\]|[^\\])+?/"/>
+  <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"/>
   <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/"/>
-  <usfm:terminal name="TEXTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"/>
+  <usfm:terminal name="TEXTNOTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"/>
   <usfm:terminal name="PIPE" value="/${ws}*(?&lt;!\\)\|${ws}*/"/>
   <usfm:alias name="usfm:tag" def="match">
     <usfm:match before="&#x27;\&#x27;" after="TAGEND" afterout="&#x27; &#x27;"/>
@@ -930,7 +932,7 @@
           <ref name="CrossReference"/>
           <ref name="Break"/>
           <text>
-            <usfm:match match="TEXTATTRIB" after="ATTRIBTEXTEND"/>
+            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
         </choice>
       </oneOrMore>
@@ -951,7 +953,7 @@
           <ref name="Milestone"/>
           <ref name="Break"/>
           <text>
-            <usfm:match match="TEXTATTRIB" after="ATTRIBTEXTEND"/>
+            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
         </choice>
       </zeroOrMore>
@@ -972,7 +974,7 @@
             <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
             <oneOrMore>
               <attribute usfm:fallback-from="style">
-                <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
+                <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
                 <anyName>
                   <except>
                     <choice>
@@ -1124,7 +1126,7 @@
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
-              <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
+              <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
               <anyName>
                 <except>
                   <choice>
@@ -1143,7 +1145,7 @@
           <choice>
             <ref name="CharEmbed"/>
             <text>
-              <usfm:match match="TEXTATTRIB"/>
+              <usfm:match match="TEXTNOTATTRIB"/>
             </text>
           </choice>
         </group>
@@ -1168,7 +1170,7 @@
       <group usfm:order="-1">
         <optional>
           <text>
-            <usfm:match match="TEXTATTRIB"/>
+            <usfm:match match="TEXTNOTATTRIB"/>
           </text>
         </optional>
       </group>
@@ -1177,7 +1179,7 @@
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
-              <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
+              <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
               <anyName>
                 <except>
                   <choice>
@@ -1206,37 +1208,37 @@
         <ref name="char.closed"/>
       </optional>
       <attribute>
-        <usfm:match match="TEXTATTRIB"/>
+        <usfm:match match="TEXTNOTATTRIB"/>
         <name ns="">alt</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
         <name ns="">src</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
         <name ns="">size</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
         <name ns="">loc</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
         <name ns="">copy</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
         <name ns="">alt</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
         <name ns="">ref</name>
         <data type="string"/>
       </attribute>
@@ -1259,7 +1261,7 @@
           <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
           <oneOrMore>
             <attribute usfm:fallback-from="style">
-              <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
+              <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
               <anyName>
                 <except>
                   <choice>
@@ -1278,7 +1280,7 @@
           <choice>
             <ref name="CharEmbed"/>
             <text>
-              <usfm:match match="TEXTATTRIB"/>
+              <usfm:match match="TEXTNOTATTRIB"/>
             </text>
           </choice>
         </group>
@@ -1362,7 +1364,7 @@
             <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
             <oneOrMore>
               <attribute usfm:fallback-from="style">
-                <usfm:matchpair first="/[^\\\n=&quot;]+/" between="&#x27;=&quot;&#x27;" second="/[^\\\n&quot;]*/" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
+                <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"/>
                 <anyName>
                   <except>
                     <choice>

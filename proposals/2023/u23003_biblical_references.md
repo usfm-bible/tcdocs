@@ -137,7 +137,7 @@ In reading and interpretting a reference, we typically think from the large to t
                                         note -- word -- char
                                        / n    !       +
 translation -- Book -- Chapter -- Verse -- word -- char
-             .                  :        !       +
+            :.                 :.        !       +
 ```
 when interpretting a reference in the context of another reference, we start from the position in the hierarchy of the other reference. A pure number therefore is at the same level in the hierarchy. for example in GEN 2:3!4+5-7, the 7 is interpretted as a character. On the other hand GEN 2:3!4-7!8, the 7 is a word index and 8 the character. But why is this not verse 7 word 8? This is an ambiguity. To resolve it, we need to use a different separator. The basic principle is that a separator followed by a sequence (in this case digits) must be unique, but the separator defines the type of the following component. In this case of the character index, we can reuse `+` from the translation.
 
@@ -160,5 +160,5 @@ Noteref = "n" digits
 Charref = digits
 ContextRef = Chapter (chaptersep Verse)? | Verse | WordRef | Charref
 ```
-This grammar is technically ambiguous. For example a reference that consists only of a sequence of digits may be a chapter or a verse or a wordref or a charref.
+This grammar is technically ambiguous. For example a reference that consists only of a sequence of digits may be a chapter or a verse or a wordref or a charref. It is only in the context of another reference that the ambiguity may be resolved.
 
