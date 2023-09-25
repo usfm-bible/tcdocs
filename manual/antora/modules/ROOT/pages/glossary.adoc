@@ -1,3 +1,4 @@
+[glossary]
 = Glossary of Terms
 ifndef::localdir[]
 :source-highlighter: rouge
@@ -6,7 +7,7 @@ endif::[]
 :imagesdir: {localdir}/images
 
 Definitions for terms used within the USFM/USX schema and diagrams.
-
+[glossary]
 ws:: Pattern: ``++[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]++``
 wsnnl:: Pattern: ``++[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]++``
 nl:: Pattern: ``++\u000D?\u000A++``
