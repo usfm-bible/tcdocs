@@ -1,0 +1,104 @@
+{
+  "type": "USJ",
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "book:id",
+      "code": "GEN",
+      "content": []
+    },
+    {
+      "type": "chapter:c",
+      "number": "1",
+      "sid": "GEN 1"
+    },
+    {
+      "type": "para:p",
+      "content": [
+        {
+          "type": "verse:v",
+          "number": "1",
+          "sid": "GEN 1:1"
+        },
+        "verse one",
+        {
+          "type": "verse:v",
+          "number": "2",
+          "sid": "GEN 1:2"
+        },
+        "...",
+        {
+          "type": "char:w",
+          "strong": "H6212",
+          "content": [
+            "herbs"
+          ]
+        },
+        {
+          "type": "char:w",
+          "strong": "H2232",
+          "content": [
+            "yielding"
+          ]
+        },
+        {
+          "type": "char:w",
+          "strong": "H2233",
+          "content": [
+            "seed"
+          ]
+        },
+        ",",
+        {
+          "type": "char:add",
+          "content": [
+            {
+              "type": "char:w",
+              "strong": "H430",
+              "content": [
+                "and"
+              ]
+            }
+          ]
+        },
+        "fruit-trees",
+        {
+          "type": "char:w",
+          "strong": "H6213",
+          "content": [
+            "bearing"
+          ]
+        },
+        {
+          "type": "char:w",
+          "strong": "H6529",
+          "content": [
+            "fruit"
+          ]
+        },
+        {
+          "type": "char:w",
+          "strong": "H5921",
+          "content": [
+            "after"
+          ]
+        },
+        {
+          "type": "char:w",
+          "strong": "H5921",
+          "content": [
+            "their"
+          ]
+        },
+        {
+          "type": "char:w",
+          "strong": "H4327",
+          "content": [
+            "kind"
+          ]
+        },
+        ",..."
+      ]
+    }
+  ]
+}
