@@ -1,0 +1,55 @@
+#!/usr/bin/python3
+
+import argparse, sys, re
+import xml.etree.ElementTree as et
+
+deftemplate = '''
+[glossary]
+= Glossary of Terms
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+Definitions for terms used within the USFM/USX schema and diagrams.
+[glossary]
+'''
+
+structure = "{name}:: Pattern: ``++{value}++`` {documentation}"
+
+usfm = "http://usfm.bible/parse/2023"
+a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+def adocise(aregex):
+    return re.sub(r"\$\{(.*?)\}", r"++``\\$\\{\1\\}\\$``++", aregex)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("infile", help="Input RNG file")
+parser.add_argument("-o","--output", help="Output .adoc file")
+parser.add_argument("-t","--template", help="Template file to use")
+args = parser.parse_args()
+
+if args.template:
+    with open(args.template, encoding="utf-8") as inf:
+        template = inf.read()
+else:
+    template = deftemplate
+
+if args.output:
+    ofile = open(args.output, "w", encoding="utf-8")
+else:
+    ofile = sys.stdout
+
+ofile.write(template)
+doc = et.parse(args.infile)
+for e in doc.findall(f'{{{usfm}}}terminal'):
+    entry = {"name": e.get("name"),
+             "value": adocise(e.get("value")),
+             "documentation": e.findtext(f"{{{a}}}documentation")}
+    ofile.write(structure.format(**entry) + "\n")
+
+if args.output:
+    ofile.close()
+
+
