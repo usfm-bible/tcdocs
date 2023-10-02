@@ -162,3 +162,37 @@ ContextRef = Chapter (chaptersep Verse)? | Verse | WordRef | Charref
 ```
 This grammar is technically ambiguous. For example a reference that consists only of a sequence of digits may be a chapter or a verse or a wordref or a charref. It is only in the context of another reference that the ambiguity may be resolved.
 
+## Conclusion
+
+The final full grammar is therefore:
+
+```
+Reflist = RefRange (ws* Refsep ws* RefRange)*
+RefRange = Reference (ws* "-" ws* Reference)?
+Reference = Fullref | ContextRef
+FullRef = BookId ws* Chapter (chaptersep Verse)?
+ContextRef = Chapter (chaptersep Verse)? | Verse
+BookId = (TransId (":" | "."))? BookCode
+BookCode = [O-9A-Z]{3}
+TransId = langtag ("+" transcode)?
+chaptersep = ws* (":" | ".") ws* 
+Chapter = digits
+Verse = VerseNum ("!" WordRef)? 
+VerseNum = digits (subverse)? | "end"
+WordRef = (Noteref "!")? digits ("+" Charref)?
+Noteref = "n" digits
+Charref = digits
+ContextRef = Chapter (chaptersep Verse)? | Verse | WordRef | Charref
+subverse = "a" | "b" | "c" | "d" | "e" | "f"
+digits = ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+
+ws = " " | [\p{Zs}\u2OOB-\u200F\u202A-\u202E]
+langtag = lang ("-" script)? ("-" region)? ("-" variant)* ("-" ns ("-" extval)+)*
+lang = [a-z]{2,3} ("-" extlang)?
+extlang = [a-z]{3}
+script = [a-z]{4}
+region = [a-z]{2}
+variant = [a-z]{5,8}
+ns = [a-z]
+extval = [a-z]{5:8}
+transcode = [0-9a-z]{1,8}
+```

@@ -6,21 +6,55 @@ namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 namespace usfm = "http://usfm.bible/parse/2023"
 
-usfm:terminal [name="ws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"]
-usfm:terminal [name="wsnnl" value="/[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"]
-usfm:terminal [name="nl" value="/\u000D?\u000A/"]
-usfm:terminal [name="NL" value="/(?:${nl}|\u000D)+/"]
-usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"]
-usfm:terminal [name="WSS" value="/${ws}*/"]
-usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"]
-usfm:terminal [name="TAGPARMEND" value="/${wsnnl}+/"]
-usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"]
-usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"]
-usfm:terminal [name="ATTRIBTEXT" value="/(?:\\['&quot;\\]|[^\\])+?/"]
-usfm:terminal [name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"]
-usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"]
-usfm:terminal [name="TEXTNOTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"]
-usfm:terminal [name="PIPE" value="/${ws}*(?<!\\)\|${ws}*/"]
+usfm:terminal [name="ws" value="/[\u0009-\u000D\u0020]/"
+    a:documentation ["A single simple whitespace character that may be reduced"]]
+
+usfm:terminal [name="allws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"
+    a:documentation ["All possible whitespace characters including content whitespace. Matches a single character"]]
+
+usfm:terminal [name="wsnnl" value="/[\u0009\u0020]/"
+    a:documentation ["A single non newline simple whitespace character"]]
+
+usfm:terminal [name="nl" value="/(?:\u000D?\u000A|\u000D)/"
+    a:documentation ["A single newline (as supported by all operating systems)"]]
+
+usfm:terminal [name="NL" value="/${nl}+/"
+    a:documentation ["A sequence of newline characters"]]
+
+usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"
+    a:documentation ["A single reducable whitespace character"]]
+
+usfm:terminal [name="WSS" value="/${wsnnl}*/"
+    a:documentation ["A sequence of reducable whitespace characters"]]
+
+usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"
+    a:documentation ["Delimits a marker"]]
+
+usfm:terminal [name="TAGPARMEND" value="/${wsnnl}+/"
+    a:documentation ["Delimits an attribute parameter name"]]
+
+usfm:terminal [name="TEXTEND" value="/${ws}*(?=[\\]|$)/"
+    a:documentation ["Delimits simple text"]]
+
+usfm:terminal [name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"
+    a:documentation ["Reducable characters following an attribute value"]]
+
+usfm:terminal [name="ATTRIBTEXT" value="/(?:\\['&quot;\\]|[^\\])+?/"
+    a:documentation ["Matches text inside an attribute value (not including the quotes)"]]
+
+usfm:terminal [name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"
+    a:documentation ["Matches an attribute name"]]
+
+usfm:terminal [name="TEXT" value="/[^\\]+?(?=[\\]|$)/"
+    a:documentation ["Matches simple text"]]
+
+usfm:terminal [name="TEXTNOTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"
+    a:documentation ["Matches simple text up to the start of a sequence of attributes delimited by |"]]
+
+usfm:terminal [name="PIPE" value="/${ws}*(?<!\\)\|${ws}*/"
+    a:documentation ["Matches the attributes list delimiter of |"]]
+
+
 usfm:alias [name="usfm:tag" def="match" usfm:match [before="'\'" after="TAGEND" afterout="' '"]]
 usfm:alias [name="usfm:endtag" def="match" usfm:match [before="'\'" matchref="a" after="'*'" dump="true"]]
 usfm:alias [name="usfm:text" def="match" usfm:match[match="TEXT" after="TEXTEND"]]

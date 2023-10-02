@@ -4,21 +4,54 @@
          xmlns:usfm="http://usfm.bible/parse/2023"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-  <usfm:terminal name="ws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"/>
-  <usfm:terminal name="wsnnl" value="/[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/"/>
-  <usfm:terminal name="nl" value="/\u000D?\u000A/"/>
-  <usfm:terminal name="NL" value="/(?:${nl}|\u000D)+/"/>
-  <usfm:terminal name="WS" value="/(?:${ws}|${nl}|$)/"/>
-  <usfm:terminal name="WSS" value="/${ws}*/"/>
-  <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"/>
-  <usfm:terminal name="TAGPARMEND" value="/${wsnnl}+/"/>
-  <usfm:terminal name="TEXTEND" value="/${ws}*(?=[\\]|$)/"/>
-  <usfm:terminal name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/"/>
-  <usfm:terminal name="ATTRIBTEXT" value="/(?:\\[&#x27;&quot;\\]|[^\\])+?/"/>
-  <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"/>
-  <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/"/>
-  <usfm:terminal name="TEXTNOTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/"/>
-  <usfm:terminal name="PIPE" value="/${ws}*(?&lt;!\\)\|${ws}*/"/>
+  <usfm:terminal name="ws" value="/[\u0009-\u000D\u0020]/">
+    <a:documentation>A single simple whitespace character that may be reduced</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="allws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/">
+    <a:documentation>All possible whitespace characters including content whitespace. Matches a single character</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="wsnnl" value="/[\u0009\u0020]/">
+    <a:documentation>A single non newline simple whitespace character</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="nl" value="/(?:\u000D?\u000A|\u000D)/">
+    <a:documentation>A single newline (as supported by all operating systems)</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="NL" value="/${nl}+/">
+    <a:documentation>A sequence of newline characters</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="WS" value="/(?:${ws}|${nl}|$)/">
+    <a:documentation>A single reducable whitespace character</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="WSS" value="/${wsnnl}*/">
+    <a:documentation>A sequence of reducable whitespace characters</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/">
+    <a:documentation>Delimits a marker</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="TAGPARMEND" value="/${wsnnl}+/">
+    <a:documentation>Delimits an attribute parameter name</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="TEXTEND" value="/${ws}*(?=[\\]|$)/">
+    <a:documentation>Delimits simple text</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="ATTRIBTEXTEND" value="/${ws}*(?=[\\|])/">
+    <a:documentation>Reducable characters following an attribute value</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="ATTRIBTEXT" value="/(?:\\[&#x27;&quot;\\]|[^\\])+?/">
+    <a:documentation>Matches text inside an attribute value (not including the quotes)</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/">
+    <a:documentation>Matches an attribute name</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="TEXT" value="/[^\\]+?(?=[\\]|$)/">
+    <a:documentation>Matches simple text</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="TEXTNOTATTRIB" value="/[^\\|]+?(?=[\\|]|$)/">
+    <a:documentation>Matches simple text up to the start of a sequence of attributes delimited by |</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="PIPE" value="/${ws}*(?&lt;!\\)\|${ws}*/">
+    <a:documentation>Matches the attributes list delimiter of |</a:documentation>
+  </usfm:terminal>
   <usfm:alias name="usfm:tag" def="match">
     <usfm:match before="&#x27;\&#x27;" after="TAGEND" afterout="&#x27; &#x27;"/>
   </usfm:alias>
