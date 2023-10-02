@@ -7,7 +7,7 @@
   <usfm:terminal name="ws" value="/[\u0009-\u000D\u0020]/">
     <a:documentation>A single simple whitespace character that may be reduced</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="allws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]/">
+  <usfm:terminal name="allws" value="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F\u3000]/">
     <a:documentation>All possible whitespace characters including content whitespace. Matches a single character</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="wsnnl" value="/[\u0009\u0020]/">

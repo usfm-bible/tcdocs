@@ -16,18 +16,19 @@ Definitions for terms used within the USFM/USX schema and diagrams.
 [glossary]
 '''
 
-structure = "{name}:: Pattern: ``++{value}++`` {documentation}"
+defstructure = "{name}:: Pattern: ``++{value}++`` {documentation}"
 
 usfm = "http://usfm.bible/parse/2023"
 a = "http://relaxng.org/ns/compatibility/annotations/1.0"
 
 def adocise(aregex):
-    return re.sub(r"\$\{(.*?)\}", r"++``\\$\\{\1\\}\\$``++", aregex)
+    return re.sub(r"\$\{(.*?)\}", r"++``#$\\{\1\\}#``++", aregex)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("infile", help="Input RNG file")
 parser.add_argument("-o","--output", help="Output .adoc file")
 parser.add_argument("-t","--template", help="Template file to use")
+parser.add_argument("-s","--structure", help="Override output entry structure")
 args = parser.parse_args()
 
 if args.template:
@@ -35,6 +36,11 @@ if args.template:
         template = inf.read()
 else:
     template = deftemplate
+
+if args.structure:
+    structure = args.structure.encode("utf-8").decode("unicode_escape")
+else:
+    structure = defstructure
 
 if args.output:
     ofile = open(args.output, "w", encoding="utf-8")

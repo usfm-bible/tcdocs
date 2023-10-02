@@ -9,11 +9,12 @@ unknown:
 	@- echo "tests      Run all the tests"
 	@- echo "single     Run a single test TEST=path"
 	@- echo "dbl        Set DBLDIR and test against dbl zips"
+	@- echo "doc        Create documentation files"
 	@- echo "settings variables: CHUNKSIZE=0, PYTHON=python"
 
-diagrams: markers/images/schema/p_rail.svg
+diagrams: markers/images/schema/pngs/p_rail.png
 
-markers/images/schema/p_rail.svg : grammar/usx.rng python/scripts/mkraildiagrams
+markers/images/schema/pngs/p_rail.png : grammar/usx.rng python/scripts/mkraildiagrams
 	- $(PYTHON) python/scripts/mkraildiagrams -g $< -o markers/images/schema -z 1
 	- cd markers/images/schema; for f in *.svg; do inkscape -d 300 -o "pngs/$${f%.svg}.png" $$f; done
 
@@ -39,3 +40,9 @@ single: grammar/usx.rng $(TEST)/origin.usfm
 
 singledbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}
+
+doc: diagrams manual/antora/modules/ROOT/pages/glossary.adoc
+
+
+manual/antora/modules/ROOT/pages/glossary.adoc: grammar/usx.rng
+	$(PYTHON) python/scripts/mkglossary -o $@ $<

@@ -1,3 +1,4 @@
+
 [glossary]
 = Glossary of Terms
 ifndef::localdir[]
@@ -8,16 +9,19 @@ endif::[]
 
 Definitions for terms used within the USFM/USX schema and diagrams.
 [glossary]
-ws:: Pattern: ``++[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]++``
-wsnnl:: Pattern: ``++[\u0009\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]++``
-nl:: Pattern: ``++\u000D?\u000A++``
-NL:: Pattern: ``++(?:++``#$\{nl\}#``++|\u000D)+++``
-WS:: Pattern: ``++(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)++``
-WSS:: Pattern: #$\{ws\}#``++*++``
-TAGEND:: Pattern: ``++(?:++``#$\{ws\}#``+++|(?=[\\|]|$))++``
-TAGPARMEND:: Pattern: #$\{wsnnl\}#``+++++``
-TEXTEND:: Pattern: #$\{ws\}#``++*(?=[\\]|$)++``
-ATTRIBTEXTEND:: Pattern: #$\{ws\}#``++*(?=[\\|])++``
-TEXT:: Pattern: ``++[^\\]+?(?=[\\]|$)++``
-TEXTATTRIB:: Pattern: ``++[^\\|]+?(?=[\\|]|$)++``
-PIPE:: Pattern: #$\{ws\}#``++*(?<!\\)\|++``#$\{ws\}#``++*++``
+ws:: Pattern: ``++/[\u0009-\u000D\u0020]/++`` A single simple whitespace character that may be reduced
+allws:: Pattern: ``++/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F\u3000]/++`` All possible whitespace characters including content whitespace. Matches a single character
+wsnnl:: Pattern: ``++/[\u0009\u0020]/++`` A single non newline simple whitespace character
+nl:: Pattern: ``++/(?:\u000D?\u000A|\u000D)/++`` A single newline (as supported by all operating systems)
+NL:: Pattern: ``++/++``#$\{nl\}#``+++/++`` A sequence of newline characters
+WS:: Pattern: ``++/(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)/++`` A single reducable whitespace character
+WSS:: Pattern: ``++/++``#$\{wsnnl\}#``++*/++`` A sequence of reducable whitespace characters
+TAGEND:: Pattern: ``++/(?:++``#$\{ws\}#``+++|(?=[\\|]|$))/++`` Delimits a marker
+TAGPARMEND:: Pattern: ``++/++``#$\{wsnnl\}#``+++/++`` Delimits an attribute parameter name
+TEXTEND:: Pattern: ``++/++``#$\{ws\}#``++*(?=[\\]|$)/++`` Delimits simple text
+ATTRIBTEXTEND:: Pattern: ``++/++``#$\{ws\}#``++*(?=[\\|])/++`` Reducable characters following an attribute value
+ATTRIBTEXT:: Pattern: ``++/(?:\\['"\\]|[^\\])+?/++`` Matches text inside an attribute value (not including the quotes)
+ATTRIBNAME:: Pattern: ``++/[a-zA-Z0-9\-_]+?/++`` Matches an attribute name
+TEXT:: Pattern: ``++/[^\\]+?(?=[\\]|$)/++`` Matches simple text
+TEXTNOTATTRIB:: Pattern: ``++/[^\\|]+?(?=[\\|]|$)/++`` Matches simple text up to the start of a sequence of attributes delimited by |
+PIPE:: Pattern: ``++/++``#$\{ws\}#``++*(?<!\\)\|++``#$\{ws\}#``++*/++`` Matches the attributes list delimiter of |
