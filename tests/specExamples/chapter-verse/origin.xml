@@ -1,8 +1,7 @@
-<usx version="3.0">
+﻿<usx version="3.0">
   <book code="MAT" style="id">41MATGNT92.SFM, Good News Translation, June 2003</book>
-  <chapter number="1" style="c" sid="MAT 1" />
-  <para style="cl">Matthew <char style="ca" status="invalid">2</char></para>
-  <para style="cp">M</para>
+  <chapter number="1" style="c" altnumber="2" pubnumber="M" sid="MAT 1" />
+  <para style="cl">Matthew</para>
   <para style="cd">Additional deacription about the chapter</para>
   <para style="s1">The Ancestors of Jesus Christ</para>
   <para style="r">(Luke 3.23-38)</para>
