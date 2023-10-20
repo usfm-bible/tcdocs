@@ -162,17 +162,29 @@ def etCmp(a, b, at=None, bt=None, verbose=False):
     aattrib = attribnorm(a.attrib)
     battrib = attribnorm(b.attrib)
     if a.tag != b.tag or aattrib != battrib:
+        if verbose:
+            print("tag or attribute: ", a, aattrib, b, battrib)
         return False
     if strnormal(a.text, a.tag) != strnormal(b.text, b.tag):
+        if verbose:
+            print("text or tag: ", a.text, a.tag, b, b.tag)
         return False
     if strnormal(a.tail, at) != strnormal(b.tail, bt):
+        if verbose:
+            print("tail or attributes: ", strnormal(a.tail, at), strnormal(b.tail, bt))
         return False
     if len(a) != len(b):
+        print("length mismatch: ", len(a), len(b))
+        if verbose:
+            if len(a) > len(b):
+                print("first item in a not in b: ", a[len(b)])
+            else:
+                print("first item in b not in a: ", b[len(a)])
         return False
     for ac, bc in zip(a, b):
         if not etCmp(ac, bc, a.tag if a is not None else None, b.tag if b is not None else None, verbose=verbose):
             if verbose:
-                print(ac, bc)
+                print("child mismatch: ", ac, bc)
             return False
     return True
 
