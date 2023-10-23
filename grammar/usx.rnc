@@ -219,7 +219,7 @@ BookIdentification.book.code.enum = (
      | "REP" # Reproof
      | "4BA" # 4 Baruch
      | "LAO" # Laodiceans
-     | [usfm:match[]] xsd:string { pattern = "\S{3}" }
+     | [usfm:match[]] xsd:string { pattern = "[0-9A-Z]{3}" }
      )
 
 PeripheralBookIdentification =
