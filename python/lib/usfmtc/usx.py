@@ -174,8 +174,8 @@ def etCmp(a, b, at=None, bt=None, verbose=False):
             print("tail or attributes: ", strnormal(a.tail, at), strnormal(b.tail, bt))
         return False
     if len(a) != len(b):
-        print("length mismatch: ", len(a), len(b))
         if verbose:
+            print("length mismatch: ", len(a), len(b))
             if len(a) > len(b):
                 print("first item in a not in b: ", a[len(b)])
             else:
