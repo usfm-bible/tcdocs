@@ -3,22 +3,26 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "EXO",
       "content": [
         "- Central Asian Russian Scriptures (CARS)"
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "25",
       "sid": "EXO 25"
     },
     {
-      "type": "optbreak:b",
+      "type": "optbreak",
+      "marker": "b",
       "content": [
         {
-          "type": "figure:fig",
+          "type": "figure",
+          "marker": "fig",
           "alt": "Священный шатёр",
           "file": "Exo25.jpg",
           "size": "span",

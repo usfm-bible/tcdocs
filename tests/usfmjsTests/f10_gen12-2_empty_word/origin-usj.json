@@ -3,33 +3,39 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GEN",
       "content": []
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
         "L'",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H3068",
           "content": [
             "Éternel"
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H559",
           "x-morph": "strongMorph:TH8799",
           "content": [
@@ -38,7 +44,8 @@
         },
         "à",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H87",
           "content": [
             "Abram"
@@ -46,7 +53,8 @@
         },
         ": Va-t-",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H3212",
           "x-morph": "strongMorph:TH8798",
           "content": [
@@ -55,7 +63,8 @@
         },
         "de ton",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H776",
           "content": [
             "pays"
@@ -63,7 +72,8 @@
         },
         ", de ta",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H4138",
           "content": [
             "patrie"
@@ -71,7 +81,8 @@
         },
         ", et de la",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1004",
           "content": [
             "maison"
@@ -79,7 +90,8 @@
         },
         "de ton",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1",
           "content": [
             "père"
@@ -87,7 +99,8 @@
         },
         ", dans le",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H776",
           "content": [
             "pays"
@@ -95,7 +108,8 @@
         },
         "que je te",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H7200",
           "x-morph": "strongMorph:TH8686",
           "content": [
@@ -104,13 +118,15 @@
         },
         ".",
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
         },
         "Je ferai de",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H6213",
           "x-morph": "strongMorph:TH8799",
           "content": [
@@ -119,14 +135,16 @@
         },
         "une",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1419",
           "content": [
             "grande"
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1471",
           "content": [
             "nation"
@@ -134,7 +152,8 @@
         },
         ", et je te",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1288",
           "x-morph": "strongMorph:TH8762",
           "content": [
@@ -143,26 +162,30 @@
         },
         "; je",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1431",
           "content": [
             "rendrai"
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "content": []
         },
         "ton",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H8034",
           "content": [
             "nom"
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1431",
           "x-morph": "strongMorph:TH8762",
           "content": [
@@ -171,7 +194,8 @@
         },
         ", et tu seras une source de",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "strong": "H1293",
           "content": [
             "bénédiction"

@@ -3,25 +3,30 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GEN",
       "content": []
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "27",
           "sid": "GEN 1:27"
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ὁ",
           "strong": "G35880",
           "x-morph": "Gr,RD,,,,NNS,",
@@ -30,7 +35,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "δέ",
           "strong": "G11610",
           "x-morph": "Gr,CC,,,,,,,,",
@@ -40,7 +46,8 @@
         },
         ", “",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ἔτι",
           "strong": "G20890",
           "x-morph": "Gr,D,,,,,,,,,",
@@ -49,7 +56,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ἅπαξ",
           "strong": "G05300",
           "x-morph": "Gr,D,,,,,,,,,",
@@ -59,7 +67,8 @@
         },
         "”,",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "δηλόω",
           "strong": "G12130",
           "x-morph": "Gr,V,IPA3,,S,",
@@ -68,7 +77,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ὁ",
           "strong": "G35880",
           "x-morph": "Gr,RD,,,,GNP,",
@@ -77,7 +87,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "σαλεύω",
           "strong": "G45310",
           "x-morph": "Gr,V,PPP,GNP,",
@@ -86,7 +97,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "μετάθεσις",
           "strong": "G33310",
           "x-morph": "Gr,N,,,,,AFS,",
@@ -96,7 +108,8 @@
         },
         ",",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ὡς",
           "strong": "G56130",
           "x-morph": "Gr,CS,,,,,,,,",
@@ -106,7 +119,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ποιέω",
           "strong": "G41600",
           "x-morph": "Gr,V,PEP,GNP,",
@@ -116,7 +130,8 @@
         },
         ",",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ἵνα",
           "strong": "G24430",
           "x-morph": "Gr,CS,,,,,,,,",
@@ -125,7 +140,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "μένω",
           "strong": "G33060",
           "x-morph": "Gr,V,SAA3,,S,",
@@ -134,7 +150,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ὁ",
           "strong": "G35880",
           "x-morph": "Gr,RD,,,,NNP,",
@@ -143,7 +160,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "μή",
           "strong": "G33610",
           "x-morph": "Gr,D,,,,,,,,,",
@@ -152,7 +170,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "σαλεύω",
           "strong": "G45310",
           "x-morph": "Gr,V,PPP,NNP,",

@@ -3,37 +3,44 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GEN",
       "content": []
     },
     {
-      "type": "para:usfm",
+      "type": "para",
+      "marker": "usfm",
       "content": [
         "3.0"
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
         "From Gen 1:",
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "אֶרֶץ",
           "strong": "c:d:H0776",
           "x-morph": "He,C:Td:Ncbsa",
@@ -42,7 +49,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "הָיָה",
           "strong": "H1961",
           "x-morph": "He,Vqp3fs",
@@ -51,7 +59,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "תֹּהוּ",
           "strong": "H8414",
           "x-morph": "He,Ncmsa",
@@ -60,7 +69,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "בֹּהוּ",
           "strong": "c:H0922",
           "x-morph": "He,C:Ncmsa",
@@ -69,7 +79,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "חֹשֶׁךְ",
           "strong": "c:H2822",
           "x-morph": "He,C:Ncmsa",
@@ -78,7 +89,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "עַל",
           "strong": "H5921a",
           "x-morph": "He,R",
@@ -88,7 +100,8 @@
         },
         "־",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "פָּנִים",
           "strong": "H6440",
           "x-morph": "He,Ncbpc",
@@ -97,7 +110,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "תְּהוֹם",
           "strong": "H8415",
           "x-morph": "He,Ncbsa",
@@ -106,7 +120,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "רוּחַ",
           "strong": "c:H7307",
           "x-morph": "He,C:Ncbsc",
@@ -115,7 +130,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "אֱלֹהִים",
           "strong": "H0430",
           "x-morph": "He,Ncmpa",
@@ -124,7 +140,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "רָחַף",
           "strong": "H7363b",
           "x-morph": "He,Vprfsa",
@@ -133,7 +150,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "עַל",
           "strong": "H5921a",
           "x-morph": "He,R",
@@ -143,7 +161,8 @@
         },
         "־",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "פָּנִים",
           "strong": "H6440",
           "x-morph": "He,Ncbpc",
@@ -152,7 +171,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "מַיִם",
           "strong": "d:H4325",
           "x-morph": "He,Td:Ncmpa",
@@ -162,18 +182,21 @@
         },
         "׃",
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "3",
           "sid": "GEN 1:3"
         },
         "From Isa:",
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "4",
           "sid": "GEN 1:4"
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "עַל",
           "strong": "H5921a",
           "x-morph": "He,R",
@@ -183,7 +206,8 @@
         },
         "־",
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "פָּנִים",
           "strong": "H6440",
           "x-morph": "He,Ncbpc",
@@ -192,7 +216,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "תְּהוֹם",
           "strong": "H8415",
           "x-morph": "He,Ncbsa",

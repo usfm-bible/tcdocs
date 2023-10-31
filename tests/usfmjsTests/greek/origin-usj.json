@@ -3,39 +3,46 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "TIT",
       "content": [
         "Titus"
       ]
     },
     {
-      "type": "para:ide",
+      "type": "para",
+      "marker": "ide",
       "content": [
         "UTF-8"
       ]
     },
     {
-      "type": "para:h",
+      "type": "para",
+      "marker": "h",
       "content": [
         "Titus"
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "TIT 1:1"
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "Παῦλος",
           "strong": "G39720",
           "x-morph": "Gr,N,,,,,NMS,",
@@ -44,7 +51,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "δοῦλος",
           "strong": "G14010",
           "x-morph": "Gr,N,,,,,NMS,",
@@ -53,7 +61,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "Χριστός",
           "strong": "G55470",
           "x-morph": "Gr,N,,,,,GMS,",
@@ -62,7 +71,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "κατά",
           "strong": "G25960",
           "x-morph": "Gr,P,,,,,A,,,",
@@ -73,20 +83,24 @@
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "2",
       "sid": "TIT 2"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "TIT 2:1"
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "σύ",
           "strong": "G47710",
           "x-morph": "Gr,RP,,,2N,S,",
@@ -95,7 +109,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "δέ",
           "strong": "G11610",
           "x-morph": "Gr,CC,,,,,,,,",
@@ -104,7 +119,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "λαλέω",
           "strong": "G29800",
           "x-morph": "Gr,VTMPA2,,S,",
@@ -113,7 +129,8 @@
           ]
         },
         {
-          "type": "char:w",
+          "type": "char",
+          "marker": "w",
           "lemma": "ὅς",
           "strong": "G37390",
           "x-morph": "Gr,RR,,,,ANP,",

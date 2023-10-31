@@ -3,40 +3,47 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GAL",
       "content": [
         "- Testing data"
       ]
     },
     {
-      "type": "para:h",
+      "type": "para",
+      "marker": "h",
       "content": [
         "Galatians"
       ]
     },
     {
-      "type": "para:mt",
+      "type": "para",
+      "marker": "mt",
       "content": [
         "Galatians"
       ]
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         "An erroneous paragraph before the first chapter"
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GAL 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "GAL 1:1"
         },

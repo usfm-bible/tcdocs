@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": ""
         },

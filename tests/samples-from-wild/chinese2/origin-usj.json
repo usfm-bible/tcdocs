@@ -3,51 +3,60 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "OBA",
       "content": [
         "Chinese-Simplified Script: Chinese Union New Punctuation 1989"
       ]
     },
     {
-      "type": "para:h",
+      "type": "para",
+      "marker": "h",
       "content": [
         "俄巴底亚书"
       ]
     },
     {
-      "type": "para:toc1",
+      "type": "para",
+      "marker": "toc1",
       "content": [
         "俄巴底亚书"
       ]
     },
     {
-      "type": "para:toc2",
+      "type": "para",
+      "marker": "toc2",
       "content": [
         "俄巴底亚书"
       ]
     },
     {
-      "type": "para:mt1",
+      "type": "para",
+      "marker": "mt1",
       "content": [
         "俄巴底亚书"
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "OBA 1"
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "OBA 1:1"
         },
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "俄巴底亚"
           ]
@@ -56,17 +65,20 @@
       ]
     },
     {
-      "type": "para:s1",
+      "type": "para",
+      "marker": "s1",
       "content": [
         "耶和华要惩罚以东"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "论",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以东"
           ]
@@ -75,22 +87,26 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "我从耶和华那里听见信息，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "并有使者被差往列国去，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:add",
+          "type": "char",
+          "marker": "add",
           "content": [
             "说"
           ]
@@ -99,11 +115,13 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "一同起来与",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以东"
           ]
@@ -112,16 +130,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "2",
           "sid": "OBA 1:2"
         },
         "我使你—",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以东"
           ]
@@ -130,16 +151,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "被人大大藐视。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "3",
           "sid": "OBA 1:3"
         },
@@ -147,22 +171,26 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你因狂傲自欺，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "心里说：谁能将我拉下地去呢？"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "4",
           "sid": "OBA 1:4"
         },
@@ -170,31 +198,37 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "在星宿之间搭窝，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "我必从那里拉下你来。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "这是耶和华说的。"
       ]
     },
     {
-      "type": "optbreak:b"
+      "type": "optbreak",
+      "marker": "b"
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "5",
           "sid": "OBA 1:5"
         },
@@ -202,51 +236,60 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "或强盗夜间而来—"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你何竟被剪除—"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "岂不偷窃直到够了呢？"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "摘葡萄的若来到你那里，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "岂不剩下些葡萄呢？"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "6",
           "sid": "OBA 1:6"
         },
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫"
           ]
         },
         {
-          "type": "char:add",
+          "type": "char",
+          "marker": "add",
           "content": [
             "的隐密处"
           ]
@@ -255,16 +298,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "他隐藏的宝物何竟被查出？"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "7",
           "sid": "OBA 1:7"
         },
@@ -272,28 +318,33 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "与你和好的欺骗你，且胜过你；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "与你一同吃饭的设下网罗陷害你；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "在你心里毫无聪明。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "8",
           "sid": "OBA 1:8"
         },
@@ -301,11 +352,13 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "我岂不从",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以东"
           ]
@@ -314,11 +367,13 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "从",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫山"
           ]
@@ -327,15 +382,18 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "9",
           "sid": "OBA 1:9"
         },
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "提幔"
           ]
@@ -344,17 +402,20 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你的勇士必惊惶，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "甚至",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫山"
           ]
@@ -363,22 +424,26 @@
       ]
     },
     {
-      "type": "para:s1",
+      "type": "para",
+      "marker": "s1",
       "content": [
         "以东受罚的原因"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "10",
           "sid": "OBA 1:10"
         },
         "因你向兄弟",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "雅各"
           ]
@@ -387,28 +452,33 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "羞愧必遮盖你，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你也必永远断绝。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "11",
           "sid": "OBA 1:11"
         },
         "当外人掳掠",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "雅各"
           ]
@@ -417,17 +487,20 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "外邦人进入他的城门，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "为",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "耶路撒冷"
           ]
@@ -436,16 +509,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你竟站在一旁，像与他们同伙。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "12",
           "sid": "OBA 1:12"
         },
@@ -453,16 +529,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当瞪眼看着；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "犹大"
           ]
@@ -471,28 +550,33 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当因此欢乐；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "他们遭难的日子，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当说狂傲的话。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "13",
           "sid": "OBA 1:13"
         },
@@ -500,40 +584,47 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当进他们的城门；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "他们遭灾的日子，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当瞪眼看着他们受苦；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "他们遭灾的日子，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当伸手抢他们的财物；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "14",
           "sid": "OBA 1:14"
         },
@@ -541,17 +632,20 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "他们遭难的日子，"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你不当将他们剩下的人交付",
         {
-          "type": "char:add",
+          "type": "char",
+          "marker": "add",
           "content": [
             "仇敌"
           ]
@@ -560,16 +654,19 @@
       ]
     },
     {
-      "type": "para:s1",
+      "type": "para",
+      "marker": "s1",
       "content": [
         "神要审判万国"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "15",
           "sid": "OBA 1:15"
         },
@@ -577,11 +674,13 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你怎样行，",
         {
-          "type": "char:add",
+          "type": "char",
+          "marker": "add",
           "content": [
             "他"
           ]
@@ -590,29 +689,34 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "你的报应必归到你头上。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "16",
           "sid": "OBA 1:16"
         },
         "你们",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "犹大"
           ]
         },
         "人在我圣山怎样喝了",
         {
-          "type": "char:add",
+          "type": "char",
+          "marker": "add",
           "content": [
             "苦杯"
           ]
@@ -621,34 +725,40 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "万国也必照样常常地喝；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "且喝且咽，他们就归于无有。"
       ]
     },
     {
-      "type": "para:s1",
+      "type": "para",
+      "marker": "s1",
       "content": [
         "以色列的胜利"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "17",
           "sid": "OBA 1:17"
         },
         "在",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "锡安山"
           ]
@@ -657,16 +767,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "那山也必成圣；"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "雅各"
           ]
@@ -675,15 +788,18 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "18",
           "sid": "OBA 1:18"
         },
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "雅各"
           ]
@@ -692,10 +808,12 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "约瑟"
           ]
@@ -704,10 +822,12 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫"
           ]
@@ -716,16 +836,19 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "火必将他烧着吞灭。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫"
           ]
@@ -734,25 +857,30 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "这是耶和华说的。"
       ]
     },
     {
-      "type": "optbreak:b"
+      "type": "optbreak",
+      "marker": "b"
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "19",
           "sid": "OBA 1:19"
         },
         "南地的人必得",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫山"
           ]
@@ -761,11 +889,13 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "高原的人必得",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "非利士"
           ]
@@ -774,18 +904,21 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "也得",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以法莲"
           ]
         },
         "地和",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "撒马利亚"
           ]
@@ -794,17 +927,20 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "便雅悯"
           ]
         },
         "人必得",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "基列"
           ]
@@ -813,23 +949,27 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "20",
           "sid": "OBA 1:20"
         },
         "在",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "迦南"
           ]
         },
         "人中被掳的",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以色列"
           ]
@@ -838,17 +978,20 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "char:add",
+          "type": "char",
+          "marker": "add",
           "content": [
             "必得地"
           ]
         },
         "直到",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "撒勒法"
           ]
@@ -857,18 +1000,21 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "在",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "西法拉"
           ]
         },
         "中被掳的",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "耶路撒冷"
           ]
@@ -877,29 +1023,34 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "必得南地的城邑。"
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "21",
           "sid": "OBA 1:21"
         },
         "必有拯救者上到",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "锡安山"
           ]
         },
         "，审判",
         {
-          "type": "char:pn",
+          "type": "char",
+          "marker": "pn",
           "content": [
             "以扫山"
           ]
@@ -908,7 +1059,8 @@
       ]
     },
     {
-      "type": "para:q1",
+      "type": "para",
+      "marker": "q1",
       "content": [
         "国度就归耶和华了。"
       ]
