@@ -721,7 +721,10 @@
       <attribute usfm:grouping="15">
         <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n\\&#x27;"/>
         <name ns="">style</name>
-        <ref name="Para.para.style.enum"/>
+        <choice>
+          <ref name="Para.nonpara.style.enum"/>
+          <ref name="Para.para.style.enum"/>
+        </choice>
       </attribute>
       <optional>
         <attribute>
@@ -750,10 +753,7 @@
   <define name="Para.para.style.enum">
     <choice>
       <value>cls</value>
-      <value>lit</value>
-      <value>cp</value>
       <value>nb</value>
-      <value>pb</value>
       <value>pc</value>
       <value>pi1</value>
       <value>pi2</value>
@@ -769,8 +769,6 @@
       <value>ph2</value>
       <value>ph3</value>
       <value>ph</value>
-      <value>p1</value>
-      <value>p2</value>
       <value>p</value>
       <value>q1</value>
       <value>q2</value>
@@ -790,6 +788,15 @@
       <value>mi</value>
       <value>m</value>
       <value>ts</value>
+    </choice>
+  </define>
+  <define name="Para.nonpara.style.enum">
+    <choice>
+      <value>lit</value>
+      <value>cp</value>
+      <value>pb</value>
+      <value>p1</value>
+      <value>p2</value>
       <value>k1</value>
       <value>k2</value>
       <value>rem</value>

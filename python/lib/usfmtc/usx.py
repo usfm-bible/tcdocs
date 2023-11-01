@@ -3,7 +3,8 @@ import re
 
 allpartypes = {
     'Section': """ms mse ms1 ms2 ms2e ms3 ms3e mr s s1 s2 s3 s4 s1e s2e s3e s4e sr r sp
-                    sd1 sd2 sd3 sd4 periph iex"""
+                    sd1 sd2 sd3 sd4 periph iex""",
+    'NonVerse': """lit cp pb p1 p2 k1 k2 rem sts"""
 }
 
 partypes = {e: k for k, v in allpartypes.items() for e in v.split()}
@@ -20,7 +21,7 @@ def addvids(lastp, endp, base, v, endv, atend=False):
                 break
             lastp = lastp.getnext()
             continue
-        if lastp.tag == 'para' and partypes.get(lastp.get('style', None), None) == "Section" \
+        if lastp.tag == 'para' and partypes.get(lastp.get('style', None), None) in ("Section", "NonVerse") \
                 or (not len(lastp) and (lastp.text is None or lastp.text.strip() == "")):
             pending.append(lastp)
         elif id(lastp) != id(endp) or atend or endp[0].tag != "verse" or (endp.text is not None and endp.text.strip() != ""):
@@ -144,15 +145,17 @@ def cleanup(node):
     for c in node:
         cleanup(c)
 
-def strnormal(s, t):
+def strnormal(s, t, mode=0):
     if s is None:
         return ""
-    if not len(s.strip()):
+    if not len(s.lstrip()):
         return ""
-    if t in ('para', 'char'):
-        return re.sub("[\n\s]+", " ", s)
-    else:
-        return s.strip()
+    res = re.sub("[\n\s]+", " ", s) if t in ('para', 'char') else s
+    if mode & 1 == 1:
+        res = res.lstrip()
+    if mode & 2 == 2 and t != "char":
+        res = res.rstrip()
+    return res
 
 def attribnorm(d):
     banned = ('closed', 'status')
@@ -165,13 +168,10 @@ def etCmp(a, b, at=None, bt=None, verbose=False):
         if verbose:
             print("tag or attribute: ", a, aattrib, b, battrib)
         return False
-    if strnormal(a.text, a.tag) != strnormal(b.text, b.tag):
+    mode = 1 if len(a) else 3
+    if strnormal(a.text, a.tag, mode) != strnormal(b.text, b.tag, mode):
         if verbose:
             print("text or tag: ", a.text, a.tag, b, b.tag)
-        return False
-    if strnormal(a.tail, at) != strnormal(b.tail, bt):
-        if verbose:
-            print("tail or attributes: ", strnormal(a.tail, at), strnormal(b.tail, bt))
         return False
     if len(a) != len(b):
         if verbose:
@@ -181,10 +181,17 @@ def etCmp(a, b, at=None, bt=None, verbose=False):
             else:
                 print("first item in b not in a: ", b[len(a)])
         return False
-    for ac, bc in zip(a, b):
-        if not etCmp(ac, bc, a.tag if a is not None else None, b.tag if b is not None else None, verbose=verbose):
+    for i, (ac, bc) in enumerate(zip(a, b)):
+        act = a.tag if a is not None else None
+        bct = b.tag if b is not None else None
+        if not etCmp(ac, bc, act, bct, verbose=verbose):
             if verbose:
                 print("child mismatch: ", ac, bc)
+            return False
+        mode = 0 if i < len(a) - 1 else 2
+        if strnormal(ac.tail, act, mode) != strnormal(bc.tail, bct, mode):
+            if verbose:
+                print("tail or attributes: ", strnormal(a.tail, at), strnormal(b.tail, bt))
             return False
     return True
 

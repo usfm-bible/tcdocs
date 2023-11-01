@@ -461,17 +461,14 @@ Section.para.style.enum = (
 
 Para =
     element para {
-        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.para.style.enum },
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.nonpara.style.enum  | Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
 
 Para.para.style.enum = (
     "cls" # Closure of an Epistle
-    | "lit" # For a comment or note inserted for liturgical use
-    | "cp" # Chapter published style
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
-    | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
     | "pc" # Inscription (paragraph text centered)
     | "pi1" # Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse
     | "pi2" # Paragraph text, level 2 indent, with first line indent; often used for discourse
@@ -487,8 +484,6 @@ Para.para.style.enum = (
     | "ph2" # Paragraph text, with level 2 hanging indent
     | "ph3" # Paragraph text, with level 3 hanging indent
     | "ph" # Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
-    | "p1" # Front or back matter text paragraph, level 1 (if multiple levels)
-    | "p2" # Front or back matter text paragraph, level 2 (if multiple levels)
     | "p" # Paragraph text, with first line indent
     | "q1" # Poetry text, level 1 indent (if multiple levels)
     | "q2" # Poetry text, level 2 indent
@@ -508,11 +503,19 @@ Para.para.style.enum = (
     | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
     | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "ts" # Translator's chunk (to identify chunks of text suitable for translating at one time)
+    )
+
+Para.nonpara.style.enum = (
+    "lit" # For a comment or note inserted for liturgical use
+    | "cp" # Chapter published style
+    | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
+    | "p1" # Front or back matter text paragraph, level 1 (if multiple levels)
+    | "p2" # Front or back matter text paragraph, level 2 (if multiple levels)
     | "k1" # Concordance main entry text or keyword, level 1
     | "k2" # Concordance main entry text or keyword, level 2
     | "rem" # Remark
     | "sts" # Remark
-    )
+)
 
 List =
     element para {
