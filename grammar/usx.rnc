@@ -612,7 +612,7 @@ Char = (
            ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
                     second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed| link-href | link-title | link-id) {xsd:string}+)?
-        >> usfm:endtag[ahead="/[^\\]/" usfm:seq="true"]  # required
+        >> usfm:endtag[usfm:seq="true"]  # required
     }
     | CharWithAttrib | Figure
     )
@@ -880,7 +880,7 @@ FootnoteChar =
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)*
-        >> usfm:endtag[usfm:many="?" after="/\*${ws}*/"]
+        >> usfm:endtag[usfm:many="?" after="/\*/"]
     }
 FootnoteChar.char.style.enum = (
       "fr" # The origin reference for the footnote

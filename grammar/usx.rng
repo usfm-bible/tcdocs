@@ -1071,7 +1071,7 @@
             </oneOrMore>
           </group>
         </optional>
-        <usfm:endtag ahead="/[^\\]/" usfm:seq="true"/>
+        <usfm:endtag usfm:seq="true"/>
       </element>
       <ref name="CharWithAttrib"/>
       <ref name="Figure"/>
@@ -1681,7 +1681,7 @@
           </text>
         </choice>
       </zeroOrMore>
-      <usfm:endtag usfm:many="?" after="/\*${ws}*/"/>
+      <usfm:endtag usfm:many="?" after="/\*/"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">
