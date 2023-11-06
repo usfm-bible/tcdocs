@@ -156,6 +156,7 @@ def strnormal(s, t, mode=0):
         res = res.lstrip()
     if mode & 2 == 2 and t != "char":
         res = res.rstrip()
+    res = re.sub(r"[ \n]*\n[ ]*", "\n", res)
     return res
 
 def attribnorm(d):
