@@ -27,6 +27,9 @@ usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"
 usfm:terminal [name="WSS" value="/${wsnnl}*/"
     a:documentation ["A sequence of reducable whitespace characters"]]
 
+usfm:terminal [name="WSNL" value="/${wsnnl}*${NL}/"
+    a:documentation ["A sequence of non-newline whitespace up to and including a newline"]]
+
 usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"
     a:documentation ["Delimits a marker"]]
 
@@ -459,9 +462,17 @@ Section.para.style.enum = (
     | "cd" # Chapter Description (Publishing option D, e.g. in Russian Bibles)
     )
 
-Para =
+Para = 
     element para {
-        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.nonpara.style.enum  | Para.para.style.enum },
+        ([usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.nonpara.style.enum } |
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.para.style.enum }),
+        attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
+    }
+
+VersePara =
+    element para {
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
     }
@@ -801,7 +812,7 @@ ChapterStart =
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
-        [usfm:match [before="'\cp '"]]
+        [usfm:match [before="/${WS}\\cp /" match="/\S+\s*(?=${nl})/"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
     }
