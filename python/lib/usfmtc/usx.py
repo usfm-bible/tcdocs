@@ -1,9 +1,10 @@
 
 import re
 
+# This should be read from usx.rng
 allpartypes = {
     'Section': """ms mse ms1 ms2 ms2e ms3 ms3e mr s s1 s2 s3 s4 s1e s2e s3e s4e sr r sp
-                    sd1 sd2 sd3 sd4 periph iex""",
+                    sd sd1 sd2 sd3 sd4 periph iex ip mte mte1 mte2 cl cd""",
     'NonVerse': """lit cp pb p1 p2 k1 k2 rem sts"""
 }
 
