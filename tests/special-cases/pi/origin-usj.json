@@ -3,26 +3,31 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GEN",
       "content": []
     },
     {
-      "type": "para:mt1",
+      "type": "para",
+      "marker": "mt1",
       "content": [
         "ഉല്പത്തിപുസ്തകം"
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
     {
-      "type": "para:pi",
+      "type": "para",
+      "marker": "pi",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },

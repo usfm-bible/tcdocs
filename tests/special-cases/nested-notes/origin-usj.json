@@ -3,46 +3,55 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "SNG",
       "content": []
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "SNG 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "26",
           "sid": "SNG 1:26"
         },
         "फिर परमेश्वर ने कहा, “हम",
         {
-          "type": "char:nd",
+          "type": "char",
+          "marker": "nd",
           "content": [
             "मनुष्य",
             {
-              "type": "note:f",
+              "type": "note",
+              "marker": "f",
               "caller": "+",
               "content": [
                 {
-                  "type": "char:fr",
+                  "type": "char",
+                  "marker": "fr",
                   "content": [
                     "1.26"
                   ]
                 },
                 {
-                  "type": "char:fq",
+                  "type": "char",
+                  "marker": "fq",
                   "content": [
                     "मनुष्य:"
                   ]
                 },
                 {
-                  "type": "char:ft",
+                  "type": "char",
+                  "marker": "ft",
                   "content": [
                     "मनुष्य नई प्रजाति है, वह विशेष रूप से इस पृथ्वी के अन्य प्रकार के जीवों से भिन्न है।"
                   ]
@@ -53,29 +62,34 @@
         },
         "को",
         {
-          "type": "char:it",
+          "type": "char",
+          "marker": "it",
           "content": [
             "अपने स्वरूप के अनुसार"
           ]
         },
         {
-          "type": "note:f",
+          "type": "note",
+          "marker": "f",
           "caller": "+",
           "content": [
             {
-              "type": "char:fr",
+              "type": "char",
+              "marker": "fr",
               "content": [
                 "1.26"
               ]
             },
             {
-              "type": "char:fq",
+              "type": "char",
+              "marker": "fq",
               "content": [
                 "अपने स्वरूप के अनुसार:"
               ]
             },
             {
-              "type": "char:ft",
+              "type": "char",
+              "marker": "ft",
               "content": [
                 "अर्थात् अपनी समानता में। मनुष्य का स्वर्ग से सम्बंध है और इस पृथ्वी का कोई भी प्राणी नहीं है"
               ]
@@ -84,7 +98,8 @@
         },
         "अपनी समानता में बनाएँ; और वे समुद्र की मछलियों, और आकाश के पक्षियों, और घरेलू पशुओं, और सारी पृथ्वी पर, और सब रेंगनेवाले जन्तुओं पर जो पृथ्वी पर रेंगते हैं, अधिकार रखें।”",
         {
-          "type": "char:bdit",
+          "type": "char",
+          "marker": "bdit",
           "content": [
             "(याकू. 3:9)"
           ]

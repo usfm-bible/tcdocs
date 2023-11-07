@@ -290,7 +290,7 @@
       <value>LAO</value>
       <data type="string">
         <usfm:match/>
-        <param name="pattern">\S{3}</param>
+        <param name="pattern">[0-9A-Z]{3}</param>
       </data>
     </choice>
   </define>
@@ -751,6 +751,7 @@
     <choice>
       <value>cls</value>
       <value>lit</value>
+      <value>cp</value>
       <value>nb</value>
       <value>pb</value>
       <value>pc</value>
@@ -1032,9 +1033,7 @@
   </define>
   <define name="Char.char.style.enum">
     <choice>
-      <value>va</value>
       <value>vp</value>
-      <value>ca</value>
       <value>qac</value>
       <value>qs</value>
       <value>add</value>
@@ -1479,7 +1478,7 @@
       </optional>
       <optional>
         <attribute>
-          <usfm:match before="&#x27;\cp &#x27;" after="&#x27;\cp*&#x27;"/>
+          <usfm:match before="&#x27;\cp &#x27;"/>
           <name ns="">pubnumber</name>
           <data type="string">
             <param name="minLength">1</param>

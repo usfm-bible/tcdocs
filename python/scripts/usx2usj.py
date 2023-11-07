@@ -15,10 +15,11 @@ def convert_usx(input_usx_elmt):
     out_obj = {}
     action = "append"
     attribs = dict(input_usx_elmt.attrib)
+    tag = None
     if "style" in attribs:
         if attribs["style"] == 'b':
             key = "optbreak"
-        key = key+":"+attribs['style']
+        tag = attribs['style']
         del attribs['style']
     if "vid" in attribs:
         del attribs['vid'] # dropping because presence of vid in paragraph elements is not consistent in USX
@@ -27,6 +28,8 @@ def convert_usx(input_usx_elmt):
     if "status" in attribs:
         del attribs['status']
     out_obj["type"]  = key
+    if tag:
+        out_obj["marker"] = tag
     out_obj =  out_obj | attribs
     if input_usx_elmt.text and input_usx_elmt.text.strip() != "":
         text = input_usx_elmt.text.strip()
@@ -47,10 +50,10 @@ def convert_usx(input_usx_elmt):
                 pass
         if child.tail and child.tail.strip() != "":
             out_obj['content'].append(child.tail.strip())
-    if  (key in ["chapter:c", "verse:v", "char:va", "char:ca", "optbreak:b"] or key.startswith("ms:"))\
+    if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca"])\
          and out_obj['content'] == []:
         del out_obj['content']
-    if "eid" in out_obj and input_usx_elmt.tag in ['verse', 'chapter']:
+    if "eid" in out_obj and key in ['verse', 'chapter']:
         action = "ignore"
     # May need some special handling for va vp, ca cp elements.
     # Now the USX samples in testsuite are not correct

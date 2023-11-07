@@ -3,20 +3,24 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "SNG",
       "content": []
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "SNG 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "SNG 1:1"
         },
@@ -24,19 +28,22 @@
       ]
     },
     {
-      "type": "para:s1",
+      "type": "para",
+      "marker": "s1",
       "content": [
         "The Bride Confesses Her Love"
       ]
     },
     {
-      "type": "para:sp",
+      "type": "para",
+      "marker": "sp",
       "content": [
         "She"
       ]
     },
     {
-      "type": "optbreak:b"
+      "type": "optbreak",
+      "marker": "b"
     }
   ]
 }

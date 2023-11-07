@@ -3,70 +3,89 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "XXA",
       "content": [
         "- New International Version® NIV® 2011, updated 2016"
       ]
     },
     {
-      "type": "para:rem",
+      "type": "para",
+      "marker": "rem",
       "content": [
         "Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc."
       ]
     },
     {
-      "type": "para:mt1",
-      "content": [
-        "Alternate Texts"
-      ]
-    },
-    {
-      "type": "para:rem",
-      "content": [
-        "[a] footnote ommitted"
-      ]
-    },
-    {
-      "type": "para:h1",
+      "type": "para",
+      "marker": "h1",
       "content": [
         "Matthew"
       ]
     },
     {
-      "type": "para:s1",
+      "type": "para",
+      "marker": "mt1",
+      "content": [
+        "Alternate Texts"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "rem",
+      "content": [
+        "[a] footnote ommitted"
+      ]
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "XXA 1"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
       "content": [
         "Matthew 17:21"
       ]
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "20",
           "sid": "XXA 1:20"
         },
         "He replied,",
         {
-          "type": "char:wj",
+          "type": "char",
+          "marker": "wj",
           "content": [
             "“Because you have so little faith. Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, ‘Move from here to there,’ and it will move. Nothing will be impossible for you."
           ]
         },
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "21",
           "sid": "XXA 1:21"
         },
         {
-          "type": "char:vp",
+          "type": "char",
+          "marker": "vp",
           "content": [
             {
-              "type": "char:it",
+              "type": "char",
+              "marker": "it",
               "content": [
                 {
-                  "type": "char:wj",
+                  "type": "char",
+                  "marker": "wj",
                   "content": [
                     "21"
                   ]
@@ -76,10 +95,12 @@
           ]
         },
         {
-          "type": "char:it",
+          "type": "char",
+          "marker": "it",
           "content": [
             {
-              "type": "char:wj",
+              "type": "char",
+              "marker": "wj",
               "content": [
                 "But this kind does not go out except by prayer and fasting."
               ]
@@ -88,7 +109,8 @@
         },
         "[a]",
         {
-          "type": "char:wj",
+          "type": "char",
+          "marker": "wj",
           "content": [
             "”"
           ]

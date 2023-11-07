@@ -3,36 +3,43 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GEN",
       "content": []
     },
     {
-      "type": "para:ib",
+      "type": "para",
+      "marker": "ib",
       "content": []
     },
     {
-      "type": "para:ip",
+      "type": "para",
+      "marker": "ip",
       "content": [
         "Hi mom."
       ]
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
         "Hi",
         {
-          "type": "char:nd",
+          "type": "char",
+          "marker": "nd",
           "content": [
             "Bob"
           ]
@@ -41,15 +48,18 @@
       ]
     },
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "MAT",
       "content": []
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
         }

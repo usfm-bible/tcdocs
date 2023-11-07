@@ -3,42 +3,51 @@
   "version": "0.1.0",
   "content": [
     {
-      "type": "book:id",
+      "type": "book",
+      "marker": "id",
       "code": "GEN",
       "content": []
     },
     {
-      "type": "chapter:c",
+      "type": "chapter",
+      "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
     {
-      "type": "para:p",
+      "type": "para",
+      "marker": "p",
       "content": [
         {
-          "type": "verse:v",
+          "type": "verse",
+          "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
         "something",
         {
-          "type": "note:f",
+          "type": "note",
+          "marker": "f",
           "caller": "+",
           "content": [
             {
-              "type": "char:fr",
+              "type": "char",
+              "marker": "fr",
               "content": [
                 "1.1"
               ]
             },
             {
-              "type": "char:ft",
+              "type": "char",
+              "marker": "ft",
               "content": [
                 {
-                  "type": "char:em",
+                  "type": "char",
+                  "marker": "em",
                   "content": [
                     {
-                      "type": "char:pn",
+                      "type": "char",
+                      "marker": "pn",
                       "content": [
                         "name"
                       ]

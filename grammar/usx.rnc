@@ -219,7 +219,7 @@ BookIdentification.book.code.enum = (
      | "REP" # Reproof
      | "4BA" # 4 Baruch
      | "LAO" # Laodiceans
-     | [usfm:match[]] xsd:string { pattern = "\S{3}" }
+     | [usfm:match[]] xsd:string { pattern = "[0-9A-Z]{3}" }
      )
 
 PeripheralBookIdentification =
@@ -469,6 +469,7 @@ Para =
 Para.para.style.enum = (
     "cls" # Closure of an Epistle
     | "lit" # For a comment or note inserted for liturgical use
+    | "cp" # Chapter published style
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
     | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
     | "pc" # Inscription (paragraph text centered)
@@ -603,9 +604,7 @@ Char = (
     )
 
 Char.char.style.enum = (
-      "va" # Second (alternate) verse number (for coding dual numeration in Psalms; see also NRSV Exo 22.1-4)
-    | "vp" # Published verse marker - this is a verse marking that would be used in the published text
-    | "ca" # Second (alternate) chapter number
+      "vp" # Published verse marker - this is a verse marking that would be used in the published text
     | "qac" # Poetry text, Acrostic markup of the first character of a line of acrostic poetry
     | "qs" # Poetry text, Selah
     | "add" # For a translational addition to the text
@@ -799,7 +798,7 @@ ChapterStart =
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
         attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
-        [usfm:match [before="'\cp '" after="'\cp*'"]]
+        [usfm:match [before="'\cp '"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
     }
