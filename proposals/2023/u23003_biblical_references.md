@@ -141,8 +141,8 @@ translation -- Book -- Chapter -- Verse -- word -- char
 ```
 when interpretting a reference in the context of another reference, we start from the position in the hierarchy of the other reference. A pure number therefore is at the same level in the hierarchy. for example in GEN 2:3!4+5-7, the 7 is interpretted as a character. On the other hand GEN 2:3!4-7!8, the 7 is a word index and 8 the character. But why is this not verse 7 word 8? This is an ambiguity. To resolve it, we need to use a different separator. The basic principle is that a separator followed by a sequence (in this case digits) must be unique, but the separator defines the type of the following component. In this case of the character index, we can reuse `+` from the translation.
 
-| Range                 | Description                                                 |
-|-----------------|‐------------------------------------------|
+| Range           | Description                               |
+| --------------- | ----------------------------------------- |
 | GEN 7:8!2-6       | Genesis ch 7 vs 8 words 2-6  |
 | GEN 7:8!2-12!3  | Genesis ch 7 vs 8 word 2 to vs 12 word 3 |
 | wsg-gong+JHN 3:16 | John 3:16 from the Gondi translation and script |
@@ -196,3 +196,11 @@ ns = [a-z]
 extval = [a-z]{5:8}
 transcode = [0-9a-z]{1,8}
 ```
+
+# Outstanding Issues
+
+This referencing scheme allows reference down to a single character. But it
+doesn't allow reference to the zero width point between characters. There are
+situations where information wants to be associated with a point between two
+characters. How can we mark this position?
+
