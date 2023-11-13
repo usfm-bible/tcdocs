@@ -808,10 +808,10 @@ ChapterStart =
         [usfm:tag[usfm:seq="true" after="TAGPARMEND"]]
         attribute style { "c" },
         [usfm:match[after="/(${WS}+|(?=\\))/" afterout="' '" usfm:seq="true"]]
-        attribute number { xsd:integer },
+        attribute number { xsd:string { pattern = "[1-9][0-9]*" } },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[1-9][0-9]*\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
         [usfm:match [before="/${WS}\\cp /" match="/\S+\s*(?=${nl})/"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
@@ -841,9 +841,9 @@ VerseStart =
         [usfm:tag[usfm:seq="true"]]
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="/(${WS}|(?=\\))/" afterout="' '"]]
-        attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
+        attribute number { xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
         [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "va"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
         [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]

@@ -23,7 +23,7 @@ def proconedir(d, sfmp, relax, args):
         for e in doc.getroot():
             meta[e.tag] = e.text
         tags = set((meta.get('tags', "") or "").split())
-        if len(args.exclude) and tags & args.exclude and (not len(tags) or not tags & args.include):
+        if (tags & args.exclude or len(args.include)) and not tags & args.include:
             return
     # print(f"{d}: ", end='', flush=True)
     imsg = ""
@@ -139,7 +139,7 @@ else:
     jobs = [(args.directory, st.st_size)]
 
 if len(jobs) == 1:
-    args.exclude = []
+    args.exclude = set()
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
 

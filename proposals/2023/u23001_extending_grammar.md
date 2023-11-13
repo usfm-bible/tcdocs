@@ -83,7 +83,8 @@ at various points. The current list is:
 | ListChar |     | List paragraph character style including \\liv \\lik \\litl  |
 | List |     | List paragraph style including \\lh \\li |
 | Milestone | default\_attribute    | Milestones including ts-s qt-e  |
-| Para |     | Paragraph styles including \\p \\q \\m \\b \\s3 |
+| Para |     | Paragraph styles including \\p \\q \\m that contain scripture verse text |
+| NonVersePara |    | Paragraph styles that do not contain scripture text, e.g. \\lit |
 | Section |     | Section header styles including \\s1 \\r \\ip \\cl |
 
 ## Examples

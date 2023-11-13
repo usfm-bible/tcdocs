@@ -1503,7 +1503,9 @@
       <attribute>
         <usfm:match after="/(${WS}+|(?=\\))/" afterout="&#x27; &#x27;" usfm:seq="true"/>
         <name ns="">number</name>
-        <data type="integer"/>
+        <data type="string">
+          <param name="pattern">[1-9][0-9]*</param>
+        </data>
       </attribute>
       <attribute>
         <name ns="">sid</name>
@@ -1518,7 +1520,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+\p{L}?(‏?[\-,][0-9]+\p{L}?)*</param>
+            <param name="pattern">[1-9][0-9]*\p{L}?(‏?[\-,][0-9]+\p{L}?)*</param>
           </data>
         </attribute>
       </optional>
@@ -1579,7 +1581,7 @@
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
-          <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
+          <param name="pattern">[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
         </data>
       </attribute>
       <optional>
@@ -1590,7 +1592,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(‏?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
+            <param name="pattern">[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
           </data>
         </attribute>
       </optional>
