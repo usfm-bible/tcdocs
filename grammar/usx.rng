@@ -25,6 +25,9 @@
   <usfm:terminal name="WSS" value="/${wsnnl}*/">
     <a:documentation>A sequence of reducable whitespace characters</a:documentation>
   </usfm:terminal>
+  <usfm:terminal name="WSNL" value="/${wsnnl}*${NL}/">
+    <a:documentation>A sequence of non-newline whitespace up to and including a newline</a:documentation>
+  </usfm:terminal>
   <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/">
     <a:documentation>Delimits a marker</a:documentation>
   </usfm:terminal>
@@ -718,6 +721,45 @@
   <define name="Para">
     <element>
       <name ns="">para</name>
+      <choice>
+        <attribute usfm:grouping="15">
+          <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n\\&#x27;"/>
+          <name ns="">style</name>
+          <ref name="Para.nonpara.style.enum"/>
+        </attribute>
+        <attribute usfm:grouping="15">
+          <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n\\&#x27;"/>
+          <name ns="">style</name>
+          <ref name="Para.para.style.enum"/>
+        </attribute>
+      </choice>
+      <optional>
+        <attribute>
+          <name ns="">vid</name>
+          <data type="string">
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+          </data>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <choice>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Break"/>
+          <text>
+            <usfm:text/>
+          </text>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="VersePara">
+    <element>
+      <name ns="">para</name>
       <attribute usfm:grouping="15">
         <usfm:tag id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="&#x27;\n\\&#x27;"/>
         <name ns="">style</name>
@@ -750,10 +792,7 @@
   <define name="Para.para.style.enum">
     <choice>
       <value>cls</value>
-      <value>lit</value>
-      <value>cp</value>
       <value>nb</value>
-      <value>pb</value>
       <value>pc</value>
       <value>pi1</value>
       <value>pi2</value>
@@ -769,8 +808,6 @@
       <value>ph2</value>
       <value>ph3</value>
       <value>ph</value>
-      <value>p1</value>
-      <value>p2</value>
       <value>p</value>
       <value>q1</value>
       <value>q2</value>
@@ -790,6 +827,15 @@
       <value>mi</value>
       <value>m</value>
       <value>ts</value>
+    </choice>
+  </define>
+  <define name="Para.nonpara.style.enum">
+    <choice>
+      <value>lit</value>
+      <value>cp</value>
+      <value>pb</value>
+      <value>p1</value>
+      <value>p2</value>
       <value>k1</value>
       <value>k2</value>
       <value>rem</value>
@@ -1025,7 +1071,7 @@
             </oneOrMore>
           </group>
         </optional>
-        <usfm:endtag ahead="/[^\\]/" usfm:seq="true"/>
+        <usfm:endtag usfm:seq="true"/>
       </element>
       <ref name="CharWithAttrib"/>
       <ref name="Figure"/>
@@ -1457,7 +1503,9 @@
       <attribute>
         <usfm:match after="/(${WS}+|(?=\\))/" afterout="&#x27; &#x27;" usfm:seq="true"/>
         <name ns="">number</name>
-        <data type="integer"/>
+        <data type="string">
+          <param name="pattern">[1-9][0-9]*</param>
+        </data>
       </attribute>
       <attribute>
         <name ns="">sid</name>
@@ -1472,13 +1520,13 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+\p{L}?(‏?[\-,][0-9]+\p{L}?)*</param>
+            <param name="pattern">[1-9][0-9]*\p{L}?(‏?[\-,][0-9]+\p{L}?)*</param>
           </data>
         </attribute>
       </optional>
       <optional>
         <attribute>
-          <usfm:match before="&#x27;\cp &#x27;"/>
+          <usfm:match before="/${WS}\\cp /" match="/\S+\s*(?=${nl})/"/>
           <name ns="">pubnumber</name>
           <data type="string">
             <param name="minLength">1</param>
@@ -1533,7 +1581,7 @@
         <name ns="">number</name>
         <data type="string">
           <param name="minLength">1</param>
-          <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
+          <param name="pattern">[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
         </data>
       </attribute>
       <optional>
@@ -1544,7 +1592,7 @@
           <name ns="">altnumber</name>
           <data type="string">
             <param name="minLength">1</param>
-            <param name="pattern">[0-9]+[\p{L}\p{Mn}]*(‏?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
+            <param name="pattern">[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,:][0-9]+[\p{L}\p{Mn}]*)*</param>
           </data>
         </attribute>
       </optional>
@@ -1635,7 +1683,7 @@
           </text>
         </choice>
       </zeroOrMore>
-      <usfm:endtag usfm:many="?" after="/\*${ws}*/"/>
+      <usfm:endtag usfm:many="?" after="/\*/"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">

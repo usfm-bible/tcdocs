@@ -11,6 +11,14 @@ except ImportError:
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
 
+def get_expected_result(d):
+    metad = os.path.join(d, "metadata.xml")
+    if not os.path.exists(metad):
+        return True
+    doc = etree.parse(metad)
+    res = doc.findtext("./validated").lower() == "pass"
+    return res
+
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input XML file")
 parser.add_argument("-g","--grammar",help="Input rnc or rng grammar")
@@ -46,22 +54,30 @@ jobfiles = []
 if os.path.isdir(args.infile):
     for dp, dn, fn in os.walk(args.infile):
         if "origin.xml" in fn:
-            jobfiles.append(os.path.join(dp, "origin.xml"))
+            expected = get_expected_result(dp)
+            jobfiles.append((os.path.join(dp, "origin.xml"), expected))
 else:
-    jobfiles = [args.infile]
+    expected = get_expected_result(os.path.basename(args.infile))
+    jobfiles = [(args.infile, expected)]
 
 failed = 0
+xfailed = 0
 if args.output:
     outfile = open(args.output, "a" if args.append else "w", encoding="utf-8")
     myprint = lambda s: outfile.write(s+"\n")
 else:
     myprint = print
 for f in jobfiles:
-    doc = etree.parse(f)
+    doc = etree.parse(f[0])
+    res = True
     if not usxrng.validate(doc):
         if not args.quiet:
             log = usxrng.error_log
-            myprint(f"XML: {f} failed: {log.last_error}")
-        failed += 1
+            myprint(f"XML: {f[0]} {'Failed' if f[1] else 'Passed'}: {log.last_error}")
+        if f[1]:
+            failed += 1
+    elif not f[1]:
+        myprint(f"XML: {f[0]} xFailed. passed when expected to fail")
+        xfailed += 1
 total = len(jobfiles)
-print(f"lxmltest on {args.infile}: {total-failed} passed / {total} => {failed} failed")
+print(f"lxmltest on {args.infile}: {total-failed} passed / {total} => {failed} failed, {xfailed} expected fails")

@@ -102,10 +102,22 @@ There are various issues to address with this model:
 - How are word and character references included in a reference unambiguously?
 
 ### Word segmentation
-Accurate word segmentation is a difficult problem, particularly for non-wordspaced languages. Such languages do not have spaces between words, instead they use spaces as discourse or grammatical markers. Thankfully there are some factor in our favour.
+Accurate word segmentation is a difficult problem, particularly for
+non-wordspaced languages. Such languages do not have spaces between words,
+instead they use spaces as discourse or grammatical markers. Thankfully there
+are some factors in our favour.
 Scriptural texts are highly controlled. By this we mean that such texts are carefully edited and characters that would otherwise be missing from normal documents in a language, can and are inserted in scripture text. A primary example of this is the zero width space. This invisible character acts like a space for word segmentation and Iinebreaking, but otherwise is not seen. Therefore we can assume that any necessary character for word segmentation can be inserted.
 Accurate word segmentation is not required. The reason for character locations to be identified by word is that it makes indexing by humans easier. Humans are not expected to come up with character level references, but it helps if a human can read and approximately locate the position in a text a reference is pointing to. Thus it is sufficient for a 'word' in this context, to be defined as a sequence of non-space characters whether those characters are strictly word forming or not. This also mitigates any arguments over what is truly a word or not in a particular language.
-While the USFM standard considers any space characters other than those in ASCII (i.e. space, tab, carriage return, newline) to be content characters that must not be changed, they are not considered word forming in any way. They are also often effectively invisible in that it is not possible to count how many space charcaten are in a sequence. Punctuation characters are also non word forming, but are visible and countable. Therefore we include them as being referenceable. Also this mitigates the question of when a punctuation character gets used as a word forming character.
+While the USFM standard considers any space characters other than those in ASCII
+(i.e. space, tab, carriage return, newline) to be content characters that must
+not be changed, they are not considered word forming in any way. They are also
+often effectively invisible in that it is not possible to count how many space
+charcaters are in a sequence. Punctuation characters are also non word forming,
+but are visible and countable. Therefore we include them as being referenceable.
+Also this mitigates the question of when a punctuation character gets used as a
+word forming character. A marker is treated as a space. Multiple spaces are
+treated as a single space. The precise set of space characters is yet to be
+decided but will probably be closely aligned to \\p{Zs}.
 
 ### Including And Ignoring Notes
 At the simplest level, footnote (or any other note) text is not part of the main scripture text. They may or may not be printed, it word counting through a text, it is very awkward to have to include notes into the count. There are many other reason why it is easier to ignore notes when word counting through the text. And so we ignore them for primary referencing.
@@ -141,8 +153,8 @@ translation -- Book -- Chapter -- Verse -- word -- char
 ```
 when interpretting a reference in the context of another reference, we start from the position in the hierarchy of the other reference. A pure number therefore is at the same level in the hierarchy. for example in GEN 2:3!4+5-7, the 7 is interpretted as a character. On the other hand GEN 2:3!4-7!8, the 7 is a word index and 8 the character. But why is this not verse 7 word 8? This is an ambiguity. To resolve it, we need to use a different separator. The basic principle is that a separator followed by a sequence (in this case digits) must be unique, but the separator defines the type of the following component. In this case of the character index, we can reuse `+` from the translation.
 
-| Range                 | Description                                                 |
-|-----------------|‐------------------------------------------|
+| Range           | Description                               |
+| --------------- | ----------------------------------------- |
 | GEN 7:8!2-6       | Genesis ch 7 vs 8 words 2-6  |
 | GEN 7:8!2-12!3  | Genesis ch 7 vs 8 word 2 to vs 12 word 3 |
 | wsg-gong+JHN 3:16 | John 3:16 from the Gondi translation and script |
@@ -196,3 +208,12 @@ ns = [a-z]
 extval = [a-z]{5:8}
 transcode = [0-9a-z]{1,8}
 ```
+
+# Outstanding Issues
+
+This referencing scheme allows reference down to a single character. But it
+doesn't allow reference to the zero width point between characters. There are
+situations where information wants to be associated with a point between two
+characters. How can we mark this position? Perhaps with a trailing +?
+Indexing is 1 based. So we can say: the zerowith position after the char. Thus
+to insert at the start of the bible, one might say `GEN 1:1!1+0+`.

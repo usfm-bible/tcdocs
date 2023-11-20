@@ -27,6 +27,9 @@ usfm:terminal [name="WS" value="/(?:${ws}|${nl}|$)/"
 usfm:terminal [name="WSS" value="/${wsnnl}*/"
     a:documentation ["A sequence of reducable whitespace characters"]]
 
+usfm:terminal [name="WSNL" value="/${wsnnl}*${NL}/"
+    a:documentation ["A sequence of non-newline whitespace up to and including a newline"]]
+
 usfm:terminal [name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/"
     a:documentation ["Delimits a marker"]]
 
@@ -459,7 +462,15 @@ Section.para.style.enum = (
     | "cd" # Chapter Description (Publishing option D, e.g. in Russian Bibles)
     )
 
-Para =
+Para = 
+    element para {
+        ([usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.nonpara.style.enum } |
+        [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.para.style.enum }),
+        attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
+    }
+
+VersePara =
     element para {
         [usfm:grouping="15" usfm:tag[id="a" usfm:stacked="true" before="/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F]*\\/" beforeout="'\n\\'"]] attribute style { Para.para.style.enum },
         attribute vid { xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
@@ -468,10 +479,7 @@ Para =
 
 Para.para.style.enum = (
     "cls" # Closure of an Epistle
-    | "lit" # For a comment or note inserted for liturgical use
-    | "cp" # Chapter published style
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
-    | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
     | "pc" # Inscription (paragraph text centered)
     | "pi1" # Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse
     | "pi2" # Paragraph text, level 2 indent, with first line indent; often used for discourse
@@ -487,8 +495,6 @@ Para.para.style.enum = (
     | "ph2" # Paragraph text, with level 2 hanging indent
     | "ph3" # Paragraph text, with level 3 hanging indent
     | "ph" # Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
-    | "p1" # Front or back matter text paragraph, level 1 (if multiple levels)
-    | "p2" # Front or back matter text paragraph, level 2 (if multiple levels)
     | "p" # Paragraph text, with first line indent
     | "q1" # Poetry text, level 1 indent (if multiple levels)
     | "q2" # Poetry text, level 2 indent
@@ -508,11 +514,19 @@ Para.para.style.enum = (
     | "mi" # Paragraph text, indented, with no first line indent; often used for discourse
     | "m" #  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
     | "ts" # Translator's chunk (to identify chunks of text suitable for translating at one time)
+    )
+
+Para.nonpara.style.enum = (
+    "lit" # For a comment or note inserted for liturgical use
+    | "cp" # Chapter published style
+    | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
+    | "p1" # Front or back matter text paragraph, level 1 (if multiple levels)
+    | "p2" # Front or back matter text paragraph, level 2 (if multiple levels)
     | "k1" # Concordance main entry text or keyword, level 1
     | "k2" # Concordance main entry text or keyword, level 2
     | "rem" # Remark
     | "sts" # Remark
-    )
+)
 
 List =
     element para {
@@ -598,7 +612,7 @@ Char = (
            ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
                     second="ATTRIBTEXT" after="/&quot;${WSS}/" fallback="/[^\\\n=]+(?=\\)/"]]
             attribute * - (style | closed| link-href | link-title | link-id) {xsd:string}+)?
-        >> usfm:endtag[ahead="/[^\\]/" usfm:seq="true"]  # required
+        >> usfm:endtag[usfm:seq="true"]  # required
     }
     | CharWithAttrib | Figure
     )
@@ -794,11 +808,11 @@ ChapterStart =
         [usfm:tag[usfm:seq="true" after="TAGPARMEND"]]
         attribute style { "c" },
         [usfm:match[after="/(${WS}+|(?=\\))/" afterout="' '" usfm:seq="true"]]
-        attribute number { xsd:integer },
+        attribute number { xsd:string { pattern = "[1-9][0-9]*" } },
         attribute sid { xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } },
         [usfm:match [before="'\ca '" after="'\ca*'"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
-        [usfm:match [before="'\cp '"]]
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[1-9][0-9]*\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,
+        [usfm:match [before="/${WS}\\cp /" match="/\S+\s*(?=${nl})/"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         empty
     }
@@ -827,9 +841,9 @@ VerseStart =
         [usfm:tag[usfm:seq="true"]]
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="/(${WS}|(?=\\))/" afterout="' '"]]
-        attribute number { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
+        attribute number { xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
         [usfm:tag[dump="true" "va"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "va"]]
-        attribute altnumber { xsd:string { minLength = "1" pattern = "[0-9]+[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
+        attribute altnumber { xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
         [usfm:tag[dump="true" "vp"] usfm:text[] usfm:endtag[after="/\*${WSS}/" afterout="'\* '" "vp"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]
@@ -866,7 +880,7 @@ FootnoteChar =
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)*
-        >> usfm:endtag[usfm:many="?" after="/\*${ws}*/"]
+        >> usfm:endtag[usfm:many="?" after="/\*/"]
     }
 FootnoteChar.char.style.enum = (
       "fr" # The origin reference for the footnote

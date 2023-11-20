@@ -23,7 +23,7 @@ def proconedir(d, sfmp, relax, args):
         for e in doc.getroot():
             meta[e.tag] = e.text
         tags = set((meta.get('tags', "") or "").split())
-        if len(args.exclude) and tags & args.exclude and (not len(tags) or not tags & args.include):
+        if (tags & args.exclude or len(args.include)) and not tags & args.include:
             return
     # print(f"{d}: ", end='', flush=True)
     imsg = ""
@@ -66,7 +66,7 @@ def proconedir(d, sfmp, relax, args):
             passed=False
     else:
         passed = False
-    expected = meta.get('validated', 'pass') == 'pass'
+    expected = meta.get('validated', 'pass').lower() == 'pass'
     res = passed == expected
     if not args.quiet:
         print("{}: {} ({} {}){} | {}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg, xmsg))
@@ -139,7 +139,7 @@ else:
     jobs = [(args.directory, st.st_size)]
 
 if len(jobs) == 1:
-    args.exclude = []
+    args.exclude = set()
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
 
@@ -194,7 +194,7 @@ for r in results:
         continue
     if len(r[2]) and not r[0]:
         ifailed += 1
-    if len(r[3])and not r[0]:
+    if len(r[3]) and not r[0]:
         xfailed += 1
     total += 1
     if args.output:

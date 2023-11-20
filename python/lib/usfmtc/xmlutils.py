@@ -1,4 +1,5 @@
 
+import re
 import xml.etree.ElementTree as et
 
 class ParentElement(et.Element):
@@ -48,13 +49,27 @@ def writexml(outf, root):
     _serialize_xml(outf.write, root, qnames, ns, True)
     outf.write("\n")
 
+escapes = {
+    '&': "&amp;",
+    '<': "&lt;",
+    '>': "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+}
+def usfmToUsxEscapes(s):
+    for k, v in escapes.items():
+        if k in s:
+            s = s.replace(k, v)
+    return s
+    
+
 def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwargs):
     tag = elem.tag
     text = elem.text
     tag = qnames[tag]
     if tag is None:
         if text:
-            write(et._escape_cdata(text))
+            write(usfmToUsxEscapes(text))
         for e in elem:
             _serialize_xml(write, e, qnames, None, short_empty_elements)
     else:
@@ -65,22 +80,22 @@ def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwar
                 for v, k in sorted(namespaces.items(), key=lambda x: x[1]):  # sort on prefix
                     if k:
                         k = ":" + k
-                    write(" xmlns%s=\"%s\"" % (k, et._escape_attrib(v)))
+                    write(" xmlns%s=\"%s\"" % (k, usfmToUsxEscapes(v)))
             for k, v in items:
                 if not k.startswith(" ") and v is not None:
-                    v = et._escape_attrib(v)
+                    v = usfmToUsxEscapes(v)
                     write(" %s=\"%s\"" % (qnames[k], v))
         if text or len(elem) or not short_empty_elements:
             write(">")
             if text:
-                write(et._escape_cdata(text))
+                write(usfmToUsxEscapes(text))
             for e in elem:
                 _serialize_xml(write, e, qnames, None, short_empty_elements)
             write("</" + tag + ">")
         else:
             write(" />")
     if elem.tail:
-        write(et._escape_cdata(elem.tail))
+        write(usfmToUsxEscapes(elem.tail))
 
 def prettyxml(node, last=None, indent="", width=2):
     if node.tag in ('para', 'sidebar', 'table', 'chapter', 'usx', 'book'):
