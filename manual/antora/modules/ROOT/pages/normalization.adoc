@@ -25,7 +25,7 @@ USFM/USX adopts the following principles for reducing whitespace. Reducing white
 * Whitespace around a xref:ROOT:glossary.adoc[newline (`NL`)] is reduced.
 * Whitespace within text (e.g. between words) is not reduced.
 * Whitespace around text (e.g. between paragraphs) is reduced.
-* Whitespace before xref:cv:v.adoc[verses] is reduced. A space is not required before before xref:cv:v.adoc[verses] (example: a parenthesised verse number like (3)).
+* Whitespace before xref:cv:v.adoc[verses] is reduced. A space is not required before xref:cv:v.adoc[verses] (example: a parenthesised verse number like (3)).
 * Applications and processors may offer the user the option to reduce whitespace within text.
 
 [NOTE]
