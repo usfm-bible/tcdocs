@@ -12,16 +12,9 @@
     },
     {
       "type": "para",
-      "marker": "ide",
+      "marker": "usfm",
       "content": [
-        "UTF-8"
-      ]
-    },
-    {
-      "type": "para",
-      "marker": "h",
-      "content": [
-        "Titus"
+        "3.0"
       ]
     },
     {
@@ -43,69 +36,12 @@
         {
           "type": "char",
           "marker": "w",
-          "lemma": "Παῦλος",
-          "strong": "G39720",
+          "lemma": "ἀπόστολος",
+          "strong": "G06520",
           "x-morph": "Gr,N,,,,,NMS,",
+          "x-tw": "rc://*/tw/dict/bible/kt/apostle",
           "content": [
-            "Παῦλος"
-          ]
-        },
-        {
-          "type": "char",
-          "marker": "w",
-          "lemma": "δοῦλος",
-          "strong": "G14010",
-          "x-morph": "Gr,N,,,,,NMS,",
-          "content": [
-            "δοῦλος"
-          ]
-        },
-        {
-          "type": "char",
-          "marker": "w",
-          "lemma": "Χριστός",
-          "strong": "G55470",
-          "x-morph": "Gr,N,,,,,GMS,",
-          "content": [
-            "Χριστοῦ"
-          ]
-        },
-        {
-          "type": "char",
-          "marker": "w",
-          "lemma": "κατά",
-          "strong": "G25960",
-          "x-morph": "Gr,P,,,,,A,,,",
-          "content": [
-            "κατὰ"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "chapter",
-      "marker": "c",
-      "number": "2",
-      "sid": "TIT 2"
-    },
-    {
-      "type": "para",
-      "marker": "p",
-      "content": [
-        {
-          "type": "verse",
-          "marker": "v",
-          "number": "1",
-          "sid": "TIT 2:1"
-        },
-        {
-          "type": "char",
-          "marker": "w",
-          "lemma": "σύ",
-          "strong": "G47710",
-          "x-morph": "Gr,RP,,,2N,S,",
-          "content": [
-            "Σὺ"
+            "ἀπόστολος"
           ]
         },
         {
@@ -119,23 +55,100 @@
           ]
         },
         {
+          "type": "ms",
+          "marker": "k-s",
+          "x-tw": "rc://*/tw/dict/bible/kt/jesus"
+        },
+        {
           "type": "char",
           "marker": "w",
-          "lemma": "λαλέω",
-          "strong": "G29800",
-          "x-morph": "Gr,VTMPA2,,S,",
+          "lemma": "Ἰησοῦς",
+          "strong": "G24240",
+          "x-morph": "Gr,N,,,,,GMS,",
           "content": [
-            "λάλει"
+            "Ἰησοῦ"
           ]
         },
         {
           "type": "char",
           "marker": "w",
-          "lemma": "ὅς",
-          "strong": "G37390",
-          "x-morph": "Gr,RR,,,,ANP,",
+          "lemma": "χριστός",
+          "strong": "G55470",
+          "x-morph": "Gr,N,,,,,GMS,",
+          "x-tw": "rc://*/tw/dict/bible/kt/christ",
           "content": [
-            "ἃ"
+            "Χριστοῦ"
+          ]
+        },
+        {
+          "type": "ms",
+          "marker": "k-e"
+        },
+        ",",
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "κατά",
+          "strong": "G25960",
+          "x-morph": "Gr,P,,,,,A,,,",
+          "content": [
+            "κατὰ"
+          ]
+        },
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "4",
+          "sid": "TIT 1:4"
+        },
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "ἀπό",
+          "strong": "G05750",
+          "x-morph": "Gr,P,,,,,G,,,",
+          "content": [
+            "ἀπὸ"
+          ]
+        },
+        {
+          "type": "ms",
+          "marker": "k-s",
+          "x-tw": "rc://*/tw/dict/bible/kt/godthefather"
+        },
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "θεός",
+          "strong": "G23160",
+          "x-morph": "Gr,N,,,,,GMS,",
+          "x-tw": "rc://*/tw/dict/bible/kt/god",
+          "content": [
+            "Θεοῦ"
+          ]
+        },
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "πατήρ",
+          "strong": "G39620",
+          "x-morph": "Gr,N,,,,,GMS,",
+          "content": [
+            "Πατρὸς"
+          ]
+        },
+        {
+          "type": "ms",
+          "marker": "k-e"
+        },
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "καί",
+          "strong": "G25320",
+          "x-morph": "Gr,CC,,,,,,,,",
+          "content": [
+            "καὶ"
           ]
         }
       ]

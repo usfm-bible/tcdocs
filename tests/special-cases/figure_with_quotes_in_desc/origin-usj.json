@@ -1,6 +1,6 @@
 {
   "type": "USJ",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "content": [
     {
       "type": "book",
@@ -27,6 +27,7 @@
         "verse text",
         {
           "type": "figure",
+          "marker": "fig",
           "alt": "He said: \"this is interesting\"",
           "file": "IMG_0195.JPG",
           "size": "col",

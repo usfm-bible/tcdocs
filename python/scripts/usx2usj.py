@@ -2,7 +2,7 @@ import argparse
 import json
 from lxml import etree
 
-VERSION_NUM = "0.1.0"
+VERSION_NUM = "0.2.0"
 SPEC_NAME = "USJ" # for Unified Scripture JSON
 
 def convert_usx(input_usx_elmt):
