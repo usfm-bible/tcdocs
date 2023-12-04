@@ -114,7 +114,7 @@ USJ::
           "number": "1",
           "sid": "MRK 1:1"
         },
-        "This is the Good News about Jesus\n    Christ, the Son of God.",
+        "This is the Good News about Jesus Christ, the Son of God.",
         {
           "type": "verse",
           "marker": "v",
@@ -175,7 +175,7 @@ USJ::
           "number": "4",
           "sid": "MRK 1:4"
         },
-        "So John appeared in the desert,\n    baptizing and preaching. \u201cTurn away from your sins and be baptized,\u201d he told\n    the people, \u201cand God will forgive your sins.\u201d"
+        "So John appeared in the desert, baptizing and preaching. \u201cTurn away from your sins and be baptized,\u201d he told the people, \u201cand God will forgive your sins.\u201d"
       ]
     }
   ]
