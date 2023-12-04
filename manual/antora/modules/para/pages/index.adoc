@@ -21,7 +21,7 @@ USFM::
 image::schema/p_rail.svg[]
 USX::
 +
-image:schema/p_usx.svg[]
+image::schema/p_usx.svg[]
 ======
 
 == Embedded Elements

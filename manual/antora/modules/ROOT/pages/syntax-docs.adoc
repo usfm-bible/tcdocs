@@ -5,4 +5,26 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-* Throughout the documentation, texts shown between square brackets, with a grey background, in `[monospacedFont]` are names used for various types of definitions within the USFM/USX RNG schema. These names correspond to labels shown in the schema diagrams thoughout the documentation.
+Throughout this documentation, texts shown between square brackets, with a grey background, in `[monospacedFont]` are the names used for classes or terminals within the USFM/USX RNG schema. These names correspond to the terminal labels shown in syntax diagrams thoughout the documentation.
+
+## Syntax Diagrams
+
+'Railroad' diagrams illustrate the syntax for components of the USFM/USX schema. Where a diagram is provided, USFM and USX expressions are given in separate tabs. The railroad diagrams for the paragraph element are shown below:
+
+[tabs]
+======
+USFM::
++
+image:para:schema/p_rail.svg[]
+USX::
++
+image:para:schema/p_usx.svg[]
+======
+
+* Diagrams are read from left to right.
+* USFM markup is shown in containers with a green background. USX is shown with a purple background.
+* Explicit markup text is shown within quotation marks, or (for USX) within XML wedges `<>`.
+* Markup text which matches a regular expression pattern is shown between 2 forward slashes `/.../`
+* Markup text from an enumeration of options are shown within a dotted outline.
+* Terminals are shown in containers with rounded corners, and labelled in `ALLCAPS`. The defintions for terminal labels are given in the xref:ROOT:glossary.adoc[glossary].
+* A container identifying a markup element is shown with square corners, with a label identifying the element type (e.g. xref:note:footnote/index.adoc[Footnote], xref:note:crossref/index.adoc[CrossReference], xref:char:index.adoc[Char], xref:ms:index.adoc[Milestone], xref:cv:v.adoc[Verse]).
