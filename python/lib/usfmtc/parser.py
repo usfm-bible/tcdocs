@@ -280,7 +280,7 @@ class Group(Parser):
     def _returnRes(self, res, s):
         if isinstance(res, list) and not len(res):
             return None
-        if not any(x in self.mode for x in '*+'):
+        if not any(x in self.mode for x in '*+&'):
             if '?' in self.mode:
                 res = res[0] if len(res) and not isinstance(res, str) else None
         return res
