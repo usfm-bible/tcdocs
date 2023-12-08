@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os, sys, argparse
+import os, sys, argparse, logging
 try:
     from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
 except ImportError:
@@ -15,13 +15,29 @@ parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
 parser.add_argument("-o","--outdir",required=True,help="Output directory for generated svgs")
 parser.add_argument("-n","--node",help="Process a single node")
 parser.add_argument("-C","--charwidth",type=float,default=6.,help="Average width of characters to use")
+parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
 parser.add_argument("-z","--debug",type=int,default=0,help="bit 0 - print job name")
 args = parser.parse_args()
+
+if args.logging:
+    try:
+        loglevel = int(args.logging)
+    except ValueError:
+        loglevel = getattr(logging, args.logging.upper(), None)
+    if isinstance(loglevel, int):
+        parms = {'level': loglevel, 'datefmt': '%d/%b/%Y %H:%M:%S', 'format': '%(asctime)s.%(msecs)03d %(levelname)s:%(module)s(%(lineno)d) %(message)s'}
+        logfh = open("mkraildiagrams.log", "w", encoding="utf-8")
+        parms.update(stream=logfh, filemode="w") #, encoding="utf-8")
+        try:
+            logging.basicConfig(**parms)
+        except FileNotFoundError as e:      # no write access to the log
+            print("Exception", e)
+    log = logging.getLogger('mkraildiagrams')
 
 rdoc = et.parse(args.grammar)
 backendsfm = UsfmRailRoad()
 backendxml = XmlRailRoad()
-sfmproc = UsfmGrammarParser(rdoc, backendsfm)
+sfmproc = UsfmGrammarParser(rdoc, backendsfm, flattenre=False)
 xmlproc = XmlGrammarParser(rdoc, backendxml)
 
 if args.node:

@@ -9,19 +9,29 @@ endif::[]
 
 Definitions for terms used within the USFM/USX schema and diagrams.
 [glossary]
-ws:: Pattern: ``++/[\u0009-\u000D\u0020]/++`` A single simple whitespace character that may be reduced
-allws:: Pattern: ``++/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F\u3000]/++`` All possible whitespace characters including content whitespace. Matches a single character
-wsnnl:: Pattern: ``++/[\u0009\u0020]/++`` A single non newline simple whitespace character
+hs:: Pattern: ``++/[\u0009\u0020]/++`` A single simple horizontal (non newline) whitespace character
+HS:: Pattern: ``++/++``#$\{hs\}#``+++/++`` A sequence of more horizontal whitespace characters
+Hs:: Pattern: ``++/++``#$\{hs\}#``++*/++`` A sequence of zero or more horizontal whitespace characters
 nl:: Pattern: ``++/(?:\u000D?\u000A|\u000D)/++`` A single newline (as supported by all operating systems)
 NL:: Pattern: ``++/++``#$\{nl\}#``+++/++`` A sequence of newline characters
-WS:: Pattern: ``++/(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)/++`` A single reducable whitespace character
-WSS:: Pattern: ``++/++``#$\{wsnnl\}#``++*/++`` A sequence of reducable whitespace characters
-TAGEND:: Pattern: ``++/(?:++``#$\{ws\}#``+++|(?=[\\|]|$))/++`` Delimits a marker
-TAGPARMEND:: Pattern: ``++/++``#$\{wsnnl\}#``+++/++`` Delimits an attribute parameter name
-TEXTEND:: Pattern: ``++/++``#$\{ws\}#``++*(?=[\\]|$)/++`` Delimits simple text
-ATTRIBTEXTEND:: Pattern: ``++/++``#$\{ws\}#``++*(?=[\\|])/++`` Reducable characters following an attribute value
-ATTRIBTEXT:: Pattern: ``++/(?:\\['"\\]|[^\\])+?/++`` Matches text inside an attribute value (not including the quotes)
+ws:: Pattern: ``++/(?:++``#$\{hs\}#``++|++``#$\{nl\}#``++|$)/++`` A reducable whitespace character, including a single newline sequence
+anyws:: Pattern: ``++/[\u0009\u000A\u000D\u0020]/++`` Matches any single reducible whitespace character, may split newline
+WS:: Pattern: ``++/++``#$\{anyws\}#``+++/++`` A sequence of reducable whitespace characters
+Ws:: Pattern: ``++/++``#$\{anyws\}#``++*/++`` A sequence of zero or more reducable whitespace characters
+allws:: Pattern: ``++/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F\u3000]/++`` All possible whitespace characters including content whitespace. Matches a single character
+WSNL:: Pattern: ``++/++``#$\{HS\}#``++++``#$\{NL\}#``++/++`` A sequence of non-newline whitespace up to and including a newline
+TAGEND:: Pattern: ``++/(?:++``#$\{ws\}#``++|(?=[\\|]|$))/++`` Delimits a marker
+TEXTEND:: Pattern: ``++/(?=++``#$\{anyws\}#``++*\\|$)/++`` Delimits simple text
+ATTRIBTEXTEND:: Pattern: ``++/++``#$\{Hs\}#``++(?=[\\|])/++`` Reducable characters following an attribute value
+ATTRIBTEXT:: Pattern: ``++/(?:\\["\\=~/]|[^\\"])+/++`` Matches text inside an attribute value (not including the quotes)
+ATTRIBALL:: Pattern: ``++/(?:[^\\=]|\\=)+(?=\\)/++`` Matches a default attribute value string
 ATTRIBNAME:: Pattern: ``++/[a-zA-Z0-9\-_]+?/++`` Matches an attribute name
-TEXT:: Pattern: ``++/[^\\]+?(?=[\\]|$)/++`` Matches simple text
-TEXTNOTATTRIB:: Pattern: ``++/[^\\|]+?(?=[\\|]|$)/++`` Matches simple text up to the start of a sequence of attributes delimited by |
-PIPE:: Pattern: ``++/++``#$\{ws\}#``++*(?<!\\)\|++``#$\{ws\}#``++*/++`` Matches the attributes list delimiter of |
+TEXT:: Pattern: ``++/[^\\]+/++`` Matches simple text up to the next marker
+TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\)/++`` Matches simple text without trailing whitespace
+TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\["\\~/])+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
+PIPE:: Pattern: ``++/++``#$\{hs\}#``++*(?<!\\)\|++``#$\{hs\}#``++*/++`` Matches the attributes list delimiter of |
+TLC:: Pattern: ``++/[0-9A-Z]{3}/++`` Three letter uppercase code including digits
+VERSE:: Pattern: ``++/[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*/++`` Verse number, including ranges and sequences
+VID:: Pattern: ``++/[A-Z1-4]{3} ?[‏a-z0-9,\-:\p{L}\p{Mn}]*/++`` USX eid, sid, vid references
+MID:: Pattern: ``++/[\p{L}\d_\-\.:]+/++`` Milestone sid or eid any identifier, in effect
+HREF:: Pattern: ``++/(.*\/\/\/?(.*\/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)/++`` href bible reference
