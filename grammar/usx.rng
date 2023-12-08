@@ -340,9 +340,15 @@
         <name ns="">code</name>
         <ref name="PeripheralBookIdentification.book.code.enum"/>
       </attribute>
-      <optional>
-        <text/>
-      </optional>
+      <group usfm:seq="true">
+        <optional>
+          <group>
+            <usfm:match before="/${hs}*/" beforeout="&#x27; &#x27;" match="/[^\\\n\r]*/"/>
+            <text/>
+          </group>
+        </optional>
+        <usfm:match match="NL" matchout="&#x27;\n&#x27;" dump="true"/>
+      </group>
     </element>
   </define>
   <define name="PeripheralBookIdentification.book.code.enum">
@@ -366,9 +372,15 @@
         <name ns="">code</name>
         <ref name="PeripheralDividedBookIdentification.book.code.enum"/>
       </attribute>
-      <optional>
-        <text/>
-      </optional>
+      <group usfm:seq="true">
+        <optional>
+          <group>
+            <usfm:match before="/${hs}*/" beforeout="&#x27; &#x27;" match="/[^\\\n\r]*/"/>
+            <text/>
+          </group>
+        </optional>
+        <usfm:match match="NL" matchout="&#x27;\n&#x27;" dump="true"/>
+      </group>
     </element>
   </define>
   <define name="PeripheralDividedBookIdentification.book.code.enum">
@@ -668,6 +680,7 @@
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
       <ref name="Sidebar"/>
+      <ref name="Milestone"/>
     </choice>
   </define>
   <define name="PeripheralContent">
@@ -680,6 +693,7 @@
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
       <ref name="Sidebar"/>
+      <ref name="Milestone"/>
     </choice>
   </define>
   <define name="Section">

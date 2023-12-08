@@ -257,7 +257,9 @@ PeripheralBookIdentification =
         [usfm:tag[before="/&#xFEFF;?${anyws}*\\/" beforeout="'\\'" usfm:seq="true"]]
         attribute style { "id" },
         [usfm:match[]] attribute code { PeripheralBookIdentification.book.code.enum }, # e.g. code="CNC"
-        text? # Brief description of the project (optional)
+        [usfm:seq="true"]([usfm:match[before="/${hs}*/" beforeout="' '" match="/[^\\\n\r]*/"]]
+        (text)? # Brief description of the project (optional)
+        >> usfm:match[match="NL" matchout="'\n'" dump="true"])
     }
 PeripheralBookIdentification.book.code.enum = (
        "CNC" # Concordance
@@ -271,7 +273,9 @@ PeripheralDividedBookIdentification =
         [usfm:tag[before="/&#xFEFF;?${anyws}*\\/" beforeout="'\\'" usfm:seq="true"]]
         attribute style { "id" },
         [usfm:match[]] attribute code { PeripheralDividedBookIdentification.book.code.enum }, # e.g. code="FRT"
-        text? # Brief description of the project (optional)
+        [usfm:seq="true"]([usfm:match[before="/${hs}*/" beforeout="' '" match="/[^\\\n\r]*/"]]
+        (text)? # Brief description of the project (optional)
+        >> usfm:match[match="NL" matchout="'\n'" dump="true"])
     }
 PeripheralDividedBookIdentification.book.code.enum = (
        "XXA" # Extra A, e.g. a hymnal
@@ -448,9 +452,9 @@ BookIntroductionEndTitles.para.style.enum = (
     | "imt2" # Introduction major title, level 2
     )
 
-ChapterContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar)
+ChapterContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar | Milestone)
 
-PeripheralContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar)
+PeripheralContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar | Milestone)
 
 Section =
     element para {
