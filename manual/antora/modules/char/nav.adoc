@@ -1,6 +1,5 @@
 * xref:index.adoc[]
 ** xref:attributes.adoc[Attributes]
-** xref:linking.adoc[Linking]
 ** xref:nesting.adoc[Nesting]
 // ** Features
 // tag::nav-topcat[]
@@ -10,6 +9,7 @@
 *** xref:features/add.adoc[add - Translator addition]
 *** xref:features/bk.adoc[bk - Quoted book title]
 *** xref:features/dc.adoc[dc - DC-only content]
+*** xref:features/jmp.adoc[jmp - Link text]
 *** xref:features/k.adoc[k - Keyword/keyterm]
 *** xref:features/nd.adoc[nd - Name of God]
 *** xref:features/ord.adoc[ord - Ordinal ending]

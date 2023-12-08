@@ -1,0 +1,4 @@
+= jmp
+:env-antora:
+
+include::markers:char/jmp.adoc[tag=public]

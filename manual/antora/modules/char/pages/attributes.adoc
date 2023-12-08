@@ -118,7 +118,8 @@ USX::
 [#chars-with-attrib]
 == Characters Types with Attributes
 
-* xref:char:features/w.adoc[w] -- `lemma`, `strong`, `srcloc`
-* xref:char:features/rb.adoc[rb] -- `gloss`
-* xref:char:notes/crossref/xt.adoc[xt] -- `link-href` (a linking attribute)
-* xref:fig:fig.adoc[figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref` (harmonizing the 2.x syntax for this marker with the USFM/USX 3.x attribute specification)
+* xref:char:features/jmp.adoc[jmp - Link text] -- `link-href`, `link-title`, `link-id`
+* xref:char:features/rb.adoc[rb - Ruby gloss] -- `gloss`
+* xref:char:features/w.adoc[w - Wordlist entry] -- `lemma`, `strong`, `srcloc`
+* xref:char:notes/crossref/xt.adoc[xt - Target references] -- `link-href`
+* xref:fig:fig.adoc[fig - Figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref`
