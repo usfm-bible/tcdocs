@@ -20,7 +20,7 @@ def get_expected_result(d):
     if res is None:
         res = doc.findtext("./validated").lower() == "pass"
     else:
-        res = res.lower()
+        res = res.lower() == "pass"
     return res
 
 parser = argparse.ArgumentParser()
@@ -61,7 +61,7 @@ if os.path.isdir(args.infile):
             expected = get_expected_result(dp)
             jobfiles.append((os.path.join(dp, "origin.xml"), expected))
 else:
-    expected = get_expected_result(os.path.basename(args.infile))
+    expected = get_expected_result(os.path.dirname(args.infile))
     jobfiles = [(args.infile, expected)]
 
 failed = 0
