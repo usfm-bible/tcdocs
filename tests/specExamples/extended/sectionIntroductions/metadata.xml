@@ -2,5 +2,6 @@
 <test-metadata>
         <description>Division and section Introductions. From examples in USFM documentation.</description>
         <validated>pass</validated>
+        <xmlvalidated>fail</xmlvalidated>
         <tags>clarify</tags>
 </test-metadata>

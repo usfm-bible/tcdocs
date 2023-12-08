@@ -16,7 +16,11 @@ def get_expected_result(d):
     if not os.path.exists(metad):
         return True
     doc = etree.parse(metad)
-    res = doc.findtext("./validated").lower() == "pass"
+    res = doc.findtext("./xmlvalidated")
+    if res is None:
+        res = doc.findtext("./validated").lower() == "pass"
+    else:
+        res = res.lower()
     return res
 
 parser = argparse.ArgumentParser()
