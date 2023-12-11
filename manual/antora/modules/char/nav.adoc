@@ -40,7 +40,7 @@
 *** xref:format/no.adoc[no - Normal text]
 *** xref:format/em.adoc[em - Emphasis text]
 *** xref:format/sc.adoc[sc - Smallcap text]
-*** xref:format/sup.adoc[sup - Smallcap text]
+*** xref:format/sup.adoc[sup - Superscript text]
 // end::nav-format[]
 // ** Text Formatting
 // tag::nav-topcat[]
