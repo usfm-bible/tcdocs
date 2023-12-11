@@ -1,4 +1,7 @@
 
+import re
+import xml.etree.ElementTree as et
+
 alljobs = {
     "BookHeaders":          ("bkhdrs", ("BookHeaders.para.style.enum",)),
     "BookTitles":           ("bktitles", ("BookTitles.para.style.enum",)),
@@ -55,4 +58,21 @@ usxenums = {
     'footnotechar': 'FootnoteChar.char.style',
     'crossrefchar': 'CrossReferenceChar.char.style',
 }
+
+relaxns = "{http://relaxng.org/ns/structure/1.0}"
+
+def addmarkers(rdoc, markers):
+    for s in markers:
+        t, r = s.split('=')
+        mks = re.split(r'[,;\s]\s*', r)
+        ty = t.strip()
+        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums.get(ty, None)))
+        if e is None:
+            print(f"Can't find an enum for {ty}.")
+            continue
+        for m in mks:
+            v = et.Element(f'{relaxns}value')
+            v.text = m.strip()
+            e.insert(0, v)
+
 

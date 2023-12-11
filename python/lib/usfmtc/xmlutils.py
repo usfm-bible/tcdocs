@@ -17,21 +17,21 @@ class ParentElement(et.Element):
         p = repr(self.parent) if self.parent is not None else ""
         return "{}/{}".format(p, str(self))
 
-    def getindex(self):
+    def _getindex(self):
         if self.parent is None:
             return -1, None
         return list(self.parent).index(self), self.parent
 
     def getprevious(self):
-        i, parent = self.getindex()
+        i, parent = self._getindex()
         return parent[i-1] if parent is not None and i > 0 else None
 
     def getnext(self):
-        i, parent = self.getindex()
+        i, parent = self._getindex()
         return parent[i+1] if parent is not None and i < len(parent) - 1 else None
 
     def addprevious(self, el):
-        i, parent = self.getindex()
+        i, parent = self._getindex()
         if parent is not None:
             parent.insert(i, el)
 

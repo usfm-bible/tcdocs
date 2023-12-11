@@ -10,7 +10,7 @@ allpartypes = {
 
 partypes = {e: k for k, v in allpartypes.items() for e in v.split()}
 
-def addvids(lastp, endp, base, v, endv, atend=False):
+def _addvids(lastp, endp, base, v, endv, atend=False):
     res = lastp
     lastp = lastp.getnext()
     pending = []
@@ -75,12 +75,12 @@ def addesids(root):
         if id(pv) == id(pl):
             v.addprevious(ev) 
         else:
-            endp = addvids(pl, pv, v, eid, ev)
+            endp = _addvids(pl, pv, v, eid, ev)
         lastv = v
     if lastv is not None and lastp is not None:
         eid = lastv.get('sid', None)
         ev = lastv.makeelement('verse', {'eid': eid or ''})
-        addvids(lastv.parent, lastp, None, eid, ev, atend=True)
+        _addvids(lastv.parent, lastp, None, eid, ev, atend=True)
 
     lastc = None
     for c in root.findall('.//chapter'):
@@ -91,25 +91,6 @@ def addesids(root):
     if lastc is not None:
         root.append(lastc.makeelement('chapter', {'eid': lastc.get('sid', '')}))
 
-    if 0:
-        for r in root.findall('.//row'):
-            p = r.getprevious()
-            if r.parent is not None and r.parent.tag == "table":
-                continue
-            if p is not None and p.tag == 'table':
-                i, oldp = r.getindex()
-                p.append(r)
-                oldp.remove(r)
-                r.parent = p
-            else:
-                # there's a bug here, surely newp is never attached
-                i, oldp = r.getindex()
-                newp = r.makeelement('table', {})
-                oldp.remove(r)
-                oldp.insert(i, newp)
-                r.parent = newp
-            newp.parent = oldp
-            newp.append(r)
     return root
 
 aligns = { "": "start", "r": "end", "c": "center" }

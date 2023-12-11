@@ -166,8 +166,10 @@ class Element(list):
         else:
             self.append(e)
 
-    def asEt(self, parent=None):
-        res = ParentElement(self.name, attrib=self.attributes, parent=parent)
+    def asEt(self, parent=None, elfactory=None):
+        if elfactory is None:
+            elfactory = ParentElement
+        res = elfactory(self.name, attrib=self.attributes, parent=parent)
         if parent is not None:
             parent.append(res)
         def asetchild(c, res):
@@ -177,7 +179,7 @@ class Element(list):
                 else:
                     res.text = c if res.text is None else res.text + c
             elif isinstance(c, Element):
-                c.asEt(res)
+                c.asEt(res, elfactory=elfactory)
             elif isinstance(c, list):
                 for e in c:
                     asetchild(e, res)
@@ -196,8 +198,10 @@ class Element(list):
         return str(self)
 
 
-def parseusfm(infilename, parser, timeout=1e7):
-    if hasattr(infilename, 'read'):
+def parseusfm(infilename, parser, timeout=1e7, isdata=True):
+    if isdata:
+        dat = infilename
+    elif hasattr(infilename, 'read'):
         dat = infilename.read().decode("utf-8")
     else:
         with open(infilename, encoding="utf-8") as inf:

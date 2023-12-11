@@ -4,15 +4,13 @@ import argparse, os, sys, logging, re, itertools
 from multiprocessing import Pool
 
 try:
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc import USX, usfmGrammar
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc import USX, usfmGrammar
+
 from usfmtc.parser import NoParseError
-from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
-from usfmtc.usxgrammar import usxenums
-from usfmtc.xmlutils import parsexml, writexml, prettyxml
-from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup, partypes
+from usfmtc.usxmodel import etCmp
 import xml.etree.ElementTree as et
 from lxml import etree
 
@@ -30,34 +28,27 @@ def proconedir(d, sfmp, relax, args):
     xmsg = ""
     try:
         if os.path.isdir(d):
-            result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+            result = USX.fromUsfm(os.path.join(d, "origin.usfm"), sfmp)
         else:
-            result = parseusfm(d, sfmp)
+            result = USX.fromUsfm(d, sfmp)
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
     if result is not None:
         passed = True
-        if (args.debug & 1) != 0:
-            print(result)
-        xml = result.asEt()
-        addesids(xml)
-        cell_aligns(xml)
-        cleanup(xml)
         testxml = None
         if not os.path.isdir(d) and args.base and os.path.exists(args.base):
-            testxml = parsexml(args.base)
+            testxml = USX.fromUsx(args.base)
         if os.path.exists(os.path.join(d, "origin.xml")):
-            testxml = parsexml(os.path.join(d, "origin.xml"))
+            testxml = USX.fromUsx(os.path.join(d, "origin.xml"))
         if testxml:
-            passed = etCmp(xml, testxml.getroot(), verbose=args.print)
+            passed = etCmp(result.getroot(), testxml.getroot(), verbose=args.print)
             if not passed:
                 xmsg = "USX generated not same as origin.xml!"
         if args.print:
-            prettyxml(xml)
-            writexml(sys.stdout, xml)
+            result.outUsx(sys.stdout)
         try:
-            etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
+            etreexml = etree.fromstring(et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True))
             if not relax.validate(etreexml):
                 xmsg = str(relax.error_log.last_error)
                 passed = False
@@ -141,27 +132,8 @@ else:
 if len(jobs) == 1:
     args.exclude = set()
 
-relaxns = "{http://relaxng.org/ns/structure/1.0}"
-
 rdoc = et.parse(args.grammar)
-if len(args.marker):
-    for s in args.marker:
-        t, r = s.split('=')
-        mks = re.split(r'[,;\s]\s*', r)
-        ty = t.strip()
-        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
-        if e is None:
-            print(f"Can't find an enum for {ty}. Tried {usxenums[ty]}")
-            continue
-        for m in mks:
-            v = et.Element(f'{relaxns}value')
-            v.text = m.strip()
-            e.insert(0, v)
-            if ty == 'para':
-                partypes[m] = 'Section'
-
-backendsfm = UsfmParserBackend()
-sfmproc = UsfmGrammarParser(rdoc, backendsfm)
+sfmproc = usfmGrammar(rdoc, args.marker)
 sfmproc.parseRef(args.start)
 newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
 usxrng = etree.RelaxNG(etree=newdoc)
