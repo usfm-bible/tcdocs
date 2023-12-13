@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 import xml.etree.ElementTree as et
-import regex
+import regex, logging
 from copy import copy
+
+logger = logging.getLogger(__name__)
 
 usfmns = "{http://usfm.bible/parse/2023}"
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
@@ -23,7 +25,6 @@ class State:
             self.nsrevmap = {v:k for k, v in nsmap.items()}
         self.stack = []
         self.attributes = set(attributes)
-        self.results = []       # used by transforming subclasses of RelaxValidator
         self.key = None         # set when processing attributes
         self.atend = False
 
@@ -57,7 +58,7 @@ class State:
                 self.advance()
         else:
             self.current = curr
-        print(f"SET {self.index}, {self.current} in {self.parent}")
+        logger.debug(f"SET {self.index}, {self.current} in {self.parent}")
 
     def copy(self, parent=None, index=None, current=None, attributes=[]):
         res = self.__class__(parent, self.index if index is None else index,
@@ -74,7 +75,7 @@ class State:
                     self.nsmap[""] = v
 
     def advance(self):
-        print(f"ADVANCING {self.index}, {self.current} in {self.parent}")
+        logger.debug(f"ADVANCING {self.index}, {self.current} in {self.parent}")
         if (self.index & 1) == 1:
             self.current = self.current.tail
             if self.current is None or self.current.strip() == "":
@@ -89,7 +90,7 @@ class State:
         elif (self.index & 1) == 0:
             self.current = list(self.parent)[self.index // 2]
         self.index += 1
-        print(f"Advanced to {self.index}, {self.current} in {self.parent}")
+        logger.debug(f"Advanced to {self.index}, {self.current} in {self.parent}")
         return True
 
     def istext(self):
@@ -97,10 +98,12 @@ class State:
 
     def push(self):
         self.stack.append((self.index, self.current, self.attributes, len(self.results)))
+        logger.debug(f"Pushed {self.stack[-1]}")
 
     def pop(self):
         if len(self.stack):
             self.index, self.current, self.attributes, reslen = self.stack.pop()
+            logger.debug(f"Popped: {self.index}, {self.current}, {self.attributes}, {reslen}")
             if reslen < len(self.results):
                 self.results = self.results[:reslen]
 
@@ -114,11 +117,8 @@ class State:
     def unuseattrib(self, attrib):
         self.attributes.discard(attrib)
 
-    def addresult(self, *s):
-        self.results.extend(s)
-
     def update(self, other):
-        self.results.extend(other.results)
+        pass
 
 
 class Failure(str):
@@ -173,9 +173,10 @@ class RelaxValidator:
         t = vel.tag[len(relaxns):] if vel.tag.startswith(relaxns) else vel.tag
         fn = getattr(self, t, None)
         if fn is not None:
-            return fn(vel, state)
+            res = fn(vel, state)
         else:
-            return Failure("Unknown grammar element {} in {}".format(t, state))
+            res = Failure("Unknown grammar element {} in {}".format(t, state))
+        return res
 
     def _nsconvert(self, name, state):
         if ":" in name:
@@ -196,9 +197,9 @@ class RelaxValidator:
         testname = self._nsconvert(testname, state)
         if (name := vel.findtext(f"{relaxns}name")) is not None:
             return testname == name
-        elif (nclass := vel.find("anyName")) is not None:
-            if (eexcept := nclass.find("except")) is not None:
-                return not self._testname(testname, eexcept)
+        if (nclass := vel.find(f"{relaxns}anyName")) is not None:
+            if (eexcept := nclass.find(f"{relaxns}except")) is not None:
+                return not self._testname(testname, eexcept, state)
             return True
         elif (nclass := vel.find(f"{relaxns}nsName")) is not None:
             ns = nclass.get("ns", "")
@@ -207,11 +208,11 @@ class RelaxValidator:
             elif not testname.startswith("{{{}}}".format(ns)):
                 return False
             if (eexcept := nclass.find(f"{relaxns}except")) is not None:
-                return not self._testname(testname, eexcept)
+                return not self._testname(testname, eexcept, state)
             return True
         elif (nclass := vel.find(f"{relaxns}choice")) is not None:
             for c in nclass:
-                if self._testname(testname, c):
+                if self._testname(testname, c, state):
                     return True
         return False
 
@@ -219,13 +220,15 @@ class RelaxValidator:
         name = vel.get('name', None)
         if name is not None:
             vels = self.defines.get(name, [])
-            print(f"calling {name}")
+            logger.debug(f"calling {name}")
             res = self._validate(vels, state)
-            print(f"return from {name} = {res}")
+            logger.debug(f"return from {name} = {res}")
             return res
         return Failure("Undefined reference {} at {}".format(name, state))
 
     def element(self, vel, state):
+        if state.atend:
+            return Failure("At end of parent in {}".format(state))
         el = state.current
         if state.istext():
             return Failure("Unexpected text node in {}".format(state))
@@ -251,6 +254,9 @@ class RelaxValidator:
         state.useattrib(name)
         newstate = state.copy(current=el.attrib.get(name), index=0)
         newstate.key = name
+        logger.debug(f"Attribute [{name}] = {newstate.current}")
+        #if name == "sid" and newstate.current == "qt_123":
+        #    import pdb; pdb.set_trace()
         res = self._validate(vel, newstate)
         if res:
             state.update(newstate)
@@ -294,10 +300,10 @@ class RelaxValidator:
         state.push()
         while True:
             res = self._validate(vel, state)
-            if not res or state.atend or (maxc is not None and i >= maxc):
+            if not res or (maxc is not None and i >= maxc):
                 if i < minc:
                     state.pop()
-                    return Failure("End of parent at {}".format(state)) if res else res
+                    return Failure("Too few matches {}/{} at {}".format(i+1, minc, state)) if res else res
                 else:
                     state.drop()
                     return True
@@ -313,14 +319,14 @@ class RelaxValidator:
         ismatched = set()
         state.push()
         hitone = True
-        lastfail = Failure("interleave failed at {}".format(self.path(el, None)))
+        lastfail = Failure("interleave failed at {}".format(state))
         while hitone:
             hitone = False
             for c in vel:
-                if id(c) in ismatched and not c.tag in allngmulti:
+                if id(c) in ismatched and not c.tag in allrngmultis:
                     continue
                 state.push()
-                res = self.proc_child(el, c, newconsumed, val)
+                res = self.proc_child(c, state)
                 if res:
                     state.drop()
                     ismatched.add(id(c))
@@ -337,8 +343,10 @@ class RelaxValidator:
             return lastfail
 
     def text(self, vel, state):
+        if state.atend:
+            return Failure("At end of parent in {}".format(state))
         res = self._validate(vel, state)
-        print(state.current)
+        logger.debug(state.current)
         if res:
             state.advance()
         return res
@@ -367,6 +375,47 @@ class RelaxValidator:
             return Failure("Faulty string {} not equal to value {} at {}".format(state.current, vel.text, state))
         return True
 
+
+class USXState(State):
+    attribescapere = regex.compile("([/\\~\"'])")
+    usfmescapere = regex.compile("([/\\~])")
+
+    def __init__(self, parent, index, attributes=[], nsmap=None, current=None, context=None):
+        super().__init__(parent, index, attributes=attributes, nsmap=nsmap, current=current)
+        self.usxstack = []
+        self.context = context
+        self.results = []
+
+    def copy(self, parent=None, index=None, current=None, attributes=[]):
+        res = self.__class__(parent, self.index if index is None else index,
+                    attributes=attributes, nsmap=self.nsmap, current=current, context=self.context)
+        return res
+
+    def addresult(self, *s, text=False, attribute=False):
+        if text:
+            if attribute:
+                s = [self.attribescapere.sub(r"\\\1", x) for x in s]
+            else:
+                s = [self.usfmescapere.sub(r"\\\1", x) for x in s]
+        logger.debug(f"out: {s}")
+        self.results.extend(s)
+
+    def update(self, other):
+        self.results.extend(other.results)
+
+    def push(self):
+        super().push()
+        self.usxstack.append(len(self.context.matchids))
+        logger.debug(f"usxpush onto {self.usxstack}")
+
+    def pop(self):
+        super().pop()
+        logger.debug(f"usxpop from {self.usxstack}")
+        r = self.usxstack.pop()
+        if r < len(self.context.matchids):
+            self.context.matchids = self.context.matchids[:r]
+
+
 escapes = {
     'n' : '\n',
     '\\': '\\',
@@ -380,26 +429,48 @@ class USXConverter(RelaxValidator):
         for a in grammar.findall(f"{usfmns}alias"):
             name = a.get("name").replace("usfm:", "")
             self.aliases[name] = a[0]
-            
+        self.matchids = []
+
+    def pushmatch(self, key, value):
+        self.matchids.append((key, value))
+        logger.debug(f"Pushing match to {self.matchids}")
+
+    def popmatch(self, key):
+        logger.debug(f"Popping match from {self.matchids}")
+        while len(self.matchids):
+            k, v = self.matchids.pop()
+            if k == key:
+                return v
+        return ""
+
+    def parse(self, root, state=None):
+        if state is None:
+            state = USXState(None, 1, current=root, context=self)
+        return super().parse(root, state=state)
 
     def proc_child(self, vel, state):
         if vel.tag.startswith(usfmns):
             t = vel.tag[len(usfmns):]
             a = self.aliases.get(t, None)
             if a is not None:
+                tmp = vel
                 vel = copy(a)
-                for k, v in vel.attrib.items():
-                    a.set(k, v)
+                vel.attrib = {k: v for k,v in a.attrib.items()}
+                vel.text = tmp.text
+                for k, v in tmp.attrib.items():
+                    vel.set(k, v)
                 t = a.tag.replace(usfmns, "")
             t = "usfm_" + t
         elif vel.tag.startswith(relaxns):
             t = vel.tag[len(relaxns):]
-        print(f"{t} for {state}")
+        logger.debug(f"{t} for {state}")
         fn = getattr(self, t, None)
         if fn is not None:
-            return fn(vel, state)
+            res = fn(vel, state)
         else:
-            return Failure("Unknown grammar element {} in {}".format(vel.tag, state))
+            res = Failure("Unknown grammar element {} in {}".format(vel.tag, state))
+        logger.debug(f"From {t}[{vel.attrib}] = {res}")
+        return res
 
     def _getmatchfield(self, vel, base):
         res = vel.get(base+'out', None)
@@ -407,18 +478,35 @@ class USXConverter(RelaxValidator):
             res = vel.get(base, None)
         if res is None:
             return None
+        elif res == '':
+            return ''
         elif res.startswith("'"):
             return regex.sub(r"\\(.)", lambda m: escapes.get(m.group(1), m.group(1)), res[1:-1])
         else:
             return None
 
     def usfm_match(self, vel, state):
-        if not state.istext():
-            return Failure("String expected in value test at {}".format(state))
+        if vel.get("noout", "false").lower() in ("true", "1"):
+            return True
         if (res := self._getmatchfield(vel, 'before')) is not None:
             state.addresult(res)
-        res = self._getmatchfield(vel, 'match')
-        state.addresult(state.current or "" if res is None else res)
+        if (idcode := vel.get('matchid', None)) is not None:
+            if not state.istext():
+                return Failure("String expected in value test at {}".format(state))
+            self.pushmatch(idcode, state.current)
+        res = vel.get('matchref', None)
+        if res is not None and res != '':
+            state.addresult(self.popmatch(res))
+        else:
+            res = vel.text
+            if res is None:
+                res = self._getmatchfield(vel, 'match')
+            if res is None:
+                if not state.istext():
+                    return Failure("String expected in value test at {}".format(state))
+                state.addresult(state.current or "", text=True, attribute=state.key is not None)
+            else:
+                state.addresult(res)
         if (res := self._getmatchfield(vel, 'after')) is not None:
             state.addresult(res)
         return True
@@ -427,7 +515,7 @@ class USXConverter(RelaxValidator):
         if not state.istext():
             return Failure("String expected in value test at {}".format(state))
         if state.current is not None:
-            state.addresult(state.current)
+            state.addresult(state.current, text=True)
         return True
 
     def usfm_matchpair(self, vel, state):
@@ -437,7 +525,7 @@ class USXConverter(RelaxValidator):
         if (res := self._getmatchfield(vel, 'between')) is not None:
             state.addresult(res)
         if state.current is not None:
-            state.addresult(state.current)
+            state.addresult(state.current, text=True, attribute=True)
         if (res := self._getmatchfield(vel, 'after')) is not None:
             state.addresult(res)
         return True

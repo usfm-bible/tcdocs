@@ -208,8 +208,15 @@ def parseusfm(infilename, parser, timeout=1e7, isdata=True):
             dat = inf.read()
     gs = GlobalState(dat, timeout=timeout)
     return parser.parse(usfmp.State(gs))
-    
-        
+
+escapes = {
+    '\\' : '\\',
+    'n': '\n'
+}
+
+def expandescape(s):
+    return re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), m.group(1)), s)
+
 class UsfmParserBackend:
     _terminals = {
         'text': lambda **kw : Text(**kw),
@@ -293,8 +300,10 @@ class UsfmParserBackend:
         return Group(parent=context, mode="|+", **self.get_nodename(), **kw)
 
     def match(self, name, context, dump=False, to=None, **kw):
+        if not len(name):
+            return context
         if name[0] in "\"'":
-            res = String(regex.escape(name[1:-1]), parent=context, dump=dump, **self.get_nodename(), **kw)
+            res = String(regex.escape(expandescape(name[1:-1])), parent=context, dump=dump, **self.get_nodename(), **kw)
         elif name.startswith("/"):
             res = String(name[1:-1], parent=context, dump=dump, **self.get_nodename(), **kw)
         else:

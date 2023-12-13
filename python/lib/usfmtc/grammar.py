@@ -174,7 +174,7 @@ class UsfmGrammarParser:
             if a == "match":
                 dump = e.get('dump', 'false') in ("true", "1")
                 capture = None
-                if (d := e.get('id', None)) is not None:
+                if (d := e.get('matchid', None)) is not None:
                     lastres = res
                     k = (self.groups[-1], d)
                     if k not in self.ids:
@@ -185,7 +185,7 @@ class UsfmGrammarParser:
                     logger.debug(f"{k} := {capture}")
                     res = self.back.append_seq(res, capture=capture, dump=dump)
                     dump = False
-                if v is not None and len(v):
+                if v is not None and len(v) and v != "''":
                     if a == "match" and v != v.upper() and v[0] not in "'/":
                         v = "'{}'".format(v)
                     res = self.back.match(v, res, dump=dump, alt=self.expandvars(e.get(a+"out", None)))

@@ -1,7 +1,7 @@
 
 PYTHON ?= python
 CHUNKSIZE ?= 0
-JOBS ?= 1
+JOBS ?= 0
 MILESTONES="ms=zaln-s,zaln-e,k-s,k-e,zms,ts-s,ts-e"
 
 unknown:
@@ -21,13 +21,17 @@ markers/images/schema/pngs/p_rail.png : grammar/usx.rng python/scripts/mkraildia
 
 short: TESTEXCLUDES := -x stress
 short: tests
+test1: TESTSET := -t 1
+test1: tests
+single1: TESTSET := -t 1
+single1: single
 
 tests: testresults.log
 #	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `head -n -1 testresults.log | grep -v '^XML:' | wc -l`"
 
 testresults.log : grammar/usx.rng
-	@- $(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} -q -o $@ -g $< tests
-	@- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -o $@ -A tests
+	- $(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} ${TESTSET} -q -o $@ -g $< tests
+	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -o $@ -A tests
 
 grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@
@@ -36,7 +40,7 @@ dbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug ${DBLDIR} | tee dbltest.log
 
 single: grammar/usx.rng $(TEST)/origin.usfm
-	$(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -l debug -P -g $< $(TEST)
+	$(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -l debug ${TESTSET} -P -g $< $(TEST)
 	$(PYTHON) python/scripts/lxmltest.py -g $< -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" $(TEST)/origin.xml
 
 singledbl: grammar/usx.rng

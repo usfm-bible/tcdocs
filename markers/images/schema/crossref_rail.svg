@@ -1,4 +1,4 @@
-<svg class="railroad-diagram" height="144" viewBox="0 0 1090.5 144" width="1090.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class="railroad-diagram" height="144" viewBox="0 0 1099.0 144" width="1099.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <style>/* <![CDATA[ */
 
@@ -42,7 +42,7 @@
 /* ]]> */
 </style><g>
 <path d="M 20 55 v 20 m 0 -10 h 20"></path></g><path d="M 40 65 h 10"></path><g>
-<path d="M 50 65 h 0.0"></path><path d="M 1040.5 65 h 0.0"></path><g class="terminal ">
+<path d="M 50 65 h 0.0"></path><path d="M 1049.0 65 h 0.0"></path><g class="terminal ">
 <path d="M 50.0 65 h 0.0"></path><path d="M 95.5 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="50.0" y="54"></rect><text x="72.75" y="69">'\'</text></g><path d="M 95.5 65 h 10"></path><path d="M 105.5 65 h 10"></path><g>
 <path d="M 115.5 65 h 0.0"></path><path d="M 229.5 65 h 0.0"></path><rect class="group-box" height="88" rx="10" ry="10" width="114.0" x="115.5" y="36"></rect><g>
 <path d="M 115.5 65 h 10.0"></path><path d="M 219.5 65 h 10.0"></path><g>
@@ -62,6 +62,6 @@
 <path d="M 631.0 65 h 0.0"></path><path d="M 824.0 65 h 0.0"></path><path d="M 631.0 65 h 10"></path><g class="non-terminal ">
 <path d="M 641.0 65 h 0.0"></path><path d="M 814.0 65 h 0.0"></path><rect height="22" width="173.0" x="641.0" y="54"></rect><text x="727.5" y="69">CrossReferenceChar</text></g><path d="M 814.0 65 h 10"></path><path d="M 641.0 65 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 641.0 85 h 173.0"></path></g><path d="M 814.0 85 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 824.0 65 h 20"></path></g><path d="M 844.0 65 h 10"></path><path d="M 854.0 65 h 10"></path><g class="terminal ">
-<path d="M 864.0 65 h 0.0"></path><path d="M 909.5 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="864.0" y="54"></rect><text x="886.75" y="69">'\'</text></g><path d="M 909.5 65 h 10"></path><path d="M 919.5 65 h 10"></path><g class="terminal ">
-<path d="M 929.5 65 h 0.0"></path><path d="M 975.0 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="929.5" y="54"></rect><text x="952.25" y="69">⇐ ➋</text></g><path d="M 975.0 65 h 10"></path><path d="M 985.0 65 h 10"></path><g class="terminal ">
-<path d="M 995.0 65 h 0.0"></path><path d="M 1040.5 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="995.0" y="54"></rect><text x="1017.75" y="69">'&#42;'</text></g></g><path d="M 1040.5 65 h 10"></path><path d="M 1050.5 65 h 20 m 0 -10 v 20"></path></g></svg>
+<path d="M 864.0 65 h 0.0"></path><path d="M 918.0 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="864.0" y="54"></rect><text x="891.0" y="69">'\\'</text></g><path d="M 918.0 65 h 10"></path><path d="M 928.0 65 h 10"></path><g class="terminal ">
+<path d="M 938.0 65 h 0.0"></path><path d="M 983.5 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="938.0" y="54"></rect><text x="960.75" y="69">⇐ ➋</text></g><path d="M 983.5 65 h 10"></path><path d="M 993.5 65 h 10"></path><g class="terminal ">
+<path d="M 1003.5 65 h 0.0"></path><path d="M 1049.0 65 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="1003.5" y="54"></rect><text x="1026.25" y="69">'&#42;'</text></g></g><path d="M 1049.0 65 h 10"></path><path d="M 1059.0 65 h 20 m 0 -10 v 20"></path></g></svg>

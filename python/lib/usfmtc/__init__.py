@@ -4,6 +4,7 @@ from usfmtc.sfmparser import parseusfm, UsfmParserBackend
 from usfmtc.parser import NoParseError
 from usfmtc.xmlutils import ParentElement, prettyxml, writexml
 from usfmtc.usxgrammar import addmarkers
+from usfmtc.usxparser import USXConverter
 from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
 from usfmtc.usxmodel import addesids, cell_aligns, cleanup
@@ -13,11 +14,11 @@ import xml.etree.ElementTree as et
 def _readsrc(src):
     if hasattr(src, "read"):
         return src.read()
-    elif os.path.exists(src):
+    elif len(src) < 128 and os.path.exists(src):
         with open(src, encoding="utf-8") as inf:
             data = inf.read()
         return data
-    elif "\n" in src:
+    elif "\n" in src or len(src) > 127:
         return src
     else:
         raise FileNotFoundError(src)
@@ -47,10 +48,10 @@ class USX:
         parser = et.XMLParser(target=tb)
         if hasattr(src, "read") or os.path.exists(src):
             anet = et.ElementTree()
-            anet.parse(src, parser)
+            anet.parse(src, parser=parser)
             res = anet.getroot()
         else:
-            res = et.fromstring(src, parser)
+            res = et.fromstring(src, parser=parser)
         return cls(res)
 
     @classmethod
@@ -93,14 +94,14 @@ class USX:
             fh.close()
         else:
             fn(file, dat)
-        return None
+        return True
 
     def outUsx(self, file=None):
         """ Output pretty XML USX. If file is None returns string """
         if self.xml is None:
             return None
         prettyxml(self.xml)
-        self._outwrite(file, xml, fn=writexml)
+        self._outwrite(file, self.xml, fn=writexml)
 
     def outUsfm(self, grammar, file=None):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
@@ -108,7 +109,8 @@ class USX:
         res = parser.parse(self.xml)
         if res:
             dat = "".join(res.results)
-            self._outwrite(file, dat)
+            return self._outwrite(file, dat)
+        return False
 
     def outUsj(self, file=None):
         """ Output USJ from USX object. If file is None returns dict """

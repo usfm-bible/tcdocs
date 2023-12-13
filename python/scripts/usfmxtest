@@ -14,7 +14,13 @@ from usfmtc.usxmodel import etCmp
 import xml.etree.ElementTree as et
 from lxml import etree
 
-def proconedir(d, sfmp, relax, args):
+def getfname(d, basefile):
+    if os.path.isdir(d):
+        return os.path.join(d, basefile)
+    else:
+        return d
+
+def proconedir(d, sfmp, relax, rdoc, args):
     meta = {}
     if os.path.isdir(d):
         doc = et.parse(os.path.join(d, "metadata.xml"))
@@ -26,21 +32,30 @@ def proconedir(d, sfmp, relax, args):
     # print(f"{d}: ", end='', flush=True)
     imsg = ""
     xmsg = ""
-    try:
-        if os.path.isdir(d):
-            result = USX.fromUsfm(os.path.join(d, "origin.usfm"), sfmp)
+    testxml = None
+    expected = meta.get('validated', 'pass').lower() == 'pass'
+    if args.testset == 1:
+        f = getfname(d, "origin.xml")
+        if not os.path.exists(f):
+            return (not expected, d, "No origin.xml", "")
+        testxml = USX.fromUsx(getfname(d, "origin.xml"))
+        if not os.path.isdir(d):
+            ud = d.replace(".xml", "_test.usfm")
+            d = ud
         else:
-            result = USX.fromUsfm(d, sfmp)
+            ud = getfname(d, "origin_test.usfm")
+        passresult = testxml.outUsfm(rdoc, file=ud)
+        if not passresult:
+            return (not expected, d, "USFM output failed", "" if passresult == expected else "Unexpected result")
+    try:
+        result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp)
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
     if result is not None:
         passed = True
-        testxml = None
-        if not os.path.isdir(d) and args.base and os.path.exists(args.base):
-            testxml = USX.fromUsx(args.base)
-        if os.path.exists(os.path.join(d, "origin.xml")):
-            testxml = USX.fromUsx(os.path.join(d, "origin.xml"))
+        if testxml is None:
+            testxml = USX.fromUsx(getfname(d, args.base or "origin.xml"))
         if testxml:
             passed = etCmp(result.getroot(), testxml.getroot(), verbose=args.print)
             if not passed:
@@ -57,7 +72,6 @@ def proconedir(d, sfmp, relax, args):
             passed=False
     else:
         passed = False
-    expected = meta.get('validated', 'pass').lower() == 'pass'
     res = passed == expected
     if not args.quiet:
         print("{}: {} ({} {}){} | {}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg, xmsg))
@@ -83,6 +97,7 @@ def chunkjobs(jobs, nchunks, args):
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
+parser.add_argument("-t","--testset",type=int,default=0,help="Do given test set")
 parser.add_argument("-b","--base",help="Base USX file to compare against for direct file tests")
 parser.add_argument("-S","--start",default="USX",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
@@ -144,7 +159,7 @@ if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
     def doprocone(arg):
         if arg is None:
             return
-        return proconedir(arg, sfmproc.curr, usxrng, args)
+        return proconedir(arg, sfmproc.curr, usxrng, rdoc, args)
     pool = Pool()
     nchunks = args.jobs * 4
     chunksize = len(jobs) // nchunks
@@ -154,7 +169,7 @@ if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
 else:
     results = []
     for j in jobs:
-        results.append(proconedir(j[0], sfmproc.curr, usxrng, args))
+        results.append(proconedir(j[0], sfmproc.curr, usxrng, rdoc, args))
 
 ifailed = 0
 xfailed = 0
