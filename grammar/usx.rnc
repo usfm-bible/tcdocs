@@ -378,7 +378,7 @@ BookHeaders.para.style.enum = (
 BookTitles =
     element para {
         [usfm:ptag[]] attribute style { BookTitles.para.style.enum },
-        (Footnote | CrossReference | Char | Break | [usfm:text[]] text)*
+        ([usfm:text[]] text | Footnote | CrossReference | Char | Break)*
     }
 BookTitles.para.style.enum = (
       "mt1" # The main title of the book (if multiple levels)
@@ -395,7 +395,7 @@ BookTitles.para.style.enum = (
 BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { BookIntroduction.para.style.enum },
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | IntroChar | Milestone | [usfm:text[]] text)*
+        ([usfm:text[]] text | Char | IntroChar | Footnote | CrossReference | Milestone | [usfm:ignore="true"] Reference)*
     } | Table
 
 BookIntroduction.para.style.enum = (
@@ -439,7 +439,7 @@ BookIntroduction.para.style.enum = (
 BookIntroductionEndTitles =
     element para {
         [usfm:ptag[]] attribute style { BookIntroductionEndTitles.para.style.enum },
-        (Footnote | CrossReference | Char | Milestone | Break | [usfm:text[ahead="'\'"]] text)*
+        ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | Char | Milestone | Break)*
     }
 BookIntroductionEndTitles.para.style.enum = (
       "mt1" # The main title of the book (if multiple levels)
@@ -461,7 +461,7 @@ Section =
         [usfm:grouping="15" usfm:ptag[matchid="a" usfm:stacked="true"]]
         attribute style { Section.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | [usfm:ignore="true"] VerseEnd | Break | [usfm:text[]] text)*
+        ([usfm:text[]] text | Footnote | CrossReference | Char | Milestone | [usfm:ignore="true"] VerseEnd | [usfm:ignore="true"] Reference | Break)*
     }
 
 Section.para.style.enum = (
@@ -726,7 +726,7 @@ ListChar = (
         [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
         #char.link?,
         char.closed?,
-        ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | CrossReference | Break | [usfm:text[]] text)* # Nested character <char> markup
+        ([usfm:text[]] text | Char | Milestone | Footnote | CrossReference | Break | [usfm:ignore="true"] Reference)* # Nested character <char> markup
         >> usfm:endtag[usfm:many="?"]
     }
     )
@@ -891,6 +891,7 @@ FootnoteChar =
         ([usfm:text[]] text | NoteCharEmbed | [usfm:ignore="true"] Reference)*
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="'*'"]
     }
+
 FootnoteChar.char.style.enum = (
       "fr" # The origin reference for the footnote
     | "ft" # Footnote text, Protocanon

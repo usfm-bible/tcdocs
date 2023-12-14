@@ -547,13 +547,13 @@
       </attribute>
       <zeroOrMore>
         <choice>
+          <text>
+            <usfm:text/>
+          </text>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
           <ref name="Break"/>
-          <text>
-            <usfm:text/>
-          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -582,15 +582,15 @@
         </attribute>
         <zeroOrMore>
           <choice>
-            <ref name="Reference" usfm:ignore="true"/>
-            <ref name="Footnote"/>
-            <ref name="CrossReference"/>
-            <ref name="Char"/>
-            <ref name="IntroChar"/>
-            <ref name="Milestone"/>
             <text>
               <usfm:text/>
             </text>
+            <ref name="Char"/>
+            <ref name="IntroChar"/>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+            <ref name="Milestone"/>
+            <ref name="Reference" usfm:ignore="true"/>
           </choice>
         </zeroOrMore>
       </element>
@@ -646,14 +646,14 @@
       </attribute>
       <zeroOrMore>
         <choice>
+          <text>
+            <usfm:text ahead="&#x27;\&#x27;"/>
+          </text>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="Break"/>
-          <text>
-            <usfm:text ahead="&#x27;\&#x27;"/>
-          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -715,16 +715,16 @@
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
+          <text>
+            <usfm:text/>
+          </text>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="VerseEnd" usfm:ignore="true"/>
+          <ref name="Reference" usfm:ignore="true"/>
           <ref name="Break"/>
-          <text>
-            <usfm:text/>
-          </text>
         </choice>
       </zeroOrMore>
     </element>
@@ -1229,15 +1229,15 @@
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
+          <text>
+            <usfm:text/>
+          </text>
           <ref name="Char"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Break"/>
-          <text>
-            <usfm:text/>
-          </text>
+          <ref name="Reference" usfm:ignore="true"/>
         </choice>
       </zeroOrMore>
       <usfm:endtag usfm:many="?"/>
