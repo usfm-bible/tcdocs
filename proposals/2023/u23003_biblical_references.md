@@ -14,7 +14,7 @@ M. Hosken
 
 This document introduces a scheme for biblical references down to the character level. Thus it supports ranges of references from traditional verse references through word references to character references. In addition it allows referencing other scripture books withing a reference as well. A fully specified character reference might look like:
 ```
-wsg-t-en+MAT 1:1!5+6
+wsg-t-en.MAT 1:1!5+6
 ```
 Although this is overkill for nearly all situations.
 
@@ -22,6 +22,7 @@ Although this is overkill for nearly all situations.
 The purpose of this document is to propose a normative basic standard for scripture references. Notice it is not concerned with Localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in two directions.
 - To be able to referencetext in other translations
 - To be able to reference a word or even part of a word within a verse.
+
 This proposal will examine both of these extensions and propose a grammar for a scripture reference list that includes scripture reference ranges.
 
 ## Basic Reference
@@ -33,6 +34,7 @@ Reference = Fullref | ContextRef
 FullRef = BookId ws* Chapter (chaptersep Verse)?
 ContextRef = Chapter (chaptersep Verse)? | Verse
 BookId = [0-9A-Z]{3}
+Refsep = ';' | ','
 chaptersep = ws* (":" | ".") ws* 
 Chapter = digits
 Verse = digits (subverse)? | "end"
@@ -57,30 +59,32 @@ There are two core questions to resolve when extending references to be able to 
 - How to integrate such a reference into a verse reference
 
 ### Translation Reference
-This work builds on discussions held on how to reference not only a translation but a scripture product. In summary, a scripture Product reference is a sequence of components separated by `+`. The complete string of components may be truncated at the point where no other information is needed to disambiguate the product / translation. The components are:
+This work builds on discussions held on how to reference not only a translation but a scripture product. In summary, a scripture product reference is a sequence of components separated by `+`. The complete string of components may be truncated at the point where no other information is needed to disambiguate the product / translation. The components are:
 
 #### Language Tag
-The language tag component consists of a BCP47 language tag. The only difference is that the language tag is expressed entirely in lowercase.
+The language tag component consists of a BCP47 language tag. The only difference is that the language tag is expressed entirely in lowercase. Notice that the components of a language tag are separated by `-`.
 
 #### Translation Id
 There are a number of translations even within a language group. This is even discounting the 200 English translations. Consider, for example the New International Version (NIV). The code for this translation could well be NIV. But there are many versions of the NIV. There can be further identified, separated by a hyphen `-` as in a language tag. Thus niv-1976
 
 #### Product id
-When it comes to a verse reference, the product id is unlikely to be needed. The product id maybe used to identify different scripture products associated with the translation.
+When it comes to a verse reference, the product id is unlikely to be needed. The product id may be used to identify different scripture products associated with the translation. Examples of products would be various study editions.
 
 ### Within a Verse Reference
-Given the various separation for components in a reference, we need to find something suitable. The good news is that this separator is used to extend the bookld. We can, therefore use the same separators as used between a chapter and a verse. Theas we propose using the same separator.
+Given the various separation for components in a reference, we need to find something suitable. The good news is that this separator is used to extend the bookld. We can, therefore use the same separators as used between a chapter and a verse. Thus we propose using the same separator.
 
 ### Conclusion
 Bringing all this together a reference to a different translation might look like:
 ```
-en+niv.JHN 3:16
+en-gb+niv+study.JHN 3:16
 ```
+The first component is the language tag (which has two parts: language and region) and identifies the Anglicised NIV translation over the US English version. Then comes the translation id. Then within the translation there is the particular product, the NIV study bible. These are separated from the book code, which in turn is separated from the chapter:verse by a space.
+
 Integrating this definition into our grammar, we get:
 ```
 BookId = (TransId (":" | "."))? BookCode
 BookCode = [O-9A-Z]{3}
-TransId = langtag ("+" transcode)?
+TransId = langtag ("+" transcode ("+" productid)?)?
 langtag = lang ("-" script)? ("-" region)? ("-" variant)* ("-" ns ("-" extval)+)*
 lang = [a-z]{2,3} ("-" extlang)?
 extlang = [a-z]{3}
@@ -90,8 +94,9 @@ variant = [a-z]{5,8}
 ns = [a-z]
 extval = [a-z]{5:8}
 transcode = [0-9a-z]{1,8}
+productid = [0-9a-z]{1,8}
 ```
-A full BCP47 language tag is more complex than presented here. This grammer only accounts for the common language tags that are in use today. The 8 character limit on a translation code is arbitrary at this point.
+A full BCP47 language tag is more complex than presented here. This grammer only accounts for the common language tags that are in use today. See BCP47 for the full format definition. The 8 character limit on a translation code is arbitrary at this point.
 
 ## Word And Character References
 At the other end of the scale is the desire to reference words or even characters within a verse. Extending the range model where we say that a chapter is a range of verses, we can say that a verse is a range of words and a word is a range of characters.
@@ -117,15 +122,17 @@ but are visible and countable. Therefore we include them as being referenceable.
 Also this mitigates the question of when a punctuation character gets used as a
 word forming character. A marker is treated as a space. Multiple spaces are
 treated as a single space. The precise set of space characters is yet to be
-decided but will probably be closely aligned to \\p{Zs}.
+decided but will probably be closely aligned to \\p{Zs} (Unicode character of
+general category Zs which includes all the various space characters. Perhaps we
+should also include Cf. The precise character set is to be resolved).
 
 ### Including And Ignoring Notes
-At the simplest level, footnote (or any other note) text is not part of the main scripture text. They may or may not be printed, it word counting through a text, it is very awkward to have to include notes into the count. There are many other reason why it is easier to ignore notes when word counting through the text. And so we ignore them for primary referencing.
-But there are also good reasons for people to want to reference text within notes. For example, when interlinearising some people want to interlinearise their footnote text. l Interlinearising is a primary out of band text linkage use case for which word level and even character level referencing is necessary. For this reason, we provide a mechanism for referencing notes and the words and characters within them. In effect one specifies the note number in a verse and then uses the proposed word and character referencing below that. The detailed syntax is described below.
+At the simplest level, footnote (or any other note) text is not part of the main scripture text. They may or may not be printed, if word counting through a text, it is very awkward to have to include notes into the count. There are many other reason why it is easier to ignore notes when word counting through the text. And so we ignore them for primary referencing.
+But there are also good reasons for people to want to reference text within notes. For example, when interlinearising some people want to interlinearise their footnote text. Interlinearising is a primary out-of-band text linkage use case for which word level and even character level referencing is necessary. For this reason, we provide a mechanism for referencing notes and the words and characters within them. In effect one specifies the note number in a verse and then uses the proposed word and character referencing below that. The detailed syntax is described below.
 _Discuss other USFM markers including \s and \r_ 
 
 ### Normalization
-The normalization encoding moded question is relatively easy. We just have to pick one. The relative strengths and weaknesses of NFC vs NFD are:
+The normalization encoding model question is relatively easy. We just have to pick one. The relative strengths and weaknesses of NFC vs NFD are:
 
 #### NFC
 This is the most common way that data is stored. Given NFC and NFD are canonically equivalent, there is no content difference between the two normal forms.
@@ -134,7 +141,7 @@ This is the most common way that data is stored. Given NFC and NFD are canonical
 The problem with NFC is that some characters, for example: é, which is one code in NFC, but two in NFD may need to have its diacritic individually referenced, and for this we need to use NFD.
 
 #### Conclusion
-Giver the need to be able to reference components in precomposed characters, referencing needs to index characters based on NFD encoding. There may be better arguments why this decision should be reversed.
+Given the need to be able to reference components in precomposed characters, referencing needs to index characters based on NFD encoding. There may be better arguments why this decision should be reversed.
 
 ### Syntax
 
@@ -157,10 +164,10 @@ when interpretting a reference in the context of another reference, we start fro
 | --------------- | ----------------------------------------- |
 | GEN 7:8!2-6       | Genesis ch 7 vs 8 words 2-6  |
 | GEN 7:8!2-12!3  | Genesis ch 7 vs 8 word 2 to vs 12 word 3 |
-| wsg-gong+JHN 3:16 | John 3:16 from the Gondi translation and script |
-| wsg-t-en+JHN 3:16 | John 3:16 from the Gondi back translation into English |
+| wsg-gong.JHN 3:16 | John 3:16 from the Gondi translation and script |
+| wsg-t-en.JHN 3:16 | John 3:16 from the Gondi back translation into English |
 | REV 3.20!n1!4+3-5 | Revelation 3:20, 1st note (including cross references), 4th word characters 3-5 |
-| wsg-t-en+MAT 1:1!5+6 | All that for a single letter! |
+| wsg-t-en.MAT 1:1!5+6 | All that for a single letter! |
 
 
 #### Grammar Extensions
@@ -186,7 +193,8 @@ FullRef = BookId ws* Chapter (chaptersep Verse)?
 ContextRef = Chapter (chaptersep Verse)? | Verse
 BookId = (TransId (":" | "."))? BookCode
 BookCode = [O-9A-Z]{3}
-TransId = langtag ("+" transcode)?
+TransId = langtag ("+" transcode ("+" productid)?)?
+Refsep = ';' | ','
 chaptersep = ws* (":" | ".") ws* 
 Chapter = digits
 Verse = VerseNum ("!" WordRef)? 
@@ -207,6 +215,7 @@ variant = [a-z]{5,8}
 ns = [a-z]
 extval = [a-z]{5:8}
 transcode = [0-9a-z]{1,8}
+productid = [0-9a-z]{1,8}
 ```
 
 # Outstanding Issues
