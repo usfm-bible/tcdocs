@@ -292,10 +292,10 @@ PeripheralDividedBookIdentification.book.code.enum = (
      )
 
 PeripheralDivision =
-    [usfm:stacked="true" usfm:match[usfm:order="-3" before="/${Ws}\\periph${HS}/"]]
+    [usfm:stacked="true" usfm:match[usfm:order="-3" before="/${Ws}\\periph${HS}/" beforeout="'\\periph '" match="''"]]
     element periph {
         [usfm:match[match="TEXTNOTATTRIB" usfm:seq="true"]] attribute alt { text }?,
-        [usfm:grouping="15" usfm:match[before="/${PIPE}${Hs}id=&quot;/" beforeout="'|'" after="'&quot;'" usfm:seq="true"]]
+        [usfm:grouping="15" usfm:match[before="/${PIPE}${Hs}id=?&quot;/" beforeout="'|id=&quot;'" after="'&quot;'" usfm:seq="true"]]
         attribute id {
               Peripheral.FRT.periph.id.enum
             | Peripheral.INT.periph.id.enum
@@ -647,9 +647,13 @@ Char = (
     | CharWithAttrib | Figure
     )
 
+FullCharExtra.char.style.enum = (
+    [usfm:propval="link-href"] "xt" # A target reference(s)
+)
+
 FullChar.char.style.enum = (
     Char.char.style.enum
-    | [usfm:propval="link-href"] "xt" # A target reference(s)
+    | FullCharExtra.char.style.enum
 )
 
 Char.char.style.enum = (
@@ -699,16 +703,16 @@ CharEmbed = (
 
 NoteCharEmbed = (
     element char {
-        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
+        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
         NoteCharContent
-        >> usfm:endtag[usfm:many="?" usfm:order="3" before="'\\'"]
+        >> usfm:endtag[matchref="b" usfm:many="?" before="'\\+'"]
     } |
     element char {
-        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true" noout="true"]] attribute style { FullChar.char.style.enum },
+        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
         NoteCharContent
-        >> usfm:endtag[usfm:many="?" usfm:order="3" before="'\\+'" noout="true"]
-    }
-    | CharEmbedWithAttrib
+        >> usfm:endtag[matchref="c" usfm:many="?" before="'\\'"]
+    } |
+    CharEmbedWithAttrib
     )
 
 ListChar = (
@@ -904,8 +908,8 @@ Footnote =
         attribute caller { text },
         category?,
         FootnoteChar, 
-        (FootnoteChar | [usfm:text[]] text)*
-        >> usfm:endtag[]
+        (FootnoteChar)* # not allowed here | [usfm:text[]] text)*
+        >> usfm:endtag[before="/${Ws}\\/" beforeout="'\\'"]
     }
 
 FootnoteChar =

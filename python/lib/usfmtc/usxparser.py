@@ -377,8 +377,8 @@ class RelaxValidator:
 
 
 class USXState(State):
-    attribescapere = regex.compile("([/\\~\"'])")
-    usfmescapere = regex.compile("([/\\~])")
+    attribescapere = regex.compile("([\\~\"'])")
+    usfmescapere = regex.compile("([\\~])")
 
     def __init__(self, parent, index, attributes=[], nsmap=None, current=None, context=None):
         super().__init__(parent, index, attributes=attributes, nsmap=nsmap, current=current)
@@ -396,7 +396,7 @@ class USXState(State):
             if attribute:
                 s = [self.attribescapere.sub(r"\\\1", x) for x in s]
             else:
-                s = [self.usfmescapere.sub(r"\\\1", x) for x in s]
+                s = [self.usfmescapere.sub(r"\\\1", x).replace("//", "\\//") for x in s]
         logger.debug(f"out: {s}")
         self.results.extend(s)
 

@@ -400,7 +400,7 @@
   </define>
   <define name="PeripheralDivision">
     <element usfm:stacked="true">
-      <usfm:match usfm:order="-3" before="/${Ws}\\periph${HS}/"/>
+      <usfm:match usfm:order="-3" before="/${Ws}\\periph${HS}/" beforeout="&#x27;\\periph &#x27;" match="&#x27;&#x27;"/>
       <name ns="">periph</name>
       <optional>
         <attribute>
@@ -410,7 +410,7 @@
         </attribute>
       </optional>
       <attribute usfm:grouping="15">
-        <usfm:match before="/${PIPE}${Hs}id=&quot;/" beforeout="&#x27;|&#x27;" after="&#x27;&quot;&#x27;" usfm:seq="true"/>
+        <usfm:match before="/${PIPE}${Hs}id=?&quot;/" beforeout="&#x27;|id=&quot;&#x27;" after="&#x27;&quot;&#x27;" usfm:seq="true"/>
         <name ns="">id</name>
         <choice>
           <ref name="Peripheral.FRT.periph.id.enum"/>
@@ -1107,10 +1107,13 @@
       <ref name="Figure"/>
     </choice>
   </define>
+  <define name="FullCharExtra.char.style.enum">
+    <value usfm:propval="link-href">xt</value>
+  </define>
   <define name="FullChar.char.style.enum">
     <choice>
       <ref name="Char.char.style.enum"/>
-      <value usfm:propval="link-href">xt</value>
+      <ref name="FullCharExtra.char.style.enum"/>
     </choice>
   </define>
   <define name="Char.char.style.enum">
@@ -1171,22 +1174,22 @@
       <element>
         <name ns="">char</name>
         <attribute usfm:stacked="true" usfm:grouping="9">
-          <usfm:tag matchid="a" before="&#x27;\\&#x27;" usfm:seq="true"/>
-          <name ns="">style</name>
-          <ref name="Char.char.style.enum"/>
-        </attribute>
-        <ref name="NoteCharContent"/>
-        <usfm:endtag usfm:many="?" usfm:order="3" before="&#x27;\\&#x27;"/>
-      </element>
-      <element>
-        <name ns="">char</name>
-        <attribute usfm:stacked="true" usfm:grouping="9">
-          <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true" noout="true"/>
+          <usfm:tag matchid="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
           <name ns="">style</name>
           <ref name="FullChar.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
-        <usfm:endtag usfm:many="?" usfm:order="3" before="&#x27;\\+&#x27;" noout="true"/>
+        <usfm:endtag matchref="b" usfm:many="?" before="&#x27;\\+&#x27;"/>
+      </element>
+      <element>
+        <name ns="">char</name>
+        <attribute usfm:stacked="true" usfm:grouping="9">
+          <usfm:tag matchid="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
+          <name ns="">style</name>
+          <ref name="Char.char.style.enum"/>
+        </attribute>
+        <ref name="NoteCharContent"/>
+        <usfm:endtag matchref="c" usfm:many="?" before="&#x27;\\&#x27;"/>
       </element>
       <ref name="CharEmbedWithAttrib"/>
     </choice>
@@ -1679,14 +1682,9 @@
       </optional>
       <ref name="FootnoteChar"/>
       <zeroOrMore>
-        <choice>
-          <ref name="FootnoteChar"/>
-          <text>
-            <usfm:text/>
-          </text>
-        </choice>
+        <ref name="FootnoteChar"/>
       </zeroOrMore>
-      <usfm:endtag/>
+      <usfm:endtag before="/${Ws}\\/" beforeout="&#x27;\\&#x27;"/>
     </element>
   </define>
   <define name="FootnoteChar">
