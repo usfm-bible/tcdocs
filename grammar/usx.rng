@@ -672,28 +672,28 @@
   </define>
   <define name="ChapterContent">
     <choice>
-      <ref name="Chapter"/>
-      <ref name="Section"/>
       <ref name="Para"/>
-      <ref name="List"/>
-      <ref name="Table"/>
+      <ref name="Section"/>
+      <ref name="Chapter"/>
+      <ref name="Milestone"/>
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
+      <ref name="List"/>
+      <ref name="Table"/>
       <ref name="Sidebar"/>
-      <ref name="Milestone"/>
     </choice>
   </define>
   <define name="PeripheralContent">
     <choice>
-      <ref name="Chapter"/>
-      <ref name="Section"/>
       <ref name="Para"/>
-      <ref name="List"/>
-      <ref name="Table"/>
+      <ref name="Section"/>
+      <ref name="Chapter"/>
+      <ref name="Milestone"/>
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
+      <ref name="List"/>
+      <ref name="Table"/>
       <ref name="Sidebar"/>
-      <ref name="Milestone"/>
     </choice>
   </define>
   <define name="Section">
@@ -785,16 +785,16 @@
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Char"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Break"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
         </choice>
       </zeroOrMore>
     </element>
@@ -818,16 +818,16 @@
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Char"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Break"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
         </choice>
       </zeroOrMore>
     </element>
@@ -904,17 +904,17 @@
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Char"/>
-          <ref name="ListChar"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Break"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="ListChar"/>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
         </choice>
       </zeroOrMore>
     </element>
@@ -986,15 +986,15 @@
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Char"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Break"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
         </choice>
       </zeroOrMore>
     </element>
@@ -1019,15 +1019,15 @@
       </optional>
       <oneOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="Char"/>
-          <ref name="Milestone"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Break"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="Char"/>
+          <ref name="Milestone"/>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
         </choice>
       </oneOrMore>
       <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
@@ -1039,38 +1039,37 @@
       <value>iqt</value>
     </choice>
   </define>
-  <define name="CharContent">
-    <group>
-      <optional>
-        <ref name="char.closed" usfm:ignore="true"/>
-      </optional>
-      <oneOrMore>
-        <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="CharEmbed"/>
-          <ref name="Milestone"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Break"/>
-          <text>
-            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
-          </text>
-        </choice>
-      </oneOrMore>
-    </group>
-  </define>
   <define name="NoteCharContent">
     <zeroOrMore>
       <choice>
-        <ref name="Reference" usfm:ignore="true"/>
-        <ref name="NoteCharEmbed"/>
-        <ref name="Milestone"/>
-        <ref name="Break"/>
         <text>
           <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
         </text>
+        <ref name="NoteCharEmbed"/>
+        <ref name="Milestone"/>
+        <ref name="Reference" usfm:ignore="true"/>
+        <ref name="Break"/>
       </choice>
     </zeroOrMore>
+  </define>
+  <define name="Attributes">
+    <group>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+      <oneOrMore>
+        <attribute usfm:fallback-from="style">
+          <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
+          <anyName>
+            <except>
+              <choice>
+                <name ns="">style</name>
+                <name ns="">closed</name>
+              </choice>
+            </except>
+          </anyName>
+          <data type="string"/>
+        </attribute>
+      </oneOrMore>
+    </group>
   </define>
   <define name="Char">
     <choice>
@@ -1081,31 +1080,39 @@
           <name ns="">style</name>
           <ref name="FullChar.char.style.enum"/>
         </attribute>
-        <ref name="CharContent"/>
-        <optional>
+        <choice>
           <group>
-            <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-            <oneOrMore>
-              <attribute usfm:fallback-from="style">
-                <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
-                <anyName>
-                  <except>
-                    <choice>
-                      <name ns="">style</name>
-                      <name ns="">closed</name>
-                    </choice>
-                  </except>
-                </anyName>
-                <data type="string"/>
-              </attribute>
-            </oneOrMore>
+            <ref name="CharContent"/>
+            <optional>
+              <ref name="Attributes"/>
+            </optional>
           </group>
-        </optional>
+          <ref name="Attributes"/>
+        </choice>
         <usfm:endtag usfm:seq="true"/>
       </element>
-      <ref name="CharWithAttrib"/>
       <ref name="Figure"/>
     </choice>
+  </define>
+  <define name="CharContent">
+    <group>
+      <optional>
+        <ref name="char.closed" usfm:ignore="true"/>
+      </optional>
+      <oneOrMore>
+        <choice>
+          <text>
+            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
+          </text>
+          <ref name="CharEmbed"/>
+          <ref name="Milestone"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Break"/>
+        </choice>
+      </oneOrMore>
+    </group>
   </define>
   <define name="FullCharExtra.char.style.enum">
     <value usfm:propval="link-href">xt</value>
@@ -1151,6 +1158,9 @@
       <value>em</value>
       <value>sc</value>
       <value>sup</value>
+      <value usfm:propval="lemma">w</value>
+      <value usfm:propval="gloss">rb</value>
+      <value>jmp</value>
     </choice>
   </define>
   <define name="CharEmbed">
@@ -1162,10 +1172,17 @@
           <name ns="">style</name>
           <ref name="FullChar.char.style.enum"/>
         </attribute>
-        <ref name="CharContent"/>
+        <choice>
+          <group>
+            <ref name="CharContent"/>
+            <optional>
+              <ref name="Attributes"/>
+            </optional>
+          </group>
+          <ref name="Attributes"/>
+        </choice>
         <usfm:endtag usfm:many="?" usfm:order="3" before="&#x27;\\+&#x27;"/>
       </element>
-      <ref name="CharEmbedWithAttrib"/>
       <ref name="Figure"/>
     </choice>
   </define>
@@ -1179,6 +1196,9 @@
           <ref name="FullChar.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
+        <optional>
+          <ref name="Attributes"/>
+        </optional>
         <usfm:endtag matchref="b" usfm:many="?" before="&#x27;\\+&#x27;"/>
       </element>
       <element>
@@ -1189,9 +1209,11 @@
           <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
+        <optional>
+          <ref name="Attributes"/>
+        </optional>
         <usfm:endtag matchref="c" usfm:many="?" before="&#x27;\\&#x27;"/>
       </element>
-      <ref name="CharEmbedWithAttrib"/>
     </choice>
   </define>
   <define name="ListChar">
@@ -1202,9 +1224,6 @@
         <name ns="">style</name>
         <ref name="ListChar.char.style.enum"/>
       </attribute>
-      <optional>
-        <ref name="char.link"/>
-      </optional>
       <optional>
         <ref name="char.closed"/>
       </optional>
@@ -1236,49 +1255,6 @@
       <value>liv</value>
     </choice>
   </define>
-  <define name="CharWithAttrib">
-    <element>
-      <name ns="">char</name>
-      <attribute usfm:order="-2">
-        <usfm:tag matchid="a"/>
-        <name ns="">style</name>
-        <ref name="CharWithAttrib.enum"/>
-      </attribute>
-      <optional>
-        <ref name="char.closed"/>
-      </optional>
-      <zeroOrMore>
-        <group usfm:order="-1">
-          <choice>
-            <ref name="CharEmbed"/>
-            <text>
-              <usfm:match match="TEXTNOTATTRIB"/>
-            </text>
-          </choice>
-        </group>
-      </zeroOrMore>
-      <optional>
-        <group usfm:order="2">
-          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-          <oneOrMore>
-            <attribute usfm:fallback-from="style">
-              <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
-              <anyName>
-                <except>
-                  <choice>
-                    <name ns="">style</name>
-                    <name ns="">closed</name>
-                  </choice>
-                </except>
-              </anyName>
-              <data type="string"/>
-            </attribute>
-          </oneOrMore>
-        </group>
-      </optional>
-      <usfm:endtag usfm:order="4"/>
-    </element>
-  </define>
   <define name="Figure">
     <ref name="FigureThree" usfm:alt="FigureTwo"/>
   </define>
@@ -1301,23 +1277,7 @@
         </optional>
       </group>
       <optional>
-        <group>
-          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-          <oneOrMore>
-            <attribute usfm:fallback-from="style">
-              <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot; &#x27;" fallback="ATTRIBALL"/>
-              <anyName>
-                <except>
-                  <choice>
-                    <name ns="">style</name>
-                    <name ns="">closed</name>
-                  </choice>
-                </except>
-              </anyName>
-              <data type="string"/>
-            </attribute>
-          </oneOrMore>
-        </group>
+        <ref name="Attributes"/>
       </optional>
       <usfm:endtag usfm:order="4"/>
     </element>
@@ -1371,56 +1331,6 @@
       <usfm:endtag/>
     </element>
   </define>
-  <define name="CharEmbedWithAttrib">
-    <element>
-      <name ns="">char</name>
-      <attribute usfm:order="-2">
-        <usfm:tag before="&#x27;\\+&#x27;" matchid="a"/>
-        <name ns="">style</name>
-        <ref name="CharWithAttrib.enum"/>
-      </attribute>
-      <optional>
-        <ref name="char.closed"/>
-      </optional>
-      <zeroOrMore>
-        <group usfm:order="-1">
-          <choice>
-            <ref name="CharEmbed"/>
-            <text>
-              <usfm:match match="TEXTNOTATTRIB"/>
-            </text>
-          </choice>
-        </group>
-      </zeroOrMore>
-      <optional>
-        <group usfm:order="2">
-          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-          <oneOrMore>
-            <attribute usfm:fallback-from="style">
-              <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
-              <anyName>
-                <except>
-                  <choice>
-                    <name ns="">style</name>
-                    <name ns="">closed</name>
-                  </choice>
-                </except>
-              </anyName>
-              <data type="string"/>
-            </attribute>
-          </oneOrMore>
-        </group>
-      </optional>
-      <usfm:endtag usfm:order="4" before="&#x27;\\+&#x27;"/>
-    </element>
-  </define>
-  <define name="CharWithAttrib.enum">
-    <choice>
-      <value usfm:propval="lemma">w</value>
-      <value usfm:propval="gloss">rb</value>
-      <value>jmp</value>
-    </choice>
-  </define>
   <define name="char.link">
     <optional>
       <group>
@@ -1473,20 +1383,7 @@
           <ref name="Milestone.enum"/>
         </attribute>
         <optional>
-          <group>
-            <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-            <oneOrMore>
-              <attribute usfm:fallback-from="style">
-                <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot; &#x27;" fallback="ATTRIBALL"/>
-                <anyName>
-                  <except>
-                    <name ns="">style</name>
-                  </except>
-                </anyName>
-                <data type="string"/>
-              </attribute>
-            </oneOrMore>
-          </group>
+          <ref name="Attributes"/>
         </optional>
         <empty/>
       </element>
@@ -1680,10 +1577,9 @@
       <optional>
         <ref name="category"/>
       </optional>
-      <ref name="FootnoteChar"/>
-      <zeroOrMore>
+      <oneOrMore>
         <ref name="FootnoteChar"/>
-      </zeroOrMore>
+      </oneOrMore>
       <usfm:endtag before="/${Ws}\\/" beforeout="&#x27;\\&#x27;"/>
     </element>
   </define>
@@ -1696,18 +1592,15 @@
         <ref name="FootnoteChar.char.style.enum"/>
       </attribute>
       <optional>
-        <ref name="char.link" usfm:ignore="true"/>
-      </optional>
-      <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
       <zeroOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="NoteCharEmbed"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="NoteCharEmbed"/>
+          <ref name="Reference" usfm:ignore="true"/>
         </choice>
       </zeroOrMore>
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="&#x27;*&#x27;"/>
@@ -1764,18 +1657,15 @@
         <ref name="CrossReferenceChar.char.style.enum"/>
       </attribute>
       <optional>
-        <ref name="char.link" usfm:ignore="true"/>
-      </optional>
-      <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
       <oneOrMore>
         <choice>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="NoteCharEmbed"/>
           <text>
             <usfm:text/>
           </text>
+          <ref name="NoteCharEmbed"/>
+          <ref name="Reference" usfm:ignore="true"/>
         </choice>
       </oneOrMore>
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"/>

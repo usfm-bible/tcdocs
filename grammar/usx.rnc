@@ -452,9 +452,9 @@ BookIntroductionEndTitles.para.style.enum = (
     | "imt2" # Introduction major title, level 2
     )
 
-ChapterContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar | Milestone)
+ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
-PeripheralContent = (Chapter | Section | Para | List | Table | Footnote | CrossReference | Sidebar | Milestone)
+PeripheralContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
 Section =
     element para {
@@ -498,14 +498,14 @@ Para =
         ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { Para.nonpara.style.enum } |
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { Para.para.style.enum }),
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
+        ([usfm:text[]] text | Char | Milestone | Verse | [usfm:ignore="true"] Reference | Footnote | CrossReference | Break)*
     }
 
 VersePara =
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { Para.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
+        ([usfm:text[]] text | Char | Milestone | Verse | [usfm:ignore="true"] Reference | Footnote | CrossReference | Break)*
     }
 
 Para.para.style.enum = (
@@ -563,7 +563,7 @@ List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:ignore="true"] Reference | Footnote | CrossReference | Char | ListChar | Milestone | Verse | Break | [usfm:text[]]text)*
+        ([usfm:text[]] text | ListChar | Char | Milestone | Verse | [usfm:ignore="true"] Reference | Footnote | CrossReference | Break)*
     }
 List.para.style.enum = (
       "lh" # List header (introductory remark)
@@ -597,7 +597,7 @@ TableContent =
         attribute style { xsd:string { pattern = "t[hc][rc]?\d+" } },
         attribute align { cell.align.enum },
         attribute colspan { xsd:integer }?,
-        (Footnote | CrossReference | Char | Milestone | Verse | Break | [usfm:text[]] text)*
+        ([usfm:text[]] text | Char | Milestone | Verse | Footnote | CrossReference | Break)*
     }
            
 cell.align.enum = (
@@ -610,7 +610,7 @@ IntroChar =
     element char {
         [usfm:tag[matchid="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
         char.closed?,
-        ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | CrossReference | Break | [usfm:text[]]text)+ # Nested character <char> markup
+        ([usfm:text[]] text | Char | Milestone | [usfm:ignore="true"] Reference | Footnote | CrossReference | Break)+
         >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]
     }
 IntroChar.char.style.enum = (
@@ -618,33 +618,36 @@ IntroChar.char.style.enum = (
     | "iqt" # For quoted scripture text appearing in the introduction
     )
 
-CharContent = (
-    #[usfm:order="2"] char.link?,
-    [usfm:ignore="true"]char.closed?,
-    ([usfm:ignore="true"] Reference | CharEmbed | Milestone | Footnote | CrossReference | Break |
-        [usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text)+ # Nested character <char> markup
-    )
-
 NoteCharContent = (
     #[usfm:order="2"]
     # char.link?,
     # [usfm:ignore="true"]char.closed?,
-    ([usfm:ignore="true"] Reference | NoteCharEmbed | Milestone | Break |
-        [usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text)* # Nested character <char> markup
+    ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
+        | NoteCharEmbed | Milestone | [usfm:ignore="true"] Reference | Break)* # Nested character <char> markup
     )
+
+Attributes = (
+    [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+       ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
+        attribute * - (style | closed) {xsd:string}+)
+)
 
 Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[matchid="a" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        CharContent,
-        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-           ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
-                    second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
-            attribute * - (style | closed) {xsd:string}+)?
+        ( (CharContent, Attributes?) | Attributes)
         >> usfm:endtag[usfm:seq="true"]  # required
     }
-    | CharWithAttrib | Figure
+    | Figure
+    )
+
+CharContent = (
+    #[usfm:order="2"] char.link?,
+    [usfm:ignore="true"]char.closed?,
+    ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
+        | CharEmbed | Milestone | Footnote | CrossReference | [usfm:ignore="true"] Reference | Break)+ # Nested character <char> markup
     )
 
 FullCharExtra.char.style.enum = (
@@ -690,35 +693,38 @@ Char.char.style.enum = (
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text
     | "sup" # A character style, for superscript text. Typically for use in critical edition footnotes.
+    | [usfm:propval="lemma"] "w"
+    | [usfm:propval="gloss"] "rb"
+    | "jmp"
     )
 
 CharEmbed = (
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        CharContent
+        ((CharContent, Attributes?) | Attributes)
         >> usfm:endtag[usfm:many="?" usfm:order="3" before="'\\+'"]
     }
-    | CharEmbedWithAttrib | Figure
+    | Figure
     )
 
 NoteCharEmbed = (
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        NoteCharContent
+        NoteCharContent,
+        Attributes?
         >> usfm:endtag[matchref="b" usfm:many="?" before="'\\+'"]
     } |
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        NoteCharContent
+        NoteCharContent,
+        Attributes?
         >> usfm:endtag[matchref="c" usfm:many="?" before="'\\'"]
-    } |
-    CharEmbedWithAttrib
-    )
+    })
 
 ListChar = (
     element char {
         [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
-        char.link?,
+        #char.link?,
         char.closed?,
         ([usfm:ignore="true"] Reference | Char | Milestone | Footnote | CrossReference | Break | [usfm:text[]] text)* # Nested character <char> markup
         >> usfm:endtag[usfm:many="?"]
@@ -736,18 +742,6 @@ ListChar.char.style.enum = (
     | "liv" # Structured list entry value 1 content (if single value)
     )
 
-CharWithAttrib =
-    element char {
-        [usfm:order="-2" usfm:tag [matchid="a"]] attribute style { CharWithAttrib.enum },
-        char.closed?,
-        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTNOTATTRIB"]] text)*,
-        [usfm:order="2" usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
-                    second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
-            attribute * - (style | closed) {xsd:string}+)?
-        >> usfm:endtag[usfm:order="4"]
-    }
-
 Figure = ([usfm:alt="FigureTwo"] FigureThree)
 
 FigureThree = 
@@ -755,10 +749,7 @@ FigureThree =
         [usfm:order="-2" usfm:tag [matchid="a"]] attribute style { "fig" },
         [usfm:ignore="true"] char.closed?,
         [usfm:order="-1"] ([usfm:match[match="TEXTNOTATTRIB"]] text?), # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
-        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
-                    second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot; '" fallback="ATTRIBALL"]]
-            attribute * - (style | closed) {xsd:string}+)?
+        Attributes?
         >> usfm:endtag[usfm:order="4"]
     }
 
@@ -776,24 +767,6 @@ FigureTwo =
         >> usfm:endtag[]
     }
 
-CharEmbedWithAttrib =
-    element char {
-        [usfm:order="-2" usfm:tag [before="'\\+'" matchid="a"]] attribute style { CharWithAttrib.enum },
-        char.closed?,
-        [usfm:order="-1"] (CharEmbed | [usfm:match[match="TEXTNOTATTRIB"]] text)*,
-        [usfm:order="2" usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
-                    second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
-            attribute * - (style | closed) {xsd:string}+)?
-        >> usfm:endtag[usfm:order="4" before="'\\+'"]
-    }
-
-CharWithAttrib.enum = (
-      [usfm:propval="lemma"] "w"
-    | [usfm:propval="gloss"] "rb"
-    | "jmp"
-)
-        
 char.link =
     [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:properties[interleave_between="WS"]]
     ([usfm:match[before="'link-href=&quot;'" after="/[&quot;]\s*/"]]attribute link-href { [usfm:pattern[name="HREF"]] xsd:string
@@ -810,11 +783,7 @@ Milestone = (
     (element ms {
         # [usfm:tag[after="/\s?(?=[\\|])/"]] attribute style { xsd:string {pattern="[a-z][a-z0-9-]*" }},
         [usfm:tag[after="Hs" afterout=""]] attribute style { Milestone.enum },
-        [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-        (
-         [usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
-                    second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot; '" fallback="ATTRIBALL"]]
-            attribute * - (style) {xsd:string}+)?,
+        Attributes?,
         empty
     } >> usfm:endtag[matchref="''"])
     )
@@ -907,8 +876,7 @@ Footnote =
         [usfm:match[match="/[^\\\s]+/" after="Hs" afterout="' '"]]
         attribute caller { text },
         category?,
-        FootnoteChar, 
-        (FootnoteChar)* # not allowed here | [usfm:text[]] text)*
+        FootnoteChar+ 
         >> usfm:endtag[before="/${Ws}\\/" beforeout="'\\'"]
     }
 
@@ -916,11 +884,11 @@ FootnoteChar =
     element char {
         [usfm:grouping="8" usfm:tag[matchid="b"]]
         attribute style { FootnoteChar.char.style.enum },
-        [usfm:ignore="true"]
-        char.link?,
+        #[usfm:ignore="true"]
+        #char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)*
+        ([usfm:text[]] text | NoteCharEmbed | [usfm:ignore="true"] Reference)*
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="'*'"]
     }
 FootnoteChar.char.style.enum = (
@@ -956,11 +924,11 @@ CrossReferenceChar =
     element char {
         [usfm:tag[matchid="b"]]
         attribute style { CrossReferenceChar.char.style.enum },
-        [usfm:ignore="true"]
-        char.link?,
+        #[usfm:ignore="true"]
+        #char.link?,
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:ignore="true"] Reference | NoteCharEmbed | [usfm:text[]] text)+
+        ([usfm:text[]] text | NoteCharEmbed | [usfm:ignore="true"] Reference)+
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"]
     }
 CrossReferenceChar.char.style.enum = (
