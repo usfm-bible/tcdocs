@@ -72,11 +72,11 @@
 <path d="M 580.0 163 h 0.0"></path><path d="M 833.5 163 h 0.0"></path><path d="M 580.0 163 a 10 10 0 0 0 10 -10 v -9 a 10 10 0 0 1 10 -10"></path><g>
 <path d="M 600.0 134 h 213.5"></path></g><path d="M 813.5 134 a 10 10 0 0 1 10 10 v 9 a 10 10 0 0 0 10 10"></path><path d="M 580.0 163 h 20"></path><g>
 <path d="M 600.0 163 h 0.0"></path><path d="M 813.5 163 h 0.0"></path><path d="M 600.0 163 h 10"></path><g>
-<path d="M 610.0 163 h 0.0"></path><path d="M 803.5 163 h 0.0"></path><path d="M 610.0 163 h 20"></path><g class="non-terminal ">
-<path d="M 630.0 163 h 11.5"></path><path d="M 772.0 163 h 11.5"></path><rect height="22" width="130.5" x="641.5" y="152"></rect><text x="706.75" y="167">NoteCharEmbed</text></g><path d="M 783.5 163 h 20"></path><path d="M 610.0 163 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g>
-<path d="M 630.0 193 h 0.0"></path><path d="M 783.5 193 h 0.0"></path><g class="terminal ">
-<path d="M 630.0 193 h 0.0"></path><path d="M 684.0 193 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="630.0" y="182"></rect><text x="657.0" y="197">TEXT</text></g><path d="M 684.0 193 h 10"></path><path d="M 694.0 193 h 10"></path><g class="terminal ">
-<path d="M 704.0 193 h 0.0"></path><path d="M 783.5 193 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="704.0" y="182"></rect><text x="743.75" y="197">TEXTEND</text></g></g><path d="M 783.5 193 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g><path d="M 803.5 163 h 10"></path><path d="M 610.0 163 a 10 10 0 0 0 -10 10 v 39 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 610.0 163 h 0.0"></path><path d="M 803.5 163 h 0.0"></path><path d="M 610.0 163 h 20"></path><g>
+<path d="M 630.0 163 h 0.0"></path><path d="M 783.5 163 h 0.0"></path><g class="terminal ">
+<path d="M 630.0 163 h 0.0"></path><path d="M 684.0 163 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="630.0" y="152"></rect><text x="657.0" y="167">TEXT</text></g><path d="M 684.0 163 h 10"></path><path d="M 694.0 163 h 10"></path><g class="terminal ">
+<path d="M 704.0 163 h 0.0"></path><path d="M 783.5 163 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="704.0" y="152"></rect><text x="743.75" y="167">TEXTEND</text></g></g><path d="M 783.5 163 h 20"></path><path d="M 610.0 163 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 630.0 193 h 11.5"></path><path d="M 772.0 193 h 11.5"></path><rect height="22" width="130.5" x="641.5" y="182"></rect><text x="706.75" y="197">NoteCharEmbed</text></g><path d="M 783.5 193 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g><path d="M 803.5 163 h 10"></path><path d="M 610.0 163 a 10 10 0 0 0 -10 10 v 39 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 610.0 222 h 193.5"></path></g><path d="M 803.5 222 a 10 10 0 0 0 10 -10 v -39 a 10 10 0 0 0 -10 -10"></path></g><path d="M 813.5 163 h 20"></path></g><path d="M 833.5 163 h 10"></path><path d="M 843.5 163 h 10"></path><g>
 <path d="M 853.5 163 h 0.0"></path><path d="M 1078.5 163 h 0.0"></path><path d="M 853.5 163 h 20"></path><g>
 <path d="M 873.5 163 h 185.0"></path></g><path d="M 1058.5 163 h 20"></path><path d="M 853.5 163 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
