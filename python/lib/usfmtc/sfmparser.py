@@ -29,6 +29,8 @@ class GlobalState(usfmp.GlobalState):
 
     def capture(self, index, txt):
         self._ensure(index)
+        if isinstance(txt, (list, tuple)):
+            txt = "".join(txt)
         logger.debug(f"Capture[{index}] = '{self.captures[index]}' + '{txt}'")
         self.captures[index] += txt
 

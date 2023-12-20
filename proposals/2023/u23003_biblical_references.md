@@ -123,8 +123,8 @@ Also this mitigates the question of when a punctuation character gets used as a
 word forming character. A marker is treated as a space. Multiple spaces are
 treated as a single space. The precise set of space characters is yet to be
 decided but will probably be closely aligned to \\p{Zs} (Unicode character of
-general category Zs which includes all the various space characters. Perhaps we
-should also include Cf. The precise character set is to be resolved).
+general category Zs which includes all the various space characters. We extend
+the list to include U+200B.)
 
 ### Including And Ignoring Notes
 At the simplest level, footnote (or any other note) text is not part of the main scripture text. They may or may not be printed, if word counting through a text, it is very awkward to have to include notes into the count. There are many other reason why it is easier to ignore notes when word counting through the text. And so we ignore them for primary referencing.
@@ -200,7 +200,7 @@ Chapter = digits
 Verse = VerseNum ("!" WordRef)? 
 VerseNum = digits (subverse)? | "end"
 WordRef = (Noteref "!")? digits ("+" Charref)?
-Noteref = "n" digits
+Noteref = "n" ("[" digits "]")?
 Charref = digits
 ContextRef = Chapter (chaptersep Verse)? | Verse | WordRef | Charref
 subverse = "a" | "b" | "c" | "d" | "e" | "f"
@@ -220,9 +220,57 @@ productid = [0-9a-z]{1,8}
 
 # Outstanding Issues
 
+## Zero width assertions
+
 This referencing scheme allows reference down to a single character. But it
 doesn't allow reference to the zero width point between characters. There are
 situations where information wants to be associated with a point between two
 characters. How can we mark this position? Perhaps with a trailing +?
 Indexing is 1 based. So we can say: the zerowith position after the char. Thus
 to insert at the start of the bible, one might say `GEN 1:1!1+0+`.
+
+## Referencing into non-verse text
+
+How do we reference into a footnote or a section heading?
+We will call such text, out-of-band text. Consider a footnote. This is anchored
+at a particular character in the text and so may either be counted over a range
+(for example a verse or word). Thus we might say: `GEN 1:1!f` would be the first
+footnote in GEN 1:1. For the second we would say `GEN 1:1!f[2]`.
+Or if we wanted the footnote after the
+3rd word, we might say: `GEN 1:1!3!f` and then for the 4th word in that
+footnote we would say `GEN 1:1!3!f!4`. Notes associate backwards and so are
+considered part of the character they follow.
+
+What if a note is surrounded by spaces? Is it counted as a word? No it still is
+associated with the last character of the previous word. What about notes at the
+start of a verse or some other marker anchor? Here they are associated with that
+anchor and cannot be referenced in relation to a word (unless the word index is
+0).
+
+For subheadings. The key is to notice that subheadings associate forwards. Thus
+the subheading before verse 1 is associated with v1. Thus `GEN 1:1!s!f` is the
+first footnote in the first subheading before GEN 1:1. Subheadings are counted
+forward, thus s[1] comes before s[2].
+
+We can think of using a word reference marker `!` as a way of referring to the
+whole of the marked text, but also to its first word. It is a word range (more
+akin to a verse, really, but using `:` would cause problems with book ids.)
+Since markers never start with a digit and words always do, the two categories
+are disambiguated.
+
+### Referencing Marker Arguments
+
+Here we discuss referencing verse numbers and footnote markers, etc.
+
+Again we can use the 0th word for these.
+
+For a subheading before the start of a chapter, that subheading is associated
+both with the chapter number itself `GEN 1:0!s` and also with the first verse
+`GEN 1:1!s`. In each case also with the zeroth word of each: `GEN 1:0!0+0!s` and
+`GEN 1:1!0+0!s`.
+
+### Referencing Introductory Material
+
+What about `\h` or `\ip` material?
+
+

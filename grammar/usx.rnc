@@ -700,9 +700,13 @@ Char.char.style.enum = (
 
 CharEmbed = (
     element char {
-        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
         ((CharContent, Attributes?) | Attributes)
-        >> usfm:endtag[usfm:many="?" usfm:order="3" before="'\\+'"]
+        >> usfm:endtag[usfm:order="2" before="'\\+'"])
+      |
+        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        ((CharContent, Attributes?) | Attributes)
+        >> usfm:endtag[matchref="b" usfm:order="3" before="'\\'"])
     }
     | Figure
     )
@@ -712,13 +716,13 @@ NoteCharEmbed = (
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
         NoteCharContent,
         Attributes?
-        >> usfm:endtag[matchref="b" usfm:many="?" before="'\\+'"]
+        >> usfm:endtag[matchref="b" before="'\\+'"]
     } |
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
         NoteCharContent,
         Attributes?
-        >> usfm:endtag[matchref="c" usfm:many="?" before="'\\'"]
+        >> usfm:endtag[matchref="c" before="'\\'"]
     })
 
 ListChar = (

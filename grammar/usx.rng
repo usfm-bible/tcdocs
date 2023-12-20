@@ -1167,21 +1167,42 @@
     <choice>
       <element>
         <name ns="">char</name>
-        <attribute usfm:stacked="true" usfm:grouping="9">
-          <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
-          <name ns="">style</name>
-          <ref name="FullChar.char.style.enum"/>
-        </attribute>
         <choice>
           <group>
-            <ref name="CharContent"/>
-            <optional>
+            <attribute usfm:stacked="true" usfm:grouping="9">
+              <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
+              <name ns="">style</name>
+              <ref name="FullChar.char.style.enum"/>
+            </attribute>
+            <choice>
+              <group>
+                <ref name="CharContent"/>
+                <optional>
+                  <ref name="Attributes"/>
+                </optional>
+              </group>
               <ref name="Attributes"/>
-            </optional>
+            </choice>
+            <usfm:endtag usfm:order="2" before="&#x27;\\+&#x27;"/>
           </group>
-          <ref name="Attributes"/>
+          <group>
+            <attribute usfm:stacked="true" usfm:grouping="9">
+              <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
+              <name ns="">style</name>
+              <ref name="FullChar.char.style.enum"/>
+            </attribute>
+            <choice>
+              <group>
+                <ref name="CharContent"/>
+                <optional>
+                  <ref name="Attributes"/>
+                </optional>
+              </group>
+              <ref name="Attributes"/>
+            </choice>
+            <usfm:endtag matchref="b" usfm:order="3" before="&#x27;\\&#x27;"/>
+          </group>
         </choice>
-        <usfm:endtag usfm:many="?" usfm:order="3" before="&#x27;\\+&#x27;"/>
       </element>
       <ref name="Figure"/>
     </choice>
@@ -1199,7 +1220,7 @@
         <optional>
           <ref name="Attributes"/>
         </optional>
-        <usfm:endtag matchref="b" usfm:many="?" before="&#x27;\\+&#x27;"/>
+        <usfm:endtag matchref="b" before="&#x27;\\+&#x27;"/>
       </element>
       <element>
         <name ns="">char</name>
@@ -1212,7 +1233,7 @@
         <optional>
           <ref name="Attributes"/>
         </optional>
-        <usfm:endtag matchref="c" usfm:many="?" before="&#x27;\\&#x27;"/>
+        <usfm:endtag matchref="c" before="&#x27;\\&#x27;"/>
       </element>
     </choice>
   </define>

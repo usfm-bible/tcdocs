@@ -70,8 +70,8 @@ def addesids(root):
             continue
         eid = lastv.get('sid', None)
         ev = v.makeelement('verse', {'eid': eid or ""})
-        pv = v.parent
-        pl = lastv.parent
+        pv = v.getparent()
+        pl = lastv.getparent()
         if id(pv) == id(pl):
             v.addprevious(ev) 
         else:
@@ -80,7 +80,7 @@ def addesids(root):
     if lastv is not None and lastp is not None:
         eid = lastv.get('sid', None)
         ev = lastv.makeelement('verse', {'eid': eid or ''})
-        _addvids(lastv.parent, lastp, None, eid, ev, atend=True)
+        _addvids(lastv.getparent(), lastp, None, eid, ev, atend=True)
 
     lastc = None
     for c in root.findall('.//chapter'):

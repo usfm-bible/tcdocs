@@ -35,6 +35,9 @@ class ParentElement(et.Element):
         if parent is not None:
             parent.insert(i, el)
 
+    def getparent(self):
+        return self.parent
+
 
 def parsexml(infile):
     tb = et.TreeBuilder(element_factory=ParentElement)
