@@ -619,9 +619,7 @@ IntroChar.char.style.enum = (
     )
 
 NoteCharContent = (
-    #[usfm:order="2"]
-    # char.link?,
-    # [usfm:ignore="true"]char.closed?,
+    [usfm:ignore="true"]char.closed?,
     ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
         | NoteCharEmbed | Milestone | [usfm:ignore="true"] Reference | Break)* # Nested character <char> markup
     )
@@ -644,7 +642,6 @@ Char = (
     )
 
 CharContent = (
-    #[usfm:order="2"] char.link?,
     [usfm:ignore="true"]char.closed?,
     ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
         | CharEmbed | Milestone | Footnote | CrossReference | [usfm:ignore="true"] Reference | Break)+ # Nested character <char> markup
@@ -728,7 +725,6 @@ NoteCharEmbed = (
 ListChar = (
     element char {
         [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
-        #char.link?,
         char.closed?,
         ([usfm:text[]] text | Char | Milestone | Footnote | CrossReference | Break | [usfm:ignore="true"] Reference)* # Nested character <char> markup
         >> usfm:endtag[usfm:many="?"]
@@ -770,15 +766,6 @@ FigureTwo =
         [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute ref {xsd:string}
         >> usfm:endtag[]
     }
-
-char.link =
-    [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:properties[interleave_between="WS"]]
-    ([usfm:match[before="'link-href=&quot;'" after="/[&quot;]\s*/"]]attribute link-href { [usfm:pattern[name="HREF"]] xsd:string
-        { pattern = "(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)" } }? # The resource being linked to as a URI
-    & [usfm:match[before="'link-title=&quot;'" after="/[&quot;]\s*/"]]
-    attribute link-title { xsd:string }? # Plain text describing the remote resource such as might be shown in a tooltip
-    & [usfm:match[before="'link-matchid=&quot;'" after="/[&quot;]\s*/"]]
-    attribute link-id { xsd:string { pattern = "[\p{L}\d_\-\.:]+" } }?)? # Unique identifier for this location in the text
 
 char.closed =
     [usfm:ignore="true"] attribute closed { xsd:boolean } # Present to allow roundtripping to USFM, not needed for publishing
@@ -888,8 +875,6 @@ FootnoteChar =
     element char {
         [usfm:grouping="8" usfm:tag[matchid="b"]]
         attribute style { FootnoteChar.char.style.enum },
-        #[usfm:ignore="true"]
-        #char.link?,
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:text[]] text | NoteCharEmbed | [usfm:ignore="true"] Reference)*
@@ -929,8 +914,6 @@ CrossReferenceChar =
     element char {
         [usfm:tag[matchid="b"]]
         attribute style { CrossReferenceChar.char.style.enum },
-        #[usfm:ignore="true"]
-        #char.link?,
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:text[]] text | NoteCharEmbed | [usfm:ignore="true"] Reference)+

@@ -1040,17 +1040,22 @@
     </choice>
   </define>
   <define name="NoteCharContent">
-    <zeroOrMore>
-      <choice>
-        <text>
-          <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
-        </text>
-        <ref name="NoteCharEmbed"/>
-        <ref name="Milestone"/>
-        <ref name="Reference" usfm:ignore="true"/>
-        <ref name="Break"/>
-      </choice>
-    </zeroOrMore>
+    <group>
+      <optional>
+        <ref name="char.closed" usfm:ignore="true"/>
+      </optional>
+      <zeroOrMore>
+        <choice>
+          <text>
+            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
+          </text>
+          <ref name="NoteCharEmbed"/>
+          <ref name="Milestone"/>
+          <ref name="Reference" usfm:ignore="true"/>
+          <ref name="Break"/>
+        </choice>
+      </zeroOrMore>
+    </group>
   </define>
   <define name="Attributes">
     <group>
@@ -1351,42 +1356,6 @@
       </attribute>
       <usfm:endtag/>
     </element>
-  </define>
-  <define name="char.link">
-    <optional>
-      <group>
-        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-        <usfm:properties interleave_between="WS"/>
-        <interleave>
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;link-href=&quot;&#x27;" after="/[&quot;]\s*/"/>
-              <name ns="">link-href</name>
-              <data type="string">
-                <usfm:pattern name="HREF"/>
-                <param name="pattern">(.*///?(.*/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)</param>
-              </data>
-            </attribute>
-          </optional>
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;link-title=&quot;&#x27;" after="/[&quot;]\s*/"/>
-              <name ns="">link-title</name>
-              <data type="string"/>
-            </attribute>
-          </optional>
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;link-matchid=&quot;&#x27;" after="/[&quot;]\s*/"/>
-              <name ns="">link-id</name>
-              <data type="string">
-                <param name="pattern">[\p{L}\d_\-\.:]+</param>
-              </data>
-            </attribute>
-          </optional>
-        </interleave>
-      </group>
-    </optional>
   </define>
   <define name="char.closed">
     <attribute usfm:ignore="true">

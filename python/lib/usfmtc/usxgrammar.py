@@ -11,9 +11,9 @@ alljobs = {
     "ChapterStart":         ("chapter",),
     "ChapterEnd":           ("chapterend",),
     "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Attributes", "Break",
-                                        "CharContent", "FullChar.char.style.enum", "FullCharExtra.char.style.enum"), ("+char.link", )),
+                                        "CharContent", "FullChar.char.style.enum", "FullCharExtra.char.style.enum")),
     "CharEmbed":            ("charembed", ("Char.char.style.enum", "+char.closed", "Attributes", "Break",
-                                            "FullChar.char.style.enum", "FullCharExtra.char.style.enum"), ("+char.link", )),
+                                            "FullChar.char.style.enum", "FullCharExtra.char.style.enum")),
     "CrossReference":       ("crossref",),
     "CrossReferenceChar":   ("xchar",("CrossReferenceChar.char.style.enum", "+char.closed")),
     "Figure":               ("fig",("FigureTwo", "Attributes", "FigureThree")),
@@ -31,7 +31,6 @@ alljobs = {
     "VerseStart":           ("verse",),
     "VerseEnd":             ("verseend",),
     "category":             ("cat",),
-    "char.link":            ("link",),
 }
 
 usxenums = {
