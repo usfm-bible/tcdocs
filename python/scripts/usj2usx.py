@@ -1,38 +1,71 @@
 '''Standalone script to generate USX from input USJ'''
 
+import glob
 import argparse
 import json
-import lxml.etree
 from jsonschema import validate
+import re
+import lxml.etree
 
 
 USJ_SCHEMA = None
-with open('../grammar/usj.js', 'r', encoding='utf-8') as json_file:
+with open('grammar/usj.js', 'r', encoding='utf-8') as json_file:
     USJ_SCHEMA = json.load(json_file)
 
 prev_chapter_sid = None
 prev_verse_sid = None
 
+VERSE_CARRYING_PARAS = [
+       "q", "qr", "qc", "qa", "qm", "qd", #poetry
+        "lh", "li", "lf", "lim", "litl", #lists
+        "tr", "tc", "th", "tcr", "thr", # table
+        "p", "m", "po", "pr", "cls", "pmo", "pm",
+        "pmc", "pmr", "pi", "mi", "nb", "pc", "ph", 
+        ]
+
+def find_para_node_for_verse_eid(current_usx_head):
+    if current_usx_head.tag in ["para", "cell"] and \
+        (len(current_usx_head) > 0 or current_usx_head.text is not None): # within a para
+        return current_usx_head
+    if current_usx_head.tag in ["para", "cell"] and len(current_usx_head) == 0: # start of a para
+        paras = current_usx_head.getparent().xpath('para | .//cell')[:-1]
+    else:
+        paras = current_usx_head.xpath('para | .//cell') # not in a para element
+    for i in range(len(paras)-1, -1, -1):
+        if "style" in paras[i].attrib:
+            marker = re.sub(r'\d+$', "", paras[i].attrib['style'])
+        if (paras[i].tag == "table" or marker in VERSE_CARRYING_PARAS) and \
+                (len(paras[i]) > 0 or paras[i].text is not None):
+            return paras[i]
+    raise Exception("Can't find a suitable last para:\n "+\
+        f"{lxml.etree.tostring(current_usx_head)}")
+
+
 def convert_usj(json_node, usx_head):
     '''Traverse the JSON recursively, building the XML'''
     global prev_verse_sid
     global prev_chapter_sid
-    if json_node['type'] in ["chapter", "verse"]: # adding end nodes
+    if json_node['type'] in ["chapter", "verse", "sidebar"]: # adding end nodes
         if prev_verse_sid is not None:
             end_node = lxml.etree.Element('verse')
             end_node.set('eid', prev_verse_sid)
-            if usx_head.tag == "para":
-                last_para = usx_head
-            else:
-                last_para = usx_head.findall('para')[-1]
+            last_para = find_para_node_for_verse_eid(usx_head)
             last_para.append(end_node)
-        prev_verse_sid = json_node["sid"]
-        if json_node['type'] == "chapter":
+        if json_node['type'] == 'verse':
+            prev_verse_sid = json_node["sid"]
+        else:
             prev_verse_sid = None
+        if json_node['type'] == "chapter":
             if prev_chapter_sid is not None:
                 end_node = lxml.etree.SubElement(usx_head, 'chapter')
                 end_node.set('eid', prev_chapter_sid)    
             prev_chapter_sid = json_node['sid']
+
+    if json_node['type'] in ['table:row', 'table:cell']:
+        json_node['type'] = json_node['type'].replace("table:", "")
+
+    if json_node['type'] == 'optbreak':
+        json_node['type'] = "para"
     new_node = lxml.etree.SubElement(usx_head, json_node['type'])
     if 'marker' in json_node:
         new_node.set('style', json_node['marker'])
@@ -53,6 +86,8 @@ def usj_to_xml(input_usj):
     '''Build the XML tree'''
     global prev_verse_sid
     global prev_chapter_sid
+    prev_verse_sid = None
+    prev_chapter_sid = None
     output_usx = lxml.etree.Element('usx')
     output_usx.set('version', '3.0')
     for item in input_usj['content']:
@@ -62,13 +97,50 @@ def usj_to_xml(input_usj):
     if prev_verse_sid is not None:
         end_node = lxml.etree.Element('verse')
         end_node.set('eid', prev_verse_sid)
-        last_para = output_usx.findall('para')[-1]
+        last_para = find_para_node_for_verse_eid(output_usx)
         last_para.append(end_node)
     if prev_chapter_sid is not None:
         end_node = lxml.etree.SubElement(output_usx, 'chapter')
         end_node.set('eid', prev_chapter_sid)    
 
     return output_usx
+
+def test():
+    '''Test by comparing the generated USX against origin.xml in test suite'''
+    from lxml.doctestcompare import LXMLOutputChecker
+    checker = LXMLOutputChecker()
+    usj_paths = glob.glob('tests/*/*/origin.json') + glob.glob('tests/*/*/*/origin.json')
+    conversion_error = 0
+    comparison_error = 0
+    for path in usj_paths:
+        with open(path, 'r', encoding='utf-8') as usj_file:
+            input_usj = json.load(usj_file)
+            # validate(instance=input_usj, schema=USJ_SCHEMA)
+            try:
+                output_usx = usj_to_xml(input_usj)
+            except Exception as exce:
+                conversion_error += 1
+                print(f"\n\nError at {path}\n{exce}")
+                continue
+                # raise Exception(f"Error at conversion on {path}") from exce
+        with open(path.replace('.json','.xml'), 'r', encoding='utf-8') as origin_file:
+            origin_usx = lxml.etree.parse(origin_file).getroot()
+            all_vid_nodes = origin_usx.findall(".//*[@vid]")
+            all_closed_nodes = origin_usx.findall(".//*[@closed]")
+            all_status_nodes = origin_usx.findall(".//*[@status]")
+            for node in all_vid_nodes:
+                del node.attrib['vid']
+            for node in all_closed_nodes:
+                del node.attrib['closed']
+            for node in all_status_nodes:
+                del node.attrib['status']
+        if not checker.compare_docs(origin_usx, output_usx):
+            comparison_error += 1
+            message = checker.collect_diff(origin_usx, output_usx, html=False, indent=4)
+            print(f"\n\nError at {path}\n{message}")
+    print(f"{conversion_error=}\n{comparison_error=}")
+    print(f"Out of total tested {len(usj_paths)} samples.")
+
 
 def main():
     '''Handles the command line requests.
@@ -105,3 +177,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    # test()
