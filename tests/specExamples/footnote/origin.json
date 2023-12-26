@@ -174,7 +174,13 @@
                 "38"
               ]
             },
-            "As the scripture says, ‘Streams of life-giving water will pour out ...’”"
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "As the scripture says, ‘Streams of life-giving water will pour out ...’”"
+              ]
+            }
           ]
         },
         {

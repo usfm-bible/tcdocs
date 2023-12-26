@@ -43,7 +43,13 @@
                 "and in the ruins of the rich, lambs will graze"
               ]
             },
-            "."
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "."
+              ]
+            }
           ]
         },
         {

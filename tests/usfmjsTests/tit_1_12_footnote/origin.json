@@ -88,7 +88,13 @@
                 "in Ephesus,"
               ]
             },
-            "but this expression is probably in Paul's original letter."
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "but this expression is probably in Paul's original letter."
+              ]
+            }
           ]
         }
       ]
