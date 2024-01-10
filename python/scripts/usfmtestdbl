@@ -12,14 +12,13 @@ def lognprint(s, q, level=logging.DEBUG):
         print(s, flush=True)
 
 try:
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc import USX, _grammarDoc, _usfmGrammar
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc import USX, _grammarDoc, _usfmGrammar
 from usfmtc.parser import NoParseError, Parser
-from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.usxgrammar import usxenums
-from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup, partypes
+from usfmtc.usxmodel import addesids, etCmp, cell_aligns, cleanup, partypes
 import xml.etree.ElementTree as et
 from lxml import etree
 
@@ -29,18 +28,18 @@ def proconezip(fpath, sfmp, log, relax, args):
         zipf = zipfile.ZipFile(fpath)
     except (OSError, zipfile.BadZipFile) as e:
         lognprint(f"{fpath}: Skipped {e}", args.quiet, logging.INFO)
-        return (fpath, None)
+        return (fpath, [])
     try:
         fh = zipf.open("source/source.zip")
     except (KeyError, OSError) as e:
         zipf.close()
         lognprint(f"{fpath}: Skipped (no source) {e}", args.quiet, logging.INFO)
-        return (fpath, None)
+        return (fpath, [])
     try:
         szip = zipfile.ZipFile(fh)
     except zipfile.BadZipFile as e:
         lognprint(f"{fpath}: Skipped. Bad Zip file source/source.zip {e}", args.quiet, logging.INFO)
-        return (fpath, None)
+        return (fpath, [])
     results = []
     anyfailed = False
     if args.do in ("all", "usfm"):
@@ -54,10 +53,11 @@ def proconezip(fpath, sfmp, log, relax, args):
             if args.verbose:
                 lognprint(f"{fpath}/{f}", args.quiet)
             sfmfh = szip.open(f)
+            sfmdat = sfmfh.read().decode("utf-8", errors="ignore")
             result = None
             failed = False
             try:
-                result = parseusfm(sfmfh, sfmp, timeout=args.timeout or 3600)
+                result = USX.fromUsfm(sfmdat, sfmp, timeout=args.timeout or 3600)
             except NoParseError as e:
                 imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
                 results.append(imsg)
@@ -72,11 +72,8 @@ def proconezip(fpath, sfmp, log, relax, args):
                 results.append("Encoding error")
                 failed = True
             if result is not None:
-                xml = result.asEt()
-                addesids(xml)
-                cell_aligns(xml)
-                cleanup(xml)
-                etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
+                result.addesids()
+                etreexml = etree.fromstring(et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True))
                 if not relax.validate(etreexml):
                     #xmsg = str(relax.error_log.last_error)
                     if failed:
@@ -174,26 +171,8 @@ if args.skipfile and os.path.exists(args.skipfile):
                 if m.group(2) in ("Passed", "Skipped"):
                     skips[m.group(1)] = m.group(3) or m.group(2)
 
-rdoc = et.parse(args.grammar)
-if len(args.marker):
-    for s in args.marker:
-        t, r = s.split('=')
-        mks = re.split(r'[,;\s]\s*', r)
-        ty = t.strip()
-        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
-        if e is None:
-            continue
-        for m in mks:
-            v = et.Element('value')
-            v.text = m.strip()
-            e.insert(0, v)
-            if ty == 'para':
-                partypes[m] = 'Section'
-
-backendsfm = UsfmParserBackend()
-sfmproc = UsfmGrammarParser(rdoc, backendsfm)
-sfmproc.parseRef(args.start)
-newdoctxt = et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True)
+rdoc = _grammarDoc(args.grammar, args.marker)
+sfmproc = _usfmGrammar(rdoc, start=args.start)
 
 jobs = []
 skipcount = 0
@@ -228,9 +207,10 @@ if args.jobs != 1 and len(jobs) > 1:
         if arg is None:
             return
         proc = current_process()
-        res = proconezip(arg, sfmproc.curr, log, proc.usxrng, args)
+        res = proconezip(arg, sfmproc, log, proc.usxrng, args)
         return (str(res[0]), [str(x) for x in res[1]])
     #pool = get_context('spawn').Pool()
+    newdoctxt = et.tostring(rdoc.getroot())
     pool = Pool(initializer=initproc, initargs=(newdoctxt,))
     if args.chunks:
         chunksize = args.chunks
@@ -242,11 +222,10 @@ if args.jobs != 1 and len(jobs) > 1:
     mapresults = pool.map_async(doprocone, dojobs, chunksize=chunksize)
     results = mapresults.get()
 else:
-    newdoc = etree.fromstring(newdoctxt)
-    usxrng = etree.RelaxNG(etree=newdoc)
+    usxrng = etree.RelaxNG(etree=rdoc)
     results = []
     for j in jobs:
-        results.append(proconezip(j[0], sfmproc.curr, log, usxrng, args))
+        results.append(proconezip(j[0], sfmproc, log, usxrng, args))
 
 failed = 0
 passed = 0

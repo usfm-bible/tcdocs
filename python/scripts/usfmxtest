@@ -49,6 +49,7 @@ def proconedir(d, sfmp, relax, rdoc, args):
             return (not expected, d, "USFM output failed", "" if passresult == expected else "Unexpected result")
     try:
         result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp)
+        result.addesids()
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
@@ -148,8 +149,7 @@ if len(jobs) == 1:
     args.exclude = set()
 
 rdoc = et.parse(args.grammar)
-sfmproc = usfmGrammar(rdoc, args.marker)
-sfmproc.parseRef(args.start)
+sfmproc = usfmGrammar(rdoc, args.marker, start=args.start)
 newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
 usxrng = etree.RelaxNG(etree=newdoc)
 
@@ -159,7 +159,7 @@ if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
     def doprocone(arg):
         if arg is None:
             return
-        return proconedir(arg, sfmproc.curr, usxrng, rdoc, args)
+        return proconedir(arg, sfmproc, usxrng, rdoc, args)
     pool = Pool()
     nchunks = args.jobs * 4
     chunksize = len(jobs) // nchunks
@@ -169,7 +169,7 @@ if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
 else:
     results = []
     for j in jobs:
-        results.append(proconedir(j[0], sfmproc.curr, usxrng, rdoc, args))
+        results.append(proconedir(j[0], sfmproc, usxrng, rdoc, args))
 
 ifailed = 0
 xfailed = 0

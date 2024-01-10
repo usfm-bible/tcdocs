@@ -23,8 +23,7 @@ def _readsrc(src):
     else:
         raise FileNotFoundError(src)
 
-def usfmGrammar(gsrc, markers=[], backend=None):
-    """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
+def _grammarDoc(gsrc, markers=[]):
     if isinstance(gsrc, et.ElementTree):
         rdoc = gsrc
     else:
@@ -32,10 +31,21 @@ def usfmGrammar(gsrc, markers=[], backend=None):
         rdoc = et.ElementTree(et.fromstring(data))
     if len(markers):
         addmarkers(rdoc, markers)
+    return rdoc
+
+def _usfmGrammar(rdoc, backend=None, start=None):
     if backend is None:
         backend = UsfmParserBackend()
     sfmproc = UsfmGrammarParser(rdoc, backend)
-    return sfmproc
+    if start is None:
+        start = "Scripture"
+    parser = sfmproc.parseRef(start)
+    return parser
+
+def usfmGrammar(gsrc, markers=[], backend=None, start=None):
+    """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
+    rdoc = _grammarDoc(gsrc, markers)
+    return _usfmGrammar(rdoc, backend, start)
 
 
 class USX:
@@ -55,19 +65,18 @@ class USX:
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, elfactory=None):
+    def fromUsfm(cls, src, grammar, elfactory=None, timeout=1e7):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error. """
         data = _readsrc(src)
 
         # This can raise usfmtc.parser.NoParseError
-        result = parseusfm(data, grammar)
+        result = parseusfm(data, grammar, timeout=timeout, isdata=True)
 
         xml = result.asEt(elfactory=elfactory)
         cleanup(xml)            # convert // and ~ etc.
         cell_aligns(xml)        # create cell @aligns
         res = cls(xml)
-        res.addesids()
         return res
 
     @classmethod
@@ -75,6 +84,7 @@ class USX:
         data = _readsrc(src)
         djson = json.loads(data)
         xml = usjtousx(djson, elfactory=elfactory)
+        return cls(xml)
 
     def __init__(self, xml):
         self.xml = xml      # an Element, not an ElementTree

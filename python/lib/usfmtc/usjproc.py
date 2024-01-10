@@ -57,4 +57,27 @@ def usxtousj(input_usx_elmt):
 def usjtousx(adict, elfactory=None):
     if elfactory is None:
         elfactory = ParentElement       # Needed for adding esid_s. Or use lxml
-    return None
+    root = elfactory('usx')
+    root.set('version', '3.0')
+    for item in adict['content']:
+        convert_usj(item, root, elfactory)
+    return root
+
+def convert_usj(json_node, usx_head, elfactory):
+    ntype = json_node['type'].replace('table:', '')
+    new_node = elfactory(ntype, parent=usx_head)
+    parent.append(new_node)
+    if 'marker' in json_node:
+        new_node.set('style', json_node['marker'])
+    for k, v in json_node.items():
+        if k not in ('type', 'marker', 'content'):
+            new_node.set(k, v)
+    if 'content' in json_node:
+        for item in json_node['content']:
+            if isinstance(item, str):
+                if len(new_node) == 0:
+                    new_node.text = item
+                else:
+                    new_node[-1].tail = item
+            else:
+                convert_usj(item, new_node, elfactory)
