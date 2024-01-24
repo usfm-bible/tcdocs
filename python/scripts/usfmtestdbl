@@ -1,7 +1,7 @@
 #!/usr/bin/env -S python3 -u
 
 import argparse, zipfile, os, sys, itertools, re
-from multiprocessing import Pool, get_context, current_process
+from multiprocessing import Pool, get_context, current_process, set_start_method
 from math import sqrt
 import logging
 import logging.config
@@ -196,22 +196,27 @@ if not args.quiet:
     print(f"Skipping {skipcount} jobs")
 
 if args.jobs != 1 and len(jobs) > 1:
+    set_start_method('fork')
     if args.jobs == 0:
         args.jobs = os.cpu_count()
 
-    def initproc(newdoctxt):
+    def initproc(newdoctxt, args, log):
         proc = current_process()
         newdoc = etree.fromstring(newdoctxt)
-        proc.usxrng = etree.RelaxNG(etree=newdoc)
+        rng =  etree.RelaxNG(etree=newdoc)
+        proc.usxrng = rng
+        proc.sfmproc = _usfmGrammar(rdoc, start=args.start)
+        proc.log = log
+        proc.args = args
     def doprocone(arg):
         if arg is None:
             return
         proc = current_process()
-        res = proconezip(arg, sfmproc, log, proc.usxrng, args)
+        res = proconezip(arg, proc.sfmproc, proc.log, proc.usxrng, proc.args)
         return (str(res[0]), [str(x) for x in res[1]])
     #pool = get_context('spawn').Pool()
     newdoctxt = et.tostring(rdoc.getroot())
-    pool = Pool(initializer=initproc, initargs=(newdoctxt,))
+    pool = Pool(args.jobs or None, initializer=initproc, initargs=(newdoctxt, args, log))
     if args.chunks:
         chunksize = args.chunks
         nchunks = len(jobs) // chunksize

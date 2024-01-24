@@ -1,0 +1,18 @@
+# 3-1
+
+Differences in the grammar from 3-0-5
+
+- BookTitles are optional
+- BOM is allowed
+- BookIdentification may be any 3 letter code (within reason)
+- Other peripherals may be of any type
+- Bookheaders support \sts
+- Separate out Section, Verse and Other paragraphs as different categories (internal)
+- @vid has extended reference syntax
+- Note content must be in a submarker, no content just in the note
+- Char markers must be closed explicitly
+- + is an optional embedded char maker prefix due to required closure of character markers
+- \\ escaping is required and supported for a number of key characters: \\, ', ", |, ~, //
+- Whitespace rules clarified and formalised
+
+

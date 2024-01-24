@@ -589,6 +589,7 @@
             <ref name="IntroChar"/>
             <ref name="Footnote"/>
             <ref name="CrossReference"/>
+            <ref name="Figure"/>
             <ref name="Milestone"/>
             <ref name="Reference" usfm:ignore="true"/>
           </choice>
@@ -652,6 +653,7 @@
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Break"/>
         </choice>
@@ -675,6 +677,7 @@
       <ref name="Para"/>
       <ref name="Section"/>
       <ref name="Chapter"/>
+      <ref name="Figure"/>
       <ref name="Milestone"/>
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
@@ -688,6 +691,7 @@
       <ref name="Para"/>
       <ref name="Section"/>
       <ref name="Chapter"/>
+      <ref name="Figure"/>
       <ref name="Milestone"/>
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
@@ -721,6 +725,7 @@
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
           <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="VerseEnd" usfm:ignore="true"/>
           <ref name="Reference" usfm:ignore="true"/>
@@ -789,39 +794,7 @@
             <usfm:text/>
           </text>
           <ref name="Char"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Reference" usfm:ignore="true"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Break"/>
-        </choice>
-      </zeroOrMore>
-    </element>
-  </define>
-  <define name="VersePara">
-    <element>
-      <name ns="">para</name>
-      <attribute usfm:grouping="15">
-        <usfm:ptag usfm:stacked="true"/>
-        <name ns="">style</name>
-        <ref name="Para.para.style.enum"/>
-      </attribute>
-      <optional>
-        <attribute>
-          <name ns="">vid</name>
-          <data type="string">
-            <usfm:pattern name="VERSE"/>
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-          </data>
-        </attribute>
-      </optional>
-      <zeroOrMore>
-        <choice>
-          <text>
-            <usfm:text/>
-          </text>
-          <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Verse"/>
           <ref name="Reference" usfm:ignore="true"/>
@@ -909,6 +882,7 @@
           </text>
           <ref name="ListChar"/>
           <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Verse"/>
           <ref name="Reference" usfm:ignore="true"/>
@@ -990,6 +964,7 @@
             <usfm:text/>
           </text>
           <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Verse"/>
           <ref name="Footnote"/>
@@ -1023,6 +998,7 @@
             <usfm:text/>
           </text>
           <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Reference" usfm:ignore="true"/>
           <ref name="Footnote"/>
@@ -1050,6 +1026,7 @@
             <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
           <ref name="NoteCharEmbed"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Reference" usfm:ignore="true"/>
           <ref name="Break"/>
@@ -1077,27 +1054,24 @@
     </group>
   </define>
   <define name="Char">
-    <choice>
-      <element usfm:stacked="true">
-        <name ns="">char</name>
-        <attribute usfm:grouping="12">
-          <usfm:tag matchid="a" usfm:seq="true"/>
-          <name ns="">style</name>
-          <ref name="FullChar.char.style.enum"/>
-        </attribute>
-        <choice>
-          <group>
-            <ref name="CharContent"/>
-            <optional>
-              <ref name="Attributes"/>
-            </optional>
-          </group>
-          <ref name="Attributes"/>
-        </choice>
-        <usfm:endtag usfm:seq="true"/>
-      </element>
-      <ref name="Figure"/>
-    </choice>
+    <element usfm:stacked="true">
+      <name ns="">char</name>
+      <attribute usfm:grouping="12">
+        <usfm:tag matchid="a" usfm:seq="true"/>
+        <name ns="">style</name>
+        <ref name="FullChar.char.style.enum"/>
+      </attribute>
+      <choice>
+        <group>
+          <ref name="CharContent"/>
+          <optional>
+            <ref name="Attributes"/>
+          </optional>
+        </group>
+        <ref name="Attributes"/>
+      </choice>
+      <usfm:endtag usfm:seq="true"/>
+    </element>
   </define>
   <define name="CharContent">
     <group>
@@ -1110,6 +1084,7 @@
             <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
           <ref name="CharEmbed"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
@@ -1169,48 +1144,45 @@
     </choice>
   </define>
   <define name="CharEmbed">
-    <choice>
-      <element>
-        <name ns="">char</name>
-        <choice>
-          <group>
-            <attribute usfm:stacked="true" usfm:grouping="9">
-              <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
-              <name ns="">style</name>
-              <ref name="FullChar.char.style.enum"/>
-            </attribute>
-            <choice>
-              <group>
-                <ref name="CharContent"/>
-                <optional>
-                  <ref name="Attributes"/>
-                </optional>
-              </group>
-              <ref name="Attributes"/>
-            </choice>
-            <usfm:endtag usfm:order="2" before="&#x27;\\+&#x27;"/>
-          </group>
-          <group>
-            <attribute usfm:stacked="true" usfm:grouping="9">
-              <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
-              <name ns="">style</name>
-              <ref name="FullChar.char.style.enum"/>
-            </attribute>
-            <choice>
-              <group>
-                <ref name="CharContent"/>
-                <optional>
-                  <ref name="Attributes"/>
-                </optional>
-              </group>
-              <ref name="Attributes"/>
-            </choice>
-            <usfm:endtag matchref="b" usfm:order="3" before="&#x27;\\&#x27;"/>
-          </group>
-        </choice>
-      </element>
-      <ref name="Figure"/>
-    </choice>
+    <element>
+      <name ns="">char</name>
+      <choice>
+        <group>
+          <attribute usfm:stacked="true" usfm:grouping="9">
+            <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
+            <name ns="">style</name>
+            <ref name="FullChar.char.style.enum"/>
+          </attribute>
+          <choice>
+            <group>
+              <ref name="CharContent"/>
+              <optional>
+                <ref name="Attributes"/>
+              </optional>
+            </group>
+            <ref name="Attributes"/>
+          </choice>
+          <usfm:endtag usfm:order="2" before="&#x27;\\+&#x27;"/>
+        </group>
+        <group>
+          <attribute usfm:stacked="true" usfm:grouping="9">
+            <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
+            <name ns="">style</name>
+            <ref name="FullChar.char.style.enum"/>
+          </attribute>
+          <choice>
+            <group>
+              <ref name="CharContent"/>
+              <optional>
+                <ref name="Attributes"/>
+              </optional>
+            </group>
+            <ref name="Attributes"/>
+          </choice>
+          <usfm:endtag matchref="b" usfm:order="3" before="&#x27;\\&#x27;"/>
+        </group>
+      </choice>
+    </element>
   </define>
   <define name="NoteCharEmbed">
     <choice>
@@ -1259,6 +1231,7 @@
             <usfm:text/>
           </text>
           <ref name="Char"/>
+          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
