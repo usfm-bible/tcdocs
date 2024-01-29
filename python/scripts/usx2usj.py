@@ -86,7 +86,7 @@ def main():
         raise Exception("Input file path or the USX file seems not valid!") from exe
 
     output_json = usx_to_json(input_usx.getroot())
-    json_str = json.dumps(output_json, indent=2)
+    json_str = json.dumps(output_json, ensure_ascii=False, indent=2)
     if outpath == 'STDOUT':
         print(json_str)
     else:
