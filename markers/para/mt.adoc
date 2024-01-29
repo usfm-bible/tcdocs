@@ -30,8 +30,9 @@ Added:: 1.0
 USFM::
 +
 .Introduction to Acts (GNT)
-[source#src-usfm-para-mt_1,usfm,highlight=4..5]
+[source#src-usfm-para-mt_1,usfm,highlight=5..6]
 ----
+\id ACT
 \h Acts
 \toc1 The Acts of the Apostles
 \toc2 Acts
@@ -44,17 +45,79 @@ according to Luke\bk*.
 USX::
 +
 .Introduction to Acts (GNT)
-[source#src-usx-para-mt_1,xml,highlight=4..5]
+[source#src-usx-para-mt_1,xml,highlight=5..6]
 ----
-<para style="h">Acts</para>
-<para style="toc1">The Acts of the Apostles</para>
-<para style="toc2">Acts</para>
-<para style="mt1">THE ACTS</para>
-<para style="mt2">of the Apostles</para>
-<para style="is">Introduction</para>
-<para style="ip">
-  <char style="bk">The Acts of the Apostles</char> is a continuation of 
-  <char style="bk">The Gospel according to Luke</char>.</para>
+<usx version="3.0">
+  <para style="h">Acts</para>
+  <para style="toc1">The Acts of the Apostles</para>
+  <para style="toc2">Acts</para>
+  <para style="mt1">THE ACTS</para>
+  <para style="mt2">of the Apostles</para>
+  <para style="is">Introduction</para>
+  <para style="ip">
+    <char style="bk">The Acts of the Apostles</char> is a continuation of 
+    <char style="bk">The Gospel according to Luke</char>.</para>
+</usx>
+----
+USJ::
++
+.Introduction to Acts (GNT)
+[source#src-usj-para-mt_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "para",
+      "marker": "h",
+      "content": ["Acts"]
+    },
+    {
+      "type": "para",
+      "marker": "toc1",
+      "content": ["The Acts of the Apostles"]
+    },
+    {
+      "type": "para",
+      "marker": "toc2",
+      "content": ["Acts"]
+    },
+    {
+      "type": "para",
+      "marker": "mt1",
+      "content": ["THE ACTS"]
+    },
+    {
+      "type": "para",
+      "marker": "mt2",
+      "content": ["of the Apostles"]
+    },
+    {
+      "type": "para",
+      "marker": "is",
+      "content": ["Introduction"]
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        {
+          "type": "char",
+          "marker": "bk",
+          "content": ["The Acts of the Apostles"]
+        },
+        "is a continuation of",
+        {
+          "type": "char",
+          "marker": "bk",
+          "content": ["The Gospel according to Luke"]
+        },
+        "."
+      ]
+    }
+  ]
+}
 ----
 ======
 

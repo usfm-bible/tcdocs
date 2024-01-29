@@ -31,6 +31,7 @@ USFM::
 .Job 3.1 (GNT)
 [source#src-usfm-para-sp_1,usfm,highlight=6]
 ----
+\id JOB
 \c 3
 \s1 Job's Complaint to God
 \p
@@ -43,19 +44,86 @@ USFM::
 USX::
 +
 .Job 3.1 (GNT)
-[source#src-usx-para-sp_1,xml,highlight=6]
+[source#src-usx-para-sp_1,xml,highlight=7]
 ----
-<chapter number="3" style="c" sid="JOB 3"/>
-<para style="s1">Job's Complaint to God</para>
-<para style="p">
-  <verse number="1" style="v" sid="JOB 3:1"/>Finally Job broke the silence and
-  cursed the day on which he had been born.<verse eid="JOB 3:1"/></para>
-<para style="sp">Job</para>
-<para style="q1">
-  <verse number="2-3" style="v" sid="JOB 3:2-3"/>O God, put a curse on the day I
-  was born;</para>
-<para style="q2" vid="JOB 3:2-3">put a curse on the night when I was conceived!
-  <verse eid="JOB 3:2-3"/></para>
+<usx version="3.1">
+  <chapter number="3" style="c" sid="JOB 3"/>
+  <para style="s1">Job's Complaint to God</para>
+  <para style="p">
+    <verse number="1" style="v" sid="JOB 3:1"/>Finally Job broke the silence and
+    cursed the day on which he had been born.<verse eid="JOB 3:1"/></para>
+  <para style="sp">Job</para>
+  <para style="q1">
+    <verse number="2-3" style="v" sid="JOB 3:2-3"/>O God, put a curse on the day I
+    was born;</para>
+  <para style="q2" vid="JOB 3:2-3">put a curse on the night when I was conceived!
+    <verse eid="JOB 3:2-3"/></para>
+</usx>
+----
+USJ::
++
+.Job 3.1 (GNT)
+[source#src-usj-para-sp_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "JOB 3"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": [
+        "Job's Complaint to God"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "JOB 3:1"
+        },
+        "Finally Job broke the silence and cursed the day on which he had been born."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "sp",
+      "content": [
+        "Job"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2-3",
+          "sid": "JOB 3:2-3"
+        },
+        "O God, put a curse on the day I was born;"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        "put a curse on the night when I was conceived!"
+      ]
+    }
+  ]
+}
 ----
 ======
 

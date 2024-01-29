@@ -31,8 +31,9 @@ Added:: 1.0
 USFM::
 +
 .Matthew 3.1 (GNT)
-[source#src-usfm-para-r_1,usfm,highlight=3]
+[source#src-usfm-para-r_1,usfm,highlight=4]
 ----
+\id MAT
 \c 3
 \s1 The Preaching of John the Baptist
 \r (Mark 1.1-8; Luke 3.1-18; John 1.19-28)
@@ -44,16 +45,70 @@ started preaching.
 USX::
 +
 .Matthew 3.1 (GNT)
-[source#src-usx-para-r_1,xml,highlight=3]
+[source#src-usx-para-r_1,xml,highlight=4]
 ----
-<chapter number="3" style="c" sid="MAT 3"/>
-<para style="s1">The Preaching of John the Baptist</para>
-<para style="r">(Mark 1.1-8; Luke 3.1-18; John 1.19-28)</para>
-<para style="p">
-  <verse number="1" style="v" sid="MAT 3:1"/>At that time John the Baptist came 
-  to the desert of Judea and started preaching. <verse eid="MAT 3:1"/>
-  <verse number="2" style="v" sid="MAT 3:2"/>“Turn away from your sins,” he 
-  said, ...<verse eid="MAT 3:2"/></para>
+<usx version="3.1">
+  <chapter number="3" style="c" sid="MAT 3"/>
+  <para style="s1">The Preaching of John the Baptist</para>
+  <para style="r">(Mark 1.1-8; Luke 3.1-18; John 1.19-28)</para>
+  <para style="p">
+    <verse number="1" style="v" sid="MAT 3:1"/>At that time John the Baptist came 
+    to the desert of Judea and started preaching. <verse eid="MAT 3:1"/>
+    <verse number="2" style="v" sid="MAT 3:2"/>“Turn away from your sins,” he 
+    said, ...<verse eid="MAT 3:2"/></para>
+</usx>
+----
+USJ::
++
+.Matthew 3.1 (GNT)
+[source#src-usj-para-r_1,json,highlight=5]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "MAT 3"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": [
+        "The Preaching of John the Baptist"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": [
+        "(Mark 1.1-8; Luke 3.1-18; John 1.19-28)"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "MAT 3:1"
+        },
+        "At that time John the Baptist came to the desert of Judea and started preaching.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "MAT 3:2"
+        },
+        "“Turn away from your sins,” he said, ..."
+      ]
+    }
+  ]
+}
 ----
 ======
 
