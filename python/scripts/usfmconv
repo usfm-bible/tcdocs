@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+
+import argparse, os, sys
+
+try:
+    from usfmtc import USX, usfmGrammar
+except ImportError:
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
+    from usfmtc import USX, usfmGrammar
+
+parser = argparse.ArgumentParser()
+parser.add_argument("infile",help="Input file")
+parser.add_argument("outfile",nargs="?",help="Output file, with inferred format")
+parser.add_argument("-F","--format",help="Output format [usfm, usx, usj]")
+parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
+parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
+parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
+args = parser.parse_args()
+
+filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm", ".json": "usj"}
+fileexts = {"usx": ".xml", "usfm": ".usfm", "usj": ".json"}
+
+inroot, ext = os.path.splitext(args.infile)
+intype = args.informat or filetypes.get(ext.lower(), args.informat)
+if intype is None or intype not in filetypes.values():
+    print(f"Unknown input filetype: {ext}. Please use --informat")
+
+if args.outfile:
+    outroot, outext = os.path.splitext(args.outfile)
+    outtype = args.format or filetypes.get(outext.lower(), args.format)
+else:
+    outtype = args.format
+    outext = fileexts.get(outtype, "")
+    args.outfile = inroot + outext
+if outtype is None or outtype not in filetypes.values():
+    print(f"Unknown output filetype: {outext}. Please use --format")
+
+if not args.grammar:
+    args.grammar = os.path.join(os.path.dirname(__file__), "..", "..", "grammar", "usx.rng")
+
+grammar = None
+if intype == "usx":
+    usxdoc = USX.fromUsx(args.infile)
+elif intype == "usj":
+    usxdoc = USX.fromUsj(args.infile)
+elif intype == "usfm":
+    grammar = usfmGrammar(args.grammar)
+    usxdoc = USX.fromUsfm(args.infile, grammar)
+
+if outtype == "usx":
+    if args.esids:
+        usxdoc.addesids()
+    usxdoc.outUsx(args.outfile)
+elif outtype == "usj":
+    usxdoc.outUsj(args.outfile)
+elif outtype == "usfm":
+    if grammar is None:
+        grammar = usfmGrammar(args.grammar)
+    usxdoc.outUsfm(gramma, args.outfile)
