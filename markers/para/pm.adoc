@@ -53,7 +53,7 @@ USX::
 .Act 15.24-27,28-29 (CEV)
 [source#src-usx-para-pm_1,xml,highlight=6;17]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="15" style="c" sid="ACT 15"/>
   <para style="p">...</para>
   <para style="pmo">We apostles and leaders send friendly greetings to all of you

@@ -46,7 +46,7 @@ USX::
 .Deuteronomy 27.15,16,17 (GNT)
 [source#src-usx-para-pr_1,xml,highlight=7;12;17]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="27" style="c" sid="DEU 27"/>
   <para style="p">
     <verse number="15" style="v" sid="DEU 27:15"/>“ ‘God's curse on anyone who makes

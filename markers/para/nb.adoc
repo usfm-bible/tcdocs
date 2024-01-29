@@ -51,7 +51,7 @@ USX::
 .John 7.53–8.2 (CEV)
 [source#src-usx-para-nb_1,xml,highlight=14]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="12" style="c" sid="JHN 7"/>
   <para style="p">...</para>
   <para style="p">

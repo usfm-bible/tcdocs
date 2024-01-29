@@ -58,7 +58,7 @@ USX::
 .Proverbs 22.17 (GNT)
 [source#src-usx-para-s1_1,xml,highlight=4;17]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="22" style="c" sid="PRO 22"/>
   <para style="p">...</para>
   <para style="s1">The Thirty Wise Sayings</para>

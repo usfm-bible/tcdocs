@@ -53,7 +53,7 @@ USX::
 .Mark 1.1-4 (GNT)
 [source#src-usx-para-p_1,xml,highlight=5;20]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="1" style="c" sid="MRK 1" />
   <para style="s1">The Preaching of John the Baptist</para>
   <para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>

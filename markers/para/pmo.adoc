@@ -50,7 +50,7 @@ USX::
 .Acts 15.24 (CEV)
 [source#src-usx-para-pmo_1,xml,highlight=11]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="15" style="c" sid="MRK 15"/>
   <para style="p">...</para>
   <para style="p">

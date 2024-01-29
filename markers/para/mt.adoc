@@ -47,7 +47,7 @@ USX::
 .Introduction to Acts (GNT)
 [source#src-usx-para-mt_1,xml,highlight=5..6]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <para style="h">Acts</para>
   <para style="toc1">The Acts of the Apostles</para>
   <para style="toc2">Acts</para>

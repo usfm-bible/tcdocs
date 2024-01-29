@@ -48,7 +48,7 @@ USX::
 .Psalm 1 (GNT - markup adapted - general chapter label)
 [source#src-usx-para-cl_1,xml,highlight=2]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <para style="cl">Psalm</para>
   <chapter number="1" style="c" sid="PSA 1"/>
   <para style="q1">

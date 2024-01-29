@@ -50,7 +50,7 @@ USX::
 .Revelation 17.5 (CEV)
 [source#src-usx-para-pc_1,xml,highlight=10]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="17" style="c" sid="REV 17" />
   <para style="p" vid="REV 17:3">
     ...

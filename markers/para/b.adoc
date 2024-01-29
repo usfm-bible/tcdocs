@@ -61,7 +61,7 @@ USX::
 .Psalm 3 (GNT)
 [source#src-usx-para-b_1,xml,highlight=13;25]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="3" style="c" sid="PSA 3"/>
   <para style="s1">Morning Prayer for Help</para>
   <para style="q1">
@@ -293,7 +293,7 @@ USX::
 .Habakkuk 3.1 (GNT)
 [source#src-usx-para-b_2,xml,highlight=7]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="s1">A Prayer of Habakkuk</para>
   <para style="p">

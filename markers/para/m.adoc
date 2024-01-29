@@ -50,7 +50,7 @@ USX::
 .Mark 12.37 (GNT)
 [source#src-usx-para-m_1,xml,highlight=15]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="12" style="c" sid="MRK 12" />
   <para style="p">...</para>
   <para style="p">

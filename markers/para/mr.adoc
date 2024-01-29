@@ -46,7 +46,7 @@ USX::
 .Psalm 1 (Book 1 division) (GNT)
 [source#src-usx-para-mr_1,xml,highlight=4]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="1" style="c" sid="PSA 1"/>
   <para style="ms1">Book One</para>
   <para style="mr">(Psalms 1–41)</para>

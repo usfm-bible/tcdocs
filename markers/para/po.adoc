@@ -52,7 +52,7 @@ USX::
 .Romans 1.1,7 (GNT)
 [source#src-usx-para-po_1,xml,highlight=3;15;18]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <chapter number="1" style="c" sid="ROM 1" />
   <para style="po">
     <verse number="1" style="v" sid="ROM 1:1" />From Paul, a servant of Christ 
