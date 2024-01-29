@@ -29,7 +29,7 @@ Added:: 1.0
 USFM::
 +
 .John 7.53–8.2 (CEV)
-[source#src-usfm-para-nb_1,usfm,highlight=8]
+[source#src-usfm-para-nb_1,usfm,highlight=11]
 ----
 \id JHN
 \c 7
@@ -49,7 +49,7 @@ to him, and he sat down and started teaching them.
 USX::
 +
 .John 7.53–8.2 (CEV)
-[source#src-usx-para-nb_1,xml,highlight=11]
+[source#src-usx-para-nb_1,xml,highlight=14]
 ----
 <usx version="3.0">
   <chapter number="12" style="c" sid="JHN 7"/>

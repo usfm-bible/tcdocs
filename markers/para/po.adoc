@@ -29,7 +29,7 @@ Added:: 3.0
 USFM::
 +
 .Romans 1.1,7 (GNT)
-[source#src-usfm-para-po_1,usfm,highlight=2;10;12]
+[source#src-usfm-para-po_1,usfm,highlight=3;12;15]
 ----
 \id ROM
 \c 1
@@ -50,7 +50,7 @@ his own people:
 USX::
 +
 .Romans 1.1,7 (GNT)
-[source#src-usx-para-po_1,xml,highlight=2;13;16]
+[source#src-usx-para-po_1,xml,highlight=3;15;18]
 ----
 <usx version="3.0">
   <chapter number="1" style="c" sid="ROM 1" />

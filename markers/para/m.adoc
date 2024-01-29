@@ -28,7 +28,7 @@ Added:: 1.0
 USFM::
 +
 .Mark 12.37 (GNT)
-[source#src-usfm-para-m_1,usfm,highlight=8]
+[source#src-usfm-para-m_1,usfm,highlight=12]
 ----
 \id MRK
 \c 12
@@ -48,7 +48,7 @@ descendant?”
 USX::
 +
 .Mark 12.37 (GNT)
-[source#src-usx-para-m_1,xml,highlight=8]
+[source#src-usx-para-m_1,xml,highlight=15]
 ----
 <usx version="3.0">
   <chapter number="12" style="c" sid="MRK 12" />

@@ -29,7 +29,7 @@ Added:: 1.0
 USFM::
 +
 .Psalm 3 (GNT)
-[source#src-usfm-para-b_1,usfm,highlight=9;17]
+[source#src-usfm-para-b_1,usfm,highlight=10;18]
 ----
 \id PSA
 \c 3
@@ -59,7 +59,7 @@ USFM::
 USX::
 +
 .Psalm 3 (GNT)
-[source#src-usx-para-b_1,xml,highlight=12;24]
+[source#src-usx-para-b_1,xml,highlight=13;25]
 ----
 <usx version="3.0">
   <chapter number="3" style="c" sid="PSA 3"/>
@@ -276,7 +276,7 @@ image::para/b_1.jpg[Psalm 3 (GNT),300]
 USFM::
 +
 .Habakkuk 3.1 (GNT)
-[source#src-usfm-para-b_2,usfm,highlight=5]
+[source#src-usfm-para-b_2,usfm,highlight=6]
 ----
 \id HAB
 \c 3
@@ -291,7 +291,7 @@ USFM::
 USX::
 +
 .Habakkuk 3.1 (GNT)
-[source#src-usx-para-b_2,xml,highlight=6]
+[source#src-usx-para-b_2,xml,highlight=7]
 ----
 <usx version="3.0">
   <chapter number="3" style="c" sid="HAB 3"/>

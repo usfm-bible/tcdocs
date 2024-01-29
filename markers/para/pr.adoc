@@ -26,7 +26,7 @@ Added:: 1.0
 USFM::
 +
 .Deuteronomy 27.15,16,17 (GNT)
-[source#src-usfm-para-pr_1,usfm,highlight=3;6;9]
+[source#src-usfm-para-pr_1,usfm,highlight=6;9;12]
 ----
 \id DEU
 \c 27
@@ -44,7 +44,7 @@ secretly worships it; the \nd Lord\nd* hates idolatry.’
 USX::
 +
 .Deuteronomy 27.15,16,17 (GNT)
-[source#src-usx-para-pr_1,xml,highlight=5;10;15]
+[source#src-usx-para-pr_1,xml,highlight=7;12;17]
 ----
 <usx version="3.0">
   <chapter number="27" style="c" sid="DEU 27"/>

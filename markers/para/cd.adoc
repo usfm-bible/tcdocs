@@ -29,8 +29,9 @@ Added:: 1.0
 USFM::
 +
 .Genesis 2 (Russian Synodal Protestant Version)
-[source#src-usfm-para-cd_1,usfm,highlight=2..3]
+[source#src-usfm-para-cd_1,usfm,highlight=3..4]
 ----
+\id GEN
 \c 2
 \cd 1 Бог благословляет седьмой день; 8 человек в раю Едемском; четыре реки; дерево
 познания добра и зла. 18 Человек дает названия животным. 21 Создание женщины.
@@ -43,19 +44,72 @@ USFM::
 USX::
 +
 .Genesis 2 (Russian Synodal Protestant Version)
-[source#src-usx-para-cd_1,xml,highlight=2..4]
+[source#src-usx-para-cd_1,xml,highlight=3..5]
 ----
-<chapter number="2" style="c" sid="GEN 2"/>
-<para style="cd">1 Бог благословляет седьмой день; 8 человек в раю Едемском;
-  четыре реки; дерево познания добра и зла. 18 Человек дает названия животным. 
-  21 Создание женщины.</para>
-<para style="p">
-  <verse number="1" style="v" sid="GEN 2:1"/>Так совершены небо и земля и все
-  воинство их.<verse eid="GEN 2:1"/></para>
-<para style="p">
-  <verse number="2" style="v" sid="GEN 2:2"/>И совершил Бог к седьмому дню дела
-  Свои, которые Он делал, и почил в день седьмой от всех дел Своих, которые делал.
-  <verse eid="GEN 2:2"/></para>
+<usx version="3.0">
+  <chapter number="2" style="c" sid="GEN 2"/>
+  <para style="cd">1 Бог благословляет седьмой день; 8 человек в раю Едемском;
+    четыре реки; дерево познания добра и зла. 18 Человек дает названия животным. 
+    21 Создание женщины.</para>
+  <para style="p">
+    <verse number="1" style="v" sid="GEN 2:1"/>Так совершены небо и земля и все
+    воинство их.<verse eid="GEN 2:1"/></para>
+  <para style="p">
+    <verse number="2" style="v" sid="GEN 2:2"/>И совершил Бог к седьмому дню дела
+    Свои, которые Он делал, и почил в день седьмой от всех дел Своих, которые делал.
+    <verse eid="GEN 2:2"/></para>
+</usx>
+----
+USJ::
++
+.Genesis 2 (Russian Synodal Protestant Version)
+[source#src-usj-para-cd_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "2",
+      "sid": "GEN 2"
+    },
+    {
+      "type": "para",
+      "marker": "cd",
+      "content": [
+        "1 Бог благословляет седьмой день; 8 человек в раю Едемском; четыре реки; дерево познания добра и зла. 18 Человек дает названия животным. 21 Создание женщины."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "GEN 2:1"
+        },
+        "Так совершены небо и земля и все воинство их."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "GEN 2:2"
+        },
+        "И совершил Бог к седьмому дню дела Свои, которые Он делал, и почил в день седьмой от всех дел Своих, которые делал."
+      ]
+    }
+  ]
+}
 ----
 ======
 

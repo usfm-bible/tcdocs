@@ -29,7 +29,7 @@ Added:: 1.0
 USFM::
 +
 .Colossians 4.18 (GNT)
-[source#src-usfm-para-cls_1,usfm,highlight=4]
+[source#src-usfm-para-cls_1,usfm,highlight=6]
 ----
 \id
 \c 4
@@ -41,7 +41,7 @@ forget my chains!
 USX::
 +
 .Colossians 4.18 (GNT)
-[source#src-usx-para-cls_1,xml,highlight=4]
+[source#src-usx-para-cls_1,xml,highlight=6]
 ----
 <usx version="3.0">
   <chapter number="4" style="c" sid="COL 4"/>

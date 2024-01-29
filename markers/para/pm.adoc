@@ -29,7 +29,7 @@ Added:: 1.0
 USFM::
 +
 .Act 15.24-27,28-29 (CEV)
-[source#src-usfm-para-pm_1,usfm,highlight=3;11]
+[source#src-usfm-para-pm_1,usfm,highlight=6;14]
 ----
 \id ACT
 \c 15
@@ -51,7 +51,7 @@ on you...
 USX::
 +
 .Act 15.24-27,28-29 (CEV)
-[source#src-usx-para-pm_1,xml,highlight=3;14]
+[source#src-usx-para-pm_1,xml,highlight=6;17]
 ----
 <usx version="3.0">
   <chapter number="15" style="c" sid="ACT 15"/>

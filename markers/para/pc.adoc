@@ -30,7 +30,7 @@ Added:: 1.0
 USFM::
 +
 .Revelation 17.5 (CEV)
-[source#src-usfm-para-pc_1,usfm,highlight=3]
+[source#src-usfm-para-pc_1,usfm,highlight=8]
 ----
 \id REV
 \c 17
@@ -48,7 +48,7 @@ had given their lives for Jesus. This surprising sight amazed me, ...
 USX::
 +
 .Revelation 17.5 (CEV)
-[source#src-usx-para-pc_1,xml,highlight=7]
+[source#src-usx-para-pc_1,xml,highlight=10]
 ----
 <usx version="3.0">
   <chapter number="17" style="c" sid="REV 17" />

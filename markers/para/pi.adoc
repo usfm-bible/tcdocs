@@ -29,7 +29,7 @@ Added:: 1.0
 USFM::
 +
 .Matthew 13.37-39 (CEV)
-[source#src-usfm-para-pi_1,usfm,highlight=7]
+[source#src-usfm-para-pi_1,usfm,highlight=10]
 ----
 \id MAT
 \c 13
@@ -49,7 +49,7 @@ time, and angels are the ones who bring in the harvest.
 USX::
 +
 .Matthew 13.37-39 (CEV)
-[source#src-usx-para-pi_1,xml,highlight=8]
+[source#src-usx-para-pi_1,xml,highlight=11]
 ----
 <usx version="3.0">
   <chapter number="13" style="c" sid="MAT 13"/>

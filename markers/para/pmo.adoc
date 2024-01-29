@@ -29,7 +29,7 @@ Added:: 2.0
 USFM::
 +
 .Acts 15.24 (CEV)
-[source#src-usfm-para-pmo_1,usfm,highlight=6]
+[source#src-usfm-para-pmo_1,usfm,highlight=9]
 ----
 \id ACT
 \c 15
@@ -48,7 +48,7 @@ they said. But we did not send them!
 USX::
 +
 .Acts 15.24 (CEV)
-[source#src-usx-para-pmo_1,xml,highlight=8]
+[source#src-usx-para-pmo_1,xml,highlight=11]
 ----
 <usx version="3.0">
   <chapter number="15" style="c" sid="MRK 15"/>

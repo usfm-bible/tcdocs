@@ -29,7 +29,7 @@ Added:: 1.0
 USFM::
 +
 .Mark 1.1-4 (GNT)
-[source#src-usfm-para-p_1,usfm,highlight=4;13]
+[source#src-usfm-para-p_1,usfm,highlight=5;14]
 ----
 \id MRK
 \c 1
@@ -51,7 +51,7 @@ sins and be baptized,” he told the people, “and God will forgive your sins.�
 USX::
 +
 .Mark 1.1-4 (GNT)
-[source#src-usx-para-p_1,xml,highlight=4;19]
+[source#src-usx-para-p_1,xml,highlight=5;20]
 ----
 <usx version="3.0">
   <chapter number="1" style="c" sid="MRK 1" />
