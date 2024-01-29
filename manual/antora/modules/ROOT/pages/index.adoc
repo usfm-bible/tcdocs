@@ -1,4 +1,6 @@
-= USFM and USX 3.0 Documentation
+= USFM and USX Documentation
+
+Version:: 3.1 Candidate Standard
 
 == Contents
 
@@ -13,12 +15,3 @@
 * xref:sbar:esb.adoc[Sidebars]
 * xref:fig:fig.adoc[Figures]
 * xref:periph:index.adoc[Peripherals]
-
-== Status
-
-Version::
-
-[NOTE]
-====
-This documentation is *under development*. Until further notice, the current stable USFM and USX documentation sites remain available at https://ubsicap.github.io/usfm[] and https://ubsicap.github.io/usx[]
-====

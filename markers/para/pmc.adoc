@@ -31,6 +31,9 @@ USFM::
 .Act 15.28-29 (CEV)
 [source#src-usfm-para-pmc_1,usfm,highlight=8]
 ----
+\id ACT
+\c 15
+\p ...
 \pm
 \v 28 The Holy Spirit has shown us that we should not place any extra burden 
 on you.
@@ -45,15 +48,67 @@ USX::
 .Act 15.28-29 (CEV)
 [source#src-usx-para-pmc_1,xml,highlight=8]
 ----
-<para style="pm">
-  <verse number="28" style="v" sid="ACT 15:28"/>The Holy Spirit has shown us that
-  we should not place any extra burden on you. <verse eid="ACT 15:28"/>
-  <verse number="29" style="v" sid="ACT 15:29"/>But you should not eat anything 
-  offered to idols. You should not eat any meat that still has the blood in it 
-  or any meat of any animal that has been strangled. You must also not commit any 
-  terrible sexual sins. If you follow these instructions, you will do well.</para>
-<para style="pmc" vid="ACT 15:29">We send our best wishes.<verse eid="ACT 15:29"/>
-  </para>
+<usx version="3.0">
+  <chapter number="15" style="c" sid="ACT 15"/>
+  <para style="p">...</para>
+  <para style="pm">
+    <verse number="28" style="v" sid="ACT 15:28"/>The Holy Spirit has shown us that
+    we should not place any extra burden on you. <verse eid="ACT 15:28"/>
+    <verse number="29" style="v" sid="ACT 15:29"/>But you should not eat anything 
+    offered to idols. You should not eat any meat that still has the blood in it 
+    or any meat of any animal that has been strangled. You must also not commit any 
+    terrible sexual sins. If you follow these instructions, you will do well.</para>
+  <para style="pmc" vid="ACT 15:29">We send our best wishes.<verse eid="ACT 15:29"/>
+    </para>
+</usx>
+----
+USJ::
++
+.Act 15.28-29 (CEV)
+[source#src-usj-para-pmc_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "15",
+      "sid": "ACT 15"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "pm",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "28",
+          "sid": "ACT 15:28"
+        },
+        "The Holy Spirit has shown us that we should not place any extra burden on you.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "29",
+          "sid": "ACT 15:29"
+        },
+        "But you should not eat anything offered to idols. You should not eat any meat that still has the blood in it or any meat of any animal that has been strangled. You must also not commit any terrible sexual sins. If you follow these instructions, you will do well."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pmc",
+      "content": ["We send our best wishes."]
+    }
+  ]
+}
 ----
 ======
 

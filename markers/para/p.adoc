@@ -31,6 +31,7 @@ USFM::
 .Mark 1.1-4 (GNT)
 [source#src-usfm-para-p_1,usfm,highlight=4;13]
 ----
+\id MRK
 \c 1
 \s1 The Preaching of John the Baptist
 \r (Matthew 3.1-12; Luke 3.1-18; John 1.19-28)
@@ -52,28 +53,29 @@ USX::
 .Mark 1.1-4 (GNT)
 [source#src-usx-para-p_1,xml,highlight=4;19]
 ----
-<chapter number="1" style="c" sid="MRK 1" />
-<para style="s1">The Preaching of John the Baptist</para>
-<para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
-<para style="p">
-  <verse number="1" style="v" sid="MRK 1:1" />This is the Good News about Jesus 
-  Christ, the Son of God. <verse eid="MRK 1:1" /><verse number="2" style="v" 
-  sid="MRK 1:2" />It began as the prophet Isaiah had written:</para>
-<para style="q1" vid="MRK 1:2">“God said, ‘I will send my messenger ahead of you
-  </para>
-<para style="q2" vid="MRK 1:2">to open the way for you.’<verse eid="MRK 1:2" />
-  </para>
-<para style="q1">
-  <verse number="3" style="v" sid="MRK 1:3" />Someone is shouting in the desert,
-  </para>
-<para style="q2" vid="MRK 1:3">‘Get the road ready for the Lord;</para>
-<para style="q2" vid="MRK 1:3">make a straight path for him to travel!’”
-  <verse eid="MRK 1:3" /></para>
-<para style="p">
-  <verse number="4" style="v" sid="MRK 1:4" />So John appeared in the desert, 
-  baptizing and preaching. “Turn away from your sins and be baptized,” he told 
-  the people, “and God will forgive your sins.”<verse eid="MRK 1:4" /></para>
-...
+<usx version="3.0">
+  <chapter number="1" style="c" sid="MRK 1" />
+  <para style="s1">The Preaching of John the Baptist</para>
+  <para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
+  <para style="p">
+    <verse number="1" style="v" sid="MRK 1:1" />This is the Good News about Jesus 
+    Christ, the Son of God. <verse eid="MRK 1:1" /><verse number="2" style="v" 
+    sid="MRK 1:2" />It began as the prophet Isaiah had written:</para>
+  <para style="q1" vid="MRK 1:2">“God said, ‘I will send my messenger ahead of you
+    </para>
+  <para style="q2" vid="MRK 1:2">to open the way for you.’<verse eid="MRK 1:2" />
+    </para>
+  <para style="q1">
+    <verse number="3" style="v" sid="MRK 1:3" />Someone is shouting in the desert,
+    </para>
+  <para style="q2" vid="MRK 1:3">‘Get the road ready for the Lord;</para>
+  <para style="q2" vid="MRK 1:3">make a straight path for him to travel!’”
+    <verse eid="MRK 1:3" /></para>
+  <para style="p">
+    <verse number="4" style="v" sid="MRK 1:4" />So John appeared in the desert, 
+    baptizing and preaching. “Turn away from your sins and be baptized,” he told 
+    the people, “and God will forgive your sins.”<verse eid="MRK 1:4" /></para>
+</usx>
 ----
 USJ::
 +
@@ -82,7 +84,7 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "content": [
     {
       "type": "chapter",
@@ -93,16 +95,12 @@ USJ::
     {
       "type": "para",
       "marker": "s1",
-      "content": [
-        "The Preaching of John the Baptist"
-      ]
+      "content": ["The Preaching of John the Baptist"]
     },
     {
       "type": "para",
       "marker": "r",
-      "content": [
-        "(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)"
-      ]
+      "content": ["(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)"]
     },
     {
       "type": "para",
@@ -127,16 +125,12 @@ USJ::
     {
       "type": "para",
       "marker": "q1",
-      "content": [
-        "\u201cGod said, \u2018I will send my messenger ahead of you"
-      ]
+      "content": ["“God said, ‘I will send my messenger ahead of you"]
     },
     {
       "type": "para",
       "marker": "q2",
-      "content": [
-        "to open the way for you.\u2019"
-      ]
+      "content": ["to open the way for you.’"]
     },
     {
       "type": "para",
@@ -154,16 +148,12 @@ USJ::
     {
       "type": "para",
       "marker": "q2",
-      "content": [
-        "\u2018Get the road ready for the Lord;"
-      ]
+      "content": ["‘Get the road ready for the Lord;"]
     },
     {
       "type": "para",
       "marker": "q2",
-      "content": [
-        "make a straight path for him to travel!\u2019\u201d"
-      ]
+      "content": ["make a straight path for him to travel!’”"]
     },
     {
       "type": "para",
@@ -175,7 +165,7 @@ USJ::
           "number": "4",
           "sid": "MRK 1:4"
         },
-        "So John appeared in the desert, baptizing and preaching. \u201cTurn away from your sins and be baptized,\u201d he told the people, \u201cand God will forgive your sins.\u201d"
+        "So John appeared in the desert, baptizing and preaching. “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”"
       ]
     }
   ]

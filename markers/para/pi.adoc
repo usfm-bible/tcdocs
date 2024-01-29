@@ -31,6 +31,9 @@ USFM::
 .Matthew 13.37-39 (CEV)
 [source#src-usfm-para-pi_1,usfm,highlight=7]
 ----
+\id MAT
+\c 13
+\p ...
 \s1 Jesus Explains the Story about the Weeds
 \p
 \v 36 After Jesus left the crowd and went inside, his disciples came to him 
@@ -48,20 +51,99 @@ USX::
 .Matthew 13.37-39 (CEV)
 [source#src-usx-para-pi_1,xml,highlight=8]
 ----
-<para style="s1">Jesus Explains the Story about the Weeds</para>
-<para style="p">
-  <verse number="36" style="v" sid="MAT 13:36"/>After Jesus left the crowd and
-  went inside, his disciples came to him and said, “Explain to us the story about
-  the weeds in the wheat field.”<verse eid="MAT 13:36"/></para>
-<para style="p">
-  <verse number="37" style="v" sid="MAT 13:37"/>Jesus answered:</para>
-<para style="pi" vid="MAT 13:37">The one who scattered the good seed is the Son of
-  Man. <verse eid="MAT 13:37"/><verse number="38" style="v" sid="MAT 13:38"/>The
-  field is the world, and the good seeds are the people who belong to the kingdom.
-  The weed seeds are those who belong to the evil one, <verse eid="MAT 13:38"/>
-  <verse number="39" style="v" sid="MAT 13:39"/>and the one who scattered them is 
-  the devil. The harvest is the end of time, and angels are the ones who bring in 
-  the harvest.<verse eid="MAT 13:39"/></para>
+<usx version="3.0">
+  <chapter number="13" style="c" sid="MAT 13"/>
+  <para style="p">...</para>
+  <para style="s1">Jesus Explains the Story about the Weeds</para>
+  <para style="p">
+    <verse number="36" style="v" sid="MAT 13:36"/>After Jesus left the crowd and
+    went inside, his disciples came to him and said, “Explain to us the story about
+    the weeds in the wheat field.”<verse eid="MAT 13:36"/></para>
+  <para style="p">
+    <verse number="37" style="v" sid="MAT 13:37"/>Jesus answered:</para>
+  <para style="pi" vid="MAT 13:37">The one who scattered the good seed is the Son of
+    Man. <verse eid="MAT 13:37"/><verse number="38" style="v" sid="MAT 13:38"/>The
+    field is the world, and the good seeds are the people who belong to the kingdom.
+    The weed seeds are those who belong to the evil one, <verse eid="MAT 13:38"/>
+    <verse number="39" style="v" sid="MAT 13:39"/>and the one who scattered them is 
+    the devil. The harvest is the end of time, and angels are the ones who bring in 
+    the harvest.<verse eid="MAT 13:39"/></para>
+</usx>
+----
+USJ::
++
+.Matthew 13.37-39 (CEV)
+[source#src-usj-para-pi_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "13",
+      "sid": "MAT 13"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["Jesus Explains the Story about the Weeds"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "36",
+          "sid": "MAT 13:36"
+        },
+        "After Jesus left the crowd and went inside, his disciples came to him and said, “Explain to us the story about the weeds in the wheat field.”"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "37",
+          "sid": "MAT 13:37"
+        },
+        "Jesus answered:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pi",
+      "content": [
+        "The one who scattered the good seed is the Son of Man.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "38",
+          "sid": "MAT 13:38"
+        },
+        "The field is the world, and the good seeds are the people who belong to the kingdom. The weed seeds are those who belong to the evil one,",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "39",
+          "sid": "MAT 13:39"
+        },
+        "and the one who scattered them is the devil. The harvest is the end of time, and angels are the ones who bring in the harvest."
+      ]
+    }
+  ]
+}
 ----
 ======
 

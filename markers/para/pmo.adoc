@@ -31,6 +31,9 @@ USFM::
 .Acts 15.24 (CEV)
 [source#src-usfm-para-pmo_1,usfm,highlight=6]
 ----
+\id ACT
+\c 15
+\p ...
 \p
 \v 22 The apostles, the leaders, and all the church members decided to send 
 some men to Antioch along with Paul and Barnabas. They chose Silas and Judas 
@@ -47,20 +50,87 @@ USX::
 .Acts 15.24 (CEV)
 [source#src-usx-para-pmo_1,xml,highlight=8]
 ----
-<para style="p">
-  <verse number="22" style="v" sid="ACT 15:22"/>The apostles, the leaders, and all
-  the church members decided to send some men to Antioch along with Paul and
-  Barnabas. They chose Silas and Judas Barsabbas, who were two leaders of the
-  Lord's followers. <verse eid="ACT 15:22"/>
-  <verse number="23" style="v" sid="ACT 15:23"/>They wrote a letter that said:
-  </para>
-<para style="pmo" vid="ACT 15:23">We apostles and leaders send friendly greetings
-  to all of you Gentiles who are followers of the Lord in Antioch, Syria, and
-  Cilicia.<verse eid="ACT 15:23"/></para>
-<para style="pm">
-  <verse number="24" style="v" sid="ACT 15:24"/>We have heard that some people
-  from here have terribly upset you by what they said. But we did not send them!
-  <verse eid="ACT 15:24"/></para>
+<usx version="3.0">
+  <chapter number="15" style="c" sid="MRK 15"/>
+  <para style="p">...</para>
+  <para style="p">
+    <verse number="22" style="v" sid="ACT 15:22"/>The apostles, the leaders, and 
+    all the church members decided to send some men to Antioch along with Paul 
+    and Barnabas. They chose Silas and Judas Barsabbas, who were two leaders of 
+    the Lord's followers. <verse eid="ACT 15:22"/>
+    <verse number="23" style="v" sid="ACT 15:23"/>They wrote a letter that said:
+    </para>
+  <para style="pmo" vid="ACT 15:23">We apostles and leaders send friendly greetings
+    to all of you Gentiles who are followers of the Lord in Antioch, Syria, and
+    Cilicia.<verse eid="ACT 15:23"/></para>
+  <para style="pm">
+    <verse number="24" style="v" sid="ACT 15:24"/>We have heard that some people
+    from here have terribly upset you by what they said. But we did not send them!
+    <verse eid="ACT 15:24"/></para>
+</usx>
+----
+USJ::
++
+.Acts 15.24 (CEV)
+[source#src-usj-para-pmo_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "15",
+      "sid": "MRK 15"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "22",
+          "sid": "ACT 15:22"
+        },
+        "The apostles, the leaders, and all the church members decided to send some men to Antioch along with Paul and Barnabas. They chose Silas and Judas Barsabbas, who were two leaders of the Lord's followers.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "23",
+          "sid": "ACT 15:23"
+        },
+        "They wrote a letter that said:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pmo",
+      "content": [
+        "We apostles and leaders send friendly greetings to all of you Gentiles who are followers of the Lord in Antioch, Syria, and Cilicia."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pm",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "24",
+          "sid": "ACT 15:24"
+        },
+        "We have heard that some people from here have terribly upset you by what they said. But we did not send them!"
+      ]
+    }
+  ]
+}
 ----
 ======
 

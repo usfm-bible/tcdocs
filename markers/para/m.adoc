@@ -30,6 +30,9 @@ USFM::
 .Mark 12.37 (GNT)
 [source#src-usfm-para-m_1,usfm,highlight=8]
 ----
+\id MRK
+\c 12
+\p ...
 \p
 \v 35 As Jesus was teaching in the Temple, he asked the question, “How can the 
 teachers of the Law say that the Messiah will be the descendant of David?
@@ -47,20 +50,100 @@ USX::
 .Mark 12.37 (GNT)
 [source#src-usx-para-m_1,xml,highlight=8]
 ----
-<para style="p">
-  <verse number="35" style="v" sid="MRK 12:35" />As Jesus was teaching in the 
-  Temple, he asked the question, “How can the teachers of the Law say that the 
-  Messiah will be the descendant of David? <verse eid="MRK 12:35" />
-  <verse number="36" style="v" sid="MRK 12:36" />The Holy Spirit inspired David 
-  to say:</para>
-<para style="q1" vid="MRK 12:36">‘The Lord said to my Lord:</para>
-<para style="q2" vid="MRK 12:36">Sit here at my right side</para>
-<para style="q2" vid="MRK 12:36">until I put your enemies under your feet.’
-  <verse eid="MRK 12:36" /></para>
-<para style="b" />
-<para style="m">
-  <verse number="37" style="v" sid="MRK 12:37" />David himself called him ‘Lord’; 
-  so how can the Messiah be David's descendant?”<verse eid="MRK 12:37" />
+<usx version="3.0">
+  <chapter number="12" style="c" sid="MRK 12" />
+  <para style="p">...</para>
+  <para style="p">
+    <verse number="35" style="v" sid="MRK 12:35" />As Jesus was teaching in the 
+    Temple, he asked the question, “How can the teachers of the Law say that the 
+    Messiah will be the descendant of David? <verse eid="MRK 12:35" />
+    <verse number="36" style="v" sid="MRK 12:36" />The Holy Spirit inspired David 
+    to say:</para>
+  <para style="q1" vid="MRK 12:36">‘The Lord said to my Lord:</para>
+  <para style="q2" vid="MRK 12:36">Sit here at my right side</para>
+  <para style="q2" vid="MRK 12:36">until I put your enemies under your feet.’
+    <verse eid="MRK 12:36" /></para>
+  <para style="b" />
+  <para style="m">
+    <verse number="37" style="v" sid="MRK 12:37" />David himself called him ‘Lord’; 
+    so how can the Messiah be David's descendant?”<verse eid="MRK 12:37" />...</para>
+</usx>
+----
+USJ::
++
+.Mark 1.1-4 (GNT)
+[source#src-usj-para-m_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "12",
+      "sid": "MRK 12"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "35",
+          "sid": "MRK 12:35"
+        },
+        "As Jesus was teaching in the Temple, he asked the question, “How can the teachers of the Law say that the Messiah will be the descendant of David?",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "36",
+          "sid": "MRK 12:36"
+        },
+        "The Holy Spirit inspired David to say:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["‘The Lord said to my Lord:"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["Sit here at my right side"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["until I put your enemies under your feet.’"]
+    },
+    {
+      "type": "optbreak",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "m",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "37",
+          "sid": "MRK 12:37"
+        },
+        "David himself called him ‘Lord’; so how can the Messiah be David's descendant?”",
+        "..."
+      ]
+    }
+  ]
+}
 ----
 ======
 
