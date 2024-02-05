@@ -43,7 +43,7 @@ USX::
 [source#src-usx-periph-ndx_1,xml]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="NDX" style="id" />
   <para style="mt">Names Index</para>
   <para style="ip">Introductory paragraph(s) ...</para>

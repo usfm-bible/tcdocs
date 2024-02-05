@@ -39,7 +39,14 @@ Missing
 USX::
 +
 .Missing
-[source#src-usx-para-ph_1,usfm,highlight=1]
+[source#src-usx-para-ph_1,usx,highlight=1]
+----
+Missing
+----
+USJ::
++
+.Missing
+[source#src-usj-para-ph_1,json,highlight=]
 ----
 Missing
 ----

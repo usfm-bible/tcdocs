@@ -48,7 +48,7 @@ USX::
 [source#src-usx-periph-cnc_1,xml]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="CNC" style="id"/>
   <para style="mt">Concordance</para>
   <para style="ip">The entries in this concordance have been carefully selected by 

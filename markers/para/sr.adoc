@@ -31,8 +31,11 @@ Added:: 1.0
 USFM::
 +
 .Proverbs 22.17 (GNT - markup adapted)
-[source#src-usfm-para-sr_1,usfm,highlight=2]
+[source#src-usfm-para-sr_1,usfm,highlight=5]
 ----
+\id PRO
+\c 22
+\p ...
 \s1 The Thirty Wise Sayings
 \sr (22.17--24.22)
 \p
@@ -42,13 +45,63 @@ Study their teachings, ...
 USX::
 +
 .Proverbs 22.17 (GNT - markup adapted)
-[source#src-usx-para-sr_1,xml,highlight=2]
+[source#src-usx-para-sr_1,xml,highlight=5]
 ----
-<para style="s1">The Thirty Wise Sayings</para>
-<para style="sr">(22.17--24.22)</para>
-<para style="p">
-  <verse number="17" style="v" sid="PRO 22:17"/>Listen, and I will teach you what
-  the wise have said. Study their teachings, ...<verse eid="PRO 22:17"/></para>
+<usx version="3.1">
+  <chapter number="22" style="c" sid="PRO 22"/>
+  <para style="p">...</para>
+  <para style="s1">The Thirty Wise Sayings</para>
+  <para style="sr">(22.17--24.22)</para>
+  <para style="p">
+    <verse number="17" style="v" sid="PRO 22:17"/>Listen, and I will teach you what
+    the wise have said. Study their teachings, ...<verse eid="PRO 22:17"/></para>
+</usx>
+----
+USJ::
++
+.Proverbs 22.17 (GNT - markup adapted)
+[source#src-usj-para-sr_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "22",
+      "sid": "PRO 22"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["The Thirty Wise Sayings"]
+    },
+    {
+      "type": "para",
+      "marker": "sr",
+      "content": ["(22.17--24.22)"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "17",
+          "sid": "PRO 22:17"
+        },
+        "Listen, and I will teach you what the wise have said. Study their teachings, ..."
+      ]
+    }
+  ]
+}
 ----
 ======
 

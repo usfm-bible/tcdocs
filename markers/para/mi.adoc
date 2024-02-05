@@ -30,8 +30,11 @@ Added:: 1.0
 USFM::
 +
 .Matthew 11.18-19 (CEV)
-[source#src-usfm-para-mi_1,usfm,highlight=11]
+[source#src-usfm-para-mi_1,usfm,highlight=14]
 ----
+\id MAT
+\c 11
+\p ...
 \pi
 \v 16 You people are like children sitting in the market and shouting to 
 each other,
@@ -51,26 +54,122 @@ man eats and drinks too much! He is even a friend of tax collectors ...
 USX::
 +
 .Matthew 11.18-19 (CEV)
-[source#src-usx-para-mi_1,xml,highlight=12]
+[source#src-usx-para-mi_1,xml,highlight=15]
 ----
-<para style="pi">
-  <verse number="16" style="v" sid="MAT 11:16"/>You people are like children
-  sitting in the market and shouting to each other,<verse eid="MAT 11:16"/></para>
-<para style="b"/>
-<para style="q1">
-  <verse number="17" style="v" sid="MAT 11:17"/>“We played the flute,</para>
-<para style="q2" vid="MAT 11:17">but you would not dance!</para>
-<para style="q1" vid="MAT 11:17">We sang a funeral song,</para>
-<para style="q2" vid="MAT 11:17">but you would not mourn!”<verse eid="MAT 11:17"/>
-  </para>
-<para style="b"/>
-<para style="mi">
-  <verse number="18" style="v" sid="MAT 11:18"/>John the Baptist did not go around
-  eating and drinking, and you said, “That man has a demon in him!”
-  <verse eid="MAT 11:18"/><verse number="19" style="v" sid="MAT 11:19"/>But the Son 
-  of Man goes around eating and drinking, and you say, “That man eats and drinks 
-  too much! He is even a friend of tax collectors ...<verse eid="MAT 11:19"/>
-  </para>
+<usx version="3.1">
+  <chapter number="11" style="c" sid="MAT 11"/>
+  <para style="p">...</para>
+  <para style="pi">
+    <verse number="16" style="v" sid="MAT 11:16"/>You people are like children
+    sitting in the market and shouting to each other,<verse eid="MAT 11:16"/></para>
+  <para style="b"/>
+  <para style="q1">
+    <verse number="17" style="v" sid="MAT 11:17"/>“We played the flute,</para>
+  <para style="q2" vid="MAT 11:17">but you would not dance!</para>
+  <para style="q1" vid="MAT 11:17">We sang a funeral song,</para>
+  <para style="q2" vid="MAT 11:17">but you would not mourn!”<verse eid="MAT 11:17"/>
+    </para>
+  <para style="b"/>
+  <para style="mi">
+    <verse number="18" style="v" sid="MAT 11:18"/>John the Baptist did not go around
+    eating and drinking, and you said, “That man has a demon in him!”
+    <verse eid="MAT 11:18"/><verse number="19" style="v" sid="MAT 11:19"/>But the Son 
+    of Man goes around eating and drinking, and you say, “That man eats and drinks 
+    too much! He is even a friend of tax collectors ...<verse eid="MAT 11:19"/>
+    </para>
+</usx>
+----
+USJ::
++
+.Matthew 11.18-19 (CEV)
+[source#src-usj-para-mi_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "11",
+      "sid": "MAT 11"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "pi",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "16",
+          "sid": "MAT 11:16"
+        },
+        "You people are like children sitting in the market and shouting to each other,"
+      ]
+    },
+    {
+      "type": "optbreak",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "17",
+          "sid": "MAT 11:17"
+        },
+        "“We played the flute,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["but you would not dance!"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["We sang a funeral song,"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["but you would not mourn!”"]
+    },
+    {
+      "type": "optbreak",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "mi",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18",
+          "sid": "MAT 11:18"
+        },
+        "John the Baptist did not go around eating and drinking, and you said, “That man has a demon in him!”",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "19",
+          "sid": "MAT 11:19"
+        },
+        "But the Son of Man goes around eating and drinking, and you say, “That man eats and drinks too much! He is even a friend of tax collectors ..."
+      ]
+    }
+  ]
+}
 ----
 ======
 

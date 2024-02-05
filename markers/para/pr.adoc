@@ -26,8 +26,10 @@ Added:: 1.0
 USFM::
 +
 .Deuteronomy 27.15,16,17 (GNT)
-[source#src-usfm-para-pr_1,usfm,highlight=3;6;9]
+[source#src-usfm-para-pr_1,usfm,highlight=6;9;12]
 ----
+\id DEU
+\c 27
 \p
 \v 15 “ ‘God's curse on anyone who makes an idol of stone, wood, or metal and 
 secretly worships it; the \nd Lord\nd* hates idolatry.’
@@ -42,24 +44,105 @@ secretly worships it; the \nd Lord\nd* hates idolatry.’
 USX::
 +
 .Deuteronomy 27.15,16,17 (GNT)
-[source#src-usx-para-pr_1,xml,highlight=5;10;15]
+[source#src-usx-para-pr_1,xml,highlight=7;12;17]
 ----
-<para style="p">
-  <verse number="15" style="v" sid="DEU 27:15"/>“ ‘God's curse on anyone who makes
-  an idol of stone, wood, or metal and secretly worships it; the <char style="nd">
-  Lord</char> hates idolatry.’</para>
-<para style="pr" vid="DEU 27:15">“And all the people will answer, ‘Amen!’
-  <verse eid="DEU 27:15"/></para>
-<para style="p">
-  <verse number="16" style="v" sid="DEU 27:16"/>“ ‘God's curse on anyone who
-  dishonors his father or mother.’</para>
-<para style="pr" vid="DEU 27:16">“And all the people will answer, ‘Amen!’
-  <verse eid="DEU 27:16"/></para>
-<para style="p">
-  <verse number="17" style="v" sid="DEU 27:17"/>“ ‘God's curse on anyone who moves
-  a neighbor's property line.’</para>
-<para style="pr" vid="DEU 27:17">“And all the people will answer, ‘Amen!’
-  <verse eid="DEU 27:17"/></para>
+<usx version="3.1">
+  <chapter number="27" style="c" sid="DEU 27"/>
+  <para style="p">
+    <verse number="15" style="v" sid="DEU 27:15"/>“ ‘God's curse on anyone who makes
+    an idol of stone, wood, or metal and secretly worships it; the <char style="nd">
+    Lord</char> hates idolatry.’</para>
+  <para style="pr" vid="DEU 27:15">“And all the people will answer, ‘Amen!’
+    <verse eid="DEU 27:15"/></para>
+  <para style="p">
+    <verse number="16" style="v" sid="DEU 27:16"/>“ ‘God's curse on anyone who
+    dishonors his father or mother.’</para>
+  <para style="pr" vid="DEU 27:16">“And all the people will answer, ‘Amen!’
+    <verse eid="DEU 27:16"/></para>
+  <para style="p">
+    <verse number="17" style="v" sid="DEU 27:17"/>“ ‘God's curse on anyone who moves
+    a neighbor's property line.’</para>
+  <para style="pr" vid="DEU 27:17">“And all the people will answer, ‘Amen!’
+    <verse eid="DEU 27:17"/></para>
+</usx>
+----
+USJ::
++
+.Deuteronomy 27.15,16,17 (GNT)
+[source#src-usj-para-pr_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "27",
+      "sid": "DEU 27"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "15",
+          "sid": "DEU 27:15"
+        },
+        "“ ‘God's curse on anyone who makes an idol of stone, wood, or metal and secretly worships it; the",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        "hates idolatry.’"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pr",
+      "content": ["“And all the people will answer, ‘Amen!’"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "16",
+          "sid": "DEU 27:16"
+        },
+        "“ ‘God's curse on anyone who dishonors his father or mother.’"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pr",
+      "content": ["“And all the people will answer, ‘Amen!’"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "17",
+          "sid": "DEU 27:17"
+        },
+        "“ ‘God's curse on anyone who moves a neighbor's property line.’"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pr",
+      "content": ["“And all the people will answer, ‘Amen!’"]
+    }
+  ]
+}
 ----
 ======
 

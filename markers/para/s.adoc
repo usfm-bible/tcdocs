@@ -30,8 +30,11 @@ Added:: 1.0
 USFM::
 +
 .Proverbs 22.17 (GNT)
-[source#src-usfm-para-s1_1,usfm,highlight=1;14]
+[source#src-usfm-para-s1_1,usfm,highlight=4;17]
 ----
+\id PRO
+\c 22
+\p ...
 \s1 The Thirty Wise Sayings
 \p
 \v 17 Listen, and I will teach you what the wise have said. Study their 
@@ -53,26 +56,123 @@ advantage of those who stand helpless in court.
 USX::
 +
 .Proverbs 22.17 (GNT)
-[source#src-usx-para-s1_1,xml,highlight=1;14]
+[source#src-usx-para-s1_1,xml,highlight=4;17]
 ----
-<para style="s1">The Thirty Wise Sayings</para>
-<para style="p">
-  <verse number="17" style="v" sid="PRO 22:17"/>Listen, and I will teach you what
-  the wise have said. Study their teachings, <verse eid="PRO 22:17"/>
-  <verse number="18" style="v" sid="PRO 22:18"/>and you will be glad if you 
-  remember them and can quote them. <verse eid="PRO 22:18"/>
-  <verse number="19" style="v" sid="PRO 22:19"/>I want you to put your trust in 
-  the <char style="nd">Lord</char>; that is why I am going to tell them to you 
-  now. <verse eid="PRO 22:19"/><verse number="20" style="v" sid="PRO 22:20"/>
-  I have written down thirty sayings for you. They contain knowledge and good 
-  advice, <verse eid="PRO 22:20"/><verse number="21" style="v" sid="PRO 22:21"/>
-  and will teach you what the truth really is. Then when you are sent to find it 
-  out, you will bring back the right answer.<verse eid="PRO 22:21"/></para>
-<para style="s2">-1-</para>
-<para style="p">
-  <verse number="22" style="v" sid="PRO 22:22"/>Don't take advantage of the poor
-  just because you can; don't take advantage of those who stand helpless in 
-  court.<verse eid="PRO 22:22"/></para>
+<usx version="3.1">
+  <chapter number="22" style="c" sid="PRO 22"/>
+  <para style="p">...</para>
+  <para style="s1">The Thirty Wise Sayings</para>
+  <para style="p">
+    <verse number="17" style="v" sid="PRO 22:17"/>Listen, and I will teach you what
+    the wise have said. Study their teachings, <verse eid="PRO 22:17"/>
+    <verse number="18" style="v" sid="PRO 22:18"/>and you will be glad if you 
+    remember them and can quote them. <verse eid="PRO 22:18"/>
+    <verse number="19" style="v" sid="PRO 22:19"/>I want you to put your trust in 
+    the <char style="nd">Lord</char>; that is why I am going to tell them to you 
+    now. <verse eid="PRO 22:19"/><verse number="20" style="v" sid="PRO 22:20"/>
+    I have written down thirty sayings for you. They contain knowledge and good 
+    advice, <verse eid="PRO 22:20"/><verse number="21" style="v" sid="PRO 22:21"/>
+    and will teach you what the truth really is. Then when you are sent to find it 
+    out, you will bring back the right answer.<verse eid="PRO 22:21"/></para>
+  <para style="s2">-1-</para>
+  <para style="p">
+    <verse number="22" style="v" sid="PRO 22:22"/>Don't take advantage of the poor
+    just because you can; don't take advantage of those who stand helpless in 
+    court.<verse eid="PRO 22:22"/></para>
+</usx>
+----
+USJ::
++
+.Proverbs 22.17 (GNT)
+[source#src-usj-para-s1_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "22",
+      "sid": "PRO 22"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["The Thirty Wise Sayings"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "17",
+          "sid": "PRO 22:17"
+        },
+        "Listen, and I will teach you what the wise have said. Study their teachings,",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18",
+          "sid": "PRO 22:18"
+        },
+        "and you will be glad if you remember them and can quote them.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "19",
+          "sid": "PRO 22:19"
+        },
+        "I want you to put your trust in the",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        "; that is why I am going to tell them to you now.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "20",
+          "sid": "PRO 22:20"
+        },
+        "I have written down thirty sayings for you. They contain knowledge and good advice,",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "21",
+          "sid": "PRO 22:21"
+        },
+        "and will teach you what the truth really is. Then when you are sent to find it out, you will bring back the right answer."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "s2",
+      "content": ["-1-"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "22",
+          "sid": "PRO 22:22"
+        },
+        "Don't take advantage of the poor just because you can; don't take advantage of those who stand helpless in court."
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -83,8 +183,11 @@ image::para/s1_1.jpg[Proverbs 22.17 (GNT),300]
 USFM::
 +
 .Proverbs 22.22,24 (GNT)
-[source#src-usfm-par-s2_1,usfm,highlight=3;9]
+[source#src-usfm-par-s2_1,usfm,highlight=6;12]
 ----
+\id PRO
+\c 22
+\p ...
 \v 21 and will teach you what the truth really is. Then when you are sent to 
 find it out, you will bring back the right answer.
 \s2 -1-
@@ -101,9 +204,12 @@ anyone who threatens theirs.
 USX::
 +
 .Proverbs 22.22,24 (GNT)
-[source#src-usx-par-s2_1,xml,highlight=5;12]
+[source#src-usx-par-s2_1,xml,highlight=8;15]
 ----
-  ...
+<usx version="3.1">
+  <chapter number="22" style="c" sid="PRO 22"/>
+  <para style="p">...</para>
+  <para style="p">...
   <verse number="21" style="v" sid="PRO 22:21"/>and will teach you what the truth
   really is. Then when you are sent to find it out, you will bring back the right
   answer.<verse eid="PRO 22:21"/></para>
@@ -120,6 +226,100 @@ USX::
   have hot, violent tempers. <verse eid="PRO 22:24"/>
   <verse number="25" style="v" sid="PRO 22:25"/>You might learn their habits and 
   not be able to change.<verse eid="PRO 22:25"/></para>
+</usx>
+----
+USJ::
++
+.Proverbs 22.22,24 (GNT)
+[source#src-usj-par-s2_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "22",
+      "sid": "PRO 22"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        "...",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "21",
+          "sid": "PRO 22:21"
+        },
+        "and will teach you what the truth really is. Then when you are sent to find it out, you will bring back the right answer."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "s2",
+      "content": ["-1-"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "22",
+          "sid": "PRO 22:22"
+        },
+        "Don't take advantage of the poor just because you can; don't take advantage of those who stand helpless in court.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "23",
+          "sid": "PRO 22:23"
+        },
+        "The",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        "will argue their case for them and threaten the life of anyone who threatens theirs."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "s2",
+      "content": ["-2-"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "24",
+          "sid": "PRO 22:24"
+        },
+        "Don't make friends with people who have hot, violent tempers.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "25",
+          "sid": "PRO 22:25"
+        },
+        "You might learn their habits and not be able to change."
+      ]
+    }
+  ]
+}
 ----
 ======
 

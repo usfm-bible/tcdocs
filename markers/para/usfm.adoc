@@ -45,7 +45,7 @@ USX::
 .Matthew (GNT)
 [source#src-usx-para-usfm_1,xml,highlight=1]
 ----
-<usx version="3.0">
+<usx version="3.1">
   <book code="MAT" style="id">41MATGNT92.SFM, Good News Translation, June 2003</book>
   ...
 </usx>

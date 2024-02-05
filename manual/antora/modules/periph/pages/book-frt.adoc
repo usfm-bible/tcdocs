@@ -35,7 +35,7 @@ USX::
 [source#src-usx-periph-frt-title_1,xml,highlight=4;18]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="FRT" style="id" />
   <periph alt="Title Page" id="title">
     <para style="mt1">Holy Bible</para>
@@ -85,7 +85,7 @@ USX::
 [source#src-usx-periph-frt-halftitle_1,xml,highlight=4;11]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="FRT" style="id" />
   <periph alt="Half Title Page" id="halftitle">
     <para style="mt1">Holy Bible</para>
@@ -203,7 +203,7 @@ USX::
 [source#src-usx-periph-frt-contents_1,xml,highlight=4;50]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="FRT" style="id" />
   <periph alt="Table of Contents" id="contents">
     <para style="mt1">Contents</para>
@@ -313,7 +313,7 @@ USX::
 [source#src-usx-periph-frt-abbreviations_1,xml,highlight=4;43]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="FRT" style="id" />
   <periph alt="Table of Abbreviations" id="abbreviations">
     <para style="mt1">Alphabetical List of Biblical Books and Abbreviations</para>

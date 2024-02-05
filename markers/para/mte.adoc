@@ -41,6 +41,13 @@ USX::
 ----
 Missing
 ----
+USJ::
++
+.Missing
+[source#src-usj-para-mte_1,json,highlight=]
+----
+Missing
+----
 ======
 
 image::para/missing.jpg[,300]

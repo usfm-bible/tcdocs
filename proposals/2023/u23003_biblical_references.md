@@ -14,7 +14,7 @@ M. Hosken
 
 This document introduces a scheme for biblical references down to the character level. Thus it supports ranges of references from traditional verse references through word references to character references. In addition it allows referencing other scripture books withing a reference as well. A fully specified character reference might look like:
 ```
-wsg-t-en+MAT 1:1!5+6
+wsg-t-en.MAT 1:1!5+6
 ```
 Although this is overkill for nearly all situations.
 
@@ -22,6 +22,7 @@ Although this is overkill for nearly all situations.
 The purpose of this document is to propose a normative basic standard for scripture references. Notice it is not concerned with Localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in two directions.
 - To be able to referencetext in other translations
 - To be able to reference a word or even part of a word within a verse.
+
 This proposal will examine both of these extensions and propose a grammar for a scripture reference list that includes scripture reference ranges.
 
 ## Basic Reference
@@ -33,6 +34,7 @@ Reference = Fullref | ContextRef
 FullRef = BookId ws* Chapter (chaptersep Verse)?
 ContextRef = Chapter (chaptersep Verse)? | Verse
 BookId = [0-9A-Z]{3}
+Refsep = ';' | ','
 chaptersep = ws* (":" | ".") ws* 
 Chapter = digits
 Verse = digits (subverse)? | "end"
@@ -57,30 +59,32 @@ There are two core questions to resolve when extending references to be able to 
 - How to integrate such a reference into a verse reference
 
 ### Translation Reference
-This work builds on discussions held on how to reference not only a translation but a scripture product. In summary, a scripture Product reference is a sequence of components separated by `+`. The complete string of components may be truncated at the point where no other information is needed to disambiguate the product / translation. The components are:
+This work builds on discussions held on how to reference not only a translation but a scripture product. In summary, a scripture product reference is a sequence of components separated by `+`. The complete string of components may be truncated at the point where no other information is needed to disambiguate the product / translation. The components are:
 
 #### Language Tag
-The language tag component consists of a BCP47 language tag. The only difference is that the language tag is expressed entirely in lowercase.
+The language tag component consists of a BCP47 language tag. The only difference is that the language tag is expressed entirely in lowercase. Notice that the components of a language tag are separated by `-`.
 
 #### Translation Id
 There are a number of translations even within a language group. This is even discounting the 200 English translations. Consider, for example the New International Version (NIV). The code for this translation could well be NIV. But there are many versions of the NIV. There can be further identified, separated by a hyphen `-` as in a language tag. Thus niv-1976
 
 #### Product id
-When it comes to a verse reference, the product id is unlikely to be needed. The product id maybe used to identify different scripture products associated with the translation.
+When it comes to a verse reference, the product id is unlikely to be needed. The product id may be used to identify different scripture products associated with the translation. Examples of products would be various study editions.
 
 ### Within a Verse Reference
-Given the various separation for components in a reference, we need to find something suitable. The good news is that this separator is used to extend the bookld. We can, therefore use the same separators as used between a chapter and a verse. Theas we propose using the same separator.
+Given the various separation for components in a reference, we need to find something suitable. The good news is that this separator is used to extend the bookld. We can, therefore use the same separators as used between a chapter and a verse. Thus we propose using the same separator.
 
 ### Conclusion
 Bringing all this together a reference to a different translation might look like:
 ```
-en+niv.JHN 3:16
+en-gb+niv+study.JHN 3:16
 ```
+The first component is the language tag (which has two parts: language and region) and identifies the Anglicised NIV translation over the US English version. Then comes the translation id. Then within the translation there is the particular product, the NIV study bible. These are separated from the book code, which in turn is separated from the chapter:verse by a space.
+
 Integrating this definition into our grammar, we get:
 ```
 BookId = (TransId (":" | "."))? BookCode
 BookCode = [O-9A-Z]{3}
-TransId = langtag ("+" transcode)?
+TransId = langtag ("+" transcode ("+" productid)?)?
 langtag = lang ("-" script)? ("-" region)? ("-" variant)* ("-" ns ("-" extval)+)*
 lang = [a-z]{2,3} ("-" extlang)?
 extlang = [a-z]{3}
@@ -90,8 +94,9 @@ variant = [a-z]{5,8}
 ns = [a-z]
 extval = [a-z]{5:8}
 transcode = [0-9a-z]{1,8}
+productid = [0-9a-z]{1,8}
 ```
-A full BCP47 language tag is more complex than presented here. This grammer only accounts for the common language tags that are in use today. The 8 character limit on a translation code is arbitrary at this point.
+A full BCP47 language tag is more complex than presented here. This grammer only accounts for the common language tags that are in use today. See BCP47 for the full format definition. The 8 character limit on a translation code is arbitrary at this point.
 
 ## Word And Character References
 At the other end of the scale is the desire to reference words or even characters within a verse. Extending the range model where we say that a chapter is a range of verses, we can say that a verse is a range of words and a word is a range of characters.
@@ -102,18 +107,32 @@ There are various issues to address with this model:
 - How are word and character references included in a reference unambiguously?
 
 ### Word segmentation
-Accurate word segmentation is a difficult problem, particularly for non-wordspaced languages. Such languages do not have spaces between words, instead they use spaces as discourse or grammatical markers. Thankfully there are some factor in our favour.
+Accurate word segmentation is a difficult problem, particularly for
+non-wordspaced languages. Such languages do not have spaces between words,
+instead they use spaces as discourse or grammatical markers. Thankfully there
+are some factors in our favour.
 Scriptural texts are highly controlled. By this we mean that such texts are carefully edited and characters that would otherwise be missing from normal documents in a language, can and are inserted in scripture text. A primary example of this is the zero width space. This invisible character acts like a space for word segmentation and Iinebreaking, but otherwise is not seen. Therefore we can assume that any necessary character for word segmentation can be inserted.
 Accurate word segmentation is not required. The reason for character locations to be identified by word is that it makes indexing by humans easier. Humans are not expected to come up with character level references, but it helps if a human can read and approximately locate the position in a text a reference is pointing to. Thus it is sufficient for a 'word' in this context, to be defined as a sequence of non-space characters whether those characters are strictly word forming or not. This also mitigates any arguments over what is truly a word or not in a particular language.
-While the USFM standard considers any space characters other than those in ASCII (i.e. space, tab, carriage return, newline) to be content characters that must not be changed, they are not considered word forming in any way. They are also often effectively invisible in that it is not possible to count how many space charcaten are in a sequence. Punctuation characters are also non word forming, but are visible and countable. Therefore we include them as being referenceable. Also this mitigates the question of when a punctuation character gets used as a word forming character.
+While the USFM standard considers any space characters other than those in ASCII
+(i.e. space, tab, carriage return, newline) to be content characters that must
+not be changed, they are not considered word forming in any way. They are also
+often effectively invisible in that it is not possible to count how many space
+charcaters are in a sequence. Punctuation characters are also non word forming,
+but are visible and countable. Therefore we include them as being referenceable.
+Also this mitigates the question of when a punctuation character gets used as a
+word forming character. A marker is treated as a space. Multiple spaces are
+treated as a single space. The precise set of space characters is yet to be
+decided but will probably be closely aligned to \\p{Zs} (Unicode character of
+general category Zs which includes all the various space characters. We extend
+the list to include U+200B.)
 
 ### Including And Ignoring Notes
-At the simplest level, footnote (or any other note) text is not part of the main scripture text. They may or may not be printed, it word counting through a text, it is very awkward to have to include notes into the count. There are many other reason why it is easier to ignore notes when word counting through the text. And so we ignore them for primary referencing.
-But there are also good reasons for people to want to reference text within notes. For example, when interlinearising some people want to interlinearise their footnote text. l Interlinearising is a primary out of band text linkage use case for which word level and even character level referencing is necessary. For this reason, we provide a mechanism for referencing notes and the words and characters within them. In effect one specifies the note number in a verse and then uses the proposed word and character referencing below that. The detailed syntax is described below.
+At the simplest level, footnote (or any other note) text is not part of the main scripture text. They may or may not be printed, if word counting through a text, it is very awkward to have to include notes into the count. There are many other reason why it is easier to ignore notes when word counting through the text. And so we ignore them for primary referencing.
+But there are also good reasons for people to want to reference text within notes. For example, when interlinearising some people want to interlinearise their footnote text. Interlinearising is a primary out-of-band text linkage use case for which word level and even character level referencing is necessary. For this reason, we provide a mechanism for referencing notes and the words and characters within them. In effect one specifies the note number in a verse and then uses the proposed word and character referencing below that. The detailed syntax is described below.
 _Discuss other USFM markers including \s and \r_ 
 
 ### Normalization
-The normalization encoding moded question is relatively easy. We just have to pick one. The relative strengths and weaknesses of NFC vs NFD are:
+The normalization encoding model question is relatively easy. We just have to pick one. The relative strengths and weaknesses of NFC vs NFD are:
 
 #### NFC
 This is the most common way that data is stored. Given NFC and NFD are canonically equivalent, there is no content difference between the two normal forms.
@@ -122,7 +141,7 @@ This is the most common way that data is stored. Given NFC and NFD are canonical
 The problem with NFC is that some characters, for example: é, which is one code in NFC, but two in NFD may need to have its diacritic individually referenced, and for this we need to use NFD.
 
 #### Conclusion
-Giver the need to be able to reference components in precomposed characters, referencing needs to index characters based on NFD encoding. There may be better arguments why this decision should be reversed.
+Given the need to be able to reference components in precomposed characters, referencing needs to index characters based on NFD encoding. There may be better arguments why this decision should be reversed.
 
 ### Syntax
 
@@ -141,14 +160,14 @@ translation -- Book -- Chapter -- Verse -- word -- char
 ```
 when interpretting a reference in the context of another reference, we start from the position in the hierarchy of the other reference. A pure number therefore is at the same level in the hierarchy. for example in GEN 2:3!4+5-7, the 7 is interpretted as a character. On the other hand GEN 2:3!4-7!8, the 7 is a word index and 8 the character. But why is this not verse 7 word 8? This is an ambiguity. To resolve it, we need to use a different separator. The basic principle is that a separator followed by a sequence (in this case digits) must be unique, but the separator defines the type of the following component. In this case of the character index, we can reuse `+` from the translation.
 
-| Range                 | Description                                                 |
-|-----------------|‐------------------------------------------|
+| Range           | Description                               |
+| --------------- | ----------------------------------------- |
 | GEN 7:8!2-6       | Genesis ch 7 vs 8 words 2-6  |
 | GEN 7:8!2-12!3  | Genesis ch 7 vs 8 word 2 to vs 12 word 3 |
-| wsg-gong+JHN 3:16 | John 3:16 from the Gondi translation and script |
-| wsg-t-en+JHN 3:16 | John 3:16 from the Gondi back translation into English |
+| wsg-gong.JHN 3:16 | John 3:16 from the Gondi translation and script |
+| wsg-t-en.JHN 3:16 | John 3:16 from the Gondi back translation into English |
 | REV 3.20!n1!4+3-5 | Revelation 3:20, 1st note (including cross references), 4th word characters 3-5 |
-| wsg-t-en+MAT 1:1!5+6 | All that for a single letter! |
+| wsg-t-en.MAT 1:1!5+6 | All that for a single letter! |
 
 
 #### Grammar Extensions
@@ -174,13 +193,14 @@ FullRef = BookId ws* Chapter (chaptersep Verse)?
 ContextRef = Chapter (chaptersep Verse)? | Verse
 BookId = (TransId (":" | "."))? BookCode
 BookCode = [O-9A-Z]{3}
-TransId = langtag ("+" transcode)?
+TransId = langtag ("+" transcode ("+" productid)?)?
+Refsep = ';' | ','
 chaptersep = ws* (":" | ".") ws* 
 Chapter = digits
 Verse = VerseNum ("!" WordRef)? 
 VerseNum = digits (subverse)? | "end"
 WordRef = (Noteref "!")? digits ("+" Charref)?
-Noteref = "n" digits
+Noteref = "n" ("[" digits "]")?
 Charref = digits
 ContextRef = Chapter (chaptersep Verse)? | Verse | WordRef | Charref
 subverse = "a" | "b" | "c" | "d" | "e" | "f"
@@ -195,4 +215,62 @@ variant = [a-z]{5,8}
 ns = [a-z]
 extval = [a-z]{5:8}
 transcode = [0-9a-z]{1,8}
+productid = [0-9a-z]{1,8}
 ```
+
+# Outstanding Issues
+
+## Zero width assertions
+
+This referencing scheme allows reference down to a single character. But it
+doesn't allow reference to the zero width point between characters. There are
+situations where information wants to be associated with a point between two
+characters. How can we mark this position? Perhaps with a trailing +?
+Indexing is 1 based. So we can say: the zerowith position after the char. Thus
+to insert at the start of the bible, one might say `GEN 1:1!1+0+`.
+
+## Referencing into non-verse text
+
+How do we reference into a footnote or a section heading?
+We will call such text, out-of-band text. Consider a footnote. This is anchored
+at a particular character in the text and so may either be counted over a range
+(for example a verse or word). Thus we might say: `GEN 1:1!f` would be the first
+footnote in GEN 1:1. For the second we would say `GEN 1:1!f[2]`.
+Or if we wanted the footnote after the
+3rd word, we might say: `GEN 1:1!3!f` and then for the 4th word in that
+footnote we would say `GEN 1:1!3!f!4`. Notes associate backwards and so are
+considered part of the character they follow.
+
+What if a note is surrounded by spaces? Is it counted as a word? No it still is
+associated with the last character of the previous word. What about notes at the
+start of a verse or some other marker anchor? Here they are associated with that
+anchor and cannot be referenced in relation to a word (unless the word index is
+0).
+
+For subheadings. The key is to notice that subheadings associate forwards. Thus
+the subheading before verse 1 is associated with v1. Thus `GEN 1:1!s!f` is the
+first footnote in the first subheading before GEN 1:1. Subheadings are counted
+forward, thus s[1] comes before s[2].
+
+We can think of using a word reference marker `!` as a way of referring to the
+whole of the marked text, but also to its first word. It is a word range (more
+akin to a verse, really, but using `:` would cause problems with book ids.)
+Since markers never start with a digit and words always do, the two categories
+are disambiguated.
+
+### Referencing Marker Arguments
+
+Here we discuss referencing verse numbers and footnote markers, etc.
+
+Again we can use the 0th word for these.
+
+For a subheading before the start of a chapter, that subheading is associated
+both with the chapter number itself `GEN 1:0!s` and also with the first verse
+`GEN 1:1!s`. In each case also with the zeroth word of each: `GEN 1:0!0+0!s` and
+`GEN 1:1!0+0!s`.
+
+### Referencing Introductory Material
+
+What about `\h` or `\ip` material?
+
+

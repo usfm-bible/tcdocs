@@ -22,10 +22,11 @@ class UsfmGrammarParser:
         '*': 'append_star',
     }
 
-    def __init__(self, doc, backend):
+    def __init__(self, doc, backend, flattenre=True):
         self.aliases = {}
         self.back = backend
         self.doc = doc
+        self.flattenre = flattenre
         self.defines = {}
         self.vars = {}
         self.parse()
@@ -39,13 +40,14 @@ class UsfmGrammarParser:
     def parseRef(self, name, flattens=set(), flattenall=False):
         self.flattens = flattens
         self.flattenall = flattenall
+        self.idcount = 1
+        self.ids = {}
         e = self.get_ref(name)
         self.curr = self.back.append_seq()
         if e is None:
             print("Can't find {}".format(name))
             return None
         self.groups = [name]
-        self.idcount = 1
         self.attribnodes = [None]
         res = self.proc_children(e, self.curr, False)
         self.groups.pop()
@@ -67,9 +69,11 @@ class UsfmGrammarParser:
                 self.start = e
 
     def expandvars(self, s):
+        if not self.flattenre:
+            return s
         if s is None:
             return None
-        return re.sub(r"\$\{(.*?)\}", lambda m:self.vars.get(m.group(1), "'"+m.group(1)+"'")[1:-1], s)
+        return re.sub(r"\$\{(.*?)\}", lambda m:self.expandvars(self.vars.get(m.group(1), "'"+m.group(1)+"'")[1:-1]), s)
 
     def getorder(self, e):
         if f'{usfmns}order' not in e.attrib and \
@@ -170,20 +174,18 @@ class UsfmGrammarParser:
             if a == "match":
                 dump = e.get('dump', 'false') in ("true", "1")
                 capture = None
-                if (d := e.get('id', None)) is not None:
+                if (d := e.get('matchid', None)) is not None:
                     lastres = res
-                    res = self.back.append_group(self.idcount, res)
                     k = (self.groups[-1], d)
-                    if k in self.ids:
-                        capture = self.ids[k]
-                    else:
+                    if k not in self.ids:
                         self.ids[k] = self.idcount
-                        capture = self.idcount
                         self.idcount += 1
+                    capture = self.ids[k]
+                    res = self.back.append_group(capture, res)
                     logger.debug(f"{k} := {capture}")
                     res = self.back.append_seq(res, capture=capture, dump=dump)
                     dump = False
-                if v is not None and len(v):
+                if v is not None and len(v) and v != "''":
                     if a == "match" and v != v.upper() and v[0] not in "'/":
                         v = "'{}'".format(v)
                     res = self.back.match(v, res, dump=dump, alt=self.expandvars(e.get(a+"out", None)))
@@ -285,9 +287,15 @@ class UsfmGrammarParser:
     def data(self, e, res, **kw):
         t = e.get('type', None)
         if t == 'string':
-            reg = e.findtext('./{}param/[@name="pattern"]'.format(relaxns))
+            usfmp = e.find(f'./{usfmns}pattern')
+            if usfmp is None:
+                reg = e.findtext('./{}param/[@name="pattern"]'.format(relaxns))
+                if reg is not None:
+                    reg = "/" + reg + "/"
+            else:
+                reg = self.expandvars(usfmp.get('name', None))
             if reg is not None:
-                res = self.back.match("/"+reg+"/", res)
+                res = self.back.match(reg, res)
             else:
                 res = self.back.match('TEXT', res)
         elif t == "integer":
@@ -304,11 +312,19 @@ class UsfmGrammarParser:
         return self.proc_children(e, res, **kw)
 
 class XmlGrammarParser:
-    def __init__(self, doc, backend):
+    def __init__(self, doc, backend, flattenre=True):
+        self.flattenre = flattenre
         self.doc = doc
         self.back = backend
         self.groupings = []
         self.elements = {}
+
+    def expandvars(self, s):
+        if not self.flattenre:
+            return s
+        if s is None:
+            return None
+        return re.sub(r"\$\{(.*?)\}", lambda m:self.vars.get(m.group(1), "'"+m.group(1)+"'")[1:-1], s)
 
     def parseRef(self, name, flattens=set()):
         self.flattens = flattens
@@ -402,7 +418,11 @@ class XmlGrammarParser:
     def data(self, e, res, **kw):
         t = e.get('type', None)
         if t == 'string':
-            reg = e.findtext('./{}param/[@name="pattern"]'.format(relaxns))
+            usfmp = e.find(f'./{usfmns}pattern')
+            if usfmp is None:
+                reg = e.findtext('./{}param/[@name="pattern"]'.format(relaxns))
+            else:
+                reg = self.expandvars(e.get('name', None))
             if reg is not None:
                 res = self.back.match("/"+reg+"/", res)
             else:

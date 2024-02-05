@@ -73,7 +73,7 @@ USX::
 [source#src-usx-periph_1,xml,highlight=1;14]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="FRT" style="id">Good News Translation Front Matter</book>
     <periph alt="Title Page" id="title">
       <para style="mt1">Holy Bible</para>

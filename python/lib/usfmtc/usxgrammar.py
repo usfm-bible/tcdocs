@@ -1,4 +1,7 @@
 
+import re
+import xml.etree.ElementTree as et
+
 alljobs = {
     "BookHeaders":          ("bkhdrs", ("BookHeaders.para.style.enum",)),
     "BookTitles":           ("bktitles", ("BookTitles.para.style.enum",)),
@@ -7,20 +10,19 @@ alljobs = {
     "ChapterContent":       ("chaptercontent", ),
     "ChapterStart":         ("chapter",),
     "ChapterEnd":           ("chapterend",),
-    "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Break",
-                                        "CharWithAttrib.enum", "CharContent"), ("+char.link", )),
-    "CharEmbed":            ("charembed", ("Char.char.style.enum", "+char.closed", "Break",
-                                            "CharEmbedWithAttrib", "CharWithAttrib.enum"), ("+char.link", )),
-    "CharWithAttrib":       ("charattrib", ("CharWithAttrib.enum")),
+    "Char":                 ("char", ("Char.char.style.enum", "+char.closed", "Attributes", "Break",
+                                        "CharContent", "FullChar.char.style.enum", "FullCharExtra.char.style.enum")),
+    "CharEmbed":            ("charembed", ("Char.char.style.enum", "+char.closed", "Attributes", "Break",
+                                            "FullChar.char.style.enum", "FullCharExtra.char.style.enum")),
     "CrossReference":       ("crossref",),
     "CrossReferenceChar":   ("xchar",("CrossReferenceChar.char.style.enum", "+char.closed")),
-    "Figure":               ("fig",("FigureTwo", "FigureThree")),
-    "Footnote":             ("f", tuple(), ("category", )),
+    "Figure":               ("fig",("FigureTwo", "Attributes", "FigureThree")),
+    "Footnote":             ("f", ("NoteCharEmbed", "Attributes"), ("category", )),
     "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
     "List":                 ("list", ("List.para.style.enum",)),
     "ListChar":             ("listchar", ("+char.closed", "ListChar.char.style.enum",)),
-    "Milestone":            ("ms", ("MilestoneWithAttrib.enum", "MilestoneWithAttrib.ms.style.qt", "Milestone.enum")),
-    "Para":                 ("p", ("Para.para.style.enum", "Break")),
+    "Milestone":            ("ms", ("Milestone.enum", "Attributes")),
+    "Para":                 ("p", ("VersePara", "NonVersePara", "Para.para.style.enum", "Para.nonpara.style.enum", "Break")),
     "PeripheralDivision":   ("periph", ("Peripheral.FRT.periph.id.enum", "Peripheral.INT.periph.id.enum",
                                         "Peripheral.BAK.periph.id.enum", "Peripheral.OTH.periph.id.enum", "PeripheralContent")),
     "Scripture":            ("id", ("BookIdentification", "BookIdentification.book.code.enum", "ChapterContent")),
@@ -29,7 +31,6 @@ alljobs = {
     "VerseStart":           ("verse",),
     "VerseEnd":             ("verseend",),
     "category":             ("cat",),
-    "char.link":            ("link",),
 }
 
 usxenums = {
@@ -55,4 +56,21 @@ usxenums = {
     'footnotechar': 'FootnoteChar.char.style',
     'crossrefchar': 'CrossReferenceChar.char.style',
 }
+
+relaxns = "{http://relaxng.org/ns/structure/1.0}"
+
+def addmarkers(rdoc, markers):
+    for s in markers:
+        t, r = s.split('=')
+        mks = re.split(r'[,;\s]\s*', r)
+        ty = t.strip()
+        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums.get(ty, None)))
+        if e is None:
+            print(f"Can't find an enum for {ty}.")
+            continue
+        for m in mks:
+            v = et.Element(f'{relaxns}value')
+            v.text = m.strip()
+            e.insert(0, v)
+
 

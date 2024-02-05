@@ -4,60 +4,67 @@ import argparse, os, sys, logging, re, itertools
 from multiprocessing import Pool
 
 try:
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc import USX, usfmGrammar
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.sfmparser import UsfmParserBackend, parseusfm
+    from usfmtc import USX, usfmGrammar
+
 from usfmtc.parser import NoParseError
-from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
-from usfmtc.usxgrammar import usxenums
-from usfmtc.xmlutils import parsexml, writexml, prettyxml
-from usfmtc.usx import addesids, etCmp, cell_aligns, cleanup, partypes
+from usfmtc.usxmodel import etCmp
 import xml.etree.ElementTree as et
 from lxml import etree
 
-def proconedir(d, sfmp, relax, args):
+def getfname(d, basefile):
+    if os.path.isdir(d):
+        return os.path.join(d, basefile)
+    else:
+        return d
+
+def proconedir(d, sfmp, relax, rdoc, args):
     meta = {}
     if os.path.isdir(d):
         doc = et.parse(os.path.join(d, "metadata.xml"))
         for e in doc.getroot():
             meta[e.tag] = e.text
         tags = set((meta.get('tags', "") or "").split())
-        if len(args.exclude) and tags & args.exclude and (not len(tags) or not tags & args.include):
+        if (tags & args.exclude or len(args.include)) and not tags & args.include:
             return
     # print(f"{d}: ", end='', flush=True)
     imsg = ""
     xmsg = ""
-    try:
-        if os.path.isdir(d):
-            result = parseusfm(os.path.join(d, "origin.usfm"), sfmp)
+    testxml = None
+    expected = meta.get('validated', 'pass').lower() == 'pass'
+    if args.testset == 1:
+        f = getfname(d, "origin.xml")
+        if not os.path.exists(f):
+            return (not expected, d, "No origin.xml", "")
+        testxml = USX.fromUsx(getfname(d, "origin.xml"))
+        if not os.path.isdir(d):
+            ud = d.replace(".xml", "_test.usfm")
+            d = ud
         else:
-            result = parseusfm(d, sfmp)
+            ud = getfname(d, "origin_test.usfm")
+        passresult = testxml.outUsfm(rdoc, file=ud)
+        if not passresult:
+            return (not expected, d, "USFM output failed", "" if passresult == expected else "Unexpected result")
+    try:
+        result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp)
+        result.addesids()
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
     if result is not None:
         passed = True
-        if (args.debug & 1) != 0:
-            print(result)
-        xml = result.asEt()
-        addesids(xml)
-        cell_aligns(xml)
-        cleanup(xml)
-        testxml = None
-        if not os.path.isdir(d) and args.base and os.path.exists(args.base):
-            testxml = parsexml(args.base)
-        if os.path.exists(os.path.join(d, "origin.xml")):
-            testxml = parsexml(os.path.join(d, "origin.xml"))
+        if testxml is None:
+            testxml = USX.fromUsx(getfname(d, args.base or "origin.xml"))
         if testxml:
-            passed = etCmp(xml, testxml.getroot(), verbose=args.print)
+            passed = etCmp(result.getroot(), testxml.getroot(), verbose=args.print)
             if not passed:
                 xmsg = "USX generated not same as origin.xml!"
         if args.print:
-            prettyxml(xml)
-            writexml(sys.stdout, xml)
+            result.outUsx(sys.stdout)
         try:
-            etreexml = etree.fromstring(et.tostring(xml, encoding="utf-8", xml_declaration=True))
+            etreexml = etree.fromstring(et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True))
             if not relax.validate(etreexml):
                 xmsg = str(relax.error_log.last_error)
                 passed = False
@@ -66,7 +73,6 @@ def proconedir(d, sfmp, relax, args):
             passed=False
     else:
         passed = False
-    expected = meta.get('validated', 'pass') == 'pass'
     res = passed == expected
     if not args.quiet:
         print("{}: {} ({} {}){} | {}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg, xmsg))
@@ -92,8 +98,9 @@ def chunkjobs(jobs, nchunks, args):
 parser = argparse.ArgumentParser()
 parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
+parser.add_argument("-t","--testset",type=int,default=0,help="Do given test set")
 parser.add_argument("-b","--base",help="Base USX file to compare against for direct file tests")
-parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
+parser.add_argument("-S","--start",default="USX",help="Starting node for parsing")
 parser.add_argument("-P","--print",action="store_true",help="Print generated xml")
 parser.add_argument("-q","--quiet",action="store_true",help="Don't output error reports, just stats")
 parser.add_argument("-o","--output",help="Output error reports to this file")
@@ -139,30 +146,10 @@ else:
     jobs = [(args.directory, st.st_size)]
 
 if len(jobs) == 1:
-    args.exclude = []
-
-relaxns = "{http://relaxng.org/ns/structure/1.0}"
+    args.exclude = set()
 
 rdoc = et.parse(args.grammar)
-if len(args.marker):
-    for s in args.marker:
-        t, r = s.split('=')
-        mks = re.split(r'[,;\s]\s*', r)
-        ty = t.strip()
-        e = rdoc.find('./{0}define[@name="{1}.enum"]/{0}choice'.format(relaxns, usxenums[ty]))
-        if e is None:
-            print(f"Can't find an enum for {ty}. Tried {usxenums[ty]}")
-            continue
-        for m in mks:
-            v = et.Element(f'{relaxns}value')
-            v.text = m.strip()
-            e.insert(0, v)
-            if ty == 'para':
-                partypes[m] = 'Section'
-
-backendsfm = UsfmParserBackend()
-sfmproc = UsfmGrammarParser(rdoc, backendsfm)
-sfmproc.parseRef(args.start)
+sfmproc = usfmGrammar(rdoc, args.marker, start=args.start)
 newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
 usxrng = etree.RelaxNG(etree=newdoc)
 
@@ -172,7 +159,7 @@ if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
     def doprocone(arg):
         if arg is None:
             return
-        return proconedir(arg, sfmproc.curr, usxrng, args)
+        return proconedir(arg, sfmproc, usxrng, rdoc, args)
     pool = Pool()
     nchunks = args.jobs * 4
     chunksize = len(jobs) // nchunks
@@ -182,7 +169,7 @@ if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
 else:
     results = []
     for j in jobs:
-        results.append(proconedir(j[0], sfmproc.curr, usxrng, args))
+        results.append(proconedir(j[0], sfmproc, usxrng, rdoc, args))
 
 ifailed = 0
 xfailed = 0
@@ -194,7 +181,7 @@ for r in results:
         continue
     if len(r[2]) and not r[0]:
         ifailed += 1
-    if len(r[3])and not r[0]:
+    if len(r[3]) and not r[0]:
         xfailed += 1
     total += 1
     if args.output:

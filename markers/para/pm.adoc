@@ -29,8 +29,11 @@ Added:: 1.0
 USFM::
 +
 .Act 15.24-27,28-29 (CEV)
-[source#src-usfm-para-pm_1,usfm,highlight=3;11]
+[source#src-usfm-para-pm_1,usfm,highlight=6;14]
 ----
+\id ACT
+\c 15
+\p ...
 \pmo We apostles and leaders send friendly greetings to all of you Gentiles 
 who are followers of the Lord in Antioch, Syria, and Cilicia.
 \pm
@@ -48,24 +51,105 @@ on you...
 USX::
 +
 .Act 15.24-27,28-29 (CEV)
-[source#src-usx-para-pm_1,xml,highlight=3;14]
+[source#src-usx-para-pm_1,xml,highlight=6;17]
 ----
-<para style="pmo">We apostles and leaders send friendly greetings to all of you
-  Gentiles who are followers of the Lord in Antioch, Syria, and Cilicia.</para>
-<para style="pm">
-  <verse number="24" style="v" sid="ACT 15:24"/>We have heard that some people
-  from here have terribly upset you by what they said. But we did not send them! 
-  <verse eid="ACT 15:24"/><verse number="25" style="v" sid="ACT 15:25"/>So we met
-  together and decided to choose some men and to send them to you along with our
-  good friends Barnabas and Paul. <verse eid="ACT 15:25"/>
-  <verse number="26" style="v" sid="ACT 15:26"/>These men have risked their lives 
-  for our Lord Jesus Christ. <verse eid="ACT 15:26"/>
-  <verse number="27" style="v" sid="ACT 15:27"/>We are also sending Judas and Silas, 
-  who will tell you in person the same things that we are writing.
-  <verse eid="ACT 15:27"/></para>
-<para style="pm">
-  <verse number="28" style="v" sid="ACT 15:28"/>The Holy Spirit has shown us that
-  we should not place any extra burden on you...<verse eid="ACT 15:28"/></para>
+<usx version="3.1">
+  <chapter number="15" style="c" sid="ACT 15"/>
+  <para style="p">...</para>
+  <para style="pmo">We apostles and leaders send friendly greetings to all of you
+    Gentiles who are followers of the Lord in Antioch, Syria, and Cilicia.</para>
+  <para style="pm">
+    <verse number="24" style="v" sid="ACT 15:24"/>We have heard that some people
+    from here have terribly upset you by what they said. But we did not send them! 
+    <verse eid="ACT 15:24"/><verse number="25" style="v" sid="ACT 15:25"/>So we met
+    together and decided to choose some men and to send them to you along with our
+    good friends Barnabas and Paul. <verse eid="ACT 15:25"/>
+    <verse number="26" style="v" sid="ACT 15:26"/>These men have risked their lives 
+    for our Lord Jesus Christ. <verse eid="ACT 15:26"/>
+    <verse number="27" style="v" sid="ACT 15:27"/>We are also sending Judas and 
+    Silas, who will tell you in person the same things that we are writing.
+    <verse eid="ACT 15:27"/></para>
+  <para style="pm">
+    <verse number="28" style="v" sid="ACT 15:28"/>The Holy Spirit has shown us that
+    we should not place any extra burden on you...<verse eid="ACT 15:28"/></para>
+</usx>
+----
+USJ::
++
+.Act 15.24-27,28-29 (CEV)
+[source#src-usj-para-pm_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "15",
+      "sid": "ACT 15"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": ["..."]
+    },
+    {
+      "type": "para",
+      "marker": "pmo",
+      "content": [
+        "We apostles and leaders send friendly greetings to all of you Gentiles who are followers of the Lord in Antioch, Syria, and Cilicia."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pm",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "24",
+          "sid": "ACT 15:24"
+        },
+        "We have heard that some people from here have terribly upset you by what they said. But we did not send them!",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "25",
+          "sid": "ACT 15:25"
+        },
+        "So we met together and decided to choose some men and to send them to you along with our good friends Barnabas and Paul.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "26",
+          "sid": "ACT 15:26"
+        },
+        "These men have risked their lives for our Lord Jesus Christ.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "27",
+          "sid": "ACT 15:27"
+        },
+        "We are also sending Judas and Silas, who will tell you in person the same things that we are writing."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pm",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "28",
+          "sid": "ACT 15:28"
+        },
+        "The Holy Spirit has shown us that we should not place any extra burden on you..."
+      ]
+    }
+  ]
+}
 ----
 ======
 

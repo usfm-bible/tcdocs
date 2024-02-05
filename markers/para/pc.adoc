@@ -30,8 +30,11 @@ Added:: 1.0
 USFM::
 +
 .Revelation 17.5 (CEV)
-[source#src-usfm-para-pc_1,usfm,highlight=3]
+[source#src-usfm-para-pc_1,usfm,highlight=8]
 ----
+\id REV
+\c 17
+\p ...
 \v 4 The woman was dressed in purple and scarlet robes, and she wore jewelry 
 made of gold, precious stones, and pearls. In her hand she held a gold cup 
 filled with the filthy and nasty things she had done.
@@ -45,20 +48,83 @@ had given their lives for Jesus. This surprising sight amazed me, ...
 USX::
 +
 .Revelation 17.5 (CEV)
-[source#src-usx-para-pc_1,xml,highlight=7]
+[source#src-usx-para-pc_1,xml,highlight=10]
 ----
-  ...
-  <verse number="4" style="v" sid="REV 17:4"/>The woman was dressed in purple and
-  scarlet robes, and she wore jewelry made of gold, precious stones, and pearls.
-  In her hand she held a gold cup filled with the filthy and nasty things she had
-  done. <verse eid="REV 17:4"/><verse number="5" style="v" sid="REV 17:5"/>On her
-  forehead a mysterious name was written:</para>
-<para style="pc" vid="REV 17:5">I AM THE GREAT CITY OF BABYLON, THE MOTHER OF
-  EVERY IMMORAL AND FILTHY THING ON EARTH.<verse eid="REV 17:5"/></para>
-<para style="m">
-  <verse number="6" style="v" sid="REV 17:6"/>I could tell that the woman was
-  drunk on the blood of God's people who had given their lives for Jesus. This
-  surprising sight amazed me, ...<verse eid="REV 17:6"/></para>
+<usx version="3.1">
+  <chapter number="17" style="c" sid="REV 17" />
+  <para style="p" vid="REV 17:3">
+    ...
+    <verse number="4" style="v" sid="REV 17:4"/>The woman was dressed in purple and
+    scarlet robes, and she wore jewelry made of gold, precious stones, and pearls.
+    In her hand she held a gold cup filled with the filthy and nasty things she had
+    done. <verse eid="REV 17:4"/><verse number="5" style="v" sid="REV 17:5"/>On her
+    forehead a mysterious name was written:</para>
+  <para style="pc" vid="REV 17:5">I AM THE GREAT CITY OF BABYLON, THE MOTHER OF
+    EVERY IMMORAL AND FILTHY THING ON EARTH.<verse eid="REV 17:5"/></para>
+  <para style="m">
+    <verse number="6" style="v" sid="REV 17:6"/>I could tell that the woman was
+    drunk on the blood of God's people who had given their lives for Jesus. This
+    surprising sight amazed me, ...<verse eid="REV 17:6"/></para>
+</usx>
+----
+USJ::
++
+.Revelation 17.5 (CEV)
+[source#src-usj-para-pc_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "17",
+      "sid": "REV 17"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        "...",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "4",
+          "sid": "REV 17:4"
+        },
+        "The woman was dressed in purple and scarlet robes, and she wore jewelry made of gold, precious stones, and pearls. In her hand she held a gold cup filled with the filthy and nasty things she had done.",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "5",
+          "sid": "REV 17:5"
+        },
+        "On her forehead a mysterious name was written:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "pc",
+      "content": [
+        "I AM THE GREAT CITY OF BABYLON, THE MOTHER OF EVERY IMMORAL AND FILTHY THING ON EARTH."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "m",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "6",
+          "sid": "REV 17:6"
+        },
+        "I could tell that the woman was drunk on the blood of God's people who had given their lives for Jesus. This surprising sight amazed me, ..."
+      ]
+    }
+  ]
+}
 ----
 ======
 

@@ -5,90 +5,41 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-USFM considers space (`U+0020`), tab (`U+0009`), and xref:whitespace.adoc#newlines[newline characters] to be whitespace.
+[#ws-definition]
+== Definition
 
-* [#significant]*Significant whitespace* is a critical part of the USFM document and should always be preserved as is.
-** The space after the end of a paragraph marker, or the end of the opening marker within a character or note marker pair.
-** The xref:whitespace.adoc#newlines[newline] preceding a new paragraph marker.
+In USFM/USX, a white space (*_WS_*) character is xref:ROOT:glossary.adoc[defined] by the pattern ``++/(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)/++``, where:
 
-* [#insignificant]*Insignificant whitespace* should be normalized by a USFM processor.
-** Multiple whitespace within the body text of a xref:para:index.adoc[paragraph].
-** Multiple whitespace preceding a xref:para:index.adoc[paragraph] marker.
+ws:: ``++/[\u0009-\u000D\u0020]/++``
+** A single simple whitespace character that may be reduced
+nl:: ``++/(?:\u000D?\u000A|\u000D)/++``
+** A single newline (as supported by all operating systems)
 
-[#newlines]
-== Newlines
-USFM processors should treat the single `CR` (`U+000D`) or `LF` (`U+000A`) characters, and the sequence Carriage Return-Line Feed (`CRLF`), like a single `LF` character. Applications can save documents using the appropriate line-ending convention.
+All other characters, even if formally Unicode whitespace characters, are treated as _content_ characters.
 
-All *paragraph markers* should be preceded by a single newline.
+*Significant* or _#content#_ whitespace is considered part of the text of the document. It may be reduced but is not deleted.
 
-As a recommended best practice for USFM editors, *inline markup* (xref:char:index.adoc[character-level markup], xref:note:footnote/index.adoc[footnotes], or xref:note:crossref/index.adoc[cross references]) should not be preceded by a newline. It would be acceptable for a xref:whitespace.adoc#normalization[whitespace normalization] process to replace a newline and any preceding space (multiple spaces) before this inline markup with a single space (#3), but it should not remove all whitespace.
+*Structural* or _non-content_ whitespace exists either to aid the layout of a source file or to delimit markers. Structural whitespace is explicitly identified in the syntax diagrams and is not part of a `TEXT` terminal.
 
-In the following example, the footnote `+\f ...\f*+` at Matthew 6:27:
+[#ws-reducing]
+== Reducing or Eliminating Whitespace
 
-[source#src-wsn_1,usfm]
-----
-\v 27 Can any of you live a bit longer
-\f + \fr 6.27: \fq live a bit longer; \ft or \fq grow a bit taller.\f* by 
-worrying about it?
-----
+* Whitespace is *reduced* according to these rules:
 
-would be normalized as:
+** Any string of *_WS_* chars including a newline is reduced to a single newline.
+** Any string of *_WS_* chars not including a newline is reduced to a single space.
 
-[source#src-wsn_2,usfm]
-----
-\v 27 Can any of you live a bit longer \f + \fr 6.27: \fq live a bit 
-longer; \ft or \fq grow a bit taller.\f* by worrying about it?
-----
+* _#Content#_ whitespace can be *eliminated* when it occurs:
 
-[#normalization]
-== Whitespace Normalization
+** At the start of any element content.
+** At the end of any element content, except inside a xref:char:index.adoc[character] element, when followed by text or another xref:char:index.adoc[character] element.
 
-. Multiple whitespace between the end of a paragraph marker and the paragraph text are normalized to a single space (U+0020).
-. Multiple whitespace between words are normalized to a single space (U+0020).
-. Multiple whitespace between text and a character or note marker (f, ex, x, ex; not esb or esbe) are normalized to a single space (U+0020).
-** Due to the extensive common practice in USFM documents of adding new verse text after a newline, multiple whitespace between text and a xref:cv:v.adoc[verse marker] should be normalized as a single newline.
-. Multiple whitespace preceding a paragraph marker is normalized to a single xref:whitespace.adoc#newlines[newline].
-. Normalized whitespace preceding and following a character or note marker pair is preserved. (USFM validation tools may flag suspicious whitespace.)
-. Normalized whitespace preceding the closing marker of a character or note marker pair is preserved. (USFM validation tools may flag suspicious whitespace.)
-. xref:whitespace.adoc#significant[Significant whitespace] should not be added to the text.
+* Whitespace *canonicalization* is done as follows:
 
-=== Handling special contexts
+** A newline before a xref:char:index.adoc[character] marker is converted to a space. That space is significant _#content#_.
+** Any whitespace before a xref:para:index.adoc[paragraph] marker, including none, is replaced by a newline. This newline is not significant _#content#_.
 
-The normalization rules outlined in 3,5,7 can result in whitespace remaining in the text which may be considered insignificant depending on its context.
-
-For example, the space preceding the footnote in:
-
-[source#src-wsn_3,usfm]
-----
-\v 27 Can any of you live a bit longer \f + \fr 6.27: \fq live a bit longer;
-----
-
-could be removed:
-
-[source#src-wsn_4,usfm]
-----
-\v 27 Can any of you live a bit longer\f + \fr 6.27: \fq live a bit longer;
-----
-
-And a space after a cross reference occurring at the start of a verse:
-
-[source#src-wsn_5,usfm]
-----
-v 7 \x - \xo 2.7: \xt 1 Co 15.45.\x* Then the \nd Lord\nd* God took some soil
-from the ground and formed a man
-----
-
-could be removed:
-
-[source#src-wsn_6,usfm]
-----
-v 7 \x - \xo 2.7: \xt 1 Co 15.45.\x*Then the \nd Lord\nd* God took some soil
-from the ground and formed a man
-----
-
-Yet, a normalization process cannot _generally_ remove ALL whitespace preceding and following note marker pairs. In many cases a single whitespace is expected between the texts which precede and follows a note. As suggested and recommended earlier:
-
-* USFM validation tools may flag suspicious whitespace.
-* USFM editors can takes steps to discourage ambiguous whitespace wherever possible.
-* USFM normalization tools can identify and handles special contexts (examples above).
-* USFM publication tools and other post processors can identify and handle special contexts in the manner which is most suitable for the intended output.
+[NOTE]
+====
+USX documents contain whitespace that delimits aspects of the XML syntax. XML allows for unlimited whitespace wherever it is permitted in the XML syntax, which is typically added for the purpose of formatting for easier reading ('pretty-printing').
+====

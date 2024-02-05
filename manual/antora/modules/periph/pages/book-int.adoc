@@ -69,7 +69,7 @@ USX::
 [source#src-usx-periph-int-all_1,xml,highlight=4;12;18;24;30;36;42;47]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="INT" style="id" />
   <periph alt="Old testament Introduction" id="intot">
     <para style="mt1">Introduction to the Old Testament</para>
@@ -83,7 +83,7 @@ USX::
 </usx>
 ...
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="INT" style="id" />
   <periph alt="Pentateuch Introduction" id="intpent">
     <para style="mt1">The Pentateuch</para>
@@ -95,7 +95,7 @@ USX::
 </usx>
 ...
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="INT" style="id" />
   <periph alt="Deuterocanon Introduction" id="intdc">
     <para style="mt1">Deuterocanonicals/Apocrypha</para>
@@ -107,7 +107,7 @@ USX::
 </usx>
 ...
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="INT" style="id" />
   <periph alt="New Testament Introduction" id="intnt">
     <para style="mt1">Introduction to the New Testament</para>

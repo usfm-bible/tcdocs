@@ -1,4 +1,5 @@
 
+import re
 import xml.etree.ElementTree as et
 
 class ParentElement(et.Element):
@@ -16,23 +17,26 @@ class ParentElement(et.Element):
         p = repr(self.parent) if self.parent is not None else ""
         return "{}/{}".format(p, str(self))
 
-    def getindex(self):
+    def _getindex(self):
         if self.parent is None:
             return -1, None
         return list(self.parent).index(self), self.parent
 
     def getprevious(self):
-        i, parent = self.getindex()
+        i, parent = self._getindex()
         return parent[i-1] if parent is not None and i > 0 else None
 
     def getnext(self):
-        i, parent = self.getindex()
+        i, parent = self._getindex()
         return parent[i+1] if parent is not None and i < len(parent) - 1 else None
 
     def addprevious(self, el):
-        i, parent = self.getindex()
+        i, parent = self._getindex()
         if parent is not None:
             parent.insert(i, el)
+
+    def getparent(self):
+        return self.parent
 
 
 def parsexml(infile):
@@ -48,13 +52,27 @@ def writexml(outf, root):
     _serialize_xml(outf.write, root, qnames, ns, True)
     outf.write("\n")
 
+escapes = {
+    '&': "&amp;",
+    '<': "&lt;",
+    '>': "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+}
+def usfmToUsxEscapes(s):
+    for k, v in escapes.items():
+        if k in s:
+            s = s.replace(k, v)
+    return s
+    
+
 def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwargs):
     tag = elem.tag
     text = elem.text
     tag = qnames[tag]
     if tag is None:
         if text:
-            write(et._escape_cdata(text))
+            write(usfmToUsxEscapes(text))
         for e in elem:
             _serialize_xml(write, e, qnames, None, short_empty_elements)
     else:
@@ -65,22 +83,22 @@ def _serialize_xml(write, elem, qnames, namespaces, short_empty_elements, **kwar
                 for v, k in sorted(namespaces.items(), key=lambda x: x[1]):  # sort on prefix
                     if k:
                         k = ":" + k
-                    write(" xmlns%s=\"%s\"" % (k, et._escape_attrib(v)))
+                    write(" xmlns%s=\"%s\"" % (k, usfmToUsxEscapes(v)))
             for k, v in items:
                 if not k.startswith(" ") and v is not None:
-                    v = et._escape_attrib(v)
+                    v = usfmToUsxEscapes(v)
                     write(" %s=\"%s\"" % (qnames[k], v))
         if text or len(elem) or not short_empty_elements:
             write(">")
             if text:
-                write(et._escape_cdata(text))
+                write(usfmToUsxEscapes(text))
             for e in elem:
                 _serialize_xml(write, e, qnames, None, short_empty_elements)
             write("</" + tag + ">")
         else:
             write(" />")
     if elem.tail:
-        write(et._escape_cdata(elem.tail))
+        write(usfmToUsxEscapes(elem.tail))
 
 def prettyxml(node, last=None, indent="", width=2):
     if node.tag in ('para', 'sidebar', 'table', 'chapter', 'usx', 'book'):

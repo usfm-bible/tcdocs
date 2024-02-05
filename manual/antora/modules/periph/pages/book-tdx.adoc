@@ -46,7 +46,7 @@ USX::
 [source#src-usx-periph-tdx_1,xml]
 ----
 <?xml version="1.0" encoding="utf-8"?>
-<usx version="3.0">
+<usx version="3.1">
   <book code="TDX" style="id" />
   <para style="mt">Subject Index</para>
   <para style="ip">Introductory paragraph(s) ...</para>

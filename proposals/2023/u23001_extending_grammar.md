@@ -53,7 +53,7 @@ a \\defmarker is a space separated list of elements:
 For example:
 
 ```
-\defmarker z-aln charwithattrib lemma
+\defmarker z-aln Char lemma
 ```
 
 The marker is the marker being defined. The category is one of a closed set of
@@ -76,14 +76,15 @@ at various points. The current list is:
 | BookHeaders |         | Book information including \\h \\toc#  |
 | BookIntroduction |    | Book introductions including \\mt# \\imt# \\ip \\is \\io |
 | Char        |         | Character markers including \\k \\wg \\nd \\pn \\xt   |
-| CharWithAttrib | default\_attribute | Character markers with attributes including \\w \\rb  |
+| Char | default\_attribute | The default attribute is optional if there are no attributes |
 | CrossReferenceChar |     | CrossReference structural marker including \\xo \\xt  |
 | FootnoteChar |     | Footnote structural marker including \\fr \\ft    |
 | IntroChar |     | Introductory character style including \\ior \\iqt  |
 | ListChar |     | List paragraph character style including \\liv \\lik \\litl  |
 | List |     | List paragraph style including \\lh \\li |
 | Milestone | default\_attribute    | Milestones including ts-s qt-e  |
-| Para |     | Paragraph styles including \\p \\q \\m \\b \\s3 |
+| Para |     | Paragraph styles including \\p \\q \\m that contain scripture verse text |
+| NonVersePara |    | Paragraph styles that do not contain scripture text, e.g. \\lit |
 | Section |     | Section header styles including \\s1 \\r \\ip \\cl |
 
 ## Examples

@@ -30,8 +30,9 @@ Added:: 1.0
 USFM::
 +
 .Psalm 1 (Book 1 division) (GNT)
-[source#src-usfm-para-ms1_1,usfm,highlight=2]
+[source#src-usfm-para-ms1_1,usfm,highlight=3]
 ----
+\id PSA
 \c 1
 \ms1 Book One
 \mr (Psalms 1–41)
@@ -40,19 +41,80 @@ USFM::
 \v 1 Happy are those
 \q2 who reject the advice of evil people,
 ----
-USFM::
+USX::
 +
 .Psalm 1 (Book 1 division) (GNT)
-[source#src-usx-para-ms1_1,xml,highlight=2]
+[source#src-usx-para-ms1_1,xml,highlight=3]
 ----
-<chapter number="1" style="c" sid="PSA 1"/>
-<para style="ms1">Book One</para>
-<para style="mr">(Psalms 1–41)</para>
-<para style="s">True Happiness</para>
-<para style="q1">
-  <verse number="1" style="v" sid="PSA 1:1"/>Happy are those</para>
-<para style="q2" vid="PSA 1:1">who reject the advice of evil people,
-  <verse eid="PSA 1:1"/></para>
+<usx version="3.1">
+  <chapter number="1" style="c" sid="PSA 1"/>
+  <para style="ms1">Book One</para>
+  <para style="mr">(Psalms 1–41)</para>
+  <para style="s">True Happiness</para>
+  <para style="q1">
+    <verse number="1" style="v" sid="PSA 1:1"/>Happy are those</para>
+  <para style="q2" vid="PSA 1:1">who reject the advice of evil people,
+    <verse eid="PSA 1:1"/></para>
+</usx>
+----
+USJ::
++
+.Psalm 1 (Book 1 division) (GNT)
+[source#src-usj-para-ms1_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "PSA 1"
+    },
+    {
+      "type": "para",
+      "marker": "ms1",
+      "content": [
+        "Book One"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "mr",
+      "content": [
+        "(Psalms 1–41)"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "s",
+      "content": [
+        "True Happiness"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "PSA 1:1"
+        },
+        "Happy are those"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        "who reject the advice of evil people,"
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -63,8 +125,9 @@ image::para/ms1_1.jpg[Psalm 1 (Book 1 division) (GNT),300]
 USFM::
 +
 .Daniel 1.1 (GNT)
-[source#src-usfm-par-ms1_2,usfm,highlight=2]
+[source#src-usfm-par-ms1_2,usfm,highlight=3]
 ----
+\id DAN
 \c 1
 \ms1 The Story of Daniel and His Friends
 \mr (1.1—6.28)
@@ -76,16 +139,64 @@ of Babylonia attacked Jerusalem and surrounded the city.
 USX::
 +
 .Daniel 1.1 (GNT)
-[source#src-usx-par-ms1_2,xml,highlight=2]
+[source#src-usx-par-ms1_2,xml,highlight=3]
 ----
-<chapter number="1" style="c" sid="DAN 1"/>
-<para style="ms1">The Story of Daniel and His Friends</para>
-<para style="mr">(1.1—6.28)</para>
-<para style="s">The Young Men at Nebuchadnezzar's Court</para>
-<para style="p">
-  <verse number="1" style="v" sid="DAN 1:1"/>In the third year that Jehoiakim was
-  king of Judah, King Nebuchadnezzar of Babylonia attacked Jerusalem and
-  surrounded the city.<verse eid="DAN 1:1"/></para>
+<usx version="3.1">
+  <chapter number="1" style="c" sid="DAN 1"/>
+  <para style="ms1">The Story of Daniel and His Friends</para>
+  <para style="mr">(1.1—6.28)</para>
+  <para style="s">The Young Men at Nebuchadnezzar's Court</para>
+  <para style="p">
+    <verse number="1" style="v" sid="DAN 1:1"/>In the third year that Jehoiakim was
+    king of Judah, King Nebuchadnezzar of Babylonia attacked Jerusalem and
+    surrounded the city.<verse eid="DAN 1:1"/></para>
+</usx>
+----
+USJ::
++
+.Daniel 1.1 (GNT)
+[source#src-usj-par-ms1_2,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "DAN 1"
+    },
+    {
+      "type": "para",
+      "marker": "ms1",
+      "content": ["The Story of Daniel and His Friends"]
+    },
+    {
+      "type": "para",
+      "marker": "mr",
+      "content": ["(1.1—6.28)"]
+    },
+    {
+      "type": "para",
+      "marker": "s",
+      "content": ["The Young Men at Nebuchadnezzar's Court"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "DAN 1:1"
+        },
+        "In the third year that Jehoiakim was king of Judah, King Nebuchadnezzar of Babylonia attacked Jerusalem and surrounded the city."
+      ]
+    }
+  ]
+}
 ----
 ======
 

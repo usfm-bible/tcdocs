@@ -29,6 +29,8 @@ class GlobalState(usfmp.GlobalState):
 
     def capture(self, index, txt):
         self._ensure(index)
+        if isinstance(txt, (list, tuple)):
+            txt = "".join(txt)
         logger.debug(f"Capture[{index}] = '{self.captures[index]}' + '{txt}'")
         self.captures[index] += txt
 
@@ -166,8 +168,10 @@ class Element(list):
         else:
             self.append(e)
 
-    def asEt(self, parent=None):
-        res = ParentElement(self.name, attrib=self.attributes, parent=parent)
+    def asEt(self, parent=None, elfactory=None):
+        if elfactory is None:
+            elfactory = ParentElement
+        res = elfactory(self.name, attrib=self.attributes, parent=parent)
         if parent is not None:
             parent.append(res)
         def asetchild(c, res):
@@ -177,7 +181,7 @@ class Element(list):
                 else:
                     res.text = c if res.text is None else res.text + c
             elif isinstance(c, Element):
-                c.asEt(res)
+                c.asEt(res, elfactory=elfactory)
             elif isinstance(c, list):
                 for e in c:
                     asetchild(e, res)
@@ -196,16 +200,25 @@ class Element(list):
         return str(self)
 
 
-def parseusfm(infilename, parser, timeout=1e7):
-    if hasattr(infilename, 'read'):
+def parseusfm(infilename, parser, timeout=1e7, isdata=True):
+    if isdata:
+        dat = infilename
+    elif hasattr(infilename, 'read'):
         dat = infilename.read().decode("utf-8")
     else:
         with open(infilename, encoding="utf-8") as inf:
             dat = inf.read()
     gs = GlobalState(dat, timeout=timeout)
     return parser.parse(usfmp.State(gs))
-    
-        
+
+escapes = {
+    '\\' : '\\',
+    'n': '\n'
+}
+
+def expandescape(s):
+    return re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), m.group(1)), s)
+
 class UsfmParserBackend:
     _terminals = {
         'text': lambda **kw : Text(**kw),
@@ -289,8 +302,10 @@ class UsfmParserBackend:
         return Group(parent=context, mode="|+", **self.get_nodename(), **kw)
 
     def match(self, name, context, dump=False, to=None, **kw):
+        if not len(name):
+            return context
         if name[0] in "\"'":
-            res = String(regex.escape(name[1:-1]), parent=context, dump=dump, **self.get_nodename(), **kw)
+            res = String(regex.escape(expandescape(name[1:-1])), parent=context, dump=dump, **self.get_nodename(), **kw)
         elif name.startswith("/"):
             res = String(name[1:-1], parent=context, dump=dump, **self.get_nodename(), **kw)
         else:
