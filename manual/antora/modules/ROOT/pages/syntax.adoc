@@ -31,7 +31,7 @@ In *USFM*, all markers begin with a backslash character `\`.
 * xref:char:index.adoc[Character] spans occur within a `+<char>+` element.
 * xref:note:index.adoc[Notes] occur within a `+<note>+` element.
 * xref:ms:index.adoc[Milestones] occur as an `+<ms/>+` element.
-* xref:cv:c.adoc[Chapters] and xref:cv:v.adoc[verses] occur as as pairs of 'milestone-like' self-closing `+<chapter/>+` or `+<verse/>+` elements, which identify the start and end positions for a chapter or verse.
+* xref:cv:c.adoc[Chapters] and xref:cv:v.adoc[verses] occur as 'milestone-like' self-closing `+<chapter/>+` or `+<verse/>+` elements which identify the start for a chapter or verse. Optionally, `+<chapter/>+` and `+<verse/>+` elements can be added to mark the end of a chapter or verse by using the `+eid+` attribute instead of the `+sid+` attribute. The end elements should be placed at the end of the Scripture text for chapter or verse.
 
 Different _types_ of paragraph, character, note, or milestones are identified by a `+style+` attribute. The `+style+` attribute is the value which associates the element with its corresponding USFM marker.
 
