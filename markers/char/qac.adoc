@@ -90,7 +90,7 @@ image::char/qac_1.jpg[Lamentations 1.1-2 (Spanish TLA),300]
 
 StyleType:: xref:char:index.adoc[Character]
 OccursUnder:: `[ChapterContent] > [PoeticPara]`, `[SidebarContent] > [PoeticPara]`
-TextType:: VerseText
+TextType:: Other
 TextProperties:: publishable, vernacular, poetic
 
 == Publication Issues

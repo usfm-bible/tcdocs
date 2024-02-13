@@ -68,7 +68,7 @@ image::para/qa_1.jpg[Psalm 119 (NIV),300]
 
 == Properties
 
-TextType:: VerseText
+TextType:: Other
 TextProperties:: paragraph, publishable, vernacular, poetic
 
 == Publication Issues
