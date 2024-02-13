@@ -2,5 +2,6 @@
 <test-metadata>
         <description>CharStyleNotClosed. From paratext test suite</description>
         <validated>fail</validated>
+		<xmlvalidated>pass</xmlvalidated>
         <tags></tags>
 </test-metadata>

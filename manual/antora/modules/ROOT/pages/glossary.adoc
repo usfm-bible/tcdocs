@@ -10,7 +10,7 @@ endif::[]
 Definitions for terms used within the USFM/USX schema and diagrams.
 [glossary]
 hs:: Pattern: ``++/[\u0009\u0020]/++`` A single simple horizontal (non newline) whitespace character
-HS:: Pattern: ``++/++``#$\{hs\}#``+++/++`` A sequence of more horizontal whitespace characters
+HS:: Pattern: ``++/++``#$\{hs\}#``+++/++`` A sequence of horizontal whitespace characters
 Hs:: Pattern: ``++/++``#$\{hs\}#``++*/++`` A sequence of zero or more horizontal whitespace characters
 nl:: Pattern: ``++/(?:\u000D?\u000A|\u000D)/++`` A single newline (as supported by all operating systems)
 NL:: Pattern: ``++/++``#$\{nl\}#``+++/++`` A sequence of newline characters

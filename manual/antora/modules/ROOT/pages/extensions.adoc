@@ -5,4 +5,4 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-Any 'private-use' marker/style extensions should begin with `+z+`. Example: `+\zMyPara+` or `+<para style="zMyPara">+`. Markers/styles in the `+z+` namespace are not considered part of the USFM/USX standard. An application or processor may provided support for `+z+` extensions, but are not expected to handle the markup or its associated text in any particular way, and are also free to ignore this markup when it is encountered in a text.
+Any 'private-use' marker/style extensions should begin with `+z+`. Example: `+\zMyPara+` or `+<para style="zMyPara">+`. Markers/styles in the `+z+` namespace are not considered part of the USFM/USX standard. An application or processor may provide support for `+z+` extensions, but are not expected to handle the markup or its associated text in any particular way, and are also free to ignore this markup when it is encountered in a text.
