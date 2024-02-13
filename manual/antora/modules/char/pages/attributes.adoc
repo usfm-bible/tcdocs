@@ -91,7 +91,7 @@ Pre-existing markers which formally provide attributes in USFM/USX 3 (or newer) 
 
 == User Defined Attributes
 
-Using the general syntax above, attributes may be added to any character markers beyond the formalized set in the current version of the USFM/USX specification. These will not be considered strictly canonical, and software supporting USFM/USX may not process user-deined attributes. (Future versions of USFM may formally provide additional attributes within the specification.)
+Using the general syntax above, attributes may be added to any character markers beyond the formalized set in the current version of the USFM/USX specification. These will not be considered canonical, and software supporting USFM/USX is not required to process user-defined attributes.
 
 User defined attributes must begin with the prefix `+x-+`.
 
