@@ -30,16 +30,43 @@ Added:: 1.0
 USFM::
 +
 .Any project
-[source#src-usfm-para-sts_1,usfm,highlight=1]
+[source#src-usfm-para-sts_1,usfm,highlight=2]
 ----
+\id MRK
 \sts 2
 ----
 USX::
 +
 .Any project
-[source#src-usx-para-sts_1,xml,highlight=1]
+[source#src-usx-para-sts_1,xml,highlight=3]
 ----
-<para style="sts">2</para>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <para style="sts">2</para>
+</usx>
+----
+USJ::
++
+.Any project
+[source#src-usj-para-sts_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "sts",
+      "content": ["2"]
+    }
+  ]
+}
 ----
 ======
 

@@ -33,8 +33,9 @@ Added:: 2.0
 USFM::
 +
 .Matthew (GNT)
-[source#src-usfm-para-toc_1,usfm,highlight=2..4]
+[source#src-usfm-para-toc_1,usfm,highlight=3..5]
 ----
+\id MAT
 \h Matthew
 \toc1 The Gospel According to Matthew
 \toc2 Matthew
@@ -43,12 +44,53 @@ USFM::
 USX::
 +
 .Matthew (GNT)
-[source#src-usx-para-toc_1,xml,highlight=2..4]
+[source#src-usx-para-toc_1,xml,highlight=4..6]
 ----
-<para style="h">Matthew</para>
-<para style="toc1">The Gospel According to Matthew</para>
-<para style="toc2">Matthew</para>
-<para style="toc3">Mat</para>
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <para style="h">Matthew</para>
+  <para style="toc1">The Gospel According to Matthew</para>
+  <para style="toc2">Matthew</para>
+  <para style="toc3">Mat</para>
+</usx>
+----
+USJ::
++
+.Matthew (GNT)
+[source#src-usj-para-toc_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "h",
+      "content": ["Matthew"]
+    },
+    {
+      "type": "para",
+      "marker": "toc1",
+      "content": ["The Gospel According to Matthew"]
+    },
+    {
+      "type": "para",
+      "marker": "toc2",
+      "content": ["Matthew"]
+    },
+    {
+      "type": "para",
+      "marker": "toc3",
+      "content": ["Mat"]
+    }
+  ]
+}
 ----
 ======
 

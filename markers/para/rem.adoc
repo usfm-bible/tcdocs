@@ -33,16 +33,43 @@ Added:: 1.0
 USFM::
 +
 .Any project
-[source#src-usfm-para-rem_1,usfm,highlight=1]
+[source#src-usfm-para-rem_1,usfm,highlight=2]
 ----
+\id MRK
 \rem First draft complete, waiting for checks.
 ----
 USX::
 +
 .Any project
-[source#src-usx-para-rem_1,xml,highlight=1]
+[source#src-usx-para-rem_1,xml,highlight=3]
 ----
-<para style="rem">First draft complete, waiting for checks.</para>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <para style="rem">First draft complete, waiting for checks.</para>
+</usx>
+----
+USJ::
++
+.Any project
+[source#src-usj-para-rem_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "rem",
+      "content": ["First draft complete, waiting for checks."]
+    }
+  ]
+}
 ----
 ======
 
