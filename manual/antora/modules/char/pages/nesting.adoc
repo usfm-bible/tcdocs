@@ -4,11 +4,12 @@
 
 xref:char:index.adoc[Character] level markup is applied to a span of text within a xref:para:index.adoc[paragraph] block. Sometimes, marking texts in a semantically accurate way requires nesting a character level element within another character level element. In these situations an editor, processor, or publishing system must be able to interpret the nested markup contexts correctly.
 
-Initially, USFM did not allow character styles to be nested, whenever a new character style was encountered in a paragraph the currently active character style was implicitly closed. However, it is a common occurrence for text within footnote sections, a footnote quotation (xref:char:notes/footnote/fq.adoc[fq]), keyword ((xref:char:notes/footnote/fk.adoc[fk])), or the footnote text (xref:char:notes/footnote/ft.adoc[ft])] to contain some text that needs to be marked. With the character styles being implicitly closed, a new way of marking nesting was needed and the plus sign `+` was used as a prefix to the opening and closing forms of a nested marker pair.
+Initially, USFM did not allow character styles to be nested, whenever a new character style was encountered in a paragraph the currently active character style was implicitly closed. However, it is a common occurrence for text within footnote sections, a footnote quotation (xref:char:notes/footnote/fq.adoc[fq]), keyword (xref:char:notes/footnote/fk.adoc[fk]), or the footnote text (xref:char:notes/footnote/ft.adoc[ft]) to contain some text that needs to be marked. With the character styles being implicitly closed, a new way of marking nesting was needed and the plus sign `+` was used as a prefix to the opening and closing forms of a nested marker pair.
 
 With USFM 3.1, the ending character marker has been made required except for the markers used to start sections in footnotes and cross references. This allows nesting to be done without the use of the plus sign. For backward compatibility, the use of the plus sign will still be processed as it has been.
 
 In the following example text:
+
 * `\nd` indicates to start a new character element nested inside the existing `\add` element (without closing `\add`)
 * `\nd*` indicates the end of the nested environment without closing `\add`
 

@@ -30,8 +30,9 @@ Added:: 1.0
 USFM::
 +
 .Habakkuk 3.1-2 (GNT)
-[source#src-usfm-para-q1_1,usfm,highlight=6;9;11]
+[source#src-usfm-para-q1_1,usfm,highlight=7;10;12]
 ----
+\id HAB
 \c 3
 \s1 A Prayer of Habakkuk
 \p
@@ -47,22 +48,103 @@ USFM::
 USX::
 +
 .Habakkuk 3.1-2 (GNT)
-[source#src-usx-para-q1_1,xml,highlight=7;11;13]
+[source#src-usx-para-q1_1,xml,highlight=8;12;14]
 ----
-<chapter number="3" style="c" sid="HAB 3"/>
-<para style="s1">A Prayer of Habakkuk</para>
-<para style="p">
-  <verse number="1" style="v" sid="HAB 3:1"/>This is a prayer of the prophet
-  Habakkuk:<verse eid="HAB 3:1"/></para>
-<para style="b"/>
-<para style="q1">
-  <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
-  I have heard of what you have done,</para>
-<para style="q2" vid="HAB 3:2">and I am filled with awe.</para>
-<para style="q1" vid="HAB 3:2">Now do again in our times</para>
-<para style="q2" vid="HAB 3:2">the great deeds you used to do.</para>
-<para style="q1" vid="HAB 3:2">Be merciful, even when you are angry.
-  <verse eid="HAB 3:2"/></para>
+<usx version="3.1">
+  <chapter number="3" style="c" sid="HAB 3"/>
+  <para style="s1">A Prayer of Habakkuk</para>
+  <para style="p">
+    <verse number="1" style="v" sid="HAB 3:1"/>This is a prayer of the prophet
+    Habakkuk:<verse eid="HAB 3:1"/></para>
+  <para style="b"/>
+  <para style="q1">
+    <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
+    I have heard of what you have done,</para>
+  <para style="q2" vid="HAB 3:2">and I am filled with awe.</para>
+  <para style="q1" vid="HAB 3:2">Now do again in our times</para>
+  <para style="q2" vid="HAB 3:2">the great deeds you used to do.</para>
+  <para style="q1" vid="HAB 3:2">Be merciful, even when you are angry.
+    <verse eid="HAB 3:2"/></para>
+</usx>
+----
+USJ::
++
+.Habakkuk 3.1-2 (GNT)
+[source#src-usj-para-q1_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "HAB 3"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["A Prayer of Habakkuk"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "HAB 3:1"
+        },
+        "This is a prayer of the prophet Habakkuk:"
+      ]
+    },
+    {
+      "type": "optbreak",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "HAB 3:2"
+        },
+        "O",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        ", I have heard of what you have done,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["and I am filled with awe."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Now do again in our times"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["the great deeds you used to do."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Be merciful, even when you are angry."]
+    }
+  ]
+}
 ----
 ======
 
@@ -72,9 +154,11 @@ image::para/q1_1.jpg[Habakkuk 3.1 (GNT),300]
 ======
 USFM::
 +
-.Habakkuk 3.1-2 (GNT)
-[source#src-usfm-para-q2_1,usfm,highlight=3;5]
+.Habakkuk 3.2 (GNT)
+[source#src-usfm-para-q2_1,usfm,highlight=5;7]
 ----
+\id HAB
+\c 3
 \q1
 \v 2 O \nd Lord\nd*, I have heard of what you have done,
 \q2 and I am filled with awe.
@@ -84,17 +168,77 @@ USFM::
 ----
 USX::
 +
-.Habakkuk 3.1-2 (GNT)
-[source#src-usx-para-q2_1,xml,highlight=4;6]
+.Habakkuk 3.2 (GNT)
+[source#src-usx-para-q2_1,xml,highlight=6;8]
 ----
-<para style="q1">
-  <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
-  I have heard of what you have done,</para>
-<para style="q2" vid="HAB 3:2">and I am filled with awe.</para>
-<para style="q1" vid="HAB 3:2">Now do again in our times</para>
-<para style="q2" vid="HAB 3:2">the great deeds you used to do.</para>
-<para style="q1" vid="HAB 3:2">Be merciful, even when you are angry.
-  <verse eid="HAB 3:2"/></para>
+<usx version="3.1">
+  <chapter number="3" style="c" sid="HAB 3"/>
+  <para style="q1">
+    <verse number="2" style="v" sid="HAB 3:2"/>O <char style="nd">Lord</char>, 
+    I have heard of what you have done,</para>
+  <para style="q2" vid="HAB 3:2">and I am filled with awe.</para>
+  <para style="q1" vid="HAB 3:2">Now do again in our times</para>
+  <para style="q2" vid="HAB 3:2">the great deeds you used to do.</para>
+  <para style="q1" vid="HAB 3:2">Be merciful, even when you are angry.
+    <verse eid="HAB 3:2"/></para>
+</usx>
+----
+USJ::
++
+.Habakkuk 3.2 (GNT)
+[source#src-usj-para-q2_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "HAB 3"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "HAB 3:2"
+        },
+        "O",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        ", I have heard of what you have done,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["and I am filled with awe."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Now do again in our times"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["the great deeds you used to do."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Be merciful, even when you are angry."]
+    }
+  ]
+}
 ----
 ======
 
