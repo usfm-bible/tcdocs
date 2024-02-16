@@ -29,8 +29,9 @@ Added:: 1.0
 USFM::
 +
 .Introduction to Mark (GNT)
-[source#src-usfm-para-ie_1,usfm,highlight=3]
+[source#src-usfm-para-ie_1,usfm,highlight=4]
 ----
+\id MRK
 \io1 The resurrection of Jesus (16.1-8)
 \io1 The appearances and ascension of the risen Lord (16.9-20)
 \ie
@@ -43,17 +44,82 @@ USFM::
 USX::
 +
 .Introduction to Mark (GNT)
-[source#src-usx-para-ie_1,xml,highlight=3]
+[source#src-usx-para-ie_1,xml,highlight=5]
 ----
-<para style="io1">The resurrection of Jesus (16.1-8)</para>
-<para style="io1">The appearances and ascension of the risen Lord (16.9-20)</para>
-<para style="ie"/>
-<chapter number="1" style="c" sid="MRK 1"/>
-<para style="s">The Preaching of John the Baptist</para>
-<para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
-<para style="p">
-  <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
-  Christ ...</para>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <para style="io1">The resurrection of Jesus (16.1-8)</para>
+  <para style="io1">The appearances and ascension of the risen Lord (16.9-20)</para>
+  <para style="ie"/>
+  <chapter number="1" style="c" sid="MRK 1"/>
+  <para style="s">The Preaching of John the Baptist</para>
+  <para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
+  <para style="p">
+    <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
+    Christ ...</para>
+</usx>
+----
+USJ::
++
+.Introduction to Mark (GNT)
+[source#src-usj-para-ie_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "io1",
+      "content": ["The resurrection of Jesus (16.1-8)"]
+    },
+    {
+      "type": "para",
+      "marker": "io1",
+      "content": ["The appearances and ascension of the risen Lord (16.9-20)"]
+    },
+    {
+      "type": "para",
+      "marker": "ie",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "MRK 1"
+    },
+    {
+      "type": "para",
+      "marker": "s",
+      "content": ["The Preaching of John the Baptist"]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": ["(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "MRK 1:1"
+        },
+        "This is the Good News about Jesus Christ ..."
+      ]
+    }
+  ]
+}
 ----
 ======
 

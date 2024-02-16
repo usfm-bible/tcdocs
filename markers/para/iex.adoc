@@ -30,8 +30,11 @@ Added:: 1.0
 USFM::
 +
 .After Romans 16 (KJV54 - BFBS)
-[source#src-usfm-para-iex_1,usfm,highlight=2]
+[source#src-usfm-para-iex_1,usfm,highlight=5]
 ----
+\id ROM
+\c 16
+\p ...
 \v 27 to God only wise, \add be\add* glory through Jesus Christ for ever. Amen.
 \iex Written to the Romans from Corinthus, and sent by Phebe servant of the 
 church at Cenchrea.
@@ -39,13 +42,68 @@ church at Cenchrea.
 USX::
 +
 .After Romans 16 (KJV54 - BFBS)
-[source#src-usx-para-iex_1,xml,highlight=4]
+[source#src-usx-para-iex_1,xml,highlight=7]
 ----
-<para style="p">... <verse number="27" style="v" sid="ROM 16:27"/>to God only
-  wise, <char style="add">be</char> glory through Jesus Christ for ever. Amen.
-  <verse eid="ROM 16:27"/></para>
-<para style="iex">Written to the Romans from Corinthus, and sent by Phebe servant
-  of the church at Cenchrea.</para>
+<usx version="3.1">
+  <book code="ROM" style="id"/>
+  <chapter number="16" style="c" sid="ROM 16"/>
+  <para style="p">... <verse number="27" style="v" sid="ROM 16:27"/>to God only
+    wise, <char style="add">be</char> glory through Jesus Christ for ever. Amen.
+    <verse eid="ROM 16:27"/></para>
+  <para style="iex">Written to the Romans from Corinthus, and sent by Phebe servant
+    of the church at Cenchrea.</para>
+</usx>
+----
+USJ::
++
+.After Romans 16 (KJV54 - BFBS)
+[source#src-usj-para-iex_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "ROM",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "16",
+      "sid": "ROM 16"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        "...",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "27",
+          "sid": "ROM 16:27"
+        },
+        "to God only wise,",
+        {
+          "type": "char",
+          "marker": "add",
+          "content": ["be"]
+        },
+        "glory through Jesus Christ for ever. Amen."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "iex",
+      "content": [
+        "Written to the Romans from Corinthus, and sent by Phebe servant of the church at Cenchrea."
+      ]
+    }
+  ]
+}
 ----
 ======
 

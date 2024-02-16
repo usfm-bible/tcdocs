@@ -30,8 +30,9 @@ Added:: 1.0
 USFM::
 +
 .Introduction to Titus (CEV)
-[source#src-usfm-para-iq_1,usfm,highlight=3..9]
+[source#src-usfm-para-iq_1,usfm,highlight=4..10]
 ----
+\id TIT
 \ip Paul also tells how we are saved:
 \ib
 \iq1 God our Savior showed us
@@ -46,18 +47,89 @@ USFM::
 USX::
 +
 .Introduction to Titus (CEV)
-[source#src-usx-para-iq_1,xml,highlight=3..9]
+[source#src-usx-para-iq_1,xml,highlight=5..11]
 ----
-<para style="ip">Paul also tells how we are saved:</para>
-<para style="ib"/>
-<para style="iq1">God our Savior showed us</para>
-<para style="iq2">how good and kind he is.</para>
-<para style="iq1">He saved us because</para>
-<para style="iq2">of his mercy,</para>
-<para style="iq1">and not because</para>
-<para style="iq2">of any good things</para>
-<para style="iq2">that we have done.</para>
-<para style="ipr">(3.4,5a)</para>
+<usx version="3.1">
+  <book code="TIT" style="id"/>
+  <para style="ip">Paul also tells how we are saved:</para>
+  <para style="ib"/>
+  <para style="iq1">God our Savior showed us</para>
+  <para style="iq2">how good and kind he is.</para>
+  <para style="iq1">He saved us because</para>
+  <para style="iq2">of his mercy,</para>
+  <para style="iq1">and not because</para>
+  <para style="iq2">of any good things</para>
+  <para style="iq2">that we have done.</para>
+  <para style="ipr">(3.4,5a)</para>
+</usx>
+----
+USJ::
++
+.Introduction to Titus (CEV)
+[source#src-usj-para-iq_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "0.2.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "TIT",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": ["Paul also tells how we are saved:"]
+    },
+    {
+      "type": "para",
+      "marker": "ib",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "iq1",
+      "content": ["God our Savior showed us"]
+    },
+    {
+      "type": "para",
+      "marker": "iq2",
+      "content": ["how good and kind he is."]
+    },
+    {
+      "type": "para",
+      "marker": "iq1",
+      "content": ["He saved us because"]
+    },
+    {
+      "type": "para",
+      "marker": "iq2",
+      "content": ["of his mercy,"]
+    },
+    {
+      "type": "para",
+      "marker": "iq1",
+      "content": ["and not because"]
+    },
+    {
+      "type": "para",
+      "marker": "iq2",
+      "content": ["of any good things"]
+    },
+    {
+      "type": "para",
+      "marker": "iq2",
+      "content": ["that we have done."]
+    },
+    {
+      "type": "para",
+      "marker": "ipr",
+      "content": ["(3.4,5a)"]
+    }
+  ]
+}
 ----
 ======
 
