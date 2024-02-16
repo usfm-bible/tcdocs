@@ -48,10 +48,11 @@ descendant?”
 USX::
 +
 .Mark 12.37 (GNT)
-[source#src-usx-para-m_1,xml,highlight=15]
+[source#src-usx-para-m_1,xml,highlight=16]
 ----
-<usx version="3.1">
-  <chapter number="12" style="c" sid="MRK 12" />
+ <usx version="3.1">
+  <book code="MRK" style="id"/>
+  <chapter number="12" style="c" sid="MRK 12"/>
   <para style="p">...</para>
   <para style="p">
     <verse number="35" style="v" sid="MRK 12:35" />As Jesus was teaching in the 
@@ -78,6 +79,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

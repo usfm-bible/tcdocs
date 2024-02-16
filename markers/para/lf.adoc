@@ -42,9 +42,10 @@ USFM::
 USX::
 +
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-usx-para-lf_1,xml,highlight=7]
+[source#src-usx-para-lf_1,xml,highlight=8]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="1CH" style="id"/>
   <chapter number="27" style="c" sid="1CH 27"/>
   <para style="li1" vid="1CH 27:16-22">...</para>
   <para style="li1" vid="1CH 27:16-22">East Manasseh - Iddo son of Zechariah</para>
@@ -63,6 +64,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "1CH",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

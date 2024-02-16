@@ -54,9 +54,10 @@ man eats and drinks too much! He is even a friend of tax collectors ...
 USX::
 +
 .Matthew 11.18-19 (CEV)
-[source#src-usx-para-mi_1,xml,highlight=15]
+[source#src-usx-para-mi_1,xml,highlight=16]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="MAT" style="id"/>
   <chapter number="11" style="c" sid="MAT 11"/>
   <para style="p">...</para>
   <para style="pi">
@@ -88,6 +89,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

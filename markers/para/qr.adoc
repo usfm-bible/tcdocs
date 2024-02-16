@@ -47,9 +47,10 @@ USFM::
 USX::
 +
 .Psalm 136.1-3 (CEV - markup adapted)
-[source#src-usx-para-qr_1,xml,highlight=7;11;15]
+[source#src-usx-para-qr_1,xml,highlight=8;12;16]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="136" style="c" sid="PSA 136"/>
   <para style="s1">God's Love Never Fails</para>
   <para style="q1">
@@ -76,6 +77,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

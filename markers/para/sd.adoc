@@ -51,9 +51,10 @@ powers?” they asked.
 USX::
 +
 .Matthew 13.51-54 (NIV “Books of the Bible”).
-[source#src-usx-para-sd_1,xml,highlight=14]
+[source#src-usx-para-sd_1,xml,highlight=15]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="MAT" style="id"/>
   <chapter number="13" style="c" sid="MAT 13"/>
   <para style="p">...</para>
   <para style="m">
@@ -85,6 +86,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

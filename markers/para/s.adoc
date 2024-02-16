@@ -56,9 +56,10 @@ advantage of those who stand helpless in court.
 USX::
 +
 .Proverbs 22.17 (GNT)
-[source#src-usx-para-s1_1,xml,highlight=4;17]
+[source#src-usx-para-s1_1,xml,highlight=5;18]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PRO" style="id"/>
   <chapter number="22" style="c" sid="PRO 22"/>
   <para style="p">...</para>
   <para style="s1">The Thirty Wise Sayings</para>
@@ -90,6 +91,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PRO",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -204,9 +211,10 @@ anyone who threatens theirs.
 USX::
 +
 .Proverbs 22.22,24 (GNT)
-[source#src-usx-par-s2_1,xml,highlight=8;15]
+[source#src-usx-par-s2_1,xml,highlight=9;16]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PRO" style="id"/>
   <chapter number="22" style="c" sid="PRO 22"/>
   <para style="p">...</para>
   <para style="p">...
@@ -237,6 +245,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PRO",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

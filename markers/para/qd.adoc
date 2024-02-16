@@ -46,9 +46,10 @@ USFM::
 USX::
 +
 .Habakkuk 3:19 (NIV)
-[source#src-usx-para-qd_1,xml,highlight=15]
+[source#src-usx-para-qd_1,xml,highlight=16]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="HAB" style="id"/>
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="q1">
     <verse number="18" style="v" sid="HAB 3:18"/>yet I will rejoice in the 
@@ -75,6 +76,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "HAB",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

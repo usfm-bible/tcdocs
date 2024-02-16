@@ -49,9 +49,10 @@ to him, and he sat down and started teaching them.
 USX::
 +
 .John 7.53–8.2 (CEV)
-[source#src-usx-para-nb_1,xml,highlight=14]
+[source#src-usx-para-nb_1,xml,highlight=15]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="JHN" style="id"/>
   <chapter number="12" style="c" sid="JHN 7"/>
   <para style="p">...</para>
   <para style="p">
@@ -80,6 +81,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "JHN",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

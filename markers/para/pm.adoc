@@ -51,9 +51,10 @@ on you...
 USX::
 +
 .Act 15.24-27,28-29 (CEV)
-[source#src-usx-para-pm_1,xml,highlight=6;17]
+[source#src-usx-para-pm_1,xml,highlight=7;18]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="ACT" style="id"/>
   <chapter number="15" style="c" sid="ACT 15"/>
   <para style="p">...</para>
   <para style="pmo">We apostles and leaders send friendly greetings to all of you
@@ -83,6 +84,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "ACT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

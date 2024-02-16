@@ -46,9 +46,10 @@ commander of “The Thirty,” and he called out,
 USX::
 +
 .1 Chronicles 12.18 (GNT - markup adapted)
-[source#src-usx-para-qm_1,xml,highlight=7..9]
+[source#src-usx-para-qm_1,xml,highlight=8..10]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="1CH" style="id"/>
   <chapter number="12" style="c" sid="1CH 12"/>
   <para style="p">
     <verse number="18" style="v" sid="1CH 12:18"/>God's spirit took control of one
@@ -71,6 +72,12 @@ USX::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "1CH",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

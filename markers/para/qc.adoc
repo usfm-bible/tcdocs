@@ -48,9 +48,10 @@ USFM::
 USX::
 +
 .Psalm 72.19 (GNT)
-[source#src-usx-para-qc_1,xml,highlight=13]
+[source#src-usx-para-qc_1,xml,highlight=14]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="3" style="c" sid="PSA 72"/>
   <para style="q1">
     <verse number="18" style="v" sid="PSA 72:18"/>Praise the 
@@ -80,6 +81,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

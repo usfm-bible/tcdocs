@@ -51,10 +51,11 @@ sins and be baptized,” he told the people, “and God will forgive your sins.�
 USX::
 +
 .Mark 1.1-4 (GNT)
-[source#src-usx-para-p_1,xml,highlight=5;20]
+[source#src-usx-para-p_1,xml,highlight=6;20]
 ----
 <usx version="3.1">
-  <chapter number="1" style="c" sid="MRK 1" />
+  <book code="MRK" style="id"/>
+  <chapter number="1" style="c" sid="MRK 1"/>
   <para style="s1">The Preaching of John the Baptist</para>
   <para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
   <para style="p">
@@ -86,6 +87,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

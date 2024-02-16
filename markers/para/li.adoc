@@ -48,9 +48,10 @@ the fellowship offerings
 USX::
 +
 .Numbers 7.84-88 (GNT)
-[source#src-usx-para-li_1,xml,highlight=7..17]
+[source#src-usx-para-li_1,xml,highlight=8..18]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="NUM" style="id"/>
   <chapter number="7" style="c" sid="NUM 7"/>
   <para style="p">
     <verse number="84-88" style="v" sid="NUM 7:84-88"/>The totals of the offerings
@@ -78,6 +79,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NUM",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

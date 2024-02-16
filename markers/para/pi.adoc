@@ -49,9 +49,10 @@ time, and angels are the ones who bring in the harvest.
 USX::
 +
 .Matthew 13.37-39 (CEV)
-[source#src-usx-para-pi_1,xml,highlight=11]
+[source#src-usx-para-pi_1,xml,highlight=12]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="MAT" style="id"/>
   <chapter number="13" style="c" sid="MAT 13"/>
   <para style="p">...</para>
   <para style="s1">Jesus Explains the Story about the Weeds</para>
@@ -79,6 +80,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

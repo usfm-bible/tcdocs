@@ -59,9 +59,10 @@ USFM::
 USX::
 +
 .Psalm 3 (GNT)
-[source#src-usx-para-b_1,xml,highlight=13;25]
+[source#src-usx-para-b_1,xml,highlight=14;26]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="3" style="c" sid="PSA 3"/>
   <para style="s1">Morning Prayer for Help</para>
   <para style="q1">
@@ -106,6 +107,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -266,6 +273,7 @@ USJ::
     }
   ]
 }
+
 ----
 ======
 
@@ -293,7 +301,8 @@ USX::
 .Habakkuk 3.1 (GNT)
 [source#src-usx-para-b_2,xml,highlight=7]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="HAB" style="id"/>
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="s1">A Prayer of Habakkuk</para>
   <para style="p">

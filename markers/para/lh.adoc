@@ -43,9 +43,10 @@ USFM::
 USX::
 +
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-usx-para-lh_1,xml,highlight=4]
+[source#src-usx-para-lh_1,xml,highlight=5]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="1CH" style="id"/>
   <chapter number="27" style="c" sid="1CH 27"/>
   <para style="s1">Administration of the Tribes of Israel</para>
   <para style="lh">
@@ -65,6 +66,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "1CH",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

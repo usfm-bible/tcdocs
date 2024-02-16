@@ -44,9 +44,10 @@ secretly worships it; the \nd Lord\nd* hates idolatry.’
 USX::
 +
 .Deuteronomy 27.15,16,17 (GNT)
-[source#src-usx-para-pr_1,xml,highlight=7;12;17]
+[source#src-usx-para-pr_1,xml,highlight=8;13;18]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="DEU" style="id"/>
   <chapter number="27" style="c" sid="DEU 27"/>
   <para style="p">
     <verse number="15" style="v" sid="DEU 27:15"/>“ ‘God's curse on anyone who makes
@@ -75,6 +76,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "DEU",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

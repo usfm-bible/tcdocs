@@ -71,9 +71,10 @@ Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):
 USX::
 +
 .Nehemiah 7.4-25 (NIV)
-[source#src-usx-para-lim_1,xml,highlight=24;27;30;33;36;39;42]
+[source#src-usx-para-lim_1,xml,highlight=25;28;31;34;37;40;43]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="NEH" style="id"/>
   <chapter number="7" style="c" sid="NEH 7"/>
   <para style="s1">The List of the Exiles Who Returned</para>
   <para style="p">
@@ -128,6 +129,12 @@ USJ::
   "type": "USJ",
   "version": "0.2.0",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NEH",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
