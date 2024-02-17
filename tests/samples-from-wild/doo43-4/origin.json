@@ -448,7 +448,7 @@
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -499,7 +499,7 @@
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -569,7 +569,7 @@
       "content": []
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -593,7 +593,7 @@
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {

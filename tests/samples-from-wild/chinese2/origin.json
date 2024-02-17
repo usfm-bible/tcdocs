@@ -219,7 +219,7 @@
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -864,7 +864,7 @@
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {

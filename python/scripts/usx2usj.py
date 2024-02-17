@@ -17,8 +17,6 @@ def convert_usx(input_usx_elmt):
     attribs = dict(input_usx_elmt.attrib)
     tag = None
     if "style" in attribs:
-        if attribs["style"] == 'b':
-            key = "optbreak"
         tag = attribs['style']
         del attribs['style']
     if "vid" in attribs:
@@ -50,7 +48,7 @@ def convert_usx(input_usx_elmt):
                 pass
         if child.tail and child.tail.strip() != "":
             out_obj['content'].append(child.tail.strip())
-    if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca"])\
+    if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca", "b"])\
          and out_obj['content'] == []:
         del out_obj['content']
     if "eid" in out_obj and key in ['verse', 'chapter']:
