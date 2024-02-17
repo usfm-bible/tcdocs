@@ -64,8 +64,6 @@ def convert_usj(json_node, usx_head):
     if json_node['type'] in ['table:row', 'table:cell']:
         json_node['type'] = json_node['type'].replace("table:", "")
 
-    if json_node['type'] == 'optbreak':
-        json_node['type'] = "para"
     new_node = lxml.etree.SubElement(usx_head, json_node['type'])
     if 'marker' in json_node:
         new_node.set('style', json_node['marker'])
