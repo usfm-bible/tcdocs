@@ -65,6 +65,11 @@
     },
     {
       "type": "para",
+      "marker": "s5",
+      "content": []
+    },
+    {
+      "type": "para",
       "marker": "q1",
       "content": []
     },
@@ -80,23 +85,10 @@
         {
           "type": "verse",
           "marker": "v",
-          "number": "15",
-          "sid": "ISA 5:15"
+          "number": "15-16",
+          "sid": "ISA 5:15-16"
         },
-        "Man is brought down, and the great man is humbled, and the eyes of the lofty are cast down."
-      ]
-    },
-    {
-      "type": "para",
-      "marker": "q1",
-      "content": [
-        {
-          "type": "verse",
-          "marker": "v",
-          "number": "16",
-          "sid": "ISA 5:16"
-        },
-        "Yahweh of hosts is exalted in his justice, and God the Holy One shows himself holy by his righteousness."
+        "Man is brought down, and the great man is humbled, and the eyes of the lofty are cast down. Yahweh of hosts is exalted in his justice, and God the Holy One shows himself holy by his righteousness."
       ]
     },
     {
