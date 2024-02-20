@@ -1,6 +1,6 @@
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "content": [
     {
       "type": "book",
@@ -164,17 +164,17 @@
               "type": "char",
               "marker": "ft",
               "content": [
-                "In 597"
+                "In 597",
+                {
+                  "type": "char",
+                  "marker": "sc",
+                  "content": [
+                    "BC"
+                  ]
+                },
+                "King Nebuchadnezzar \nof Babylonia conquered Jerusalem and took many of its inhabitants as prisoners to his \ncountry (2 Kgs 24.10-16; 2 Chr 36.9-10)."
               ]
-            },
-            {
-              "type": "char",
-              "marker": "sc",
-              "content": [
-                "BC"
-              ]
-            },
-            "King Nebuchadnezzar \nof Babylonia conquered Jerusalem and took many of its inhabitants as prisoners to his \ncountry (2 Kgs 24.10-16; 2 Chr 36.9-10)."
+            }
           ]
         },
         ", the following ancestors are listed: ..."
