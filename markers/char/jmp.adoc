@@ -38,20 +38,88 @@ Added:: 3.0
 USFM::
 +
 .Link to other project text
-[source#src-usfm-char-jmp_1,usfm,highlight=2]
+[source#src-usfm-char-jmp_1,usfm,highlight=5..6]
 ----
-The traditional translation of verse 1, as given in
+\id GEN
+\c 1
+\p
+\v 1 \ef - \fr 1:2 \ft The traditional translation of verse 1, as given in
 \jmp RSV|link-href="x-prj:RSV52 GEN 1:1" link-title="Revised Standard 
-Version"\jmp*, may be appropriate.
+Version"\jmp*, may be appropriate.\ef*
 ----
 USX::
 +
 .Link to other project text
-[source#src-usx-char-jmp_1,xml,highlight=2..3]
+[source#src-usx-char-jmp_1,xml,highlight=7..8]
 ----
-The traditional translation of verse 1, as given in
-<char style="jmp" link-href="x-prj:RSV52 GEN 1:1" link-title="Revised Standard 
-Version">RSV</char>, may be quite appropriate.
+<usx version="3.1">
+  <book code="GEN" style="id"/>
+  <para style="p">
+    <verse number="1" style="v" sid="GEN 1:1"/>
+    <note caller="-" style="ef">
+      <char style="fr">1.1: </char><char style="ft">The traditional translation 
+      of verse 1, as given in <char style="jmp" link-href="x-prj:RSV52 GEN 1:1"
+      link-title="Revised Standard Version">RSV</char>, may be appropriate.</char>
+    </note>
+  </para>
+</usx>
+----
+USJ::
++
+.Link to other project text
+[source#src-usj-char-jmp_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "GEN",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "GEN 1:1"
+        },
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["1.1:"]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "The traditional translation of verse 1, as given in",
+                {
+                  "type": "char",
+                  "marker": "jmp",
+                  "link-href": "x-prj:RSV52 GEN 1:1",
+                  "link-title": "Revised Standard Version",
+                  "content": ["RSV"]
+                },
+                ", may be appropriate."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -78,6 +146,27 @@ walls and roof, where grain was kept until needed. (See illustration:
 link-title="Ancient storehouse">Storehouse</char>)
 ...</para>
 ----
+USJ::
++
+.Link to other project text
+[source#src-usj-char-jmp_2,json,highlight=]
+----
+{
+  "type": "para",
+  "marker": "p",
+  "content": [
+    "Storehouses, as used here, refers to large buildings with walls and roof, where grain was kept until needed. (See illustration:",
+    {
+      "type": "char",
+      "marker": "jmp",
+      "link-href": "figures/storehouse.png",
+      "link-title": "Ancient storehouse",
+      "content": ["Storehouse"]
+    },
+    ") ..."
+  ]
+}
+----
 ======
 
 [tabs]
@@ -85,8 +174,10 @@ link-title="Ancient storehouse">Storehouse</char>)
 USFM::
 +
 .Assigning an identifier (anchor)
-[source#src-usfm-char-jmp_3,usfm,highlight=4]
+[source#src-usfm-char-jmp_3,usfm,highlight=6]
 ----
+\id MRK
+\c 1
 \q1 “Someone is shouting in the desert,
 \q2 ‘Prepare a road for the Lord;
 \q2 make a straight path for him to travel!’ ”
@@ -101,19 +192,83 @@ of God's “Chosen One” (Messiah).
 USX::
 +
 .Assigning an identifier (anchor)
-[source#src-usx-char-jmp_3,xml,highlight=5]
+[source#src-usx-char-jmp_3,xml,highlight=7]
 ----
-<para style="q1">“Someone is shouting in the desert,</para>
-<para style="q2">‘Prepare a road for the Lord;</para>
-<para style="q2">make a straight path for him to travel!’ ”</para>
-<sidebar style="esb" category="people">
-  <para style="ms"><char style="jmp" link-id="article-john_the_baptist" />John the 
-    Baptist</para>
-  <para style="p">John is sometimes called the last “Old Testament prophet” 
-    because of the warnings he  brought about God's judgment and because he 
-    announced the coming of God's “Chosen One” (Messiah).</para>
-  ...
-</sidebar>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <para style="q1">“Someone is shouting in the desert,</para>
+  <para style="q2">‘Prepare a road for the Lord;</para>
+  <para style="q2">make a straight path for him to travel!’ ”</para>
+  <sidebar style="esb" category="people">
+    <para style="ms"><char style="jmp" link-id="article-john_the_baptist" />John the 
+      Baptist</para>
+    <para style="p">John is sometimes called the last “Old Testament prophet” 
+      because of the warnings he  brought about God's judgment and because he 
+      announced the coming of God's “Chosen One” (Messiah).</para>
+    ...
+  </sidebar>
+</usx>
+----
+USJ::
++
+.Assigning an identifier (anchor)
+[source#src-usj-char-jmp_3,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["“Someone is shouting in the desert,"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["‘Prepare a road for the Lord;"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["make a straight path for him to travel!’ ”"]
+    },
+    {
+      "type": "sidebar",
+      "marker": "esb",
+      "category": "people",
+      "content": [
+        {
+          "type": "para",
+          "marker": "ms",
+          "content": [
+            {
+              "type": "char",
+              "marker": "jmp",
+              "link-id": "article-john_the_baptist",
+              "content": []
+            },
+            "John the Baptist"
+          ]
+        },
+        {
+          "type": "para",
+          "marker": "p",
+          "content": [
+            "John is sometimes called the last “Old Testament prophet” because of the warnings he brought about God's judgment and because he announced the coming of God's “Chosen One” (Messiah)."
+          ]
+        },
+        " ... "
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -122,8 +277,10 @@ USX::
 USFM::
 +
 .Reference to named target within the same project
-[source#src-usfm-char-jmp_5,usfm,highlight=5]
+[source#src-usfm-char-jmp_5,usfm,highlight=7]
 ----
+\id MAT
+\c 1
 \p
 \v 2-6a From Abraham to King David, the following ancestors are listed: Abraham,
 Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was 
@@ -134,16 +291,57 @@ David.
 USX::
 +
 .Reference to named target within the same project
-[source#src-usx-char-jmp_5,xml,highlight=6]
+[source#src-usx-char-jmp_5,xml,highlight=8]
 ----
-<para style="p">
-  <verse number="2-6a" style="v" sid="MAT 1:2-6a" />From Abraham to King David,
-  the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his 
-  brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, 
-  Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was 
-  <char style="jmp" link-href="#article-Ruth">Ruth</char>), Jesse, and King 
-  David.<verse eid="MAT 1:2-6a"/>
-</para>
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <para style="p">
+    <verse number="2-6a" style="v" sid="MAT 1:2-6a" />From Abraham to King David,
+    the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his 
+    brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, 
+    Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was 
+    <char style="jmp" link-href="#article-Ruth">Ruth</char>), Jesse, and King 
+    David.<verse eid="MAT 1:2-6a"/>
+  </para>
+</usx>
+----
+USJ::
++
+.Reference to named target within the same project
+[source#src-usj-char-jmp_5,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2-6a",
+          "sid": "MAT 1:2-6a"
+        },
+        "From Abraham to King David, the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was ",
+        {
+          "type": "char",
+          "marker": "jmp",
+          "link-href": "#article-Ruth",
+          "content": ["Ruth"]
+        },
+        "), Jesse, and King David."
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -152,23 +350,99 @@ USX::
 USFM::
 +
 .Nested within extended footnote text.
-[source#src-usfm-char-jmp_6,usfm,highlight=3]
+[source#src-usfm-char-jmp_6,usfm,highlight=9]
 ----
-\ef - \fr 1.2-6a: \fq Ruth: \ft A Moabite (Ruth 1.4). Only outstanding
-women were normally included in Jewish genealogical lists. See article
-on \+jmp Ruth|link-href="#article-Ruth"\+jmp*\ef*
+\id MAT
+\c 1
+\p
+\v 2-6a From Abraham to King David, the following ancestors are listed: Abraham,
+Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was 
+Tamar*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab*), 
+Obed (his mother was Ruth\ef - \fr 1.2-6a: \fq Ruth: \ft A Moabite (Ruth 1.4). 
+Only outstanding women were normally included in Jewish genealogical lists. See 
+article on \+jmp Ruth|link-href="#article-Ruth"\+jmp*\ef*), Jesse, and King David.
 ----
 USX::
 +
 .Reference to named target within the same project
-[source#src-usx-char-jmp_6,xml,highlight=4..5]
+[source#src-usx-char-jmp_6,xml,highlight=12]
 ----
-<note caller="-" style="ef">
-  <char style="fr">1.2-6a: </char><char style="fq">Ruth: </char>
-  <char style="ft">A Moabite. Only outstanding women were normally included in 
-  Jewish genealogical lists. See article on <char style="jmp" 
-  link-href="#article-Ruth">Ruth</char>
-</note>
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <para style="p">
+    <verse number="2-6a" style="v" sid="MAT 1:2-6a" />From Abraham to King David,
+    the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his 
+    brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, 
+    Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was 
+    Ruth<note caller="-" style="ef">
+      <char style="fr">1.2-6a: </char><char style="fq">Ruth: </char>
+        <char style="ft">A Moabite. Only outstanding women were normally included in 
+        Jewish genealogical lists. See article on 
+        <char style="jmp" link-href="#article-Ruth">Ruth</char></char></note>), 
+    Jesse, and King David. ...<verse eid="MAT 1:2-6a"/></para>
+</usx>
+----
+USJ::
++
+.Reference to named target within the same project
+[source#src-usj-char-jmp_6,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2-6a",
+          "sid": "MAT 1:2-6a"
+        },
+        "From Abraham to King David, the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was Ruth",
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["1.2-6a:"]
+            },
+            {
+              "type": "char",
+              "marker": "fq",
+              "content": ["Ruth:"]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "A Moabite. Only outstanding women were normally included in Jewish genealogical lists. See article on",
+                {
+                  "type": "char",
+                  "marker": "jmp",
+                  "link-href": "#article-Ruth",
+                  "content": ["Ruth"]
+                }
+              ]
+            }
+          ]
+        },
+        "), Jesse, and King David. ..."
+      ]
+    }
+  ]
+}
 ----
 ======
 

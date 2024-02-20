@@ -29,8 +29,9 @@ Added:: 1.0
 USFM::
 +
 .Introduction to Mark (GNT)
-[source#src-usfm-char-bk_1,usfm,highlight=4..5]
+[source#src-usfm-char-bk_1,usfm,highlight=5..6]
 ----
+\id MRK
 \mt1 The Acts
 \mt2 of the Apostles
 \is Introduction
@@ -42,17 +43,71 @@ of Judea and Samaria, and to the ends of the earth” (1.8).
 USX::
 +
 .Introduction to Mark (GNT)
-[source#src-usx-char-bk_1,xml,highlight=5..6]
+[source#src-usx-char-bk_1,xml,highlight=7..8]
 ----
-<para style="mt1">The Acts</para>
-<para style="mt2">of the Apostles</para>
-<para style="is">Introduction</para>
-<para style="ip">
-  <char style="bk">The Acts of the Apostles</char> is a continuation of 
-  <char style="bk">The Gospel according to Luke</char> Its chief purpose is to tell
-  how Jesus' early followers, led by the Holy Spirit, spread the Good News about
-  him “in Jerusalem, in all of Judea and Samaria, and to the ends of the earth”
-  (1.8).</para>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <para style="mt1">The Acts</para>
+  <para style="mt2">of the Apostles</para>
+  <para style="is">Introduction</para>
+  <para style="ip">
+    <char style="bk">The Acts of the Apostles</char> is a continuation of 
+    <char style="bk">The Gospel according to Luke</char> Its chief purpose is to tell
+    how Jesus' early followers, led by the Holy Spirit, spread the Good News about
+    him “in Jerusalem, in all of Judea and Samaria, and to the ends of the earth”
+    (1.8).</para>
+</usx>
+----
+USJ::
++
+.Introduction to Mark (GNT)
+[source#src-usj-char-bk_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "mt1",
+      "content": ["The Acts"]
+    },
+    {
+      "type": "para",
+      "marker": "mt2",
+      "content": ["of the Apostles"]
+    },
+    {
+      "type": "para",
+      "marker": "is",
+      "content": ["Introduction"]
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        {
+          "type": "char",
+          "marker": "bk",
+          "content": ["The Acts of the Apostles"]
+        },
+        " is a continuation of ",
+        {
+          "type": "char",
+          "marker": "bk",
+          "content": ["The Gospel according to Luke"]
+        },
+        " Its chief purpose is to tell how Jesus' early followers, led by the Holy Spirit, spread the Good News about him “in Jerusalem, in all of Judea and Samaria, and to the ends of the earth” (1.8)."
+      ]
+    }
+  ]
+}
 ----
 ======
 

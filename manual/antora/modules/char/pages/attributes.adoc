@@ -24,6 +24,18 @@ USX::
 ----
 <char style="w" lemma="grace">gracious</char>
 ----
+USJ::
++
+.Glossary word with `lemma` attribute
+[source#src-usj-char-w-attrib_1,json]
+----
+{
+  "type": "char",
+  "marker": "w",
+  "lemma": "grace",
+  "content": ["gracious"]
+}
+----
 ======
 
 [NOTE]
@@ -53,6 +65,18 @@ USX::
 ----
 <char style="w" lemma="grace">gracious</char>
 ----
+USJ::
++
+.USX: Glossary word with `lemma` attribute
+[source#src-usj-char-w-attrib_2,json]
+----
+{
+  "type": "char",
+  "marker": "w",
+  "lemma": "grace",
+  "content": ["gracious"]
+}
+----
 ======
 
 == Multiple Attribute Values
@@ -74,6 +98,18 @@ USX::
 [source#src-usx-char-w-attrib-strong,xml]
 ----
 <char style="w" strong="H1234,G5485">gracious</char>
+----
+USJ::
++
+.Glossary word with multiple `strong` values
+[source#src-usj-char-w-attrib-strong,json]
+----
+{
+  "type": "char",
+  "marker": "w",
+  "strong": "H1234,G5485",
+  "content": ["gracious"]
+}
 ----
 ======
 
@@ -103,6 +139,7 @@ USFM::
 [source#src-usfm-char-w-attrib-user,usfm]
 ----
 \w gracious|x-myattr="value"\w*
+
 \w gracious|lemma="grace" x-myattr="value"\w*
 ----
 USX::
@@ -111,7 +148,28 @@ USX::
 [source#src-usx-char-w-attrib-user,xml]
 ----
 <char style="w" x-myattr="value">gracious</char>
+
 <char style="w" lemma="grace" x-myattr="value">gracious</char>
+----
+USJ::
++
+.Glossary word with user defined attribute
+[source#src-usj-char-w-attrib-user,json]
+----
+{
+  "type": "char",
+  "marker": "w",
+  "x-myattr": "value",
+  "content": ["gracious"]
+}
+
+{
+  "type": "char",
+  "marker": "w",
+  "lemma": "grace",
+  "x-myattr": "value",
+  "content": ["gracious"]
+}
 ----
 ======
 
