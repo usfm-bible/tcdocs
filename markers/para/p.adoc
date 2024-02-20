@@ -119,7 +119,7 @@ USJ::
           "number": "1",
           "sid": "MRK 1:1"
         },
-        "This is the Good News about Jesus Christ, the Son of God.",
+        "This is the Good News about Jesus Christ, the Son of God. ",
         {
           "type": "verse",
           "marker": "v",
@@ -132,7 +132,7 @@ USJ::
     {
       "type": "para",
       "marker": "q1",
-      "content": ["“God said, ‘I will send my messenger ahead of you"]
+      "content": ["“God said, ‘I will send my messenger ahead of you "]
     },
     {
       "type": "para",
@@ -149,7 +149,7 @@ USJ::
           "number": "3",
           "sid": "MRK 1:3"
         },
-        "Someone is shouting in the desert,"
+        "Someone is shouting in the desert, "
       ]
     },
     {
