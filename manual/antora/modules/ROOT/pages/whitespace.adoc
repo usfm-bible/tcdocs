@@ -10,7 +10,7 @@ endif::[]
 
 In USFM/USX, a white space (*_WS_*) character is xref:ROOT:glossary.adoc[defined] by the pattern ``++/(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)/++``, where:
 
-ws:: ``++/[\u0009-\u000D\u0020]/++``
+ws:: ``++/[\u0009\u000D\u000A\u0020]/++``
 ** A single simple whitespace character that may be reduced
 nl:: ``++/(?:\u000D?\u000A|\u000D)/++``
 ** A single newline (as supported by all operating systems)
