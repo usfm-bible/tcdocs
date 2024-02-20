@@ -48,14 +48,14 @@ USX::
 ----
 <usx version="3.1">
   <book code="INT" style="id"/>
-  <para style="ip">The following lists summarize each Christian tradition’s views of
-    the books here designated as Deuterocanonicals/Apocrypha.</para>
-  <para style="ipi">Many Protestants consider the following books to be Apocrypha as
-    defined above: Tobit, Judith, additions to Esther (as found in Greek Esther in
-    the CEV) ...</para>
+  <para style="ip">The following lists summarize each Christian tradition’s views
+    of the books here designated as Deuterocanonicals/Apocrypha.</para>
+  <para style="ipi">Many Protestants consider the following books to be Apocrypha
+    as defined above: Tobit, Judith, additions to Esther (as found in Greek Esther
+    in the CEV) ...</para>
   <para style="ipi">Roman Catholics consider the following books to be
-    Deuterocanonical and of equal status with all other books of the Old Testament:
-    Tobit, Judith, Greek Esther ...</para>
+    Deuterocanonical and of equal status with all other books of the Old
+    Testament: Tobit, Judith, Greek Esther ...</para>
 </usx>
 ----
 USJ::

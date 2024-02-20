@@ -49,16 +49,17 @@ USX::
 ----
 <usx version="3.1">
   <book code="GEN" style="id"/>
-  <para style="ip">... One of these brothers, Joseph, had become the governor of
-    Egypt. But Joseph knew that God would someday keep his promise to his people:
-    </para>
+  <para style="ip">... One of these brothers, Joseph,
+  had become the governor of Egypt. But Joseph knew that God would someday keep
+  his promise to his people: </para>
   <para style="ib"/>
-  <para style="ipq">Before Joseph died, he told his brothers, “I won't live much
-    longer. But God will take care of you and lead you out of Egypt to the land he
-    promised Abraham, Isaac, and Jacob.”</para>
+  <para style="ipq">Before
+  Joseph died, he told his brothers, “I won't live much longer. But God will take
+  care of you and lead you out of Egypt to the land he promised Abraham, Isaac,
+  and Jacob.”</para>
   <para style="ipr">(50.24)</para>
-  <para style="iot">A QUICK LOOK AT THIS BOOK</para>
-  ...
+  <para style="iot">A QUICK LOOK
+  AT THIS BOOK</para> ... 
 </usx>
 ----
 USX::
@@ -105,7 +106,7 @@ USX::
       "marker": "iot",
       "content": ["A QUICK LOOK AT THIS BOOK"]
     },
-    "..."
+    " ... "
   ]
 }
 ----

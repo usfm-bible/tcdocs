@@ -53,12 +53,12 @@ USX::
   <para style="is1">A Word about the Contemporary English Version</para>
   <para style="imi">
     <char style="em">Translation it is that opens the window, to let in the light;
-    that breaks the shell, that we may eat the kernel; that puts aside the curtain,
-    that we may look into the most holy place; that removes the cover of the well,
-    that we may come by the water.</char> (“The Translators to the Reader,” King
-    James Version, 1611).</para>
+    that breaks the shell, that we may eat the kernel; that puts aside the
+    curtain, that we may look into the most holy place; that removes the cover of
+    the well, that we may come by the water.</char> (“The Translators to the
+    Reader,” King James Version, 1611).</para>
   <para style="im">The most important document in the history of the English
-    language is the <char style="bk">King James Version</char> of the Bible...
+    language is the <char style="bk">King James Version</char> of the Bible... 
     </para>
 </usx>
 ----
@@ -98,7 +98,7 @@ USJ::
             "Translation it is that opens the window, to let in the light; that breaks the shell, that we may eat the kernel; that puts aside the curtain, that we may look into the most holy place; that removes the cover of the well, that we may come by the water."
           ]
         },
-        "(“The Translators to the Reader,” King James Version, 1611)."
+        " (“The Translators to the Reader,” King James Version, 1611)."
       ]
     },
     {
@@ -111,7 +111,7 @@ USJ::
           "marker": "bk",
           "content": ["King James Version"]
         },
-        "of the Bible..."
+        " of the Bible... "
       ]
     }
   ]

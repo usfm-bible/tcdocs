@@ -47,7 +47,7 @@ USX::
 .Psalm 3.1 (NRSV)
 [source#src-usx-para-d_1,xml,highlight=5]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="PSA" style="id"/>
   <chapter number="3" style="c" sid="PSA 3"/>
   <para style="s1">Trust in God under Adversity</para>
@@ -104,7 +104,7 @@ USJ::
           "number": "1",
           "sid": "PSA 3:1"
         },
-        "O",
+        "O ",
         {
           "type": "char",
           "marker": "nd",

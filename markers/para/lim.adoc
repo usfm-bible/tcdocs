@@ -73,7 +73,7 @@ USX::
 .Nehemiah 7.4-25 (NIV)
 [source#src-usx-para-lim_1,xml,highlight=25;28;31;34;37;40;43]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="NEH" style="id"/>
   <chapter number="7" style="c" sid="NEH 7"/>
   <para style="s1">The List of the Exiles Who Returned</para>
@@ -156,7 +156,7 @@ USJ::
           "number": "4",
           "sid": "NEH 7:4"
         },
-        "Now the city was large and spacious, but there were few people in it, and the houses had not yet been rebuilt.",
+        "Now the city was large and spacious, but there were few people in it, and the houses had not yet been rebuilt. ",
         {
           "type": "verse",
           "marker": "v",
@@ -167,7 +167,7 @@ USJ::
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -180,7 +180,7 @@ USJ::
           "number": "6",
           "sid": "NEH 7:6"
         },
-        "These are the people of the province who came up from the captivity of the exiles whom Nebuchadnezzar king of Babylon had taken captive (they returned to Jerusalem and Judah, each to his own town,",
+        "These are the people of the province who came up from the captivity of the exiles whom Nebuchadnezzar king of Babylon had taken captive (they returned to Jerusalem and Judah, each to his own town, ",
         {
           "type": "verse",
           "marker": "v",
@@ -191,7 +191,7 @@ USJ::
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -200,7 +200,7 @@ USJ::
       "content": ["The list of the men of Israel:"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -213,7 +213,7 @@ USJ::
           "number": "8",
           "sid": "NEH 7:8"
         },
-        "the descendants of Parosh - 2,172"
+        "the descendants of Parosh - 2,172 "
       ]
     },
     {
@@ -226,7 +226,7 @@ USJ::
           "number": "9",
           "sid": "NEH 7:9"
         },
-        "of Shephatiah - 372"
+        "of Shephatiah - 372 "
       ]
     },
     {
@@ -239,7 +239,7 @@ USJ::
           "number": "10",
           "sid": "NEH 7:10"
         },
-        "of Arah - 652"
+        "of Arah - 652 "
       ]
     },
     {
@@ -265,7 +265,7 @@ USJ::
           "number": "12",
           "sid": "NEH 7:12"
         },
-        "of Elam - 1,254"
+        "of Elam - 1,254 "
       ]
     },
     {
@@ -278,7 +278,7 @@ USJ::
           "number": "13",
           "sid": "NEH 7:13"
         },
-        "of Zattu - 845"
+        "of Zattu - 845 "
       ]
     },
     {
@@ -291,7 +291,7 @@ USJ::
           "number": "14",
           "sid": "NEH 7:14"
         },
-        "of Zaccai - 760"
+        "of Zaccai - 760 "
       ]
     }
   ]

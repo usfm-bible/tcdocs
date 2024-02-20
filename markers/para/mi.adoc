@@ -56,7 +56,7 @@ USX::
 .Matthew 11.18-19 (CEV)
 [source#src-usx-para-mi_1,xml,highlight=16]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="MAT" style="id"/>
   <chapter number="11" style="c" sid="MAT 11"/>
   <para style="p">...</para>
@@ -120,7 +120,7 @@ USJ::
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -152,7 +152,7 @@ USJ::
       "content": ["but you would not mourn!”"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -165,7 +165,7 @@ USJ::
           "number": "18",
           "sid": "MAT 11:18"
         },
-        "John the Baptist did not go around eating and drinking, and you said, “That man has a demon in him!”",
+        "John the Baptist did not go around eating and drinking, and you said, “That man has a demon in him!” ",
         {
           "type": "verse",
           "marker": "v",

@@ -50,7 +50,7 @@ USX::
 .Psalm 72.19 (GNT)
 [source#src-usx-para-qc_1,xml,highlight=14]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="PSA" style="id"/>
   <chapter number="3" style="c" sid="PSA 72"/>
   <para style="q1">
@@ -103,7 +103,7 @@ USJ::
           "number": "18",
           "sid": "PSA 72:18"
         },
-        "Praise the",
+        "Praise the ",
         {
           "type": "char",
           "marker": "nd",
@@ -136,7 +136,7 @@ USJ::
       "content": ["May his glory fill the whole world."]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -145,7 +145,7 @@ USJ::
       "content": ["Amen! Amen!"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {

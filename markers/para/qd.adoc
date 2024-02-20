@@ -48,7 +48,7 @@ USX::
 .Habakkuk 3:19 (NIV)
 [source#src-usx-para-qd_1,xml,highlight=16]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="HAB" style="id"/>
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="q1">
@@ -98,7 +98,7 @@ USJ::
           "number": "18",
           "sid": "HAB 3:18"
         },
-        "yet I will rejoice in the",
+        "yet I will rejoice in the ",
         {
           "type": "char",
           "marker": "nd",
@@ -113,7 +113,7 @@ USJ::
       "content": ["I will be joyful in God my Savior."]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -126,13 +126,13 @@ USJ::
           "number": "19",
           "sid": "HAB 3:19"
         },
-        "The Sovereign",
+        "The Sovereign ",
         {
           "type": "char",
           "marker": "nd",
           "content": ["Lord"]
         },
-        "is my strength;"
+        " is my strength;"
       ]
     },
     {
@@ -146,7 +146,7 @@ USJ::
       "content": ["he enables me to tread on the heights."]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {

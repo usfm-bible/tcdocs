@@ -53,7 +53,7 @@ USX::
 .Matthew 13.51-54 (NIV “Books of the Bible”).
 [source#src-usx-para-sd_1,xml,highlight=15]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="MAT" style="id"/>
   <chapter number="13" style="c" sid="MAT 13"/>
   <para style="p">...</para>
@@ -149,14 +149,14 @@ USJ::
           "number": "53",
           "sid": "MAT 13:53"
         },
-        "When Jesus had finished these parables, he moved on from there.",
+        "When Jesus had finished these parables, he moved on from there. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "54",
           "sid": "MAT 13:54"
         },
-        "Coming to his hometown, he began teaching the people in their synagogue, and they were amazed. “Where did this man get this wisdom and these miraculous powers?” they asked."
+        "Coming to his hometown, he began teaching the people in their synagogue, and they were amazed. “Where did this man get this wisdom and these miraculous powers?” they asked. "
       ]
     }
   ]

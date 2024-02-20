@@ -48,7 +48,7 @@ USX::
 .Act 15.28-29 (CEV)
 [source#src-usx-para-pmc_1,xml,highlight=12]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="ACT" style="id"/>
   <chapter number="15" style="c" sid="ACT 15"/>
   <para style="p">...</para>
@@ -99,7 +99,7 @@ USJ::
           "number": "28",
           "sid": "ACT 15:28"
         },
-        "The Holy Spirit has shown us that we should not place any extra burden on you.",
+        "The Holy Spirit has shown us that we should not place any extra burden on you. ",
         {
           "type": "verse",
           "marker": "v",

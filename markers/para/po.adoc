@@ -52,7 +52,7 @@ USX::
 .Romans 1.1,7 (GNT)
 [source#src-usx-para-po_1,xml,highlight=4;16;19]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="ROM" style="id"/>
   <chapter number="1" style="c" sid="ROM 1"/>
   <para style="po">
@@ -105,7 +105,7 @@ USJ::
           "number": "1",
           "sid": "ROM 1:1"
         },
-        "From Paul, a servant of Christ Jesus and an apostle chosen and called by God to preach his Good News."
+        "From Paul, a servant of Christ Jesus and an apostle chosen and called by God to preach his Good News. "
       ]
     },
     {
@@ -118,8 +118,8 @@ USJ::
           "number": "2",
           "sid": "ROM 1:2"
         },
-        "The Good News was promised long ago by God through his prophets, as written in the Holy Scriptures.",
-        "...",
+        "The Good News was promised long ago by God through his prophets, as written in the Holy Scriptures. ",
+        " ... ",
         {
           "type": "verse",
           "marker": "v",

@@ -50,7 +50,7 @@ USX::
 .Numbers 7.84-88 (GNT)
 [source#src-usx-para-li_1,xml,highlight=8..18]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="NUM" style="id"/>
   <chapter number="7" style="c" sid="NUM 7"/>
   <para style="p">

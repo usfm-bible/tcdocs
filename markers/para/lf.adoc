@@ -44,7 +44,7 @@ USX::
 .1 Chronicles 27:16-22 (GNT - markup adapted)
 [source#src-usx-para-lf_1,xml,highlight=8]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="1CH" style="id"/>
   <chapter number="27" style="c" sid="1CH 27"/>
   <para style="li1" vid="1CH 27:16-22">...</para>

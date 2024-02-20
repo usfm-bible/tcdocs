@@ -46,7 +46,7 @@ USX::
 .Job 3.1 (GNT)
 [source#src-usx-para-sp_1,xml,highlight=8]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="JOB" style="id"/>
   <chapter number="3" style="c" sid="JOB 3"/>
   <para style="s1">Job's Complaint to God</para>
@@ -85,9 +85,7 @@ USJ::
     {
       "type": "para",
       "marker": "s1",
-      "content": [
-        "Job's Complaint to God"
-      ]
+      "content": ["Job's Complaint to God"]
     },
     {
       "type": "para",
@@ -105,9 +103,7 @@ USJ::
     {
       "type": "para",
       "marker": "sp",
-      "content": [
-        "Job"
-      ]
+      "content": ["Job"]
     },
     {
       "type": "para",
@@ -125,9 +121,7 @@ USJ::
     {
       "type": "para",
       "marker": "q2",
-      "content": [
-        "put a curse on the night when I was conceived!"
-      ]
+      "content": ["put a curse on the night when I was conceived!"]
     }
   ]
 }

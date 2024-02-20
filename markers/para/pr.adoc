@@ -46,7 +46,7 @@ USX::
 .Deuteronomy 27.15,16,17 (GNT)
 [source#src-usx-para-pr_1,xml,highlight=8;13;18]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="DEU" style="id"/>
   <chapter number="27" style="c" sid="DEU 27"/>
   <para style="p">
@@ -98,13 +98,13 @@ USJ::
           "number": "15",
           "sid": "DEU 27:15"
         },
-        "“ ‘God's curse on anyone who makes an idol of stone, wood, or metal and secretly worships it; the",
+        "“ ‘God's curse on anyone who makes an idol of stone, wood, or metal and secretly worships it; the ",
         {
           "type": "char",
           "marker": "nd",
           "content": ["Lord"]
         },
-        "hates idolatry.’"
+        " hates idolatry.’"
       ]
     },
     {

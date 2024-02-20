@@ -50,7 +50,7 @@ USX::
 .Habakkuk 3.1-2 (GNT)
 [source#src-usx-para-q1_1,xml,highlight=9;13;15]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="HAB" style="id"/>
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="s1">A Prayer of Habakkuk</para>
@@ -108,7 +108,7 @@ USJ::
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -121,7 +121,7 @@ USJ::
           "number": "2",
           "sid": "HAB 3:2"
         },
-        "O",
+        "O ",
         {
           "type": "char",
           "marker": "nd",
@@ -178,7 +178,7 @@ USX::
 .Habakkuk 3.2 (GNT)
 [source#src-usx-para-q2_1,xml,highlight=7;9]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="HAB" style="id"/>
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="q1">
@@ -222,7 +222,7 @@ USJ::
           "number": "2",
           "sid": "HAB 3:2"
         },
-        "O",
+        "O ",
         {
           "type": "char",
           "marker": "nd",

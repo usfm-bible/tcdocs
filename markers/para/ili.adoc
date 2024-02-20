@@ -64,29 +64,29 @@ USX::
   <book code="MRK" style="id"/>
   <para style="ip">However, he is more than a teacher, healer, or <char style="w">
     miracle</char>-worker. He is also the Messiah, the Son of God, the Son of Man.
-    These three titles express the first Christians' understanding of who Jesus is.
-    </para>
-  <para style="ili1">1 <char style="k">The Messiah</char> is the one promised by God,
-    the one who would come and free God's people. By the time <char style="bk">The
-    Gospel of Mark</char> appeared, the title "Messiah" (in Greek, "<char style="w">
-    christ</char>") had become a proper name, so that the Gospel opens with "the
-    Good News about Jesus Christ" (and not "Jesus the Christ"). Peter's confession
-    (8.29) marks a turning-point in the ministry of Jesus. The title 
-    "<char style="w">son of david</char> " (10.46-48) also identifies Jesus as the
-    Messiah, who would restore to Israel the power and glory it enjoyed under
-    David's reign (also 12.35-37).</para>
+    These three titles express the first Christians' understanding of who Jesus
+    is. </para>
+  <para style="ili1">1 <char style="k">The Messiah</char> is the one promised by
+    God, the one who would come and free God's people. By the time <char
+      style="bk">The Gospel of Mark</char> appeared, the title "Messiah" (in
+    Greek, "<char style="w"> christ</char>") had become a proper name, so that the
+    Gospel opens with "the Good News about Jesus Christ" (and not "Jesus the
+    Christ"). Peter's confession (8.29) marks a turning-point in the ministry of
+    Jesus. The title "<char style="w">son of david</char> " (10.46-48) also
+    identifies Jesus as the Messiah, who would restore to Israel the power and
+    glory it enjoyed under David's reign (also 12.35-37).</para>
   <para style="ili1">2 <char style="k">The Son of God</char> is the title by which
-    the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration
-    (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of
-    God (15.39).</para>
-  <para style="ili1">3 <char style="k">The Son of Man</char> is the title most often
-    used of Jesus, and it appears only on the lips of Jesus. This enigmatic title
-    appears in <char style="bk">The Book of Daniel</char> (Dan 7.13n), where it is
-    applied to the exalted figure to whom God gives universal dominion. In 
-    <char style="bk">Mark</char> the title is used of Jesus in three ways: the Son of
-    Man acts with divine power (2.10, 28); he will be rejected, will suffer and die
-    (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and glory
-    (8.38; 13.26; 14.62).</para>
+    the heavenly voice addresses Jesus at his baptism (1.11) and his
+    transfiguration (9.7). And at Jesus' death the Roman officer confesses that
+    Jesus is the Son of God (15.39).</para>
+  <para style="ili1">3 <char style="k">The Son of Man</char> is the title most
+    often used of Jesus, and it appears only on the lips of Jesus. This enigmatic
+    title appears in <char style="bk">The Book of Daniel</char> (Dan 7.13n), where
+    it is applied to the exalted figure to whom God gives universal dominion. In <char
+      style="bk">Mark</char> the title is used of Jesus in three ways: the Son of
+    Man acts with divine power (2.10, 28); he will be rejected, will suffer and
+    die (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and
+    glory (8.38; 13.26; 14.62).</para>
 </usx>
 ----
 USJ::
@@ -114,7 +114,7 @@ USJ::
           "marker": "w",
           "content": ["miracle"]
         },
-        "-worker. He is also the Messiah, the Son of God, the Son of Man. These three titles express the first Christians' understanding of who Jesus is."
+        "-worker. He is also the Messiah, the Son of God, the Son of Man. These three titles express the first Christians' understanding of who Jesus is. "
       ]
     },
     {
@@ -127,13 +127,13 @@ USJ::
           "marker": "k",
           "content": ["The Messiah"]
         },
-        "is the one promised by God, the one who would come and free God's people. By the time",
+        " is the one promised by God, the one who would come and free God's people. By the time ",
         {
           "type": "char",
           "marker": "bk",
           "content": ["The Gospel of Mark"]
         },
-        "appeared, the title \"Messiah\" (in Greek, \"",
+        " appeared, the title \"Messiah\" (in Greek, \"",
         {
           "type": "char",
           "marker": "w",
@@ -145,7 +145,7 @@ USJ::
           "marker": "w",
           "content": ["son of david"]
         },
-        "\" (10.46-48) also identifies Jesus as the Messiah, who would restore to Israel the power and glory it enjoyed under David's reign (also 12.35-37)."
+        " \" (10.46-48) also identifies Jesus as the Messiah, who would restore to Israel the power and glory it enjoyed under David's reign (also 12.35-37)."
       ]
     },
     {
@@ -158,7 +158,7 @@ USJ::
           "marker": "k",
           "content": ["The Son of God"]
         },
-        "is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of God (15.39)."
+        " is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of God (15.39)."
       ]
     },
     {
@@ -171,19 +171,19 @@ USJ::
           "marker": "k",
           "content": ["The Son of Man"]
         },
-        "is the title most often used of Jesus, and it appears only on the lips of Jesus. This enigmatic title appears in",
+        " is the title most often used of Jesus, and it appears only on the lips of Jesus. This enigmatic title appears in ",
         {
           "type": "char",
           "marker": "bk",
           "content": ["The Book of Daniel"]
         },
-        "(Dan 7.13n), where it is applied to the exalted figure to whom God gives universal dominion. In",
+        " (Dan 7.13n), where it is applied to the exalted figure to whom God gives universal dominion. In ",
         {
           "type": "char",
           "marker": "bk",
           "content": ["Mark"]
         },
-        "the title is used of Jesus in three ways: the Son of Man acts with divine power (2.10, 28); he will be rejected, will suffer and die (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and glory (8.38; 13.26; 14.62)."
+        " the title is used of Jesus in three ways: the Son of Man acts with divine power (2.10, 28); he will be rejected, will suffer and die (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and glory (8.38; 13.26; 14.62)."
       ]
     }
   ]

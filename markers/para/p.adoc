@@ -132,7 +132,7 @@ USJ::
     {
       "type": "para",
       "marker": "q1",
-      "content": ["“God said, ‘I will send my messenger ahead of you "]
+      "content": ["“God said, ‘I will send my messenger ahead of you"]
     },
     {
       "type": "para",

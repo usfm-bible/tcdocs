@@ -48,7 +48,7 @@ USX::
 .1 Chronicles 12.18 (GNT - markup adapted)
 [source#src-usx-para-qm_1,xml,highlight=8..10]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="1CH" style="id"/>
   <chapter number="12" style="c" sid="1CH 12"/>
   <para style="p">
@@ -113,7 +113,7 @@ USX::
       "content": ["God is on your side.”"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {

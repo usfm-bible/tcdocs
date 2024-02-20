@@ -50,7 +50,7 @@ USX::
 .Revelation 17.5 (CEV)
 [source#src-usx-para-pc_1,xml,highlight=11]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="REV" style="id"/>
   <chapter number="17" style="c" sid="REV 17"/>
   <para style="p" vid="REV 17:3">
@@ -100,7 +100,7 @@ USJ::
           "number": "4",
           "sid": "REV 17:4"
         },
-        "The woman was dressed in purple and scarlet robes, and she wore jewelry made of gold, precious stones, and pearls. In her hand she held a gold cup filled with the filthy and nasty things she had done.",
+        "The woman was dressed in purple and scarlet robes, and she wore jewelry made of gold, precious stones, and pearls. In her hand she held a gold cup filled with the filthy and nasty things she had done. ",
         {
           "type": "verse",
           "marker": "v",

@@ -48,7 +48,7 @@ USX::
 .Psalm 119 (NIV)
 [source#src-usx-para-qa_1,xml,highlight=4;11]
 ----
- <usx version="3.1">
+<usx version="3.1">
   <book code="PSA" style="id"/>
   <chapter number="119" style="c" sid="PSA 119"/>
   <para style="qa">Aleph</para>
@@ -118,7 +118,7 @@ USJ::
         "."
       ]
     },
-    "...",
+    " ... ",
     {
       "type": "para",
       "marker": "qa",
