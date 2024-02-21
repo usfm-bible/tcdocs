@@ -29,8 +29,8 @@ def convert_usx(input_usx_elmt):
     if tag:
         out_obj["marker"] = tag
     out_obj =  out_obj | attribs
-    if input_usx_elmt.text and input_usx_elmt.text.strip() != "":
-        text = input_usx_elmt.text.strip()
+    if input_usx_elmt.text and input_usx_elmt.text != "":
+        text = input_usx_elmt.text
     children = input_usx_elmt.getchildren()
     out_obj['content'] = []
     if text:
@@ -46,8 +46,8 @@ def convert_usx(input_usx_elmt):
                 pass
             case _:
                 pass
-        if child.tail and child.tail.strip() != "":
-            out_obj['content'].append(child.tail.strip())
+        if child.tail and child.tail != "":
+            out_obj['content'].append(child.tail)
     if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca", "b"])\
          and out_obj['content'] == []:
         del out_obj['content']
