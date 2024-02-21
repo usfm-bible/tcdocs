@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Unlocked Literal Bible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Book of Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Isa"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,37 +52,31 @@
         "The Book of the Prophet Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "5",
       "sid": "ISA 5"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -99,12 +86,10 @@
         "Man is brought down, and the great man is humbled, and the eyes of the lofty are cast down."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -114,12 +99,10 @@
         "Yahweh of hosts is exalted in his justice, and God the Holy One shows himself holy by his righteousness."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -157,19 +140,15 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": []
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

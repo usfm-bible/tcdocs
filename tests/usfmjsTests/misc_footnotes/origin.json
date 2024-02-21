@@ -2,39 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "50",
           "sid": "GEN 1:50"
         },
-        "\n    ",
         {
           "type": "note",
           "marker": "f",
           "caller": "+",
           "content": [
-            "\n      ",
             {
               "type": "char",
               "marker": "ft",
@@ -42,7 +36,6 @@
                 "Some modern versions have "
               ]
             },
-            "\n      ",
             {
               "type": "char",
               "marker": "fqa",
@@ -59,7 +52,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -87,7 +79,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -101,7 +92,6 @@
             "But do not allow yourselves to be called ‘Rabbi,’ for you have only one teacher, and you yourselves are all [neut:brothers and sisters./masc:brothers.]"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -129,7 +119,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -159,8 +148,6 @@
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

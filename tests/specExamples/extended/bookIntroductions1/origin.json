@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "- Good News Study Bible - Notes Material"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "iot",
@@ -19,7 +17,6 @@
         "Outline of Contents"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -27,7 +24,6 @@
         "The beginning of the gospel 1.1-13"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -35,7 +31,6 @@
         "Jesus' public ministry in Galilee 1.14-9.50"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -43,7 +38,6 @@
         "From Galilee to Jerusalem 10.1-52"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -51,7 +45,6 @@
         "The last week in and near Jerusalem 11.1-15.47"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -59,7 +52,6 @@
         "The resurrection of Jesus 16.1-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -67,7 +59,6 @@
         "[An Old Ending to the Gospel 16.9-20]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -75,7 +66,6 @@
         "[Another Old Ending 16.9-10]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -107,7 +97,6 @@
         " by him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -123,19 +112,16 @@
         " to faith\". ..."
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -144,8 +130,6 @@
         },
         "sample verse"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

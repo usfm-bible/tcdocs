@@ -2,21 +2,18 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s",
@@ -24,12 +21,10 @@
         "some text"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -45,7 +40,6 @@
             "B"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -61,7 +55,6 @@
             "僕使御"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -77,7 +70,6 @@
             "BB"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -93,7 +85,6 @@
             "BB"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -109,7 +100,6 @@
             "B僕使御"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -126,8 +116,6 @@
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -19,7 +17,6 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -27,7 +24,6 @@
         "The Acts of the Apostles"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -35,7 +31,6 @@
         "Acts"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -43,7 +38,6 @@
         "One of these brothers, Joseph, had become..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ipr",
@@ -51,19 +45,16 @@
         "(50.24)"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MAT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "po",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -73,7 +64,6 @@
         "This is the Good News ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pr",
@@ -88,7 +78,6 @@
         "It began as .."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -96,7 +85,6 @@
         "“God said, ‘I will send ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -104,12 +92,10 @@
         "to open the way for you.’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -119,7 +105,6 @@
         "Someone is shouting in the desert,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -127,7 +112,6 @@
         "‘Get the road ready for the Lord;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -135,17 +119,14 @@
         "make a straight path for him to travel!’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -155,7 +136,6 @@
         "So John appeared in the desert, ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pmo",
@@ -163,12 +143,10 @@
         "We apostles and leaders send friendly"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pm",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -185,20 +163,16 @@
         "So we met together and decided .."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "MAT 8"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "nb",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -208,7 +182,6 @@
         "These men have risked their lives .."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pc",
@@ -223,12 +196,10 @@
         "We are also sending Judas and Silas, .."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pm",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -238,7 +209,6 @@
         "Jesus answered:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pi",
@@ -246,12 +216,10 @@
         "The one who scattered the good .."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mi",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -261,7 +229,6 @@
         "The Holy Spirit has shown..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pmc",
@@ -269,15 +236,12 @@
         "We send our best wishes."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "cls",
       "content": [
         "May God's grace be with you."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

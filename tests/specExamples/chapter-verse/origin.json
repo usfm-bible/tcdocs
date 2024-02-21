@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
@@ -20,7 +18,6 @@
       "pubnumber": "M",
       "sid": "MAT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "cl",
@@ -28,7 +25,6 @@
         "Matthew"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "cd",
@@ -36,7 +32,6 @@
         "Additional deacription about the chapter"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -44,7 +39,6 @@
         "The Ancestors of Jesus Christ"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -52,12 +46,10 @@
         "(Luke 3.23-38)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -69,20 +61,16 @@
         "This is the list of the ancestors of Jesus Christ, a descendant of David, who was a descendant of Abraham."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "MAT 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -99,7 +87,6 @@
         "നമ്മുടെ പിതാവായ ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "iex",
@@ -107,12 +94,10 @@
         "Written to the Romans from Corinthus, and sent by Phebe servant of the church at Cenchrea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -121,8 +106,6 @@
         },
         "കർത്താവായ യേശുവിനോടും ..."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

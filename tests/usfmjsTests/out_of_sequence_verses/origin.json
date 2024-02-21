@@ -2,14 +2,12 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "PHP",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,7 +15,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -25,7 +22,6 @@
         "Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -33,7 +29,6 @@
         "The Epistle of Paul the Apostle to the Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -41,7 +36,6 @@
         "Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -49,7 +43,6 @@
         "Php"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -57,19 +50,16 @@
         "The Epistle of Paul the Apostle to the Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "PHP 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -86,23 +76,19 @@
         "Paul and Timothy, servants of Christ Jesus, to all the ones set apart in Christ Jesus who are at Philippi, with the overseers and deacons."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -126,26 +112,21 @@
         "Every time I pray for you, it is always a prayer of joy."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "PHP 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -155,18 +136,15 @@
         "If there is therefore any encouragement in Christ, if any comfort from his love, if any fellowship of the Spirit, if any tender mercies and compassions,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -182,8 +160,6 @@
         },
         "make my joy full so that you are of the same mind, have the same love, are united in spirit, and have the same purpose."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

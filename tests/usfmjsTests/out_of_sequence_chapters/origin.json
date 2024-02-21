@@ -2,14 +2,12 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "PHP",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,7 +15,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -25,7 +22,6 @@
         "Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -33,7 +29,6 @@
         "The Epistle of Paul the Apostle to the Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -41,7 +36,6 @@
         "Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -49,7 +43,6 @@
         "Php"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -57,19 +50,16 @@
         "The Epistle of Paul the Apostle to the Philippians"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "PHP 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -79,26 +69,21 @@
         "Therefore, my beloved brothers whom I long for, my joy and crown, in this way stand firm in the Lord, beloved friends."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "PHP 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -115,26 +100,21 @@
         "Grace to you and peace from God our Father and the Lord Jesus Christ."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "PHP 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -151,26 +131,21 @@
         "Watch out for the dogs. Watch out for the evil workers. Watch out for the mutilators."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "PHP 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -186,8 +161,6 @@
         },
         "make my joy full so that you are of the same mind, have the same love, are united in spirit, and have the same purpose."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

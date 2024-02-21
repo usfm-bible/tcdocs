@@ -2,26 +2,22 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GLO",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GLO 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -31,12 +27,10 @@
         "something"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "k",
@@ -47,20 +41,16 @@
         " definition"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GLO 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -70,12 +60,10 @@
         "something"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -94,12 +82,10 @@
         "something"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -110,8 +96,6 @@
         },
         " definition"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

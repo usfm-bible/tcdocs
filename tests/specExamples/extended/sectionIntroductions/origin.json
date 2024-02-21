@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,19 +10,16 @@
         "- Good News Study Bible - Notes Material"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40,7 +36,6 @@
         "where he stayed 40 days, being tempted by Satan. Wild animals were there also, but angels came and helped him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -48,7 +43,6 @@
         "Jesus' Public Ministry in Galilee"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mr",
@@ -56,7 +50,6 @@
         "1.14--9.50"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -80,7 +73,6 @@
         " ) mentioned (14.1). He spends much of his time in Capernaum (1.21; 2.1; 3.1, 20; 9.33) and other places around Lake Galilee (1.9; 2.13; 3.7; 4.1). Twice Jesus ventures out of Galilee: into the region of the Ten Towns (5.1-20) and Phoenicia (7.24-31). His actions and teachings soon arouse opposition from the religious leaders (2.6-7, 24; 3.6, 22; 7.1-13; 8.11-12), and before long he predicts his coming arrest, condemnation, and crucifixion (8.31; 9.30-31)."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -88,7 +80,6 @@
         "Jesus Calls Four Fishermen"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -96,7 +87,6 @@
         "(Mt 4.12-22; Lk 4.14-15; 5.1-11)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -112,12 +102,10 @@
         ", which will happen soon. To prepare for it, the people need to repent (1.15). He immediately summons two pairs of fishermen brothers to be his followers and helpers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -126,8 +114,6 @@
         },
         "After John had been put in prison, Jesus went to Galilee and preached the Good News from God."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

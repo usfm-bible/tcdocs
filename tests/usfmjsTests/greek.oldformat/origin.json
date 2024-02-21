@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,26 +24,22 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 1:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -57,7 +50,6 @@
             "Παῦλος"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -68,7 +60,6 @@
             "δοῦλος"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -79,7 +70,6 @@
             "Χριστοῦ"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -92,27 +82,22 @@
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "TIT 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 2:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -123,7 +108,6 @@
             "Σὺ"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -134,7 +118,6 @@
             "δὲ"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -145,7 +128,6 @@
             "λάλει"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -157,8 +139,6 @@
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -27,7 +25,6 @@
         "-worker. He is also ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ili",
@@ -59,7 +56,6 @@
         "\") had become ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ili",
@@ -75,7 +71,6 @@
         " is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ili",
@@ -91,7 +86,6 @@
         " is the title most..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "imte",
@@ -99,25 +93,21 @@
         "End of the Introduction to the Gospel of Mark"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ie",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MAT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -134,7 +124,6 @@
         "നമ്മുടെ പിതാവായ ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "iex",
@@ -142,12 +131,10 @@
         "Written to the Romans from Corinthus, and sent by Phebe servant of the church at Cenchrea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -156,8 +143,6 @@
         },
         "കർത്താവായ യേശുവിനോടും ..."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

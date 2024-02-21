@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Unlocked Literal Bible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Book of Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Isa"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,25 +52,21 @@
         "Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "ISA 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -117,32 +106,26 @@
               "content": [
                 "seventy men. "
               ]
-            },
-            " "
+            }
           ]
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "15",
       "sid": "ISA 15"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -185,7 +168,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -195,26 +177,21 @@
         "Shimei had these sons: Jakim, Zikri, Zabdi, Elienai, Zillethai, Eliel, Adaiah, Beraiah, and Shimrath."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "60",
       "sid": "ISA 60"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -224,7 +201,6 @@
         "Camel caravans will cover you, the dromedaries of Midian and Ephah;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -232,7 +208,6 @@
         "all of them will come from Sheba;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -240,12 +215,10 @@
         "they will bring gold and frankincense, and will sing the praises of Yahweh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -255,15 +228,12 @@
         "All the flocks of Kedar will be gathered together to you, the rams of Nebaioth will serve your needs;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
         "they will be acceptable offerings on my altar; and I will glorify my glorious house."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

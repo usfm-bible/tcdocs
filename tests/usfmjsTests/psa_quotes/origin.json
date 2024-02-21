@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Unlocked Literal Bible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Book of Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Psa"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,7 +52,6 @@
         "The Book of Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "cl",
@@ -67,20 +59,17 @@
         "Psalm"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "PSA 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -88,12 +77,10 @@
         "Book One"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -103,7 +90,6 @@
         "Blessed is the man who does not walk in the advice of the wicked,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -111,7 +97,6 @@
         "or stand in the pathway with sinners,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -119,12 +104,10 @@
         "or sit in the assembly of mockers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -134,7 +117,6 @@
         "But his delight is in the law of Yahweh,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -149,18 +131,15 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -170,7 +149,6 @@
         "He will be like a tree planted by the streams of water"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -178,7 +156,6 @@
         "that produces its fruit in its season,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -186,7 +163,6 @@
         "whose leaves do not wither;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -194,18 +170,15 @@
         "whatever he does will prosper."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -215,7 +188,6 @@
         "The wicked are not so,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -223,12 +195,10 @@
         "but are instead like the chaff that the wind drives away."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -238,15 +208,12 @@
         "So the wicked will not stand in the judgment,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
         "nor sinners in the assembly of the righteous."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

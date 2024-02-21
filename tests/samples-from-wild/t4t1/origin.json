@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "- Translation 4 Translators 1"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "65001 - Unicode (UTF-8)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "2 KINGS"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "2 Kings"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "2 Kings"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "2 Ki"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -59,14 +52,12 @@
         "SECOND KINGS"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "2KI 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -74,12 +65,10 @@
         "Elijah condemned King Ahaziah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -128,12 +117,10 @@
         ", and ask their god Baalzebub whether I will ◄recover/become well►.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -190,19 +177,16 @@
         " that he will not recover from his being injured; he will surely die.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "2KI 1:5"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -229,12 +213,10 @@
         "?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -276,12 +258,10 @@
         " he will not recover from being injured; instead, he will surely die.”’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -291,12 +271,10 @@
         "The king said to them, “The man who came to meet you and told that to you, what did he look like?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -314,12 +292,10 @@
         " leather belt around his waist.” The king exclaimed, “That was Elijah!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -329,12 +305,10 @@
         "Then the king sent an officer with fifty soldiers to seize Elijah. They found Elijah sitting on the top of a hill. The officer called out to him, “Prophet, the king commands that you come down here!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -352,19 +326,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "11",
           "sid": "2KI 1:11"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -383,12 +354,10 @@
         ", and the officer called out to him, “Prophet, the king commands that you come down immediately!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -406,19 +375,16 @@
         ", I command that fire come down from the sky and kill you and your soldiers!” Then a fire from God came down from the sky and killed the officer and his soldiers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "13",
           "sid": "2KI 1:13"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -451,12 +417,10 @@
         " two times fire came down from the sky and killed officers and the fifty soldiers who were with them. So now, please be kind to me!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -474,12 +438,10 @@
         " him. Do not be afraid of him.” So Elijah went with them to the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -528,19 +490,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "18",
           "sid": "2KI 1:18"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -551,15 +510,12 @@
         " all the other things that Ahaziah did, they are [RHQ] written in the scroll called ❛The History of the Kings of Israel❜."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "2KI 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -567,12 +523,10 @@
         "Elijah is taken up to heaven"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -637,7 +591,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -645,7 +598,6 @@
         "But Elisha replied, “Just as certainly as Yahweh lives and you live, I will not leave you!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -684,7 +636,6 @@
         " away from you today?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -707,7 +658,6 @@
         " me to go to Jericho.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -723,7 +673,6 @@
         ", “Just as certainly as Yahweh lives and you live, I will not leave you!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -747,19 +696,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "2KI 2:5"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -778,7 +724,6 @@
         " away from you today?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -786,12 +731,10 @@
         "He answered again, “Certainly I know that, but don't talk about it!” [IDM]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -817,7 +760,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -833,7 +775,6 @@
         " Elisha replied, “As certainly as Yahweh lives and you live, I will not leave you!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -879,12 +820,10 @@
         " on dry ground."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -894,7 +833,6 @@
         "When they came to the other side, Elijah said to Elisha, “What do you want me to do for you before ◄I am taken away/Yahweh takes me away►?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -910,12 +848,10 @@
         " (OR enable me to very powerfully continue your ministry).”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -933,12 +869,10 @@
         ". But, if you see me when ◄I am taken from you/Yahweh takes me from you►, you will get what you are requesting. But if you do not see me, then you will not get it.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1057,12 +991,10 @@
         "?” Then the water separated, and a path opened up for him, and Elisha went across."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1094,7 +1026,6 @@
         ". Perhaps the Spirit of Yahweh has left him on some mountain or in some valley.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1102,12 +1033,10 @@
         "Elisha replied, “No, do not send them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1132,7 +1061,6 @@
         "!” [RHQ]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1140,12 +1068,10 @@
         "Elisha made the water pure"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1171,12 +1097,10 @@
         ". But the water is bad, and as a result, crops will not grow on the land.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1186,12 +1110,10 @@
         "Elisha said to them, “Put some salt in a new bowl and bring the bowl to me.” So they brought it to him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1216,7 +1138,6 @@
         "And the water became pure, just as Elisha said it would be. Since that time it has always remained pure."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1224,12 +1145,10 @@
         "Elisha cursed boys who made fun of him"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1269,15 +1188,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "2KI 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1285,12 +1201,10 @@
         "The war between Israel and Moab"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1338,12 +1252,10 @@
         " Jeroboam had committed and which led the Israeli people to sin, and he did not stop committing those sins."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1390,7 +1302,6 @@
         "Then he sent this message to Jehoshaphat, the king of Judah: “The king of Moab has rebelled against me. So will your army join my army and fight against the army of Moab?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1398,12 +1309,10 @@
         "Jehoshaphat replied, “Yes, we will help you. We are ready to do whatever you want us to. My soldiers and my horses are ready to help you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1413,7 +1322,6 @@
         "He asked, “On which road shall we march to attack them?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1429,12 +1337,10 @@
         " through the Edom desert.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1460,12 +1366,10 @@
         ". They marched for seven days. Then there was no water left for their soldiers or for their animals that carried supplies."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1491,12 +1395,10 @@
         " [MTY] Moab!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1514,7 +1416,6 @@
         "?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1522,12 +1423,10 @@
         "One of Joram's army officers said, “Elisha, the son of Shaphat, is here. He was Elijah's assistant.” [IDM]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1545,7 +1444,6 @@
         " he speaks what Yahweh tells him to say.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1560,7 +1458,6 @@
         "Elisha said to the king of Israel, “Why do you come to me [RHQ]? Go and ask those prophets that your father and mother consulted!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1576,12 +1473,10 @@
         " Yahweh is going to allow us three kings to be captured by the army of Moab.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1598,12 +1493,10 @@
         "But, bring a musician to me.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -1666,12 +1559,10 @@
         "You will conquer all their beautiful cities, cities that have high walls around them. You must cut down all their fruit trees, stop water from flowing from their springs, and ruin their fertile fields by covering them with rocks.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1689,12 +1580,10 @@
         ", they were surprised to see water flowing from Edom and covering the ground."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1734,12 +1623,10 @@
         "They exclaimed, “It is blood! The three enemy armies must have fought and killed each other! So let's go and take everything that they have left!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1794,15 +1681,12 @@
         ", burning him on top of the city wall. The Israeli soldiers were horrified, with the result that they left that city and returned to their own country."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "2KI 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1810,12 +1694,10 @@
         "Elisha helped a poor widow"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1857,12 +1739,10 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1872,7 +1752,6 @@
         "Elisha replied, “What can I do to help you? Tell me, what do you have in your house?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1888,12 +1767,10 @@
         " oil; we have nothing else.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1918,19 +1795,16 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "2KI 4:5"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -1948,12 +1822,10 @@
         "Soon all the jars were full. So she said to one of her sons, “Bring me another jar!” But he replied, “There are no more jars!” And then the olive oil stopped flowing."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1987,7 +1859,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1995,12 +1866,10 @@
         "Elisha caused the son of the woman from Shunem to become alive again"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2072,12 +1941,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2125,12 +1992,10 @@
         " the king or the army commander, to request something for you?’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2149,19 +2014,16 @@
         " my family/relatives are able to give me what I need.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "14",
           "sid": "2KI 4:14"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2172,7 +2034,6 @@
         ", Elisha asked Gehazi, “What do you think that we can do for that woman?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2188,12 +2049,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2234,12 +2093,10 @@
         " God, so please do not deceive/lie to me by saying things like that!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2249,12 +2106,10 @@
         "But a few months later, the woman became pregnant, and she gave birth to a son at that time the following year, just like Elisha had predicted."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2310,7 +2165,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2340,12 +2194,10 @@
         " to the prophet's room and laid him on the bed. She left him there and went out and shut the door."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2371,12 +2223,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2402,7 +2252,6 @@
         " today? This is not the day when we celebrate the Festival of the New Moon, and it is not a Sabbath day!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2418,12 +2267,10 @@
         " everything will be all right.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2463,12 +2310,10 @@
         "Run to her, and ask her if everything is all right with her and her husband and with her child!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2479,12 +2324,10 @@
         ". She only said, “Yes, everything is fine.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2502,12 +2345,10 @@
         " took hold of his feet. Gehazi started to push her away, but Elisha said, “◄Do not push her away/Leave her alone►! Something is troubling her very much, but Yahweh has not told me what it is.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2517,12 +2358,10 @@
         "Then she said to Elisha, “O, sir, I did not ask you to enable me to give birth to a son [RHQ]. And I told you not to lie to me about that!” [RHQ]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2580,12 +2419,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2611,12 +2448,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2634,7 +2469,6 @@
         ", he laid the staff/walking stick on the child's face, but the child did not move or say anything."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2686,12 +2520,10 @@
         ". Then he stretched his body on the boy's body again. The boy sneezed seven times and opened his eyes!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2724,7 +2556,6 @@
         " prostrated herself at Elisha's feet. Then she picked up her son and carried him downstairs."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2732,12 +2563,10 @@
         "Elisha made some stew edible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2763,12 +2592,10 @@
         " and make some stew for these men.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2793,7 +2620,6 @@
         "He served the stew to the prophets, but after the men had eaten only a couple bites, they cried out, “Elisha, there is something in the pot that will kill us!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2816,7 +2642,6 @@
         " he threw it in the pot and he said, “It is all right now. You can eat it.” And they ate it, and it did not harm them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2824,12 +2649,10 @@
         "Elisha multiplied food for the prophets"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2855,7 +2678,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2878,7 +2700,6 @@
         "But his servant exclaimed, “Do you think that we can feed a hundred of us prophets with only that much?” [RHQ]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2901,15 +2722,12 @@
         ", and there was food left over, just as Yahweh had promised."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "5",
       "sid": "2KI 5"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2917,19 +2735,16 @@
         "Naaman was healed of leprosy"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "2KI 5:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2940,19 +2755,16 @@
         " Naaman was the commander of the army of Syria. Yahweh had enabled him to win many victories/battles. He was a great warrior, and as a result the king of Syria greatly respected him. But he had ◄leprosy/a dreaded skin disease►."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "2KI 5:2"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2978,19 +2790,16 @@
         "One day, that girl said to her, “I wish that ◄my master/your husband► would go to see the prophet in Samaria. That prophet would heal your husband from his leprosy.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "2KI 5:4"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -3064,19 +2873,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "7",
           "sid": "2KI 5:7"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -3095,12 +2901,10 @@
         " who wrote this letter request me to cure this man of his leprosy? I think that he is just wanting to start a fight with me!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3172,12 +2976,10 @@
         " and wash yourself seven times in the river. Then your skin will be restored/healed, and you will no longer have leprosy.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3202,12 +3004,10 @@
         " are [RHQ] better than any of the rivers in Israel! Why can I not wash in those rivers and be healed?” [RHQ] So he turned and walked away with great anger/disgust."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3248,12 +3048,10 @@
         " and washed himself seven times, as ◄the prophet/Elisha► told him to do. Then his skin was restored/healed, and it became healthy/smooth, like the skin of a young child."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3271,12 +3069,10 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3294,12 +3090,10 @@
         ", but Elisha kept refusing."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3356,12 +3150,10 @@
         ", goes into the temple of the god Rimmon to worship him/it there, and he is leaning on my arm, I hope/desire that Yahweh will forgive me because I will have to bow down, too.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3379,7 +3171,6 @@
         " started to travel home."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3387,12 +3178,10 @@
         "Elisha cursed Gehazi for being greedy"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3402,12 +3191,10 @@
         "But then Elisha's servant Gehazi said to himself, “It is not good that my master allowed this Syrian man to leave like this. He should have accepted his gifts. So just as certainly as Yahweh lives, I will go and catch up with Naaman and get something from him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3433,12 +3220,10 @@
         ", jumped out, and went to see what Gehazi wanted. He asked him, “Is everything all right?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3448,12 +3233,10 @@
         "Gehazi replied, “Yes, but two young prophets from the hilly area where the descendants of Ephraim live have just arrived. Elisha has sent me to tell you that he would like 75 pounds of silver and two sets of clothing to give to them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3485,12 +3268,10 @@
         "When he went to Elisha, Elisha asked him, “Where did you go, Gehazi?” Gehazi replied, “I did not go anywhere.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3515,15 +3296,12 @@
         "Because you have done this, you and your children and all your descendants, forever, will have leprosy just like Naaman had!” And when Gehazi left the room, he was a leper! His skin was as white as snow!"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "2KI 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3531,12 +3309,10 @@
         "The axe head floated"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3561,12 +3337,10 @@
         " logs to build a new meeting place.” So Elisha said, “Okay, go.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3576,12 +3350,10 @@
         "One of them said to Elisha, “Please come with us.” So Elisha replied, “Okay, I will go with you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3599,12 +3371,10 @@
         ", they cut down some trees."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3630,12 +3400,10 @@
         "; I borrowed it!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3660,7 +3428,6 @@
         "Elisha said, “Take it out of the water.” So the man reached his hand down and picked up the axe head."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3668,12 +3435,10 @@
         "Elisha tricked the army of Syria"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3691,12 +3456,10 @@
         " fight against Israel, he first consulted his officers, and then told them where they should set up their tents."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3737,12 +3500,10 @@
         " that place, and the people would remain on guard. That happened several times."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3760,12 +3521,10 @@
         " one of you is ◄betraying us/revealing our plans► to the king of Israel. Which one of you is doing it?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3783,12 +3542,10 @@
         ", and he tells the king of Israel everything. He even knows what you say in your own bedroom!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3829,12 +3586,10 @@
         " with horses and chariots. They arrived at night and surrounded the town."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3852,12 +3607,10 @@
         " exclaimed, “O, sir! What are we going to do?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3867,12 +3620,10 @@
         "Elisha replied, “Do not be afraid! Those who will be helping us will be more than those who will be helping them!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3898,12 +3649,10 @@
         " was a huge number of horses, and chariots made of fire!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3913,12 +3662,10 @@
         "When the army of Syria prepared to attack Elisha, he prayed again, saying, “Yahweh, cause all these soldiers to become blind!” Yahweh answered his prayer and caused them to be unable to see clearly."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3936,12 +3683,10 @@
         "!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3959,12 +3704,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3982,12 +3725,10 @@
         " kill them? Shall we kill all of them?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4012,7 +3753,6 @@
         ". So for a while after that, soldiers from Syria stopped raiding/attacking towns in Israel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4020,12 +3760,10 @@
         "The army of Syria surrounded Samaria"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4058,12 +3796,10 @@
         ", cost eighty pieces of silver, and ◄one cup/0.3 liter► of dove's dung cost five pieces of silver."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4073,12 +3809,10 @@
         "One day when the king of Israel was walking on top of the city wall, a woman cried out to him, “Your Majesty, help me!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4119,12 +3853,10 @@
         " eat his flesh.’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4150,12 +3882,10 @@
         " eat it.’ But she has hidden her son!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4196,12 +3926,10 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4211,7 +3939,6 @@
         "So the king sent an officer to get Elisha."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -4250,20 +3977,16 @@
         "!►”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "7",
       "sid": "2KI 7"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4281,12 +4004,10 @@
         " one piece of silver.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4312,7 +4033,6 @@
         ", you [SYN] will see it happen, but you will not be able to eat any of the food!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4320,12 +4040,10 @@
         "The Syrian army became frightened and left"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4365,12 +4083,10 @@
         "So when it was getting dark, those four men went to the camp where the army of Syria had set up their tents. But when they reached the camp, they saw that there was no one there!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4411,12 +4127,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4442,12 +4156,10 @@
         " and hid those things. Then they entered another tent, and took things from there, and then went outside and hid them, also."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4473,12 +4185,10 @@
         ". So let's go right now to the palace and tell it to the king's officials!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4503,12 +4213,10 @@
         " went to the palace and reported it there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4534,12 +4242,10 @@
         ", and then they will capture us and capture the city.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4565,12 +4271,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4626,12 +4330,10 @@
         "! As a result people could buy ten pounds of fine wheat or twenty pounds of barley for only one piece of silver, which was what Yahweh had said would happen!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4656,12 +4358,10 @@
         "Elisha had told him that by the next day there would be plenty of food, with the result that anyone could buy ten pounds of fine wheat or twenty pounds of barley for only one piece of silver."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4694,15 +4394,12 @@
         " the city gate trampled on him, and he died."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "2KI 8"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4710,12 +4407,10 @@
         "The widow from Shunem recovered her land"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4748,12 +4443,10 @@
         " for seven years."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4785,12 +4478,10 @@
         " to become alive again, that woman came in and requested the king to enable her to get her house and land back again. Gehazi exclaimed, “Your Majesty, this is the woman whose son Elisha caused to become alive again!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4824,7 +4515,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4832,12 +4522,10 @@
         "Elisha predicted the death of the king of Syria"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4878,12 +4566,10 @@
         " Hazael, “Go and talk to that prophet and take a present/gift with you to give to him. Request him to ask Yahweh if I will recover from my illness.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4901,12 +4587,10 @@
         " he will recover from his illness.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4939,12 +4623,10 @@
         " Elisha started to cry."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4954,7 +4636,6 @@
         "Hazael said, “Sir, why are you crying?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -4978,12 +4659,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5001,7 +4680,6 @@
         " [MET] a dog; ◄how could I do such things?/I would never do such terrible things!►” [RHQ]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5009,12 +4687,10 @@
         "Elisha replied, “Yahweh has also revealed to me that you will become the king of Syria.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5032,7 +4708,6 @@
         ", who asked him, “What did Elisha say?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5063,7 +4738,6 @@
         ", and he died. Then Hazael became the king of Syria instead of Ben-Hadad."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5071,12 +4745,10 @@
         "King Jehoram of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5115,12 +4787,10 @@
         ". He had promised David that his descendants [MET] would always rule Judah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5168,19 +4838,16 @@
         " also freed themselves from being controlled by Judah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "23",
           "sid": "2KI 8:23"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -5206,7 +4873,6 @@
         " ❛The City of David❜. Then Jehoram's son Ahaziah became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5214,12 +4880,10 @@
         "King Ahaziah of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5259,12 +4923,10 @@
         "King Ahab conducted his life just like the members of Ahab's family had done. He did things that Yahweh considered to be very evil."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5305,15 +4967,12 @@
         " to recover from his wounds. King Ahaziah went to visit him there."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "9",
       "sid": "2KI 9"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5321,12 +4980,10 @@
         "Jehu became the king of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5382,12 +5039,10 @@
         " this oil on his head. Then say to him, ‘Yahweh declares that he is appointing you to be the king of Israel.’ Then open the door and run away as quickly as you can.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5420,7 +5075,6 @@
         " you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5428,7 +5082,6 @@
         "Jehu replied, “Which one of us is the message for?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5436,12 +5089,10 @@
         "The young prophet replied, “It is for you, commander/sir.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5535,7 +5186,6 @@
         ".’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5550,7 +5200,6 @@
         "When Jehu came out of the room to where his other commanders were, they said to him, “Is everything all right? Why did that mad fellow come to you?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5558,12 +5207,10 @@
         "He replied, “You know what kinds of things young prophets like him say.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5573,7 +5220,6 @@
         "They said, “You are lying! Tell us what he said!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5581,12 +5227,10 @@
         "He replied, “He told me that Yahweh said, ‘I am appointing [MTY] you to be the king of Israel.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5604,7 +5248,6 @@
         ", and they blew trumpets and shouted, “Jehu is now the king!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5612,12 +5255,10 @@
         "King Joram of Israel was killed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5650,12 +5291,10 @@
         "Then Jehu and his officers got into their chariots and rode to Jezreel, where Joram was still recovering. And King Ahaziah of Judah was there, visiting Joram."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5681,12 +5320,10 @@
         " he said to his soldiers, “Send someone on a horse to go and find out if they are coming to be friendly to us or to attack us.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5704,7 +5341,6 @@
         " friendly to us.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5712,7 +5348,6 @@
         "Jehu replied, “This is not the time for you [RHQ] to be concerned about acting friendly! Turn around and come behind me!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5736,12 +5371,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5751,12 +5384,10 @@
         "So King Joram sent another messenger, who asked Jehu the same question. Again Jehu replied, “This is not the time [RHQ] for you to be concerned about acting friendly! Turn around and follow me!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5798,12 +5429,10 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5844,7 +5473,6 @@
         "When Joram met Jehu, he said to him, “Are you coming on a peacefull visit?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5852,12 +5480,10 @@
         "Jehu replied, “◄How can there be peace while you and your people are prostrating themselves to worship idols and practicing very much ‘witchcraft/sorcery’ like your mother Jezebel did?/There certainly cannot be peace while you and your people are prostrating themselves to worship idols and practicing ‘witchcraft/sorcery’ like your mother Jezebel has been doing!►” [RHQ]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5875,12 +5501,10 @@
         "!” So Joram turned his chariot around and tried to flee."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5936,7 +5560,6 @@
         "‘Yesterday I saw Ahab murder [MTY] Naboth and his sons here. And I solemnly promise that I will punish him right here in this same field!’ So take Joram's corpse and throw it into that field! That will fulfill what Yahweh said would happen.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5944,12 +5567,10 @@
         "King Ahaziah of Judah was killed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6029,7 +5650,6 @@
         "Ahaziah had become the king of Judah when Joram had been ruling Israel for almost eleven years."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6037,12 +5657,10 @@
         "Queen Jezebel was killed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6091,12 +5709,10 @@
         " you are certainly not [RHQ] comingon apeaceful visit!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6121,7 +5737,6 @@
         "Jehu said to them, “Throw her down here!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -6205,15 +5820,12 @@
         " say, “These are Jezebel's bones.” ’ ”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "10",
       "sid": "2KI 10"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6221,12 +5833,10 @@
         "Ahab's descendants were murdered"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6281,12 +5891,10 @@
         " fight to defend him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6304,12 +5912,10 @@
         ", they became very afraid. They said, “King Joram and King Ahaziah could not resist him; ◄how can we resist him?/we cannot possibly resist him!►” [RHQ]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6319,12 +5925,10 @@
         "So the officer who was in charge of the palace and the mayor of the city sent a message to Jehu saying, “We want to serve you, and we are ready to do whatever you tell us to do. We will not appoint anyone to become our king. You do whatever you think is best.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6342,7 +5946,6 @@
         " their heads and bring their heads to me here in Jezreel at this time tomorrow.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -6380,12 +5983,10 @@
         "A messenger came to Jehu and told him, “They have brought the heads of Ahab's descendants.” So Jehu commanded that the heads should be put in two piles at the city gate and that the heads should stay there until the next morning."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6441,12 +6042,10 @@
         "Then Jehu executed all the other relatives of Ahab in Jezreel, and all Ahab's officers, and close friends, and his priests. He did not allow any of them to remain alive."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6471,7 +6070,6 @@
         "he met some relatives of King Ahaziah of Judah. He asked them, “Who are you?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -6487,12 +6085,10 @@
         " family.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6502,12 +6098,10 @@
         "Jehu said to his men, “Seize them!” So they seized them and killed all of them at the pit named Beth-Eked. There were forty-two people whom they killed; they did not allow any of them to remain alive."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6525,7 +6119,6 @@
         ". Along the road, he was met by Jonadab, a leader of the Rechab clan. Jehu greeted him and said to him, “Are you as devoted to me [IDM] as I am devoted to you?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -6533,7 +6126,6 @@
         "Jonadab replied, “Yes, I am.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -6548,12 +6140,10 @@
         "Jehu said to him, “Come with me, and you will see that I am very devoted to Yahweh.” So they rode together to Samaria."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6563,7 +6153,6 @@
         "When they arrived in Samaria, Jehu killed all of Ahab's relatives who were still alive. He did not ◄spare any of them/allow any of them to remain alive►. That was what Yahweh told Elijah would happen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6571,12 +6160,10 @@
         "The people who worshiped Baal were killed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6609,12 +6196,10 @@
         "So now summon all the prophets of Baal, all of Baal's priests, and all the others who worship Baal. I am going to make a great sacrifice to Baal. I want all of them to be there. Any of them who is not there will be executed.” But Jehu was planning to trick them; he was planning to kill all those who worshiped Baal."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6654,12 +6239,10 @@
         "Jehu told the priest who took care of the sacred robes to bring them out and give them to the people who worshiped Baal. So the priest did that."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6692,12 +6275,10 @@
         ". Anyone who allows one of them to escape will be executed!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6737,12 +6318,10 @@
         "So they destroyed that pillar that honored Baal, and then they burned down the temple, and made it a publc toilet. And it is still a toilet!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6775,12 +6354,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6797,7 +6374,6 @@
         "But Jehu did not obey all the laws of Yahweh, the God of the Israeli people. He did not stop committing the sins that Jeroboam had committed, sins that led the Israeli people to sin."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6805,12 +6381,10 @@
         "Jehu died"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6875,19 +6449,16 @@
         ", where the tribes of Gad, Reuben, and half of the tribe of Manasseh lived."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "34",
           "sid": "2KI 10:34"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -6898,12 +6469,10 @@
         " about all the other things that Jehu did [RHQ], they are written in the scroll called ❛The History of the Kings of Israel❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6920,15 +6489,12 @@
         "Jehu had ruled in Samaria as the king of Israel for twenty-eight years."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "11",
       "sid": "2KI 11"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6936,12 +6502,10 @@
         "Queen Athaliah of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6997,12 +6561,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7056,12 +6618,10 @@
         "You must stand around the king wherever he goes, with your weapons in your hands. You must kill anyone who comes near you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7093,12 +6653,10 @@
         "Then he commanded all the guards to stand in their positions, each one with his sword in his hand, all around the young king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7116,12 +6674,10 @@
         ". Then he poured some olive oil on Joash's head and proclaimed that he was now the king. The people all clapped their hands and shouted, “We desire/hope that the king will live for many years!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7191,12 +6747,10 @@
         " the guards seized her and took her to the palace, to the place where horses enter the courtyard. They killed her there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7213,7 +6767,6 @@
         "Then all the people of Israel who were there went to the temple of Baal and tore it down. They smashed the altars and the statues of Baal. They also killed Mattan, the priest of Baal, in front of the altars."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -7251,12 +6804,10 @@
         "All the people of Judah rejoiced. And because Athaliah had been killed, the city was quiet/calm."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7274,15 +6825,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "12",
       "sid": "2KI 12"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7290,12 +6838,10 @@
         "King Joash of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7343,12 +6889,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7365,12 +6909,10 @@
         "Each priest must take the money from people who know him (OR, from one of the treasurers), and he must use that money to repair the temple whenever he sees that there is something that needs to be repaired.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7394,12 +6936,10 @@
         "The priests agreed to do that, and they also agreed that they themselves would not do the repair work."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7453,12 +6993,10 @@
         " silver cups or wick trimmers or bowls or trumpets or any other items made of silver or gold to be used in the temple."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7482,12 +7020,10 @@
         "But the money that people gave to pay for the wrong things that they had done and the money they gave to purify themselves because of the sins that they had committed was not put in the chest. That money belonged to the priests."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7536,19 +7072,16 @@
         " away from Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "19",
           "sid": "2KI 12:19"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -7582,15 +7115,12 @@
         " ❛The City of David❜. Then Joash's son Amaziah became the king of Judah."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "13",
       "sid": "2KI 13"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7598,12 +7128,10 @@
         "King Jehoahaz of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7635,12 +7163,10 @@
         "So Yahweh became very angry with the Israeli people, and he allowed the army of King Hazael of Syria and his son Ben-Hadad to defeat the Israelis many times."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7680,12 +7206,10 @@
         " sin. And the statue of the goddess Asherah remained in Samaria."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7695,19 +7219,16 @@
         "Jehoahaz had only fifty men who rode on horses and ten chariots and 10,000 other soldiers, because the army of Syria had killed all the rest, trampling them like people walk on dirt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "2KI 13:8"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -7725,7 +7246,6 @@
         "Jehoahaz died [EUP] and was buried in Samaria. Then his son Jehoash became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7733,12 +7253,10 @@
         "King Jehoash ruled Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7763,12 +7281,10 @@
         " Jeroboam had told the Israeli people to commit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7809,7 +7325,6 @@
         " kings of Israel were buried. Then his son Jeroboam became king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7817,12 +7332,10 @@
         "Elisha died"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7848,12 +7361,10 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7878,12 +7389,10 @@
         ". And then Elisha put his own hands on the king's hands."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7925,12 +7434,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7963,12 +7470,10 @@
         ", your army will defeat them only three times!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7978,7 +7483,6 @@
         "Then Elisha died and was buried."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -8009,7 +7513,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -8017,7 +7520,6 @@
         "But as soon as the man's body touched Elisha's bones, the dead man became alive again and jumped up!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8025,12 +7527,10 @@
         "War between Israel and Syria"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8071,12 +7571,10 @@
         " Abraham, Isaac, and Jacob. He did not get rid of the Israelis, and he still has not rejected them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8108,15 +7606,12 @@
         " King Ben-Hadad three times, and recaptured the cities that Ben-Hadad's army had captured during the time that Jehoash's father Jehoahaz was ruling Israel."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "14",
       "sid": "2KI 14"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8124,12 +7619,10 @@
         "King Amaziah of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8184,12 +7677,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8230,12 +7721,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8261,12 +7750,10 @@
         " and gave it a new name, Joktheel. That is still its name."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8276,12 +7763,10 @@
         "Then Amaziah sent messengers to King Jehoash of Israel, saying “Come here and let's talk together.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8321,12 +7806,10 @@
         " us, you will surely [RHQ] cause a disaster to happen to you and to your people.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8373,19 +7856,16 @@
         "Jehoash's soldiers seized all the gold and silver that they found, and all the utensils that were in the temple, and all the valuable things that were in the palace, and took them to Samaria. They also took to Samaria some prisoners whom they had captured."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "2KI 14:15"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -8427,12 +7907,10 @@
         " became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8456,12 +7934,10 @@
         ", it is written [RHQ] in the scroll called ❛The History of the Kings of Judah❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8494,12 +7970,10 @@
         " ❛The City of David❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8524,7 +7998,6 @@
         ", and it came under the control of Judah again."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8540,12 +8013,10 @@
         " of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8601,12 +8072,10 @@
         ", would happen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8639,19 +8108,16 @@
         " to rescue them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "28",
           "sid": "2KI 14:28"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -8709,15 +8175,12 @@
         " the other kings of Israel were buried, and his son Zechariah became the king."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "15",
       "sid": "2KI 15"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8725,12 +8188,10 @@
         "King Uzziah of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8785,12 +8246,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8808,19 +8267,16 @@
         ". He lived alone in a house, and his son Jotham ruled the country."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "2KI 15:6"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -8846,7 +8302,6 @@
         " ❛The City of David❜, where his ancestors had been buried. Then his son Jotham oficially became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8854,12 +8309,10 @@
         "King Zechariah of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8908,12 +8361,10 @@
         " had committed, sins which led the Israeli people to sin."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8953,7 +8404,6 @@
         ". That fulfilled what Yahweh said to King Jehu would happen: “Your son and grandson and great-grandson and great-great-grandson will all be kings of Israel.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8961,12 +8411,10 @@
         "King Shallum of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8999,12 +8447,10 @@
         " to Samaria and assassinated Shallum. Then Menahem became the king of Israel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9014,12 +8460,10 @@
         "Everything else that Shallum did, including his killing King Zechariah, is written in the scroll called ❛The History of the Kings of Israel❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9045,7 +8489,6 @@
         " he even ripped open the bellies of pregnant women."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9053,12 +8496,10 @@
         "King Menahem of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9083,12 +8524,10 @@
         " had committed, sins that led the people of Israel to sin. He continued to commit those sins for the rest of his life."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9121,19 +8560,16 @@
         " went back home."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "21",
           "sid": "2KI 15:21"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -9151,7 +8587,6 @@
         "Menahem died [EUP] and was buried, and his son Pekahiah became the king of Israel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9159,12 +8594,10 @@
         "King Pekahiah of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9212,12 +8645,10 @@
         " to kill Pekahiah. They assassinated him in a fortified place in the king's palace in Samaria. Then Pekah became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9227,7 +8658,6 @@
         "Everything else that Pekahiah did is written in the scroll called ❛The History of the Kings of Israel❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9235,12 +8665,10 @@
         "King Pekah of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9265,12 +8693,10 @@
         " had committed, sins that led the people of Israel to sin."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9304,12 +8730,10 @@
         " Gilead, Galilee, and Naphtali. His army forced the Israeli people to leave their country and go to live in Assyria."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9319,12 +8743,10 @@
         "Then Hoshea, the son of Elah, plotted to kill Pekah. He assassinated him when Uzziah's son Jotham had been ruling Judah for almost twenty years. Then Hoshea became the king of Israel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9334,7 +8756,6 @@
         "Everything else that Pekah did is written in the scroll called ❛The History of the Kings of Israel❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9342,12 +8763,10 @@
         "King Jotham of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9394,19 +8813,16 @@
         ". Jotham's workers built the Upper Gate of the temple."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "36",
           "sid": "2KI 15:36"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -9447,15 +8863,12 @@
         " ❛The City of David❜. Then his son Ahaz became the king of Judah."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "16",
       "sid": "2KI 16"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9463,12 +8876,10 @@
         "King Ahaz of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9523,12 +8934,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9569,12 +8978,10 @@
         ". Some of the people of Edom started to live there, and they are still living there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9614,12 +9021,10 @@
         " Rezin."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9689,12 +9094,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9711,12 +9114,10 @@
         "So Uriah did what the king commanded him to do."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9757,19 +9158,16 @@
         " the king of Assyria, Ahaz had them remove from the temple the roof under which the people walked into the temple on the Sabbath Day, and closed up the private entrance into the temple for the kings of Judah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "19",
           "sid": "2KI 16:19"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -9795,15 +9193,12 @@
         " ❛The City of David❜, where his ancestors had been buried. Then his son Hezekiah became the king."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "17",
       "sid": "2KI 17"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9811,12 +9206,10 @@
         "When Hoshea ruled Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9833,19 +9226,16 @@
         "He did many things that Yahweh considered to be evil, but he did not do as many evil things as the previous kings of Israel had done."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "2KI 17:3"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -9933,7 +9323,6 @@
         ". They forced others to live near the Habor River in Gozan district. They forced others to live in the towns where the Mede people-group lived."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9941,12 +9330,10 @@
         "The reason that the Israelis were defeated"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10062,12 +9449,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10084,12 +9469,10 @@
         "They rejected Yahweh's laws and the agreement that he had made with their ancestors. They ignored Yahweh's warnings. They worshiped worthless idols and as a result they themselves became worthless. Although Yahweh had commanded them not to imitate the evil behavior of the people-groups that lived near them, they disobeyed that command."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10146,12 +9529,10 @@
         " evil things that caused Yahweh to become angry."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10207,12 +9588,10 @@
         ". He got rid of all of them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10252,7 +9631,6 @@
         "until finally Yahweh got rid of them. That was just what his prophets had warned would happen. The Israeli people were taken away to the land of Assyria, and they still remain there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10260,12 +9638,10 @@
         "Other groups settled in Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10361,12 +9737,10 @@
         " in this land. So he has sent lions among us to kill us, because we have not worshiped him correctly.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10415,12 +9789,10 @@
         ", and he taught the people there how to worship Yahweh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10467,12 +9839,10 @@
         "But those people also worshiped Yahweh, and they appointed from among their own groups many people to be priests at the shrines on the tops of the hills, in order that those priests could offer sacrifices for them there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10532,12 +9902,10 @@
         "Instead, you must revere me, Yahweh, your God. If you do that, I will rescue you from the power [MTY] of all your enemies.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10562,15 +9930,12 @@
         "So, they worshiped Yahweh, but they also worshiped their idols. And their descendants still do the same thing."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "18",
       "sid": "2KI 18"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10578,12 +9943,10 @@
         "King Hezekiah started to rule Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10646,12 +10009,10 @@
         " snake that Moses had made. He did that because the people had named it Nehushtan, and they were burning incense in front of it to honor it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10722,12 +10083,10 @@
         " and the nearby villages. They conquered the entire area, from the smallest watchtower to the largest cities surrounded by walls."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10806,7 +10165,6 @@
         ", had told them to obey. They would not obey those laws; they would not even listen to them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10814,12 +10172,10 @@
         "The army of Assyria invaded Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10860,12 +10216,10 @@
         " stop attacking us. If you do that, I will pay you whatever you tell me to.” So the king of Assyria said that Hezekiah must pay to him ◄ten tons/9,000 kg.► of silver and ◄one ton/900 kg.► of gold."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10875,7 +10229,6 @@
         "So Hezekiah gave to him all the silver that was in the temple and that was stored in the king's palace."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10883,12 +10236,10 @@
         "Sennacherib threatened to destroy Jerusalem"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10944,12 +10295,10 @@
         ". He sent Hilkiah's son Eliakim, who supervised the palace; Shebna, the official secretary; and Asaph's son Joah, who communicated the king's messages to the people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10959,7 +10308,6 @@
         "One of Sennacherib's important officials told them to take this message to Hezekiah:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -11076,12 +10424,10 @@
         "?” ’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11121,12 +10467,10 @@
         "Furthermore, ◄do you think that we have come to destroy Jerusalem without Yahweh's help?/do not think that we have come to Jerusalem without Yahweh's help.► [RHQ] It is Yahweh himself who told us to come here and destroy this land!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11144,12 +10488,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11183,12 +10525,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11220,12 +10560,10 @@
         "Do not allow him to persuade you to rely on Yahweh, saying that Yahweh will rescue you, and that the army of Assyria will never capture this city!’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11250,7 +10588,6 @@
         " wine. It will be a land that has plenty of olive trees and honey. If you do what the king of Assyria commands, you will not die. You will continue to live."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -11303,12 +10640,10 @@
         " rescued their people [RHQ] from me! So why do you think that Yahweh will rescue you people of Jerusalem from my power [MTY]?’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11334,12 +10669,10 @@
         ", do not answer him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11357,15 +10690,12 @@
         ", and they told him what the official from Assyria had said."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "19",
       "sid": "2KI 19"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11373,12 +10703,10 @@
         "Hezekiah consulted the prophet Isaiah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11441,12 +10769,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11494,12 +10820,10 @@
         " swords.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11541,12 +10865,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11631,7 +10953,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11639,12 +10960,10 @@
         "Hezekiah prayed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11700,12 +11019,10 @@
         ". And listen to what King Sennacherib has said to insult you, the all-powerful God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11761,7 +11078,6 @@
         ", in order that the people in all the kingdoms of the world will know that you, Yahweh, are the only one who is truly God.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11769,12 +11085,10 @@
         "Isaiah predicted that the Assyrians would not conquer Jerusalem"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11791,7 +11105,6 @@
         "This is what I say to him:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -11799,7 +11112,6 @@
         "‘The people of Jerusalem [MTY] despise you and make fun of you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11807,12 +11119,10 @@
         "They wag/shake their heads to mock you while you flee from here."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11822,7 +11132,6 @@
         "Who do you think that you are despising and ridiculing?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11830,7 +11139,6 @@
         "Who do you think you were shouting at?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -11838,7 +11146,6 @@
         "Who do you think you were looking at very proudly/arrogantly?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11846,12 +11153,10 @@
         "It was I, the holy God whom the Israelis worship."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11861,7 +11166,6 @@
         "The messengers that you sent made fun of me."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11869,7 +11173,6 @@
         "You said, “With my many chariots I have gone to the highest mountains,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11877,7 +11180,6 @@
         "even to the highest mountains in Lebanon."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -11885,7 +11187,6 @@
         "We have cut down its tallest cedar trees"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11893,7 +11194,6 @@
         "and its nicest pine/cyprus trees."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -11901,7 +11201,6 @@
         "We have been to the most distant/remote peaks"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11909,12 +11208,10 @@
         "and to its dense forests."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11924,7 +11221,6 @@
         "We have dug wells in other countries and drank water from them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -11932,7 +11228,6 @@
         "And by marching through [MTY] the streams of Egypt,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11940,24 +11235,20 @@
         "we dried them all up [HYP]!” ’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "25",
           "sid": "2KI 19:25"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -11976,7 +11267,6 @@
         "?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -11984,7 +11274,6 @@
         "I planned it long ago,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -11992,7 +11281,6 @@
         "and now I have been causing it to happen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12008,7 +11296,6 @@
         " capture many cities that were surrounded by high walls,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12016,12 +11303,10 @@
         "and cause them to become piles of rubble."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12031,7 +11316,6 @@
         "The people who lived in those cities have no power,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12039,7 +11323,6 @@
         "and as a result they became dismayed and discouraged."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12047,7 +11330,6 @@
         "They are as frail as plants and grass in the fields,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12055,7 +11337,6 @@
         "as frail as grass that grows on the roofs of houses"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12063,17 +11344,14 @@
         "and is scorched by the hot east wind."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12091,7 +11369,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12099,7 +11376,6 @@
         "I know when you are in your house and when you go outside;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12107,12 +11383,10 @@
         "I also know that you are ◄raging/speaking very angrily► against me."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12122,7 +11396,6 @@
         "So, because you have raged against me,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12130,12 +11403,10 @@
         "and because I have heard [MTY] you speak very proudly/arrogantly,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12146,7 +11417,6 @@
         " I will put a hook in your nose"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12162,7 +11432,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12177,7 +11446,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12193,17 +11461,14 @@
         ".’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12221,7 +11486,6 @@
         ":"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -12237,7 +11501,6 @@
         " will be able to harvest only ◄wild grain/grain that grows without having been planted►."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -12253,12 +11516,10 @@
         " will be able to plant grain and harvest it, and to plant vineyards and eat the grapes that you harvest."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12268,12 +11529,10 @@
         "The people [MTY] in Judah who remain alive will prosper and have many children; they will be like plants whose roots go deep down into the ground and which produce much [MET]."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12283,12 +11542,10 @@
         "There will be many people in Jerusalem [DOU] who will survive, because I, Yahweh, the commander of the armies of angels in heaven, want [PRS] it to happen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12298,7 +11555,6 @@
         "So this is what I, Yahweh, say about the king of Assyria:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12306,7 +11562,6 @@
         "‘His armies will not enter this city;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12314,7 +11569,6 @@
         "they will not even shoot any arrows into it!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12330,7 +11584,6 @@
         " the city gates carrying shields,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12345,12 +11598,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12361,12 +11612,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12376,7 +11625,6 @@
         "Their king will return to his own country"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12384,7 +11632,6 @@
         "on the same road on which he came here."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12392,12 +11639,10 @@
         "He will not enter this city!’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12408,12 +11653,10 @@
         " I, Yahweh, have said it!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12423,7 +11666,6 @@
         "I will defend this city and prevent it from being destroyed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -12431,17 +11673,14 @@
         "I will do this for the sake of my own reputation and because of what I promised to King David, who served me well.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12466,12 +11705,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12489,15 +11726,12 @@
         ". And another of Sennacherib's sons, Esarhaddon, became the king of Assyria."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "20",
       "sid": "2KI 20"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12505,12 +11739,10 @@
         "Hezekiah's sickness and his recovery"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12528,12 +11760,10 @@
         " was about to die. Isaiah the prophet came to him and said, “This is what Yahweh says: ‘You should tell the people in your palace what you want them to do after you die, because you are not going to recover from this illness. You are going to die.’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12550,12 +11780,10 @@
         "“Yahweh, do not forget that I have always served you faithfully, and I have done things that pleased you.” Then Hezekiah started to cry loudly."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12603,12 +11831,10 @@
         ".’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12626,12 +11852,10 @@
         ", “Bring a paste made of boiled figs. Put some of it on his boil, and he will get well.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12641,12 +11865,10 @@
         "Then Hezekiah replied to Isaiah, “What will Yahweh do to prove that he will heal me and that two days from now I will be able to go up to the temple?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12656,12 +11878,10 @@
         "Isaiah replied, “Yahweh will do something that will prove to you that he will do what he promised. Do you want him to cause the shadow on the stairway/sundial to go back ten steps/degrees, or to go forward ten steps/degrees?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12679,12 +11899,10 @@
         ". Tell him to cause it to move backward ten steps/degrees.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12694,7 +11912,6 @@
         "So Isaiah prayed earnestly to Yahweh, and Yahweh caused the shadow to go backward ten steps/degrees on the stairway/sundial that King Ahaz had made (OR, that workers had built for King Ahaz)."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12702,12 +11919,10 @@
         "The messengers from the king of Babylonia"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12755,12 +11970,10 @@
         " things in his storerooms and everywhere else in his kingdom [HYP]; he showed them everything."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12770,7 +11983,6 @@
         "Then the prophet Isaiah went to Hezekiah and asked him, “Where did those men come from, and what did they say to you?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -12778,12 +11990,10 @@
         "Hezekiah replied, “They came from a country very far from here. They came from Babylonia.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12793,7 +12003,6 @@
         "Isaiah asked, “What did they see in your palace?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -12801,19 +12010,16 @@
         "Hezekiah replied, “They saw everything. I showed them absolutely everything that I own—all my valuable things.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "16",
           "sid": "2KI 20:16"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12844,7 +12050,6 @@
             "to you"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -12854,12 +12059,10 @@
         "Furthermore, some of your own descendants will be forced to go there, and they will be castrated in order that they may become servants in the palace of the King of Babylon.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12877,19 +12080,16 @@
         " all the rest of my life.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "20",
           "sid": "2KI 20:20"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12915,15 +12115,12 @@
         "Later Hezekiah died [EUP], and his son Manasseh became the king."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "21",
       "sid": "2KI 21"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12931,12 +12128,10 @@
         "King Manasseh of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13037,12 +12232,10 @@
         ". He performed rituals to practice sorcery and magic rituals. He also went to people who consulted the spirits of dead people to find out what would happen in the future. He did many things that Yahweh considered to be extremely evil, things that caused Yahweh to become very angry."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13074,19 +12267,16 @@
         "But the people did not heed Yahweh. And Manasseh persuaded them to commit sins that are more evil than the sins that were committed by the people of the nations that Yahweh had expelled from the land as the Israeli people advanced."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "2KI 21:10"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -13156,12 +12346,10 @@
         "I will do this because my people have done things that I consider to be very evil, things which have caused me to become very angry. They have caused me to become angry continually, ever since their ancestors left Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13187,19 +12375,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "17",
           "sid": "2KI 21:17"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -13225,7 +12410,6 @@
         ". Then Manasseh's son Amon became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13233,12 +12417,10 @@
         "King Amon of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13300,12 +12482,10 @@
         "Then one day some of his officials plotted to kill him. They assassinated him in the palace."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13315,19 +12495,16 @@
         "But then the people of Judah killed all those who had assassinated King Amon, and they appointed his son Josiah to be their king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "25",
           "sid": "2KI 21:25"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -13353,15 +12530,12 @@
         ". Then Amon's son Josiah became the king."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "22",
       "sid": "2KI 22"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13369,12 +12543,10 @@
         "King Josiah of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13407,12 +12579,10 @@
         "Josiah did things that were pleasing to Yahweh and conducted his life as his ancestor King David had done. He completely obeyed [IDM] all the laws of God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13458,19 +12628,16 @@
         "But the men who supervise the work will not be required to make a report on the money that is given to them, saying what they spent it for, because those men are completely honest.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "2KI 22:8"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -13519,12 +12686,10 @@
         " a scroll that Hilkiah gave to me.” And Shaphan started to read it to the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13572,12 +12737,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13611,12 +12774,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13701,7 +12862,6 @@
         " see it.” ’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -13709,15 +12869,12 @@
         "After the men heard that, they returned to King Josiah and gave him that message."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "23",
       "sid": "2KI 23"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13725,12 +12882,10 @@
         "Josiah got rid of pagan worship"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13770,12 +12925,10 @@
         ", and while Yahweh was listening, he repeated his promise to sincerely obey [DOU] all of Yahweh's commands and regulations [DOU]. He also promised to ◄fulfill the conditions of/do what was written in► the agreement he made with Yahweh. And all the people also promised to obey the agreement."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13830,12 +12983,10 @@
         "He also destroyed the rooms in the temple where the temple male prostitutes lived. That was where women wove robes that were used to worship the goddess Asherah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13901,12 +13052,10 @@
         " the altars that were dedicated to the goat demons near the gate built by Joshua, the mayor of Jerusalem, be destroyed. Those altars were at the left of the main gate into the city."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13947,12 +13096,10 @@
         " officials, whose name was Nathan-Melech, lived."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14016,12 +13163,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14062,7 +13207,6 @@
         " was standing close to that altar at a festival."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -14070,12 +13214,10 @@
         "Then Josiah looked up and saw the tomb of the prophet who had predicted that."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14085,12 +13227,10 @@
         "Josiah asked, “Whose tomb is that?” The people of Bethel replied, “It is the tomb of the prophet who came from Judah and predicted that these things that you have just now done to this altar would happen.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14100,7 +13240,6 @@
         "Josiah replied, “Allow his tomb to remain as it is. Do not remove the prophet's bones from the tomb.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -14108,12 +13247,10 @@
         "So the people did not remove those bones, or the bones of the other prophet, the one who had come from Samaria."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14138,7 +13275,6 @@
         ". Then he returned to Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14146,12 +13282,10 @@
         "Josiah had them celebrate the Passover Festival"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14191,7 +13325,6 @@
         " Yahweh they celebrated the Passover Festival in Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14199,12 +13332,10 @@
         "Other things that Josiah changed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14237,12 +13368,10 @@
         " a king like him. He obeyed all the laws of Moses. And there has never since then been a king like Josiah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14275,7 +13404,6 @@
         ", and I will abandon the temple, the place where I said that I [MTY] should be worshiped.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14283,19 +13411,16 @@
         "The end of Josiah's rule of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "28",
           "sid": "2KI 23:28"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -14306,12 +13431,10 @@
         " [RHQ] all the other things that Josiah did, they are written in the scroll called ❛The History of the Kings of Judah❜."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14336,7 +13459,6 @@
         "His officials placed his corpse in a chariot and took it back to Jerusalem, where it was buried in his own tomb, a tomb where the other previous kings had not been buried."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -14360,7 +13482,6 @@
         " Josiah's son Joahaz, to appoint him to be the new king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14368,12 +13489,10 @@
         "King Joahaz of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14452,7 +13571,6 @@
         "King Neco appointed another son of Josiah, Eliakim, to be the new king, and he changed Eliakim's name to Jehoiakim. Then he took Joahaz to Egypt, and later Joahaz died there in Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14460,12 +13578,10 @@
         "King Jehoiakim of Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14483,12 +13599,10 @@
         ". He collected more from the rich people and less from the poor people. He collected silver and gold from them, in order to pay to the king of Egypt what he commanded them to give."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14521,20 +13635,16 @@
         "He did many things that Yahweh says are evil, like his ancestors had done."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "24",
       "sid": "2KI 24"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14605,12 +13715,10 @@
         "Manasseh had even caused many innocent people in Jerusalem to be killed, and Yahweh would not forgive that."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14627,19 +13735,16 @@
         "When Jehoiakim died, his son Jehoiachin became the king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "7",
           "sid": "2KI 24:7"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -14698,7 +13803,6 @@
         " again."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14706,12 +13810,10 @@
         "Jehoiachin ruled Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14736,19 +13838,16 @@
         "Jehoiachin did many things that Yahweh considered to be evil, just as his father had done."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "2KI 24:10"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -14781,7 +13880,6 @@
         "Then King Jehoiachin and his mother and his advisors and important officers and palace officials all surrendered to the Babylonian army."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -14827,12 +13925,10 @@
         " ten thousand people, including the important officials and the best soldiers and the people who made and repaired things that were made of metal. Only the very poor people were left in Judah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14872,7 +13968,6 @@
         ", and he changed Mattaniah's name to Zedekiah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14880,12 +13975,10 @@
         "Zedekiah ruled in Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14925,7 +14018,6 @@
         " in Judah and sent them to Babylon."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14933,12 +14025,10 @@
         "Jerusalem was destroyed"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -14949,20 +14039,16 @@
         " Zedekiah rebelled against the king of Babylon."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "25",
       "sid": "2KI 25"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15062,12 +14148,10 @@
         " and then they took him to Babylon."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15129,12 +14213,10 @@
         " the fields."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15174,12 +14256,10 @@
         " items made of pure gold or pure silver."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15204,12 +14284,10 @@
         "Each of the pillars was ◄27 feet/8 meters► tall. The bronze capital/top of each pillar was ◄7-1/2 feet/2.3 meters► high. They were each decorated all around with something that looked like a net made of bronze chains connecting bronze pomegranates."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15256,7 +14334,6 @@
         "There at Riblah, in Hamath province, the king of Babylon commanded that they all be executed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -15272,7 +14349,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15280,12 +14356,10 @@
         "Gedaliah was appointed governor in Judah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15318,12 +14392,10 @@
         ", and Jaazaniah from the Maacah region."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15357,12 +14429,10 @@
         ", everything will go well for you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15387,7 +14457,6 @@
         ", so they fled to Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15395,12 +14464,10 @@
         "Jehoiachin was released"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15438,8 +14505,6 @@
         },
         "The king of Babylon also gave him money every day, so that he could buy the things that he needed. The king continued to do that until Jehoiachin died."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

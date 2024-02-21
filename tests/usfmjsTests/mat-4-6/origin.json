@@ -2,14 +2,12 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "MAT",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,26 +15,22 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "MAT 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "MAT 4:6"
         },
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -47,7 +41,6 @@
           "x-occurrences": "2",
           "x-strong": "G25320"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -57,12 +50,10 @@
             "and"
           ]
         },
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -86,7 +77,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -106,7 +96,6 @@
             "to"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -144,7 +133,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -174,7 +162,6 @@
             "you"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -184,7 +171,6 @@
             "are"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -194,7 +180,6 @@
             "the"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -212,7 +197,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -242,7 +226,6 @@
             "of"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -284,7 +267,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -308,7 +290,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -356,7 +337,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -376,7 +356,6 @@
             "it"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -386,7 +365,6 @@
             "is"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -403,7 +381,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -428,7 +405,6 @@
             "He"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -438,7 +414,6 @@
             "will"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -452,7 +427,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -492,7 +466,6 @@
             "his"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -502,7 +475,6 @@
             "angels"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -524,7 +496,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -534,7 +505,6 @@
             "take"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -567,7 +537,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -594,7 +563,6 @@
         ",'"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
@@ -602,7 +570,6 @@
         "and,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -640,7 +607,6 @@
             "They"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -650,7 +616,6 @@
             "will"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -660,7 +625,6 @@
             "lift"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -670,7 +634,6 @@
             "you"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -688,7 +651,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -712,7 +674,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -748,12 +709,10 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -764,7 +723,6 @@
           "x-occurrences": "1",
           "x-strong": "G33790"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -774,7 +732,6 @@
             "so"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -784,7 +741,6 @@
             "that"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -794,7 +750,6 @@
             "you"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -804,7 +759,6 @@
             "will"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -818,7 +772,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -842,7 +795,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -882,7 +834,6 @@
             "your"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -904,7 +855,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -928,7 +878,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -948,7 +897,6 @@
             "a"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -965,13 +913,10 @@
         ".'\""
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": []
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

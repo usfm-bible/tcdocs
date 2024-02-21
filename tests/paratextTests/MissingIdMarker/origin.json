@@ -2,19 +2,16 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": " 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23,8 +20,6 @@
         },
         "stuff"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

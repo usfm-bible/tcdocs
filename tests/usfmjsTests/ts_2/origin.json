@@ -2,21 +2,18 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "ms",
       "marker": "ts-s",
@@ -45,13 +42,11 @@
           "marker": "ts-e",
           "eid": "ts_JUD_5-6"
         },
-        " ",
         {
           "type": "ms",
           "marker": "ts-s",
           "sid": "ts_JUD_7-8"
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",

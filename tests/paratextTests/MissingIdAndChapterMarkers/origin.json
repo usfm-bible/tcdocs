@@ -2,12 +2,10 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -16,7 +14,6 @@
         },
         "stuff"
       ]
-    },
-    "\n"
+    }
   ]
 }

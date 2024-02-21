@@ -2,429 +2,328 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "rem",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "GEN 1:3"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "GEN 1:4"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "GEN 1:5"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "GEN 1:6"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "7",
           "sid": "GEN 1:7"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "GEN 1:8"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "9",
           "sid": "GEN 1:9"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "GEN 1:10"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "11",
           "sid": "GEN 1:11"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "GEN 1:12"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "13",
           "sid": "GEN 1:13"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "14",
           "sid": "GEN 1:14"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "GEN 1:15"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "16",
           "sid": "GEN 1:16"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "GEN 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 2:1"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "GEN 2:2"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "GEN 2:3"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "GEN 2:4"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "GEN 2:5"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "GEN 2:6"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "7",
           "sid": "GEN 2:7"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "GEN 2:8"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "9",
           "sid": "GEN 2:9"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "GEN 2:10"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "11",
           "sid": "GEN 2:11"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "GEN 2:12"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "13",
           "sid": "GEN 2:13"
         },
-        "\n    ",
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "14",
           "sid": "GEN 2:14"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "GEN 2:15"
-        },
-        "\n    ",
-        "\n  "
+        }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "GEN 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -432,12 +331,10 @@
         "heading 1"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -454,12 +351,10 @@
         "verse two"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -469,12 +364,10 @@
         "verse three"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -508,12 +401,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -535,7 +426,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -543,12 +433,10 @@
         "heading 2"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -570,12 +458,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -585,15 +471,12 @@
         "verse fifteen a"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
         "verse fifteen b"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "is",
@@ -19,12 +17,10 @@
         "Introduction"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "bk",
@@ -43,19 +39,16 @@
         " Its chief purpose is..."
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "MAT 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -88,7 +81,6 @@
         "and the slope of the valleys ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -96,7 +88,6 @@
         "The Garden of Eden"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -109,7 +100,6 @@
             "Lord"
           ]
         },
-        " ",
         {
           "type": "note",
           "marker": "f",
@@ -164,12 +154,10 @@
         "there were no plants on the earth and no seeds had sprouted, because he had not sent any rain, and there was no one to cultivate the land;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -238,7 +226,6 @@
         "От Господа спасение. Над народом Твоим благословение Твое."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lit",
@@ -268,12 +255,10 @@
         "It began as the prophet Isaiah had written:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "qt",
@@ -283,12 +268,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "qt",
@@ -296,7 +279,6 @@
             "to open the way for you.’"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -327,21 +309,17 @@
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "9",
       "sid": "MAT 9"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -353,7 +331,6 @@
         " Who Could Not Walk"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -361,12 +338,10 @@
         "(Mark 2.1-12; Luke 5.17-26)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -400,8 +375,6 @@
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

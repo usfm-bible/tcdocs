@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "45-ROM-web.sfm World English Bible (WEB)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Romans"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "Paul’s Letter to the Romans"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Romans"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Romans"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt2",
@@ -59,7 +52,6 @@
         "Paul’s Letter to the"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -67,19 +59,16 @@
         "Romans"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "ROM 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -175,12 +164,10 @@
         "to all who are in Rome, beloved of God, called to be saints: Grace to you and peace from God our Father and the Lord Jesus Christ."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -218,12 +205,10 @@
         "that is, that I with you may be encouraged in you, each of us by the other’s faith, both yours and mine."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -280,7 +265,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -311,12 +295,10 @@
         "Because knowing God, they didn’t glorify him as God, and didn’t give thanks, but became vain in their reasoning, and their senseless heart was darkened."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -347,12 +329,10 @@
         "who exchanged the truth of God for a lie, and worshiped and served the creature rather than the Creator, who is blessed forever. Amen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -404,20 +384,16 @@
         "who, knowing the ordinance of God, that those who practice such things are worthy of death, not only do the same, but also approve of those who practice them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "ROM 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -481,7 +457,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -505,12 +480,10 @@
         "oppression, and anguish on every soul of man who does evil, to the Jew first, and also to the Greek."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -562,12 +535,10 @@
         "in the day when God will judge the secrets of men, according to my Good News, by Jesus Christ."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -683,20 +654,16 @@
         "but he is a Jew who is one inwardly, and circumcision is that of the heart, in the spirit not in the letter; whose praise is not from men, but from God."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "ROM 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -727,7 +694,6 @@
         "May it never be! Yes, let God be found true, but every man a liar. As it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -735,7 +701,6 @@
         "“that you might be justified in your words,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -764,12 +729,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -800,12 +763,10 @@
         "Why not (as we are slanderously reported, and as some affirm that we say), “Let’s do evil, that good may come?” Those who say so are justly condemned."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -822,7 +783,6 @@
         "As it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -830,7 +790,6 @@
         "“There is no one righteous;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -838,12 +797,10 @@
         "no, not one."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -853,7 +810,6 @@
         "There is no one who understands."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -861,12 +817,10 @@
         "There is no one who seeks after God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -876,7 +830,6 @@
         "They have all turned away."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -884,7 +837,6 @@
         "They have together become unprofitable."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -892,7 +844,6 @@
         "There is no one who does good,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -921,12 +872,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -936,7 +885,6 @@
         "“Their throat is an open tomb."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -965,7 +913,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -994,12 +941,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1030,12 +975,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1045,12 +988,10 @@
         "“Their feet are swift to shed blood."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1060,12 +1001,10 @@
         "Destruction and misery are in their ways."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1096,12 +1035,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1132,12 +1069,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1154,12 +1089,10 @@
         "Because by the works of the law, no flesh will be justified in his sight; for through the law comes the knowledge of sin."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1226,12 +1159,10 @@
         "to demonstrate his righteousness at this present time; that he might himself be just, and the justifier of him who has faith in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1262,12 +1193,10 @@
         "since indeed there is one God who will justify the circumcised by faith, and the uncircumcised through faith."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1277,20 +1206,16 @@
         "Do we then nullify the law through faith? May it never be! No, we establish the law."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "ROM 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1333,7 +1258,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -1357,12 +1281,10 @@
         "Even as David also pronounces blessing on the man to whom God counts righteousness apart from works,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1372,7 +1294,6 @@
         "“Blessed are they whose iniquities are forgiven,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -1380,12 +1301,10 @@
         "whose sins are covered."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1416,12 +1335,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1535,7 +1452,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -1585,7 +1501,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -1609,20 +1524,16 @@
         "who was delivered up for our trespasses, and was raised for our justification."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "5",
       "sid": "ROM 5"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1681,12 +1592,10 @@
         "But God commends his own love toward us, in that while we were yet sinners, Christ died for us."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1703,12 +1612,10 @@
         "For if while we were enemies, we were reconciled to God through the death of his Son, much more, being reconciled, we will be saved by his life."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1788,20 +1695,16 @@
         "that as sin reigned in death, even so grace might reign through righteousness to eternal life through Jesus Christ our Lord."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "ROM 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1881,12 +1784,10 @@
         "Thus consider yourselves also to be dead to sin, but alive to God in Christ Jesus our Lord."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1910,12 +1811,10 @@
         "For sin will not have dominion over you. For you are not under law, but under grace."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1946,12 +1845,10 @@
         "Being made free from sin, you became bondservants of righteousness."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1989,20 +1886,16 @@
         "For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "7",
       "sid": "ROM 7"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2069,12 +1962,10 @@
         "But now we have been discharged from the law, having died to that in which we were held; so that we serve in newness of the spirit, and not in oldness of the letter."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2103,7 +1994,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2141,12 +2031,10 @@
         "Therefore the law indeed is holy, and the commandment holy, and righteous, and good."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2240,20 +2128,16 @@
         "I thank God through Jesus Christ, our Lord! So then with the mind, I myself serve God’s law, but with the flesh, sin’s law."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "ROM 8"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2282,7 +2166,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2355,12 +2238,10 @@
         "But if the Spirit of him who raised up Jesus from the dead dwells in you, he who raised up Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2413,12 +2294,10 @@
         " Father!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2435,12 +2314,10 @@
         "and if children, then heirs: heirs of God and joint heirs with Christ, if indeed we suffer with him, that we may also be glorified with him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2499,12 +2376,10 @@
         "But if we hope for that which we don’t see, we wait for it with patience."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2521,12 +2396,10 @@
         "He who searches the hearts knows what is on the Spirit’s mind, because he makes intercession for the saints according to God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2562,7 +2435,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2572,12 +2444,10 @@
         "Whom he predestined, those he also called. Whom he called, those he also justified. Whom he justified, those he also glorified."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2608,12 +2478,10 @@
         "Who is he who condemns? It is Christ who died, yes rather, who was raised from the dead, who is at the right hand of God, who also makes intercession for us."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2630,7 +2498,6 @@
         "Even as it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -2638,7 +2505,6 @@
         "“For your sake we are killed all day long."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -2667,12 +2533,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2696,20 +2560,16 @@
         "nor height, nor depth, nor any other created thing will be able to separate us from God’s love which is in Christ Jesus our Lord."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "9",
       "sid": "ROM 9"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2747,12 +2607,10 @@
         "of whom are the fathers, and from whom is Christ as concerning the flesh, who is over all, God, blessed forever. Amen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2788,7 +2646,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2824,7 +2681,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2860,7 +2716,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2889,7 +2744,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2920,12 +2774,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2961,7 +2813,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2997,7 +2848,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -3007,12 +2857,10 @@
         "So then, he has mercy on whom he desires, and he hardens whom he desires."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3048,7 +2896,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -3086,7 +2933,6 @@
         "As he says also in Hosea,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3094,7 +2940,6 @@
         "“I will call them ‘my people,’ which were not my people;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3123,12 +2968,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3138,7 +2981,6 @@
         "“It will be that in the place where it was said to them, ‘You are not my people,’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3167,12 +3009,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3182,7 +3022,6 @@
         "Isaiah cries concerning Israel,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3190,7 +3029,6 @@
         "“If the number of the children of Israel are as the sand of the sea,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3198,12 +3036,10 @@
         "it is the remnant who will be saved;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3213,7 +3049,6 @@
         "for He will finish the work and cut it short in righteousness,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3242,12 +3077,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3257,7 +3090,6 @@
         "As Isaiah has said before,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3287,7 +3119,6 @@
         " had left us a seed,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3295,7 +3126,6 @@
         "we would have become like Sodom,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3324,12 +3154,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3360,7 +3188,6 @@
         "even as it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3390,7 +3217,6 @@
         " I lay in Zion a stumbling stone and a rock of offense;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3419,20 +3245,16 @@
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "10",
       "sid": "ROM 10"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3511,7 +3333,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -3643,12 +3464,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3684,7 +3503,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -3701,7 +3519,6 @@
         "And how will they preach unless they are sent? As it is written:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3709,7 +3526,6 @@
         "“How beautiful are the feet of those who preach the Good News of peace,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3738,12 +3554,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3772,7 +3586,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -3789,7 +3602,6 @@
         "But I say, didn’t they hear? Yes, most certainly,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3797,7 +3609,6 @@
         "“Their sound went out into all the earth,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3826,12 +3637,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3841,7 +3650,6 @@
         "But I ask, didn’t Israel know? First Moses says,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3849,7 +3657,6 @@
         "“I will provoke you to jealousy with that which is no nation."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3878,12 +3685,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3893,7 +3698,6 @@
         "Isaiah is very bold and says,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3901,7 +3705,6 @@
         "“I was found by those who didn’t seek me."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -3930,12 +3733,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3966,20 +3767,16 @@
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "11",
       "sid": "ROM 11"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4022,7 +3819,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -4051,7 +3847,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -4068,12 +3863,10 @@
         "And if by grace, then it is no longer of works; otherwise grace is no longer grace. But if it is of works, it is no longer grace; otherwise work is no longer work."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4109,7 +3902,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -4119,7 +3911,6 @@
         "David says,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4127,7 +3918,6 @@
         "“Let their table be made a snare, a trap,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4135,12 +3925,10 @@
         "a stumbling block, and a retribution to them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4150,7 +3938,6 @@
         "Let their eyes be darkened, that they may not see."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4179,12 +3966,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4285,12 +4070,10 @@
         "For if you were cut out of that which is by nature a wild olive tree, and were grafted contrary to nature into a good olive tree, how much more will these, which are the natural branches, be grafted into their own olive tree?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4329,7 +4112,6 @@
         "and so all Israel will be saved. Even as it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4337,7 +4119,6 @@
         "“There will come out of Zion the Deliverer,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4345,12 +4126,10 @@
         "and he will turn away ungodliness from Jacob."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4360,7 +4139,6 @@
         "This is my covenant with them,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4389,12 +4167,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4432,12 +4208,10 @@
         "For God has bound all to disobedience, that he might have mercy on all."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4447,12 +4221,10 @@
         "Oh the depth of the riches both of the wisdom and the knowledge of God! How unsearchable are his judgments, and his ways past tracing out!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4462,7 +4234,6 @@
         "“For who has known the mind of the Lord?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4491,12 +4262,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4506,7 +4275,6 @@
         "“Or who has first given to him,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4535,12 +4303,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4550,20 +4316,16 @@
         "For of him, and through him, and to him are all things. To him be the glory for ever! Amen."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "12",
       "sid": "ROM 12"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4580,12 +4342,10 @@
         "Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4630,12 +4390,10 @@
         "or he who exhorts, to his exhorting; he who gives, let him do it with generosity; he who rules, with diligence; he who shows mercy, with cheerfulness."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4734,7 +4492,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -4744,7 +4501,6 @@
         "Therefore"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4752,7 +4508,6 @@
         "“If your enemy is hungry, feed him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4760,7 +4515,6 @@
         "If he is thirsty, give him a drink;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4789,12 +4543,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4804,20 +4556,16 @@
         "Don’t be overcome by evil, but overcome evil with good."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "13",
       "sid": "ROM 13"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4869,12 +4617,10 @@
         "Therefore give everyone what you owe: if you owe taxes, pay taxes; if customs, then customs; if respect, then respect; if honor, then honor."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4954,7 +4700,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -4964,12 +4709,10 @@
         "Love doesn’t harm a neighbor. Love therefore is the fulfillment of the law."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5000,20 +4743,16 @@
         "But put on the Lord Jesus Christ, and make no provision for the flesh, for its lusts."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "14",
       "sid": "ROM 14"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5044,12 +4783,10 @@
         "Who are you who judge another’s servant? To his own lord he stands or falls. Yes, he will be made to stand, for God has power to make him stand."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5087,12 +4824,10 @@
         "For to this end Christ died, rose, and lived again, that he might be Lord of both the dead and the living."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5109,7 +4844,6 @@
         "For it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5117,7 +4851,6 @@
         "“‘As I live,’ says the Lord, ‘to me every knee will bow."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -5146,12 +4879,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5161,12 +4892,10 @@
         "So then each one of us will give account of himself to God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5232,12 +4961,10 @@
         "It is good to not eat meat, drink wine, nor do anything by which your brother stumbles, is offended, or is made weak."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5254,12 +4981,10 @@
         "But he who doubts is condemned if he eats, because it isn’t of faith; and whatever is not of faith is sin."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5304,20 +5029,16 @@
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "15",
       "sid": "ROM 15"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5360,7 +5081,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -5384,12 +5104,10 @@
         "that with one accord you may with one mouth glorify the God and Father of our Lord Jesus Christ."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5435,7 +5153,6 @@
         "and that the Gentiles might glorify God for his mercy. As it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5443,7 +5160,6 @@
         "“Therefore I will give praise to you among the Gentiles"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -5472,12 +5188,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5487,7 +5201,6 @@
         "Again he says,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5516,12 +5229,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5531,7 +5242,6 @@
         "Again,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5539,7 +5249,6 @@
         "“Praise the Lord, all you Gentiles!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -5568,12 +5277,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5583,7 +5290,6 @@
         "Again, Isaiah says,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5591,7 +5297,6 @@
         "“There will be the root of Jesse,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -5599,7 +5304,6 @@
         "he who arises to rule over the Gentiles;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -5628,12 +5332,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5643,12 +5345,10 @@
         "Now may the God of hope fill you with all joy and peace in believing, that you may abound in hope, in the power of the Holy Spirit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5729,7 +5429,6 @@
         "But, as it is written,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5737,7 +5436,6 @@
         "“They will see, to whom no news of him came."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -5766,12 +5464,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5830,12 +5526,10 @@
         "I know that when I come to you, I will come in the fullness of the blessing of the Good News of Christ."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5866,20 +5560,16 @@
         "Now the God of peace be with you all. Amen."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "16",
       "sid": "ROM 16"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5918,12 +5608,10 @@
         "that you receive her in the Lord, in a way worthy of the saints, and that you assist her in whatever matter she may need from you, for she herself also has been a helper of many, and of my own self."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6046,12 +5734,10 @@
         "Greet one another with a holy kiss. The assemblies of Christ greet you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6082,7 +5768,6 @@
         "And the God of peace will quickly crush Satan under your feet."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -6090,12 +5775,10 @@
         "The grace of our Lord Jesus Christ be with you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6152,8 +5835,6 @@
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

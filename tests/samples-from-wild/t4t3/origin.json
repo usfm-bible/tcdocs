@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "- Translation 4 Translators 1"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "65001 - Unicode (UTF-8)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "ACTS"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "Acts"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Acts"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Act"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt2",
@@ -59,7 +52,6 @@
         "The account of the first Christians, which we call the book of"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -67,14 +59,12 @@
         "Acts"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "ACT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -82,7 +72,6 @@
         "Acts 1:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -90,19 +79,16 @@
         "Luke referred to the Gospel he had written to Theophilus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 1:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -113,7 +99,6 @@
         " Theophilus,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -239,7 +224,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -247,7 +231,6 @@
         "Jesus commanded his apostles to wait for the Holy Spirit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -255,19 +238,16 @@
         "Acts 1:4-5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "ACT 1:4"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -357,7 +337,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -365,7 +344,6 @@
         "Jesus said that they would tell about him everywhere, and then he ascended to heaven."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -373,12 +351,10 @@
         "Acts 1:6-9"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -585,7 +561,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -593,7 +568,6 @@
         "Angels told the apostles that Jesus would return later."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -601,12 +575,10 @@
         "Acts 1:10-11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -719,7 +691,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -727,7 +698,6 @@
         "The apostles and other believers often prayed together."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -735,12 +705,10 @@
         "Acts 1:12-14"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -860,7 +828,6 @@
         " brothers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -868,7 +835,6 @@
         "Peter told them why someone must replace Judas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -876,12 +842,10 @@
         "Acts 1:15-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -984,7 +948,6 @@
         ", Judas was the person who led to Jesus the people who seized him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -992,7 +955,6 @@
         "How Judas died."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -1000,19 +962,16 @@
         "Acts 1:18-19"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "18",
           "sid": "ACT 1:18"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -1110,7 +1069,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1118,7 +1076,6 @@
         "Peter quoted from the Psalms about Judas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -1126,19 +1083,16 @@
         "Acts 1:20"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "20",
           "sid": "ACT 1:20"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -1189,7 +1143,6 @@
         " ‘Let someone else take over his work as a leader.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1197,7 +1150,6 @@
         "Peter concluded that they needed to choose a man to replace Judas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -1205,12 +1157,10 @@
         "Acts 1:21-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1298,7 +1248,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1306,7 +1255,6 @@
         "Jesus' followers prayed and then chose Matthias to replace Judas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -1314,12 +1262,10 @@
         "Acts 1:23-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1519,15 +1465,12 @@
         " eleven apostles."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "ACT 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1535,7 +1478,6 @@
         "The Holy Spirit came and enabled the disciples to speak other languages."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -1543,12 +1485,10 @@
         "Acts 2:1-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1675,7 +1615,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -1683,7 +1622,6 @@
         "Jews from many places were amazed to hear their native languages spoken by the believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -1691,12 +1629,10 @@
         "Acts 2:5-13"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1836,7 +1772,6 @@
             "doing that"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2024,7 +1959,6 @@
         " they are drunk!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2032,7 +1966,6 @@
         "Peter said that the prophet Joel foretold what the Holy Spirit would do."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -2040,12 +1973,10 @@
         "Acts 2:14-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2172,7 +2103,6 @@
         ":"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2413,7 +2343,6 @@
         ".}’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2421,7 +2350,6 @@
         "Peter said, “You killed Jesus but God caused him to live again.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -2429,19 +2357,16 @@
         "Acts 2:22-24"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "22",
           "sid": "ACT 2:22"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2545,7 +2470,6 @@
         ". God did not let him continue to be dead, because it was not possible for him [PRS] to remain dead.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2553,7 +2477,6 @@
         "David foretold that the Messiah would rejoice about becoming alive again."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -2561,12 +2484,10 @@
         "Acts 2:25-28"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2600,7 +2521,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2749,7 +2669,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2757,7 +2676,6 @@
         "Peter explained that David wrote that the Messiah would become alive again."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -2765,19 +2683,16 @@
         "Acts 2:29-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "29",
           "sid": "ACT 2:29"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -2922,7 +2837,6 @@
         ". He said that God would not let the Messiah remain in the place of the dead, nor let his body decay.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -2930,7 +2844,6 @@
         "Peter said, “Jesus has abundantly given us the Holy Spirit, shown by what you see and hear.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -2938,12 +2851,10 @@
         "Acts 2:32-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3094,7 +3005,6 @@
         ":"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -3125,7 +3035,6 @@
         "while I completely defeat [MTY] your enemies.’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3133,7 +3042,6 @@
         "Peter said, “Know surely that God has made this Jesus both Lord and Messiah.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -3141,19 +3049,16 @@
         "Acts 2:36"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "36",
           "sid": "ACT 2:36"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -3196,7 +3101,6 @@
         " you are the ones who nailed Jesus to a cross.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3204,7 +3108,6 @@
         "Peter told them to repent, and said that believers would baptize them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -3212,12 +3115,10 @@
         "Acts 2:37-40"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3251,12 +3152,10 @@
         "?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3399,7 +3298,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3407,7 +3305,6 @@
         "Many people became believers and joined the other believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -3415,12 +3312,10 @@
         "Acts 2:41-42"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3477,7 +3372,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3485,7 +3379,6 @@
         "The apostles performed miracles, all the believers shared everything, and the Lord helped them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -3493,12 +3386,10 @@
         "Acts 2:43-47"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3694,15 +3585,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "ACT 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3710,7 +3598,6 @@
         "Peter healed a lame man, so the people were amazed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -3718,19 +3605,16 @@
         "Acts 3:1-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 3:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -3796,12 +3680,10 @@
         " the temple courtyard to give him some money."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3910,7 +3792,6 @@
         " with them, walking and leaping and praising God!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -3918,7 +3799,6 @@
         "The people were amazed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -3926,12 +3806,10 @@
         "Acts 3:9-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4003,7 +3881,6 @@
         " call} Solomon's Porch."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4011,7 +3888,6 @@
         "Peter explained that Jesus healed the man, and they should repent."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -4019,12 +3895,10 @@
         "Acts 3:12-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4211,7 +4085,6 @@
         " trusted in Jesus that he has completely healed this man for all of you to see.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4219,7 +4092,6 @@
         "Peter told the people to repent."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -4227,12 +4099,10 @@
         "Acts 3:17-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4677,15 +4547,12 @@
         ".”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "ACT 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4693,7 +4560,6 @@
         "Jewish leaders arrested Peter and John, but many people became believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -4701,19 +4567,16 @@
         "Acts 4:1-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 4:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -4873,7 +4736,6 @@
         " increased to about five thousand."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -4881,7 +4743,6 @@
         "Jewish leaders questioned Peter and John about healing the lame man."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -4889,12 +4750,10 @@
         "Acts 4:5-7"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5030,7 +4889,6 @@
         "? And who authorized [MTY] you to do this [DOU]?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5038,7 +4896,6 @@
         "Peter told them that Jesus healed the man and only Jesus could save people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5046,12 +4903,10 @@
         "Acts 4:8-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5136,7 +4991,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5152,7 +5006,6 @@
         " [MET] the stone that was rejected by the builders {that the builders rejected}."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -5168,12 +5021,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -5215,7 +5066,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5223,7 +5073,6 @@
         "The Jewish leaders realized that Peter and John had been associating with Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5231,12 +5080,10 @@
         "Acts 4:13-14"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5285,7 +5132,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5293,7 +5139,6 @@
         "The Jewish leaders commanded the two apostles to stop teaching people about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5301,12 +5146,10 @@
         "Acts 4:15-18"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5488,7 +5331,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5496,7 +5338,6 @@
         "Peter and John said that they needed to continue speaking about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5504,12 +5345,10 @@
         "Acts 4:19-20"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5589,7 +5428,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5597,7 +5435,6 @@
         "The Jewish leaders threatened to punish Peter and John and then released them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5605,12 +5442,10 @@
         "Acts 4:21-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5668,7 +5503,6 @@
         " let them go."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5676,7 +5510,6 @@
         "The believers talked to God about those who opposed him and them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5684,12 +5517,10 @@
         "Acts 4:23-28"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5753,12 +5584,10 @@
         " David [MTY], who served you, to write these words:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pi1",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -5777,12 +5606,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pi1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5832,19 +5659,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "27",
           "sid": "ACT 4:27"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -5949,7 +5773,6 @@
         ". It was what you decided long ago would happen.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -5957,7 +5780,6 @@
         "The believers asked God to help them speak boldly to people about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -5965,12 +5787,10 @@
         "Acts 4:29-30"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5993,7 +5813,6 @@
             "(sg) about Jesus"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -6034,7 +5853,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6042,7 +5860,6 @@
         "God shook the place where they were, and his Spirit enabled them to speak his words boldly."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6050,12 +5867,10 @@
         "Acts 4:31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6073,7 +5888,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6081,7 +5895,6 @@
         "The believers shared everything, and the apostles told others about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6089,12 +5902,10 @@
         "Acts 4:32-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6170,7 +5981,6 @@
             "the money for what they sold"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -6204,7 +6014,6 @@
         ". So no one among the believers was lacking anything."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6212,7 +6021,6 @@
         "Joseph Barnabas sold a field and brought the money to the apostles."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6220,19 +6028,16 @@
         "Acts 4:36-37"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "36",
           "sid": "ACT 4:36"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -6298,15 +6103,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "5",
       "sid": "ACT 5"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6314,7 +6116,6 @@
         "Ananias pretended to give the apostles all the money from selling a field."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6322,12 +6123,10 @@
         "Acts 5:1-2"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6368,7 +6167,6 @@
         ", and his wife knew that he had done that. Then he brought the rest of the money and presented it to the apostles [MTY]."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6376,7 +6174,6 @@
         "People were terrified when they saw or heard that Ananias had died."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6384,12 +6181,10 @@
         "Acts 5:3-6"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6580,7 +6375,6 @@
         " buried it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6588,7 +6382,6 @@
         "Sapphira also died because she lied, and some men buried her beside her husband."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6596,12 +6389,10 @@
         "Acts 5:7-11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6743,12 +6534,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6798,7 +6587,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6806,7 +6594,6 @@
         "The apostles healed many people, and many people believed in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6814,19 +6601,16 @@
         "Acts 5:12-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "ACT 5:12"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -6976,7 +6760,6 @@
         " healed all of them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -6984,7 +6767,6 @@
         "Jewish leaders jailed the apostles, but an angel freed them to teach people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -6992,12 +6774,10 @@
         "Acts 5:17-21a"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7122,7 +6902,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7130,7 +6909,6 @@
         "The Jewish leaders were perplexed because the apostles were not in jail."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -7138,7 +6916,6 @@
         "Acts 5:21b-24"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -7239,7 +7016,6 @@
         " what might result from all this."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7247,7 +7023,6 @@
         "After finding them, the leaders brought the apostles back to question them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -7255,12 +7030,10 @@
         "Acts 5:25-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7357,7 +7130,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7365,7 +7137,6 @@
         "Peter and the other apostles said that they must obey God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -7373,12 +7144,10 @@
         "Acts 5:27-33"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7638,7 +7407,6 @@
         ", and they wanted to kill them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7646,7 +7414,6 @@
         "After beating the apostles, they followed Gamaliel's advice and released them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -7654,12 +7421,10 @@
         "Acts 5:34-40"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7853,7 +7618,6 @@
             "like Theudas and Judas did"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -7902,7 +7666,6 @@
         " and flogged them. Then the Council members commanded them not to speak to people about [MTY] Jesus, and they released the apostles."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -7910,7 +7673,6 @@
         "The apostles rejoiced and continued to tell others about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -7918,12 +7680,10 @@
         "Acts 5:41-42"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8004,15 +7764,12 @@
         " that Jesus is the Messiah."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "ACT 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8020,7 +7777,6 @@
         "The believers neglected the Greek-speaking widows."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8028,12 +7784,10 @@
         "Acts 6:1"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8067,7 +7821,6 @@
         " to widows every day, you are not giving fair amounts to the widows who speak Greek!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8075,7 +7828,6 @@
         "The apostles told the other believers to choose men to care for those widows."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8083,12 +7835,10 @@
         "Acts 6:2-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8224,7 +7974,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8232,7 +7981,6 @@
         "The apostles appointed seven men to care for the widows' needs."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8240,12 +7988,10 @@
         "Acts 6:5-6"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8334,7 +8080,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8342,7 +8087,6 @@
         "The number of people who were becoming believers increased greatly."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8350,12 +8094,10 @@
         "Acts 6:7"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8405,7 +8147,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8413,7 +8154,6 @@
         "People opposed Stephen, but could not refute his arguments."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8421,12 +8161,10 @@
         "Acts 6:8-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8522,7 +8260,6 @@
         " Spirit enabled him to speak very wisely."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8530,7 +8267,6 @@
         "People persuaded some men to falsely accuse Stephen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8538,12 +8274,10 @@
         "Acts 6:11-14"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8686,7 +8420,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8694,7 +8427,6 @@
         "The people saw Stephen's face shining like the face of an angel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8702,12 +8434,10 @@
         "Acts 6:15"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8741,15 +8471,12 @@
         " [SIM] like the face of an angel."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "7",
       "sid": "ACT 7"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8757,7 +8484,6 @@
         "Stephen started to answer the high priest's accusations by talking about Abraham."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8765,12 +8491,10 @@
         "Acts 7:1-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8881,7 +8605,6 @@
         " are now living.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8889,7 +8612,6 @@
         "God promised to give the land to Abraham and his descendants."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8897,12 +8619,10 @@
         "Acts 7:5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8976,7 +8696,6 @@
         "►.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -8984,7 +8703,6 @@
         "God told Abraham that later on he would deliver his descendants from Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -8992,12 +8710,10 @@
         "Acts 7:6-7"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9062,7 +8778,6 @@
         " worship me in this land.’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9070,7 +8785,6 @@
         "God commanded the ceremony of circumcision for Abraham and his descendants."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9078,12 +8792,10 @@
         "Acts 7:8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9141,7 +8853,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9149,7 +8860,6 @@
         "God helped Joseph, so Pharaoh appointed him to govern Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9157,12 +8867,10 @@
         "Acts 7:9-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9235,7 +8943,6 @@
         " Egypt and to look after all of Pharaoh's property [MTY].”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9243,7 +8950,6 @@
         "There was a famine in Canaan, so Jacob's family moved to Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9251,12 +8957,10 @@
         "Acts 7:11-15a"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9437,7 +9141,6 @@
         " Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9445,7 +9148,6 @@
         "When Jacob and his sons died, people buried them in Canaan."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9453,7 +9155,6 @@
         "Acts 7:15b-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -9571,7 +9272,6 @@
         " had bought from Hamor's sons.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9579,7 +9279,6 @@
         "An Egyptian king who did not know about Joseph began to oppress the Israelites."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9587,12 +9286,10 @@
         "Acts 7:17-19"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9664,7 +9361,6 @@
         " so that they would die.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9672,7 +9368,6 @@
         "Moses, who grew up as an Egyptian, spoke and acted powerfully."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9680,12 +9375,10 @@
         "Acts 7:20-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9765,7 +9458,6 @@
         ", he spoke powerfully and did things powerfully.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9773,7 +9465,6 @@
         "Moses killed an Egyptian, so he had to flee to Midian."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9781,12 +9472,10 @@
         "Acts 7:23-29"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9974,7 +9663,6 @@
         " had two sons.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -9982,7 +9670,6 @@
         "God commanded Moses to rescue the Jewish people from Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -9990,12 +9677,10 @@
         "Acts 7:30-34"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10185,7 +9870,6 @@
         ".’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10193,7 +9877,6 @@
         "God sent Moses to lead Israel and tell them of the Prophet who would come."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -10201,12 +9884,10 @@
         "Acts 7:35-38"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10413,7 +10094,6 @@
         " on to us.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10421,7 +10101,6 @@
         "Israel rejected Moses, so God rejected them and said that he would punish them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -10429,12 +10108,10 @@
         "Acts 7:39-43"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10553,7 +10230,6 @@
         "So God rejected them. He abandoned them to worship the sun, moon and stars in the sky. This agrees with the words that one of the prophets wrote that God said,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -10719,7 +10395,6 @@
         " even farther than Babylon.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10727,7 +10402,6 @@
         "The Israelite people worshipped God at the tent Moses built and later in the temple that Solomon built."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -10735,12 +10409,10 @@
         "Acts 7:44-47"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10858,7 +10530,6 @@
         " God.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10866,7 +10537,6 @@
         "People can worship God anywhere, not only at certain places."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -10874,12 +10544,10 @@
         "Acts 7:48-50"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10920,12 +10588,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10991,7 +10657,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -10999,7 +10664,6 @@
         "Stephen said that those who were listening to him were opposing God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11007,12 +10671,10 @@
         "Acts 7:51-53"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11132,7 +10794,6 @@
         ", you have not obeyed them!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11140,7 +10801,6 @@
         "All the people there became very angry with Stephen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11148,12 +10808,10 @@
         "Acts 7:54"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11187,7 +10845,6 @@
         " at him!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11195,7 +10852,6 @@
         "After Stephen said that he could see Jesus standing beside God in heaven, they stoned him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11203,12 +10859,10 @@
         "Acts 7:55-59"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11241,19 +10895,16 @@
         " the one who came from heaven standing at God's right side!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "57",
           "sid": "ACT 7:57"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -11326,7 +10977,6 @@
         "While they continued to throw stones at Stephen, Stephen prayed, “Lord Jesus, receive my spirit!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11334,7 +10984,6 @@
         "He asked the Lord to forgive them, and he died. The disciples fled, some men buried Stephen, and Saul harassed believers. But the believers preached about Jesus wherever they were scattered."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11342,12 +10991,10 @@
         "Acts 7:60—8:3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11357,20 +11004,16 @@
         "Then Stephen fell on his knees and cried out, “Lord, do not punish them (OR, forgive them) [LIT] for this sin!” After he had said that, he died."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "ACT 8"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11380,7 +11023,6 @@
         "Then some men who revered God buried Stephen's body in a tomb, and they mourned greatly and loudly for him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -11467,7 +11109,6 @@
         " them to be put in prison."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11475,7 +11116,6 @@
         "Many Samaritans heeded Philip's words and rejoiced."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11483,12 +11123,10 @@
         "Acts 8:4-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11597,7 +11235,6 @@
         " [MTY] in that city greatly rejoiced."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11605,7 +11242,6 @@
         "Philip baptized many Samaritans, including a sorcerer."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11613,12 +11249,10 @@
         "Acts 8:9-13"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11752,7 +11386,6 @@
         " doing many kinds of miraculous things."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11760,7 +11393,6 @@
         "Samaritan believers received the power of the Holy Spirit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11768,12 +11400,10 @@
         "Acts 8:14-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11906,7 +11536,6 @@
         " [MTY] the Holy Spirit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -11914,7 +11543,6 @@
         "Peter denounced Simon the sorcerer."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -11922,12 +11550,10 @@
         "Acts 8:18-24"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12036,7 +11662,6 @@
             "people"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -12097,7 +11722,6 @@
             "to do"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -12169,7 +11793,6 @@
         " will not do to me what you just said!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12177,7 +11800,6 @@
         "Peter and John preached to many Samaritans."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12185,12 +11807,10 @@
         "Acts 8:25"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12256,7 +11876,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12264,7 +11883,6 @@
         "Philip met an Ethiopian official."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12272,19 +11890,16 @@
         "Acts 8:26-28"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "26",
           "sid": "ACT 8:26"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12405,7 +12020,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12413,7 +12027,6 @@
         "The official could not understand what he was reading."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12421,19 +12034,16 @@
         "Acts 8:29-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "29",
           "sid": "ACT 8:29"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12530,7 +12140,6 @@
         " no one to explain it to me?► [RHQ]”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12538,7 +12147,6 @@
         "Philip preached about Jesus to the official."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12546,7 +12154,6 @@
         "Acts 8:31b-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -12577,7 +12184,6 @@
         "The part of the Scriptures that the official was reading was this:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12593,12 +12199,10 @@
         " they lead him away to kill him"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12617,7 +12221,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12641,12 +12244,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12664,12 +12265,10 @@
         "},"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -12680,7 +12279,6 @@
         " ◄will not consider him innocent/will consider him guilty►."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -12696,12 +12294,10 @@
         " on the earth."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12750,7 +12346,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12758,7 +12353,6 @@
         "Philip baptized the official. Then the Spirit took Philip away."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12766,12 +12360,10 @@
         "Acts 8:36-39"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12883,7 +12475,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12891,7 +12482,6 @@
         "Philip preached in towns from Azotus to Caesarea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12899,12 +12489,10 @@
         "Acts 8:40"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12962,15 +12550,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "9",
       "sid": "ACT 9"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -12978,7 +12563,6 @@
         "Saul asked the high priest to authorize him to arrest believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -12986,12 +12570,10 @@
         "Acts 9:1-2"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13014,7 +12596,6 @@
             "in Jerusalem"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -13072,7 +12653,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13080,7 +12660,6 @@
         "While Saul was traveling to Damascus, Jesus appeared to him and blinded him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -13088,12 +12667,10 @@
         "Acts 9:3-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13272,7 +12849,6 @@
         ", and he did not eat or drink anything."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13280,7 +12856,6 @@
         "Saul could see again after Ananias had put his hands on him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -13288,12 +12863,10 @@
         "Acts 9:9-19"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13605,7 +13178,6 @@
         " believers in Damascus for several days."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13613,7 +13185,6 @@
         "People there were astonished that Saul had believed in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -13621,12 +13192,10 @@
         "Acts 9:20-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13754,7 +13323,6 @@
         "►."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13762,7 +13330,6 @@
         "Saul escaped from those who plotted to kill him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -13770,12 +13337,10 @@
         "Acts 9:23-25"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13894,7 +13459,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -13902,7 +13466,6 @@
         "Barnabas introduced Saul to other believers in Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -13910,12 +13473,10 @@
         "Acts 9:26-28"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14019,7 +13580,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14027,7 +13587,6 @@
         "The believers sent Saul to Tarsus because some Jews tried to kill him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14035,12 +13594,10 @@
         "Acts 9:29-30"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14137,7 +13694,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14145,7 +13701,6 @@
         "The church in Israel had peace and many people believed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14153,12 +13708,10 @@
         "Acts 9:31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14208,7 +13761,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14216,7 +13768,6 @@
         "Because Peter healed Aeneas, many people believed in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14224,12 +13775,10 @@
         "Acts 9:32-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14332,7 +13881,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14340,7 +13888,6 @@
         "Dorcas died."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14348,12 +13895,10 @@
         "Acts 9:36-37"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14458,7 +14003,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14466,7 +14010,6 @@
         "Peter resurrected Dorcas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14474,12 +14017,10 @@
         "Acts 9:38-43"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -14651,15 +14192,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "10",
       "sid": "ACT 10"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14667,7 +14205,6 @@
         "Obeying an angel, Cornelius sent men to summon Peter."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14675,19 +14212,16 @@
         "Acts 10:1-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 10:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -14745,19 +14279,16 @@
         " people, and he prayed to God regularly."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "ACT 10:3"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -14915,7 +14446,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -14923,7 +14453,6 @@
         "Peter's vision."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -14931,12 +14460,10 @@
         "Acts 10:9-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15233,7 +14760,6 @@
         " up into the sky again►."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15241,7 +14767,6 @@
         "The Holy Spirit commanded Peter to go with the non-Jewish men."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -15249,12 +14774,10 @@
         "Acts 10:17-23a"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15458,7 +14981,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15466,7 +14988,6 @@
         "Peter went with the men and met Cornelius."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -15474,7 +14995,6 @@
         "Acts 10:23b-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -15535,7 +15055,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15543,7 +15062,6 @@
         "Peter asked why they had sent for him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -15551,12 +15069,10 @@
         "Acts 10:27-29"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15684,7 +15200,6 @@
         "?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15692,7 +15207,6 @@
         "Cornelius told about his vision."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -15700,12 +15214,10 @@
         "Acts 10:30-33"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -15912,7 +15424,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -15920,7 +15431,6 @@
         "Peter reminded them of what they knew about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -15928,12 +15438,10 @@
         "Acts 10:34-38"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -16146,7 +15654,6 @@
         " because God was always helping him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -16154,7 +15661,6 @@
         "Peter said that God would forgive the sins of all who believe in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -16162,12 +15668,10 @@
         "Acts 10:39-43"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -16397,7 +15901,6 @@
         " for them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -16405,7 +15908,6 @@
         "The Holy Spirit came down on the non-Jewish believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -16413,12 +15915,10 @@
         "Acts 10:44-48"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -16583,15 +16083,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "11",
       "sid": "ACT 11"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -16599,7 +16096,6 @@
         "Some Jewish believers criticized Peter."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -16607,12 +16103,10 @@
         "Acts 11:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -16716,7 +16210,6 @@
         " ate with them!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -16724,7 +16217,6 @@
         "Peter told about his vision."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -16732,12 +16224,10 @@
         "Acts 11:4-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -16949,7 +16439,6 @@
         " was pulled up into heaven again.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -16957,7 +16446,6 @@
         "Peter said that the Holy Spirit came to be with the non-Jewish believers. Peter accepted those non-Jews as fellow believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -16965,12 +16453,10 @@
         "Acts 11:11-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -17131,7 +16617,6 @@
             "to enter you and change your lives.’"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -17197,7 +16682,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -17205,7 +16689,6 @@
         "They praised God that he also saves non-Jewish people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -17213,12 +16696,10 @@
         "Acts 11:18"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -17260,7 +16741,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -17268,7 +16748,6 @@
         "Many non-Jews in Antioch believed in the Lord Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -17276,12 +16755,10 @@
         "Acts 11:19-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -17425,7 +16902,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -17433,7 +16909,6 @@
         "Barnabas encouraged the believers at Antioch."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -17441,12 +16916,10 @@
         "Acts 11:22-24"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -17566,7 +17039,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -17574,7 +17046,6 @@
         "Barnabas and Saul taught many believers at Antioch."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -17582,12 +17053,10 @@
         "Acts 11:25-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -17668,7 +17137,6 @@
         " first called the believers Christians}."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -17676,7 +17144,6 @@
         "Believers in Antioch helped needy believers in Judea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -17684,12 +17151,10 @@
         "Acts 11:27-30"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -17832,15 +17297,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "12",
       "sid": "ACT 12"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -17848,7 +17310,6 @@
         "Herod had James killed and Peter put in prison."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -17856,12 +17317,10 @@
         "Acts 12:1-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -18052,7 +17511,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -18060,7 +17518,6 @@
         "An angel freed Peter from prison."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -18068,12 +17525,10 @@
         "Acts 12:5-11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -18381,7 +17836,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -18389,7 +17843,6 @@
         "Peter reported to the other believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -18397,12 +17850,10 @@
         "Acts 12:12-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -18662,7 +18113,6 @@
         " went away to another town."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -18670,7 +18120,6 @@
         "Herod commanded soldiers to execute the guards."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -18678,12 +18127,10 @@
         "Acts 12:18-19"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -18804,7 +18251,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -18812,7 +18258,6 @@
         "An angel caused Herod to die."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -18820,12 +18265,10 @@
         "Acts 12:20-23"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -19024,7 +18467,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19032,7 +18474,6 @@
         "Many people heard God's message and became believers. Barnabas and Saul returned to Antioch from Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19040,19 +18481,16 @@
         "Acts 12:24-25"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "24",
           "sid": "ACT 12:24"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -19071,12 +18509,10 @@
         " was continually increasing/there were continually more and more people who were believing in Jesus►."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -19102,15 +18538,12 @@
         ". They took John, whose other name was Mark, with them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "13",
       "sid": "ACT 13"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19118,7 +18551,6 @@
         "The Holy Spirit commanded Barnabas and Saul to go on a mission."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19126,12 +18558,10 @@
         "Acts 13:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -19243,7 +18673,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19251,7 +18680,6 @@
         "Barnabas and Saul preached the gospel in Jewish meetings place on Cyprus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19259,12 +18687,10 @@
         "Acts 13:4-5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -19329,7 +18755,6 @@
         " was helping them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19337,7 +18762,6 @@
         "Saul-Paul denounced a sorcerer, and an official believed in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19345,19 +18769,16 @@
         "Acts 13:6-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "ACT 13:6"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -19578,7 +18999,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19586,7 +19006,6 @@
         "The leaders of the Jewish meeting place in Antioch asked Paul and Barnabas to speak to them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19594,19 +19013,16 @@
         "Acts 13:13-15"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "13",
           "sid": "ACT 13:13"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -19758,7 +19174,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19766,7 +19181,6 @@
         "Paul said that God helped Israel and gave them the land of Canaan."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19774,12 +19188,10 @@
         "Acts 13:16-20"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -19935,7 +19347,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -19943,7 +19354,6 @@
         "Paul told about God's removing Saul and appointing David to be Israel's king."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -19951,7 +19361,6 @@
         "Acts 13:20b-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -20053,7 +19462,6 @@
         ".’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -20061,7 +19469,6 @@
         "Paul said that God sent David's descendant, Jesus, to Israel to save them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -20069,12 +19476,10 @@
         "Acts 13:23-25"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -20194,7 +19599,6 @@
         " important enough to be his slave [MET].’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -20202,7 +19606,6 @@
         "Paul said that God resurrected Jesus and caused many people to see him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -20210,12 +19613,10 @@
         "Acts 13:26-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -20451,7 +19852,6 @@
         " people about him now.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -20459,7 +19859,6 @@
         "Paul said that God had done what he had promised that he would do by resurrecting Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -20467,12 +19866,10 @@
         "Acts 13:32-37"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -20545,7 +19942,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -20561,7 +19957,6 @@
         " are my Son;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -20577,19 +19972,16 @@
         " your Father."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "34",
           "sid": "ACT 13:34"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -20756,7 +20148,6 @@
         " his body did not decay.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -20764,7 +20155,6 @@
         "Paul informed them that God would forgive their sins if they believed in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -20772,12 +20162,10 @@
         "Acts 13:38-41"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -20952,7 +20340,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -21008,7 +20395,6 @@
         " even though someone told you!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21016,7 +20402,6 @@
         "People asked Paul and Barnabas to speak to them again the next Jewish day of rest."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21024,12 +20409,10 @@
         "Acts 13:42-43"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -21118,7 +20501,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21126,7 +20508,6 @@
         "Many non-Jews believed in Jesus and told others about him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21134,12 +20515,10 @@
         "Acts 13:44-49"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -21329,7 +20708,6 @@
         ". He said to us,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -21377,12 +20755,10 @@
         ".’ ”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -21454,7 +20830,6 @@
         " [MTY]."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21462,7 +20837,6 @@
         "People expelled the apostles, but the believers continued on."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21470,12 +20844,10 @@
         "Acts 13:50-52"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -21563,15 +20935,12 @@
         " continued to rejoice greatly, and they continued to be completely controlled by the Holy Spirit."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "14",
       "sid": "ACT 14"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21579,7 +20948,6 @@
         "Paul and Barnabas preached the gospel and performed miracles in Iconium."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21587,12 +20955,10 @@
         "Acts 14:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -21680,7 +21046,6 @@
         " that the message about how the Lord saves us in a way that we do not deserve is true."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21688,7 +21053,6 @@
         "Before people could attack the apostles, they escaped to Lystra and Derbe."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21696,12 +21060,10 @@
         "Acts 14:4-7"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -21827,7 +21189,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21835,7 +21196,6 @@
         "God enabled Paul to heal a lame man."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21843,19 +21203,16 @@
         "Acts 14:8-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "ACT 14:8"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -21944,7 +21301,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -21952,7 +21308,6 @@
         "The apostles stopped the people from worshipping them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -21960,12 +21315,10 @@
         "Acts 14:11-18"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -22240,7 +21593,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -22248,7 +21600,6 @@
         "Some Jews incited people to stone Paul at Lystra."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -22256,19 +21607,16 @@
         "Acts 14:19-20a"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "19",
           "sid": "ACT 14:19"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -22358,7 +21706,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -22366,7 +21713,6 @@
         "The apostles revisited believers and appointed leaders."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -22374,7 +21720,6 @@
         "Acts 14:20b-23"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -22546,7 +21891,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -22554,7 +21898,6 @@
         "Paul and Barnabas reported to the believers at Syrian Antioch."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -22562,12 +21905,10 @@
         "Acts 14:24-28"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -22724,15 +22065,12 @@
         " believers for several months."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "15",
       "sid": "ACT 15"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -22740,7 +22078,6 @@
         "Some Jewish believers said that God will save only people who are circumcised."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -22748,19 +22085,16 @@
         "Acts 15:1-2"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 15:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -22874,7 +22208,6 @@
         " leaders."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -22882,7 +22215,6 @@
         "Paul and Barnabas reported what God had enabled them to do."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -22890,12 +22222,10 @@
         "Acts 15:3-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23024,7 +22354,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -23032,7 +22361,6 @@
         "Some Jewish believers said that non-Jewish believers must obey Moses' laws."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -23040,12 +22368,10 @@
         "Acts 15:5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23087,7 +22413,6 @@
         " Moses.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -23095,7 +22420,6 @@
         "Peter told about non-Jews becoming believers when he preached to them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -23103,12 +22427,10 @@
         "Acts 15:6-11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23399,7 +22721,6 @@
         " us Jews.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -23407,7 +22728,6 @@
         "Barnabas and Paul reported what God had helped them to do among the non-Jews."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -23415,12 +22735,10 @@
         "Acts 15:12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23470,7 +22788,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -23478,7 +22795,6 @@
         "James recommended what they should tell the non-Jewish believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -23486,12 +22802,10 @@
         "Acts 15:13-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23570,12 +22884,10 @@
         ", agree with that:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pi1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23695,19 +23007,16 @@
         " long ago.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "19",
           "sid": "ACT 15:19"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -23868,7 +23177,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -23876,7 +23184,6 @@
         "The church leaders sent messengers with a letter to non-Jewish believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -23884,12 +23191,10 @@
         "Acts 15:22-29"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -23954,7 +23259,6 @@
         ":"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -24141,12 +23445,10 @@
         " the following instructions,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -24156,7 +23458,6 @@
         "You should not eat food that people have sacrificed to idols."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -24164,7 +23465,6 @@
         "You should not eat blood from animals, and you should not eat meat from animals that people have killed by strangling them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -24172,7 +23472,6 @@
         "Also, you should not have sex with someone to whom you are not married."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -24188,7 +23487,6 @@
         " you avoid doing them, you will be doing what is right. That is all.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -24196,7 +23494,6 @@
         "The letter and messengers encouraged the believers at Antioch."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -24204,12 +23501,10 @@
         "Acts 15:30-32"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -24320,7 +23615,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -24328,7 +23622,6 @@
         "Paul and Barnabas continued to teach and preach in Antioch."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -24336,12 +23629,10 @@
         "Acts 15:33-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -24447,7 +23738,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -24481,7 +23771,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -24489,7 +23778,6 @@
         "Paul and Barnabas separated, and Paul chose Silas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -24497,12 +23785,10 @@
         "Acts 15:36-41"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -24699,15 +23985,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "16",
       "sid": "ACT 16"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -24715,7 +23998,6 @@
         "Paul chose Timothy to work with him and Silas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -24723,12 +24005,10 @@
         "Acts 16:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -24824,7 +24104,6 @@
         "}."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -24832,7 +24111,6 @@
         "Paul, Silas and Timothy told believers in Galatia what the church leaders had decided."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -24840,19 +24118,16 @@
         "Acts 16:4-5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "ACT 16:4"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -24887,19 +24162,16 @@
         " believers should obey."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "ACT 16:5"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -24918,7 +24190,6 @@
         ", and every day more people became believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -24926,7 +24197,6 @@
         "Because of a vision in Troas, Paul went to preach in Macedonia."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -24934,12 +24204,10 @@
         "Acts 16:6-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -25136,7 +24404,6 @@
         " preach the good message to the people there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -25144,7 +24411,6 @@
         "Paul's company went from Troas to Philippi."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -25152,12 +24418,10 @@
         "Acts 16:11-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -25238,7 +24502,6 @@
         " Roman citizens lived. We stayed in Philippi several days."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -25246,7 +24509,6 @@
         "Paul preached the gospel and Lydia became a believer."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -25254,12 +24516,10 @@
         "Acts 16:13-15"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -25435,7 +24695,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -25443,7 +24702,6 @@
         "Paul expelled a demon from a slave girl, so officials imprisoned Paul and Silas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -25451,12 +24709,10 @@
         "Acts 16:16-24"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -25768,7 +25024,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -25776,7 +25031,6 @@
         "Paul and Silas helped the jailer and his household to become believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -25784,12 +25038,10 @@
         "Acts 16:25-34"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -25992,12 +25244,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -26039,7 +25289,6 @@
         " baptized the jailer and all his family}. They were very happy, because now they all believed in God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -26047,7 +25296,6 @@
         "Paul and Silas encouraged the believers and then left Philippi."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -26055,12 +25303,10 @@
         "Acts 16:35-40"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -26352,15 +25598,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "17",
       "sid": "ACT 17"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -26368,7 +25611,6 @@
         "In Thessalonica, Paul convinced many people that Jesus is the Messiah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -26376,12 +25618,10 @@
         "Acts 17:1-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -26492,7 +25732,6 @@
         ", and they began to associate with Paul and Silas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -26500,7 +25739,6 @@
         "Some Jews there incited people to oppose Paul and Silas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -26508,12 +25746,10 @@
         "Acts 17:5-9"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -26726,7 +25962,6 @@
         ". Then the authorities let Jason and those other believers go."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -26734,7 +25969,6 @@
         "In Berea, Paul helped many Jews and non-Jews to believe in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -26742,19 +25976,16 @@
         "Acts 17:10-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "ACT 17:10"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -26859,7 +26090,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -26867,7 +26097,6 @@
         "Jews from Thessalonica incited people to oppose Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -26875,12 +26104,10 @@
         "Acts 17:13-15"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27008,7 +26235,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27016,7 +26242,6 @@
         "In Athens, idols distressed Paul, so he talked to many people about Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27024,12 +26249,10 @@
         "Acts 17:16-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27070,7 +26293,6 @@
         " there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27078,7 +26300,6 @@
         "When Paul talked about Jesus, he perplexed some teachers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27086,12 +26307,10 @@
         "Acts 17:18"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27181,7 +26400,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27189,7 +26407,6 @@
         "Athens Council members asked Paul to explain what he had been teaching."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27197,12 +26414,10 @@
         "Acts 17:19-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27281,7 +26496,6 @@
         " what was new."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27289,7 +26503,6 @@
         "Paul told them about the God whom they did not know."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27297,12 +26510,10 @@
         "Acts 17:22-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27367,12 +26578,10 @@
         " whom you worship but you do not know."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27429,19 +26638,16 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "26",
           "sid": "ACT 17:26"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -27522,12 +26728,10 @@
         " are God's children.’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27654,7 +26858,6 @@
         ", because God ◄caused him to become alive again after he had died/raised him from the dead►.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27662,7 +26865,6 @@
         "Some Council members believed in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27670,12 +26872,10 @@
         "Acts 17:32-34"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27779,15 +26979,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "18",
       "sid": "ACT 18"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27795,7 +26992,6 @@
         "In Corinth, Paul helped many people to become believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27803,12 +26999,10 @@
         "Acts 18:1-4"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27919,7 +27113,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -27927,7 +27120,6 @@
         "Paul helped many non-Jews become believers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -27935,12 +27127,10 @@
         "Acts 18:5-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28082,7 +27272,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28090,7 +27279,6 @@
         "Jesus commanded Paul to continue speaking about him, so Paul did that."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28098,12 +27286,10 @@
         "Acts 18:9-11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28183,7 +27369,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28191,7 +27376,6 @@
         "Gallio refused to judge Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28199,12 +27383,10 @@
         "Acts 18:12-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28385,7 +27567,6 @@
         ". They beat him, right there in front of the courthouse. But Gallio did nothing about it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28393,7 +27574,6 @@
         "At Ephesus, Paul parted from Priscilla and Aquila."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28401,12 +27581,10 @@
         "Acts 18:18-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28463,12 +27641,10 @@
         ", and Priscilla and Aquila stayed there."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -28517,7 +27693,6 @@
         " sailed from Ephesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28525,7 +27700,6 @@
         "Paul visited Jerusalem, then he went on to Antioch in Syria and then he returned to visit the believers throughout Galatia and Phrygia."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28533,12 +27707,10 @@
         "Acts 18:22-23"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28572,12 +27744,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28619,7 +27789,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28627,7 +27796,6 @@
         "Priscilla and Aquila instructed Apollos about the gospel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28635,19 +27803,16 @@
         "Acts 18:24-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "24",
           "sid": "ACT 18:24"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -28759,7 +27924,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28767,7 +27931,6 @@
         "Apollos helped believers in Achaia."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28775,12 +27938,10 @@
         "Acts 18:27-28"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -28853,15 +28014,12 @@
         " from the Scriptures, he proved to people that Jesus was the Messiah."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "19",
       "sid": "ACT 19"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -28869,7 +28027,6 @@
         "Paul helped some men to become real believers in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -28877,12 +28034,10 @@
         "Acts 19:1-7"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29086,7 +28241,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29094,7 +28248,6 @@
         "Paul helped many people in Asia province to hear the gospel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29102,12 +28255,10 @@
         "Acts 19:8-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29218,7 +28369,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29226,7 +28376,6 @@
         "God enabled Paul to do amazing miracles."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29234,12 +28383,10 @@
         "Acts 19:11-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29279,7 +28426,6 @@
         " the sick people handkerchiefs or aprons that Paul had touched}. As a result, those sick people would become well, and evil spirits that troubled people would leave."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29287,7 +28433,6 @@
         "People honored Jesus' name, after Jewish exorcists misused it and failed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29295,12 +28440,10 @@
         "Acts 19:13-17"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29449,7 +28592,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29457,7 +28599,6 @@
         "Many believers confessed their former sins and burned their books of magic."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29465,19 +28606,16 @@
         "Acts 19:18-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "18",
           "sid": "ACT 19:18"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -29511,12 +28649,10 @@
         " magic and burned them in a public place. When people added up how much those scrolls had cost, they realized that altogether the amount was fifty thousand valuable silver coins."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29542,12 +28678,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29604,7 +28738,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29612,7 +28745,6 @@
         "Demetrius made silver shrines of the goddess Artemis."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29620,19 +28752,16 @@
         "Acts 19:23-24"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "23",
           "sid": "ACT 19:23"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -29690,7 +28819,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29698,7 +28826,6 @@
         "Demetrius incited people to shout and to riot."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29706,12 +28833,10 @@
         "Acts 19:25-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29922,7 +29047,6 @@
         " not to go into the stadium."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -29930,7 +29054,6 @@
         "The crowd shouted, “Great is Artemis of the Ephesians!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -29938,12 +29061,10 @@
         "Acts 19:32-34"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -30063,7 +29184,6 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -30071,7 +29191,6 @@
         "The city secretary quieted, warned and dismissed the crowd."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -30079,12 +29198,10 @@
         "Acts 19:35-41"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -30351,15 +29468,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "20",
       "sid": "ACT 20"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -30367,7 +29481,6 @@
         "After being in Macedonia and Greece, Paul went to Troas."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -30375,12 +29488,10 @@
         "Acts 20:1-6"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -30663,7 +29774,6 @@
         " stayed in Troas for seven days."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -30671,7 +29781,6 @@
         "At Troas, Paul encouraged believers by resurrecting Eutychus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -30679,12 +29788,10 @@
         "Acts 20:7-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -30881,7 +29988,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -30889,7 +29995,6 @@
         "Paul and his companions traveled from Troas to Miletus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -30897,12 +30002,10 @@
         "Acts 20:13-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -31084,7 +30187,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -31092,7 +30194,6 @@
         "Paul reminded the Ephesian elders how he had conducted himself and had taught them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -31100,19 +30201,16 @@
         "Acts 20:17-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "17",
           "sid": "ACT 20:17"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -31131,12 +30229,10 @@
         " to Ephesus to ask the elders of the congregation to come to talk with him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -31270,7 +30366,6 @@
         " believe in our Lord Jesus.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -31278,7 +30373,6 @@
         "Paul told them that they would never see him again."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -31286,12 +30380,10 @@
         "Acts 20:22-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -31579,7 +30671,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -31587,7 +30678,6 @@
         "Paul entrusted them to God and to the message about God's goodness."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -31595,12 +30685,10 @@
         "Acts 20:32-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -31650,19 +30738,16 @@
         ", and God will give you the blessings that he has promised to give to all of those who belong to him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "33",
           "sid": "ACT 20:33"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -31727,7 +30812,6 @@
         " should remember that our Lord Jesus himself said, ‘You are happy when people give you what you need, but God will be happy with you when you give other people what they need.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -31735,7 +30819,6 @@
         "Paul prayed with them and they sadly told him goodbye."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -31743,12 +30826,10 @@
         "Acts 20:36-38"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -31780,15 +30861,12 @@
         " went with him to the ship."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "21",
       "sid": "ACT 21"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -31796,7 +30874,6 @@
         "Paul, Luke and his other companions traveled from Miletus to Tyre."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -31804,19 +30881,16 @@
         "Acts 21:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 21:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -31935,7 +31009,6 @@
         " had to unload the cargo."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -31943,7 +31016,6 @@
         "At Tyre, believers warned Paul not to go to Jerusalem, but he went on anyway."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -31951,19 +31023,16 @@
         "Acts 21:4-6"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "ACT 21:4"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -32076,7 +31145,6 @@
         " believers returned to their own homes."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -32084,7 +31152,6 @@
         "Paul and his companions sailed from Tyre to Caesarea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -32092,12 +31159,10 @@
         "Acts 21:7-9"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -32185,7 +31250,6 @@
         " spoke messages that the Holy Spirit had revealed to them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -32193,7 +31257,6 @@
         "The believers could not persuade Paul from going on to Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -32201,12 +31264,10 @@
         "Acts 21:10-14"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -32396,7 +31457,6 @@
         " do what he wants/the Lord's will be done►!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -32404,7 +31464,6 @@
         "Paul and other believers went from Caesarea to Jerusalem."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -32412,12 +31471,10 @@
         "Acts 21:15-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -32522,7 +31579,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -32530,7 +31586,6 @@
         "Paul agreed with church leaders to perform a Jewish purifying ritual."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -32538,12 +31593,10 @@
         "Acts 21:17-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33031,7 +32084,6 @@
         " for each of them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -33039,7 +32091,6 @@
         "Some Jews seized Paul in the Temple courts."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -33047,12 +32098,10 @@
         "Acts 21:27-30"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33260,7 +32309,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -33268,7 +32316,6 @@
         "Roman soldiers ran to where those Jews were trying to kill Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -33276,12 +32323,10 @@
         "Acts 21:31-32"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33346,7 +32391,6 @@
         ", they stopped beating him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -33354,7 +32398,6 @@
         "After the commander arrested Paul, soldiers carried him towards the fort."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -33362,12 +32405,10 @@
         "Acts 21:33-40"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33509,12 +32550,10 @@
         "The crowd that followed kept shouting, “Kill him! Kill him!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33681,15 +32720,12 @@
         " Hebrew language [MTY]."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "22",
       "sid": "ACT 22"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -33697,7 +32733,6 @@
         "Paul defended his believing in Jesus, but the Jews wanted to kill him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -33705,12 +32740,10 @@
         "Acts 22:1-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33955,12 +32988,10 @@
         " could punish them}."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -34293,7 +33324,6 @@
         " for your sins!’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -34301,7 +33331,6 @@
         "Paul told about the Lord's commanding him to go to non-Jewish people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -34309,12 +33338,10 @@
         "Acts 22:17-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -34337,7 +33364,6 @@
             "in which"
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -34534,7 +33560,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -34542,7 +33567,6 @@
         "Paul said that he was a Roman citizen, so soldiers did not flog him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -34550,12 +33574,10 @@
         "Acts 22:23-29"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -34847,7 +33869,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -34855,7 +33876,6 @@
         "The commander's soldiers brought Paul to the Jewish Council."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -34863,19 +33883,16 @@
         "Acts 22:30"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "30",
           "sid": "ACT 22:30"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -34926,15 +33943,12 @@
         " him to stand before them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "23",
       "sid": "ACT 23"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -34942,7 +33956,6 @@
         "Paul apologized for unknowingly denouncing the high priest."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -34950,12 +33963,10 @@
         "Acts 23:1-5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -35113,7 +34124,6 @@
         ", ‘Do not speak evil of any of your rulers!’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -35121,7 +34131,6 @@
         "The commander rescued Paul from the Council members."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -35129,12 +34138,10 @@
         "Acts 23:6-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -35340,7 +34347,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -35348,7 +34354,6 @@
         "The Lord revealed that Paul would tell people about him in Rome."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -35356,12 +34361,10 @@
         "Acts 23:11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -35419,7 +34422,6 @@
         ", too.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -35427,7 +34429,6 @@
         "Some Jews plotted to kill Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -35435,12 +34436,10 @@
         "Acts 23:12-15"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -35567,7 +34566,6 @@
         " will be waiting to kill Paul while he is on the way here.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -35575,7 +34573,6 @@
         "Paul's nephew warned that some Jews had plotted to kill Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -35583,12 +34580,10 @@
         "Acts 23:16-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -35775,7 +34770,6 @@
         ".” Then he sent the young man away."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -35783,7 +34777,6 @@
         "Many soldiers escorted Paul safely to Governor Felix at Caesarea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -35791,12 +34784,10 @@
         "Acts 23:23-35"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -36046,12 +35037,10 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -36209,15 +35198,12 @@
         "."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "24",
       "sid": "ACT 24"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -36225,7 +35211,6 @@
         "Paul defended himself, and the governor Felix promised to judge him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -36233,12 +35218,10 @@
         "Acts 24:1-9"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -36510,7 +35493,6 @@
         " what Tertullus had said was true."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -36518,7 +35500,6 @@
         "Paul disproved what they had said, but admitted that he was a Christian."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -36526,12 +35507,10 @@
         "Acts 24:10-21"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -36999,7 +35978,6 @@
         " from the dead►.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -37007,7 +35985,6 @@
         "Governor Felix adjourned the trial."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -37015,12 +35992,10 @@
         "Acts 24:22-23"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -37109,7 +36084,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -37117,7 +36091,6 @@
         "Felix often talked to Paul, hoping that Paul would give him money."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -37125,12 +36098,10 @@
         "Acts 24:24-27"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -37297,12 +36268,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -37320,15 +36289,12 @@
         ". But when two years had passed, Porcius Festus became governor in place of Felix."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "25",
       "sid": "ACT 25"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -37336,7 +36302,6 @@
         "Festus told the Jews to go and accuse Paul at Caesarea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -37344,12 +36309,10 @@
         "Acts 25:1-5"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -37499,7 +36462,6 @@
         ", they can accuse Paul of the wrong things that you say that he has done.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -37507,7 +36469,6 @@
         "Paul appealed to Caesar, so Festus agreed to that."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -37515,12 +36476,10 @@
         "Acts 25:6-12"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -37859,7 +36818,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -37867,7 +36825,6 @@
         "Festus told King Agrippa about Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -37875,12 +36832,10 @@
         "Acts 25:13-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38202,7 +37157,6 @@
         "!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -38210,7 +37164,6 @@
         "Festus asked King Agrippa to tell him what to write to Caesar about Paul."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -38218,12 +37171,10 @@
         "Acts 25:23-27"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38233,7 +37184,6 @@
         "Agrippa said to Festus, “I also would like to hear the man myself.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -38241,12 +37191,10 @@
         "“Tomorrow,” he said, “you shall hear him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38420,15 +37368,12 @@
         " are accusing him.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "26",
       "sid": "ACT 26"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -38436,7 +37381,6 @@
         "Paul requested that his hearers would listen to him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -38444,12 +37388,10 @@
         "Acts 26:1-3"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38537,7 +37479,6 @@
         " argue about. So I ask you, please listen patiently to what I say.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -38545,7 +37486,6 @@
         "Paul told about being a Pharisee who believed that God would resurrect people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -38553,12 +37493,10 @@
         "Acts 26:4-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38684,7 +37622,6 @@
         "► [RHQ]”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -38692,7 +37629,6 @@
         "Paul told about how he had persecuted Christians."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -38700,12 +37636,10 @@
         "Acts 26:9-11"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38817,7 +37751,6 @@
         " do things to harm them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -38825,7 +37758,6 @@
         "Paul told how he had become a believer in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -38833,12 +37765,10 @@
         "Acts 26:12-18"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -39081,7 +38011,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -39089,7 +38018,6 @@
         "Paul said that he obeyed what Jesus commanded him from heaven."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -39097,12 +38025,10 @@
         "Acts 26:19-20"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -39159,7 +38085,6 @@
         ". After that, I also preached to non-Jews. I preached that they must turn away from their sinful behavior and turn their lives over to God. I told them that they must do things that would show that they had truly stopped their sinful behavior.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -39167,7 +38092,6 @@
         "Paul said that he proclaimed what the prophets had written about the Messiah."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -39175,12 +38099,10 @@
         "Acts 26:21-23"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -39316,7 +38238,6 @@
         " people and non-Jewish people.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -39324,7 +38245,6 @@
         "Paul talked to Festus and Agrippa, urging them to become believers in Jesus."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -39332,12 +38252,10 @@
         "Acts 26:24-29"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -39502,7 +38420,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -39510,7 +38427,6 @@
         "The officials said that Paul was innocent but must go to Rome."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -39518,12 +38434,10 @@
         "Acts 26:30-32"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -39563,15 +38477,12 @@
         " could have released him}.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "27",
       "sid": "ACT 27"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -39579,7 +38490,6 @@
         "Paul and other prisoners sailed from Caesarea to Crete."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -39587,12 +38497,10 @@
         "Acts 27:1-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -39994,7 +38902,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -40002,7 +38909,6 @@
         "Paul warned them not to travel on, but the ship's officials decided to go on anyway."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -40010,12 +38916,10 @@
         "Acts 27:9-20"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40407,7 +39311,6 @@
         " finally thought that we would drown in the sea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -40415,7 +39318,6 @@
         "Paul told them that an angel from God said that they would all survive."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -40423,12 +39325,10 @@
         "Acts 27:21-26"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40617,7 +39517,6 @@
         ".”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -40625,7 +39524,6 @@
         "Paul thwarted some sailors who tried to sneak ashore in the lifeboat."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -40633,12 +39531,10 @@
         "Acts 27:27-32"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40779,7 +39675,6 @@
         "So the soldiers cut the ropes and let the lifeboat fall into the water."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -40787,7 +39682,6 @@
         "Paul urged them to eat some food, so they did and then lightened the ship."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -40795,12 +39689,10 @@
         "Acts 27:33-38"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40909,7 +39801,6 @@
         " into the sea, and this made the ship lighter."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -40917,7 +39808,6 @@
         "The waves began to break up the ship after it struck a shoal."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -40925,12 +39815,10 @@
         "Acts 27:39-41"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -41049,7 +39937,6 @@
         "But the ship hit a sandbank. The front of the ship stuck there and could not move, and big waves beat against the back of the ship and it began to break apart."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -41057,7 +39944,6 @@
         "The officer saved Paul and commanded all to go to the shore, so they did that."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -41065,12 +39951,10 @@
         "Acts 27:42-44"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -41189,15 +40073,12 @@
         " in that way all of us arrived safely on land."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "28",
       "sid": "ACT 28"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -41205,7 +40086,6 @@
         "The Maltese thought that Paul was a god because a snake did not harm him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -41213,12 +40093,10 @@
         "Acts 28:1-6"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -41350,7 +40228,6 @@
         ", “This man is not a murderer! Probably he is a god!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -41358,7 +40235,6 @@
         "Paul healed many Maltese, so they supplied what he and the others needed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -41366,12 +40242,10 @@
         "Acts 28:7-10"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -41481,7 +40355,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -41489,7 +40362,6 @@
         "Paul and the others sailed to Puteoli, then went by land towards Rome."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -41497,12 +40369,10 @@
         "Acts 28:11-14"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -41637,7 +40507,6 @@
         " to Rome."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -41645,7 +40514,6 @@
         "Christians came out from Rome and escorted Paul into that city."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -41653,19 +40521,16 @@
         "Acts 28:15-16"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "ACT 28:15"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -41771,7 +40636,6 @@
         " a soldier there to guard him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -41779,7 +40643,6 @@
         "The Jewish leaders asked Paul to tell them about Christianity."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -41787,12 +40650,10 @@
         "Acts 28:17-22"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -41997,7 +40858,6 @@
         " sect/group, because we know that in many places [HYP] bad things are being said {people are saying bad things} about it.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -42005,7 +40865,6 @@
         "Paul told the Jews that non-Jews would believe the gospel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "sr",
@@ -42013,12 +40872,10 @@
         "Acts 28:23-31"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -42114,12 +40971,10 @@
         ":"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -42129,7 +40984,6 @@
         "Go to your fellow Israelites and tell them,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42153,7 +41007,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42169,7 +41022,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42185,12 +41037,10 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -42200,7 +41050,6 @@
         "God also said to the prophet,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42208,7 +41057,6 @@
         "These people do not understand, because they have become stubborn."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42216,7 +41064,6 @@
         "They have ears, but they do not understand what they hear,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42232,7 +41079,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42256,7 +41102,6 @@
         "."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -42264,19 +41109,16 @@
         "Then they might turn from their sinful behavior and I would save them.’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "28-29",
           "sid": "ACT 28:28-29"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -42303,12 +41145,10 @@
         "!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -42356,8 +41196,6 @@
         },
         " [MET] and taught them about the Lord Jesus Christ. He did that without being afraid, and no one tried to stop him."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

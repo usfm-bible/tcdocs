@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -19,7 +17,6 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -27,7 +24,6 @@
         "The Acts of the Apostles"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -35,7 +31,6 @@
         "Acts"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -43,7 +38,6 @@
         "One of these brothers, Joseph, had become..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ipr",
@@ -51,20 +45,17 @@
         "(50.24)"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "136",
       "sid": "MAT 136"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -72,12 +63,10 @@
         "God's Love Never Fails"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lh",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -87,7 +76,6 @@
         "This is the list of the administrators of the tribes of Israel:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -95,7 +83,6 @@
         "Reuben - Eliezer son of Zichri"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -103,7 +90,6 @@
         "Simeon - Shephatiah son of Maacah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -111,7 +97,6 @@
         "Levi - Hashabiah son of Kemuel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lf",
@@ -126,12 +111,10 @@
         "in company with Zerubbabel, Jeshua, Nehemiah, Azariah, Raamiah, Nahamani, Mordecai,Bilshan, Mispereth, Bigvai, Nehum and Baanah):"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "pm",
@@ -139,17 +122,14 @@
         "The list of the men of Israel:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lim1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -166,12 +146,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lim1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -187,8 +165,6 @@
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

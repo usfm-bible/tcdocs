@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "World English Bible (WEB)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Exodus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Second Book of Mosis, Commonly Called Exodus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Exodus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Exodus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt2",
@@ -59,7 +52,6 @@
         "The Second Book of Moses,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt3",
@@ -67,7 +59,6 @@
         "Commonly Called"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -75,19 +66,16 @@
         "Exodus"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "EXO 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -139,12 +127,10 @@
         "The children of Israel were fruitful, and increased abundantly, and multiplied, and grew exceedingly mighty; and the land was filled with them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -218,12 +204,10 @@
         "and they made their lives bitter with hard service in mortar and in brick, and in all kinds of service in the field, all their service, in which they ruthlessly made them serve."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -276,12 +260,10 @@
         "The king of Egypt called for the midwives, and said to them, “Why have you done this thing and saved the boys alive?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -291,12 +273,10 @@
         "The midwives said to Pharaoh, “Because the Hebrew women aren’t like the Egyptian women; for they are vigorous and give birth before the midwife comes to them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -320,20 +300,16 @@
         "Pharaoh commanded all his people, saying, “You shall cast every son who is born into the river, and every daughter you shall save alive.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "EXO 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -378,12 +354,10 @@
         "She opened it, and saw the child, and behold, the baby cried. She had compassion on him, and said, “This is one of the Hebrews’ children.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -393,12 +367,10 @@
         "Then his sister said to Pharaoh’s daughter, “Should I go and call a nurse for you from the Hebrew women, that she may nurse the child for you?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -408,7 +380,6 @@
         "Pharaoh’s daughter said to her, “Go.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -423,7 +394,6 @@
         "Pharaoh’s daughter said to her, “Take this child away, and nurse him for me, and I will give you your wages.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -460,12 +430,10 @@
         " and said, “Because I drew him out of the water.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -482,12 +450,10 @@
         "He looked this way and that way, and when he saw that there was no one, he killed the Egyptian, and hid him in the sand."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -497,12 +463,10 @@
         "He went out the second day, and behold, two men of the Hebrews were fighting with each other. He said to him who did the wrong, “Why do you strike your fellow?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -512,7 +476,6 @@
         "He said, “Who made you a prince and a judge over us? Do you plan to kill me, as you killed the Egyptian?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -527,12 +490,10 @@
         "Now when Pharaoh heard this thing, he sought to kill Moses. But Moses fled from the face of Pharaoh, and lived in the land of Midian, and he sat down by a well."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -556,12 +517,10 @@
         "When they came to Reuel, their father, he said, “How is it that you have returned so early today?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -571,12 +530,10 @@
         "They said, “An Egyptian delivered us out of the hand of the shepherds, and moreover he drew water for us, and watered the flock.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -586,12 +543,10 @@
         "He said to his daughters, “Where is he? Why is it that you have left the man? Call him, that he may eat bread.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -630,12 +585,10 @@
         " for he said, “I have lived as a foreigner in a foreign land.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -659,20 +612,16 @@
         "God saw the children of Israel, and God was concerned about them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "EXO 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -718,12 +667,10 @@
         "Moses said, “I will go now, and see this great sight, why the bush is not burned.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -733,7 +680,6 @@
         "When Yahweh saw that he came over to see, God called to him out of the middle of the bush, and said, “Moses! Moses!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -741,12 +687,10 @@
         "He said, “Here I am.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -763,7 +707,6 @@
         "Moreover he said, “I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -771,12 +714,10 @@
         "Moses hid his face because he was afraid to look at God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -807,12 +748,10 @@
         "Come now therefore, and I will send you to Pharaoh, that you may bring my people, the children of Israel, out of Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -822,12 +761,10 @@
         "Moses said to God, “Who am I, that I should go to Pharaoh, and that I should bring the children of Israel out of Egypt?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -837,12 +774,10 @@
         "He said, “Certainly I will be with you. This will be the token to you, that I have sent you: when you have brought the people out of Egypt, you shall serve God on this mountain.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -852,12 +787,10 @@
         "Moses said to God, “Behold, when I come to the children of Israel, and tell them, ‘The God of your fathers has sent me to you,’ and they ask me, ‘What is his name?’ what should I tell them?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -923,20 +856,16 @@
         "But every woman shall ask of her neighbor, and of her who visits her house, jewels of silver, jewels of gold, and clothing. You shall put them on your sons, and on your daughters. You shall plunder the Egyptians.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "EXO 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -946,12 +875,10 @@
         "Moses answered, “But, behold, they will not believe me, nor listen to my voice; for they will say, ‘Yahweh has not appeared to you.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -961,7 +888,6 @@
         "Yahweh said to him, “What is that in your hand?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -969,12 +895,10 @@
         "He said, “A rod.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -984,7 +908,6 @@
         "He said, “Throw it on the ground.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -992,12 +915,10 @@
         "He threw it on the ground, and it became a snake; and Moses ran away from it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1007,7 +928,6 @@
         "Yahweh said to Moses, “Stretch out your hand, and take it by the tail.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1015,12 +935,10 @@
         "He stretched out his hand, and took hold of it, and it became a rod in his hand."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1037,7 +955,6 @@
         "Yahweh said furthermore to him, “Now put your hand inside your cloak.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1045,12 +962,10 @@
         "He put his hand inside his cloak, and when he took it out, behold, his hand was leprous, as white as snow."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1060,7 +975,6 @@
         "He said, “Put your hand inside your cloak again.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1068,12 +982,10 @@
         "He put his hand inside his cloak again, and when he took it out of his cloak, behold, it had turned again as his other flesh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1090,12 +1002,10 @@
         "It will happen, if they will not believe even these two signs or listen to your voice, that you shall take of the water of the river, and pour it on the dry land. The water which you take out of the river will become blood on the dry land.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1127,12 +1037,10 @@
         " I am not eloquent, neither before now, nor since you have spoken to your servant; for I am slow of speech, and of a slow tongue.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1149,12 +1057,10 @@
         "Now therefore go, and I will be with your mouth, and teach you what you shall speak.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1164,12 +1070,10 @@
         "Moses said, “Oh, Lord, please send someone else.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1200,12 +1104,10 @@
         "You shall take this rod in your hand, with which you shall do the signs.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1215,7 +1117,6 @@
         "Moses went and returned to Jethro his father-in-law, and said to him, “Please let me go and return to my brothers who are in Egypt, and see whether they are still alive.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1223,12 +1124,10 @@
         "Jethro said to Moses, “Go in peace.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1238,12 +1137,10 @@
         "Yahweh said to Moses in Midian, “Go, return into Egypt; for all the men who sought your life are dead.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1274,12 +1171,10 @@
         "and I have said to you, “Let my son go, that he may serve me;” and you have refused to let him go. Behold, I will kill your firstborn son.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1296,12 +1191,10 @@
         "Then Zipporah took a flint, and cut off the foreskin of her son, and cast it at his feet; and she said, “Surely you are a bridegroom of blood to me.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1311,12 +1204,10 @@
         "So he let him alone. Then she said, “You are a bridegroom of blood,” because of the circumcision."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1326,7 +1217,6 @@
         "Yahweh said to Aaron, “Go into the wilderness to meet Moses.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -1362,20 +1252,16 @@
         "The people believed, and when they heard that Yahweh had visited the children of Israel, and that he had seen their affliction, then they bowed their heads and worshiped."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "5",
       "sid": "EXO 5"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1385,12 +1271,10 @@
         "Afterward Moses and Aaron came, and said to Pharaoh, “This is what Yahweh, the God of Israel, says, ‘Let my people go, that they may hold a feast to me in the wilderness.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1400,12 +1284,10 @@
         "Pharaoh said, “Who is Yahweh, that I should listen to his voice to let Israel go? I don’t know Yahweh, and moreover I will not let Israel go.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1415,12 +1297,10 @@
         "They said, “The God of the Hebrews has met with us. Please let us go three days’ journey into the wilderness, and sacrifice to Yahweh, our God, lest he fall on us with pestilence, or with the sword.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1465,12 +1345,10 @@
         "Let heavier work be laid on the men, that they may labor in it. Don’t let them pay any attention to lying words.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1508,12 +1386,10 @@
         "The officers of the children of Israel, whom Pharaoh’s taskmasters had set over them, were beaten, and were asked, “Why haven’t you fulfilled your quota both yesterday and today, in making brick as before?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1530,12 +1406,10 @@
         "No straw is given to your servants, and they tell us, ‘Make brick!’ and behold, your servants are beaten; but the fault is in your own people.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1552,12 +1426,10 @@
         "Go therefore now, and work; for no straw shall be given to you; yet you shall deliver the same number of bricks!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1567,12 +1439,10 @@
         "The officers of the children of Israel saw that they were in trouble when it was said, “You shall not diminish anything from your daily quota of bricks!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1589,12 +1459,10 @@
         "They said to them, “May Yahweh look at you and judge, because you have made us a stench to be abhorred in the eyes of Pharaoh, and in the eyes of his servants, to put a sword in their hand to kill us!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1611,20 +1479,16 @@
         "For since I came to Pharaoh to speak in your name, he has brought trouble on this people. You have not rescued your people at all!”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "EXO 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1634,12 +1498,10 @@
         "Yahweh said to Moses, “Now you shall see what I will do to Pharaoh, for by a strong hand he shall let them go, and by a strong hand he shall drive them out of his land.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1691,12 +1553,10 @@
         "I will bring you into the land which I swore to give to Abraham, to Isaac, and to Jacob; and I will give it to you for a heritage: I am Yahweh.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1706,12 +1566,10 @@
         "Moses spoke so to the children of Israel, but they didn’t listen to Moses for anguish of spirit, and for cruel bondage."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1728,12 +1586,10 @@
         "“Go in, speak to Pharaoh king of Egypt, that he let the children of Israel go out of his land.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1750,12 +1606,10 @@
         "Yahweh spoke to Moses and to Aaron, and gave them a command to the children of Israel, and to Pharaoh king of Egypt, to bring the children of Israel out of the land of Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1856,12 +1710,10 @@
         "These are those who spoke to Pharaoh king of Egypt, to bring out the children of Israel from Egypt. These are that Moses and Aaron."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1878,12 +1730,10 @@
         "Yahweh said to Moses, “I am Yahweh. Tell Pharaoh king of Egypt all that I tell you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1893,20 +1743,16 @@
         "Moses said before Yahweh, “Behold, I am of uncircumcised lips, and how shall Pharaoh listen to me?”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "7",
       "sid": "EXO 7"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1944,12 +1790,10 @@
         "The Egyptians shall know that I am Yahweh when I stretch out my hand on Egypt, and bring the children of Israel out from among them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1966,12 +1810,10 @@
         "Moses was eighty years old, and Aaron eighty-three years old, when they spoke to Pharaoh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1988,12 +1830,10 @@
         "“When Pharaoh speaks to you, saying, ‘Perform a miracle!’ then you shall tell Aaron, ‘Take your rod, and cast it down before Pharaoh, and it will become a serpent.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2024,12 +1864,10 @@
         "Pharaoh’s heart was hardened, and he didn’t listen to them, as Yahweh had spoken."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2074,12 +1912,10 @@
         "Yahweh said to Moses, “Tell Aaron, ‘Take your rod, and stretch out your hand over the waters of Egypt, over their rivers, over their streams, and over their pools, and over all their ponds of water, that they may become blood. There will be blood throughout all the land of Egypt, both in vessels of wood and in vessels of stone.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2124,20 +1960,16 @@
         "Seven days were fulfilled, after Yahweh had struck the river."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "EXO 8"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2189,12 +2021,10 @@
         "The magicians did the same thing with their enchantments, and brought up frogs on the land of Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2204,12 +2034,10 @@
         "Then Pharaoh called for Moses and Aaron, and said, “Entreat Yahweh, that he take away the frogs from me and from my people; and I will let the people go, that they may sacrifice to Yahweh.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2219,12 +2047,10 @@
         "Moses said to Pharaoh, “I give you the honor of setting the time that I should pray for you, and for your servants, and for your people, that the frogs be destroyed from you and your houses, and remain in the river only.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2234,7 +2060,6 @@
         "Pharaoh said, “Tomorrow.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -2249,12 +2074,10 @@
         "The frogs shall depart from you, and from your houses, and from your servants, and from your people. They shall remain in the river only.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2285,12 +2108,10 @@
         "But when Pharaoh saw that there was a respite, he hardened his heart, and didn’t listen to them, as Yahweh had spoken."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2321,12 +2142,10 @@
         "Then the magicians said to Pharaoh, “This is God’s finger;” but Pharaoh’s heart was hardened, and he didn’t listen to them, as Yahweh had spoken."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2364,12 +2183,10 @@
         "Yahweh did so; and there came grievous swarms of flies into the house of Pharaoh, and into his servants’ houses. In all the land of Egypt the land was corrupted by reason of the swarms of flies."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2379,12 +2196,10 @@
         "Pharaoh called for Moses and for Aaron, and said, “Go, sacrifice to your God in the land!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2401,12 +2216,10 @@
         "We will go three days’ journey into the wilderness, and sacrifice to Yahweh our God, as he shall command us.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2416,12 +2229,10 @@
         "Pharaoh said, “I will let you go, that you may sacrifice to Yahweh your God in the wilderness, only you shall not go very far away. Pray for me.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2452,20 +2263,16 @@
         "Pharaoh hardened his heart this time also, and he didn’t let the people go."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "9",
       "sid": "EXO 9"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2517,12 +2324,10 @@
         "Pharaoh sent, and, behold, there was not so much as one of the livestock of the Israelites dead. But the heart of Pharaoh was stubborn, and he didn’t let the people go."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2539,12 +2344,10 @@
         "It shall become small dust over all the land of Egypt, and shall be boils and blisters breaking out on man and on animal, throughout all the land of Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2568,12 +2371,10 @@
         "Yahweh hardened the heart of Pharaoh, and he didn’t listen to them, as Yahweh had spoken to Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2625,12 +2426,10 @@
         "Now therefore command that all of your livestock and all that you have in the field be brought into shelter. The hail will come down on every man and animal that is found in the field, and isn’t brought home, and they will die.”’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2647,12 +2446,10 @@
         "Whoever didn’t respect Yahweh’s word left his servants and his livestock in the field."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2662,12 +2459,10 @@
         "Yahweh said to Moses, “Stretch out your hand toward the sky, that there may be hail in all the land of Egypt, on man, and on animal, and on every herb of the field, throughout the land of Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2698,12 +2493,10 @@
         "Only in the land of Goshen, where the children of Israel were, there was no hail."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2720,12 +2513,10 @@
         "Pray to Yahweh; for there has been enough of mighty thunderings and hail. I will let you go, and you shall stay no longer.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2742,12 +2533,10 @@
         "But as for you and your servants, I know that you don’t yet fear Yahweh God.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2785,20 +2574,16 @@
         "The heart of Pharaoh was hardened, and he didn’t let the children of Israel go, just as Yahweh had spoken through Moses."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "10",
       "sid": "EXO 10"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2815,12 +2600,10 @@
         "and that you may tell in the hearing of your son, and of your son’s son, what things I have done to Egypt, and my signs which I have done among them; that you may know that I am Yahweh.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2851,12 +2634,10 @@
         "Your houses shall be filled, and the houses of all your servants, and the houses of all the Egyptians, as neither your fathers nor your fathers’ fathers have seen, since the day that they were on the earth to this day.’” He turned, and went out from Pharaoh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2866,12 +2647,10 @@
         "Pharaoh’s servants said to him, “How long will this man be a snare to us? Let the men go, that they may serve Yahweh, their God. Don’t you yet know that Egypt is destroyed?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2881,12 +2660,10 @@
         "Moses and Aaron were brought again to Pharaoh, and he said to them, “Go, serve Yahweh your God; but who are those who will go?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2896,12 +2673,10 @@
         "Moses said, “We will go with our young and with our old. We will go with our sons and with our daughters, with our flocks and with our herds; for we must hold a feast to Yahweh.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2918,12 +2693,10 @@
         "Not so! Go now you who are men, and serve Yahweh; for that is what you desire!” Then they were driven out from Pharaoh’s presence."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -2968,12 +2741,10 @@
         "Now therefore please forgive my sin again, and pray to Yahweh your God, that he may also take away from me this death.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3019,12 +2790,10 @@
         "But Yahweh hardened Pharaoh’s heart, and he didn’t let the children of Israel go."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3048,12 +2817,10 @@
         "They didn’t see one another, and nobody rose from his place for three days; but all the children of Israel had light in their dwellings."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3063,12 +2830,10 @@
         "Pharaoh called to Moses, and said, “Go, serve Yahweh. Only let your flocks and your herds stay behind. Let your little ones also go with you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3085,12 +2850,10 @@
         "Our livestock also shall go with us. Not a hoof shall be left behind, for of it we must take to serve Yahweh our God; and we don’t know with what we must serve Yahweh, until we come there.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3107,12 +2870,10 @@
         "Pharaoh said to him, “Get away from me! Be careful to see my face no more; for in the day you see my face you shall die!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3122,20 +2883,16 @@
         "Moses said, “You have spoken well. I will see your face again no more.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "11",
       "sid": "EXO 11"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3159,12 +2916,10 @@
         "Yahweh gave the people favor in the sight of the Egyptians. Moreover, the man Moses was very great in the land of Egypt, in the sight of Pharaoh’s servants, and in the sight of the people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3202,12 +2957,10 @@
         "All these servants of yours will come down to me, and bow down themselves to me, saying, “Get out, with all the people who follow you;” and after that I will go out.’” He went out from Pharaoh in hot anger."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3224,20 +2977,16 @@
         "Moses and Aaron did all these wonders before Pharaoh, but Yahweh hardened Pharaoh’s heart, and he didn’t let the children of Israel go out of his land."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "12",
       "sid": "EXO 12"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3338,12 +3087,10 @@
         "This day shall be a memorial for you. You shall keep it as a feast to Yahweh. You shall keep it as a feast throughout your generations by an ordinance forever."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3388,12 +3135,10 @@
         "You shall eat nothing leavened. In all your habitations you shall eat unleavened bread.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3445,7 +3190,6 @@
         "that you shall say, ‘It is the sacrifice of Yahweh’s Passover, who passed over the houses of the children of Israel in Egypt, when he struck the Egyptians, and spared our houses.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -3460,12 +3204,10 @@
         "The children of Israel went and did so; as Yahweh had commanded Moses and Aaron, so they did."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3496,12 +3238,10 @@
         "Take both your flocks and your herds, as you have said, and be gone; and bless me also!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3532,12 +3272,10 @@
         "Yahweh gave the people favor in the sight of the Egyptians, so that they let them have what they asked. They plundered the Egyptians."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3582,12 +3320,10 @@
         "It is a night to be much observed to Yahweh for bringing them out from the land of Egypt. This is that night of Yahweh, to be much observed by all the children of Israel throughout their generations."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3653,20 +3389,16 @@
         "That same day, Yahweh brought the children of Israel out of the land of Egypt by their armies."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "13",
       "sid": "EXO 13"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3683,12 +3415,10 @@
         "“Sanctify to me all the firstborn, whatever opens the womb among the children of Israel, both of man and of animal. It is mine.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3747,12 +3477,10 @@
         "You shall therefore keep this ordinance in its season from year to year."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3797,12 +3525,10 @@
         "It shall be for a sign on your hand, and for symbols between your eyes; for by strength of hand Yahweh brought us out of Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3847,20 +3573,16 @@
         "the pillar of cloud by day, and the pillar of fire by night, didn’t depart from before the people."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "14",
       "sid": "EXO 14"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3891,12 +3613,10 @@
         "I will harden Pharaoh’s heart, and he will follow after them; and I will get honor over Pharaoh, and over all his armies; and the Egyptians shall know that I am Yahweh.” They did so."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3946,7 +3666,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -3956,12 +3675,10 @@
         "The Egyptians pursued them. All the horses and chariots of Pharaoh, his horsemen, and his army overtook them encamping by the sea, beside Pihahiroth, before Baal Zephon."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -3985,12 +3702,10 @@
         "Isn’t this the word that we spoke to you in Egypt, saying, ‘Leave us alone, that we may serve the Egyptians?’ For it would have been better for us to serve the Egyptians than to die in the wilderness.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4007,12 +3722,10 @@
         "Yahweh will fight for you, and you shall be still.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4057,12 +3770,10 @@
         "It came between the camp of Egypt and the camp of Israel. There was the cloud and the darkness, yet it gave light by night. One didn’t come near the other all night."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4100,12 +3811,10 @@
         "He took off their chariot wheels, and they drove them heavily; so that the Egyptians said, “Let’s flee from the face of Israel, for Yahweh fights for them against the Egyptians!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4150,20 +3859,16 @@
         "Israel saw the great work which Yahweh did to the Egyptians, and the people feared Yahweh; and they believed in Yahweh and in his servant Moses."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "15",
       "sid": "EXO 15"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4173,7 +3878,6 @@
         "Then Moses and the children of Israel sang this song to Yahweh, and said,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4181,7 +3885,6 @@
         "“I will sing to Yahweh, for he has triumphed gloriously."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4189,12 +3892,10 @@
         "He has thrown the horse and his rider into the sea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4204,7 +3905,6 @@
         "Yah is my strength and song."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4212,7 +3912,6 @@
         "He has become my salvation."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4220,7 +3919,6 @@
         "This is my God, and I will praise him;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4228,12 +3926,10 @@
         "my father’s God, and I will exalt him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4243,7 +3939,6 @@
         "Yahweh is a man of war."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4251,12 +3946,10 @@
         "Yahweh is his name."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4266,7 +3959,6 @@
         "He has cast Pharaoh’s chariots and his army into the sea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4274,12 +3966,10 @@
         "His chosen captains are sunk in the Red Sea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4289,7 +3979,6 @@
         "The deeps cover them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4297,12 +3986,10 @@
         "They went down into the depths like a stone."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4312,7 +3999,6 @@
         "Your right hand, Yahweh, is glorious in power."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4320,12 +4006,10 @@
         "Your right hand, Yahweh, dashes the enemy in pieces."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4335,7 +4019,6 @@
         "In the greatness of your excellency, you overthrow those who rise up against you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4343,12 +4026,10 @@
         "You send out your wrath. It consumes them as stubble."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4358,7 +4039,6 @@
         "With the blast of your nostrils, the waters were piled up."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4366,7 +4046,6 @@
         "The floods stood upright as a heap."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4374,12 +4053,10 @@
         "The deeps were congealed in the heart of the sea."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4389,7 +4066,6 @@
         "The enemy said, ‘I will pursue. I will overtake. I will divide the plunder."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4397,7 +4073,6 @@
         "My desire will be satisfied on them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4405,12 +4080,10 @@
         "I will draw my sword. My hand will destroy them.’"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4420,7 +4093,6 @@
         "You blew with your wind."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4428,7 +4100,6 @@
         "The sea covered them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4436,12 +4107,10 @@
         "They sank like lead in the mighty waters."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4451,7 +4120,6 @@
         "Who is like you, Yahweh, among the gods?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4459,7 +4127,6 @@
         "Who is like you, glorious in holiness,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4467,12 +4134,10 @@
         "fearful in praises, doing wonders?"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4482,7 +4147,6 @@
         "You stretched out your right hand."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4490,12 +4154,10 @@
         "The earth swallowed them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4505,7 +4167,6 @@
         "“You, in your loving kindness, have led the people that you have redeemed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4513,12 +4174,10 @@
         "You have guided them in your strength to your holy habitation."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4528,7 +4187,6 @@
         "The peoples have heard."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4536,7 +4194,6 @@
         "They tremble."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4544,12 +4201,10 @@
         "Pangs have taken hold of the inhabitants of Philistia."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4559,7 +4214,6 @@
         "Then the chiefs of Edom were dismayed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4567,7 +4221,6 @@
         "Trembling takes hold of the mighty men of Moab."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4575,12 +4228,10 @@
         "All the inhabitants of Canaan have melted away."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4590,7 +4241,6 @@
         "Terror and dread falls on them."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4598,7 +4248,6 @@
         "By the greatness of your arm they are as still as a stone,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4606,7 +4255,6 @@
         "until your people pass over, Yahweh,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4614,12 +4262,10 @@
         "until the people you have purchased pass over."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4629,7 +4275,6 @@
         "You will bring them in, and plant them in the mountain of your inheritance,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4637,7 +4282,6 @@
         "the place, Yahweh, which you have made for yourself to dwell in;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -4645,12 +4289,10 @@
         "the sanctuary, Lord, which your hands have established."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4660,12 +4302,10 @@
         "Yahweh will reign forever and ever.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4689,7 +4329,6 @@
         "Miriam answered them,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4697,7 +4336,6 @@
         "“Sing to Yahweh, for he has triumphed gloriously."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -4705,12 +4343,10 @@
         "He has thrown the horse and his rider into the sea.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4746,7 +4382,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -4770,12 +4405,10 @@
         "He said, “If you will diligently listen to Yahweh your God’s voice, and will do that which is right in his eyes, and will pay attention to his commandments, and keep all his statutes, I will put none of the diseases on you which I have put on the Egyptians; for I am Yahweh who heals you.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4785,20 +4418,16 @@
         "They came to Elim, where there were twelve springs of water and seventy palm trees. They encamped there by the waters."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "16",
       "sid": "EXO 16"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4822,12 +4451,10 @@
         "and the children of Israel said to them, “We wish that we had died by Yahweh’s hand in the land of Egypt, when we sat by the meat pots, when we ate our fill of bread, for you have brought us out into this wilderness to kill this whole assembly with hunger.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4844,12 +4471,10 @@
         "It shall come to pass on the sixth day, that they shall prepare that which they bring in, and it shall be twice as much as they gather daily.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -4901,12 +4526,10 @@
         "“I have heard the murmurings of the children of Israel. Speak to them, saying, ‘At evening you shall eat meat, and in the morning you shall be filled with bread. Then you will know that I am Yahweh your God.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5057,12 +4680,10 @@
         "So the people rested on the seventh day."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5150,20 +4771,16 @@
         }
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "17",
       "sid": "EXO 17"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5180,7 +4797,6 @@
         "Therefore the people quarreled with Moses, and said, “Give us water to drink.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5188,12 +4804,10 @@
         "Moses said to them, “Why do you quarrel with me? Why do you test Yahweh?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5203,12 +4817,10 @@
         "The people were thirsty for water there; so the people murmured against Moses, and said, “Why have you brought us up out of Egypt, to kill us, our children, and our livestock with thirst?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5218,12 +4830,10 @@
         "Moses cried to Yahweh, saying, “What shall I do with these people? They are almost ready to stone me.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5291,12 +4901,10 @@
         " because the children of Israel quarreled, and because they tested Yahweh, saying, “Is Yahweh among us, or not?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5374,7 +4982,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -5384,20 +4991,16 @@
         "He said, “Yah has sworn: ‘Yahweh will have war with Amalek from generation to generation.’”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "18",
       "sid": "EXO 18"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5486,12 +5089,10 @@
         "He said to Moses, “I, your father-in-law Jethro, have come to you with your wife, and her two sons with her.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5536,12 +5137,10 @@
         "Jethro, Moses’ father-in-law, took a burnt offering and sacrifices for God. Aaron came with all the elders of Israel, to eat bread with Moses’ father-in-law before God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5558,12 +5157,10 @@
         "When Moses’ father-in-law saw all that he did to the people, he said, “What is this thing that you do for the people? Why do you sit alone, and all the people stand around you from morning to evening?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5629,12 +5226,10 @@
         "If you will do this thing, and God commands you so, then you will be able to endure, and all these people also will go to their place in peace.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5665,20 +5260,16 @@
         "Moses let his father-in-law depart, and he went his way into his own land."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "19",
       "sid": "EXO 19"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5723,12 +5314,10 @@
         "and you shall be to me a kingdom of priests and a holy nation.’ These are the words which you shall speak to the children of Israel.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5745,7 +5334,6 @@
         "All the people answered together, and said, “All that Yahweh has spoken we will do.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -5788,12 +5376,10 @@
         "No hand shall touch him, but he shall surely be stoned or shot through; whether it is animal or man, he shall not live.’ When the trumpet sounds long, they shall come up to the mountain.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5810,12 +5396,10 @@
         "He said to the people, “Be ready by the third day. Don’t have sexual relations with a woman.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5853,12 +5437,10 @@
         "Yahweh came down on Mount Sinai, to the top of the mountain. Yahweh called Moses to the top of the mountain, and Moses went up."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5875,12 +5457,10 @@
         "Let the priests also, who come near to Yahweh, sanctify themselves, lest Yahweh break out on them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5890,12 +5470,10 @@
         "Moses said to Yahweh, “The people can’t come up to Mount Sinai, for you warned us, saying, ‘Set bounds around the mountain, and sanctify it.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5905,12 +5483,10 @@
         "Yahweh said to him, “Go down! You shall bring Aaron up with you, but don’t let the priests and the people break through to come up to Yahweh, lest he break out against them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5920,20 +5496,16 @@
         "So Moses went down to the people, and told them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "20",
       "sid": "EXO 20"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5972,12 +5544,10 @@
         "“I am Yahweh your God, who brought you out of the land of Egypt, out of the house of bondage."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -5987,12 +5557,10 @@
         "“You shall have no other gods before me."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6016,12 +5584,10 @@
         "and showing loving kindness to thousands of those who love me and keep my commandments."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6053,12 +5619,10 @@
         " for Yahweh will not hold him guiltless who misuses his name."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6089,12 +5653,10 @@
         "for in six days Yahweh made heaven and earth, the sea, and all that is in them, and rested the seventh day; therefore Yahweh blessed the Sabbath day, and made it holy."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6104,12 +5666,10 @@
         "“Honor your father and your mother, that your days may be long in the land which Yahweh your God gives you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6119,12 +5679,10 @@
         "“You shall not murder."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6134,12 +5692,10 @@
         "“You shall not commit adultery."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6149,12 +5705,10 @@
         "“You shall not steal."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6164,12 +5718,10 @@
         "“You shall not give false testimony against your neighbor."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6179,12 +5731,10 @@
         "“You shall not covet your neighbor’s house. You shall not covet your neighbor’s wife, nor his male servant, nor his female servant, nor his ox, nor his donkey, nor anything that is your neighbor’s.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6201,12 +5751,10 @@
         "They said to Moses, “Speak with us yourself, and we will listen; but don’t let God speak with us, lest we die.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6223,12 +5771,10 @@
         "The people stayed at a distance, and Moses came near to the thick darkness where God was."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6266,20 +5812,16 @@
         "You shall not go up by steps to my altar, that your nakedness may not be exposed to it.’"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "21",
       "sid": "EXO 21"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6289,12 +5831,10 @@
         "“Now these are the ordinances which you shall set before them:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6332,12 +5872,10 @@
         "then his master shall bring him to God, and shall bring him to the door or to the doorpost, and his master shall bore his ear through with an awl, and he shall serve him forever."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6375,12 +5913,10 @@
         "If he doesn’t do these three things for her, she may go free without paying any money."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6404,12 +5940,10 @@
         "If a man schemes and comes presumptuously on his neighbor to kill him, you shall take him from my altar, that he may die."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6419,12 +5953,10 @@
         "“Anyone who attacks his father or his mother shall be surely put to death."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6434,12 +5966,10 @@
         "“Anyone who kidnaps someone and sells him, or if he is found in his hand, he shall surely be put to death."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6449,12 +5979,10 @@
         "“Anyone who curses his father or his mother shall surely be put to death."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6471,12 +5999,10 @@
         "if he rises again and walks around with his staff, then he who struck him shall be cleared; only he shall pay for the loss of his time, and shall provide for his healing until he is thoroughly healed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6493,12 +6019,10 @@
         "Notwithstanding, if his servant gets up after a day or two, he shall not be punished, for the servant is his property."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6529,12 +6053,10 @@
         "burning for burning, wound for wound, and bruise for bruise."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6551,12 +6073,10 @@
         "If he strikes out his male servant’s tooth, or his female servant’s tooth, he shall let the servant go free for his tooth’s sake."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6616,12 +6136,10 @@
         " of silver shall be given to their master, and the ox shall be stoned."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6638,12 +6156,10 @@
         "the owner of the pit shall make it good. He shall give money to its owner, and the dead animal shall be his."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6660,20 +6176,16 @@
         "Or if it is known that the bull was in the habit of goring in the past, and its owner has not kept it in, he shall surely pay bull for bull, and the dead animal shall be his own."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "22",
       "sid": "EXO 22"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6704,12 +6216,10 @@
         "If the stolen property is found in his hand alive, whether it is ox, donkey, or sheep, he shall pay double."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6719,12 +6229,10 @@
         "“If a man causes a field or vineyard to be eaten by letting his animal loose, and it grazes in another man’s field, he shall make restitution from the best of his own field, and from the best of his own vineyard."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6734,12 +6242,10 @@
         "“If fire breaks out, and catches in thorns so that the shocks of grain, or the standing grain, or the field are consumed; he who kindled the fire shall surely make restitution."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6763,12 +6269,10 @@
         "For every matter of trespass, whether it is for ox, for donkey, for sheep, for clothing, or for any kind of lost thing, about which one says, ‘This is mine,’ the cause of both parties shall come before God. He whom God condemns shall pay double to his neighbor."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6799,12 +6303,10 @@
         "If it is torn in pieces, let him bring it for evidence. He shall not make good that which was torn."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6821,12 +6323,10 @@
         "If its owner is with it, he shall not make it good. If it is a leased thing, it came for its lease."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6843,12 +6343,10 @@
         "If her father utterly refuses to give her to him, he shall pay money according to the dowry of virgins."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6858,12 +6356,10 @@
         "“You shall not allow a sorceress to live."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6873,12 +6369,10 @@
         "“Whoever has sex with an animal shall surely be put to death."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6888,12 +6382,10 @@
         "“He who sacrifices to any god, except to Yahweh only, shall be utterly destroyed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6903,12 +6395,10 @@
         "“You shall not wrong an alien or oppress him, for you were aliens in the land of Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6932,12 +6422,10 @@
         "and my wrath will grow hot, and I will kill you with the sword; and your wives shall be widows, and your children fatherless."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6961,12 +6449,10 @@
         "for that is his only covering, it is his garment for his skin. What would he sleep in? It will happen, when he cries to me, that I will hear, for I am gracious."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6976,12 +6462,10 @@
         "“You shall not blaspheme God, nor curse a ruler of your people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -6991,7 +6475,6 @@
         "“You shall not delay to offer from your harvest and from the outflow of your presses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -7006,12 +6489,10 @@
         "You shall do likewise with your cattle and with your sheep. It shall be with its mother seven days, then on the eighth day you shall give it to me."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7021,20 +6502,16 @@
         "“You shall be holy men to me, therefore you shall not eat any meat that is torn by animals in the field. You shall cast it to the dogs."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "23",
       "sid": "EXO 23"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7044,12 +6521,10 @@
         "“You shall not spread a false report. Don’t join your hand with the wicked to be a malicious witness."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7066,12 +6541,10 @@
         "You shall not favor a poor man in his cause."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7088,12 +6561,10 @@
         "If you see the donkey of him who hates you fallen down under his burden, don’t leave him. You shall surely help him with it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7103,12 +6574,10 @@
         "“You shall not deny justice to your poor people in their lawsuits."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7118,12 +6587,10 @@
         "“Keep far from a false charge, and don’t kill the innocent and righteous; for I will not justify the wicked."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7133,12 +6600,10 @@
         "“You shall take no bribe, for a bribe blinds those who have sight and perverts the words of the righteous."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7148,12 +6613,10 @@
         "“You shall not oppress an alien, for you know the heart of an alien, since you were aliens in the land of Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7170,12 +6633,10 @@
         "but the seventh year you shall let it rest and lie fallow, that the poor of your people may eat; and what they leave the animal of the field shall eat. In the same way, you shall deal with your vineyard and with your olive grove."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7185,12 +6646,10 @@
         "“Six days you shall do your work, and on the seventh day you shall rest, that your ox and your donkey may have rest, and the son of your servant, and the alien may be refreshed."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7200,12 +6659,10 @@
         "“Be careful to do all things that I have said to you; and don’t invoke the name of other gods or even let them be heard out of your mouth."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7236,12 +6693,10 @@
         "Three times in the year all your males shall appear before the Lord Yahweh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7251,12 +6706,10 @@
         "“You shall not offer the blood of my sacrifice with leavened bread. The fat of my feast shall not remain all night until the morning."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7266,7 +6719,6 @@
         "You shall bring the first of the first fruits of your ground into the house of Yahweh your God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -7274,12 +6726,10 @@
         "“You shall not boil a young goat in its mother’s milk."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7380,20 +6830,16 @@
         "They shall not dwell in your land, lest they make you sin against me, for if you serve their gods, it will surely be a snare to you.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "24",
       "sid": "EXO 24"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7410,12 +6856,10 @@
         "Moses alone shall come near to Yahweh, but they shall not come near. The people shall not go up with him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7425,12 +6869,10 @@
         "Moses came and told the people all Yahweh’s words, and all the ordinances; and all the people answered with one voice, and said, “All the words which Yahweh has spoken will we do.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7461,12 +6903,10 @@
         "He took the book of the covenant and read it in the hearing of the people, and they said, “We will do all that Yahweh has said, and be obedient.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7476,12 +6916,10 @@
         "Moses took the blood, and sprinkled it on the people, and said, “Look, this is the blood of the covenant, which Yahweh has made with you concerning all these words.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7527,12 +6965,10 @@
         "He didn’t lay his hand on the nobles of the children of Israel. They saw God, and ate and drank."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7542,12 +6978,10 @@
         "Yahweh said to Moses, “Come up to me on the mountain, and stay here, and I will give you the stone tablets with the law and the commands that I have written, that you may teach them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7564,12 +6998,10 @@
         "He said to the elders, “Wait here for us, until we come again to you. Behold, Aaron and Hur are with you. Whoever is involved in a dispute can go to them.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7600,20 +7032,16 @@
         "Moses entered into the middle of the cloud, and went up on the mountain; and Moses was on the mountain forty days and forty nights."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "25",
       "sid": "EXO 25"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7701,12 +7129,10 @@
         "According to all that I show you, the pattern of the tabernacle, and the pattern of all of its furniture, even so you shall make it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7822,12 +7248,10 @@
         "There I will meet with you, and I will tell you from above the mercy seat, from between the two cherubim which are on the ark of the covenant, all that I command you for the children of Israel."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7886,12 +7310,10 @@
         "You shall set bread of the presence on the table before me always."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -7986,20 +7408,16 @@
         "See that you make them after their pattern, which has been shown to you on the mountain."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "26",
       "sid": "EXO 26"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8066,12 +7484,10 @@
         "You shall make fifty clasps of gold, and couple the curtains to one another with the clasps. The tabernacle shall be a unit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8130,12 +7546,10 @@
         "You shall make a covering for the tent of rams’ skins dyed red, and a covering of sea cow hides above."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8215,12 +7629,10 @@
         "There shall be eight boards, and their sockets of silver, sixteen sockets; two sockets under one board, and two sockets under another board."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8258,12 +7670,10 @@
         "You shall set up the tabernacle according to the way that it was shown to you on the mountain."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8301,12 +7711,10 @@
         "You shall set the table outside the veil, and the lamp stand opposite the table on the side of the tabernacle toward the south. You shall put the table on the north side."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8323,20 +7731,16 @@
         "You shall make for the screen five pillars of acacia, and overlay them with gold. Their hooks shall be of gold. You shall cast five sockets of bronze for them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "27",
       "sid": "EXO 27"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8387,7 +7791,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -8439,12 +7842,10 @@
         "You shall make it hollow with planks. They shall make it as it has been shown you on the mountain."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8524,12 +7925,10 @@
         "All the instruments of the tabernacle in all its service, and all its pins, and all the pins of the court, shall be of bronze."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8546,20 +7945,16 @@
         "In the Tent of Meeting, outside the veil which is before the covenant, Aaron and his sons shall keep it in order from evening to morning before Yahweh: it shall be a statute forever throughout their generations on the behalf of the children of Israel."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "28",
       "sid": "EXO 28"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8597,12 +7992,10 @@
         "They shall use the gold, and the blue, and the purple, and the scarlet, and the fine linen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8668,12 +8061,10 @@
         "and two chains of pure gold; you shall make them like cords of braided work. You shall put the braided chains on the settings."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8832,12 +8223,10 @@
         "You shall put in the breastplate of judgment the Urim and the Thummim; and they shall be on Aaron’s heart, when he goes in before Yahweh. Aaron shall bear the judgment of the children of Israel on his heart before Yahweh continually."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8875,12 +8264,10 @@
         "It shall be on Aaron to minister: and its sound shall be heard when he goes in to the holy place before Yahweh, and when he comes out, that he not die."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8911,12 +8298,10 @@
         "You shall weave the tunic with fine linen. You shall make a turban of fine linen. You shall make a sash, the work of the embroiderer."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -8947,20 +8332,16 @@
         "They shall be on Aaron and on his sons, when they go in to the Tent of Meeting, or when they come near to the altar to minister in the holy place, that they don’t bear iniquity, and die. This shall be a statute forever to him and to his offspring after him."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "29",
       "sid": "EXO 29"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9026,12 +8407,10 @@
         "You shall clothe them with belts, Aaron and his sons, and bind headbands on them. They shall have the priesthood by a perpetual statute. You shall consecrate Aaron and his sons."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9069,12 +8448,10 @@
         "But the meat of the bull, and its skin, and its dung, you shall burn with fire outside of the camp. It is a sin offering."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9105,12 +8482,10 @@
         "You shall burn the whole ram on the altar: it is a burnt offering to Yahweh; it is a pleasant aroma, an offering made by fire to Yahweh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9162,12 +8537,10 @@
         "You shall take them from their hands, and burn them on the altar on the burnt offering, for a pleasant aroma before Yahweh: it is an offering made by fire to Yahweh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9191,12 +8564,10 @@
         "It shall be for Aaron and his sons as their portion forever from the children of Israel; for it is a wave offering. It shall be a wave offering from the children of Israel of the sacrifices of their peace offerings, even their wave offering to Yahweh."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9213,12 +8584,10 @@
         "Seven days shall the son who is priest in his place put them on, when he comes into the Tent of Meeting to minister in the holy place."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9249,12 +8618,10 @@
         "If anything of the meat of the consecration, or of the bread, remains to the morning, then you shall burn the remainder with fire. It shall not be eaten, because it is holy."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9278,12 +8645,10 @@
         "Seven days you shall make atonement for the altar, and sanctify it; and the altar shall be most holy. Whatever touches the altar shall be holy."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9393,20 +8758,16 @@
         "They shall know that I am Yahweh their God, who brought them out of the land of Egypt, that I might dwell among them: I am Yahweh their God."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "30",
       "sid": "EXO 30"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9501,12 +8862,10 @@
         "Aaron shall make atonement on its horns once in the year; with the blood of the sin offering of atonement once in the year he shall make atonement for it throughout your generations. It is most holy to Yahweh.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9617,12 +8976,10 @@
         "You shall take the atonement money from the children of Israel, and shall appoint it for the service of the Tent of Meeting; that it may be a memorial for the children of Israel before Yahweh, to make atonement for your souls.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9660,12 +9017,10 @@
         "So they shall wash their hands and their feet, that they not die. This shall be a statute forever to them, even to him and to his descendants throughout their generations.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9796,12 +9151,10 @@
         "Whoever compounds any like it, or whoever puts any of it on a stranger, he shall be cut off from his people.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9839,20 +9192,16 @@
         "Whoever shall make any like that, to smell of it, he shall be cut off from his people.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "31",
       "sid": "EXO 31"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9932,12 +9281,10 @@
         "the anointing oil, and the incense of sweet spices for the holy place: according to all that I have commanded you they shall do.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9982,12 +9329,10 @@
         "It is a sign between me and the children of Israel forever; for in six days Yahweh made heaven and earth, and on the seventh day he rested, and was refreshed.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -9997,20 +9342,16 @@
         "When he finished speaking with him on Mount Sinai, he gave Moses the two tablets of the covenant, stone tablets, written with God’s finger."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "32",
       "sid": "EXO 32"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10020,12 +9361,10 @@
         "When the people saw that Moses delayed coming down from the mountain, the people gathered themselves together to Aaron, and said to him, “Come, make us gods, which shall go before us; for as for this Moses, the man who brought us up out of the land of Egypt, we don’t know what has become of him.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10035,12 +9374,10 @@
         "Aaron said to them, “Take off the golden rings, which are in the ears of your wives, of your sons, and of your daughters, and bring them to me.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10057,12 +9394,10 @@
         "He received what they handed him, fashioned it with an engraving tool, and made it a molded calf. Then they said, “These are your gods, Israel, which brought you up out of the land of Egypt.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10072,12 +9407,10 @@
         "When Aaron saw this, he built an altar before it; and Aaron made a proclamation, and said, “Tomorrow shall be a feast to Yahweh.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10087,12 +9420,10 @@
         "They rose up early on the next day, and offered burnt offerings, and brought peace offerings; and the people sat down to eat and to drink, and rose up to play."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10109,12 +9440,10 @@
         "They have turned away quickly out of the way which I commanded them. They have made themselves a molded calf, and have worshiped it, and have sacrificed to it, and said, ‘These are your gods, Israel, which brought you up out of the land of Egypt.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10131,12 +9460,10 @@
         "Now therefore leave me alone, that my wrath may burn hot against them, and that I may consume them; and I will make of you a great nation.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10182,12 +9509,10 @@
         " as the stars of the sky, and all this land that I have spoken of I will give to your offspring, and they shall inherit it forever.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10197,12 +9522,10 @@
         "So Yahweh turned away from the evil which he said he would do to his people."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10219,12 +9542,10 @@
         "The tablets were the work of God, and the writing was the writing of God, engraved on the tablets."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10234,12 +9555,10 @@
         "When Joshua heard the noise of the people as they shouted, he said to Moses, “There is the noise of war in the camp.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10263,12 +9582,10 @@
         "He took the calf which they had made, and burned it with fire, ground it to powder, and scattered it on the water, and made the children of Israel drink it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10278,12 +9595,10 @@
         "Moses said to Aaron, “What did these people do to you, that you have brought a great sin on them?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10307,12 +9622,10 @@
         "I said to them, ‘Whoever has any gold, let them take it off.’ So they gave it to me; and I threw it into the fire, and out came this calf.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10329,7 +9642,6 @@
         "then Moses stood in the gate of the camp, and said, “Whoever is on Yahweh’s side, come to me!”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -10358,12 +9670,10 @@
         "Moses said, “Consecrate yourselves today to Yahweh, for every man was against his son and against his brother, that he may give you a blessing today.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10373,12 +9683,10 @@
         "On the next day, Moses said to the people, “You have sinned a great sin. Now I will go up to Yahweh. Perhaps I shall make atonement for your sin.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10395,12 +9703,10 @@
         "Yet now, if you will, forgive their sin—and if not, please blot me out of your book which you have written.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10424,20 +9730,16 @@
         "Yahweh struck the people, because of what they did with the calf, which Aaron made."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "33",
       "sid": "EXO 33"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10461,12 +9763,10 @@
         "Go to a land flowing with milk and honey; but I will not go up among you, for you are a stiff-necked people, lest I consume you on the way.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10476,12 +9776,10 @@
         "When the people heard this evil news, they mourned; and no one put on his jewelry."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10491,12 +9789,10 @@
         "Yahweh had said to Moses, “Tell the children of Israel, ‘You are a stiff-necked people. If I were to go up among you for one moment, I would consume you. Therefore now take off your jewelry from you, that I may know what to do to you.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10506,12 +9802,10 @@
         "The children of Israel stripped themselves of their jewelry from Mount Horeb onward."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10549,12 +9843,10 @@
         "Yahweh spoke to Moses face to face, as a man speaks to his friend. He turned again into the camp, but his servant Joshua, the son of Nun, a young man, didn’t depart from the Tent."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10571,12 +9863,10 @@
         "Now therefore, if I have found favor in your sight, please show me your way, now, that I may know you, so that I may find favor in your sight; and consider that this nation is your people.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10586,12 +9876,10 @@
         "He said, “My presence will go with you, and I will give you rest.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10608,12 +9896,10 @@
         "For how would people know that I have found favor in your sight, I and your people? Isn’t it that you go with us, so that we are separated, I and your people, from all the people who are on the surface of the earth?”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10623,12 +9909,10 @@
         "Yahweh said to Moses, “I will do this thing also that you have spoken; for you have found favor in my sight, and I know you by name.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10638,12 +9922,10 @@
         "Moses said, “Please show me your glory.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10681,20 +9963,16 @@
         "then I will take away my hand, and you will see my back; but my face shall not be seen.”"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "34",
       "sid": "EXO 34"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10718,12 +9996,10 @@
         "No one shall come up with you or be seen anywhere on the mountain. Do not let the flocks or herds graze in front of that mountain.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10754,12 +10030,10 @@
         "keeping loving kindness for thousands, forgiving iniquity and disobedience and sin; and who will by no means clear the guilty, visiting the iniquity of the fathers on the children, and on the children’s children, on the third and on the fourth generation.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10776,12 +10050,10 @@
         "He said, “If now I have found favor in your sight, Lord, please let the Lord go among us, even though this is a stiff-necked people; pardon our iniquity and our sin, and take us for your inheritance.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10819,12 +10091,10 @@
         "for you shall worship no other god; for Yahweh, whose name is Jealous, is a jealous God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10841,12 +10111,10 @@
         "and you take of their daughters to your sons, and their daughters play the prostitute after their gods, and make your sons play the prostitute after their gods."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10856,12 +10124,10 @@
         "“You shall make no cast idols for yourselves."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10871,12 +10137,10 @@
         "“You shall keep the feast of unleavened bread. Seven days you shall eat unleavened bread, as I commanded you, at the time appointed in the month Abib; for in the month Abib you came out of Egypt."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10893,12 +10157,10 @@
         "You shall redeem the firstborn of a donkey with a lamb. If you will not redeem it, then you shall break its neck. You shall redeem all the firstborn of your sons. No one shall appear before me empty."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10908,12 +10170,10 @@
         "“Six days you shall work, but on the seventh day you shall rest: in plowing time and in harvest you shall rest."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10937,12 +10197,10 @@
         "For I will drive out nations before you and enlarge your borders; neither shall any man desire your land when you go up to appear before Yahweh, your God, three times in the year."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10952,12 +10210,10 @@
         "“You shall not offer the blood of my sacrifice with leavened bread. The sacrifice of the feast of the Passover shall not be left to the morning."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10967,7 +10223,6 @@
         "“You shall bring the first of the first fruits of your ground to the house of Yahweh your God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -10975,12 +10230,10 @@
         "“You shall not boil a young goat in its mother’s milk.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -10990,12 +10243,10 @@
         "Yahweh said to Moses, “Write these words; for in accordance with these words I have made a covenant with you and with Israel.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11005,12 +10256,10 @@
         "He was there with Yahweh forty days and forty nights; he neither ate bread, nor drank water. He wrote on the tablets the words of the covenant, the ten commandments."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11062,20 +10311,16 @@
         "The children of Israel saw Moses’ face, that the skin of Moses’ face shone; so Moses put the veil on his face again, until he went in to speak with him."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "35",
       "sid": "EXO 35"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11099,12 +10344,10 @@
         "You shall kindle no fire throughout your habitations on the Sabbath day.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11149,12 +10392,10 @@
         "onyx stones, and stones to be set for the ephod and for the breastplate."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11227,12 +10468,10 @@
         "the finely worked garments for ministering in the holy place—the holy garments for Aaron the priest, and the garments of his sons—to minister in the priest’s office.’”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11305,12 +10544,10 @@
         "The children of Israel brought a free will offering to Yahweh; every man and woman whose heart made them willing to bring for all the work, which Yahweh had commanded to be made by Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11355,20 +10592,16 @@
         "He has filled them with wisdom of heart to work all kinds of workmanship, of the engraver, of the skillful workman, and of the embroiderer, in blue, in purple, in scarlet, and in fine linen, and of the weaver, even of those who do any workmanship, and of those who make skillful works."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "36",
       "sid": "EXO 36"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11378,12 +10611,10 @@
         "“Bezalel and Oholiab shall work with every wise-hearted man, in whom Yahweh has put wisdom and understanding to know how to do all the work for the service of the sanctuary, according to all that Yahweh has commanded.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11414,12 +10645,10 @@
         "They spoke to Moses, saying, “The people have brought much more than enough for the service of the work which Yahweh commanded to make.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11436,12 +10665,10 @@
         "For the stuff they had was sufficient to do all the work, and too much."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11508,12 +10735,10 @@
         "He made fifty clasps of gold, and coupled the curtains to one another with the clasps: so the tabernacle was a unit."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11558,12 +10783,10 @@
         "He made a covering for the tent of rams’ skins dyed red, and a covering of sea cow hides above."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11643,12 +10866,10 @@
         "There were eight boards and their sockets of silver, sixteen sockets—under every board two sockets."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11679,12 +10900,10 @@
         "He overlaid the boards with gold, and made their rings of gold as places for the bars, and overlaid the bars with gold."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11715,20 +10934,16 @@
         "and the five pillars of it with their hooks. He overlaid their capitals and their fillets with gold, and their five sockets were of bronze."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "37",
       "sid": "EXO 37"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11816,12 +11031,10 @@
         "The cherubim spread out their wings above, covering the mercy seat with their wings, with their faces toward one another. The faces of the cherubim were toward the mercy seat."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11873,12 +11086,10 @@
         "He made the vessels which were on the table, its dishes, its spoons, its bowls, and its pitchers with which to pour out, of pure gold."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -11959,12 +11170,10 @@
         " of pure gold, with all its vessels."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12002,20 +11211,16 @@
         "He made the holy anointing oil and the pure incense of sweet spices, after the art of the perfumer."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "38",
       "sid": "EXO 38"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12089,12 +11294,10 @@
         "He put the poles into the rings on the sides of the altar, with which to carry it. He made it hollow with planks."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12104,12 +11307,10 @@
         "He made the basin of bronze, and its base of bronze, out of the mirrors of the ministering women who ministered at the door of the Tent of Meeting."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12196,12 +11397,10 @@
         "All the pins of the tabernacle, and around the court, were of bronze."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12225,12 +11424,10 @@
         "With him was Oholiab, the son of Ahisamach, of the tribe of Dan, an engraver, and a skillful workman, and an embroiderer in blue, in purple, in scarlet, and in fine linen."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12492,7 +11689,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -12509,20 +11705,16 @@
         "the sockets around the court, the sockets of the gate of the court, all the pins of the tabernacle, and all the pins around the court."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "39",
       "sid": "EXO 39"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12532,12 +11724,10 @@
         "Of the blue, purple, and scarlet, they made finely worked garments for ministering in the holy place, and made the holy garments for Aaron, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12568,12 +11758,10 @@
         "The skillfully woven band that was on it, with which to fasten it on, was of the same piece, like its work: of gold, of blue, purple, scarlet, and fine twined linen, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12590,12 +11778,10 @@
         "He put them on the shoulder straps of the ephod, to be stones of memorial for the children of Israel, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12740,12 +11926,10 @@
         "They bound the breastplate by its rings to the rings of the ephod with a lace of blue, that it might be on the skillfully woven band of the ephod, and that the breastplate might not come loose from the ephod, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12783,12 +11967,10 @@
         "a bell and a pomegranate, a bell and a pomegranate, around the skirts of the robe, to minister in, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12812,12 +11994,10 @@
         "the sash of fine twined linen, blue, purple, and scarlet, the work of the embroiderer, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12834,12 +12014,10 @@
         "They tied to it a lace of blue, to fasten it on the turban above, as Yahweh commanded Moses."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12926,20 +12104,16 @@
         "Moses saw all the work, and behold, they had done it as Yahweh had commanded. They had done so; and Moses blessed them."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "40",
       "sid": "EXO 40"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -12977,12 +12151,10 @@
         "You shall set the golden altar for incense before the ark of the covenant, and put the screen of the door to the tabernacle."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13006,12 +12178,10 @@
         "You shall set up the court around it, and hang up the screen of the gate of the court."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13035,12 +12205,10 @@
         "You shall anoint the basin and its base, and sanctify it."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13078,12 +12246,10 @@
         "Moses did so. According to all that Yahweh commanded him, so he did."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13205,12 +12371,10 @@
         "He raised up the court around the tabernacle and the altar, and set up the screen of the gate of the court. So Moses finished the work."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -13247,8 +12411,6 @@
         },
         "For the cloud of Yahweh was on the tabernacle by day, and there was fire in the cloud by night, in the sight of all the house of Israel, throughout all their journeys."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -19,7 +17,6 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -27,7 +24,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -35,7 +31,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Tit"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,26 +52,22 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "TIT 1:12"
         },
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -89,7 +78,6 @@
           "x-occurrences": "1",
           "x-strong": "G51000"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -99,12 +87,10 @@
             "One"
           ]
         },
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -128,7 +114,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -168,7 +153,6 @@
             "their"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -190,7 +174,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -214,7 +197,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -234,7 +216,6 @@
             "has"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -272,7 +253,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -296,7 +276,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -320,7 +299,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -368,7 +346,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -416,7 +393,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -442,8 +418,6 @@
         },
         ".\""
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

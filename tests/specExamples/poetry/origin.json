@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -19,7 +17,6 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -27,7 +24,6 @@
         "The Acts of the Apostles"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -35,7 +31,6 @@
         "Acts"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -43,7 +38,6 @@
         "One of these brothers, Joseph, had become..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ipr",
@@ -51,14 +45,12 @@
         "(50.24)"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "136",
       "sid": "MAT 136"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qa",
@@ -66,7 +58,6 @@
         "Aleph"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -74,19 +65,16 @@
         "God's Love Never Fails"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MAT 136:1"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "qac",
@@ -105,7 +93,6 @@
         "! He is good."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qr",
@@ -120,12 +107,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -135,7 +120,6 @@
         "Praise the God of all gods."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -143,12 +127,10 @@
         "May his glory fill the whole world."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qc",
@@ -156,7 +138,6 @@
         "Amen! Amen!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qd",
@@ -164,12 +145,10 @@
         "For the director of music. On my stringed instruments."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -179,7 +158,6 @@
         "God's spirit took control of one of them, Amasai, who later became the commander of “The Thirty,” and he called out,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qm1",
@@ -187,7 +165,6 @@
         "“David son of Jesse, we are yours!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qm1",
@@ -195,7 +172,6 @@
         "Success to you and those who help you!"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "qm1",
@@ -203,20 +179,16 @@
         "God is on your side.”"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
         "David welcomed them and made them officers in his army."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

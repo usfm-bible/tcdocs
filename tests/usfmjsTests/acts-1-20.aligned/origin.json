@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "EN_ULT en_English_ltr Wed Oct 10 2018 11:55:23 GMT-0400 (EDT) tc"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -19,19 +17,16 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "ACT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -62,7 +57,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -82,7 +76,6 @@
             "it"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -92,7 +85,6 @@
             "is"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -106,7 +98,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -130,7 +121,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -150,7 +140,6 @@
             "the"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -164,7 +153,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -184,7 +172,6 @@
             "of"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -201,7 +188,6 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -230,7 +216,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -254,7 +239,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -292,7 +276,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -312,7 +295,6 @@
             "be"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -326,7 +308,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -353,12 +334,10 @@
         ","
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -369,7 +348,6 @@
           "x-occurrences": "1",
           "x-strong": "G25320"
         },
-        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -379,12 +357,10 @@
             "and"
           ]
         },
-        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -408,7 +384,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -432,7 +407,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -456,7 +430,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -476,7 +449,6 @@
             "even"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -486,7 +458,6 @@
             "one"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -500,7 +471,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -524,7 +494,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -565,7 +534,6 @@
         "';"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -594,7 +562,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -618,7 +585,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -638,7 +604,6 @@
             "someone"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -652,7 +617,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -676,7 +640,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -700,7 +663,6 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -730,7 +692,6 @@
             "position"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -740,7 +701,6 @@
             "of"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -761,19 +721,15 @@
         ".'"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "- Good News Study Bible - Notes Material"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "is1",
@@ -19,12 +17,10 @@
         "The Story"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "bk",
@@ -43,19 +39,16 @@
         " is about to arrive..."
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -64,8 +57,6 @@
         },
         "sample verse"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

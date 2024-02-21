@@ -2,26 +2,22 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40,11 +36,8 @@
             "This is the caption"
           ]
         },
-        " more text",
-        "\n  "
+        " more text"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

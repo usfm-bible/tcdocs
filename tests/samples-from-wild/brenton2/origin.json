@@ -2,14 +2,12 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "SNG",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -17,7 +15,6 @@
         "Song of Songs"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -25,7 +22,6 @@
         "SONG OF SONGS"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -33,7 +29,6 @@
         "Song of Songs"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -41,7 +36,6 @@
         "SNG"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -49,19 +43,16 @@
         "SONG OF SONGS"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "SNG 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -207,20 +198,16 @@
         "The beams of our house are cedars, our ceilings are of cypress."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "SNG 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -381,20 +368,16 @@
         "Until the day dawn, and the shadows depart, turn, my kinsman, be thou like to a roe or young hart on the mountains of the ravines."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "SNG 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -513,20 +496,16 @@
         "Go forth, ye daughters of Sion, and behold king Solomon, with the crown wherewith his mother crowned him, in the day of his espousals, and in the day of the gladness of his heart."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "SNG 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -681,20 +660,16 @@
         "Awake, O north wind; and come, O south; and blow through my garden, and let my spices flow out."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "5",
       "sid": "SNG 5"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -888,20 +863,16 @@
         ", and we will seek him with thee."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "SNG 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1052,20 +1023,16 @@
         "Return, return, O Sunamite; return, return, and we will look at thee. What will ye see in the Sunamite? She comes as bands of armies."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "7",
       "sid": "SNG 7"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1215,20 +1182,16 @@
         " for thee."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "SNG 8"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1384,8 +1347,6 @@
         },
         "Away, my kinsman, and be like a doe or a fawn on the mountains of spices."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Unlocked Literal Bible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Letter of Paul to Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Tit"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,7 +52,6 @@
         "Titus"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "iot",
@@ -67,7 +59,6 @@
         "Outline of Contents"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -75,7 +66,6 @@
         "The beginning of the gospel 1.1-13"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -83,7 +73,6 @@
         "Jesus' public ministry in Galilee 1.14-9.50"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -91,7 +80,6 @@
         "From Galilee to Jerusalem 10.1-52"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -99,7 +87,6 @@
         "The last week in and near Jerusalem 11.1-15.47"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -107,7 +94,6 @@
         "The resurrection of Jesus 16.1-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -115,7 +101,6 @@
         "[An Old Ending to the Gospel 16.9-20]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -123,7 +108,6 @@
         "[Another Old Ending 16.9-10]"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -155,7 +139,6 @@
         " by him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -171,7 +154,6 @@
         " to faith\"."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "is1",
@@ -179,12 +161,10 @@
         "The Story"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "bk",
@@ -203,7 +183,6 @@
         " is about to arrive."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -219,7 +198,6 @@
         "-worker. He is also the Messiah, the Son of God, the Son of Man. These three titles express the first Christians' understanding of who Jesus is."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ili",
@@ -259,7 +237,6 @@
         " \" (10.46-48) also identifies Jesus as the Messiah, who would restore to Israel the power and glory it enjoyed under David's reign (also 12.35-37)."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ili",
@@ -275,7 +252,6 @@
         " is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of God (15.39)."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ili",
@@ -307,25 +283,21 @@
         " the title is used of Jesus in three ways: the Son of Man acts with divine power (2.10, 28); he will be rejected, will suffer and die (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and glory (8.38; 13.26; 14.62)."
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -349,18 +321,15 @@
         "At the right time, he revealed his word by the message that he trusted me to deliver, by the command of God our savior."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -370,12 +339,10 @@
         "To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -385,18 +352,15 @@
         "For this purpose I left you in Crete, that you might set in order things not yet complete and ordain elders in every city as I directed you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -413,18 +377,15 @@
         "It is necessary for the overseer, as God's household manager, to be blameless. He must not be arrogant, not be easily angered, not addicted to wine, not a brawler, and not a greedy man."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -441,18 +402,15 @@
         "He should hold tightly to the trustworthy message that was taught, so that he may be able to encourage others with good teaching and correct those who oppose him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -469,18 +427,15 @@
         "It is necessary to stop them. They are upsetting whole families by teaching for shameful profit what they should not teach."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -497,7 +452,6 @@
         "where he stayed 40 days, being tempted by Satan. Wild animals were there also, but angels came and helped him."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -505,7 +459,6 @@
         "Jesus' Public Ministry in Galilee"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mr",
@@ -513,7 +466,6 @@
         "1.14--9.50"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -529,7 +481,6 @@
         " mentioned (14.1). He spends much of his time in Capernaum (1.21; 2.1; 3.1, 20; 9.33) and other places around Lake Galilee (1.9; 2.13; 3.7; 4.1). Twice Jesus ventures out of Galilee: into the region of the Ten Towns (5.1-20) and Phoenicia (7.24-31). His actions and teachings soon arouse opposition from the religious leaders (2.6-7, 24; 3.6, 22; 7.1-13; 8.11-12), and before long he predicts his coming arrest, condemnation, and crucifixion (8.31; 9.30-31)."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -537,7 +488,6 @@
         "Jesus Calls Four Fishermen"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -545,7 +495,6 @@
         "(Mt 4.12-22; Lk 4.14-15; 5.1-11)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -561,12 +510,10 @@
         ", which will happen soon. To prepare for it, the people need to repent (1.15). He immediately summons two pairs of fishermen brothers to be his followers and helpers."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -576,18 +523,15 @@
         "After John had been put in prison, Jesus went to Galilee and preached the Good News from God."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -604,26 +548,21 @@
         "They profess to know God, but they deny him by their actions. They are detestable, disobedient, and unfit for doing any good work."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "TIT 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -640,18 +579,15 @@
         "Teach older men to be temperate, dignified, sensible, sound in faith, in love, and in perseverance."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -675,18 +611,15 @@
         "to be sensible, pure, good housekeepers, and obedient to their own husbands, so that God's word may not be insulted."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -710,18 +643,15 @@
         "and a correct message that is above criticism, so that anyone who opposes you may be ashamed because they have nothing bad to say about us."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -738,18 +668,15 @@
         "to not steal from them, but instead to demonstrate all good faith, so that in every way they may bring credit to the teaching about God our Savior."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -773,18 +700,15 @@
         "while we look forward to receiving our blessed hope, the appearance of the glory of our great God and Savior Jesus Christ."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -794,18 +718,15 @@
         "Jesus gave himself for us in order to redeem us from all lawlessness and to make pure, for himself, a special people who are eager to do good works."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -815,26 +736,21 @@
         "Speak of these things, encourage people to do them, and give correction with all authority. Let no one disregard you."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "TIT 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -851,18 +767,15 @@
         "to revile no one, to not be eager to fight, and to be gentle, showing all humility toward everyone."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -872,18 +785,15 @@
         "For once we ourselves were thoughtless and disobedient. We were led astray and enslaved by various passions and pleasures. We lived in evil and envy. We were detestable and hated one another."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -900,18 +810,15 @@
         "it was not by works of righteousness that we did, but by his mercy that he saved us, through the washing of new birth and renewal by the Holy Spirit,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -928,18 +835,15 @@
         "so that having been justified by his grace, we might become heirs with the certain hope of eternal life."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -949,18 +853,15 @@
         "This message is trustworthy. I want you to insist on these things, so that those who have believed in God may be careful to engage themselves in good works. These things are good and useful for everyone."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -984,18 +885,15 @@
         "knowing that such a person has turned from the right way and is sinning and condemns himself."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1012,18 +910,15 @@
         "Do everything you can to send on their way Zenas the lawyer and Apollos, so that they lack nothing."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1033,18 +928,15 @@
         "Our people must learn to engage themselves in good works that provide for urgent needs, and so not be unfruitful."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1053,8 +945,6 @@
         },
         "All those who are with me greet you. Greet those who love us in faith. Grace be with all of you."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Unlocked Literal Bible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Book of Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Psa"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,14 +52,12 @@
         "The Book of Psalms"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "091",
       "sid": "PSA 91"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -74,24 +65,20 @@
         "Book One"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -101,7 +88,6 @@
         "He who lives in the shelter of the Most High"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -109,12 +95,10 @@
         "will stay in the shadow of the Almighty."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -124,7 +108,6 @@
         "I will say of Yahweh, \"He is my refuge and my fortress,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -132,18 +115,15 @@
         "my God, in whom I trust.\""
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -153,7 +133,6 @@
         "For he will rescue you from the snare of the hunter"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -161,7 +140,6 @@
         "and from the deadly plague."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -169,7 +147,6 @@
         "He will cover you with his wings,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -177,15 +154,12 @@
         "and under his wings you will find refuge."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
         "His trustworthiness is a shield and protection."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

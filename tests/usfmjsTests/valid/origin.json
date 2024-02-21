@@ -2,14 +2,12 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -17,19 +15,16 @@
         "3 John"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -45,8 +40,6 @@
         },
         "Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

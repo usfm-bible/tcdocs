@@ -2,14 +2,12 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "RUT",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -17,7 +15,6 @@
         "Ruth"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -25,7 +22,6 @@
         "RUTH"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -33,7 +29,6 @@
         "Ruth"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -41,7 +36,6 @@
         "RUT"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -49,19 +43,16 @@
         "RUTH"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "RUT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -266,20 +257,16 @@
         "So Noemin and Ruth the Moabitess, her daughter-in-law, returned from the country of Moab; and they came to Bethleem in the beginning of barley harvest."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "RUT 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -562,20 +549,16 @@
         "And Ruth joined herself to the damsels of Booz to glean until they had finished the barley-harvest and the wheat-harvest."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "RUT 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -776,20 +759,16 @@
         " daughter, until thou shalt know how the matter will fall out; for the man will not rest until the matter be accomplished this day."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "RUT 4"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1041,8 +1020,6 @@
         },
         "And Obed begot Jessae; and Jessae begot David."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

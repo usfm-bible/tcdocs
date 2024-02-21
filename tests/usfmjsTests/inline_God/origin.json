@@ -2,26 +2,22 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -61,12 +57,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -84,12 +78,10 @@
         " and further text ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -129,8 +121,6 @@
         },
         " speaks of “...the town of Waheb in the area of Suphah, and the valleys; the Arnon River,"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

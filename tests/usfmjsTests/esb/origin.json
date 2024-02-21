@@ -2,36 +2,30 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "16",
           "sid": "GEN 1:16"
-        },
-        "\n  "
+        }
       ]
     },
-    "\n  ",
     {
       "type": "sidebar",
       "marker": "esb",
@@ -83,15 +77,12 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
         "Passing alongside the Sea of Galilee, he saw Simon and Andrew the brother of Simon casting a net into the sea, for they were fishermen."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

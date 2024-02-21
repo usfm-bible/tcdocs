@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,14 +10,12 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "136",
       "sid": "MAT 136"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -26,7 +23,6 @@
         "The Preaching of John the Baptist"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -34,12 +30,10 @@
         "(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -75,7 +69,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -190,7 +183,6 @@
             }
           ]
         },
-        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -235,8 +227,6 @@
         },
         " la imagen misma ..."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -19,7 +17,6 @@
         "3.0"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "SAN MARCOS"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt2",
@@ -35,7 +31,6 @@
         "Evangelio según"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -43,7 +38,6 @@
         "SAN MARCOS"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "imt1",
@@ -51,7 +45,6 @@
         "INTRODUCCIÓN"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "is1",
@@ -59,7 +52,6 @@
         "Importancia del evangelio de Marcos"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -82,7 +74,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ipi",
@@ -90,12 +81,10 @@
         "Many Protestants consider the following books to be Apocrypha as defined above: Tobit, Judith, additions to Esther (as found in Greek Esther in the CEV) ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "imi",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "em",
@@ -106,7 +95,6 @@
         " (“The Translators to the Reader,” King James Version, 1611)."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "im",
@@ -122,19 +110,16 @@
         " of the Bible..."
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MAT 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -151,12 +136,10 @@
         "നമ്മുടെ പിതാവായ ..."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -165,8 +148,6 @@
         },
         "കർത്താവായ യേശുവിനോടും ..."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

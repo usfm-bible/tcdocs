@@ -2,26 +2,22 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -44,7 +40,6 @@
             "herbs"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -53,7 +48,6 @@
             "yielding"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -86,7 +80,6 @@
             "bearing"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -95,7 +88,6 @@
             "fruit"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -104,7 +96,6 @@
             "after"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -113,7 +104,6 @@
             "their"
           ]
         },
-        " ",
         {
           "type": "char",
           "marker": "w",
@@ -124,8 +114,6 @@
         },
         ",..."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

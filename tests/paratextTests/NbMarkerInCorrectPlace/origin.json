@@ -2,20 +2,17 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ib",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -23,19 +20,16 @@
         "Hi mom."
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -45,20 +39,16 @@
         "Hi Bob."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "GEN 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "nb",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -67,8 +57,6 @@
         },
         "Soup is good!"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

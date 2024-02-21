@@ -2,44 +2,37 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "37",
           "sid": "GEN 1:37"
         },
-        "\n    ",
         {
           "type": "note",
           "marker": "f",
           "caller": "+",
           "content": [
-            "\n      ",
             {
               "type": "char",
               "marker": "fqa",
               "content": [
-                "\n        ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -50,7 +43,6 @@
                     "εἶπεν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -61,7 +53,6 @@
                     "δὲ"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -72,7 +63,6 @@
                     "αὐτῷ"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -83,7 +73,6 @@
                     "ὁ"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -94,7 +83,6 @@
                     "Φίλιππος"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -105,7 +93,6 @@
                     "ἐὰν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -116,7 +103,6 @@
                     "πιστεύεις"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -127,7 +113,6 @@
                     "ἐξ"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -138,7 +123,6 @@
                     "ὅλης"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -149,7 +133,6 @@
                     "τῆς"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -160,7 +143,6 @@
                     "καρδίας"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -171,7 +153,6 @@
                     "σου"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -193,7 +174,6 @@
                     "ἀποκριθεὶς"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -204,7 +184,6 @@
                     "δὲ"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -215,7 +194,6 @@
                     "εἶπεν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -226,7 +204,6 @@
                     "Πιστεύω"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -237,7 +214,6 @@
                     "εἰς"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -248,7 +224,6 @@
                     "τὸν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -259,7 +234,6 @@
                     "Χριστὸν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -270,7 +244,6 @@
                     "τὸν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -281,7 +254,6 @@
                     "Υἱὸν"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -292,7 +264,6 @@
                     "τοῦ"
                   ]
                 },
-                " ",
                 {
                   "type": "char",
                   "marker": "w",
@@ -305,13 +276,10 @@
                 },
                 ". "
               ]
-            },
-            "\n    "
+            }
           ]
         }
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

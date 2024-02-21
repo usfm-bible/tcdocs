@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Chinese-Simplified Script: Chinese Union New Punctuation 1989"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -19,7 +17,6 @@
         "约翰三书"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -27,7 +24,6 @@
         "约翰三书"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -35,7 +31,6 @@
         "约翰三书"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -43,14 +38,12 @@
         "约翰三书"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "3JN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -58,12 +51,10 @@
         "问候"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -110,7 +101,6 @@
         "我听见我的儿女们按真理而行，我的喜乐就没有比这个大的。"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -118,12 +108,10 @@
         "合作和反对"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -206,12 +194,10 @@
         "所以我若去，必要提说他所行的事，就是他用恶言妄论我们。还不以此为足，他自己不接待弟兄，有人愿意接待，他也禁止，并且将接待弟兄的人赶出教会。"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -250,7 +236,6 @@
         "，有众人给他作见证，又有真理给他作见证，就是我们也给他作见证。你也知道我们的见证是真的。"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -258,12 +243,10 @@
         "问安"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -286,8 +269,6 @@
         },
         "愿你平安。众位朋友都问你安。请你替我按着姓名问众位朋友安。"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

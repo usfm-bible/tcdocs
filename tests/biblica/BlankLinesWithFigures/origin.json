@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,19 +10,16 @@
         "- Central Asian Russian Scriptures (CARS)"
       ]
     },
-    "\n\t",
     {
       "type": "chapter",
       "marker": "c",
       "number": "25",
       "sid": "EXO 25"
     },
-    "\n\t  ",
     {
       "type": "para",
       "marker": "b",
       "content": [
-        "\n\t\t",
         {
           "type": "figure",
           "marker": "fig",
@@ -37,8 +33,6 @@
           ]
         }
       ]
-    },
-    "\n\t",
-    "\n"
+    }
   ]
 }

@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "41MRKGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -19,7 +17,6 @@
         "John"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -27,7 +24,6 @@
         "The Gospel according to John"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -35,7 +31,6 @@
         "John"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt2",
@@ -43,7 +38,6 @@
         "The Gospel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt3",
@@ -51,7 +45,6 @@
         "according to"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -59,7 +52,6 @@
         "JOHN"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -74,7 +66,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "iot",
@@ -82,7 +73,6 @@
         "Outline of Contents"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -97,7 +87,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -112,7 +101,6 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -127,14 +115,12 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -142,7 +128,6 @@
         "BOOK ONE"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mr",
@@ -150,12 +135,10 @@
         "(Psalms 1–41)"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -171,8 +154,6 @@
         },
         "the second verse"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

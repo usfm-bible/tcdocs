@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,7 +10,6 @@
         "Unlocked Literal Bible"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -19,7 +17,6 @@
         "UTF-8"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -27,7 +24,6 @@
         "Proverbs"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -35,7 +31,6 @@
         "The Book of Proverbs"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -43,7 +38,6 @@
         "Proverbs"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -51,7 +45,6 @@
         "Pro"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,25 +52,21 @@
         "Proverbs"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "30",
       "sid": "PRO 30"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -87,7 +76,6 @@
         "The words of Agur son of Jakeh—the utterance:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -111,18 +99,15 @@
               "content": [
                 "This man declared, \"I am weary, O God, I am weary. I am unable to do anything.\" "
               ]
-            },
-            " "
+            }
           ]
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -132,7 +117,6 @@
         "Surely I am more like an animal than any human"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -140,12 +124,10 @@
         "and I do not have the understanding of a human being."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -155,15 +137,12 @@
         "I have not learned wisdom,"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
         "nor do I have knowledge of the Holy One."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

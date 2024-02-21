@@ -2,7 +2,6 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -11,19 +10,16 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "MAT 6"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -117,20 +113,16 @@
         " You know the commandments: ‘Do not commit murder..."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "MAT 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "cd",
       "content": [
-        "\n    ",
         {
           "type": "char",
           "marker": "xt",
@@ -169,12 +161,10 @@
         " Создание женщины."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -184,15 +174,12 @@
         "Так совершены небо и земля и все воинство их."
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "MAT 3"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -249,12 +236,10 @@
         }
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -287,7 +272,6 @@
                 "Гл 1. (1)"
               ]
             },
-            " ",
             {
               "type": "char",
               "marker": "xt",
@@ -307,7 +291,6 @@
         "Our God is in heaven;"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -315,25 +298,21 @@
         "he does whatever he wishes."
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "MAT 3:4"
         },
-        "\n    ",
         {
           "type": "note",
           "marker": "x",
           "caller": "-",
           "content": [
-            "\n      ",
             {
               "type": "char",
               "marker": "xo",
@@ -341,7 +320,6 @@
                 "115.4-8: "
               ]
             },
-            "\n      ",
             {
               "type": "char",
               "marker": "xt",
@@ -349,7 +327,6 @@
                 "Ps 135.15-18; "
               ]
             },
-            "\n      ",
             {
               "type": "char",
               "marker": "xdc",
@@ -357,21 +334,17 @@
                 "Ltj Jr 4-73; "
               ]
             },
-            "\n      ",
             {
               "type": "char",
               "marker": "xt",
               "content": [
                 "Rev 9.20."
               ]
-            },
-            "\n    "
+            }
           ]
         },
         " Their gods are made of silver and gold,"
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }

@@ -2,26 +2,22 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
-    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -38,20 +34,16 @@
         "the second verse"
       ]
     },
-    "\n  ",
-    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "GEN 2"
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -68,7 +60,6 @@
         "the fourth verse"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -76,12 +67,10 @@
         "Administration of the Tribes of Israel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lh",
       "content": [
-        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -91,7 +80,6 @@
         "This is the list of the administrators of the tribes of Israel:"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -99,7 +87,6 @@
         "Reuben - Eliezer son of Zichri"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -107,7 +94,6 @@
         "Simeon - Shephatiah son of Maacah"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "li1",
@@ -115,15 +101,12 @@
         "Levi - Hashabiah son of Kemuel"
       ]
     },
-    "\n  ",
     {
       "type": "para",
       "marker": "lf",
       "content": [
         "This was the list of the administrators of the tribes of Israel."
       ]
-    },
-    "\n  ",
-    "\n"
+    }
   ]
 }
