@@ -31,7 +31,7 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "From Gen 1:",
+        "From Gen 1: ",
         {
           "type": "verse",
           "marker": "v",
@@ -180,14 +180,14 @@
             "הַ​מָּֽיִם"
           ]
         },
-        "׃",
+        "׃ ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "GEN 1:3"
         },
-        "From Isa:",
+        "From Isa: ",
         {
           "type": "verse",
           "marker": "v",

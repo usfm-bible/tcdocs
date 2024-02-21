@@ -38,7 +38,7 @@
             "blah"
           ]
         },
-        "definition",
+        " definition ",
         {
           "type": "verse",
           "marker": "v",
@@ -56,10 +56,10 @@
           "type": "char",
           "marker": "w",
           "content": [
-            "word"
+            "word "
           ]
         },
-        "definition"
+        " definition"
       ]
     }
   ]

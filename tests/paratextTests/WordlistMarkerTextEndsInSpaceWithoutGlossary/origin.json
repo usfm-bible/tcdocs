@@ -36,10 +36,10 @@
           "marker": "w",
           "lemma": "keyword",
           "content": [
-            "word"
+            "word "
           ]
         },
-        "definition",
+        " definition ",
         {
           "type": "verse",
           "marker": "v",
@@ -58,10 +58,10 @@
           "marker": "w",
           "lemma": "keyword",
           "content": [
-            "word"
+            "word "
           ]
         },
-        "definition"
+        " definition"
       ]
     }
   ]

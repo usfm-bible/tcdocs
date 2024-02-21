@@ -36,12 +36,12 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "Hi",
+        "Hi ",
         {
           "type": "char",
           "marker": "em",
           "content": [
-            "Mr.",
+            "Mr. ",
             {
               "type": "char",
               "marker": "nd",
@@ -68,7 +68,7 @@
               "type": "char",
               "marker": "fr",
               "content": [
-                "1.1"
+                "1.1 "
               ]
             },
             {

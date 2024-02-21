@@ -51,7 +51,7 @@
             "| src=\"figure.png\""
           ]
         },
-        "and some more text"
+        " and some more text"
       ]
     },
     {
@@ -64,7 +64,7 @@
           "marker": "fig",
           "content": []
         },
-        "and some more text"
+        " and some more text"
       ]
     },
     {

@@ -38,7 +38,7 @@
             "blah"
           ]
         },
-        "definition",
+        " definition ",
         {
           "type": "verse",
           "marker": "v",
@@ -59,7 +59,7 @@
             "grace"
           ]
         },
-        "definition",
+        " definition ",
         {
           "type": "verse",
           "marker": "v",
@@ -81,7 +81,7 @@
             "grace"
           ]
         },
-        "definition",
+        " definition ",
         {
           "type": "verse",
           "marker": "v",
@@ -103,7 +103,7 @@
             "gracious"
           ]
         },
-        "definition"
+        " definition"
       ]
     }
   ]

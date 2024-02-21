@@ -38,7 +38,7 @@
             "keywordkeyw"
           ]
         },
-        "definition"
+        " definition"
       ]
     },
     {
@@ -69,10 +69,10 @@
           "marker": "w",
           "lemma": "keyword",
           "content": [
-            "word"
+            "word "
           ]
         },
-        "definition"
+        " definition"
       ]
     }
   ]

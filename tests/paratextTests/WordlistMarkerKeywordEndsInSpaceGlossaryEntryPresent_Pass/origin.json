@@ -38,7 +38,7 @@
             "keywordkeyw"
           ]
         },
-        "definition"
+        " definition"
       ]
     },
     {
@@ -68,10 +68,10 @@
           "type": "char",
           "marker": "w",
           "content": [
-            "keyword"
+            "keyword "
           ]
         },
-        "definition"
+        " definition"
       ]
     }
   ]

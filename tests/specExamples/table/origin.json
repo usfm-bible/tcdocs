@@ -76,7 +76,7 @@
               "marker": "th1",
               "align": "start",
               "content": [
-                "Day"
+                "Day "
               ]
             },
             {
@@ -84,7 +84,7 @@
               "marker": "th2",
               "align": "start",
               "content": [
-                "Tribe"
+                "Tribe "
               ]
             },
             {
@@ -106,7 +106,7 @@
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "1st"
+                "1st "
               ]
             },
             {
@@ -114,7 +114,7 @@
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Judah"
+                "Judah "
               ]
             },
             {
@@ -136,7 +136,7 @@
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "2nd"
+                "2nd "
               ]
             },
             {
@@ -144,7 +144,7 @@
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Issachar"
+                "Issachar "
               ]
             },
             {
@@ -166,7 +166,7 @@
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "3rd"
+                "3rd "
               ]
             },
             {
@@ -174,7 +174,7 @@
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Zebulun"
+                "Zebulun "
               ]
             },
             {
@@ -196,7 +196,7 @@
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "4th"
+                "4th "
               ]
             },
             {
@@ -204,7 +204,7 @@
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Reuben"
+                "Reuben "
               ]
             },
             {
@@ -226,7 +226,7 @@
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "5th"
+                "5th "
               ]
             },
             {
@@ -234,7 +234,7 @@
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Simeon"
+                "Simeon "
               ]
             },
             {

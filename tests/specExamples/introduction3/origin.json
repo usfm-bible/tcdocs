@@ -14,7 +14,7 @@
       "type": "para",
       "marker": "ip",
       "content": [
-        "However, he is more than a teacher, healer, or",
+        "However, he is more than a teacher, healer, or ",
         {
           "type": "char",
           "marker": "w",
@@ -29,7 +29,7 @@
       "type": "para",
       "marker": "ili",
       "content": [
-        "1",
+        "1 ",
         {
           "type": "char",
           "marker": "k",
@@ -37,7 +37,7 @@
             "The Messiah"
           ]
         },
-        "is the one promised by God, the one who would come and free God's people. By the time",
+        " is the one promised by God, the one who would come and free God's people. By the time ",
         {
           "type": "char",
           "marker": "bk",
@@ -45,7 +45,7 @@
             "The Gospel of Mark"
           ]
         },
-        "appeared, the title \"Messiah\" (in Greek, \"",
+        " appeared, the title \"Messiah\" (in Greek, \"",
         {
           "type": "char",
           "marker": "w",
@@ -60,7 +60,7 @@
       "type": "para",
       "marker": "ili",
       "content": [
-        "2",
+        "2 ",
         {
           "type": "char",
           "marker": "k",
@@ -68,14 +68,14 @@
             "The Son of God"
           ]
         },
-        "is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration ..."
+        " is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration ..."
       ]
     },
     {
       "type": "para",
       "marker": "ili",
       "content": [
-        "3",
+        "3 ",
         {
           "type": "char",
           "marker": "k",
@@ -83,7 +83,7 @@
             "The Son of Man"
           ]
         },
-        "is the title most..."
+        " is the title most..."
       ]
     },
     {
@@ -114,7 +114,7 @@
           "number": "1",
           "sid": "MAT 1:1"
         },
-        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ...",
+        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ... ",
         {
           "type": "verse",
           "marker": "v",

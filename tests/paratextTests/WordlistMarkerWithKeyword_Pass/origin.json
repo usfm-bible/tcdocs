@@ -38,7 +38,7 @@
             "keywordkeyw"
           ]
         },
-        "definition"
+        " definition"
       ]
     },
     {
@@ -72,7 +72,7 @@
             "word"
           ]
         },
-        "definition",
+        " definition ",
         {
           "type": "verse",
           "marker": "v",
@@ -94,7 +94,7 @@
             "word"
           ]
         },
-        "definition"
+        " definition"
       ]
     }
   ]

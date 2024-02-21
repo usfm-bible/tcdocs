@@ -31,7 +31,7 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "rb",
@@ -46,7 +46,7 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text"
+        "verse text "
       ]
     },
     {
@@ -59,7 +59,7 @@
           "marker": "*",
           "content": []
         },
-        "quoted text"
+        " quoted text "
       ]
     },
     {
@@ -77,7 +77,7 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "w",
@@ -93,7 +93,7 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "figure",
           "marker": "fig",
@@ -113,7 +113,7 @@
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "figure",
           "marker": "fig",

@@ -35,7 +35,7 @@
           "type": "char",
           "marker": "nd",
           "content": [
-            "testing"
+            "testing "
           ]
         }
       ]
@@ -60,7 +60,7 @@
           "type": "char",
           "marker": "em",
           "content": [
-            "end/beg markers"
+            "end/beg markers "
           ]
         },
         {

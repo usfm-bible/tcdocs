@@ -82,7 +82,7 @@
             "P"
           ]
         },
-        "Praise the",
+        "Praise the ",
         {
           "type": "char",
           "marker": "nd",
@@ -97,7 +97,7 @@
       "type": "para",
       "marker": "qr",
       "content": [
-        "God's love never fails",
+        "God's love never fails ",
         {
           "type": "char",
           "marker": "qs",
