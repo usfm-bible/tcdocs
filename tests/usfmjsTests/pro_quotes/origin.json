@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Unlocked Literal Bible"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,6 +19,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -24,6 +27,7 @@
         "Proverbs"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -31,6 +35,7 @@
         "The Book of Proverbs"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -38,6 +43,7 @@
         "Proverbs"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -45,6 +51,7 @@
         "Pro"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -52,21 +59,25 @@
         "Proverbs"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "21",
       "sid": "PRO 21"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -76,6 +87,7 @@
         "It is better to live on a corner of the roof"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -83,10 +95,12 @@
         "than in a house shared with a quarrelsome wife."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -96,6 +110,7 @@
         "The appetite of the wicked craves evil;"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -103,22 +118,25 @@
         "his neighbor finds no favor in his eyes."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "19",
           "sid": "PRO 21:19"
         },
-        "Long ago you spoke in a vision to your faithful ones",
+        "Long ago you spoke in a vision to your faithful ones ",
         {
           "type": "note",
           "marker": "f",
@@ -128,7 +146,7 @@
               "type": "char",
               "marker": "ft",
               "content": [
-                "Many mss have the singular"
+                "Many mss have the singular "
               ]
             },
             {
@@ -142,7 +160,7 @@
               "type": "char",
               "marker": "ft",
               "content": [
-                "instead of"
+                " instead of "
               ]
             },
             {
@@ -157,6 +175,7 @@
         ";"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -164,6 +183,7 @@
         "you said,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -178,35 +198,35 @@
               "type": "char",
               "marker": "ft",
               "content": [
-                "The MT has"
+                "The MT has "
               ]
             },
             {
               "type": "char",
               "marker": "fqa",
               "content": [
-                "I will place help upon a warrior"
+                "I will place help upon a warrior "
               ]
             },
             {
               "type": "char",
               "marker": "ft",
               "content": [
-                ". Some translate the word for"
+                ". Some translate the word for "
               ]
             },
             {
               "type": "char",
               "marker": "fqa",
               "content": [
-                "help"
+                "help "
               ]
             },
             {
               "type": "char",
               "marker": "ft",
               "content": [
-                "as"
+                " as "
               ]
             },
             {
@@ -228,6 +248,7 @@
         "\""
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -235,10 +256,13 @@
         "I have raised up one chosen from among the people."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": []
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

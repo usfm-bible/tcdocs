@@ -2,22 +2,26 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27,10 +31,12 @@
         "The list of verses follows this"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "li",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40,10 +46,12 @@
         "The item one of list"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "li",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -53,17 +61,19 @@
         "The item two of list"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "li",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "GEN 1:4"
         },
-        "The item three",
+        "The item three ",
         {
           "type": "verse",
           "marker": "v",
@@ -73,18 +83,19 @@
         "and four of the list"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "lh",
       "content": [
-        "The end of verse list",
+        "The end of verse list ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "GEN 1:6"
         },
-        "A verse out side of the list",
+        "A verse out side of the list ",
         {
           "type": "verse",
           "marker": "v",
@@ -94,6 +105,7 @@
         "The verse with a list within it"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "li",
@@ -101,11 +113,12 @@
         "item one"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "li",
       "content": [
-        "item two",
+        "item two ",
         {
           "type": "verse",
           "marker": "v",
@@ -114,6 +127,8 @@
         },
         "The last verse"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

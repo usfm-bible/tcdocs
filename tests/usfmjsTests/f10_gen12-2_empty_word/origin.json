@@ -2,22 +2,26 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -33,6 +37,7 @@
             "Éternel"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -42,7 +47,7 @@
             "dit"
           ]
         },
-        "à",
+        " à ",
         {
           "type": "char",
           "marker": "w",
@@ -61,7 +66,7 @@
             "en"
           ]
         },
-        "de ton",
+        " de ton ",
         {
           "type": "char",
           "marker": "w",
@@ -70,7 +75,7 @@
             "pays"
           ]
         },
-        ", de ta",
+        ", de ta ",
         {
           "type": "char",
           "marker": "w",
@@ -79,7 +84,7 @@
             "patrie"
           ]
         },
-        ", et de la",
+        ", et de la ",
         {
           "type": "char",
           "marker": "w",
@@ -88,7 +93,7 @@
             "maison"
           ]
         },
-        "de ton",
+        " de ton ",
         {
           "type": "char",
           "marker": "w",
@@ -97,7 +102,7 @@
             "père"
           ]
         },
-        ", dans le",
+        ", dans le ",
         {
           "type": "char",
           "marker": "w",
@@ -106,7 +111,7 @@
             "pays"
           ]
         },
-        "que je te",
+        " que je te ",
         {
           "type": "char",
           "marker": "w",
@@ -116,14 +121,14 @@
             "montrerai"
           ]
         },
-        ".",
+        ". ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
         },
-        "Je ferai de",
+        "Je ferai de ",
         {
           "type": "char",
           "marker": "w",
@@ -133,7 +138,7 @@
             "toi"
           ]
         },
-        "une",
+        " une ",
         {
           "type": "char",
           "marker": "w",
@@ -142,6 +147,7 @@
             "grande"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -150,7 +156,7 @@
             "nation"
           ]
         },
-        ", et je te",
+        ", et je te ",
         {
           "type": "char",
           "marker": "w",
@@ -160,7 +166,7 @@
             "bénirai"
           ]
         },
-        "; je",
+        "; je ",
         {
           "type": "char",
           "marker": "w",
@@ -174,7 +180,7 @@
           "marker": "w",
           "content": []
         },
-        "ton",
+        " ton ",
         {
           "type": "char",
           "marker": "w",
@@ -183,6 +189,7 @@
             "nom"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -192,7 +199,7 @@
             "grand"
           ]
         },
-        ", et tu seras une source de",
+        ", et tu seras une source de ",
         {
           "type": "char",
           "marker": "w",
@@ -203,6 +210,8 @@
         },
         "."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

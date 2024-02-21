@@ -2,22 +2,26 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "SNG",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "SNG 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27,6 +31,7 @@
         "verse"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "qa",
@@ -34,11 +39,12 @@
         "nonverse"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
       "content": [
-        "more verse",
+        "more verse ",
         {
           "type": "verse",
           "marker": "v",
@@ -47,6 +53,8 @@
         },
         "verse"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

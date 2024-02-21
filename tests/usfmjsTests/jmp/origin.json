@@ -2,29 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "From Abraham to King David, the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was Tamar*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab*), Obed (his mother was",
+        "From Abraham to King David, the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was Tamar*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab*), Obed (his mother was ",
         {
           "type": "char",
           "marker": "jmp",
@@ -35,6 +39,8 @@
         },
         "), Jesse, and King David."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

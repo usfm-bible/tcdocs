@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "EN_ULT en_English_ltr Wed Oct 10 2018 11:55:23 GMT-0400 (EDT) tc"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,6 +19,7 @@
         "3.0"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -24,6 +27,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -31,6 +35,7 @@
         "Acts"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -38,6 +43,7 @@
         "The Acts of the Apostles"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -45,6 +51,7 @@
         "Acts"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -52,6 +59,7 @@
         "Act"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -59,27 +67,32 @@
         "Acts"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "ACT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "ACT 1:1"
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -90,6 +103,7 @@
           "x-occurrences": "1",
           "x-strong": "G35880"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -99,10 +113,12 @@
             "The"
           ]
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -140,6 +156,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -163,6 +180,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -182,6 +200,7 @@
             "I"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -257,6 +276,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -280,6 +300,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -303,6 +324,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -340,6 +362,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -363,6 +386,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -386,6 +410,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -405,6 +430,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -418,6 +444,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -441,6 +468,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -460,6 +488,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -473,7 +502,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "verse",
           "marker": "v",
@@ -503,6 +532,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -526,6 +556,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -549,6 +580,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -568,6 +600,7 @@
             "that"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -577,6 +610,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -586,6 +620,7 @@
             "was"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -595,6 +630,7 @@
             "taken"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -628,6 +664,7 @@
             "after"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -637,6 +674,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -646,6 +684,7 @@
             "had"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -655,6 +694,7 @@
             "given"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -668,6 +708,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -691,6 +732,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -714,6 +756,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -737,6 +780,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -760,6 +804,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -779,6 +824,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -792,6 +838,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -815,6 +862,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -838,6 +886,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -857,6 +906,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -866,6 +916,7 @@
             "had"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -879,7 +930,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ".",
+        ". ",
         {
           "type": "verse",
           "marker": "v",
@@ -909,6 +960,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -932,6 +984,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -993,6 +1046,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1016,6 +1070,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1039,6 +1094,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1062,6 +1118,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1085,6 +1142,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1104,6 +1162,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1117,6 +1176,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1140,6 +1200,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1163,6 +1224,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1182,6 +1244,7 @@
             "convincing"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1219,6 +1282,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1242,6 +1306,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1265,6 +1330,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1284,6 +1350,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1297,6 +1364,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1316,6 +1384,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1353,6 +1422,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1372,6 +1442,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1385,6 +1456,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1408,6 +1480,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1431,6 +1504,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1454,6 +1528,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1477,6 +1552,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1506,6 +1582,7 @@
             "of"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1526,21 +1603,25 @@
         "."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "ACT 1:4"
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1551,6 +1632,7 @@
           "x-occurrences": "1",
           "x-strong": "G25320"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -1560,10 +1642,12 @@
             "When"
           ]
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1583,6 +1667,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1592,6 +1677,7 @@
             "was"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1601,6 +1687,7 @@
             "meeting"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1610,6 +1697,7 @@
             "together"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1619,6 +1707,7 @@
             "with"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1652,6 +1741,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1665,6 +1755,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1688,6 +1779,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1711,6 +1803,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1730,6 +1823,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1743,6 +1837,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1804,6 +1899,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1823,6 +1919,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1832,6 +1929,7 @@
             "wait"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1845,6 +1943,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1868,6 +1967,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1891,6 +1991,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1910,6 +2011,7 @@
             "of"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1923,6 +2025,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -1966,6 +2069,7 @@
             "about"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -1999,6 +2103,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2042,6 +2147,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2061,6 +2167,7 @@
             "heard"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2070,6 +2177,7 @@
             "from"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2083,6 +2191,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -2112,6 +2221,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2135,6 +2245,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2158,6 +2269,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2181,6 +2293,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2200,6 +2313,7 @@
             "with"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2237,6 +2351,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2260,6 +2375,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2279,6 +2395,7 @@
             "shall"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2288,6 +2405,7 @@
             "be"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2301,6 +2419,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2324,6 +2443,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2347,6 +2467,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2370,6 +2491,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2393,6 +2515,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2416,6 +2539,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2439,6 +2563,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2462,6 +2587,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2506,21 +2632,25 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "ACT 1:6"
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2531,6 +2661,7 @@
           "x-occurrences": "1",
           "x-strong": "G33030"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -2540,10 +2671,12 @@
             "When"
           ]
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2567,6 +2700,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2590,6 +2724,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2609,6 +2744,7 @@
             "were"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2618,6 +2754,7 @@
             "assembled"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2651,6 +2788,7 @@
             "they"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2664,6 +2802,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2787,6 +2926,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2810,6 +2950,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2861,6 +3002,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2884,6 +3026,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2903,6 +3046,7 @@
             "you"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2912,6 +3056,7 @@
             "will"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -2925,6 +3070,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2948,6 +3094,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2971,6 +3118,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -2994,6 +3142,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -3019,6 +3168,8 @@
         },
         "?\""
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

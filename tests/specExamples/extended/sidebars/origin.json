@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,16 +11,19 @@
         "- Good News Study Bible - Notes Material"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -29,6 +33,7 @@
         "At once they left their nets and went with him."
       ]
     },
+    "\n  ",
     {
       "type": "sidebar",
       "marker": "esb",
@@ -68,7 +73,7 @@
                 "ichthus"
               ]
             },
-            ") consists of the first letters of the Greek words that tell who Jesus is:",
+            ") consists of the first letters of the Greek words that tell who Jesus is: ",
             {
               "type": "figure",
               "marker": "fig",
@@ -80,10 +85,12 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -92,6 +99,8 @@
         },
         "He went a little farther on and saw two other brothers, James and John, the sons of Zebedee."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

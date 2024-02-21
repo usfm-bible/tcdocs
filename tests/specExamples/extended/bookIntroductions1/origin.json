@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "- Good News Study Bible - Notes Material"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "iot",
@@ -17,6 +19,7 @@
         "Outline of Contents"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -24,6 +27,7 @@
         "The beginning of the gospel 1.1-13"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -31,6 +35,7 @@
         "Jesus' public ministry in Galilee 1.14-9.50"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -38,6 +43,7 @@
         "From Galilee to Jerusalem 10.1-52"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -45,6 +51,7 @@
         "The last week in and near Jerusalem 11.1-15.47"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -52,6 +59,7 @@
         "The resurrection of Jesus 16.1-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -59,6 +67,7 @@
         "[An Old Ending to the Gospel 16.9-20]"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -66,11 +75,12 @@
         "[Another Old Ending 16.9-10]"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "The opening words of",
+        "The opening words of ",
         {
           "type": "char",
           "marker": "bk",
@@ -78,7 +88,7 @@
             "The Gospel according to Mark"
           ]
         },
-        "tell its readers that the subject of this book is the Good News about Jesus Christ. With the coming of Jesus Christ, it announces, the time set by God to bring salvation to humankind has arrived (1.15). Though the book concentrates on his deeds and words, it is not a biography of Jesus of Nazareth. Only one year, or a little more, of Jesus' life appears to be recorded (chapters 1--10), and over one-third of the book (chapters 11--16) is taken up with the last week of Jesus in and near",
+        " tell its readers that the subject of this book is the Good News about Jesus Christ. With the coming of Jesus Christ, it announces, the time set by God to bring salvation to humankind has arrived (1.15). Though the book concentrates on his deeds and words, it is not a biography of Jesus of Nazareth. Only one year, or a little more, of Jesus' life appears to be recorded (chapters 1--10), and over one-third of the book (chapters 11--16) is taken up with the last week of Jesus in and near ",
         {
           "type": "char",
           "marker": "w",
@@ -86,7 +96,7 @@
             "Jerusalem"
           ]
         },
-        ". Nothing is said about his birth, childhood, home, or parents. When he first appears, unknown and unannounced, Jesus is a full-grown adult who comes to John the Baptist to be",
+        ". Nothing is said about his birth, childhood, home, or parents. When he first appears, unknown and unannounced, Jesus is a full-grown adult who comes to John the Baptist to be ",
         {
           "type": "char",
           "marker": "w",
@@ -94,14 +104,15 @@
             "baptized"
           ]
         },
-        "by him."
+        " by him."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "The author's primary interest in writing is religious. The Gospel is written \"from",
+        "The author's primary interest in writing is religious. The Gospel is written \"from ",
         {
           "type": "char",
           "marker": "w",
@@ -109,19 +120,22 @@
             "faith"
           ]
         },
-        "to faith\". ..."
+        " to faith\". ..."
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -130,6 +144,8 @@
         },
         "sample verse"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

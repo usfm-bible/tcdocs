@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,6 +19,7 @@
         "3.0"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -24,6 +27,7 @@
         "The Acts of the Apostles"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -31,6 +35,7 @@
         "Acts"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -38,6 +43,7 @@
         "One of these brothers, Joseph, had become..."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ipr",
@@ -45,16 +51,19 @@
         "(50.24)"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "136",
       "sid": "MAT 136"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -64,29 +73,34 @@
         "They presented their offerings in the following order:"
       ]
     },
+    "\n  ",
     {
       "type": "table",
       "content": [
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "th1",
               "align": "start",
               "content": [
-                "Day"
+                "Day "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "th2",
               "align": "start",
               "content": [
-                "Tribe"
+                "Tribe "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "thr3",
@@ -94,29 +108,34 @@
               "content": [
                 "Leader"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "1st"
+                "1st "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Judah"
+                "Judah "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr3",
@@ -124,29 +143,34 @@
               "content": [
                 "Nahshon son of Amminadab"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "2nd"
+                "2nd "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Issachar"
+                "Issachar "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr3",
@@ -154,29 +178,34 @@
               "content": [
                 "Nethanel son of Zuar"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "3rd"
+                "3rd "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Zebulun"
+                "Zebulun "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr3",
@@ -184,29 +213,34 @@
               "content": [
                 "Eliab son of Helon"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "4th"
+                "4th "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Reuben"
+                "Reuben "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr3",
@@ -214,29 +248,34 @@
               "content": [
                 "Elizur son of Shedeur"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr1",
               "align": "end",
               "content": [
-                "5th"
+                "5th "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tc2",
               "align": "start",
               "content": [
-                "Simeon"
+                "Simeon "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr3",
@@ -244,10 +283,14 @@
               "content": [
                 "Shelumiel son of Zurishaddai"
               ]
-            }
+            },
+            "\n    "
           ]
-        }
+        },
+        "\n  "
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,12 +11,14 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "136",
       "sid": "MAT 136"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -23,6 +26,7 @@
         "The Preaching of John the Baptist"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -30,17 +34,19 @@
         "(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MAT 136:1"
         },
-        "This is the Good News about Jesus Christ, the Son of God.",
+        "This is the Good News about Jesus Christ, the Son of God. ",
         {
           "type": "note",
           "marker": "f",
@@ -50,14 +56,14 @@
               "type": "char",
               "marker": "fr",
               "content": [
-                "1.1:"
+                "1.1: "
               ]
             },
             {
               "type": "char",
               "marker": "ft",
               "content": [
-                "Some manuscripts do not have"
+                "Some manuscripts do not have "
               ]
             },
             {
@@ -69,13 +75,14 @@
             }
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
           "number": "20",
           "sid": "MAT 136:20"
         },
-        "Adam",
+        "Adam ",
         {
           "type": "note",
           "marker": "f",
@@ -85,14 +92,14 @@
               "type": "char",
               "marker": "fr",
               "content": [
-                "3.20:"
+                "3.20: "
               ]
             },
             {
               "type": "char",
               "marker": "fk",
               "content": [
-                "Adam:"
+                "Adam: "
               ]
             },
             {
@@ -104,7 +111,7 @@
             }
           ]
         },
-        "named his wife Eve,",
+        " named his wife Eve, ",
         {
           "type": "note",
           "marker": "f",
@@ -114,14 +121,14 @@
               "type": "char",
               "marker": "fr",
               "content": [
-                "3.20:"
+                "3.20: "
               ]
             },
             {
               "type": "char",
               "marker": "fk",
               "content": [
-                "Eve:"
+                "Eve: "
               ]
             },
             {
@@ -133,14 +140,14 @@
             }
           ]
         },
-        "because she was the mother of all human beings.",
+        " because she was the mother of all human beings. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "38",
           "sid": "MAT 136:38"
         },
-        "whoever believes in me should drink. As the scripture says, ‘Streams of life-giving water will pour out from his side.’”",
+        "whoever believes in me should drink. As the scripture says, ‘Streams of life-giving water will pour out from his side.’” ",
         {
           "type": "note",
           "marker": "f",
@@ -150,21 +157,21 @@
               "type": "char",
               "marker": "fr",
               "content": [
-                "7.38:"
+                "7.38: "
               ]
             },
             {
               "type": "char",
               "marker": "ft",
               "content": [
-                "Jesus' words in verses 37-38 may be translated:"
+                "Jesus' words in verses 37-38 may be translated: "
               ]
             },
             {
               "type": "char",
               "marker": "fqa",
               "content": [
-                "“Whoever is thirsty should come to me and drink."
+                "“Whoever is thirsty should come to me and drink. "
               ]
             },
             {
@@ -178,11 +185,12 @@
               "type": "char",
               "marker": "ft",
               "content": [
-                "As the scripture says, ‘Streams of life-giving water will pour out ...’”"
+                " As the scripture says, ‘Streams of life-giving water will pour out ...’”"
               ]
             }
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -199,14 +207,14 @@
               "type": "char",
               "marker": "fr",
               "content": [
-                "1.3:"
+                "1.3: "
               ]
             },
             {
               "type": "char",
               "marker": "fk",
               "content": [
-                "Resplandor:"
+                "Resplandor: "
               ]
             },
             {
@@ -225,8 +233,10 @@
             }
           ]
         },
-        "la imagen misma ..."
+        " la imagen misma ..."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "EN_ULT en_English_ltr Wed Oct 10 2018 11:55:23 GMT-0400 (EDT) tc"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,22 +19,26 @@
         "3.0"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "ACT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "ACT 1:4"
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -43,6 +49,7 @@
           "x-occurrences": "1",
           "x-strong": "G25320"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -52,10 +59,12 @@
             "When"
           ]
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -75,6 +84,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -84,6 +94,7 @@
             "was"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -93,6 +104,7 @@
             "meeting"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -102,6 +114,7 @@
             "together"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -111,6 +124,7 @@
             "with"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -124,7 +138,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -144,6 +158,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -157,6 +172,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -180,6 +196,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -203,6 +220,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -222,6 +240,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -235,6 +254,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -272,7 +292,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -296,6 +316,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -315,6 +336,7 @@
             "to"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -324,6 +346,7 @@
             "wait"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -337,6 +360,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -360,6 +384,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -383,6 +408,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -402,6 +428,7 @@
             "of"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -415,6 +442,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -438,7 +466,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -458,6 +486,7 @@
             "about"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -471,7 +500,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -491,6 +520,7 @@
             "he"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -534,6 +564,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -553,6 +584,7 @@
             "heard"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -562,6 +594,7 @@
             "from"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -576,6 +609,8 @@
           "marker": "zaln-e"
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

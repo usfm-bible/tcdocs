@@ -2,29 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "son of David, son of Abraham.",
+        "son of David, son of Abraham. ",
         {
           "type": "note",
           "marker": "f",
@@ -34,6 +38,8 @@
           ]
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

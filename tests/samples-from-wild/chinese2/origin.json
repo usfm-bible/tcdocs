@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Chinese-Simplified Script: Chinese Union New Punctuation 1989"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -17,6 +19,7 @@
         "俄巴底亚书"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -24,6 +27,7 @@
         "俄巴底亚书"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -31,6 +35,7 @@
         "俄巴底亚书"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -38,22 +43,26 @@
         "俄巴底亚书"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "OBA 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "OBA 1:1"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -64,6 +73,7 @@
         "得了耶和华的默示。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -71,6 +81,7 @@
         "耶和华要惩罚以东"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -86,6 +97,7 @@
         "说："
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -93,6 +105,7 @@
         "我从耶和华那里听见信息，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -100,10 +113,12 @@
         "并有使者被差往列国去，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -114,6 +129,7 @@
         "：起来吧，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -129,10 +145,12 @@
         "争战！"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -150,6 +168,7 @@
         "在列国中为最小的，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -157,10 +176,12 @@
         "被人大大藐视。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -170,6 +191,7 @@
         "住在山穴中、居所在高处的啊，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -177,6 +199,7 @@
         "你因狂傲自欺，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -184,10 +207,12 @@
         "心里说：谁能将我拉下地去呢？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -197,6 +222,7 @@
         "你虽如大鹰高飞，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -204,6 +230,7 @@
         "在星宿之间搭窝，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -211,6 +238,7 @@
         "我必从那里拉下你来。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -218,14 +246,17 @@
         "这是耶和华说的。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -235,6 +266,7 @@
         "盗贼若来在你那里，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -242,6 +274,7 @@
         "或强盗夜间而来—"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -249,6 +282,7 @@
         "你何竟被剪除—"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -256,6 +290,7 @@
         "岂不偷窃直到够了呢？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -263,6 +298,7 @@
         "摘葡萄的若来到你那里，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -270,16 +306,19 @@
         "岂不剩下些葡萄呢？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "OBA 1:6"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -287,6 +326,7 @@
             "以扫"
           ]
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -297,6 +337,7 @@
         "何竟被搜寻？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -304,10 +345,12 @@
         "他隐藏的宝物何竟被查出？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -317,6 +360,7 @@
         "与你结盟的都送你上路，直到交界；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -324,6 +368,7 @@
         "与你和好的欺骗你，且胜过你；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -331,6 +376,7 @@
         "与你一同吃饭的设下网罗陷害你；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -338,10 +384,12 @@
         "在你心里毫无聪明。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -351,6 +399,7 @@
         "耶和华说：到那日，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -366,6 +415,7 @@
         "除灭智慧人？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -381,16 +431,19 @@
         "除灭聪明人？"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "9",
           "sid": "OBA 1:9"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -401,6 +454,7 @@
         "哪，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -408,6 +462,7 @@
         "你的勇士必惊惶，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -423,6 +478,7 @@
         "的人都被杀戮剪除。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -430,10 +486,12 @@
         "以东受罚的原因"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -451,6 +509,7 @@
         "行强暴，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -458,6 +517,7 @@
         "羞愧必遮盖你，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -465,10 +525,12 @@
         "你也必永远断绝。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -486,6 +548,7 @@
         "的财物，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -493,6 +556,7 @@
         "外邦人进入他的城门，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -508,6 +572,7 @@
         "拈阄的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -515,10 +580,12 @@
         "你竟站在一旁，像与他们同伙。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -528,6 +595,7 @@
         "你兄弟遭难的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -535,10 +603,12 @@
         "你不当瞪眼看着；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -549,6 +619,7 @@
         "人被灭的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -556,6 +627,7 @@
         "你不当因此欢乐；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -563,6 +635,7 @@
         "他们遭难的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -570,10 +643,12 @@
         "你不当说狂傲的话。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -583,6 +658,7 @@
         "我民遭灾的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -590,6 +666,7 @@
         "你不当进他们的城门；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -597,6 +674,7 @@
         "他们遭灾的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -604,6 +682,7 @@
         "你不当瞪眼看着他们受苦；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -611,6 +690,7 @@
         "他们遭灾的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -618,10 +698,12 @@
         "你不当伸手抢他们的财物；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -631,6 +713,7 @@
         "你不当站在岔路口剪除他们中间逃脱的；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -638,6 +721,7 @@
         "他们遭难的日子，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -653,17 +737,20 @@
         "。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
       "content": [
-        "神要审判万国"
+        "　神要审判万国"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -673,6 +760,7 @@
         "耶和华降罚的日子临近万国。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -688,6 +776,7 @@
         "也必照样向你行；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -695,10 +784,12 @@
         "你的报应必归到你头上。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -724,6 +815,7 @@
         "，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -731,6 +823,7 @@
         "万国也必照样常常地喝；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -738,6 +831,7 @@
         "且喝且咽，他们就归于无有。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -745,10 +839,12 @@
         "以色列的胜利"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -766,6 +862,7 @@
         "必有逃脱的人，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -773,10 +870,12 @@
         "那山也必成圣；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -787,16 +886,19 @@
         "家必得原有的产业。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "18",
           "sid": "OBA 1:18"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -807,10 +909,12 @@
         "家必成为大火；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -821,10 +925,12 @@
         "家必为火焰；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -835,6 +941,7 @@
         "家必如碎秸；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -842,10 +949,12 @@
         "火必将他烧着吞灭。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -856,6 +965,7 @@
         "家必无余剩的。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -863,14 +973,17 @@
         "这是耶和华说的。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "b"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -888,6 +1001,7 @@
         "；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -903,6 +1017,7 @@
         "地，"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -926,10 +1041,12 @@
         "地；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "pn",
@@ -948,10 +1065,12 @@
         "。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -977,10 +1096,12 @@
         "众人"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "add",
@@ -999,6 +1120,7 @@
         "；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -1022,6 +1144,7 @@
         "人"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -1029,10 +1152,12 @@
         "必得南地的城邑。"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -1058,12 +1183,15 @@
         "；"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
         "国度就归耶和华了。"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

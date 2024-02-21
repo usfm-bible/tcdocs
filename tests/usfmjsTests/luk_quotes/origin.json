@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Unlocked Literal Bible"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,6 +19,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -24,6 +27,7 @@
         "Luke"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -31,6 +35,7 @@
         "The Gospel of Luke"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -38,6 +43,7 @@
         "Luke"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -45,6 +51,7 @@
         "Luk"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -52,21 +59,25 @@
         "Luke"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "4",
       "sid": "LUK 4"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -76,6 +87,7 @@
         "\"The Spirit of the Lord is upon me,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -83,6 +95,7 @@
         "because he anointed me to tell good news to the poor."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -90,6 +103,7 @@
         "He has sent me to proclaim freedom to the captives,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -97,6 +111,7 @@
         "and recovery of sight to the blind,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -104,10 +119,12 @@
         "to set free those who are oppressed,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -117,26 +134,32 @@
         "to proclaim the year of the Lord's favor.\""
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "20",
       "sid": "LUK 20"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -146,6 +169,7 @@
         "But Jesus looked at them, and said, \"What is the meaning of that which is written:"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q",
@@ -153,10 +177,12 @@
         "'The stone that the builders rejected has become the cornerstone'?"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "m",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -165,6 +191,8 @@
         },
         "Every one who falls on that stone will be broken to pieces. But on whomever it falls, it will crush.\""
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

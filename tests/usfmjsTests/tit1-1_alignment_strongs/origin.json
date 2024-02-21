@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,22 +19,26 @@
         "3.0"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 1:1"
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -41,6 +47,7 @@
           "x-strongs": "G39720",
           "x-ugnt": "Παῦλος"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -50,6 +57,7 @@
             "Paul"
           ]
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-e"
@@ -72,6 +80,7 @@
             "a"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -85,6 +94,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -102,6 +112,7 @@
             "of"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -115,6 +126,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -132,6 +144,7 @@
             "and"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -141,6 +154,7 @@
             "an"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -154,6 +168,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -175,6 +190,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -196,6 +212,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -239,6 +256,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -256,6 +274,7 @@
             "the"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -269,6 +288,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -286,6 +306,7 @@
             "of"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -309,6 +330,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -326,6 +348,7 @@
             "chosen"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -339,6 +362,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -360,6 +384,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -381,6 +406,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -402,6 +428,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -419,6 +446,7 @@
             "of"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -428,6 +456,7 @@
             "truth"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -441,6 +470,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -462,6 +492,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -479,6 +510,7 @@
             "agrees"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -492,6 +524,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -515,6 +548,8 @@
         },
         ","
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

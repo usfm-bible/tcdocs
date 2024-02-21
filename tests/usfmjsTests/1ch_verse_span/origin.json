@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Unlocked Literal Bible"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,6 +19,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -24,6 +27,7 @@
         "Isaiah"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -31,6 +35,7 @@
         "The Book of Isaiah"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -38,6 +43,7 @@
         "Isaiah"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -45,6 +51,7 @@
         "Isa"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -52,52 +59,58 @@
         "The Book of the Prophet Isaiah"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "8",
       "sid": "ISA 8"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "14",
           "sid": "ISA 8:14"
         },
-        "Beriah had these sons: Ahio, Shashak, Jeremoth,",
+        "Beriah had these sons: Ahio, Shashak, Jeremoth, ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "ISA 8:15"
         },
-        "Zebadiah, Arad, Eder,",
+        "Zebadiah, Arad, Eder, ",
         {
           "type": "verse",
           "marker": "v",
           "number": "16",
           "sid": "ISA 8:16"
         },
-        "Michael, Ishpah, and Joha were the sons of Beriah.",
+        "Michael, Ishpah, and Joha were the sons of Beriah. ",
         {
           "type": "verse",
           "marker": "v",
@@ -107,15 +120,18 @@
         "Elpaal had these sons: Zebadiah, Meshullam, Hizki, Heber, Ishmerai, Izliah, and Jobab."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -124,6 +140,8 @@
         },
         "Shimei had these sons: Jakim, Zikri, Zabdi, Elienai, Zillethai, Eliel, Adaiah, Beraiah, and Shimrath."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

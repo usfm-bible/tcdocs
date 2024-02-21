@@ -2,28 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "27",
           "sid": "GEN 1:27"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -34,6 +39,7 @@
             "τὸ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -55,6 +61,7 @@
             "ἔτι"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -65,7 +72,7 @@
             "ἅπαξ"
           ]
         },
-        "”,",
+        "”, ",
         {
           "type": "char",
           "marker": "w",
@@ -76,6 +83,7 @@
             "δηλοῖ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -86,6 +94,7 @@
             "τῶν"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -96,6 +105,7 @@
             "σαλευομένων"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -106,7 +116,7 @@
             "μετάθεσιν"
           ]
         },
-        ",",
+        ", ",
         {
           "type": "char",
           "marker": "w",
@@ -118,6 +128,7 @@
             "ὡς"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -128,7 +139,7 @@
             "πεποιημένων"
           ]
         },
-        ",",
+        ", ",
         {
           "type": "char",
           "marker": "w",
@@ -139,6 +150,7 @@
             "ἵνα"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -149,6 +161,7 @@
             "μείνῃ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -159,6 +172,7 @@
             "τὰ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -169,6 +183,7 @@
             "μὴ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -181,6 +196,8 @@
         },
         "."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

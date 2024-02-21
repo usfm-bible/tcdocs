@@ -2,29 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "11",
           "sid": "GEN 1:11"
         },
-        "Jesus stood before the Roman governor, who questioned him.",
+        "Jesus stood before the Roman governor, who questioned him. ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -35,13 +39,15 @@
           "type": "ms",
           "marker": "qt-e"
         },
-        "he asked."
+        " he asked."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -52,7 +58,7 @@
           "type": "ms",
           "marker": "qt-e"
         },
-        "answered Jesus.",
+        " answered Jesus. ",
         {
           "type": "verse",
           "marker": "v",
@@ -62,17 +68,19 @@
         "But he said nothing in response to the accusations of the chief priests and elders."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "13",
           "sid": "GEN 1:13"
         },
-        "So Pilate said to him,",
+        "So Pilate said to him, ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -85,10 +93,12 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -97,6 +107,8 @@
         },
         "But Jesus refused to answer a single word, with the result that the Governor was greatly surprised."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

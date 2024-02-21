@@ -2,28 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "em",
@@ -31,6 +36,7 @@
             "word"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "em",
@@ -38,14 +44,15 @@
             "wordtwo"
           ]
         },
-        "word3",
+        " word3 ",
         {
           "type": "char",
           "marker": "em",
           "content": [
-            "word4"
+            "word4 "
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -56,9 +63,10 @@
           "type": "char",
           "marker": "em",
           "content": [
-            "word5"
+            "word5 "
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -72,6 +80,7 @@
             "glossaryone"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -81,6 +90,8 @@
         },
         "r"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

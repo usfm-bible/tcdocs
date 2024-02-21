@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "EN_ULB en_English_ltr Wed Feb 07 2018 19:07:07 GMT-0500 (EST) tc"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,6 +19,7 @@
         "3.0"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -24,22 +27,26 @@
         "Hebrews"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "HEB 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "HEB 1:1"
         },
+        "\n    ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -50,6 +57,7 @@
           "x-occurrences": "1",
           "x-strong": "G38190"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -59,6 +67,7 @@
             "Long"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -72,6 +81,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -109,6 +119,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -128,6 +139,7 @@
             "spoke"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -141,6 +153,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -164,6 +177,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -203,6 +217,7 @@
             "ancestors"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -224,6 +239,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -244,6 +260,7 @@
             "the"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -257,6 +274,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -276,6 +294,7 @@
             "at"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -285,6 +304,7 @@
             "many"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -298,6 +318,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -321,6 +342,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
+        " ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -340,6 +362,7 @@
             "in"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -349,6 +372,7 @@
             "many"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -364,6 +388,8 @@
         },
         "."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

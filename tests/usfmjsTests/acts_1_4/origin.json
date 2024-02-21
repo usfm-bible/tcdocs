@@ -2,29 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "GEN 1:4"
         },
-        "When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said,",
+        "When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said, ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -32,6 +36,8 @@
         },
         "\"You heard from me"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

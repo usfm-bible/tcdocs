@@ -2,23 +2,26 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": " 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": ""
         },
-        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ...",
+        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ... ",
         {
           "type": "verse",
           "marker": "v",
@@ -28,10 +31,12 @@
         "നമ്മുടെ പിതാവായ ..."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -40,6 +45,8 @@
         },
         "കർത്താവായ യേശുവിനോടും ..."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

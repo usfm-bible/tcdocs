@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,16 +11,20 @@
         "Longer Heading"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "PHM 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

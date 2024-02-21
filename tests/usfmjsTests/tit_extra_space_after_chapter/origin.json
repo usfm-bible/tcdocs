@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Unlocked Literal Bible"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,6 +19,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -24,6 +27,7 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -31,6 +35,7 @@
         "The Letter of Paul to Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -38,6 +43,7 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -45,6 +51,7 @@
         "Tit"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -52,35 +59,39 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 1:1"
         },
-        "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,",
+        "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "TIT 1:2"
         },
-        "with the certain hope of everlasting life that God, who does not lie, promised before all the ages of time.",
+        "with the certain hope of everlasting life that God, who does not lie, promised before all the ages of time. ",
         {
           "type": "verse",
           "marker": "v",
@@ -90,15 +101,18 @@
         "At the right time, he revealed his word by the message that he trusted me to deliver, by the command of God our savior."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -108,10 +122,12 @@
         "To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -121,22 +137,25 @@
         "For this purpose I left you in Crete, that you might set in order things not yet complete and ordain elders in every city as I directed you."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "TIT 1:6"
         },
-        "An elder must be without blame, the husband of one wife, with faithful children not accused of reckless behavior or undisciplined.",
+        "An elder must be without blame, the husband of one wife, with faithful children not accused of reckless behavior or undisciplined. ",
         {
           "type": "verse",
           "marker": "v",
@@ -146,22 +165,25 @@
         "It is necessary for the overseer, as God's household manager, to be blameless. He must not be arrogant, not be easily angered, not addicted to wine, not a brawler, and not a greedy man."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "TIT 1:8"
         },
-        "Instead, he should be hospitable and a friend of what is good. He must be sensible, righteous, godly, and self-controlled.",
+        "Instead, he should be hospitable and a friend of what is good. He must be sensible, righteous, godly, and self-controlled. ",
         {
           "type": "verse",
           "marker": "v",
@@ -171,22 +193,25 @@
         "He should hold tightly to the trustworthy message that was taught, so that he may be able to encourage others with good teaching and correct those who oppose him."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "TIT 1:10"
         },
-        "For there are many rebellious people, empty talkers and deceivers, especially those of the circumcision.",
+        "For there are many rebellious people, empty talkers and deceivers, especially those of the circumcision. ",
         {
           "type": "verse",
           "marker": "v",
@@ -195,6 +220,8 @@
         },
         "It is necessary to stop them. They are upsetting whole families by teaching for shameful profit what they should not teach."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

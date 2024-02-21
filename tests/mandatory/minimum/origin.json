@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,23 +11,26 @@
         "Longer Heading"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "PHM 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "PHM 1:1"
         },
-        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ...",
+        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ... ",
         {
           "type": "verse",
           "marker": "v",
@@ -36,10 +40,12 @@
         "നമ്മുടെ പിതാവായ ..."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -48,6 +54,8 @@
         },
         "കർത്താവായ യേശുവിനോടും ..."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

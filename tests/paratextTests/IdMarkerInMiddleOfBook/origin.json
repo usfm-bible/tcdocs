@@ -2,17 +2,20 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ib",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
@@ -20,23 +23,26 @@
         "Hi mom."
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "Hi",
+        "Hi ",
         {
           "type": "char",
           "marker": "nd",
@@ -47,23 +53,30 @@
         "."
       ]
     },
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "MAT",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
-        }
+        },
+        "\n    ",
+        "\n  "
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

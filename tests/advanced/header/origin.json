@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "41MRKGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -17,6 +19,7 @@
         "John"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -24,6 +27,7 @@
         "The Gospel according to John"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -31,6 +35,7 @@
         "John"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt2",
@@ -38,6 +43,7 @@
         "The Gospel"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt3",
@@ -45,6 +51,7 @@
         "according to"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -52,11 +59,12 @@
         "JOHN"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "The two endings to the Gospel, which are enclosed in brackets, are regarded as written by someone other than the author of",
+        "The two endings to the Gospel, which are enclosed in brackets, are regarded as written by someone other than the author of ",
         {
           "type": "char",
           "marker": "bk",
@@ -66,6 +74,7 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "iot",
@@ -73,11 +82,12 @@
         "Outline of Contents"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
       "content": [
-        "The beginning of the gospel",
+        "The beginning of the gospel ",
         {
           "type": "char",
           "marker": "ior",
@@ -87,11 +97,12 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
       "content": [
-        "Jesus' public ministry in Galilee",
+        "Jesus' public ministry in Galilee ",
         {
           "type": "char",
           "marker": "ior",
@@ -101,11 +112,12 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
       "content": [
-        "From Galilee to Jerusalem",
+        "From Galilee to Jerusalem ",
         {
           "type": "char",
           "marker": "ior",
@@ -115,12 +127,14 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MRK 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -128,6 +142,7 @@
         "BOOK ONE"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mr",
@@ -135,17 +150,19 @@
         "(Psalms 1–41)"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MRK 1:1"
         },
-        "the first verse",
+        "the first verse ",
         {
           "type": "verse",
           "marker": "v",
@@ -154,6 +171,8 @@
         },
         "the second verse"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

@@ -2,73 +2,86 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "GEN 1:4"
         },
+        "\n    ",
         {
           "type": "note",
           "marker": "ef",
           "caller": "-",
           "content": [
+            "\n      ",
             {
               "type": "char",
               "marker": "fr",
               "content": [
-                "2.4:"
+                "2.4: "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "fk",
               "content": [
                 "Chief Priests"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "note",
           "marker": "ef",
           "caller": "-",
           "content": [
+            "\n      ",
             {
               "type": "char",
               "marker": "fr",
               "content": [
-                "2.4:"
+                "2.4: "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "fk",
               "content": [
                 "Teachers of the Law"
               ]
-            }
+            },
+            "\n    "
           ]
         },
         "He called together all the chief priests and the teachers of the Law and asked them, “Where will the Messiah be born?”"
       ]
     },
+    "\n  ",
     {
       "type": "sidebar",
       "marker": "esb",
@@ -85,7 +98,7 @@
           "type": "para",
           "marker": "p",
           "content": [
-            "The initials",
+            "The initials ",
             {
               "type": "char",
               "marker": "sc",
@@ -93,7 +106,7 @@
                 "b.c."
               ]
             },
-            "have traditionally been an abbreviation for “Before Christ.” If",
+            " have traditionally been an abbreviation for “Before Christ.” If ",
             {
               "type": "char",
               "marker": "bk",
@@ -101,7 +114,7 @@
                 "Luke"
               ]
             },
-            "'s dating is correct, then Jesus was born at least four years before the years known as",
+            "'s dating is correct, then Jesus was born at least four years before the years known as ",
             {
               "type": "char",
               "marker": "sc",
@@ -109,7 +122,7 @@
                 "a.d."
               ]
             },
-            "began. (",
+            " began. (",
             {
               "type": "char",
               "marker": "sc",
@@ -117,7 +130,7 @@
                 "a.d."
               ]
             },
-            "stands for the Latin phrase “in the year of our Lord”). Christian dating was actually not introduced until",
+            " stands for the Latin phrase “in the year of our Lord”). Christian dating was actually not introduced until ",
             {
               "type": "char",
               "marker": "sc",
@@ -125,14 +138,14 @@
                 "a.d."
               ]
             },
-            "526 by a monk named Dionysius Exiguus. He was given the job of creating a calendar for the feasts of the church. He fixed the birth of Jesus in the Roman year 754, which was selected as the first year of the Christian era beginning on January 1. Dionysius apparently misjudged Herod's reign by about five years."
+            " 526 by a monk named Dionysius Exiguus. He was given the job of creating a calendar for the feasts of the church. He fixed the birth of Jesus in the Roman year 754, which was selected as the first year of the Christian era beginning on January 1. Dionysius apparently misjudged Herod's reign by about five years."
           ]
         },
         {
           "type": "para",
           "marker": "p",
           "content": [
-            "The initials",
+            "The initials ",
             {
               "type": "char",
               "marker": "sc",
@@ -140,7 +153,7 @@
                 "b.c."
               ]
             },
-            "e. (Before the Common Era) and c.e. (in the Common Era) are sometimes used for the traditional",
+            "e. (Before the Common Era) and c.e. (in the Common Era) are sometimes used for the traditional ",
             {
               "type": "char",
               "marker": "sc",
@@ -148,7 +161,7 @@
                 "b.c."
               ]
             },
-            "and",
+            " and ",
             {
               "type": "char",
               "marker": "sc",
@@ -160,39 +173,47 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "GEN 1:5"
         },
+        "\n    ",
         {
           "type": "note",
           "marker": "ef",
           "caller": "-",
           "content": [
+            "\n      ",
             {
               "type": "char",
               "marker": "fr",
               "content": [
-                "2.5:"
+                "2.5: "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "fk",
               "content": [
                 "Prophet"
               ]
-            }
+            },
+            "\n    "
           ]
         },
         "“In the town of Bethlehem in Judea,” they answered. “For this is what the prophet wrote:"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

@@ -2,51 +2,61 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "26",
           "sid": "GEN 1:26"
         },
+        "\n    ",
         {
           "type": "note",
           "marker": "x",
           "caller": "-",
           "content": [
+            "\n      ",
             {
               "type": "char",
               "marker": "xo",
               "content": [
-                "3.26"
+                "3.26 "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "xt",
               "content": [
                 "ယစံး"
               ]
-            }
+            },
+            "\n    "
           ]
         },
-        "ဒ်သိးအကဒုးနဲၣ်အတၢ်တီတၢ် လိၤအကတီၢ်ဖဲအံၤ,"
+        " ဒ်သိးအကဒုးနဲၣ်အတၢ်တီတၢ် လိၤအကတီၢ်ဖဲအံၤ,"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

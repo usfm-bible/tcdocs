@@ -2,18 +2,21 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s",
@@ -21,10 +24,12 @@
         "some text"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -34,21 +39,25 @@
         "verse text"
       ]
     },
+    "\n  ",
     {
       "type": "table",
       "content": [
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "th1",
               "align": "start",
               "content": [
-                "header1"
+                "header1 "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "th3",
@@ -56,21 +65,25 @@
               "content": [
                 "header3"
               ]
-            }
+            },
+            "\n    "
           ]
         },
+        "\n    ",
         {
           "type": "table:row",
           "marker": "tr",
           "content": [
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr2",
               "align": "end",
               "content": [
-                "cell2"
+                "cell2 "
               ]
             },
+            "\n      ",
             {
               "type": "table:cell",
               "marker": "tcr3",
@@ -78,10 +91,14 @@
               "content": [
                 "cell3"
               ]
-            }
+            },
+            "\n    "
           ]
-        }
+        },
+        "\n  "
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

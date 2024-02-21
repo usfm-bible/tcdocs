@@ -2,29 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "the first verse",
+        "the first verse ",
         {
           "type": "verse",
           "marker": "v",
@@ -34,6 +38,7 @@
         "the second verse"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s",
@@ -41,17 +46,19 @@
         "A new section"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "GEN 1:3"
         },
-        "the third verse",
+        "the third verse ",
         {
           "type": "verse",
           "marker": "v",
@@ -60,6 +67,8 @@
         },
         "the fourth verse"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "usfm",
@@ -17,6 +19,7 @@
         "3.0"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -24,6 +27,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -31,6 +35,7 @@
         "CP-1252"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -38,6 +43,7 @@
         "Custom (TGUARANI.TTF)"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "sts",
@@ -45,6 +51,7 @@
         "2"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h1",
@@ -52,6 +59,7 @@
         "Matthew"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "rem",
@@ -59,6 +67,7 @@
         "Assigned to <translator's name>."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "rem",
@@ -66,6 +75,7 @@
         "First draft complete, waiting for checks."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -73,6 +83,7 @@
         "The Gospel According to Matthew"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -80,6 +91,7 @@
         "Matthew"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -87,6 +99,7 @@
         "Mat"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toca1",
@@ -94,6 +107,7 @@
         "മത്തായി എഴുതിയ സുവിശേഷം"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toca2",
@@ -101,6 +115,7 @@
         "മത്തായി"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toca3",
@@ -108,23 +123,26 @@
         "മത്താ"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MAT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MAT 1:1"
         },
-        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ...",
+        "ക്രിസ്തുയേശുവിന്റെ ബദ്ധനായ ... ",
         {
           "type": "verse",
           "marker": "v",
@@ -134,10 +152,12 @@
         "നമ്മുടെ പിതാവായ ..."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -146,6 +166,8 @@
         },
         "കർത്താവായ യേശുവിനോടും ..."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

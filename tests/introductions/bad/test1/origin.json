@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "- Testing data"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -17,6 +19,7 @@
         "Galatians"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -24,6 +27,7 @@
         "Galatians"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -31,12 +35,14 @@
         "An erroneous paragraph before the first chapter"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GAL 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
@@ -49,6 +55,8 @@
         },
         "This data should be here"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

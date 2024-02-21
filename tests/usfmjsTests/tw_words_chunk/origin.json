@@ -2,28 +2,33 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
+        "\n    ",
         {
           "type": "char",
           "marker": "w",
@@ -35,6 +40,7 @@
             "ἀπόστολος"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -60,6 +66,7 @@
             "Ἰησοῦ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -75,7 +82,7 @@
           "type": "ms",
           "marker": "k-e"
         },
-        ",",
+        ", ",
         {
           "type": "char",
           "marker": "w",
@@ -86,6 +93,7 @@
             "κατὰ"
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -118,6 +126,7 @@
             "Θεοῦ"
           ]
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -132,6 +141,7 @@
           "type": "ms",
           "marker": "k-e"
         },
+        " ",
         {
           "type": "char",
           "marker": "w",
@@ -143,6 +153,8 @@
           ]
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

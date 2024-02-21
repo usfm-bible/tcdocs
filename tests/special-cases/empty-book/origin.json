@@ -2,11 +2,13 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "SNG",
       "content": []
-    }
+    },
+    "\n"
   ]
 }

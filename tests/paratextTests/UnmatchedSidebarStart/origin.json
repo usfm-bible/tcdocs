@@ -2,22 +2,26 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27,10 +31,13 @@
         "this is some text"
       ]
     },
+    "\n  ",
     {
       "type": "sidebar",
       "marker": "esb",
       "content": []
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

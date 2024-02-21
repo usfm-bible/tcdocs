@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,23 +11,26 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "6",
       "sid": "MAT 6"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "18",
           "sid": "MAT 6:18"
         },
-        "“Why do you call me good?” Jesus asked him. “No one is good except God alone.",
+        "“Why do you call me good?” Jesus asked him. “No one is good except God alone. ",
         {
           "type": "verse",
           "marker": "v",
@@ -42,63 +46,63 @@
               "type": "char",
               "marker": "xo",
               "content": [
-                "10.19: a"
+                "10.19: a "
               ]
             },
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Exo 20.13; Deu 5.17;"
+                "Exo 20.13; Deu 5.17; "
               ]
             },
             {
               "type": "char",
               "marker": "xo",
               "content": [
-                "b"
+                "b "
               ]
             },
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Exo 20.14; Deu 5.18;"
+                "Exo 20.14; Deu 5.18; "
               ]
             },
             {
               "type": "char",
               "marker": "xo",
               "content": [
-                "c"
+                "c "
               ]
             },
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Exo 20.15; Deu 5.19;"
+                "Exo 20.15; Deu 5.19; "
               ]
             },
             {
               "type": "char",
               "marker": "xo",
               "content": [
-                "d"
+                "d "
               ]
             },
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Exo 20.16; Deu 5.20;"
+                "Exo 20.16; Deu 5.20; "
               ]
             },
             {
               "type": "char",
               "marker": "xo",
               "content": [
-                "e"
+                "e "
               ]
             },
             {
@@ -110,19 +114,23 @@
             }
           ]
         },
-        "You know the commandments: ‘Do not commit murder..."
+        " You know the commandments: ‘Do not commit murder..."
       ]
     },
+    "\n  ",
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "MAT 2"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "cd",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "xt",
@@ -131,7 +139,7 @@
             "1"
           ]
         },
-        "Бог благословляет седьмой день;",
+        " Бог благословляет седьмой день; ",
         {
           "type": "char",
           "marker": "xt",
@@ -140,7 +148,7 @@
             "8"
           ]
         },
-        "человек в раю Едемском; четыре реки; дерево познания добра и зла.",
+        " человек в раю Едемском; четыре реки; дерево познания добра и зла. ",
         {
           "type": "char",
           "marker": "xt",
@@ -149,7 +157,7 @@
             "18"
           ]
         },
-        "Человек дает названия животным.",
+        " Человек дает названия животным. ",
         {
           "type": "char",
           "marker": "xt",
@@ -158,13 +166,15 @@
             "21"
           ]
         },
-        "Создание женщины."
+        " Создание женщины."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -174,12 +184,15 @@
         "Так совершены небо и земля и все воинство их."
       ]
     },
+    "\n  ",
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "MAT 3"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -194,35 +207,35 @@
               "type": "char",
               "marker": "xo",
               "content": [
-                "3.0"
+                "3.0 "
               ]
             },
             {
               "type": "char",
               "marker": "xta",
               "content": [
-                "Compare with"
+                "Compare with "
               ]
             },
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Mk 1.1-8; Lk 3.1-18;"
+                "Mk 1.1-8; Lk 3.1-18; "
               ]
             },
             {
               "type": "char",
               "marker": "xta",
               "content": [
-                "and"
+                "and "
               ]
             },
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Jn 1.19-28"
+                "Jn 1.19-28 "
               ]
             },
             {
@@ -236,17 +249,19 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MAT 3:1"
         },
-        "At that time John the Baptist came to...",
+        "At that time John the Baptist came to... ",
         {
           "type": "verse",
           "marker": "v",
@@ -262,7 +277,7 @@
               "type": "char",
               "marker": "xo",
               "content": [
-                "1:1"
+                "1:1 "
               ]
             },
             {
@@ -272,6 +287,7 @@
                 "Гл 1. (1)"
               ]
             },
+            " ",
             {
               "type": "char",
               "marker": "xt",
@@ -281,7 +297,7 @@
             }
           ]
         },
-        "И биде слово Господне към Иона, син Аматиев:",
+        "И биде слово Господне към Иона, син Аматиев: ",
         {
           "type": "verse",
           "marker": "v",
@@ -291,6 +307,7 @@
         "Our God is in heaven;"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -298,53 +315,63 @@
         "he does whatever he wishes."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "MAT 3:4"
         },
+        "\n    ",
         {
           "type": "note",
           "marker": "x",
           "caller": "-",
           "content": [
+            "\n      ",
             {
               "type": "char",
               "marker": "xo",
               "content": [
-                "115.4-8:"
+                "115.4-8: "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "xt",
               "content": [
-                "Ps 135.15-18;"
+                "Ps 135.15-18; "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "xdc",
               "content": [
-                "Ltj Jr 4-73;"
+                "Ltj Jr 4-73; "
               ]
             },
+            "\n      ",
             {
               "type": "char",
               "marker": "xt",
               "content": [
                 "Rev 9.20."
               ]
-            }
+            },
+            "\n    "
           ]
         },
-        "Their gods are made of silver and gold,"
+        " Their gods are made of silver and gold,"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

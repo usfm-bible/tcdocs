@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "- New International Version® NIV® 2011, updated 2016"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "rem",
@@ -17,6 +19,7 @@
         "Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h1",
@@ -24,6 +27,7 @@
         "Matthew"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt1",
@@ -31,6 +35,7 @@
         "Alternate Texts"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "rem",
@@ -38,12 +43,14 @@
         "[a] footnote ommitted"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "XXA 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -51,17 +58,19 @@
         "Matthew 17:21"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "20",
           "sid": "XXA 1:20"
         },
-        "He replied,",
+        "He replied, ",
         {
           "type": "char",
           "marker": "wj",
@@ -69,6 +78,7 @@
             "“Because you have so little faith. Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, ‘Move from here to there,’ and it will move. Nothing will be impossible for you."
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
@@ -91,7 +101,8 @@
                   ]
                 }
               ]
-            }
+            },
+            " "
           ]
         },
         {
@@ -116,6 +127,8 @@
           ]
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

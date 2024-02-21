@@ -2,32 +2,38 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ib",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -37,16 +43,18 @@
         "Hi."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
-        "george",
+        "george ",
         {
           "type": "verse",
           "marker": "v",
@@ -54,6 +62,8 @@
           "sid": "GEN 1:2"
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

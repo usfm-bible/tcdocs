@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,29 +11,34 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MAT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MAT 1:1"
-        }
+        },
+        "\n  "
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
       "content": [
-        "“Someone is shouting in the desert,",
+        "“Someone is shouting in the desert, ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -45,17 +51,19 @@
           "marker": "qt-e",
           "eid": "qt_123"
         },
+        "\n  ",
         {
           "type": "ms",
           "marker": "zms"
         },
+        "\n     ",
         {
           "type": "verse",
           "marker": "v",
           "number": "11",
           "sid": "MAT 1:11"
         },
-        "Jesus stood before the Roman governor, who questioned him.",
+        "Jesus stood before the Roman governor, who questioned him. ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -66,13 +74,15 @@
           "type": "ms",
           "marker": "qt-e"
         },
-        "he asked."
+        " he asked."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -83,7 +93,7 @@
           "type": "ms",
           "marker": "qt-e"
         },
-        "answered Jesus.",
+        " answered Jesus. ",
         {
           "type": "verse",
           "marker": "v",
@@ -93,17 +103,19 @@
         "But he said nothing in response to the accusations of the chief priests and elders."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "13",
           "sid": "MAT 1:13"
         },
-        "So Pilate said to him,",
+        "So Pilate said to him, ",
         {
           "type": "ms",
           "marker": "qt-s",
@@ -116,34 +128,39 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "14",
           "sid": "MAT 1:14"
         },
-        "But Jesus refused to answer ...",
+        "But Jesus refused to answer ...\n  ",
         {
           "type": "ms",
           "marker": "ts"
-        }
+        },
+        " "
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "MAT 1:5"
         },
-        "Now I wish to remind you, although...",
+        "Now I wish to remind you, although... ",
         {
           "type": "ms",
           "marker": "ts-s",
@@ -151,30 +168,34 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "5",
           "sid": "MAT 1:5"
         },
-        "Now I wish to remind you, although you know everything, that the Lord once saved a people out of the land of Egypt, but that afterward he destroyed those who did not believe.",
+        "Now I wish to remind you, although you know everything, that the Lord once saved a people out of the land of Egypt, but that afterward he destroyed those who did not believe. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "MAT 1:6"
         },
-        "And angels who did not keep to their own principality, but left their proper dwelling place—God has kept them in everlasting chains in darkness for the judgment of the great day.",
+        "And angels who did not keep to their own principality, but left their proper dwelling place—God has kept them in everlasting chains in darkness for the judgment of the great day. ",
         {
           "type": "ms",
           "marker": "ts-e",
           "eid": "ts_JUD_5-6"
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

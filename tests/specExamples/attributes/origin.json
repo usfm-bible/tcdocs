@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,24 +11,29 @@
         "41MATGNT92.SFM, Good News Translation, June 2003"
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "MAT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "MAT 1:1"
-        }
+        },
+        "\n  "
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q1",
@@ -35,6 +41,7 @@
         "“Someone is shouting in the desert,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -42,6 +49,7 @@
         "‘Prepare a road for the Lord;"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "q2",
@@ -49,6 +57,7 @@
         "make a straight path for him to travel!’ ”"
       ]
     },
+    "\n  ",
     {
       "type": "sidebar",
       "marker": "esb",
@@ -76,17 +85,19 @@
         }
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2-6",
           "sid": "MAT 1:2-6"
         },
-        "From Abraham to King David, the following ancestors are listed: Abraham,...mother was",
+        "From Abraham to King David, the following ancestors are listed: Abraham,...mother was ",
         {
           "type": "char",
           "marker": "jmp",
@@ -95,7 +106,7 @@
             "Ruth"
           ]
         },
-        "), Jesse, and King David.",
+        "), Jesse, and King David. ",
         {
           "type": "char",
           "marker": "w",
@@ -105,6 +116,8 @@
           ]
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

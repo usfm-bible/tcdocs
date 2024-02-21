@@ -2,43 +2,47 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "the first verse",
+        "the first verse ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "GEN 1:2"
         },
-        "the second verse",
+        "the second verse ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "GEN 1:15"
         },
-        "Tell the Israelites that I, the",
+        "Tell the Israelites that I, the ",
         {
           "type": "char",
           "marker": "nd",
@@ -48,6 +52,8 @@
         },
         ", the God of their ancestors, the God of Abraham, Isaac, and Jacob,"
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

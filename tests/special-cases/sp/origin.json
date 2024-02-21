@@ -2,22 +2,26 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "SNG",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "SNG 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -27,6 +31,7 @@
         "The Song of Songs, which is Solomon’s."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -34,6 +39,7 @@
         "The Bride Confesses Her Love"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "sp",
@@ -41,9 +47,12 @@
         "She"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "b"
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

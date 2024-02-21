@@ -2,6 +2,7 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
@@ -10,6 +11,7 @@
         "Unlocked Literal Bible"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ide",
@@ -17,6 +19,7 @@
         "UTF-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "h",
@@ -24,6 +27,7 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc1",
@@ -31,6 +35,7 @@
         "The Letter of Paul to Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc2",
@@ -38,6 +43,7 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "toc3",
@@ -45,6 +51,7 @@
         "Tit"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mt",
@@ -52,6 +59,7 @@
         "Titus"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "iot",
@@ -59,6 +67,7 @@
         "Outline of Contents"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -66,6 +75,7 @@
         "The beginning of the gospel 1.1-13"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -73,6 +83,7 @@
         "Jesus' public ministry in Galilee 1.14-9.50"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -80,6 +91,7 @@
         "From Galilee to Jerusalem 10.1-52"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -87,6 +99,7 @@
         "The last week in and near Jerusalem 11.1-15.47"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -94,6 +107,7 @@
         "The resurrection of Jesus 16.1-8"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -101,6 +115,7 @@
         "[An Old Ending to the Gospel 16.9-20]"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "io1",
@@ -108,11 +123,12 @@
         "[Another Old Ending 16.9-10]"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "The opening words of",
+        "The opening words of ",
         {
           "type": "char",
           "marker": "bk",
@@ -120,7 +136,7 @@
             "The Gospel according to Mark"
           ]
         },
-        "tell its readers that the subject of this book is the Good News about Jesus Christ. With the coming of Jesus Christ, it announces, the time set by God to bring salvation to humankind has arrived (1.15). Though the book concentrates on his deeds and words, it is not a biography of Jesus of Nazareth. Only one year, or a little more, of Jesus' life appears to be recorded (chapters 1--10), and over one-third of the book (chapters 11--16) is taken up with the last week of Jesus in and near",
+        " tell its readers that the subject of this book is the Good News about Jesus Christ. With the coming of Jesus Christ, it announces, the time set by God to bring salvation to humankind has arrived (1.15). Though the book concentrates on his deeds and words, it is not a biography of Jesus of Nazareth. Only one year, or a little more, of Jesus' life appears to be recorded (chapters 1--10), and over one-third of the book (chapters 11--16) is taken up with the last week of Jesus in and near ",
         {
           "type": "char",
           "marker": "w",
@@ -128,7 +144,7 @@
             "Jerusalem"
           ]
         },
-        ". Nothing is said about his birth, childhood, home, or parents. When he first appears, unknown and unannounced, Jesus is a full-grown adult who comes to John the Baptist to be",
+        ". Nothing is said about his birth, childhood, home, or parents. When he first appears, unknown and unannounced, Jesus is a full-grown adult who comes to John the Baptist to be ",
         {
           "type": "char",
           "marker": "w",
@@ -136,14 +152,15 @@
             "baptized"
           ]
         },
-        "by him."
+        " by him."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "The author's primary interest in writing is religious. The Gospel is written \"from",
+        "The author's primary interest in writing is religious. The Gospel is written \"from ",
         {
           "type": "char",
           "marker": "w",
@@ -151,9 +168,10 @@
             "faith"
           ]
         },
-        "to faith\"."
+        " to faith\"."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "is1",
@@ -161,10 +179,12 @@
         "The Story"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
+        "\n    ",
         {
           "type": "char",
           "marker": "bk",
@@ -172,7 +192,7 @@
             "Mark's"
           ]
         },
-        "story of Jesus is told quickly and with an abundance of details that enhance its dramatic impact. Jesus appears suddenly in Judea, where he joins those who are being baptized in the Jordan by John the Baptist. Just as suddenly, he returns to Galilee, where he proclaims the message that the",
+        " story of Jesus is told quickly and with an abundance of details that enhance its dramatic impact. Jesus appears suddenly in Judea, where he joins those who are being baptized in the Jordan by John the Baptist. Just as suddenly, he returns to Galilee, where he proclaims the message that the ",
         {
           "type": "char",
           "marker": "w",
@@ -180,14 +200,15 @@
             "kingdom of god"
           ]
         },
-        "is about to arrive."
+        " is about to arrive."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "However, he is more than a teacher, healer, or",
+        "However, he is more than a teacher, healer, or ",
         {
           "type": "char",
           "marker": "w",
@@ -198,11 +219,12 @@
         "-worker. He is also the Messiah, the Son of God, the Son of Man. These three titles express the first Christians' understanding of who Jesus is."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ili",
       "content": [
-        "1",
+        "1 ",
         {
           "type": "char",
           "marker": "k",
@@ -210,7 +232,7 @@
             "The Messiah"
           ]
         },
-        "is the one promised by God, the one who would come and free God's people. By the time",
+        " is the one promised by God, the one who would come and free God's people. By the time ",
         {
           "type": "char",
           "marker": "bk",
@@ -218,7 +240,7 @@
             "The Gospel of Mark"
           ]
         },
-        "appeared, the title \"Messiah\" (in Greek, \"",
+        " appeared, the title \"Messiah\" (in Greek, \"",
         {
           "type": "char",
           "marker": "w",
@@ -234,14 +256,15 @@
             "son of david"
           ]
         },
-        "\" (10.46-48) also identifies Jesus as the Messiah, who would restore to Israel the power and glory it enjoyed under David's reign (also 12.35-37)."
+        " \" (10.46-48) also identifies Jesus as the Messiah, who would restore to Israel the power and glory it enjoyed under David's reign (also 12.35-37)."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ili",
       "content": [
-        "2",
+        "2 ",
         {
           "type": "char",
           "marker": "k",
@@ -249,14 +272,15 @@
             "The Son of God"
           ]
         },
-        "is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of God (15.39)."
+        " is the title by which the heavenly voice addresses Jesus at his baptism (1.11) and his transfiguration (9.7). And at Jesus' death the Roman officer confesses that Jesus is the Son of God (15.39)."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ili",
       "content": [
-        "3",
+        "3 ",
         {
           "type": "char",
           "marker": "k",
@@ -264,7 +288,7 @@
             "The Son of Man"
           ]
         },
-        "is the title most often used of Jesus, and it appears only on the lips of Jesus. This enigmatic title appears in",
+        " is the title most often used of Jesus, and it appears only on the lips of Jesus. This enigmatic title appears in ",
         {
           "type": "char",
           "marker": "bk",
@@ -272,7 +296,7 @@
             "The Book of Daniel"
           ]
         },
-        "(Dan 7.13n), where it is applied to the exalted figure to whom God gives universal dominion. In",
+        " (Dan 7.13n), where it is applied to the exalted figure to whom God gives universal dominion. In ",
         {
           "type": "char",
           "marker": "bk",
@@ -280,38 +304,42 @@
             "Mark"
           ]
         },
-        "the title is used of Jesus in three ways: the Son of Man acts with divine power (2.10, 28); he will be rejected, will suffer and die (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and glory (8.38; 13.26; 14.62)."
+        " the title is used of Jesus in three ways: the Son of Man acts with divine power (2.10, 28); he will be rejected, will suffer and die (8.31; 9.9, 12, 31; 10.33-34, 45; 14.21, 41); he will return in power and glory (8.38; 13.26; 14.62)."
       ]
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "TIT 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 1:1"
         },
-        "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,",
+        "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ",
         {
           "type": "verse",
           "marker": "v",
           "number": "2",
           "sid": "TIT 1:2"
         },
-        "with the certain hope of everlasting life that God, who does not lie, promised before all the ages of time.",
+        "with the certain hope of everlasting life that God, who does not lie, promised before all the ages of time. ",
         {
           "type": "verse",
           "marker": "v",
@@ -321,15 +349,18 @@
         "At the right time, he revealed his word by the message that he trusted me to deliver, by the command of God our savior."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -339,10 +370,12 @@
         "To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -352,22 +385,25 @@
         "For this purpose I left you in Crete, that you might set in order things not yet complete and ordain elders in every city as I directed you."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "TIT 1:6"
         },
-        "An elder must be without blame, the husband of one wife, with faithful children not accused of reckless behavior or undisciplined.",
+        "An elder must be without blame, the husband of one wife, with faithful children not accused of reckless behavior or undisciplined. ",
         {
           "type": "verse",
           "marker": "v",
@@ -377,22 +413,25 @@
         "It is necessary for the overseer, as God's household manager, to be blameless. He must not be arrogant, not be easily angered, not addicted to wine, not a brawler, and not a greedy man."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "8",
           "sid": "TIT 1:8"
         },
-        "Instead, he should be hospitable and a friend of what is good. He must be sensible, righteous, godly, and self-controlled.",
+        "Instead, he should be hospitable and a friend of what is good. He must be sensible, righteous, godly, and self-controlled. ",
         {
           "type": "verse",
           "marker": "v",
@@ -402,22 +441,25 @@
         "He should hold tightly to the trustworthy message that was taught, so that he may be able to encourage others with good teaching and correct those who oppose him."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "TIT 1:10"
         },
-        "For there are many rebellious people, empty talkers and deceivers, especially those of the circumcision.",
+        "For there are many rebellious people, empty talkers and deceivers, especially those of the circumcision. ",
         {
           "type": "verse",
           "marker": "v",
@@ -427,22 +469,25 @@
         "It is necessary to stop them. They are upsetting whole families by teaching for shameful profit what they should not teach."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "TIT 1:12"
         },
-        "At once the Spirit made him go into the desert,",
+        "At once the Spirit made him go into the desert, ",
         {
           "type": "verse",
           "marker": "v",
@@ -452,6 +497,7 @@
         "where he stayed 40 days, being tempted by Satan. Wild animals were there also, but angels came and helped him."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ms",
@@ -459,6 +505,7 @@
         "Jesus' Public Ministry in Galilee"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "mr",
@@ -466,21 +513,23 @@
         "1.14--9.50"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "Jesus returns to Galilee and does not go back to Judea until the close of his public ministry. There is no indication of how long his Galilean ministry lasted: only when he is back in Judea is a",
+        "Jesus returns to Galilee and does not go back to Judea until the close of his public ministry. There is no indication of how long his Galilean ministry lasted: only when he is back in Judea is a ",
         {
           "type": "char",
           "marker": "w",
           "content": [
-            "festival"
+            "festival "
           ]
         },
-        "mentioned (14.1). He spends much of his time in Capernaum (1.21; 2.1; 3.1, 20; 9.33) and other places around Lake Galilee (1.9; 2.13; 3.7; 4.1). Twice Jesus ventures out of Galilee: into the region of the Ten Towns (5.1-20) and Phoenicia (7.24-31). His actions and teachings soon arouse opposition from the religious leaders (2.6-7, 24; 3.6, 22; 7.1-13; 8.11-12), and before long he predicts his coming arrest, condemnation, and crucifixion (8.31; 9.30-31)."
+        " mentioned (14.1). He spends much of his time in Capernaum (1.21; 2.1; 3.1, 20; 9.33) and other places around Lake Galilee (1.9; 2.13; 3.7; 4.1). Twice Jesus ventures out of Galilee: into the region of the Ten Towns (5.1-20) and Phoenicia (7.24-31). His actions and teachings soon arouse opposition from the religious leaders (2.6-7, 24; 3.6, 22; 7.1-13; 8.11-12), and before long he predicts his coming arrest, condemnation, and crucifixion (8.31; 9.30-31)."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s1",
@@ -488,6 +537,7 @@
         "Jesus Calls Four Fishermen"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "r",
@@ -495,11 +545,12 @@
         "(Mt 4.12-22; Lk 4.14-15; 5.1-11)"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "ip",
       "content": [
-        "Jesus' message is about the arrival of the",
+        "Jesus' message is about the arrival of the ",
         {
           "type": "char",
           "marker": "w",
@@ -510,10 +561,12 @@
         ", which will happen soon. To prepare for it, the people need to repent (1.15). He immediately summons two pairs of fishermen brothers to be his followers and helpers."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -523,22 +576,25 @@
         "After John had been put in prison, Jesus went to Galilee and preached the Good News from God."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "15",
           "sid": "TIT 1:15"
         },
-        "To those who are pure, all things are pure. But to those who are corrupt and unbelieving, nothing is pure, but both their minds and their consciences have been corrupted.",
+        "To those who are pure, all things are pure. But to those who are corrupt and unbelieving, nothing is pure, but both their minds and their consciences have been corrupted. ",
         {
           "type": "verse",
           "marker": "v",
@@ -548,28 +604,33 @@
         "They profess to know God, but they deny him by their actions. They are detestable, disobedient, and unfit for doing any good work."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "2",
       "sid": "TIT 2"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 2:1"
         },
-        "But you, speak what fits with faithful instruction.",
+        "But you, speak what fits with faithful instruction. ",
         {
           "type": "verse",
           "marker": "v",
@@ -579,29 +640,32 @@
         "Teach older men to be temperate, dignified, sensible, sound in faith, in love, and in perseverance."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "3",
           "sid": "TIT 2:3"
         },
-        "Teach older women likewise to be reverent in behavior, not slanderers or being slaves to much wine, but to be teachers of what is good.",
+        "Teach older women likewise to be reverent in behavior, not slanderers or being slaves to much wine, but to be teachers of what is good. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "TIT 2:4"
         },
-        "In this way they may train the younger women to love their own husbands and children,",
+        "In this way they may train the younger women to love their own husbands and children, ",
         {
           "type": "verse",
           "marker": "v",
@@ -611,29 +675,32 @@
         "to be sensible, pure, good housekeepers, and obedient to their own husbands, so that God's word may not be insulted."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "TIT 2:6"
         },
-        "In the same way, encourage the younger men to use good sense.",
+        "In the same way, encourage the younger men to use good sense. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "7",
           "sid": "TIT 2:7"
         },
-        "In all ways present yourself as an example of good works. In your teaching, show integrity, dignity,",
+        "In all ways present yourself as an example of good works. In your teaching, show integrity, dignity, ",
         {
           "type": "verse",
           "marker": "v",
@@ -643,22 +710,25 @@
         "and a correct message that is above criticism, so that anyone who opposes you may be ashamed because they have nothing bad to say about us."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "9",
           "sid": "TIT 2:9"
         },
-        "Teach slaves to obey their masters in everything, to please them and not argue with them,",
+        "Teach slaves to obey their masters in everything, to please them and not argue with them, ",
         {
           "type": "verse",
           "marker": "v",
@@ -668,29 +738,32 @@
         "to not steal from them, but instead to demonstrate all good faith, so that in every way they may bring credit to the teaching about God our Savior."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "11",
           "sid": "TIT 2:11"
         },
-        "For the grace of God has appeared for the salvation of all people.",
+        "For the grace of God has appeared for the salvation of all people. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "TIT 2:12"
         },
-        "It trains us to reject godlessness and worldly passions, and to live self-controlled, upright, and godly lives in this age,",
+        "It trains us to reject godlessness and worldly passions, and to live self-controlled, upright, and godly lives in this age, ",
         {
           "type": "verse",
           "marker": "v",
@@ -700,15 +773,18 @@
         "while we look forward to receiving our blessed hope, the appearance of the glory of our great God and Savior Jesus Christ."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -718,15 +794,18 @@
         "Jesus gave himself for us in order to redeem us from all lawlessness and to make pure, for himself, a special people who are eager to do good works."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -736,28 +815,33 @@
         "Speak of these things, encourage people to do them, and give correction with all authority. Let no one disregard you."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "3",
       "sid": "TIT 3"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "TIT 3:1"
         },
-        "Remind them to submit to rulers and authorities, to obey them, to be ready for every good work,",
+        "Remind them to submit to rulers and authorities, to obey them, to be ready for every good work, ",
         {
           "type": "verse",
           "marker": "v",
@@ -767,15 +851,18 @@
         "to revile no one, to not be eager to fight, and to be gentle, showing all humility toward everyone."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -785,22 +872,25 @@
         "For once we ourselves were thoughtless and disobedient. We were led astray and enslaved by various passions and pleasures. We lived in evil and envy. We were detestable and hated one another."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "4",
           "sid": "TIT 3:4"
         },
-        "But when the kindness of God our savior and his love for mankind appeared,",
+        "But when the kindness of God our savior and his love for mankind appeared, ",
         {
           "type": "verse",
           "marker": "v",
@@ -810,22 +900,25 @@
         "it was not by works of righteousness that we did, but by his mercy that he saved us, through the washing of new birth and renewal by the Holy Spirit,"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "6",
           "sid": "TIT 3:6"
         },
-        "whom God richly poured on us through our Savior Jesus Christ,",
+        "whom God richly poured on us through our Savior Jesus Christ, ",
         {
           "type": "verse",
           "marker": "v",
@@ -835,15 +928,18 @@
         "so that having been justified by his grace, we might become heirs with the certain hope of eternal life."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -853,29 +949,32 @@
         "This message is trustworthy. I want you to insist on these things, so that those who have believed in God may be careful to engage themselves in good works. These things are good and useful for everyone."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "9",
           "sid": "TIT 3:9"
         },
-        "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
+        "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "10",
           "sid": "TIT 3:10"
         },
-        "Reject anyone who is causing divisions among you, after one or two warnings,",
+        "Reject anyone who is causing divisions among you, after one or two warnings, ",
         {
           "type": "verse",
           "marker": "v",
@@ -885,22 +984,25 @@
         "knowing that such a person has turned from the right way and is sinning and condemns himself."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "12",
           "sid": "TIT 3:12"
         },
-        "When I send Artemas or Tychicus to you, hurry and come to me at Nicopolis, where I have decided to spend the winter.",
+        "When I send Artemas or Tychicus to you, hurry and come to me at Nicopolis, where I have decided to spend the winter. ",
         {
           "type": "verse",
           "marker": "v",
@@ -910,15 +1012,18 @@
         "Do everything you can to send on their way Zenas the lawyer and Apollos, so that they lack nothing."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -928,15 +1033,18 @@
         "Our people must learn to engage themselves in good works that provide for urgent needs, and so not be unfruitful."
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s5",
       "content": []
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
@@ -945,6 +1053,8 @@
         },
         "All those who are with me greet you. Greet those who love us in faith. Grace be with all of you."
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

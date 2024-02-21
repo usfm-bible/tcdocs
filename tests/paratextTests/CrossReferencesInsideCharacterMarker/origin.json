@@ -2,34 +2,38 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "something",
+        "something ",
         {
           "type": "char",
           "marker": "wj",
           "content": [
-            "testing",
+            "testing ",
             {
               "type": "note",
               "marker": "x",
@@ -39,7 +43,7 @@
                   "type": "char",
                   "marker": "xo",
                   "content": [
-                    "1.1"
+                    "1.1 "
                   ]
                 },
                 {
@@ -54,6 +58,8 @@
           ]
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }

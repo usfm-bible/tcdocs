@@ -2,18 +2,21 @@
   "type": "USJ",
   "version": "0.2.1",
   "content": [
+    "\n  ",
     {
       "type": "book",
       "marker": "id",
       "code": "GEN",
       "content": []
     },
+    "\n  ",
     {
       "type": "chapter",
       "marker": "c",
       "number": "1",
       "sid": "GEN 1"
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "s",
@@ -21,17 +24,19 @@
         "some text"
       ]
     },
+    "\n  ",
     {
       "type": "para",
       "marker": "p",
       "content": [
+        "\n    ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "rb",
@@ -40,13 +45,14 @@
             "BBB"
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "rb",
@@ -55,13 +61,14 @@
             "BB"
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "rb",
@@ -70,13 +77,14 @@
             "僕使御"
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "rb",
@@ -84,13 +92,14 @@
             "BB"
           ]
         },
+        " ",
         {
           "type": "verse",
           "marker": "v",
           "number": "1",
           "sid": "GEN 1:1"
         },
-        "verse text",
+        "verse text ",
         {
           "type": "char",
           "marker": "rb",
@@ -99,6 +108,8 @@
           ]
         }
       ]
-    }
+    },
+    "\n  ",
+    "\n"
   ]
 }
