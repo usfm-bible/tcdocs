@@ -44,9 +44,10 @@ USFM::
 USX::
 +
 .Psalm 1 (Book 1 division) (GNT)
-[source#src-usx-para-ms1_1,xml,highlight=3]
+[source#src-usx-para-ms1_1,xml,highlight=4]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="1" style="c" sid="PSA 1"/>
   <para style="ms1">Book One</para>
   <para style="mr">(Psalms 1–41)</para>
@@ -64,8 +65,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -139,9 +146,10 @@ of Babylonia attacked Jerusalem and surrounded the city.
 USX::
 +
 .Daniel 1.1 (GNT)
-[source#src-usx-par-ms1_2,xml,highlight=3]
+[source#src-usx-par-ms1_2,xml,highlight=4]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="DAN" style="id"/>
   <chapter number="1" style="c" sid="DAN 1"/>
   <para style="ms1">The Story of Daniel and His Friends</para>
   <para style="mr">(1.1—6.28)</para>
@@ -159,8 +167,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "DAN",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

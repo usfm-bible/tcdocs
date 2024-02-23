@@ -4,15 +4,14 @@
 
 xref:char:index.adoc[Character] level markup is applied to a span of text within a xref:para:index.adoc[paragraph] block. Sometimes, marking texts in a semantically accurate way requires nesting a character level element within another character level element. In these situations an editor, processor, or publishing system must be able to interpret the nested markup contexts correctly.
 
-A common occurrence for nested character elements is within footnotes, where some text occurring within a footnote quotation (xref:char:notes/footnote/fq.adoc[fq]), keyword ((xref:char:notes/footnote/fk.adoc[fk])), or the footnote text (xref:char:notes/footnote/ft.adoc[ft]), needs to be marked.
+Initially, USFM did not allow character styles to be nested, whenever a new character style was encountered in a paragraph the currently active character style was implicitly closed. However, it is a common occurrence for text within footnote sections, a footnote quotation (xref:char:notes/footnote/fq.adoc[fq]), keyword (xref:char:notes/footnote/fk.adoc[fk]), or the footnote text (xref:char:notes/footnote/ft.adoc[ft]) to contain some text that needs to be marked. With the character styles being implicitly closed, a new way of marking nesting was needed and the plus sign `+` was used as a prefix to the opening and closing forms of a nested marker pair.
 
-== Indicating markup is nested
-
-*In USFM*, add a plus sign `+` as a prefix to the opening and closing forms of a nested marker pair. The `+` is added after the backslash, and before the marker text.
+With USFM 3.1, the ending character marker has been made required except for the markers used to start sections in footnotes and cross references. This allows nesting to be done without the use of the plus sign. For backward compatibility, the use of the plus sign will still be processed as it has been.
 
 In the following example text:
-* `\+nd` indicates to start a new character element nested inside the existing `\add` element (without closing `\add`)
-* `\+nd*` indicates the end of the nested environment without closing `\add`
+
+* `\nd` indicates to start a new character element nested inside the existing `\add` element (without closing `\add`)
+* `\nd*` indicates the end of the nested environment without closing `\add`
 
 [tabs]
 ======
@@ -20,15 +19,41 @@ USFM::
 +
 [source#src-usfm-char-nesting_1,usfm]
 ----
-... The following is a \add translator's addition containing the 
-word \+nd Lord\+nd* within it\add* ...
+\p The following is a \add translator's addition containing the 
+word \nd Lord\nd* within it\add* ...
 ----
 USX::
 +
 [source#src-usx-char-nesting_1,xml]
 ----
-... The following is a <char style="add">translator's addition containing the 
-  word <char style="nd">Lord</char> within it</char> ...
+<para style="p">The following is a <char style="add">translator's addition
+  containing the word <char style="nd">Lord</char> within it</char> ...</para>
+----
+USJ::
++
+[source#src-usj-char-nesting_1,json]
+----
+{
+  "type": "para",
+  "marker": "p",
+  "content": [
+    "The following is a",
+    {
+      "type": "char",
+      "marker": "add",
+      "content": [
+        "translator's addition containing the word",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        " within it"
+      ]
+    },
+    " ..."
+  ]
+}
 ----
 ======
 
@@ -45,7 +70,7 @@ USFM::
 .Numbers 21.14 (GNT) - bk + nd nested
 [source#src-usfm-char-nesting_4,usfm,highlight=1]
 ----
-\v 14 That is why \bk The Book of the \+nd Lord\+nd*'s Battles\bk* speaks of 
+\v 14 That is why \bk The Book of the \nd Lord\nd*'s Battles\bk* speaks of 
 “...the town of Waheb in the area of Suphah, and the valleys; the Arnon River,
 ----
 USX::
@@ -53,10 +78,44 @@ USX::
 .Numbers 21.14 (GNT) - bk + nd nested
 [source#src-usx-char-nesting_4,xml,highlight=2]
 ----
-<verse number="14" style="v" sid="NUM 22:14"/>That is why
-  <char style="bk">The Book of the <char style="nd">Lord</char>'s Battles</char>
-  speaks of “...the town of Waheb in the area of Suphah, and the valleys; the Arnon
-  River,<verse eid="NUM 22:14"/>
+<para style="p">...<verse number="14" style="v" sid="NUM 21:14"/>That is why <char
+    style="bk">The Book of the <char style="nd">Lord</char>'s Battles</char>
+  speaks of “...the town of Waheb in the area of Suphah, and the valleys; the
+  Arnon River, <verse eid="NUM 22:14"/></para>
+----
+USJ::
++
+.Numbers 21.14 (GNT) - bk + nd nested
+[source#src-usj-char-nesting_4,json,highlight=]
+----
+{
+  "type": "para",
+  "marker": "p",
+  "content": [
+    "...",
+    {
+      "type": "verse",
+      "marker": "v",
+      "number": "14",
+      "sid": "NUM 21:14"
+    },
+    "That is why ",
+    {
+      "type": "char",
+      "marker": "bk",
+      "content": [
+        "The Book of the",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        "'s Battles"
+      ]
+    },
+    " speaks of “...the town of Waheb in the area of Suphah, and the valleys; the Arnon River, "
+  ]
+}
 ----
 ======
 
@@ -69,10 +128,9 @@ USFM::
 .Genesis 2.4 (GNT) - fk and ft + nd nested
 [source#src-usfm-char-nesting_5,usfm,highlight=2;4]
 ----
-\s1 The Garden of Eden
-\p When the \nd Lord\nd* \f + \fr 2.4: \fk the \+nd Lord\+nd*: \ft Where the 
+\p When the \nd Lord\nd* \f + \fr 2.4: \fk the \nd Lord\nd*: \ft Where the 
 Hebrew text has Yahweh, traditionally transliterated as Jehovah, this 
-translation employs \+nd Lord\+nd* with capital letters, following a usage 
+translation employs \nd Lord\nd* with capital letters, following a usage 
 which is widespread in English versions.\f* God made the universe,
 ...
 ----
@@ -81,7 +139,6 @@ USX::
 .Genesis 2.4 (GNT) - fk and ft + nd nested
 [source#src-usx-char-nesting_5,xml,highlight=2;4]
 ----
-<para style="s" vid="GEN 2:4">The Garden of Eden</para>
 <para style="p" vid="GEN 2:4">When the <char style="nd">Lord</char>
   <note caller="+" style="f">
     <char style="fr" closed="false">2.4: </char>
@@ -94,7 +151,64 @@ USX::
       which is widespread in English versions.
     </char>
   </note> God made the universe, <verse eid="GEN 2:4" />
-  ...
+----
+USJ::
++
+.Genesis 2.4 (GNT) - fk and ft + nd nested
+[source#src-usj-char-nesting_5,json,highlight=]
+----
+{
+  "type": "USJ",
+  "marker": "p",
+  "content": [
+    "When the",
+    {
+      "type": "char",
+      "marker": "nd",
+      "content": ["Lord"]
+    },
+    {
+      "type": "note",
+      "marker": "f",
+      "caller": "+",
+      "content": [
+        {
+          "type": "char",
+          "marker": "fr",
+          "content": ["2.4:"]
+        },
+        {
+          "type": "char",
+          "marker": "fk",
+          "content": [
+            "the",
+            {
+              "type": "char",
+              "marker": "nd",
+              "content": ["Lord"]
+            },
+            ": "
+          ]
+        },
+        {
+          "type": "char",
+          "marker": "ft",
+          "content": [
+            "Where the Hebrew text has Yahweh, traditionally transliterated as Jehovah, this translation employs",
+            {
+              "type": "char",
+              "marker": "nd",
+              "content": ["Lord"]
+            },
+            " with capital letters, following a usage which is widespread in English versions. "
+          ]
+        }
+      ]
+    },
+    " God made the universe, ",
+    "..."
+  ]
+}
 ----
 ======
 

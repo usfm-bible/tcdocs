@@ -59,9 +59,10 @@ USFM::
 USX::
 +
 .Psalm 3 (GNT)
-[source#src-usx-para-b_1,xml,highlight=13;25]
+[source#src-usx-para-b_1,xml,highlight=14;26]
 ----
 <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="3" style="c" sid="PSA 3"/>
   <para style="s1">Morning Prayer for Help</para>
   <para style="q1">
@@ -104,8 +105,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -127,7 +134,7 @@ USJ::
           "number": "1",
           "sid": "PSA 3:1"
         },
-        "I have so many enemies,",
+        "I have so many enemies, ",
         {
           "type": "char",
           "marker": "nd",
@@ -160,7 +167,7 @@ USJ::
       "content": ["“God will not help him.”"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -173,7 +180,7 @@ USJ::
           "number": "3",
           "sid": "PSA 3:3"
         },
-        "But you, O",
+        "But you, O ",
         {
           "type": "char",
           "marker": "nd",
@@ -202,7 +209,7 @@ USJ::
           "number": "4",
           "sid": "PSA 3:4"
         },
-        "I call to the",
+        "I call to the ",
         {
           "type": "char",
           "marker": "nd",
@@ -217,7 +224,7 @@ USJ::
       "content": ["and from his sacred hill he answers me."]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -294,6 +301,7 @@ USX::
 [source#src-usx-para-b_2,xml,highlight=7]
 ----
 <usx version="3.1">
+  <book code="HAB" style="id"/>
   <chapter number="3" style="c" sid="HAB 3"/>
   <para style="s1">A Prayer of Habakkuk</para>
   <para style="p">
@@ -314,8 +322,14 @@ USX::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "HAB",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -341,7 +355,7 @@ USX::
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -354,7 +368,7 @@ USX::
           "number": "2",
           "sid": "HAB 3:2"
         },
-        "O",
+        "O ",
         {
           "type": "char",
           "marker": "nd",

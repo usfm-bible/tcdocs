@@ -54,9 +54,10 @@ man eats and drinks too much! He is even a friend of tax collectors ...
 USX::
 +
 .Matthew 11.18-19 (CEV)
-[source#src-usx-para-mi_1,xml,highlight=15]
+[source#src-usx-para-mi_1,xml,highlight=16]
 ----
 <usx version="3.1">
+  <book code="MAT" style="id"/>
   <chapter number="11" style="c" sid="MAT 11"/>
   <para style="p">...</para>
   <para style="pi">
@@ -86,8 +87,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -113,7 +120,7 @@ USJ::
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -145,7 +152,7 @@ USJ::
       "content": ["but you would not mourn!”"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -158,7 +165,7 @@ USJ::
           "number": "18",
           "sid": "MAT 11:18"
         },
-        "John the Baptist did not go around eating and drinking, and you said, “That man has a demon in him!”",
+        "John the Baptist did not go around eating and drinking, and you said, “That man has a demon in him!” ",
         {
           "type": "verse",
           "marker": "v",

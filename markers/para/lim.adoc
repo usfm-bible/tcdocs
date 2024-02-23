@@ -30,8 +30,10 @@ Added:: 3.0
 USFM::
 +
 .Nehemiah 7.4-25 (NIV)
-[source#src-usfm-para-lim_1,usfm,highlight=19;21;23;25;27;29;31]
+[source#src-usfm-para-lim_1,usfm,highlight=21;23;25;27;29;31;33]
 ----
+\id NEH
+\c 7
 \s1 The List of the Exiles Who Returned
 \p
 \v 4 Now the city was large and spacious, but there were few people in it, 
@@ -69,50 +71,231 @@ Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):
 USX::
 +
 .Nehemiah 7.4-25 (NIV)
-[source#src-usx-para-lim_1,xml,highlight=22;25;28;31;34;37;40]
+[source#src-usx-para-lim_1,xml,highlight=25;28;31;34;37;40;43]
 ----
-<para style="s1">The List of the Exiles Who Returned</para>
-<para style="p">
-  <verse number="4" style="v" sid="NEH 7:4"/>Now the city was large and spacious,
-  but there were few people in it, and the houses had not yet been rebuilt. 
-  <verse eid="NEH 7:4"/><verse number="5" style="v" sid="NEH 7:5"/>So my God put 
-  it into my heart to assemble the nobles, the officials and the common people for
-  registration by families. I found the genealogical record of those who had been
-  the first to return. This is what I found written there:<verse eid="NEH 7:5"/>
-  </para>
-<para style="b"/>
-<para style="pm">
-  <verse number="6" style="v" sid="NEH 7:6"/>These are the people of the province
-  who came up from the captivity of the exiles whom Nebuchadnezzar king of Babylon
-  had taken captive (they returned to Jerusalem and Judah, each to his own town, 
-  <verse eid="NEH 7:6"/><verse number="7" style="v" sid="NEH 7:7"/>in company with
-  Zerubbabel, Jeshua, Nehemiah, Azariah, Raamiah, Nahamani, Mordecai, Bilshan,
-  Mispereth, Bigvai, Nehum and Baanah):</para>
-<para style="b" vid="NEH 7:7"/>
-<para style="pm" vid="NEH 7:7">The list of the men of Israel:<verse eid="NEH 7:7"/>
-  </para>
-<para style="b"/>
-<para style="lim1">
-  <verse number="8" style="v" sid="NEH 7:8"/>the descendants of Parosh - 2,172
-  <verse eid="NEH 7:8"/></para>
-<para style="lim1">
-  <verse number="9" style="v" sid="NEH 7:9"/>of Shephatiah - 372
-  <verse eid="NEH 7:9"/></para>
-<para style="lim1">
-  <verse number="10" style="v" sid="NEH 7:10"/>of Arah - 652
-  <verse eid="NEH 7:10"/></para>
-<para style="lim1">
-  <verse number="11" style="v" sid="NEH 7:11"/>of Pahath-Moab (through the line of
-  Jeshua and Joab) - 2,818<verse eid="NEH 7:11"/></para>
-<para style="lim1">
-  <verse number="12" style="v" sid="NEH 7:12"/>of Elam - 1,254
-  <verse eid="NEH 7:12"/></para>
-<para style="lim1">
-  <verse number="13" style="v" sid="NEH 7:13"/>of Zattu - 845
-  <verse eid="NEH 7:13"/></para>
-<para style="lim1">
-  <verse number="14" style="v" sid="NEH 7:14"/>of Zaccai - 760
-  <verse eid="NEH 7:14"/></para>
+<usx version="3.1">
+  <book code="NEH" style="id"/>
+  <chapter number="7" style="c" sid="NEH 7"/>
+  <para style="s1">The List of the Exiles Who Returned</para>
+  <para style="p">
+    <verse number="4" style="v" sid="NEH 7:4"/>Now the city was large and spacious,
+    but there were few people in it, and the houses had not yet been rebuilt. 
+    <verse eid="NEH 7:4"/><verse number="5" style="v" sid="NEH 7:5"/>So my God put 
+    it into my heart to assemble the nobles, the officials and the common people for
+    registration by families. I found the genealogical record of those who had been
+    the first to return. This is what I found written there:<verse eid="NEH 7:5"/>
+    </para>
+  <para style="b"/>
+  <para style="pm">
+    <verse number="6" style="v" sid="NEH 7:6"/>These are the people of the province
+    who came up from the captivity of the exiles whom Nebuchadnezzar king of Babylon
+    had taken captive (they returned to Jerusalem and Judah, each to his own town, 
+    <verse eid="NEH 7:6"/><verse number="7" style="v" sid="NEH 7:7"/>in company with
+    Zerubbabel, Jeshua, Nehemiah, Azariah, Raamiah, Nahamani, Mordecai, Bilshan,
+    Mispereth, Bigvai, Nehum and Baanah):</para>
+  <para style="b" vid="NEH 7:7"/>
+  <para style="pm" vid="NEH 7:7">The list of the men of Israel:<verse eid="NEH 7:7"/>
+    </para>
+  <para style="b"/>
+  <para style="lim1">
+    <verse number="8" style="v" sid="NEH 7:8"/>the descendants of Parosh - 2,172
+    <verse eid="NEH 7:8"/></para>
+  <para style="lim1">
+    <verse number="9" style="v" sid="NEH 7:9"/>of Shephatiah - 372
+    <verse eid="NEH 7:9"/></para>
+  <para style="lim1">
+    <verse number="10" style="v" sid="NEH 7:10"/>of Arah - 652
+    <verse eid="NEH 7:10"/></para>
+  <para style="lim1">
+    <verse number="11" style="v" sid="NEH 7:11"/>of Pahath-Moab (through the line of
+    Jeshua and Joab) - 2,818<verse eid="NEH 7:11"/></para>
+  <para style="lim1">
+    <verse number="12" style="v" sid="NEH 7:12"/>of Elam - 1,254
+    <verse eid="NEH 7:12"/></para>
+  <para style="lim1">
+    <verse number="13" style="v" sid="NEH 7:13"/>of Zattu - 845
+    <verse eid="NEH 7:13"/></para>
+  <para style="lim1">
+    <verse number="14" style="v" sid="NEH 7:14"/>of Zaccai - 760
+    <verse eid="NEH 7:14"/></para>
+</usx>
+----
+USJ::
++
+.Nehemiah 7.4-25 (NIV)
+[source#src-usj-para-lim_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NEH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "7",
+      "sid": "NEH 7"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["The List of the Exiles Who Returned"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "4",
+          "sid": "NEH 7:4"
+        },
+        "Now the city was large and spacious, but there were few people in it, and the houses had not yet been rebuilt. ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "5",
+          "sid": "NEH 7:5"
+        },
+        "So my God put it into my heart to assemble the nobles, the officials and the common people for registration by families. I found the genealogical record of those who had been the first to return. This is what I found written there:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "pm",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "6",
+          "sid": "NEH 7:6"
+        },
+        "These are the people of the province who came up from the captivity of the exiles whom Nebuchadnezzar king of Babylon had taken captive (they returned to Jerusalem and Judah, each to his own town, ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "7",
+          "sid": "NEH 7:7"
+        },
+        "in company with Zerubbabel, Jeshua, Nehemiah, Azariah, Raamiah, Nahamani, Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "pm",
+      "content": ["The list of the men of Israel:"]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "8",
+          "sid": "NEH 7:8"
+        },
+        "the descendants of Parosh - 2,172 "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "9",
+          "sid": "NEH 7:9"
+        },
+        "of Shephatiah - 372 "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "10",
+          "sid": "NEH 7:10"
+        },
+        "of Arah - 652 "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "11",
+          "sid": "NEH 7:11"
+        },
+        "of Pahath-Moab (through the line of Jeshua and Joab) - 2,818"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "12",
+          "sid": "NEH 7:12"
+        },
+        "of Elam - 1,254 "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "13",
+          "sid": "NEH 7:13"
+        },
+        "of Zattu - 845 "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lim1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "14",
+          "sid": "NEH 7:14"
+        },
+        "of Zaccai - 760 "
+      ]
+    }
+  ]
+}
 ----
 ======
 

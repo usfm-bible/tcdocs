@@ -30,16 +30,43 @@ Added:: 1.0
 USFM::
 +
 .Introduction to Mark
-[source#src-usfm-para-imte_1,usfm,highlight=1]
+[source#src-usfm-para-imte_1,usfm,highlight=2]
 ----
+\id MRK
 \imte End of the Introduction to the Gospel of Mark
 ----
 USX::
 +
 .Introduction to Mark
-[source#src-usx-para-imte_1,xml,highlight=1]
+[source#src-usx-para-imte_1,xml,highlight=3]
 ----
-<para style="imte">End of the Introduction to the Gospel of Mark</para>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <para style="imte">End of the Introduction to the Gospel of Mark</para>
+</usx>
+----
+USJ::
++
+.Introduction to Mark
+[source#src-usj-para-imte_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "imte",
+      "content": ["End of the Introduction to the Gospel of Mark"]
+    }
+  ]
+}
 ----
 ======
 

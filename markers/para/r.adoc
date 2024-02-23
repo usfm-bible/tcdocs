@@ -45,9 +45,10 @@ started preaching.
 USX::
 +
 .Matthew 3.1 (GNT)
-[source#src-usx-para-r_1,xml,highlight=4]
+[source#src-usx-para-r_1,xml,highlight=5]
 ----
 <usx version="3.1">
+  <book code="MAT" style="id"/>
   <chapter number="3" style="c" sid="MAT 3"/>
   <para style="s1">The Preaching of John the Baptist</para>
   <para style="r">(Mark 1.1-8; Luke 3.1-18; John 1.19-28)</para>
@@ -65,8 +66,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -76,16 +83,12 @@ USJ::
     {
       "type": "para",
       "marker": "s1",
-      "content": [
-        "The Preaching of John the Baptist"
-      ]
+      "content": ["The Preaching of John the Baptist"]
     },
     {
       "type": "para",
       "marker": "r",
-      "content": [
-        "(Mark 1.1-8; Luke 3.1-18; John 1.19-28)"
-      ]
+      "content": ["(Mark 1.1-8; Luke 3.1-18; John 1.19-28)"]
     },
     {
       "type": "para",
@@ -97,7 +100,7 @@ USJ::
           "number": "1",
           "sid": "MAT 3:1"
         },
-        "At that time John the Baptist came to the desert of Judea and started preaching.",
+        "At that time John the Baptist came to the desert of Judea and started preaching. ",
         {
           "type": "verse",
           "marker": "v",

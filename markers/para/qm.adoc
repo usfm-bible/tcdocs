@@ -30,8 +30,10 @@ Added:: 2.0
 USFM::
 +
 .1 Chronicles 12.18 (GNT - markup adapted)
-[source#src-usfm-para-qm_1,usfm,highlight=4..6]
+[source#src-usfm-para-qm_1,usfm,highlight=6..8]
 ----
+\id 1CH
+\c 18
 \p
 \v 18 God's spirit took control of one of them, Amasai, who later became the 
 commander of “The Thirty,” and he called out,
@@ -44,18 +46,83 @@ commander of “The Thirty,” and he called out,
 USX::
 +
 .1 Chronicles 12.18 (GNT - markup adapted)
-[source#src-usx-para-qm_1,xml,highlight=5..7]
+[source#src-usx-para-qm_1,xml,highlight=8..10]
 ----
-<para style="p">
-  <verse number="18" style="v" sid="1CH 12:18"/>God's spirit took control of one
-  of them, Amasai, who later became the commander of “The Thirty,” and he called
-  out,</para>
-<para style="qm1" vid="1CH 12:18">“David son of Jesse, we are yours!</para>
-<para style="qm1" vid="1CH 12:18">Success to you and those who help you!</para>
-<para style="qm1" vid="1CH 12:18">God is on your side.”</para>
-<para style="b" vid="1CH 12:18"/>
-<para style="m" vid="1CH 12:18">David welcomed them and made them officers in his
-  army.<verse eid="1CH 12:18"/></para>
+<usx version="3.1">
+  <book code="1CH" style="id"/>
+  <chapter number="12" style="c" sid="1CH 12"/>
+  <para style="p">
+    <verse number="18" style="v" sid="1CH 12:18"/>God's spirit took control of one
+    of them, Amasai, who later became the commander of “The Thirty,” and he called
+    out,</para>
+  <para style="qm1" vid="1CH 12:18">“David son of Jesse, we are yours!</para>
+  <para style="qm1" vid="1CH 12:18">Success to you and those who help you!</para>
+  <para style="qm1" vid="1CH 12:18">God is on your side.”</para>
+  <para style="b" vid="1CH 12:18"/>
+  <para style="m" vid="1CH 12:18">David welcomed them and made them officers in his
+    army.<verse eid="1CH 12:18"/></para>
+</usx>
+----
+USX::
++
+.1 Chronicles 12.18 (GNT - markup adapted)
+[source#src-usj-para-qm_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "1CH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "12",
+      "sid": "1CH 12"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18",
+          "sid": "1CH 12:18"
+        },
+        "God's spirit took control of one of them, Amasai, who later became the commander of “The Thirty,” and he called out,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "qm1",
+      "content": ["“David son of Jesse, we are yours!"]
+    },
+    {
+      "type": "para",
+      "marker": "qm1",
+      "content": ["Success to you and those who help you!"]
+    },
+    {
+      "type": "para",
+      "marker": "qm1",
+      "content": ["God is on your side.”"]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "m",
+      "content": ["David welcomed them and made them officers in his army."]
+    }
+  ]
+}
 ----
 ======
 

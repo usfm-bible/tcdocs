@@ -46,9 +46,10 @@ follow these instructions, you will do well.
 USX::
 +
 .Act 15.28-29 (CEV)
-[source#src-usx-para-pmc_1,xml,highlight=11]
+[source#src-usx-para-pmc_1,xml,highlight=12]
 ----
 <usx version="3.1">
+  <book code="ACT" style="id"/>
   <chapter number="15" style="c" sid="ACT 15"/>
   <para style="p">...</para>
   <para style="pm">
@@ -69,8 +70,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "ACT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -92,7 +99,7 @@ USJ::
           "number": "28",
           "sid": "ACT 15:28"
         },
-        "The Holy Spirit has shown us that we should not place any extra burden on you.",
+        "The Holy Spirit has shown us that we should not place any extra burden on you. ",
         {
           "type": "verse",
           "marker": "v",

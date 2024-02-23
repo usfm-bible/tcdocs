@@ -49,9 +49,10 @@ to him, and he sat down and started teaching them.
 USX::
 +
 .John 7.53–8.2 (CEV)
-[source#src-usx-para-nb_1,xml,highlight=14]
+[source#src-usx-para-nb_1,xml,highlight=15]
 ----
 <usx version="3.1">
+  <book code="JHN" style="id"/>
   <chapter number="12" style="c" sid="JHN 7"/>
   <para style="p">...</para>
   <para style="p">
@@ -78,8 +79,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "JHN",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -119,7 +126,7 @@ USJ::
           "number": "53",
           "sid": "JHN 7:53"
         },
-        "Everyone else went home,"
+        "Everyone else went home, "
       ]
     },
     {
@@ -138,7 +145,7 @@ USJ::
           "number": "1",
           "sid": "JHN 8:1"
         },
-        "but Jesus walked out to the Mount of Olives.",
+        "but Jesus walked out to the Mount of Olives. ",
         {
           "type": "verse",
           "marker": "v",

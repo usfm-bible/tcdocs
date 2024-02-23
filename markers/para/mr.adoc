@@ -44,9 +44,10 @@ USFM::
 USX::
 +
 .Psalm 1 (Book 1 division) (GNT)
-[source#src-usx-para-mr_1,xml,highlight=4]
+[source#src-usx-para-mr_1,xml,highlight=5]
 ----
-<usx version="3.1">
+ <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="1" style="c" sid="PSA 1"/>
   <para style="ms1">Book One</para>
   <para style="mr">(Psalms 1–41)</para>
@@ -64,8 +65,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",

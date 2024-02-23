@@ -29,8 +29,9 @@ Added:: 1.0
 USFM::
 +
 .Psalm 119 (NIV)
-[source#src-usfm-para-qa_1,usfm,highlight=2;7]
+[source#src-usfm-para-qa_1,usfm,highlight=3;8]
 ----
+\id PSA
 \c 119
 \qa Aleph
 \q1
@@ -45,22 +46,104 @@ USFM::
 USX::
 +
 .Psalm 119 (NIV)
-[source#src-usx-para-qa_1,xml,highlight=2;9]
+[source#src-usx-para-qa_1,xml,highlight=4;11]
 ----
-<chapter number="119" style="c" sid="PSA 119"/>
-<para style="qa">Aleph</para>
-<para style="q1">
-  <verse number="1" style="v" sid="PSA 119:1"/>Blessed are they whose ways are
-  blameless,</para>
-<para style="q2" vid="PSA 119:1">who walk according to the law of the
-  <char style="nd">Lord</char>.<verse eid="PSA 119:1"/></para>
-...
-<para style="qa">Beth</para>
-<para style="q1">
-  <verse number="9" style="v" sid="PSA 119:9"/>How can a young man keep his way
-  pure?</para>
-<para style="q2" vid="PSA 119:9">By living according to your word.
-  <verse eid="PSA 119:9"/></para>
+<usx version="3.1">
+  <book code="PSA" style="id"/>
+  <chapter number="119" style="c" sid="PSA 119"/>
+  <para style="qa">Aleph</para>
+  <para style="q1">
+    <verse number="1" style="v" sid="PSA 119:1"/>Blessed are they whose ways are
+    blameless,</para>
+  <para style="q2" vid="PSA 119:1">who walk according to the law of the
+    <char style="nd">Lord</char>.<verse eid="PSA 119:1"/></para>
+  ...
+  <para style="qa">Beth</para>
+  <para style="q1">
+    <verse number="9" style="v" sid="PSA 119:9"/>How can a young man keep his way
+    pure?</para>
+  <para style="q2" vid="PSA 119:9">By living according to your word.
+    <verse eid="PSA 119:9"/></para>
+</usx>
+----
+USJ::
++
+.Psalm 119 (NIV)
+[source#src-usj-para-qa_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "119",
+      "sid": "PSA 119"
+    },
+    {
+      "type": "para",
+      "marker": "qa",
+      "content": ["Aleph"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "PSA 119:1"
+        },
+        "Blessed are they whose ways are blameless,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        "who walk according to the law of the",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        "."
+      ]
+    },
+    " ... ",
+    {
+      "type": "para",
+      "marker": "qa",
+      "content": ["Beth"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "9",
+          "sid": "PSA 119:9"
+        },
+        "How can a young man keep his way pure?"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["By living according to your word."]
+    }
+  ]
+}
 ----
 ======
 
@@ -68,7 +151,7 @@ image::para/qa_1.jpg[Psalm 119 (NIV),300]
 
 == Properties
 
-TextType:: VerseText
+TextType:: Other
 TextProperties:: paragraph, publishable, vernacular, poetic
 
 == Publication Issues

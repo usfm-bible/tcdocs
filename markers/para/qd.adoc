@@ -29,8 +29,10 @@ Added:: 3.0
 USFM::
 +
 .Habakkuk 3:19 (NIV)
-[source#src-usfm-para-qd_1,usfm,highlight=9]
+[source#src-usfm-para-qd_1,usfm,highlight=11]
 ----
+\id HAB
+\c 3
 \q1
 \v 18 yet I will rejoice in the \nd Lord\nd*,
 \q2 I will be joyful in God my Savior.
@@ -44,22 +46,116 @@ USFM::
 USX::
 +
 .Habakkuk 3:19 (NIV)
-[source#src-usx-para-qd_1,xml,highlight=13]
+[source#src-usx-para-qd_1,xml,highlight=16]
 ----
-<para style="q1">
-  <verse number="18" style="v" sid="HAB 3:18"/>yet I will rejoice in the 
-  <char style="nd">Lord</char>,</para>
-<para style="q2" vid="HAB 3:18">I will be joyful in God my Savior.
-  <verse eid="HAB 3:18"/></para>
-<para style="b"/>
-<para style="q1">
-  <verse number="19" style="v" sid="HAB 3:19"/>The Sovereign 
-  <char style="nd">Lord</char> is my strength;</para>
-<para style="q2" vid="HAB 3:19">he makes my feet like the feet of a deer,</para>
-<para style="q2" vid="HAB 3:19">he enables me to tread on the heights.</para>
-<para style="b" vid="HAB 3:19"/>
-<para style="qd" vid="HAB 3:19">For the director of music. On my stringed
-  instruments.<verse eid="HAB 3:19"/></para>
+<usx version="3.1">
+  <book code="HAB" style="id"/>
+  <chapter number="3" style="c" sid="HAB 3"/>
+  <para style="q1">
+    <verse number="18" style="v" sid="HAB 3:18"/>yet I will rejoice in the 
+    <char style="nd">Lord</char>,</para>
+  <para style="q2" vid="HAB 3:18">I will be joyful in God my Savior.
+    <verse eid="HAB 3:18"/></para>
+  <para style="b"/>
+  <para style="q1">
+    <verse number="19" style="v" sid="HAB 3:19"/>The Sovereign 
+    <char style="nd">Lord</char> is my strength;</para>
+  <para style="q2" vid="HAB 3:19">he makes my feet like the feet of a deer,</para>
+  <para style="q2" vid="HAB 3:19">he enables me to tread on the heights.</para>
+  <para style="b" vid="HAB 3:19"/>
+  <para style="qd" vid="HAB 3:19">For the director of music. On my stringed
+    instruments.<verse eid="HAB 3:19"/></para>
+</usx>
+----
+USJ::
++
+.Habakkuk 3:19 (NIV)
+[source#src-usj-para-qd_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "HAB",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "HAB 3"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18",
+          "sid": "HAB 3:18"
+        },
+        "yet I will rejoice in the ",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        ","
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["I will be joyful in God my Savior."]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "19",
+          "sid": "HAB 3:19"
+        },
+        "The Sovereign ",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        " is my strength;"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["he makes my feet like the feet of a deer,"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["he enables me to tread on the heights."]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "qd",
+      "content": ["For the director of music. On my stringed instruments."]
+    }
+  ]
+}
 ----
 ======
 

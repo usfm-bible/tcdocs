@@ -48,9 +48,10 @@ they said. But we did not send them!
 USX::
 +
 .Acts 15.24 (CEV)
-[source#src-usx-para-pmo_1,xml,highlight=11]
+[source#src-usx-para-pmo_1,xml,highlight=12]
 ----
 <usx version="3.1">
+  <book code="MRK" style="id"/>
   <chapter number="15" style="c" sid="MRK 15"/>
   <para style="p">...</para>
   <para style="p">
@@ -76,8 +77,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -99,14 +106,14 @@ USJ::
           "number": "22",
           "sid": "ACT 15:22"
         },
-        "The apostles, the leaders, and all the church members decided to send some men to Antioch along with Paul and Barnabas. They chose Silas and Judas Barsabbas, who were two leaders of the Lord's followers.",
+        "The apostles, the leaders, and all the church members decided to send some men to Antioch along with Paul and Barnabas. They chose Silas and Judas Barsabbas, who were two leaders of the Lord's followers. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "23",
           "sid": "ACT 15:23"
         },
-        "They wrote a letter that said:"
+        "They wrote a letter that said: "
       ]
     },
     {
@@ -126,7 +133,7 @@ USJ::
           "number": "24",
           "sid": "ACT 15:24"
         },
-        "We have heard that some people from here have terribly upset you by what they said. But we did not send them!"
+        "We have heard that some people from here have terribly upset you by what they said. But we did not send them! "
       ]
     }
   ]

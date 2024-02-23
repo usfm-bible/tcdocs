@@ -44,9 +44,10 @@ USFM::
 USX::
 +
 .Genesis 2 (Russian Synodal Protestant Version)
-[source#src-usx-para-cd_1,xml,highlight=3..5]
+[source#src-usx-para-cd_1,xml,highlight=4..6]
 ----
 <usx version="3.1">
+  <book code="GEN" style="id"/>
   <chapter number="2" style="c" sid="GEN 2"/>
   <para style="cd">1 Бог благословляет седьмой день; 8 человек в раю Едемском;
     четыре реки; дерево познания добра и зла. 18 Человек дает названия животным. 
@@ -67,8 +68,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "GEN",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -105,7 +112,7 @@ USJ::
           "number": "2",
           "sid": "GEN 2:2"
         },
-        "И совершил Бог к седьмому дню дела Свои, которые Он делал, и почил в день седьмой от всех дел Своих, которые делал."
+        "И совершил Бог к седьмому дню дела Свои, которые Он делал, и почил в день седьмой от всех дел Своих, которые делал. "
       ]
     }
   ]

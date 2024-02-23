@@ -48,10 +48,11 @@ descendant?”
 USX::
 +
 .Mark 12.37 (GNT)
-[source#src-usx-para-m_1,xml,highlight=15]
+[source#src-usx-para-m_1,xml,highlight=16]
 ----
 <usx version="3.1">
-  <chapter number="12" style="c" sid="MRK 12" />
+  <book code="MRK" style="id"/>
+  <chapter number="12" style="c" sid="MRK 12"/>
   <para style="p">...</para>
   <para style="p">
     <verse number="35" style="v" sid="MRK 12:35" />As Jesus was teaching in the 
@@ -76,8 +77,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -99,7 +106,7 @@ USJ::
           "number": "35",
           "sid": "MRK 12:35"
         },
-        "As Jesus was teaching in the Temple, he asked the question, “How can the teachers of the Law say that the Messiah will be the descendant of David?",
+        "As Jesus was teaching in the Temple, he asked the question, “How can the teachers of the Law say that the Messiah will be the descendant of David? ",
         {
           "type": "verse",
           "marker": "v",
@@ -125,7 +132,7 @@ USJ::
       "content": ["until I put your enemies under your feet.’"]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {

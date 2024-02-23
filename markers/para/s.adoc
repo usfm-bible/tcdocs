@@ -56,9 +56,10 @@ advantage of those who stand helpless in court.
 USX::
 +
 .Proverbs 22.17 (GNT)
-[source#src-usx-para-s1_1,xml,highlight=4;17]
+[source#src-usx-para-s1_1,xml,highlight=5;18]
 ----
 <usx version="3.1">
+  <book code="PRO" style="id"/>
   <chapter number="22" style="c" sid="PRO 22"/>
   <para style="p">...</para>
   <para style="s1">The Thirty Wise Sayings</para>
@@ -88,8 +89,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PRO",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -116,41 +123,41 @@ USJ::
           "number": "17",
           "sid": "PRO 22:17"
         },
-        "Listen, and I will teach you what the wise have said. Study their teachings,",
+        "Listen, and I will teach you what the wise have said. Study their teachings, ",
         {
           "type": "verse",
           "marker": "v",
           "number": "18",
           "sid": "PRO 22:18"
         },
-        "and you will be glad if you remember them and can quote them.",
+        "and you will be glad if you remember them and can quote them. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "19",
           "sid": "PRO 22:19"
         },
-        "I want you to put your trust in the",
+        "I want you to put your trust in the ",
         {
           "type": "char",
           "marker": "nd",
           "content": ["Lord"]
         },
-        "; that is why I am going to tell them to you now.",
+        "; that is why I am going to tell them to you now. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "20",
           "sid": "PRO 22:20"
         },
-        "I have written down thirty sayings for you. They contain knowledge and good advice,",
+        " I have written down thirty sayings for you. They contain knowledge and good advice, ",
         {
           "type": "verse",
           "marker": "v",
           "number": "21",
           "sid": "PRO 22:21"
         },
-        "and will teach you what the truth really is. Then when you are sent to find it out, you will bring back the right answer."
+        " and will teach you what the truth really is. Then when you are sent to find it out, you will bring back the right answer."
       ]
     },
     {
@@ -204,9 +211,10 @@ anyone who threatens theirs.
 USX::
 +
 .Proverbs 22.22,24 (GNT)
-[source#src-usx-par-s2_1,xml,highlight=8;15]
+[source#src-usx-par-s2_1,xml,highlight=9;16]
 ----
 <usx version="3.1">
+  <book code="PRO" style="id"/>
   <chapter number="22" style="c" sid="PRO 22"/>
   <para style="p">...</para>
   <para style="p">...
@@ -235,8 +243,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PRO",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -277,20 +291,20 @@ USJ::
           "number": "22",
           "sid": "PRO 22:22"
         },
-        "Don't take advantage of the poor just because you can; don't take advantage of those who stand helpless in court.",
+        "Don't take advantage of the poor just because you can; don't take advantage of those who stand helpless in court. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "23",
           "sid": "PRO 22:23"
         },
-        "The",
+        " The  ",
         {
           "type": "char",
           "marker": "nd",
           "content": ["Lord"]
         },
-        "will argue their case for them and threaten the life of anyone who threatens theirs."
+        " will argue their case for them and threaten the life of anyone who threatens theirs."
       ]
     },
     {
@@ -308,7 +322,7 @@ USJ::
           "number": "24",
           "sid": "PRO 22:24"
         },
-        "Don't make friends with people who have hot, violent tempers.",
+        "Don't make friends with people who have hot, violent tempers. ",
         {
           "type": "verse",
           "marker": "v",

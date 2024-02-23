@@ -51,9 +51,10 @@ on you...
 USX::
 +
 .Act 15.24-27,28-29 (CEV)
-[source#src-usx-para-pm_1,xml,highlight=6;17]
+[source#src-usx-para-pm_1,xml,highlight=7;18]
 ----
 <usx version="3.1">
+  <book code="ACT" style="id"/>
   <chapter number="15" style="c" sid="ACT 15"/>
   <para style="p">...</para>
   <para style="pmo">We apostles and leaders send friendly greetings to all of you
@@ -81,8 +82,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "ACT",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -111,28 +118,28 @@ USJ::
           "number": "24",
           "sid": "ACT 15:24"
         },
-        "We have heard that some people from here have terribly upset you by what they said. But we did not send them!",
+        "We have heard that some people from here have terribly upset you by what they said. But we did not send them! ",
         {
           "type": "verse",
           "marker": "v",
           "number": "25",
           "sid": "ACT 15:25"
         },
-        "So we met together and decided to choose some men and to send them to you along with our good friends Barnabas and Paul.",
+        "So we met together and decided to choose some men and to send them to you along with our good friends Barnabas and Paul. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "26",
           "sid": "ACT 15:26"
         },
-        "These men have risked their lives for our Lord Jesus Christ.",
+        "These men have risked their lives for our Lord Jesus Christ. ",
         {
           "type": "verse",
           "marker": "v",
           "number": "27",
           "sid": "ACT 15:27"
         },
-        "We are also sending Judas and Silas, who will tell you in person the same things that we are writing."
+        "We are also sending Judas and Silas, who will tell you in person the same things that we are writing. "
       ]
     },
     {

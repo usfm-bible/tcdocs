@@ -29,8 +29,9 @@ Added:: 1.0
 USFM::
 +
 .Psalm 136.1-3 (CEV - markup adapted)
-[source#src-usfm-para-qr_1,usfm,highlight=5;8;11]
+[source#src-usfm-para-qr_1,usfm,highlight=6;9;12]
 ----
+\id PSA
 \c 136
 \s1 God's Love Never Fails
 \q1
@@ -46,23 +47,115 @@ USFM::
 USX::
 +
 .Psalm 136.1-3 (CEV - markup adapted)
-[source#src-usx-para-qr_1,xml,highlight=6;10;14]
+[source#src-usx-para-qr_1,xml,highlight=8;12;16]
 ----
-<chapter number="136" style="c" sid="PSA 136"/>
-<para style="s1">God's Love Never Fails</para>
-<para style="q1">
-  <verse number="1" style="v" sid="PSA 136:1"/>Praise the 
-  <char style="nd">Lord</char>! He is good.</para>
-<para style="qr" vid="PSA 136:1">God's love never fails.<verse eid="PSA 136:1"/>
-  </para>
-<para style="q1">
-  <verse number="2" style="v" sid="PSA 136:2"/>Praise the God of all gods.</para>
-<para style="qr" vid="PSA 136:2">God's love never fails.<verse eid="PSA 136:2"/>
-  </para>
-<para style="q1">
-  <verse number="3" style="v" sid="PSA 136:3"/>Praise the Lord of lords.</para>
-<para style="qr" vid="PSA 136:3">God's love never fails.<verse eid="PSA 136:3"/>
-  </para>
+<usx version="3.1">
+  <book code="PSA" style="id"/>
+  <chapter number="136" style="c" sid="PSA 136"/>
+  <para style="s1">God's Love Never Fails</para>
+  <para style="q1">
+    <verse number="1" style="v" sid="PSA 136:1"/>Praise the 
+    <char style="nd">Lord</char>! He is good.</para>
+  <para style="qr" vid="PSA 136:1">God's love never fails.<verse eid="PSA 136:1"/>
+    </para>
+  <para style="q1">
+    <verse number="2" style="v" sid="PSA 136:2"/>Praise the God of all gods.</para>
+  <para style="qr" vid="PSA 136:2">God's love never fails.<verse eid="PSA 136:2"/>
+    </para>
+  <para style="q1">
+    <verse number="3" style="v" sid="PSA 136:3"/>Praise the Lord of lords.</para>
+  <para style="qr" vid="PSA 136:3">God's love never fails.<verse eid="PSA 136:3"/>
+    </para>
+</usx>
+----
+USJ::
++
+.Psalm 136.1-3 (CEV - markup adapted)
+[source#src-usj-para-qr_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "136",
+      "sid": "PSA 136"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["God's Love Never Fails"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "PSA 136:1"
+        },
+        "Praise the ",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        "! He is good."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "qr",
+      "content": ["God's love never fails."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "PSA 136:2"
+        },
+        "Praise the God of all gods."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "qr",
+      "content": ["God's love never fails."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "3",
+          "sid": "PSA 136:3"
+        },
+        "Praise the Lord of lords."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "qr",
+      "content": ["God's love never fails."]
+    }
+  ]
+}
 ----
 ======
 

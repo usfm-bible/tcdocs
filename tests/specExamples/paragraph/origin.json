@@ -1,6 +1,6 @@
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "content": [
     {
       "type": "book",
@@ -68,7 +68,7 @@
       "type": "para",
       "marker": "pr",
       "content": [
-        "“And all the people will answer, ‘Amen!’",
+        "“And all the people will answer, ‘Amen!’ ",
         {
           "type": "verse",
           "marker": "v",
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "type": "optbreak",
+      "type": "para",
       "marker": "b"
     },
     {
@@ -153,7 +153,7 @@
           "number": "24",
           "sid": "MAT 1:24"
         },
-        "We have heard that some ...",
+        "We have heard that some ... ",
         {
           "type": "verse",
           "marker": "v",
@@ -186,7 +186,7 @@
       "type": "para",
       "marker": "pc",
       "content": [
-        "I AM THE GREAT CITY OF BABYLON, ...",
+        "I AM THE GREAT CITY OF BABYLON, ... ",
         {
           "type": "verse",
           "marker": "v",

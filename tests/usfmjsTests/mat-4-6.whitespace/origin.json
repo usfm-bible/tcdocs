@@ -1,6 +1,6 @@
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "content": [
     {
       "type": "book",
@@ -243,7 +243,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "ms",
           "marker": "zaln-s",
@@ -313,7 +313,7 @@
           "type": "ms",
           "marker": "zaln-e"
         },
-        ",",
+        ", ",
         {
           "type": "ms",
           "marker": "zaln-s",

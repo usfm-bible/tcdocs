@@ -29,8 +29,10 @@ Added:: 1.0
 USFM::
 +
 .Psalm 72.19 (GNT)
-[source#src-usfm-para-qc_1,usfm,highlight=8]
+[source#src-usfm-para-qc_1,usfm,highlight=10]
 ----
+\id PSA
+\c 72
 \q1
 \v 18 Praise the \nd Lord\nd*, the God of Israel!
 \q1 He alone does these wonderful things.
@@ -46,25 +48,126 @@ USFM::
 USX::
 +
 .Psalm 72.19 (GNT)
-[source#src-usx-para-qc_1,xml,highlight=11]
+[source#src-usx-para-qc_1,xml,highlight=14]
 ----
-<para style="q1">
-  <verse number="18" style="v" sid="PSA 72:18"/>Praise the 
-  <char style="nd">Lord</char>, the God of Israel!</para>
-<para style="q1" vid="PSA 72:18">He alone does these wonderful things.
-  <verse eid="PSA 72:18"/></para>
-<para style="q1">
-  <verse number="19" style="v" sid="PSA 72:19"/>Praise his glorious name 
-  forever!</para>
-<para style="q1" vid="PSA 72:19">May his glory fill the whole world.</para>
-<para style="b" vid="PSA 72:19"/>
-<para style="qc" vid="PSA 72:19">Amen! Amen!<verse eid="PSA 72:19"/></para>
-<para style="b"/>
-<para style="q1">
-  <verse number="20" style="v" sid="PSA 72:20"/>This is the end of the prayers of
-  David son of Jesse.</para>
-<para style="qr" vid="PSA 72:20">God's love never fails.<verse eid="PSA 72:20"/>
-  </para>
+<usx version="3.1">
+  <book code="PSA" style="id"/>
+  <chapter number="3" style="c" sid="PSA 72"/>
+  <para style="q1">
+    <verse number="18" style="v" sid="PSA 72:18"/>Praise the 
+    <char style="nd">Lord</char>, the God of Israel!</para>
+  <para style="q1" vid="PSA 72:18">He alone does these wonderful things.
+    <verse eid="PSA 72:18"/></para>
+  <para style="q1">
+    <verse number="19" style="v" sid="PSA 72:19"/>Praise his glorious name 
+    forever!</para>
+  <para style="q1" vid="PSA 72:19">May his glory fill the whole world.</para>
+  <para style="b" vid="PSA 72:19"/>
+  <para style="qc" vid="PSA 72:19">Amen! Amen!<verse eid="PSA 72:19"/></para>
+  <para style="b"/>
+  <para style="q1">
+    <verse number="20" style="v" sid="PSA 72:20"/>This is the end of the prayers of
+    David son of Jesse.</para>
+  <para style="qr" vid="PSA 72:20">God's love never fails.<verse eid="PSA 72:20"/>
+    </para>
+</usx>
+----
+USJ::
++
+.Psalm 72.19 (GNT)
+[source#src-usj-para-qc_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "PSA 72"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18",
+          "sid": "PSA 72:18"
+        },
+        "Praise the ",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        ", the God of Israel!"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["He alone does these wonderful things."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "19",
+          "sid": "PSA 72:19"
+        },
+        "Praise his glorious name forever!"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["May his glory fill the whole world."]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "qc",
+      "content": ["Amen! Amen!"]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "20",
+          "sid": "PSA 72:20"
+        },
+        "This is the end of the prayers of David son of Jesse."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "qr",
+      "content": ["God's love never fails."]
+    }
+  ]
+}
 ----
 ======
 

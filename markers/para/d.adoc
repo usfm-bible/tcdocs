@@ -45,9 +45,10 @@ USFM::
 USX::
 +
 .Psalm 3.1 (NRSV)
-[source#src-usx-para-d_1,xml,highlight=4]
+[source#src-usx-para-d_1,xml,highlight=5]
 ----
 <usx version="3.1">
+  <book code="PSA" style="id"/>
   <chapter number="3" style="c" sid="PSA 3"/>
   <para style="s1">Trust in God under Adversity</para>
   <para style="d">A Psalm of David, when he fled from his son Absalom.</para>
@@ -69,8 +70,14 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "PSA",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
@@ -97,7 +104,7 @@ USJ::
           "number": "1",
           "sid": "PSA 3:1"
         },
-        "O",
+        "O ",
         {
           "type": "char",
           "marker": "nd",

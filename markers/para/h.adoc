@@ -31,16 +31,43 @@ Updated:: 3.0
 USFM::
 +
 .Matthew (GNT)
-[source#src-usfm-para-h_1,usfm,highlight=1]
+[source#src-usfm-para-h_1,usfm,highlight=2]
 ----
+\id MAT
 \h Matthew
 ----
 USX::
 +
 .Matthew (GNT)
-[source#src-usx-para-h_1,xml,highlight=1]
+[source#src-usx-para-h_1,xml,highlight=3]
 ----
-<para style="h">Matthew</para>
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <para style="h">Matthew</para>
+</usx>
+----
+USJ::
++
+.Matthew (GNT)
+[source#src-usj-para-h_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "h",
+      "content": ["Matthew"]
+    }
+  ]
+}
 ----
 ======
 

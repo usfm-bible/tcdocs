@@ -38,7 +38,7 @@ USFM::
 [source#src-usfm-para-usfm_1,usfm,highlight=2]
 ----
 \id MAT 41MATGNT92.SFM, Good News Translation, June 2003
-\usfm 3.0
+\usfm 3.1
 ----
 USX::
 +
@@ -47,8 +47,25 @@ USX::
 ----
 <usx version="3.1">
   <book code="MAT" style="id">41MATGNT92.SFM, Good News Translation, June 2003</book>
-  ...
 </usx>
+----
+USJ::
++
+.Matthew (GNT)
+[source#src-usj-para-usfm_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": ["41MATGNT92.SFM, Good News Translation, June 2003"]
+    }
+  ]
+}
 ----
 ======
 

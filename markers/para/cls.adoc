@@ -41,9 +41,10 @@ forget my chains!
 USX::
 +
 .Colossians 4.18 (GNT)
-[source#src-usx-para-cls_1,xml,highlight=6]
+[source#src-usx-para-cls_1,xml,highlight=7]
 ----
 <usx version="3.1">
+  <book code="COL" style="id"/>
   <chapter number="4" style="c" sid="COL 4"/>
   <para style="p">
     <verse number="18" style="v" sid="COL 4:18"/>With my own hand I write this: 
@@ -59,26 +60,19 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "0.2.0",
+  "version": "3.1",
   "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "COL",
+      "content": []
+    },
     {
       "type": "chapter",
       "marker": "c",
-      "number": "1",
-      "sid": "ROM 1"
-    },
-    {
-      "type": "para",
-      "marker": "po",
-      "content": [
-        {
-          "type": "verse",
-          "marker": "v",
-          "number": "1",
-          "sid": "ROM 1:1"
-        },
-        "From Paul, a servant of Christ Jesus and an apostle chosen and called by God to preach his Good News."
-      ]
+      "number": "4",
+      "sid": "COL 4"
     },
     {
       "type": "para",
@@ -87,39 +81,22 @@ USJ::
         {
           "type": "verse",
           "marker": "v",
-          "number": "2",
-          "sid": "ROM 1:2"
+          "number": "18",
+          "sid": "COL 4:18"
         },
-        "The Good News was promised long ago by God through his prophets, as written in the Holy Scriptures.",
-        "...",
+        "With my own hand I write this: ",
         {
-          "type": "verse",
-          "marker": "v",
-          "number": "6",
-          "sid": "ROM 1:6"
+          "type": "char",
+          "marker": "sig",
+          "content": ["Greetings from Paul"]
         },
-        "This also includes you who are in Rome, whom God has called to belong to Jesus Christ."
+        ". Do not forget my chains!"
       ]
     },
     {
       "type": "para",
-      "marker": "po",
-      "content": [
-        {
-          "type": "verse",
-          "marker": "v",
-          "number": "7",
-          "sid": "ROM 1:7"
-        },
-        "And so I write to all of you in Rome whom God loves and has called to be his own people:"
-      ]
-    },
-    {
-      "type": "para",
-      "marker": "po",
-      "content": [
-        "May God our Father and the Lord Jesus Christ give you grace and peace."
-      ]
+      "marker": "cls",
+      "content": ["May God's grace be with you."]
     }
   ]
 }

@@ -13,8 +13,6 @@ def usxtousj(input_usx_elmt):
     attribs = dict(input_usx_elmt.attrib)
     tag = None
     if "style" in attribs:
-        if attribs["style"] == 'b':
-            key = "optbreak"
         tag = attribs['style']
         del attribs['style']
     if "vid" in attribs:
@@ -28,7 +26,7 @@ def usxtousj(input_usx_elmt):
         out_obj["marker"] = tag
     out_obj =  out_obj | attribs
     if input_usx_elmt.text and input_usx_elmt.text.strip() != "":
-        text = input_usx_elmt.text.strip()
+        text = input_usx_elmt.text
     out_obj['content'] = []
     if text:
         out_obj['content'].append(text)
@@ -44,8 +42,8 @@ def usxtousj(input_usx_elmt):
             case _:
                 pass
         if child.tail and child.tail.strip() != "":
-            out_obj['content'].append(child.tail.strip())
-    if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca"])\
+            out_obj['content'].append(child.tail)
+    if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca", "b"])\
          and out_obj['content'] == []:
         del out_obj['content']
     if "eid" in out_obj and key in ['verse', 'chapter']:
