@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<test-metadata>
-        <description>Footnotes should be valid if they have a category marked immedataly after the caller specification
-		</description>
-        <validated>pass</validated>
-</test-metadata>
