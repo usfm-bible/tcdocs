@@ -1,5 +1,5 @@
 {
-  "$schema": "USJ-0.2.3",
+  "$schema": "USJ-0.2.4",
   "$id": "https://usfm-committee/usj.schema.json",
   "title": "Unified Scripture JSON",
   "description": "The JSON varient of USFM and USX data models",
