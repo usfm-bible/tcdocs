@@ -29,7 +29,27 @@ class ParentElement(et.Element):
     def getnext(self):
         i, parent = self._getindex()
         return parent[i+1] if parent is not None and i < len(parent) - 1 else None
+        
+    def getnext_sibling(self):
+        i, parent = self._getindex()
+        if i < len(parent) - 1:
+            return parent[i+1]
+        while parent is not None and i == len(parent) - 1:
+            i, parent = parent._getindex()
+        while isempty(parent.text) and len(parent):
+            parent = parent[0]
+        return parent
 
+    def getprevious_sibling(self):
+        i, parent = self._getindex()
+        if i > 0:
+            return parent[i-1]
+        while parent is not None and i == 0:
+            i, parent = parent.get_index()
+        while isempty(parent.tail) and len(parent):
+            parent = parent[-1]
+        return parent
+        
     def addprevious(self, el):
         i, parent = self._getindex()
         if parent is not None:
@@ -110,4 +130,10 @@ def prettyxml(node, last=None, indent="", width=2):
         prettyxml(e, last=last, indent=indent, width=width)
         last = e
 
+def isempty(s):
+    if s is None:
+        return True
+    if any(c not in " \t" for c in s):
+        return False
+    return True
 

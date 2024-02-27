@@ -10,7 +10,7 @@ endif::[]
 Definitions for terms used within the USFM/USX schema and diagrams.
 [glossary]
 hs:: Pattern: ``++/[\u0009\u0020]/++`` A single simple horizontal (non newline) whitespace character
-HS:: Pattern: ``++/++``#$\{hs\}#``+++/++`` A sequence of horizontal whitespace characters
+HS:: Pattern: ``++/++``#$\{hs\}#``+++/++`` A sequence of more horizontal whitespace characters
 Hs:: Pattern: ``++/++``#$\{hs\}#``++*/++`` A sequence of zero or more horizontal whitespace characters
 nl:: Pattern: ``++/(?:\u000D?\u000A|\u000D)/++`` A single newline (as supported by all operating systems)
 NL:: Pattern: ``++/++``#$\{nl\}#``+++/++`` A sequence of newline characters
@@ -23,12 +23,12 @@ WSNL:: Pattern: ``++/++``#$\{HS\}#``++++``#$\{NL\}#``++/++`` A sequence of non-n
 TAGEND:: Pattern: ``++/(?:++``#$\{ws\}#``++|(?=[\\|]|$))/++`` Delimits a marker
 TEXTEND:: Pattern: ``++/(?=++``#$\{anyws\}#``++*\\|$)/++`` Delimits simple text
 ATTRIBTEXTEND:: Pattern: ``++/++``#$\{Hs\}#``++(?=[\\|])/++`` Reducable characters following an attribute value
-ATTRIBTEXT:: Pattern: ``++/(?:\\["\\=~/]|[^\\"])+/++`` Matches text inside an attribute value (not including the quotes)
+ATTRIBTEXT:: Pattern: ``++/(?:\\["\\=~/|]|[^\\"])+/++`` Matches text inside an attribute value (not including the quotes)
 ATTRIBALL:: Pattern: ``++/(?:[^\\=]|\\=)+(?=\\)/++`` Matches a default attribute value string
 ATTRIBNAME:: Pattern: ``++/[a-zA-Z0-9\-_]+?/++`` Matches an attribute name
-TEXT:: Pattern: ``++/[^\\]+/++`` Matches simple text up to the next marker
-TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\)/++`` Matches simple text without trailing whitespace
-TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\["\\~/])+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
+TEXT:: Pattern: ``++/([^\\]|\\[/~\\|])+/++`` Matches simple text up to the next marker
+TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\[^~/\\])/++`` Matches simple text without trailing whitespace
+TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
 PIPE:: Pattern: ``++/++``#$\{hs\}#``++*(?<!\\)\|++``#$\{hs\}#``++*/++`` Matches the attributes list delimiter of |
 TLC:: Pattern: ``++/[0-9A-Z]{3}/++`` Three letter uppercase code including digits
 VERSE:: Pattern: ``++/[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*/++`` Verse number, including ranges and sequences

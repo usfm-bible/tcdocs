@@ -1,5 +1,8 @@
 
 import re
+from dataclasses import dataclass
+from usfmtc.xmlutils import isempty
+import xml.etree.ElementTree as et
 
 # This should be read from usx.rng
 allpartypes = {
@@ -220,4 +223,178 @@ def etCmp(a, b, at=None, bt=None, verbose=False, endofpara=False):
             return False
     return True
 
+@dataclass
+class USXLoc:
+    el: et.Element
+    attrib: str
+    char: int       
 
+def findel(node, tag, attrib, limit):
+    try:
+        res = _findelchild(node, tag, attrib, limit)
+    except StopIteration:
+        return None
+    if res is not None:
+        return res
+    start = list(node.parent).index(node)
+    for i in range(start + 1, len(node.parent)):
+        try:
+            res = _findelchild(c, tag, attrib, limit)
+        except StopIteration:
+            return None
+        if res is not None:
+            return res
+    return None
+
+def _findelchild(node, tag, attrib, limits):
+    if node.tag == tag:
+        for k, v in attrib.items():
+            if node.get(k, None) != v:
+                break
+        else:
+            return node
+    elif node.tag in limits:
+        raise StopIteration("Hit the stop")
+    for c in node:
+        res = _findelchild(node, tag, attrib, limit)
+        if res is not None:
+            return res
+    return None
+
+def findtext(node, limits):
+    yield from _findtextchild(node, limits)
+
+def _findtextchild(node, limits):
+    if not isempty(node.text):
+        yield (node.text, node, " text")
+    for c in node:
+        if c.tag in limits:
+            return
+        yield from _findtextchild(c, limits)
+        if not isempty(c.tail):
+            yield (c.tail, c, " tail")
+
+    
+def findref(ref, root, atend=False, parindex=0):
+    if ref.book:
+        bk = root.findtext("./book/@code")
+        if bk != ref.book:
+            raise ValueError("Reference book {} != text book {}".format(ref, bk))
+    if ref.chapter is not None and ref.chapter > 0:
+        for parindex, el in enumerate(root[parindex:], start=parindex):
+            if el.tag == "chapter" and el.get('number', 0) == ref.chapter:
+                break
+        else:
+            raise ValueError("Chapter reference {} out of range".format(ref))
+    if parindex < len(root) - 1 and ref.verse is not None and ref.verse > 0:
+        el = findel(root[parindex+1], "verse", {"number": ref.verse}, limits=("chapter",))
+        if el is None:
+            raise ValueError("Reference verse {} out of range".format(ref))
+    a = ""
+    w = -1
+    c = -1
+    clen = -1
+    t = ""
+    if ref.word is not None or ref.char is not None:
+        if ref.word is None or ref.word == 0:
+            t = str(el.get('number', ""))
+            a = "number"
+            c = 0
+            clen = len(t)
+        else:
+            word = ref.word
+            for t, el, a in findtext(el, limits=("chapter", "verse")):
+                b = reg.split("([\u0020\u00A0\u1680\u2000-\u200B\u202F\u205F\u3000]+)", t)
+                l = (len(b) + 1) // 2
+                if not len(b[0]):
+                    l -= 1
+                if l < word:
+                    word -= l
+                    continue
+                c = sum(len(s) for s in b[:word*2])
+                clen = len(b[word*2])
+                break
+            else:
+                raise ValueError("Reference word {} out of range".format(ref))
+        if ref.char is not None:
+            if ref.char > clen:
+                raise ValueError("Reference char {} out of range for word length {}".format(ref, clen))
+            c += ref.char
+        elif atend:
+            c += clen
+    elif atend:
+        # find end of verse or chapter
+        pass
+    res = USXLoc(el, a, c)
+    # handle mrkrs
+    return res
+
+def copy_range(root, a, b):
+    factory = cls(root)
+    pstack = []
+    t = a.el
+    while t is not None:
+        pstack.append(t)
+        t = t.parent
+    t = pstack.pop()                            # usx
+    res = factory(t.tag, attrib=t.attrib)
+    p = pstack.pop()                            # paragraph
+    curri = list(t).index(p)
+    if a.el.tag != "chapter":
+        for i in range(curri-1, -1, -1):
+            if t[curri].tag == "chapter":
+                c = factory("chapter", attrib=t[curri].attrib, parent=t)
+                t.append(c)
+                break
+    curr = factory(p.tag, attrib=p.attrib, parent=t)
+    t.append(curr)
+    for c in reversed(pstack):
+        n = factory(el.tag, attrib=el.attrib, parent=curr)
+        curr.append(n)
+        curr = n
+
+    # we have a copied tree down to the first ref element
+    hit = False
+    if a.attrib == " text":
+        if id(b.el) == id(a.el) and b.attrib == " text":
+            curr.text = a.el.tex[a.char:b.char+1]
+            return res
+        curr.text = a.el.text[a.char:]
+    if a.attrib != " tail":
+        hit = copy_downto(curr, a.el, b, factory)
+    else:
+        if id(b.el) == id(a.el) and b.attrib == " tail":
+            curr.tail = a.el.tail[a.char:b.char+1]
+            return res
+        curr.tail = a.el.tail[a.char:]
+    if not hit:
+        copy_upto(curr, a, b)
+    return res
+
+def copy_downto(curr, el, b, factory):
+    n = factory(el.tag, el.attrib, parent=curr)
+    curr.append(n)
+    if b.attrib == " text" and id(el) == id(b.el):
+        n.text = el.text[:b.char+1]
+        return True
+    else:
+        n.text = el.text
+    for c in el:
+        if copy_downto(n, c, b, factory):
+            return True
+    if b.attrib == " tail" and id(el) == id(b.el):
+        n.tail = el.tail[:b.char+1]
+        return True
+    else:
+        n.tail = el.tail
+
+def copy_upto(curr, el, a, b, factory):
+    p = el.parent
+    if p is None:
+        raise ValueError("Reference {} not found".format(b))
+    pi = list(p).index(el)
+    cp = curr.parent
+    for e in list(p)[pi+1:]:
+        if copy_downto(cp, e, b, factory):
+            return True
+    return copy_upto(cp, p, a, b, factory)

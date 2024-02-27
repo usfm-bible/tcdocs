@@ -498,9 +498,9 @@ class USXConverter(RelaxValidator):
         if res is not None and res != '':
             state.addresult(self.popmatch(res))
         else:
-            res = vel.text
+            res = self._getmatchfield(vel, 'match')
             if res is None:
-                res = self._getmatchfield(vel, 'match')
+                res = vel.text
             if res is None:
                 if not state.istext():
                     return Failure("String expected in value test at {}".format(state))

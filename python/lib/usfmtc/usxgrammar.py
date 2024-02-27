@@ -25,6 +25,7 @@ alljobs = {
     "Para":                 ("p", ("VersePara", "NonVersePara", "Para.para.style.enum", "Para.nonpara.style.enum", "Break")),
     "PeripheralDivision":   ("periph", ("Peripheral.FRT.periph.id.enum", "Peripheral.INT.periph.id.enum",
                                         "Peripheral.BAK.periph.id.enum", "Peripheral.OTH.periph.id.enum", "PeripheralContent")),
+    "Reference":            ("ref",),
     "Scripture":            ("id", ("BookIdentification", "BookIdentification.book.code.enum", "ChapterContent")),
     "Sidebar":              ("esb",),
     "Table":                ("table", ("TableContent",)),

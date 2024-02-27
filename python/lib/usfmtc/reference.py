@@ -294,7 +294,7 @@ def main():
     import sys
 
     if len(sys.argv) > 1:
-        s = sys.argv[1]
+        s = " ".join(sys.argv[1:])
         res = RefList(s)
         print(res.str(force=True))
 

@@ -45,6 +45,9 @@ def proconedir(d, sfmp, relax, rdoc, args):
         else:
             ud = getfname(d, "origin_test.usfm")
         passresult = testxml.outUsfm(rdoc, file=ud)
+        if args.print:
+            with open(ud, encoding="utf-8") as inf:
+                print("".join(inf.readlines()))
         if not passresult:
             return (not expected, d, "USFM output failed", "" if passresult == expected else "Unexpected result")
     try:

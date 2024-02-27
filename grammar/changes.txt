@@ -14,5 +14,6 @@ Differences in the grammar from 3-0-5
 - + is an optional embedded char maker prefix due to required closure of character markers
 - \\ escaping is required and supported for a number of key characters: \\, ', ", |, ~, //
 - Whitespace rules clarified and formalised
+- fv is now just a character style and needs closing
 
 
