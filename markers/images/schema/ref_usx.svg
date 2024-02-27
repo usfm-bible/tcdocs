@@ -1,0 +1,52 @@
+<svg class="railroad-diagram" height="112" viewBox="0 0 350.5 112" width="350.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<style>/* <![CDATA[ */
+
+    svg.railroad-diagram {
+        background-color: hsl(30,20%,95%);
+    }
+    svg.railroad-diagram path {
+        stroke-width: 2;
+        stroke: black;
+        fill: none;
+    }
+    svg.railroad-diagram text {
+        font-size: 12px;
+        text-anchor: middle;
+        font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram text.label {
+        text-anchor:start;
+    }
+    svg.railroad-diagram text.comment {
+        font-family: DejaVu Sans;
+        font-size: 14px;
+    }
+    svg.railroad-diagram rect{
+        stroke-width: 2;
+        stroke: black;
+        fill: rgb(210, 210, 255);
+    }
+    svg.railroad-diagram rect.group-box {
+        stroke: gray;
+        stroke-dasharray: 10 5;
+        fill: none;
+    }
+    .terminal {
+        font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram g.altterminal rect {
+        fill: rgb(251, 252, 207)
+    }
+
+/* ]]> */
+</style><g>
+<path d="M 20 61 v 20 m 0 -10 h 20"></path></g><path d="M 40 71 h 10"></path><g>
+<path d="M 50 71 h 0.0"></path><path d="M 300.5 71 h 0.0"></path><g>
+<path d="M 50.0 71 h 0.0"></path><path d="M 300.5 71 h 0.0"></path><g class="terminal ">
+<path d="M 50.0 71 h 0.0"></path><path d="M 112.5 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="50.0" y="60"></rect><text x="81.25" y="75">&#60;ref></text></g><path d="M 112.5 71 h 10"></path><path d="M 122.5 71 h 10"></path><g>
+<path d="M 132.5 71 h 0.0"></path><path d="M 300.5 71 h 0.0"></path><path d="M 132.5 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 152.5 41 h 0.0"></path><path d="M 280.5 41 h 0.0"></path><g class="terminal ">
+<path d="M 152.5 41 h 0.0"></path><path d="M 206.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="152.5" y="30"></rect><text x="179.5" y="45">@loc</text></g><path d="M 206.5 41 h 10"></path><path d="M 216.5 41 h 10"></path><g class="terminal ">
+<path d="M 226.5 41 h 0.0"></path><path d="M 280.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="226.5" y="30"></rect><text x="253.5" y="45">TEXT</text></g></g><path d="M 132.5 71 h 20"></path><g class="terminal ">
+<path d="M 152.5 71 h 37.0"></path><path d="M 243.5 71 h 37.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="189.5" y="60"></rect><text x="216.5" y="75">TEXT</text></g><path d="M 280.5 71 h 20"></path></g></g></g><path d="M 300.5 71 h 10"></path><path d="M 310.5 71 h 20 m 0 -10 v 20"></path></g></svg>
