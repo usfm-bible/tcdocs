@@ -1,6 +1,6 @@
 {
   "type": "USJ",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "content": [
     {
       "type": "book",
@@ -14,9 +14,21 @@
       "type": "chapter",
       "marker": "c",
       "number": "1",
-      "altnumber": "2",
-      "pubnumber": "M",
       "sid": "MAT 1"
+    },
+    {
+      "type": "char",
+      "marker": "ca",
+      "content": [
+        "2"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "cp",
+      "content": [
+        "M"
+      ]
     },
     {
       "type": "para",
@@ -54,9 +66,21 @@
           "type": "verse",
           "marker": "v",
           "number": "1",
-          "altnumber": "3",
-          "sid": "MAT 1:1",
-          "pubnumber": "1b"
+          "sid": "MAT 1:1"
+        },
+        {
+          "type": "char",
+          "marker": "va",
+          "content": [
+            "3"
+          ]
+        },
+        {
+          "type": "para",
+          "marker": "vp",
+          "content": [
+            "1b"
+          ]
         },
         "This is the list of the ancestors of Jesus Christ, a descendant of David, who was a descendant of Abraham."
       ]
