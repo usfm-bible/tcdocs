@@ -14,7 +14,7 @@ endif::[]
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - Target references. A list of scripture references normally written as book abbreviation + chapter + verse(s). The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation at the end of a list of references is optional.
 Syntax::
-* *USFM:* ``++\xt ++``#__content__#
+* *USFM:* ``++\xt ++``#__content__#``++|++``#__@link-href__#
 * *USX:* ``++<char style="xt" ++``#__@link-href__#``++>++``#__content__#``++</char>++`
 #link-href#::: Unambiguously identifies the scripture target reference using a standard scripture reference format. _(default attribute)_
 ** Book names must be one a standard xref:para:identification/books.adoc[book identifier]. Chapter + verse separator is always a colon `:`. A string of pattern `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
