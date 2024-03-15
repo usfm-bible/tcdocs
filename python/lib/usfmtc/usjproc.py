@@ -32,15 +32,10 @@ def usxtousj(input_usx_elmt):
         out_obj['content'].append(text)
     for child in input_usx_elmt:
         child_dict, what_to_do = convert_usx(child)
-        match what_to_do:
-            case "append":
-                out_obj['content'].append(child_dict)
-            case "merge":
-                out_obj['content'] += child_dict
-            case "ignore":
-                pass
-            case _:
-                pass
+        if what_to_do == "append":
+            out_obj['content'].append(child_dict)
+        elif what_to_do == "merge":
+            out_obj['content'] += child_dict
         if child.tail and child.tail.strip() != "":
             out_obj['content'].append(child.tail)
     if  (key in ["chapter", "verse", "optbreak", "ms"] or tag in ["va", "ca", "b"])\
