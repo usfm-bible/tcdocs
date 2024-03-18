@@ -1,0 +1,120 @@
+= ref
+:description: Scripture reference
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ref.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Scripture reference. For marking scripture references, with an optional machine-readable target location.
+Syntax::
+* *USFM:* ``++\ref ++``#__content__#``++|++``#__@loc__#``++\ref*++``
+* *USX:* ``++<ref ++``#__@loc @gen__#``++>++``#__content__#``++</char>++``
+#loc#::: Use for explicitely identifying the target scripture reference. _(default attribute)_
+** Follows the pattern: `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`.
+** Example: `MAT 3:1-4`, where:
+*** Book names is a standard 3-character scripture xref:para:identification/books.adoc[book identifier].
+*** The chapter + verse separator is a colon `:`.
+*** Verse ranges are indicated using a hyphen.
+#gen#::: Set the value to `+true+` to indicate that a `+<ref>+` tag was auto-generated. Auto-generated tags can be stripped from USFM texts converted from USX.
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`, `[xref:note:footnote/index.adoc[Footnote]]`, `[xref:note:crossref/index.adoc[CrossReference]]`
+// tag::spec[]
+Added:: 3.1
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Target references in \xt without \ref - Matthew 5.13 (GNT)
+[source#src-usfm-ref_1,usfm,highlight=5]
+----
+\id MAT
+\c 13
+\s1 Salt and Light
+\r (Mark 9.50; Luke 14.34,35)
+\p
+\v 13 \x - \xo 5.13: \xt Mk 9.50; Lk 14.34,35.\x*“You are like salt for the whole 
+human race. But if salt loses its saltiness, there is no way to make it salty 
+again. It has become worthless, so it is thrown out and people trample on it.
+----
+USX::
++
+.Corresponding target references with auto-generated ref tags - Matthew 5.13 (GNT)
+[source#src-usx-ref_1,xml,highlight=8..9]
+----
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <chapter number="5" style="c" sid="MAT 5"/>
+  <para style="p">
+    <verse number="13" style="v" sid="MAT 5:13"/>
+    <note caller="-" style="x">
+      <char style="xo" closed="false">5.13: </char>
+      <char style="xt" closed="false">
+        <ref loc="MRK 9:50" gen="true">Mk 9.50</ref>; <ref loc="LUK 14:34"
+          gen="true">Lk 14.34</ref>,<ref loc="LUK 14:35" 
+          gen="true">35</ref>.</char>
+    </note>“You are like salt for the whole human race. But if salt loses its 
+    saltiness, there is no way to make it salty again. It has become worthless, 
+    so it is thrown out and people trample on it.<verse eid="MAT 5:13"/></para>
+</usx>
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Target references in \xt with supplied \ref - Matthew 5.13 (GNT)
+[source#src-usfm-ref_2,usfm,highlight=5]
+----
+\id MAT
+\c 13
+\s1 Salt and Light
+\r (Mark 9.50; Luke 14.34,35)
+\p
+\v 13 \x - \xo 5.13: \xt \ref Mk 9.50|MRK 9:50\ref*; 
+\ref Lk 14.34|LUK 14:34\ref*,\ref 35|LUK 14:35\ref*.\x*“You are like salt for the 
+whole human race. But if salt loses its saltiness, there is no way to make it 
+salty again. It has become worthless, so it is thrown out and people trample on it.
+----
+USX::
++
+.Target references with ref tags - Matthew 5.13 (GNT)
+[source#src-usx-ref_2,xml,highlight=8..9]
+----
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <chapter number="5" style="c" sid="MAT 5"/>
+  <para style="p">
+    <verse number="13" style="v" sid="MAT 5:13"/>
+    <note caller="-" style="x">
+      <char style="xo" closed="false">5.13: </char>
+      <char style="xt" closed="false">
+        <ref loc="MRK 9:50">Mk 9.50</ref>; <ref loc="LUK 14:34">Lk 14.34</ref>,<ref
+          loc="LUK 14:35">35</ref>.</char>
+    </note>“You are like salt for the whole human race. But if salt loses its 
+    saltiness, there is no way to make it salty again. It has become worthless, 
+    so it is thrown out and people trample on it.<verse eid="MAT 5:13"/></para>
+</usx>
+----
+======
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

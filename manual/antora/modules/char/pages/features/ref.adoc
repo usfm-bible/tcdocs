@@ -1,0 +1,4 @@
+= ref
+:env-antora:
+
+include::markers:char/ref.adoc[tag=public]

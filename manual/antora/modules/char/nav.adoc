@@ -17,6 +17,7 @@
 *** xref:features/png.adoc[png - Geographic name]
 *** xref:features/qt.adoc[qt - Quoted text]
 *** xref:features/rb.adoc[rb - Ruby gloss]
+*** xref:features/ref.adoc[ref - Scripture reference]
 *** xref:features/sig.adoc[sig - Author's signature]
 *** xref:features/sls.adoc[sls - Secondary source]
 *** xref:features/tl.adoc[tl - Transliterated words]

@@ -70,7 +70,7 @@ USX::
 ======
 USFM::
 +
-.Glossay word with explicit lemma attribute
+.Glossay word with explicit "lemma" attribute
 [source#src-usfm-char-w_3,usfm,highlight=1]
 ----
 \w gracious|lemma="grace"\w*

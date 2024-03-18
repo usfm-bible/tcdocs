@@ -13,18 +13,20 @@ endif::[]
 == Summary
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - Target references. A list of scripture references normally written as book abbreviation + chapter + verse(s). The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation at the end of a list of references is optional.
+* Supply an explicit target reference by enclosing the reference string with xref:char:features/ref.adoc[ref].
 Syntax::
-* *USFM:* ``++\xt ++``#__content__#``++|++``#__@link-href__#
-* *USX:* ``++<char style="xt" ++``#__@link-href__#``++>++``#__content__#``++</char>++`
-#link-href#::: Unambiguously identifies the scripture target reference using a standard scripture reference format. _(default attribute)_
-** Book names must be one a standard xref:para:identification/books.adoc[book identifier]. Chapter + verse separator is always a colon `:`. A string of pattern `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
-** In some scenarios a target reference is written in a format which cannot be accurately parsed and identified. Providing the `link-href` attribute allows greater flexibility in the use of xref:char:notes/crossref/xt.adoc[xt].
-** In this context (xref:char:notes/crossref/xt.adoc[xt]), `link-href` should only target scripture references for the current text (i.e. references to other project texts or non-scripture URIs are not allowed).
+* *USFM:* ``++\xt ++``#__content__#
+* *USX:* ``++<char style="xt">++``#__content__#``++</char>++`
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`, `[xref:note:footnote/index.adoc[Footnote]]`, `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
 Added:: 1.0
-Updated:: 3.0 (attributes)
+Updated::
+* 3.1
+** _Deprecated_ use of the attribute #__@link-href__#. See: xref:char:features/ref.adoc[ref].
+** _Deprecated_ use of xref:char:notes/crossref/xt.adoc[xt] outside of xref:note:crossref/x.adoc[cross-reference]. See: xref:char:features/ref.adoc[ref].
+* 3.0
+** Attributes
 // end::spec[]
 
 == Examples
@@ -55,9 +57,10 @@ USX::
   there. He was given more instructions in a dream, so he went to the province of
   Galilee<verse eid="MAT 2:22"/>
   <verse number="23" style="v" sid="MAT 2:23"/><note caller="-" style="x">
-    <char style="xo" closed="false">2.23: </char>
-    <char style="xt" closed="false"><ref loc="MRK 1:24">Mk 1.24</ref>; 
-    <ref loc="LUK 2:39">Lk 2.39</ref>; <ref loc="JHN 1:45">Jn 1.45</ref>.</char>
+    <char style="xo">2.23: </char>
+    <char style="xt"><ref loc="MRK 1:24" gen="true">Mk 1.24</ref>; 
+    <ref loc="LUK 2:39" gen="true">Lk 2.39</ref>; 
+    <ref loc="JHN 1:45" gen="true">Jn 1.45</ref>.</char>
   </note>and made his home in a town named Nazareth. And so what the prophets had 
   said came true: “He will be called a Nazarene.”<verse eid="MAT 2:23"/></para>
 ----
@@ -91,23 +94,23 @@ USX::
   asked him. “No one is good except God alone.<verse eid="MRK 10:18"/>
   <verse number="19" style="v" sid="MRK 10:19"/><note caller="-" style="x">
     <char style="xo">10.19: a </char>
-    <char style="xt"><ref loc="EXO 20:13">Ex 20.13</ref>; 
-    <ref loc="DEU 5:17">Dt 5.17</ref>; </char>
+    <char style="xt"><ref loc="EXO 20:13" gen="true">Ex 20.13</ref>; 
+    <ref loc="DEU 5:17" gen="true">Dt 5.17</ref>; </char>
     <char style="xo">b </char>
-    <char style="xt"><ref loc="EXO 20:14">Ex 20.14</ref>; 
-    <ref loc="DEU 5:18">Dt 5.18</ref>; </char>
+    <char style="xt"><ref loc="EXO 20:14" gen="true">Ex 20.14</ref>; 
+    <ref loc="DEU 5:18" gen="true">Dt 5.18</ref>; </char>
     <char style="xo">c </char>
-    <char style="xt"><ref loc="EXO 20:15">Ex 20.15</ref>; 
-    <ref loc="DEU 5:19">Dt 5.19</ref>; </char>
+    <char style="xt"><ref loc="EXO 20:15" gen="true">Ex 20.15</ref>; 
+    <ref loc="DEU 5:19" gen="true">Dt 5.19</ref>; </char>
     <char style="xo">d </char>
-    <char style="xt"><ref loc="EXO 20:16">Ex 20.16</ref>;
-    <ref loc="DEU 5:20">Dt 5.20</ref>; </char>
+    <char style="xt"><ref loc="EXO 20:16" gen="true">Ex 20.16</ref>;
+    <ref loc="DEU 5:20" gen="true">Dt 5.20</ref>; </char>
     <char style="xo">e </char>
-    <char style="xt"><ref loc="EXO 20:12">Ex 20.12</ref>; 
-    <ref loc="DEU 5:16">Dt 5.16</ref>.</char></note>You know the commandments:
-  ‘Do not commit murder; do not commit adultery; do not steal; do not accuse
-  anyone falsely; do not cheat; respect your father and your mother.’”
-  <verse eid="MRK 10:19"/></para>
+    <char style="xt"><ref loc="EXO 20:12" gen="true">Ex 20.12</ref>; 
+    <ref loc="DEU 5:16" gen="true">Dt 5.16</ref>.</char></note>You know the 
+    commandments: ‘Do not commit murder; do not commit adultery; do not steal; 
+    do not accuse anyone falsely; do not cheat; respect your father and your 
+    mother.’”<verse eid="MRK 10:19"/></para>
 ----
 ======
 
