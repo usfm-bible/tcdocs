@@ -57,8 +57,8 @@ USX::
   <para style="p">
     <verse number="13" style="v" sid="MAT 5:13"/>
     <note caller="-" style="x">
-      <char style="xo" closed="false">5.13: </char>
-      <char style="xt" closed="false">
+      <char style="xo">5.13: </char>
+      <char style="xt">
         <ref loc="MRK 9:50" gen="true">Mk 9.50</ref>; <ref loc="LUK 14:34"
           gen="true">Lk 14.34</ref>,<ref loc="LUK 14:35" 
           gen="true">35</ref>.</char>
@@ -97,8 +97,8 @@ USX::
   <para style="p">
     <verse number="13" style="v" sid="MAT 5:13"/>
     <note caller="-" style="x">
-      <char style="xo" closed="false">5.13: </char>
-      <char style="xt" closed="false">
+      <char style="xo">5.13: </char>
+      <char style="xt">
         <ref loc="MRK 9:50">Mk 9.50</ref>; <ref loc="LUK 14:34">Lk 14.34</ref>,<ref
           loc="LUK 14:35">35</ref>.</char>
     </note>“You are like salt for the whole human race. But if salt loses its 
