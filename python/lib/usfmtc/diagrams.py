@@ -191,8 +191,13 @@ class UsfmRailRoad:
     def add_terminal(self, name, value, context, **kw):
         self.terminals[name] = value
 
-    def add_define(self, e, name, **kw):
-        res = self.append_seq()
+    def add_define(self, name, e, context=None, box=False, **kw):
+        if box:
+            bres = self.WrappedRailList(rr.Group, context, name, swap=True)
+            context.append(bres)
+            res = self.append_seq(context=bres)
+        else:
+            res = self.append_seq(context=context)
         self.defines[name] = res
         return res
 

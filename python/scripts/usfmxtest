@@ -22,6 +22,8 @@ def getfname(d, basefile):
 
 def proconedir(d, sfmp, relax, rdoc, args):
     meta = {}
+    if not args.quiet:
+        print("{}: ".format(d), end="", flush=True)
     if os.path.isdir(d):
         doc = et.parse(os.path.join(d, "metadata.xml"))
         for e in doc.getroot():
@@ -78,7 +80,7 @@ def proconedir(d, sfmp, relax, rdoc, args):
         passed = False
     res = passed == expected
     if not args.quiet:
-        print("{}: {} ({} {}){} | {}".format(d, "Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg, xmsg))
+        print("{} ({} {}){} | {}".format("Passed" if res else "Failed", "==" if res else "!=", "Pass" if expected else "Fail", imsg, xmsg))
     return (res, d, imsg, xmsg)
 
 def chunkjobs(jobs, nchunks, args):

@@ -510,7 +510,7 @@
       <attribute usfm:grouping="8">
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="BookHeaders.para.style.enum"/>
+        <ref name="Headers.para.style.enum"/>
       </attribute>
       <optional>
         <text>
@@ -519,7 +519,7 @@
       </optional>
     </element>
   </define>
-  <define name="BookHeaders.para.style.enum">
+  <define name="Headers.para.style.enum">
     <choice>
       <value>ide</value>
       <value>h1</value>
@@ -543,7 +543,7 @@
       <attribute>
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="BookTitles.para.style.enum"/>
+        <ref name="Titles.para.style.enum"/>
       </attribute>
       <zeroOrMore>
         <choice>
@@ -558,7 +558,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="BookTitles.para.style.enum">
+  <define name="Titles.para.style.enum">
     <choice>
       <value>mt1</value>
       <value>mt2</value>
@@ -578,7 +578,7 @@
         <attribute usfm:grouping="12">
           <usfm:ptag/>
           <name ns="">style</name>
-          <ref name="BookIntroduction.para.style.enum"/>
+          <ref name="Introductions.para.style.enum"/>
         </attribute>
         <zeroOrMore>
           <choice>
@@ -599,7 +599,7 @@
       <ref name="Table"/>
     </choice>
   </define>
-  <define name="BookIntroduction.para.style.enum">
+  <define name="Introductions.para.style.enum">
     <choice>
       <value>imt1</value>
       <value>imt2</value>
@@ -644,7 +644,7 @@
       <attribute>
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="BookIntroductionEndTitles.para.style.enum"/>
+        <ref name="Titles.para.style.enum"/>
       </attribute>
       <zeroOrMore>
         <choice>
@@ -707,7 +707,7 @@
       <attribute usfm:grouping="15">
         <usfm:ptag matchid="a" usfm:stacked="true"/>
         <name ns="">style</name>
-        <ref name="Section.para.style.enum"/>
+        <ref name="SectionParas.para.style.enum"/>
       </attribute>
       <optional>
         <attribute>
@@ -735,7 +735,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="Section.para.style.enum">
+  <define name="SectionParas.para.style.enum">
     <choice>
       <value>restore</value>
       <value>iex</value>
@@ -772,12 +772,12 @@
         <attribute usfm:grouping="15">
           <usfm:ptag usfm:stacked="true"/>
           <name ns="">style</name>
-          <ref name="Para.nonpara.style.enum"/>
+          <ref name="OtherParas.para.style.enum"/>
         </attribute>
         <attribute usfm:grouping="15">
           <usfm:ptag usfm:stacked="true"/>
           <name ns="">style</name>
-          <ref name="Para.para.style.enum"/>
+          <ref name="VerseParas.para.style.enum"/>
         </attribute>
       </choice>
       <optional>
@@ -806,7 +806,7 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="Para.para.style.enum">
+  <define name="VerseParas.para.style.enum">
     <choice>
       <value>cls</value>
       <value>nb</value>
@@ -845,7 +845,7 @@
       <value>ts</value>
     </choice>
   </define>
-  <define name="Para.nonpara.style.enum">
+  <define name="OtherParas.para.style.enum">
     <choice>
       <value>lit</value>
       <value>cp</value>
@@ -988,7 +988,7 @@
       <attribute>
         <usfm:tag matchid="a" usfm:seq="true"/>
         <name ns="">style</name>
-        <ref name="IntroChar.char.style.enum"/>
+        <ref name="IntroChars.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed"/>
@@ -1010,7 +1010,7 @@
       <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
     </element>
   </define>
-  <define name="IntroChar.char.style.enum">
+  <define name="IntroChars.char.style.enum">
     <choice>
       <value>ior</value>
       <value>iqt</value>
@@ -1060,7 +1060,7 @@
       <attribute usfm:grouping="12">
         <usfm:tag matchid="a" usfm:seq="true"/>
         <name ns="">style</name>
-        <ref name="FullChar.char.style.enum"/>
+        <ref name="Chars.char.style.enum"/>
       </attribute>
       <choice>
         <group>
@@ -1098,7 +1098,7 @@
   <define name="FullCharExtra.char.style.enum">
     <value usfm:propval="link-href">xt</value>
   </define>
-  <define name="FullChar.char.style.enum">
+  <define name="Chars.char.style.enum">
     <choice>
       <ref name="Char.char.style.enum"/>
       <ref name="FullCharExtra.char.style.enum"/>
@@ -1153,7 +1153,7 @@
           <attribute usfm:stacked="true" usfm:grouping="9">
             <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
             <name ns="">style</name>
-            <ref name="FullChar.char.style.enum"/>
+            <ref name="Chars.char.style.enum"/>
           </attribute>
           <choice>
             <group>
@@ -1170,7 +1170,7 @@
           <attribute usfm:stacked="true" usfm:grouping="9">
             <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
             <name ns="">style</name>
-            <ref name="FullChar.char.style.enum"/>
+            <ref name="Chars.char.style.enum"/>
           </attribute>
           <choice>
             <group>
@@ -1193,7 +1193,7 @@
         <attribute usfm:stacked="true" usfm:grouping="9">
           <usfm:tag matchid="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
           <name ns="">style</name>
-          <ref name="FullChar.char.style.enum"/>
+          <ref name="Chars.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
         <optional>
@@ -1206,7 +1206,7 @@
         <attribute usfm:stacked="true" usfm:grouping="9">
           <usfm:tag matchid="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
           <name ns="">style</name>
-          <ref name="FullChar.char.style.enum"/>
+          <ref name="Chars.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
         <optional>
@@ -1222,7 +1222,7 @@
       <attribute>
         <usfm:tag matchid="a"/>
         <name ns="">style</name>
-        <ref name="ListChar.char.style.enum"/>
+        <ref name="ListChars.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed"/>
@@ -1244,7 +1244,7 @@
       <usfm:endtag usfm:many="?"/>
     </element>
   </define>
-  <define name="ListChar.char.style.enum">
+  <define name="ListChars.char.style.enum">
     <choice>
       <value>litl</value>
       <value>lik</value>
@@ -1345,7 +1345,7 @@
         <attribute>
           <usfm:tag after="Hs" afterout=""/>
           <name ns="">style</name>
-          <ref name="Milestone.enum"/>
+          <ref name="Milestones.enum"/>
         </attribute>
         <optional>
           <ref name="Attributes"/>
@@ -1355,7 +1355,7 @@
       <usfm:endtag matchref="&#x27;&#x27;"/>
     </group>
   </define>
-  <define name="Milestone.enum">
+  <define name="Milestones.enum">
     <choice>
       <value usfm:propval="who">ts-s</value>
       <value>ts-e</value>
@@ -1474,7 +1474,7 @@
         <value>v</value>
       </attribute>
       <attribute>
-        <usfm:match usfm:seq="true" after="TAGEND" afterout="&#x27; &#x27;"/>
+        <usfm:match usfm:seq="true" after="WS" afterout="&#x27; &#x27;"/>
         <name ns="">number</name>
         <data type="string">
           <usfm:pattern name="VERSE"/>
@@ -1560,7 +1560,7 @@
       <attribute usfm:grouping="8">
         <usfm:tag matchid="b"/>
         <name ns="">style</name>
-        <ref name="FootnoteChar.char.style.enum"/>
+        <ref name="FootnoteChars.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
@@ -1577,7 +1577,7 @@
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="&#x27;*&#x27;"/>
     </element>
   </define>
-  <define name="FootnoteChar.char.style.enum">
+  <define name="FootnoteChars.char.style.enum">
     <choice>
       <value>fr</value>
       <value>ft</value>
@@ -1587,11 +1587,6 @@
       <value>fl</value>
       <value>fw</value>
       <value>fdc</value>
-      <value>it</value>
-      <value>bdit</value>
-      <value>bd</value>
-      <value>em</value>
-      <value>sc</value>
     </choice>
   </define>
   <define name="CrossReference">
@@ -1610,6 +1605,9 @@
         <name ns="">caller</name>
         <text/>
       </attribute>
+      <optional>
+        <ref name="category"/>
+      </optional>
       <zeroOrMore>
         <ref name="CrossReferenceChar"/>
       </zeroOrMore>
@@ -1622,7 +1620,7 @@
       <attribute>
         <usfm:tag matchid="b"/>
         <name ns="">style</name>
-        <ref name="CrossReferenceChar.char.style.enum"/>
+        <ref name="CrossReferenceChars.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
@@ -1639,7 +1637,7 @@
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"/>
     </element>
   </define>
-  <define name="CrossReferenceChar.char.style.enum">
+  <define name="CrossReferenceChars.char.style.enum">
     <choice>
       <value>xop</value>
       <value>xo</value>

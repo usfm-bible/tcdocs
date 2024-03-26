@@ -44,6 +44,7 @@ if args.node:
     jobs = {args.node: alljobs[args.node]}
 else:
     jobs = alljobs 
+    jobs['all'] = ('all',)
 
 for k, j in jobs.items():
     keeps = j[1] if len(j) > 1 else []
@@ -57,7 +58,7 @@ for k, j in jobs.items():
         back = backendsfm if a[1] else backendxml
         proc = sfmproc if a[1] else xmlproc
         p = proc
-        if p.parseRef(k, flattens=keeps) is None:
+        if p.parseRef('Scripture' if k == 'all' else k, flattens=keeps, flattenall=(k=='all')) is None:
             continue
         outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[0], a[0]))
         with open(outfile, "w", encoding="utf-8") as outf:

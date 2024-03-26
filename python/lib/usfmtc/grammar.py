@@ -37,9 +37,11 @@ class UsfmGrammarParser:
         self.elementlist = []
         self.nodes = []
 
-    def parseRef(self, name, flattens=set(), flattenall=False):
+    def parseRef(self, name, flattens=set(), flattenall=True):
         self.flattens = flattens
         self.flattenall = flattenall
+        if flattenall:
+            self.defines = {}
         self.idcount = 1
         self.ids = {}
         e = self.get_ref(name)
@@ -252,6 +254,7 @@ class UsfmGrammarParser:
         return self.back.match('"'+e.text+'"', res)
 
     def ref(self, e, res, **kw):
+        # import pdb; pdb.set_trace()
         if e is None and 'name' in kw:
             n = kw['name']
             del kw['name']
@@ -263,7 +266,7 @@ class UsfmGrammarParser:
             n = e.get('name', None)
         if n is None:
             return res
-        elif n in self.flattens or self.flattenall:
+        elif n in self.flattens:
             r = self.get_ref(n)
             self.groups.append(n)
             res = self.proc_children(r, res, **kw)
@@ -271,17 +274,18 @@ class UsfmGrammarParser:
             return res
         elif "+"+n in self.flattens:
             return res
-        elif n not in self.defines:
+        elif n not in self.defines and self.flattenall:
             r = self.get_ref(n)
-            newres = self.back.add_define(n, r, **kw)
+            newres = self.back.add_define(n, r, context=res, box=self.flattenall, **kw)
             self.defines[n] = newres
             self.elementlist.append(newres)
             self.groups.append(n)
-            self.proc_children(r, newres, **kw)
+            res = self.proc_children(r, newres, **kw)
             self.groups.pop()
             self.elementlist.pop()
-        if len(self.elementlist):
-            self.elementlist[-1].propmap.update(self.defines[n].propmap)
+            if len(self.elementlist):
+                self.elementlist[-1].propmap.update(self.defines[n].propmap)
+            return res
         return self.back.ref(n, res, **kw)
 
     def data(self, e, res, **kw):
@@ -326,8 +330,9 @@ class XmlGrammarParser:
             return None
         return re.sub(r"\$\{(.*?)\}", lambda m:self.vars.get(m.group(1), "'"+m.group(1)+"'")[1:-1], s)
 
-    def parseRef(self, name, flattens=set()):
+    def parseRef(self, name, flattens=set(), flattenall=True):
         self.flattens = flattens
+        self.flattenall = flattenall
         e = self.get_ref(name)
         self.curr = self.back.append_seq()
         if e is None:

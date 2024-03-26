@@ -30,8 +30,8 @@ tests: testresults.log
 #	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `head -n -1 testresults.log | grep -v '^XML:' | wc -l`"
 
 testresults.log : grammar/usx.rng
-	- $(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -j ${JOBS} ${TESTEXCLUDES} ${TESTSET} -q -o $@ -g $< tests
-	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -o $@ -A tests
+	- $(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "hdr=sts" -j ${JOBS} ${TESTEXCLUDES} ${TESTSET} -q -o $@ -g $< tests
+	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -m ${MILESTONES} -m "para=s5" -m "hdr=sts" -o $@ -A tests
 
 grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@
@@ -40,8 +40,8 @@ dbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug ${DBLDIR} | tee dbltest.log
 
 single: grammar/usx.rng $(TEST)/origin.usfm
-	$(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" -l debug ${TESTSET} -P -g $< $(TEST)
-	$(PYTHON) python/scripts/lxmltest.py -g $< -m ${MILESTONES} -m "para=s5" -m "bkhdr=sts" $(TEST)/origin.xml
+	$(PYTHON) python/scripts/usfmxtest -m ${MILESTONES} -m "para=s5" -m "hdr=sts" -l debug ${TESTSET} -P -g $< $(TEST)
+	$(PYTHON) python/scripts/lxmltest.py -g $< -m ${MILESTONES} -m "para=s5" -m "hdr=sts" $(TEST)/origin.xml
 
 singledbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}

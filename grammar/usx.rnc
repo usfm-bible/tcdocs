@@ -250,7 +250,7 @@ PeripheralBookIdentification =
     element book {
         [usfm:tag[before="/&#xFEFF;?${anyws}*\\/" beforeout="'\\'" usfm:seq="true"]]
         attribute style { "id" },
-        [usfm:match[]] attribute code { PeripheralBookIdentification.book.code.enum }, # e.g. code="CNC"
+        [usfm:match[]] attribute code { PeripheralBookIdentification.book.code.enum },
         [usfm:seq="true"]([usfm:match[before="/${hs}*/" beforeout="' '" match="/[^\\\n\r]*/"]]
         (text)? # Brief description of the project (optional)
         >> usfm:match[match="NL" matchout="'\n'" dump="true"])
@@ -355,11 +355,11 @@ PeripheralOther = (
 
 BookHeaders =
     element para {
-        [usfm:grouping="8" usfm:ptag[]] attribute style { BookHeaders.para.style.enum },
+        [usfm:grouping="8" usfm:ptag[]] attribute style { Headers.para.style.enum },
         [usfm:text[]] text?
     }
 
-BookHeaders.para.style.enum = (
+Headers.para.style.enum = (
       "ide" # File encoding information (DEPRECATED)
     | "h1" # Running header text 
     | "h2" # Running header text, left side of page (DEPRECATED)
@@ -378,11 +378,11 @@ BookHeaders.para.style.enum = (
 
 BookTitles =
     element para {
-        [usfm:ptag[]] attribute style { BookTitles.para.style.enum },
+        [usfm:ptag[]] attribute style { Titles.para.style.enum },
         ([usfm:text[]] text | Footnote | CrossReference | Char | Break)*
     }
 
-BookTitles.para.style.enum = (
+Titles.para.style.enum = (
       "mt1" # The main title of the book (if multiple levels)
     | "mt2" # A secondary title usually occurring before the main title
     | "mt3" # A tertiary title occurring after the main title
@@ -396,11 +396,11 @@ BookTitles.para.style.enum = (
 
 BookIntroduction =
     element para {
-        [usfm:grouping="12" usfm:ptag[]] attribute style { BookIntroduction.para.style.enum },
+        [usfm:grouping="12" usfm:ptag[]] attribute style { Introductions.para.style.enum },
         ([usfm:text[]] text | Char | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
     } | Table
 
-BookIntroduction.para.style.enum = (
+Introductions.para.style.enum = (
       "imt1" # Introduction major title, level 1 (if multiple levels)
     | "imt2" # Introduction major title, level 2
     | "imt3" # Introduction major title, level 3
@@ -440,9 +440,10 @@ BookIntroduction.para.style.enum = (
 
 BookIntroductionEndTitles =
     element para {
-        [usfm:ptag[]] attribute style { BookIntroductionEndTitles.para.style.enum },
+        [usfm:ptag[]] attribute style { Titles.para.style.enum },
         ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | Char | Figure | Milestone | Break)*
     }
+
 BookIntroductionEndTitles.para.style.enum = (
       "mt1" # The main title of the book (if multiple levels)
     | "mt2" # A secondary title usually occurring before the main title
@@ -461,12 +462,12 @@ PeripheralContent = (Para | Section | Chapter | Figure | Milestone | Footnote | 
 Section =
     element para {
         [usfm:grouping="15" usfm:ptag[matchid="a" usfm:stacked="true"]]
-        attribute style { Section.para.style.enum },
+        attribute style { SectionParas.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | Footnote | CrossReference | Char | Figure | Milestone | [usfm:ignore="true"] VerseEnd | Reference | Break)*
     }
 
-Section.para.style.enum = (
+SectionParas.para.style.enum = (
       "restore" # Comment about when text was restored
     | "iex" # Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
     | "ip" # Division or Section introductory paragraph (study Bible)
@@ -497,13 +498,13 @@ Section.para.style.enum = (
 
 Para = 
     element para {
-        ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { Para.nonpara.style.enum } |
-        [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { Para.para.style.enum }),
+        ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherParas.para.style.enum } |
+        [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VerseParas.para.style.enum }),
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | Char | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
-Para.para.style.enum = (
+VerseParas.para.style.enum = (
     "cls" # Closure of an Epistle
     | "nb" # Paragraph text, with no break from previous paragraph text (at chapter boundary)
     | "pc" # Inscription (paragraph text centered)
@@ -541,7 +542,7 @@ Para.para.style.enum = (
     | "ts" # Translator's chunk (to identify chunks of text suitable for translating at one time)
     )
 
-Para.nonpara.style.enum = (
+OtherParas.para.style.enum = (
     "lit" # For a comment or note inserted for liturgical use
     | "cp" # Chapter published style
     | "pb" # Page Break used for new reader portions and children's bibles where content is controlled by the page
@@ -605,12 +606,12 @@ cell.align.enum = (
 
 IntroChar =
     element char {
-        [usfm:tag[matchid="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
+        [usfm:tag[matchid="a" usfm:seq="true"]] attribute style { IntroChars.char.style.enum },
         char.closed?,
         ([usfm:text[]] text | Char | Figure | Milestone | Reference | Footnote | CrossReference | Break)+
         >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]
     }
-IntroChar.char.style.enum = (
+IntroChars.char.style.enum = (
       "ior" # Introduction references range for outline entry; for marking references separately
     | "iqt" # For quoted scripture text appearing in the introduction
     )
@@ -631,7 +632,7 @@ Attributes = (
 Char = (
     [usfm:stacked="true"]
     element char {
-        [usfm:grouping="12" usfm:tag[matchid="a" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        [usfm:grouping="12" usfm:tag[matchid="a" usfm:seq="true"]] attribute style { Chars.char.style.enum },
         ( (CharContent, Attributes?) | Attributes)
         >> usfm:endtag[usfm:seq="true"]  # required
     })
@@ -646,7 +647,7 @@ FullCharExtra.char.style.enum = (
     [usfm:propval="link-href"] "xt" # A target reference(s)
     )
 
-FullChar.char.style.enum = (
+Chars.char.style.enum = (
     Char.char.style.enum
     | FullCharExtra.char.style.enum
     )
@@ -693,24 +694,24 @@ Char.char.style.enum = (
 
 CharEmbed = (
     element char {
-        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true"]] attribute style { Chars.char.style.enum },
         ((CharContent, Attributes?) | Attributes)
         >> usfm:endtag[matchref="b" before="'\\'"])
       |
-        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { Chars.char.style.enum },
         ((CharContent, Attributes?) | Attributes)
         >> usfm:endtag[matchref="a" before="'\\+'"])
     })
 
 NoteCharEmbed = (
     element char {
-        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Chars.char.style.enum },
         NoteCharContent,
         Attributes?
         >> usfm:endtag[matchref="c" before="'\\'"]
     } |
     element char {
-        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { Chars.char.style.enum },
         NoteCharContent,
         Attributes?
         >> usfm:endtag[matchref="b" before="'\\+'"]
@@ -718,13 +719,13 @@ NoteCharEmbed = (
 
 ListChar = (
     element char {
-        [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
+        [usfm:tag[matchid="a"]] attribute style { ListChars.char.style.enum },
         char.closed?,
         ([usfm:text[]] text | Char | Figure | Milestone | Footnote | CrossReference | Break | Reference)* # Nested character <char> markup
         >> usfm:endtag[usfm:many="?"]
     })
 
-ListChar.char.style.enum = (
+ListChars.char.style.enum = (
       "litl" # List entry total text
     | "lik" # Structured list entry key text
     | "liv1" # Structured list entrt value 1 content (if multiple values)
@@ -766,13 +767,13 @@ char.closed =
 Milestone = (
     (element ms {
         # [usfm:tag[after="/\s?(?=[\\|])/"]] attribute style { xsd:string {pattern="[a-z][a-z0-9-]*" }},
-        [usfm:tag[after="Hs" afterout=""]] attribute style { Milestone.enum },
+        [usfm:tag[after="Hs" afterout=""]] attribute style { Milestones.enum },
         Attributes?,
         empty
     } >> usfm:endtag[matchref="''"])
     )
 
-Milestone.enum = (
+Milestones.enum = (
       [usfm:propval="who"] "ts-s"
     | "ts-e"
     | "t-s"
@@ -835,7 +836,7 @@ VerseStart =
     element verse {
         [usfm:tag[usfm:seq="true"]]
         attribute style { "v" },
-        [usfm:match[usfm:seq="true" after="TAGEND" afterout="' '"]]
+        [usfm:match[usfm:seq="true" after="WS" afterout="' '"]]
         attribute number { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
         [usfm:tag[dump="true" before="/\\va${HS}/" beforeout="'\\va '" after="/\\va\*${Hs}/" afterout="'\\va* '"]]
         attribute altnumber { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
@@ -868,14 +869,14 @@ Footnote =
 FootnoteChar =
     element char {
         [usfm:grouping="8" usfm:tag[matchid="b"]]
-        attribute style { FootnoteChar.char.style.enum },
+        attribute style { FootnoteChars.char.style.enum },
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:text[]] text | NoteCharEmbed | Reference)*
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="'*'"]
     }
 
-FootnoteChar.char.style.enum = (
+FootnoteChars.char.style.enum = (
       "fr" # The origin reference for the footnote
     | "ft" # Footnote text, Protocanon
     | "fk" # A footnote keyword
@@ -884,11 +885,6 @@ FootnoteChar.char.style.enum = (
     | "fl" # A footnote label text item, for marking or "labelling" the type or alternate translation being provided in the note.
     | "fw" # A footnote witness list, for distinguishing a list of sigla representing witnesses in critical editions.
     | "fdc" # Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
-    | "it" # A character style, use italic text
-    | "bdit" # A character style, use bold + italic text
-    | "bd" # A character style, use bold text
-    | "em" # A character style, use emphasized text style
-    | "sc" # A character style, for small capitalization text; abbreviations
     )
 
 CrossReference =
@@ -897,6 +893,7 @@ CrossReference =
         attribute style { "x" | "ex" },
         [usfm:match[match="/[^\\\s]+/" after="Hs" afterout="' '"]]
         attribute caller { text },
+        category?,
         CrossReferenceChar*
         >> usfm:endtag[]
     }
@@ -904,13 +901,13 @@ CrossReference =
 CrossReferenceChar =
     element char {
         [usfm:tag[matchid="b"]]
-        attribute style { CrossReferenceChar.char.style.enum },
+        attribute style { CrossReferenceChars.char.style.enum },
         [usfm:ignore="true"]
         char.closed?,
         ([usfm:text[]] text | NoteCharEmbed | Reference)+
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"]
     }
-CrossReferenceChar.char.style.enum = (
+CrossReferenceChars.char.style.enum = (
       "xop" # Published cross reference origin text (origin reference that should appear in the published text)
     | "xo" # The cross reference origin reference
     | "xta" # Cross reference target references added text

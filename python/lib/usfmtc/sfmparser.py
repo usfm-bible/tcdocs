@@ -328,8 +328,8 @@ class UsfmParserBackend:
             res = lambda **kw: String(value[1:-1], **kw)
         self._terminals[name.lower()] = res
 
-    def add_define(self, name, e, **kw):
-        res = self.append_seq(inref=name)
+    def add_define(self, name, e, context=None, **kw):
+        res = self.append_seq(context, inref=name)
         self.defines[name] = res
         return res
 
