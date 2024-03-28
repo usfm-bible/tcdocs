@@ -11,6 +11,7 @@ def usxtousj(input_usx_elmt):
     out_obj = {}
     action = "append"
     attribs = dict(input_usx_elmt.attrib)
+    alt_pub_numbers = []
     tag = None
     if "style" in attribs:
         tag = attribs['style']
@@ -21,6 +22,12 @@ def usxtousj(input_usx_elmt):
         del attribs['closed']
     if "status" in attribs:
         del attribs['status']
+    if "altnumber" in attribs:
+        alt_pub_numbers.append({'type':'char', "marker": f"{tag}a", "content":[attribs['altnumber']]})
+        del attribs['altnumber']
+    if "pubnumber" in attribs:
+        alt_pub_numbers.append({'type':'para', "marker": f"{tag}p", "content":[attribs['pubnumber']]})
+        del attribs['pubnumber']
     out_obj["type"]  = key
     if tag:
         out_obj["marker"] = tag
@@ -43,8 +50,9 @@ def usxtousj(input_usx_elmt):
         del out_obj['content']
     if "eid" in out_obj and key in ['verse', 'chapter']:
         action = "ignore"
-    # May need some special handling for va vp, ca cp elements.
-    # Now the USX samples in testsuite are not correct
+    if len(alt_pub_numbers)>0:
+        out_obj = [out_obj] + alt_pub_numbers
+        action = "merge"
     return out_obj, action
 
 def usjtousx(adict, elfactory=None):
