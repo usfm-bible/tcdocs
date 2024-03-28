@@ -1140,6 +1140,7 @@
       <value>em</value>
       <value>sc</value>
       <value>sup</value>
+      <value usfm:propval="link-href">xt</value>
       <value usfm:propval="lemma">w</value>
       <value usfm:propval="gloss">rb</value>
       <value>jmp</value>
@@ -1685,22 +1686,24 @@
   </define>
   <define name="Reference">
     <element>
-      <usfm:tag match="&#x27;ref&#x27;"/>
+      <usfm:tag match="&#x27;ref&#x27;" dump="true"/>
       <name ns="">ref</name>
       <optional>
         <text>
-          <usfm:text/>
+          <usfm:text match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
         </text>
       </optional>
-      <attribute>
-        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-        <usfm:match match="TEXTNOTATTRIB"/>
-        <name ns="">loc</name>
-        <data type="string">
-          <usfm:pattern name="VERSE"/>
-          <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
-        </data>
-      </attribute>
+      <optional>
+        <attribute>
+          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+          <usfm:match match="TEXTNOTATTRIB"/>
+          <name ns="">loc</name>
+          <data type="string">
+            <usfm:pattern name="VERSE"/>
+            <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
+          </data>
+        </attribute>
+      </optional>
     </element>
     <usfm:endtag match="&#x27;ref&#x27;" matchref=""/>
   </define>

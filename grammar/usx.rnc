@@ -687,6 +687,7 @@ Char.char.style.enum = (
     | "em" # A character style, use emphasized text style
     | "sc" # A character style, for small capitalization text
     | "sup" # A character style, for superscript text. Typically for use in critical edition footnotes.
+    | [usfm:propval="link-href"] "xt" # Inline scripture reference formatting.
     | [usfm:propval="lemma"] "w"
     | [usfm:propval="gloss"] "rb"
     | "jmp"
@@ -933,12 +934,11 @@ category =
     attribute category { text }
 
 Reference =
-    [usfm:tag[match="'ref'"]]
+    [usfm:tag[match="'ref'" dump="true"]]
     element ref {
-        [usfm:text[]]
-        text?,
+        [usfm:text[match="TEXTNOTATTRIB"  after="ATTRIBTEXTEND"]] text?,
         [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:match[match="TEXTNOTATTRIB"]]
-        attribute loc { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }
+        attribute loc { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?
     } >> usfm:endtag[match="'ref'" matchref=""]
 
 Break = 

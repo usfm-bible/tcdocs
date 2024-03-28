@@ -100,12 +100,18 @@ class UsfmGrammarParser:
                 c = newe
                 t = re.sub(r"^\{.*\}", "", c.tag)
             if (m := c.get(f"{usfmns}many", None)) is not None:
-                res = getattr(self.back, self._manies[m])(res, **kw)
+                newres = getattr(self.back, self._manies[m])(res, **kw)
+                if len(res.propmap):
+                    newres.propmap = res.propmap.copy()
+                res = newres
             if (not skip or t in ("match", "matchpair")) and c.get(f"{usfmns}ignore", "false") not in ("true", "1"):
                 fn = getattr(self, t, None)
                 if fn is not None:
                     if fn(c, res, skip=skip, index=i, parent=e, **kw) is None:
                         break
+        if res.children is not None:
+            for c in res.children:
+                res.propmap.update(getattr(c, 'propmap', {}))
         return res
 
     def push_element(self, val):
@@ -251,10 +257,10 @@ class UsfmGrammarParser:
         if pv is not None:
             pe = self.elementlist[-1]
             pe.propmap[e.text] = pv
+            res.propmap[e.text] = pv
         return self.back.match('"'+e.text+'"', res)
 
     def ref(self, e, res, **kw):
-        # import pdb; pdb.set_trace()
         if e is None and 'name' in kw:
             n = kw['name']
             del kw['name']
@@ -278,14 +284,12 @@ class UsfmGrammarParser:
             r = self.get_ref(n)
             newres = self.back.add_define(n, r, context=res, box=self.flattenall, **kw)
             self.defines[n] = newres
-            self.elementlist.append(newres)
             self.groups.append(n)
             res = self.proc_children(r, newres, **kw)
             self.groups.pop()
-            self.elementlist.pop()
-            if len(self.elementlist):
-                self.elementlist[-1].propmap.update(self.defines[n].propmap)
             return res
+        if len(self.elementlist):
+            self.elementlist[-1].propmap.update(self.defines[n].propmap)
         return self.back.ref(n, res, **kw)
 
     def data(self, e, res, **kw):
