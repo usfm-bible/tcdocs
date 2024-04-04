@@ -1363,7 +1363,6 @@
       <value>t-s</value>
       <value>t-e</value>
       <value>ts</value>
-      <value>fp</value>
       <value>qt1-s</value>
       <value>qt1-e</value>
       <value>qt2-s</value>
@@ -1588,6 +1587,7 @@
       <value>fl</value>
       <value>fw</value>
       <value>fdc</value>
+      <value>fp</value>
     </choice>
   </define>
   <define name="CrossReference">

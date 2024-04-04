@@ -780,7 +780,6 @@ Milestones.enum = (
     | "t-s"
     | "t-e"
     | "ts"
-    | "fp" # A Footnote additional paragraph marker
     | "qt1-s"
     | "qt1-e"
     | "qt2-s"
@@ -886,6 +885,7 @@ FootnoteChars.char.style.enum = (
     | "fl" # A footnote label text item, for marking or "labelling" the type or alternate translation being provided in the note.
     | "fw" # A footnote witness list, for distinguishing a list of sigla representing witnesses in critical editions.
     | "fdc" # Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
+    | "fp" # A Footnote additional paragraph marker
     )
 
 CrossReference =

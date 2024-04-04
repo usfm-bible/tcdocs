@@ -109,7 +109,7 @@ class UsfmGrammarParser:
                 if fn is not None:
                     if fn(c, res, skip=skip, index=i, parent=e, **kw) is None:
                         break
-        if res.children is not None:
+        if getattr(res, 'children', None) is not None:
             for c in res.children:
                 res.propmap.update(getattr(c, 'propmap', {}))
         return res
@@ -288,7 +288,7 @@ class UsfmGrammarParser:
             res = self.proc_children(r, newres, **kw)
             self.groups.pop()
             return res
-        if len(self.elementlist):
+        if self.flattenall and len(self.elementlist):
             self.elementlist[-1].propmap.update(self.defines[n].propmap)
         return self.back.ref(n, res, **kw)
 

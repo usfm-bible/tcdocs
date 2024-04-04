@@ -3,10 +3,10 @@ import re
 import xml.etree.ElementTree as et
 
 alljobs = {
-    "BookHeaders":          ("bkhdrs", ("BookHeaders.para.style.enum",)),
-    "BookTitles":           ("bktitles", ("BookTitles.para.style.enum",)),
-    "BookIntroduction":     ("bkintro", ('BookIntroduction.para.style.enum',)),
-    "BookIntroductionEndTitles": ("bkintroend", ("BookIntroductionEndTitles.para.style.enum",)),
+    "BookHeaders":          ("bkhdrs", ("Headers.para.style.enum",)),
+    "BookTitles":           ("bktitles", ("Titles.para.style.enum",)),
+    "BookIntroduction":     ("bkintro", ('Introductions.para.style.enum',)),
+    "BookIntroductionEndTitles": ("bkintroend", ("Titles.para.style.enum",)),
     "ChapterContent":       ("chaptercontent", ),
     "ChapterStart":         ("chapter",),
     "ChapterEnd":           ("chapterend",),
@@ -18,7 +18,7 @@ alljobs = {
     "CrossReferenceChar":   ("xchar",("CrossReferenceChar.char.style.enum", "+char.closed")),
     "Figure":               ("fig",("FigureTwo", "Attributes", "FigureThree")),
     "Footnote":             ("f", ("NoteCharEmbed", "Attributes"), ("category", )),
-    "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChar.char.style.enum", "char.closed")),
+    "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChars.char.style.enum", "char.closed")),
     "List":                 ("list", ("List.para.style.enum",)),
     "ListChar":             ("listchar", ("+char.closed", "ListChar.char.style.enum",)),
     "Milestone":            ("ms", ("Milestone.enum", "Attributes")),
