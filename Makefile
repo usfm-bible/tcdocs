@@ -6,6 +6,7 @@ MILESTONES="ms=zaln-s,zaln-e,k-s,k-e,zms,ts-s,ts-e"
 
 unknown:
 	@- echo "There are various useful targets:"
+	@- echo "files      core files: usx.rng, usfm.ext, etc."
 	@- echo "diagrams   All the svg and png syntax diagrams"
 	@- echo "tests      Run all the tests"
 	@- echo "single     Run a single test TEST=path"
@@ -51,3 +52,9 @@ doc: diagrams manual/antora/modules/ROOT/pages/glossary.adoc
 
 manual/antora/modules/ROOT/pages/glossary.adoc: grammar/usx.rng
 	$(PYTHON) python/scripts/mkglossary -o $@ $<
+
+files: grammar/usx.rng grammar/usfm.ext
+
+grammar/usfm.ext : grammar/usx.rng
+	$(PYTHON) python/scripts/usfmmkext -o $@ $<
+

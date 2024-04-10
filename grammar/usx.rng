@@ -510,7 +510,7 @@
       <attribute usfm:grouping="8">
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="Headers.para.style.enum"/>
+        <ref name="Header.para.style.enum"/>
       </attribute>
       <optional>
         <text>
@@ -519,22 +519,36 @@
       </optional>
     </element>
   </define>
-  <define name="Headers.para.style.enum">
+  <define name="Header.para.style.enum">
     <choice>
       <value>ide</value>
+      <a:documentation>File encoding information (DEPRECATED)</a:documentation>
       <value>h1</value>
+      <a:documentation>Running header text </a:documentation>
       <value>h2</value>
+      <a:documentation>Running header text, left side of page (DEPRECATED)</a:documentation>
       <value>h3</value>
+      <a:documentation>Running header text, right side of page (DEPRECATED)</a:documentation>
       <value>h</value>
+      <a:documentation>Running header text for a book</a:documentation>
       <value>toc1</value>
+      <a:documentation>Long table of contents text</a:documentation>
       <value>toc2</value>
+      <a:documentation>Short table of contents text</a:documentation>
       <value>toc3</value>
+      <a:documentation>Book Abbreviation</a:documentation>
       <value>toca1</value>
+      <a:documentation>Alternative language long table of contents text</a:documentation>
       <value>toca2</value>
+      <a:documentation>Alternative language short table of contents text</a:documentation>
       <value>toca3</value>
+      <a:documentation>Alternative language book Abbreviation</a:documentation>
       <value>rem</value>
+      <a:documentation>Remark</a:documentation>
       <value>sts</value>
+      <a:documentation>Status</a:documentation>
       <value>usfm</value>
+      <a:documentation>USFM markup version information (may occur if USX was generated from USFM)</a:documentation>
     </choice>
   </define>
   <define name="BookTitles">
@@ -543,7 +557,7 @@
       <attribute>
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="Titles.para.style.enum"/>
+        <ref name="Title.para.style.enum"/>
       </attribute>
       <zeroOrMore>
         <choice>
@@ -558,17 +572,25 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="Titles.para.style.enum">
+  <define name="Title.para.style.enum">
     <choice>
       <value>mt1</value>
+      <a:documentation>The main title of the book (if multiple levels)</a:documentation>
       <value>mt2</value>
+      <a:documentation>A secondary title usually occurring before the main title</a:documentation>
       <value>mt3</value>
+      <a:documentation>A tertiary title occurring after the main title</a:documentation>
       <value>mt4</value>
       <value>mt</value>
+      <a:documentation>The main title of the book (if single level)</a:documentation>
       <value>imt1</value>
+      <a:documentation>Introduction major title, level 1 (if multiple levels)</a:documentation>
       <value>imt2</value>
+      <a:documentation>Introduction major title, level 2</a:documentation>
       <value>imt</value>
+      <a:documentation>Introduction major title, level 1 (if single level)</a:documentation>
       <value>rem</value>
+      <a:documentation>Remark</a:documentation>
     </choice>
   </define>
   <define name="BookIntroduction">
@@ -578,7 +600,7 @@
         <attribute usfm:grouping="12">
           <usfm:ptag/>
           <name ns="">style</name>
-          <ref name="Introductions.para.style.enum"/>
+          <ref name="Introduction.para.style.enum"/>
         </attribute>
         <zeroOrMore>
           <choice>
@@ -599,43 +621,78 @@
       <ref name="Table"/>
     </choice>
   </define>
-  <define name="Introductions.para.style.enum">
+  <define name="Introduction.para.style.enum">
     <choice>
       <value>imt1</value>
+      <a:documentation>Introduction major title, level 1 (if multiple levels)</a:documentation>
       <value>imt2</value>
+      <a:documentation>Introduction major title, level 2</a:documentation>
       <value>imt3</value>
+      <a:documentation>Introduction major title, level 3</a:documentation>
       <value>imt4</value>
+      <a:documentation>Introduction major title, level 4 (usually within parenthesis)</a:documentation>
       <value>imte1</value>
+      <a:documentation>Introduction major title at introduction end, level 1 (if multiple levels)</a:documentation>
       <value>imte2</value>
+      <a:documentation>Introduction major title at introduction end, level 2</a:documentation>
       <value>imte</value>
+      <a:documentation>Introduction major title at introduction end, level 1 (if single level)</a:documentation>
       <value>imt</value>
+      <a:documentation>Introduction major title, level 1 - (if single level)</a:documentation>
       <value>ib</value>
+      <a:documentation>Introduction blank line</a:documentation>
       <value>ie</value>
+      <a:documentation>Introduction ending marker</a:documentation>
       <value>ili1</value>
+      <a:documentation>A list entry, level 1 (if multiple levels)</a:documentation>
       <value>ili2</value>
+      <a:documentation>A list entry, level 2</a:documentation>
       <value>ili</value>
+      <a:documentation>A list entry, level 1 (if single level)</a:documentation>
       <value>imi</value>
+      <a:documentation>Introduction prose paragraph text, indented, with no first line indent</a:documentation>
       <value>imq</value>
+      <a:documentation>Introduction prose paragraph, quote from the body text, with no first line indent</a:documentation>
       <value>im</value>
+      <a:documentation>Introduction prose paragraph, with no first line indent (may occur after poetry)</a:documentation>
       <value>io1</value>
+      <a:documentation>Introduction outline text, level 1 (if multiple levels)</a:documentation>
       <value>io2</value>
+      <a:documentation>Introduction outline text, level 2</a:documentation>
       <value>io3</value>
+      <a:documentation>Introduction outline text, level 3</a:documentation>
       <value>io4</value>
+      <a:documentation>Introduction outline text, level 4</a:documentation>
       <value>iot</value>
+      <a:documentation>Introduction outline title</a:documentation>
       <value>io</value>
+      <a:documentation>Introduction outline text, level 1 (if single level)</a:documentation>
       <value>ipi</value>
+      <a:documentation>Introduction prose paragraph, indented, with first line indent</a:documentation>
       <value>ipq</value>
+      <a:documentation>Introduction prose paragraph, quote from the body text</a:documentation>
       <value>ipr</value>
+      <a:documentation>Introduction prose paragraph, right aligned</a:documentation>
       <value>ip</value>
+      <a:documentation>Introduction prose paragraph</a:documentation>
       <value>iq1</value>
+      <a:documentation>Introduction poetry text, level 1 (if multiple levels)</a:documentation>
       <value>iq2</value>
+      <a:documentation>Introduction poetry text, level 2</a:documentation>
       <value>iq3</value>
+      <a:documentation>Introduction poetry text, level 3</a:documentation>
       <value>iq</value>
+      <a:documentation>Introduction poetry text, level 1 (if single level)</a:documentation>
       <value>is1</value>
+      <a:documentation>Introduction section heading, level 1 (if multiple levels)</a:documentation>
       <value>is2</value>
+      <a:documentation>Introduction section heading, level 2</a:documentation>
       <value>is</value>
+      <a:documentation>Introduction section heading, level 1 (if single level)</a:documentation>
       <value>iex</value>
+      <a:documentation>Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)</a:documentation>
       <value>rem</value>
+      <a:documentation>Remark</a:documentation>
     </choice>
   </define>
   <define name="BookIntroductionEndTitles">
@@ -644,7 +701,7 @@
       <attribute>
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="Titles.para.style.enum"/>
+        <ref name="Title.para.style.enum"/>
       </attribute>
       <zeroOrMore>
         <choice>
@@ -661,16 +718,24 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="BookIntroductionEndTitles.para.style.enum">
+  <define name="BookIntroductionEndTitle.para.style.enum">
     <choice>
       <value>mt1</value>
+      <a:documentation>The main title of the book (if multiple levels)</a:documentation>
       <value>mt2</value>
+      <a:documentation>A secondary title usually occurring before the main title</a:documentation>
       <value>mt3</value>
+      <a:documentation>A tertiary title occurring after the main title</a:documentation>
       <value>mt4</value>
+      <a:documentation>A small secondary title sometimes occuring within parentheses</a:documentation>
       <value>mt</value>
+      <a:documentation>The main title of the book (if single level)</a:documentation>
       <value>imt</value>
+      <a:documentation>Introduction major title, level 1 (if single level)</a:documentation>
       <value>imt1</value>
+      <a:documentation>Introduction major title, level 1 (if multiple levels)</a:documentation>
       <value>imt2</value>
+      <a:documentation>Introduction major title, level 2</a:documentation>
     </choice>
   </define>
   <define name="ChapterContent">
@@ -707,7 +772,7 @@
       <attribute usfm:grouping="15">
         <usfm:ptag matchid="a" usfm:stacked="true"/>
         <name ns="">style</name>
-        <ref name="SectionParas.para.style.enum"/>
+        <ref name="SectionPara.para.style.enum"/>
       </attribute>
       <optional>
         <attribute>
@@ -735,34 +800,60 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="SectionParas.para.style.enum">
+  <define name="SectionPara.para.style.enum">
     <choice>
       <value>restore</value>
+      <a:documentation>Comment about when text was restored</a:documentation>
       <value>iex</value>
+      <a:documentation>Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)</a:documentation>
       <value>ip</value>
+      <a:documentation>Division or Section introductory paragraph (study Bible)</a:documentation>
       <value>ms1</value>
+      <a:documentation>A major section division heading, level 1 (if multiple levels)</a:documentation>
       <value>ms2</value>
+      <a:documentation>A major section division heading, level 2</a:documentation>
       <value>ms3</value>
+      <a:documentation>A major section division heading, level 3</a:documentation>
       <value>ms</value>
+      <a:documentation>A major section division heading, level 1 (if single level)</a:documentation>
       <value>mr</value>
+      <a:documentation>A major section division references range heading</a:documentation>
       <value>mte1</value>
+      <a:documentation>The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)</a:documentation>
       <value>mte2</value>
+      <a:documentation>A secondary title occurring before or after the &#x27;ending&#x27; main title</a:documentation>
       <value>mte</value>
+      <a:documentation>The main title of the book repeated at the end of the book, level 1 (if single level)</a:documentation>
       <value>r</value>
+      <a:documentation>Parallel reference(s)</a:documentation>
       <value>s1</value>
+      <a:documentation>A section heading, level 1 (if multiple levels)</a:documentation>
       <value>s2</value>
+      <a:documentation>A section heading, level 2 (e.g. Proverbs 22-24)</a:documentation>
       <value>s3</value>
+      <a:documentation>A section heading, level 3 (e.g. Genesis &quot;The First Day&quot;) (\s3 can take a \v!)</a:documentation>
       <value>s4</value>
+      <a:documentation>A section heading, level 4</a:documentation>
       <value>sr</value>
+      <a:documentation>A section division references range heading</a:documentation>
       <value>sp</value>
+      <a:documentation>A heading, to identify the speaker (e.g. Job)</a:documentation>
       <value>sd1</value>
+      <a:documentation>Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)</a:documentation>
       <value>sd2</value>
+      <a:documentation>Semantic division location (vertical space used to divide the text into sections), level 2</a:documentation>
       <value>sd3</value>
+      <a:documentation>Semantic division location (vertical space used to divide the text into sections), level 3</a:documentation>
       <value>sd4</value>
+      <a:documentation>Semantic division location (vertical space used to divide the text into sections), level 4</a:documentation>
       <value>sd</value>
+      <a:documentation>Vertical space used to divide the text into sections, level 1 (if single level)</a:documentation>
       <value>s</value>
+      <a:documentation>A section heading, level 1 (if single level)</a:documentation>
       <value>cl</value>
+      <a:documentation>Chapter label used for translations that add a word such as &quot;Chapter&quot;</a:documentation>
       <value>cd</value>
+      <a:documentation>Chapter Description (Publishing option D, e.g. in Russian Bibles)</a:documentation>
     </choice>
   </define>
   <define name="Para">
@@ -772,12 +863,12 @@
         <attribute usfm:grouping="15">
           <usfm:ptag usfm:stacked="true"/>
           <name ns="">style</name>
-          <ref name="OtherParas.para.style.enum"/>
+          <ref name="OtherPara.para.style.enum"/>
         </attribute>
         <attribute usfm:grouping="15">
           <usfm:ptag usfm:stacked="true"/>
           <name ns="">style</name>
-          <ref name="VerseParas.para.style.enum"/>
+          <ref name="VersePara.para.style.enum"/>
         </attribute>
       </choice>
       <optional>
@@ -806,57 +897,102 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="VerseParas.para.style.enum">
+  <define name="VersePara.para.style.enum">
     <choice>
       <value>cls</value>
+      <a:documentation>Closure of an Epistle</a:documentation>
       <value>nb</value>
+      <a:documentation>Paragraph text, with no break from previous paragraph text (at chapter boundary)</a:documentation>
       <value>pc</value>
+      <a:documentation>Inscription (paragraph text centered)</a:documentation>
       <value>pi1</value>
+      <a:documentation>Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse</a:documentation>
       <value>pi2</value>
+      <a:documentation>Paragraph text, level 2 indent, with first line indent; often used for discourse</a:documentation>
       <value>pi3</value>
+      <a:documentation>Paragraph text, level 3 indent, with first line indent; often used for discourse</a:documentation>
       <value>pi</value>
+      <a:documentation>Paragraph text, level 1 indent (if single level), with first line indent; often used for discourse</a:documentation>
       <value>po</value>
+      <a:documentation>Letter opening</a:documentation>
       <value>pr</value>
+      <a:documentation>Text refrain (paragraph right-aligned)</a:documentation>
       <value>pmo</value>
+      <a:documentation>Embedded text opening</a:documentation>
       <value>pmc</value>
+      <a:documentation>Embedded text closing</a:documentation>
       <value>pmr</value>
+      <a:documentation>Embedded text refrain</a:documentation>
       <value>pm</value>
+      <a:documentation>Embedded text paragraph</a:documentation>
       <value>ph1</value>
+      <a:documentation>Paragraph text, with level 1 hanging indent (if multiple levels)</a:documentation>
       <value>ph2</value>
+      <a:documentation>Paragraph text, with level 2 hanging indent</a:documentation>
       <value>ph3</value>
+      <a:documentation>Paragraph text, with level 3 hanging indent</a:documentation>
       <value>ph</value>
+      <a:documentation>Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)</a:documentation>
       <value>p</value>
+      <a:documentation>Paragraph text, with first line indent</a:documentation>
       <value>q1</value>
+      <a:documentation>Poetry text, level 1 indent (if multiple levels)</a:documentation>
       <value>q2</value>
+      <a:documentation>Poetry text, level 2 indent</a:documentation>
       <value>q3</value>
+      <a:documentation>Poetry text, level 3 indent</a:documentation>
       <value>q4</value>
+      <a:documentation>Poetry text, level 4 indent</a:documentation>
       <value>qc</value>
+      <a:documentation>Poetry text, centered</a:documentation>
       <value>qr</value>
+      <a:documentation>Poetry text, Right Aligned</a:documentation>
       <value>qm1</value>
+      <a:documentation>Poetry text, embedded, level 1 indent (if multiple levels)</a:documentation>
       <value>qm2</value>
+      <a:documentation>Poetry text, embedded, level 2 indent</a:documentation>
       <value>qm3</value>
+      <a:documentation>Poetry text, embedded, level 3 indent</a:documentation>
       <value>qm</value>
+      <a:documentation>Poetry text, embedded, level 1 indent (if single level)</a:documentation>
       <value>qd</value>
+      <a:documentation>A Hebrew musical performance annotation, similar in content to Hebrew descriptive title.</a:documentation>
       <value>q</value>
+      <a:documentation>Poetry text, level 1 indent (if single level)</a:documentation>
       <value>b</value>
+      <a:documentation>Poetry text stanza break (e.g. stanza break)</a:documentation>
       <value>d</value>
+      <a:documentation>A Hebrew text heading, to provide description (e.g. Psalms)</a:documentation>
       <value>mi</value>
+      <a:documentation>Paragraph text, indented, with no first line indent; often used for discourse</a:documentation>
       <value>m</value>
+      <a:documentation>Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation</a:documentation>
       <value>ts</value>
+      <a:documentation>Translator&#x27;s chunk (to identify chunks of text suitable for translating at one time)</a:documentation>
     </choice>
   </define>
-  <define name="OtherParas.para.style.enum">
+  <define name="OtherPara.para.style.enum">
     <choice>
       <value>lit</value>
+      <a:documentation>For a comment or note inserted for liturgical use</a:documentation>
       <value>cp</value>
+      <a:documentation>Chapter published style</a:documentation>
       <value>pb</value>
+      <a:documentation>Page Break used for new reader portions and children&#x27;s bibles where content is controlled by the page</a:documentation>
       <value>p1</value>
+      <a:documentation>Front or back matter text paragraph, level 1 (if multiple levels)</a:documentation>
       <value>p2</value>
+      <a:documentation>Front or back matter text paragraph, level 2 (if multiple levels)</a:documentation>
       <value>qa</value>
+      <a:documentation>Poetry text, Acrostic marker/heading</a:documentation>
       <value>k1</value>
+      <a:documentation>Concordance main entry text or keyword, level 1</a:documentation>
       <value>k2</value>
+      <a:documentation>Concordance main entry text or keyword, level 2</a:documentation>
       <value>rem</value>
+      <a:documentation>Remark</a:documentation>
       <value>sts</value>
+      <a:documentation>Remark</a:documentation>
     </choice>
   </define>
   <define name="List">
@@ -897,17 +1033,29 @@
   <define name="List.para.style.enum">
     <choice>
       <value>lh</value>
+      <a:documentation>List header (introductory remark)</a:documentation>
       <value>li1</value>
+      <a:documentation>A list entry, level 1 (if multiple levels)</a:documentation>
       <value>li2</value>
+      <a:documentation>A list entry, level 2</a:documentation>
       <value>li3</value>
+      <a:documentation>A list entry, level 3</a:documentation>
       <value>li4</value>
+      <a:documentation>A list entry, level 4</a:documentation>
       <value>lim1</value>
+      <a:documentation>An embedded list entry, level 1 (if multiple levels)</a:documentation>
       <value>lim2</value>
+      <a:documentation>An embedded list entry, level 2</a:documentation>
       <value>lim3</value>
+      <a:documentation>An embedded list entry, level 3</a:documentation>
       <value>lim4</value>
+      <a:documentation>An embedded list entry, level 4</a:documentation>
       <value>lim</value>
+      <a:documentation>An embedded list entry, level 1 (if single level)</a:documentation>
       <value>li</value>
+      <a:documentation>A list entry, level 1 (if single level)</a:documentation>
       <value>lf</value>
+      <a:documentation>List footer (introductory remark)</a:documentation>
     </choice>
   </define>
   <define name="Table">
@@ -978,8 +1126,11 @@
   <define name="cell.align.enum">
     <choice>
       <value>start</value>
+      <a:documentation>left in LTR, right in RTL</a:documentation>
       <value>center</value>
+      <a:documentation>center</a:documentation>
       <value>end</value>
+      <a:documentation>right in LTR, left in RTL</a:documentation>
     </choice>
   </define>
   <define name="IntroChar">
@@ -988,7 +1139,7 @@
       <attribute>
         <usfm:tag matchid="a" usfm:seq="true"/>
         <name ns="">style</name>
-        <ref name="IntroChars.char.style.enum"/>
+        <ref name="IntroChar.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed"/>
@@ -1010,7 +1161,7 @@
       <usfm:endtag usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"/>
     </element>
   </define>
-  <define name="IntroChars.char.style.enum">
+  <define name="IntroChar.char.style.enum">
     <choice>
       <value>ior</value>
       <value>iqt</value>
@@ -1060,7 +1211,7 @@
       <attribute usfm:grouping="12">
         <usfm:tag matchid="a" usfm:seq="true"/>
         <name ns="">style</name>
-        <ref name="Chars.char.style.enum"/>
+        <ref name="FullChar.char.style.enum"/>
       </attribute>
       <choice>
         <group>
@@ -1098,7 +1249,7 @@
   <define name="FullCharExtra.char.style.enum">
     <value usfm:propval="link-href">xt</value>
   </define>
-  <define name="Chars.char.style.enum">
+  <define name="FullChar.char.style.enum">
     <choice>
       <ref name="Char.char.style.enum"/>
       <ref name="FullCharExtra.char.style.enum"/>
@@ -1107,43 +1258,79 @@
   <define name="Char.char.style.enum">
     <choice>
       <value>vp</value>
+      <a:documentation>Published verse marker - this is a verse marking that would be used in the published text</a:documentation>
       <value>qac</value>
+      <a:documentation>Poetry text, Acrostic markup of the first character of a line of acrostic poetry</a:documentation>
       <value>qs</value>
+      <a:documentation>Poetry text, Selah</a:documentation>
       <value>add</value>
+      <a:documentation>For a translational addition to the text</a:documentation>
       <value>addpn</value>
+      <a:documentation>For chinese words to be dot underline &amp; underline (DEPRECATED - used nested char@style pn)</a:documentation>
       <value>bk</value>
+      <a:documentation>For the quoted name of a book</a:documentation>
       <value>dc</value>
+      <a:documentation>Deuterocanonical/LXX additions or insertions in the Protocanonical text</a:documentation>
       <value>efm</value>
+      <a:documentation>Reference to caller of previous footnote in a study Bible</a:documentation>
       <value>fm</value>
+      <a:documentation>Reference to caller of previous footnote</a:documentation>
       <value>fv</value>
+      <a:documentation>A verse number within the footnote text</a:documentation>
       <value>k</value>
+      <a:documentation>For a keyword</a:documentation>
       <value>nd</value>
+      <a:documentation>For name of deity</a:documentation>
       <value>ndx</value>
+      <a:documentation>A subject index text item</a:documentation>
       <value>ord</value>
+      <a:documentation>For the text portion of an ordinal number</a:documentation>
       <value>png</value>
+      <a:documentation>For a geographic proper name</a:documentation>
       <value>pn</value>
+      <a:documentation>For a proper name</a:documentation>
       <value>pro</value>
+      <a:documentation>For indicating pronunciation in CJK texts (DEPRECATED - used char@style rb)</a:documentation>
       <value>qt</value>
+      <a:documentation>For Old Testament quoted text appearing in the New Testament</a:documentation>
       <value>rq</value>
+      <a:documentation>A cross-reference indicating the source text for the preceding quotation.</a:documentation>
       <value>sig</value>
+      <a:documentation>For the signature of the author of an Epistle</a:documentation>
       <value>sls</value>
+      <a:documentation>To represent where the original text is in a secondary language or from an alternate text source</a:documentation>
       <value>tl</value>
+      <a:documentation>For transliterated words</a:documentation>
       <value>wg</value>
+      <a:documentation>A Greek Wordlist text item</a:documentation>
       <value>wh</value>
+      <a:documentation>A Hebrew wordlist text item</a:documentation>
       <value>wa</value>
+      <a:documentation>An Aramaic wordlist text item</a:documentation>
       <value>wj</value>
+      <a:documentation>For marking the words of Jesus</a:documentation>
       <value>jmp</value>
+      <a:documentation>For associating linking attributes to a span of text</a:documentation>
       <value>no</value>
+      <a:documentation>A character style, use normal text</a:documentation>
       <value>it</value>
+      <a:documentation>A character style, use italic text</a:documentation>
       <value>bdit</value>
+      <a:documentation>A character style, use bold + italic text</a:documentation>
       <value>bd</value>
+      <a:documentation>A character style, use bold text</a:documentation>
       <value>em</value>
+      <a:documentation>A character style, use emphasized text style</a:documentation>
       <value>sc</value>
+      <a:documentation>A character style, for small capitalization text</a:documentation>
       <value>sup</value>
+      <a:documentation>A character style, for superscript text. Typically for use in critical edition footnotes.</a:documentation>
       <value usfm:propval="link-href">xt</value>
+      <a:documentation>Inline scripture reference formatting.</a:documentation>
       <value usfm:propval="lemma">w</value>
       <value usfm:propval="gloss">rb</value>
       <value>jmp</value>
+      <a:documentation>Jump link</a:documentation>
     </choice>
   </define>
   <define name="CharEmbed">
@@ -1154,7 +1341,7 @@
           <attribute usfm:stacked="true" usfm:grouping="9">
             <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
             <name ns="">style</name>
-            <ref name="Chars.char.style.enum"/>
+            <ref name="FullChar.char.style.enum"/>
           </attribute>
           <choice>
             <group>
@@ -1171,7 +1358,7 @@
           <attribute usfm:stacked="true" usfm:grouping="9">
             <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
             <name ns="">style</name>
-            <ref name="Chars.char.style.enum"/>
+            <ref name="FullChar.char.style.enum"/>
           </attribute>
           <choice>
             <group>
@@ -1194,7 +1381,7 @@
         <attribute usfm:stacked="true" usfm:grouping="9">
           <usfm:tag matchid="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
           <name ns="">style</name>
-          <ref name="Chars.char.style.enum"/>
+          <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
         <optional>
@@ -1207,7 +1394,7 @@
         <attribute usfm:stacked="true" usfm:grouping="9">
           <usfm:tag matchid="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
           <name ns="">style</name>
-          <ref name="Chars.char.style.enum"/>
+          <ref name="Char.char.style.enum"/>
         </attribute>
         <ref name="NoteCharContent"/>
         <optional>
@@ -1223,7 +1410,7 @@
       <attribute>
         <usfm:tag matchid="a"/>
         <name ns="">style</name>
-        <ref name="ListChars.char.style.enum"/>
+        <ref name="ListChar.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed"/>
@@ -1245,16 +1432,24 @@
       <usfm:endtag usfm:many="?"/>
     </element>
   </define>
-  <define name="ListChars.char.style.enum">
+  <define name="ListChar.char.style.enum">
     <choice>
       <value>litl</value>
+      <a:documentation>List entry total text</a:documentation>
       <value>lik</value>
+      <a:documentation>Structured list entry key text</a:documentation>
       <value>liv1</value>
+      <a:documentation>Structured list entrt value 1 content (if multiple values)</a:documentation>
       <value>liv2</value>
+      <a:documentation>Structured list entry value 2 content</a:documentation>
       <value>liv3</value>
+      <a:documentation>Structured list entry value 3 content</a:documentation>
       <value>liv4</value>
+      <a:documentation>Structured list entry value 4 content</a:documentation>
       <value>liv5</value>
+      <a:documentation>Structured list entry value 5 content</a:documentation>
       <value>liv</value>
+      <a:documentation>Structured list entry value 1 content (if single value)</a:documentation>
     </choice>
   </define>
   <define name="Figure">
@@ -1346,7 +1541,7 @@
         <attribute>
           <usfm:tag after="Hs" afterout=""/>
           <name ns="">style</name>
-          <ref name="Milestones.enum"/>
+          <ref name="Milestone.style.enum"/>
         </attribute>
         <optional>
           <ref name="Attributes"/>
@@ -1356,7 +1551,7 @@
       <usfm:endtag matchref="&#x27;&#x27;"/>
     </group>
   </define>
-  <define name="Milestones.enum">
+  <define name="Milestone.style.enum">
     <choice>
       <value usfm:propval="who">ts-s</value>
       <value>ts-e</value>
@@ -1560,7 +1755,7 @@
       <attribute usfm:grouping="8">
         <usfm:tag matchid="b"/>
         <name ns="">style</name>
-        <ref name="FootnoteChars.char.style.enum"/>
+        <ref name="FootnoteChar.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
@@ -1577,17 +1772,26 @@
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="&#x27;*&#x27;"/>
     </element>
   </define>
-  <define name="FootnoteChars.char.style.enum">
+  <define name="FootnoteChar.char.style.enum">
     <choice>
       <value>fr</value>
+      <a:documentation>The origin reference for the footnote</a:documentation>
       <value>ft</value>
+      <a:documentation>Footnote text, Protocanon</a:documentation>
       <value>fk</value>
+      <a:documentation>A footnote keyword</a:documentation>
       <value>fqa</value>
+      <a:documentation>A footnote alternate rendering for a portion of scripture text</a:documentation>
       <value>fq</value>
+      <a:documentation>A footnote scripture quote or alternate rendering</a:documentation>
       <value>fl</value>
+      <a:documentation>A footnote label text item, for marking or &quot;labelling&quot; the type or alternate translation being provided in the note.</a:documentation>
       <value>fw</value>
+      <a:documentation>A footnote witness list, for distinguishing a list of sigla representing witnesses in critical editions.</a:documentation>
       <value>fdc</value>
+      <a:documentation>Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)</a:documentation>
       <value>fp</value>
+      <a:documentation>A Footnote additional paragraph marker</a:documentation>
     </choice>
   </define>
   <define name="CrossReference">
@@ -1621,7 +1825,7 @@
       <attribute>
         <usfm:tag matchid="b"/>
         <name ns="">style</name>
-        <ref name="CrossReferenceChars.char.style.enum"/>
+        <ref name="CrossReferenceChar.char.style.enum"/>
       </attribute>
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
@@ -1638,17 +1842,26 @@
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"/>
     </element>
   </define>
-  <define name="CrossReferenceChars.char.style.enum">
+  <define name="CrossReferenceChar.char.style.enum">
     <choice>
       <value>xop</value>
+      <a:documentation>Published cross reference origin text (origin reference that should appear in the published text)</a:documentation>
       <value>xo</value>
+      <a:documentation>The cross reference origin reference</a:documentation>
       <value>xta</value>
+      <a:documentation>Cross reference target references added text</a:documentation>
       <value>xt</value>
+      <a:documentation>The cross reference target reference(s), protocanon only</a:documentation>
       <value>xk</value>
+      <a:documentation>A cross reference keyword</a:documentation>
       <value>xq</value>
+      <a:documentation>A cross-reference quotation from the scripture text</a:documentation>
       <value>xot</value>
+      <a:documentation>Cross-reference target reference(s), Old Testament only</a:documentation>
       <value>xnt</value>
+      <a:documentation>Cross-reference target reference(s), New Testament only</a:documentation>
       <value>xdc</value>
+      <a:documentation>Cross-reference target reference(s), Deuterocanon only (DEPRECATED - use char@style dc)</a:documentation>
     </choice>
   </define>
   <define name="Sidebar">

@@ -1,0 +1,837 @@
+\marker add
+\category char
+\description For a translational addition to the text
+
+\marker addpn
+\category char
+\description For chinese words to be dot underline & underline (DEPRECATED - used nested char@style pn)
+
+\marker b
+\category versepara
+\description Poetry text stanza break (e.g. stanza break)
+
+\marker bd
+\category char
+\description A character style, use bold text
+
+\marker bdit
+\category char
+\description A character style, use bold + italic text
+
+\marker bk
+\category char
+\description For the quoted name of a book
+
+\marker cd
+\category sectionpara
+\description Chapter Description (Publishing option D, e.g. in Russian Bibles)
+
+\marker cl
+\category sectionpara
+\description Chapter label used for translations that add a word such as "Chapter"
+
+\marker cls
+\category versepara
+\description Closure of an Epistle
+
+\marker cp
+\category otherpara
+\description Chapter published style
+
+\marker d
+\category versepara
+\description A Hebrew text heading, to provide description (e.g. Psalms)
+
+\marker dc
+\category char
+\description Deuterocanonical/LXX additions or insertions in the Protocanonical text
+
+\marker efm
+\category char
+\description Reference to caller of previous footnote in a study Bible
+
+\marker em
+\category char
+\description A character style, use emphasized text style
+
+\marker fdc
+\category footnotechar
+\description Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
+
+\marker fk
+\category footnotechar
+\description A footnote keyword
+
+\marker fl
+\category footnotechar
+\description A footnote label text item, for marking or "labelling" the type or alternate translation being provided in the note.
+
+\marker fm
+\category char
+\description Reference to caller of previous footnote
+
+\marker fp
+\category footnotechar
+\description A Footnote additional paragraph marker
+
+\marker fq
+\category footnotechar
+\description A footnote scripture quote or alternate rendering
+
+\marker fqa
+\category footnotechar
+\description A footnote alternate rendering for a portion of scripture text
+
+\marker fr
+\category footnotechar
+\description The origin reference for the footnote
+
+\marker ft
+\category footnotechar
+\description Footnote text, Protocanon
+
+\marker fv
+\category char
+\description A verse number within the footnote text
+
+\marker fw
+\category footnotechar
+\description A footnote witness list, for distinguishing a list of sigla representing witnesses in critical editions.
+
+\marker h
+\category header
+\description Running header text for a book
+
+\marker h1
+\category header
+\description Running header text
+
+\marker h2
+\category header
+\description Running header text, left side of page (DEPRECATED)
+
+\marker h3
+\category header
+\description Running header text, right side of page (DEPRECATED)
+
+\marker ib
+\category introduction
+\description Introduction blank line
+
+\marker ide
+\category header
+\description File encoding information (DEPRECATED)
+
+\marker ie
+\category introduction
+\description Introduction ending marker
+
+\marker iex
+\category sectionpara
+\description Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
+
+\marker ili
+\category introduction
+\description A list entry, level 1 (if single level)
+
+\marker ili1
+\category introduction
+\description A list entry, level 1 (if multiple levels)
+
+\marker ili2
+\category introduction
+\description A list entry, level 2
+
+\marker im
+\category introduction
+\description Introduction prose paragraph, with no first line indent (may occur after poetry)
+
+\marker imi
+\category introduction
+\description Introduction prose paragraph text, indented, with no first line indent
+
+\marker imq
+\category introduction
+\description Introduction prose paragraph, quote from the body text, with no first line indent
+
+\marker imt
+\category bookintroductionendtitle
+\description Introduction major title, level 1 (if single level)
+
+\marker imt1
+\category bookintroductionendtitle
+\description Introduction major title, level 1 (if multiple levels)
+
+\marker imt2
+\category bookintroductionendtitle
+\description Introduction major title, level 2
+
+\marker imt3
+\category introduction
+\description Introduction major title, level 3
+
+\marker imt4
+\category introduction
+\description Introduction major title, level 4 (usually within parenthesis)
+
+\marker imte
+\category introduction
+\description Introduction major title at introduction end, level 1 (if single level)
+
+\marker imte1
+\category introduction
+\description Introduction major title at introduction end, level 1 (if multiple levels)
+
+\marker imte2
+\category introduction
+\description Introduction major title at introduction end, level 2
+
+\marker io
+\category introduction
+\description Introduction outline text, level 1 (if single level)
+
+\marker io1
+\category introduction
+\description Introduction outline text, level 1 (if multiple levels)
+
+\marker io2
+\category introduction
+\description Introduction outline text, level 2
+
+\marker io3
+\category introduction
+\description Introduction outline text, level 3
+
+\marker io4
+\category introduction
+\description Introduction outline text, level 4
+
+\marker ior
+\category introchar
+
+\marker iot
+\category introduction
+\description Introduction outline title
+
+\marker ip
+\category sectionpara
+\description Division or Section introductory paragraph (study Bible)
+
+\marker ipi
+\category introduction
+\description Introduction prose paragraph, indented, with first line indent
+
+\marker ipq
+\category introduction
+\description Introduction prose paragraph, quote from the body text
+
+\marker ipr
+\category introduction
+\description Introduction prose paragraph, right aligned
+
+\marker iq
+\category introduction
+\description Introduction poetry text, level 1 (if single level)
+
+\marker iq1
+\category introduction
+\description Introduction poetry text, level 1 (if multiple levels)
+
+\marker iq2
+\category introduction
+\description Introduction poetry text, level 2
+
+\marker iq3
+\category introduction
+\description Introduction poetry text, level 3
+
+\marker iqt
+\category introchar
+
+\marker is
+\category introduction
+\description Introduction section heading, level 1 (if single level)
+
+\marker is1
+\category introduction
+\description Introduction section heading, level 1 (if multiple levels)
+
+\marker is2
+\category introduction
+\description Introduction section heading, level 2
+
+\marker it
+\category char
+\description A character style, use italic text
+
+\marker jmp
+\category char
+\description Jump link
+
+\marker k
+\category char
+\description For a keyword
+
+\marker k1
+\category otherpara
+\description Concordance main entry text or keyword, level 1
+
+\marker k2
+\category otherpara
+\description Concordance main entry text or keyword, level 2
+
+\marker lf
+\category list
+\description List footer (introductory remark)
+
+\marker lh
+\category list
+\description List header (introductory remark)
+
+\marker li
+\category list
+\description A list entry, level 1 (if single level)
+
+\marker li1
+\category list
+\description A list entry, level 1 (if multiple levels)
+
+\marker li2
+\category list
+\description A list entry, level 2
+
+\marker li3
+\category list
+\description A list entry, level 3
+
+\marker li4
+\category list
+\description A list entry, level 4
+
+\marker lik
+\category listchar
+\description Structured list entry key text
+
+\marker lim
+\category list
+\description An embedded list entry, level 1 (if single level)
+
+\marker lim1
+\category list
+\description An embedded list entry, level 1 (if multiple levels)
+
+\marker lim2
+\category list
+\description An embedded list entry, level 2
+
+\marker lim3
+\category list
+\description An embedded list entry, level 3
+
+\marker lim4
+\category list
+\description An embedded list entry, level 4
+
+\marker lit
+\category otherpara
+\description For a comment or note inserted for liturgical use
+
+\marker litl
+\category listchar
+\description List entry total text
+
+\marker liv
+\category listchar
+\description Structured list entry value 1 content (if single value)
+
+\marker liv1
+\category listchar
+\description Structured list entrt value 1 content (if multiple values)
+
+\marker liv2
+\category listchar
+\description Structured list entry value 2 content
+
+\marker liv3
+\category listchar
+\description Structured list entry value 3 content
+
+\marker liv4
+\category listchar
+\description Structured list entry value 4 content
+
+\marker liv5
+\category listchar
+\description Structured list entry value 5 content
+
+\marker m
+\category versepara
+\description Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
+
+\marker mi
+\category versepara
+\description Paragraph text, indented, with no first line indent; often used for discourse
+
+\marker mr
+\category sectionpara
+\description A major section division references range heading
+
+\marker ms
+\category sectionpara
+\description A major section division heading, level 1 (if single level)
+
+\marker ms1
+\category sectionpara
+\description A major section division heading, level 1 (if multiple levels)
+
+\marker ms2
+\category sectionpara
+\description A major section division heading, level 2
+
+\marker ms3
+\category sectionpara
+\description A major section division heading, level 3
+
+\marker mt
+\category bookintroductionendtitle
+\description The main title of the book (if single level)
+
+\marker mt1
+\category bookintroductionendtitle
+\description The main title of the book (if multiple levels)
+
+\marker mt2
+\category bookintroductionendtitle
+\description A secondary title usually occurring before the main title
+
+\marker mt3
+\category bookintroductionendtitle
+\description A tertiary title occurring after the main title
+
+\marker mt4
+\category bookintroductionendtitle
+\description A small secondary title sometimes occuring within parentheses
+
+\marker mte
+\category sectionpara
+\description The main title of the book repeated at the end of the book, level 1 (if single level)
+
+\marker mte1
+\category sectionpara
+\description The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
+
+\marker mte2
+\category sectionpara
+\description A secondary title occurring before or after the 'ending' main title
+
+\marker nb
+\category versepara
+\description Paragraph text, with no break from previous paragraph text (at chapter boundary)
+
+\marker nd
+\category char
+\description For name of deity
+
+\marker ndx
+\category char
+\description A subject index text item
+
+\marker no
+\category char
+\description A character style, use normal text
+
+\marker ord
+\category char
+\description For the text portion of an ordinal number
+
+\marker p
+\category versepara
+\description Paragraph text, with first line indent
+
+\marker p1
+\category otherpara
+\description Front or back matter text paragraph, level 1 (if multiple levels)
+
+\marker p2
+\category otherpara
+\description Front or back matter text paragraph, level 2 (if multiple levels)
+
+\marker pb
+\category otherpara
+\description Page Break used for new reader portions and children's bibles where content is controlled by the page
+
+\marker pc
+\category versepara
+\description Inscription (paragraph text centered)
+
+\marker ph
+\category versepara
+\description Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
+
+\marker ph1
+\category versepara
+\description Paragraph text, with level 1 hanging indent (if multiple levels)
+
+\marker ph2
+\category versepara
+\description Paragraph text, with level 2 hanging indent
+
+\marker ph3
+\category versepara
+\description Paragraph text, with level 3 hanging indent
+
+\marker pi
+\category versepara
+\description Paragraph text, level 1 indent (if single level), with first line indent; often used for discourse
+
+\marker pi1
+\category versepara
+\description Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse
+
+\marker pi2
+\category versepara
+\description Paragraph text, level 2 indent, with first line indent; often used for discourse
+
+\marker pi3
+\category versepara
+\description Paragraph text, level 3 indent, with first line indent; often used for discourse
+
+\marker pm
+\category versepara
+\description Embedded text paragraph
+
+\marker pmc
+\category versepara
+\description Embedded text closing
+
+\marker pmo
+\category versepara
+\description Embedded text opening
+
+\marker pmr
+\category versepara
+\description Embedded text refrain
+
+\marker pn
+\category char
+\description For a proper name
+
+\marker png
+\category char
+\description For a geographic proper name
+
+\marker po
+\category versepara
+\description Letter opening
+
+\marker pr
+\category versepara
+\description Text refrain (paragraph right-aligned)
+
+\marker pro
+\category char
+\description For indicating pronunciation in CJK texts (DEPRECATED - used char@style rb)
+
+\marker q
+\category versepara
+\description Poetry text, level 1 indent (if single level)
+
+\marker q1
+\category versepara
+\description Poetry text, level 1 indent (if multiple levels)
+
+\marker q2
+\category versepara
+\description Poetry text, level 2 indent
+
+\marker q3
+\category versepara
+\description Poetry text, level 3 indent
+
+\marker q4
+\category versepara
+\description Poetry text, level 4 indent
+
+\marker qa
+\category otherpara
+\description Poetry text, Acrostic marker/heading
+
+\marker qac
+\category char
+\description Poetry text, Acrostic markup of the first character of a line of acrostic poetry
+
+\marker qc
+\category versepara
+\description Poetry text, centered
+
+\marker qd
+\category versepara
+\description A Hebrew musical performance annotation, similar in content to Hebrew descriptive title.
+
+\marker qm
+\category versepara
+\description Poetry text, embedded, level 1 indent (if single level)
+
+\marker qm1
+\category versepara
+\description Poetry text, embedded, level 1 indent (if multiple levels)
+
+\marker qm2
+\category versepara
+\description Poetry text, embedded, level 2 indent
+
+\marker qm3
+\category versepara
+\description Poetry text, embedded, level 3 indent
+
+\marker qr
+\category versepara
+\description Poetry text, Right Aligned
+
+\marker qs
+\category char
+\description Poetry text, Selah
+
+\marker qt
+\category char
+\description For Old Testament quoted text appearing in the New Testament
+
+\marker qt-e
+\category milestone
+
+\marker qt-s
+\attribute who
+\category milestone
+
+\marker qt1-e
+\category milestone
+
+\marker qt1-s
+\category milestone
+
+\marker qt2-e
+\category milestone
+
+\marker qt2-s
+\category milestone
+
+\marker qt3-e
+\category milestone
+
+\marker qt3-s
+\category milestone
+
+\marker qt4-e
+\category milestone
+
+\marker qt4-s
+\category milestone
+
+\marker qt5-e
+\category milestone
+
+\marker qt5-s
+\category milestone
+
+\marker qte
+\category milestone
+
+\marker qts
+\attribute who
+\category milestone
+
+\marker r
+\category sectionpara
+\description Parallel reference(s)
+
+\marker rb
+\attribute gloss
+\category char
+
+\marker rem
+\category otherpara
+\description Remark
+
+\marker restore
+\category sectionpara
+\description Comment about when text was restored
+
+\marker rq
+\category char
+\description A cross-reference indicating the source text for the preceding quotation.
+
+\marker s
+\category sectionpara
+\description A section heading, level 1 (if single level)
+
+\marker s1
+\category sectionpara
+\description A section heading, level 1 (if multiple levels)
+
+\marker s2
+\category sectionpara
+\description A section heading, level 2 (e.g. Proverbs 22-24)
+
+\marker s3
+\category sectionpara
+\description A section heading, level 3 (e.g. Genesis "The First Day") (\s3 can take a \v!)
+
+\marker s4
+\category sectionpara
+\description A section heading, level 4
+
+\marker sc
+\category char
+\description A character style, for small capitalization text
+
+\marker sd
+\category sectionpara
+\description Vertical space used to divide the text into sections, level 1 (if single level)
+
+\marker sd1
+\category sectionpara
+\description Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)
+
+\marker sd2
+\category sectionpara
+\description Semantic division location (vertical space used to divide the text into sections), level 2
+
+\marker sd3
+\category sectionpara
+\description Semantic division location (vertical space used to divide the text into sections), level 3
+
+\marker sd4
+\category sectionpara
+\description Semantic division location (vertical space used to divide the text into sections), level 4
+
+\marker sig
+\category char
+\description For the signature of the author of an Epistle
+
+\marker sls
+\category char
+\description To represent where the original text is in a secondary language or from an alternate text source
+
+\marker sp
+\category sectionpara
+\description A heading, to identify the speaker (e.g. Job)
+
+\marker sr
+\category sectionpara
+\description A section division references range heading
+
+\marker sts
+\category otherpara
+\description Remark
+
+\marker sup
+\category char
+\description A character style, for superscript text. Typically for use in critical edition footnotes.
+
+\marker t-e
+\category milestone
+
+\marker t-s
+\category milestone
+
+\marker tl
+\category char
+\description For transliterated words
+
+\marker toc1
+\category header
+\description Long table of contents text
+
+\marker toc2
+\category header
+\description Short table of contents text
+
+\marker toc3
+\category header
+\description Book Abbreviation
+
+\marker toca1
+\category header
+\description Alternative language long table of contents text
+
+\marker toca2
+\category header
+\description Alternative language short table of contents text
+
+\marker toca3
+\category header
+\description Alternative language book Abbreviation
+
+\marker ts
+\category milestone
+
+\marker ts-e
+\category milestone
+
+\marker ts-s
+\attribute who
+\category milestone
+
+\marker usfm
+\category header
+\description USFM markup version information (may occur if USX was generated from USFM)
+
+\marker vp
+\category char
+\description Published verse marker - this is a verse marking that would be used in the published text
+
+\marker w
+\attribute lemma
+\category char
+
+\marker wa
+\category char
+\description An Aramaic wordlist text item
+
+\marker wg
+\category char
+\description A Greek Wordlist text item
+
+\marker wh
+\category char
+\description A Hebrew wordlist text item
+
+\marker wj
+\category char
+\description For marking the words of Jesus
+
+\marker xdc
+\category crossreferencechar
+\description Cross-reference target reference(s), Deuterocanon only (DEPRECATED - use char@style dc)
+
+\marker xk
+\category crossreferencechar
+\description A cross reference keyword
+
+\marker xnt
+\category crossreferencechar
+\description Cross-reference target reference(s), New Testament only
+
+\marker xo
+\category crossreferencechar
+\description The cross reference origin reference
+
+\marker xop
+\category crossreferencechar
+\description Published cross reference origin text (origin reference that should appear in the published text)
+
+\marker xot
+\category crossreferencechar
+\description Cross-reference target reference(s), Old Testament only
+
+\marker xq
+\category crossreferencechar
+\description A cross-reference quotation from the scripture text
+
+\marker xt
+\category crossreferencechar
+\description The cross reference target reference(s), protocanon only
+
+\marker xta
+\category crossreferencechar
+\description Cross reference target references added text

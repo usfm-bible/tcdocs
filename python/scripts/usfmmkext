@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+
+import argparse, sys
+import xml.etree.ElementTree as et
+
+relaxns = "{http://relaxng.org/ns/structure/1.0}"
+usfmns = "{http://usfm.bible/parse/2023}"
+ans="{http://relaxng.org/ns/compatibility/annotations/1.0}"
+
+def collectEnums(rdoc):
+    res = {}
+    for e in rdoc.findall('./{0}define'.format(relaxns)):
+        name = e.get('name')
+        if not name.endswith(".style.enum"):
+            continue
+        mktype = name[:name.find(".")].lower()
+        currk = None
+        for i, v in enumerate(e[0]):
+            if v.tag == "{0}value".format(relaxns):
+                k = v.text.strip()
+                res[k] = {'category': mktype}
+                propval = v.get("{}propval".format(usfmns), None)
+                if propval is not None:
+                    res[k]['attribute'] = propval
+                currk = k
+            elif v.tag == "{0}documentation".format(ans) and currk in res:
+                res[currk]['description'] = v.text.strip()
+    return res
+
+def extstr(mrkr, field):
+    res = [f"\\marker {mrkr}"]
+    for k, v in sorted(field.items()):
+        res.append(f"\\{k} {v}")
+    return "\n".join(res)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("infile",help="Input RNG XML file")
+parser.add_argument("-o","--outfile",help="Output .ext file")
+args = parser.parse_args()
+
+rdoc = et.parse(args.infile)
+res = collectEnums(rdoc)
+if args.outfile is not None:
+    outf = open(args.outfile, "w")
+else:
+    outf = sys.stdout
+
+output = [extstr(k, v) for k, v in sorted(res.items())]
+outf.write("\n\n".join(output))
+
+if args.outfile:
+    outf.close()
+
