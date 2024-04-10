@@ -1178,7 +1178,6 @@
             <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
           </text>
           <ref name="NoteCharEmbed"/>
-          <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Reference"/>
           <ref name="Break"/>
