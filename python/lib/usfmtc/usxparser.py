@@ -463,6 +463,8 @@ class USXConverter(RelaxValidator):
             t = "usfm_" + t
         elif vel.tag.startswith(relaxns):
             t = vel.tag[len(relaxns):]
+        else:
+            return Failure("Unexpected tag {}".format(vel.tag))
         logger.debug(f"{t} for {state}")
         fn = getattr(self, t, None)
         if fn is not None:

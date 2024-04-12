@@ -3,10 +3,10 @@
 import argparse, os, sys
 
 try:
-    from usfmtc import USX, usfmGrammar
+    from usfmtc import USX, usfmGrammar, _grammarDoc
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc import USX, usfmGrammar
+    from usfmtc import USX, usfmGrammar, _grammarDoc
 
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input file")
@@ -54,6 +54,5 @@ if outtype == "usx":
 elif outtype == "usj":
     usxdoc.outUsj(args.outfile)
 elif outtype == "usfm":
-    if grammar is None:
-        grammar = usfmGrammar(args.grammar)
-    usxdoc.outUsfm(gramma, args.outfile)
+    grammarDoc = _grammarDoc(args.grammar)
+    usxdoc.outUsfm(grammarDoc, args.outfile)
