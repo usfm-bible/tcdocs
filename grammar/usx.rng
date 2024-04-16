@@ -718,26 +718,6 @@
       </zeroOrMore>
     </element>
   </define>
-  <define name="BookIntroductionEndTitle.para.style.enum">
-    <choice>
-      <value>mt1</value>
-      <a:documentation>The main title of the book (if multiple levels)</a:documentation>
-      <value>mt2</value>
-      <a:documentation>A secondary title usually occurring before the main title</a:documentation>
-      <value>mt3</value>
-      <a:documentation>A tertiary title occurring after the main title</a:documentation>
-      <value>mt4</value>
-      <a:documentation>A small secondary title sometimes occuring within parentheses</a:documentation>
-      <value>mt</value>
-      <a:documentation>The main title of the book (if single level)</a:documentation>
-      <value>imt</value>
-      <a:documentation>Introduction major title, level 1 (if single level)</a:documentation>
-      <value>imt1</value>
-      <a:documentation>Introduction major title, level 1 (if multiple levels)</a:documentation>
-      <value>imt2</value>
-      <a:documentation>Introduction major title, level 2</a:documentation>
-    </choice>
-  </define>
   <define name="ChapterContent">
     <choice>
       <ref name="Para"/>
@@ -967,8 +947,6 @@
       <a:documentation>Paragraph text, indented, with no first line indent; often used for discourse</a:documentation>
       <value>m</value>
       <a:documentation>Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation</a:documentation>
-      <value>ts</value>
-      <a:documentation>Translator&#x27;s chunk (to identify chunks of text suitable for translating at one time)</a:documentation>
     </choice>
   </define>
   <define name="OtherPara.para.style.enum">
@@ -1276,7 +1254,7 @@
       <a:documentation>Reference to caller of previous footnote</a:documentation>
       <value>fv</value>
       <a:documentation>A verse number within the footnote text</a:documentation>
-      <value>k</value>
+      <value usfm:propval="lemma">k</value>
       <a:documentation>For a keyword</a:documentation>
       <value>nd</value>
       <a:documentation>For name of deity</a:documentation>
@@ -1556,7 +1534,6 @@
       <value>ts-e</value>
       <value>t-s</value>
       <value>t-e</value>
-      <value>ts</value>
       <value>qt1-s</value>
       <value>qt1-e</value>
       <value>qt2-s</value>
@@ -1567,8 +1544,6 @@
       <value>qt4-e</value>
       <value>qt5-s</value>
       <value>qt5-e</value>
-      <value usfm:propval="who">qts</value>
-      <value>qte</value>
       <value usfm:propval="who">qt-s</value>
       <value>qt-e</value>
     </choice>
@@ -1727,12 +1702,7 @@
       <attribute>
         <usfm:tag matchid="a"/>
         <name ns="">style</name>
-        <choice>
-          <value>fe</value>
-          <value>f</value>
-          <value>efe</value>
-          <value>ef</value>
-        </choice>
+        <ref name="Footnote.style.enum"/>
       </attribute>
       <attribute>
         <usfm:match match="/[^\\\s]+/" after="Hs" afterout="&#x27; &#x27;"/>
@@ -1747,6 +1717,18 @@
       </oneOrMore>
       <usfm:endtag before="/${Ws}\\/" beforeout="&#x27;\\&#x27;"/>
     </element>
+  </define>
+  <define name="Footnote.style.enum">
+    <choice>
+      <value>fe</value>
+      <a:documentation>Endnote</a:documentation>
+      <value>f</value>
+      <a:documentation>Footnote</a:documentation>
+      <value>efe</value>
+      <a:documentation>Extended study endnote</a:documentation>
+      <value>ef</value>
+      <a:documentation>Study note</a:documentation>
+    </choice>
   </define>
   <define name="FootnoteChar">
     <element>
@@ -1799,10 +1781,7 @@
       <attribute>
         <usfm:tag matchid="a"/>
         <name ns="">style</name>
-        <choice>
-          <value>x</value>
-          <value>ex</value>
-        </choice>
+        <ref name="CrossReference.style.enum"/>
       </attribute>
       <attribute>
         <usfm:match match="/[^\\\s]+/" after="Hs" afterout="&#x27; &#x27;"/>
@@ -1817,6 +1796,14 @@
       </zeroOrMore>
       <usfm:endtag/>
     </element>
+  </define>
+  <define name="CrossReference.style.enum">
+    <choice>
+      <value>ex</value>
+      <a:documentation>Extended cross reference</a:documentation>
+      <value>x</value>
+      <a:documentation>Cross reference</a:documentation>
+    </choice>
   </define>
   <define name="CrossReferenceChar">
     <element>

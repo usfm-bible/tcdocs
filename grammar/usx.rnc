@@ -502,25 +502,6 @@ BookIntroductionEndTitles =
         ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | Char | Figure | Milestone | Break)*
     }
 
-BookIntroductionEndTitle.para.style.enum = (
-        ## The main title of the book (if multiple levels)
-      "mt1"
-    |   ## A secondary title usually occurring before the main title
-      "mt2"
-    |   ## A tertiary title occurring after the main title
-      "mt3"
-    |   ## A small secondary title sometimes occuring within parentheses
-      "mt4"
-    |    ## The main title of the book (if single level)
-      "mt"
-    |   ## Introduction major title, level 1 (if single level)
-      "imt"
-    |   ## Introduction major title, level 1 (if multiple levels)
-      "imt1"
-    |   ## Introduction major title, level 2
-      "imt2"
-    )
-
 ChapterContent = (Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
 PeripheralContent = (Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
@@ -665,8 +646,6 @@ VersePara.para.style.enum = (
       "mi"
     |   ##  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
       "m"
-    |   ## Translator's chunk (to identify chunks of text suitable for translating at one time)
-      "ts"
     )
 
 OtherPara.para.style.enum = (
@@ -826,7 +805,7 @@ Char.char.style.enum = (
     |   ## A verse number within the footnote text
       "fv"
     |   ## For a keyword
-      "k"
+      [usfm:propval="lemma"] "k"
     |   ## For name of deity
       "nd"
     |   ## A subject index text item
@@ -975,7 +954,6 @@ Milestone.style.enum = (
     | "ts-e"
     | "t-s"
     | "t-e"
-    | "ts"
     | "qt1-s"
     | "qt1-e"
     | "qt2-s"
@@ -986,8 +964,6 @@ Milestone.style.enum = (
     | "qt4-e"
     | "qt5-s"
     | "qt5-e"
-    | [usfm:propval="who"] "qts"
-    | "qte"
     | [usfm:propval="who"] "qt-s"
     | "qt-e"
 )
@@ -1054,13 +1030,24 @@ VerseEnd =
 Footnote =
     element note {
         [usfm:tag[matchid="a"]]
-        attribute style { "fe" | "f" | "efe" | "ef" },
+        attribute style { Footnote.style.enum },
         [usfm:match[match="/[^\\\s]+/" after="Hs" afterout="' '"]]
         attribute caller { text },
         category?,
         FootnoteChar+ 
         >> usfm:endtag[before="/${Ws}\\/" beforeout="'\\'"]
     }
+
+Footnote.style.enum = (
+        ## Endnote
+      "fe"
+    |   ## Footnote
+      "f"
+    |   ## Extended study endnote
+      "efe"
+    |   ## Study note
+      "ef"
+)
 
 FootnoteChar =
     element char {
@@ -1096,13 +1083,20 @@ FootnoteChar.char.style.enum = (
 CrossReference =
     element note {
         [usfm:tag[matchid="a"]]
-        attribute style { "x" | "ex" },
+        attribute style { CrossReference.style.enum },
         [usfm:match[match="/[^\\\s]+/" after="Hs" afterout="' '"]]
         attribute caller { text },
         category?,
         CrossReferenceChar*
         >> usfm:endtag[]
     }
+
+CrossReference.style.enum = (
+        ## Extended cross reference
+      "ex"
+    |   ## Cross reference
+      "x"
+)
 
 CrossReferenceChar =
     element char {

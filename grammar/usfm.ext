@@ -46,6 +46,14 @@
 \category char
 \description Deuterocanonical/LXX additions or insertions in the Protocanonical text
 
+\marker ef
+\category footnote
+\description Study note
+
+\marker efe
+\category footnote
+\description Extended study endnote
+
 \marker efm
 \category char
 \description Reference to caller of previous footnote in a study Bible
@@ -54,9 +62,21 @@
 \category char
 \description A character style, use emphasized text style
 
+\marker ex
+\category crossreference
+\description Extended cross reference
+
+\marker f
+\category footnote
+\description Footnote
+
 \marker fdc
 \category footnotechar
 \description Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
+
+\marker fe
+\category footnote
+\description Endnote
 
 \marker fk
 \category footnotechar
@@ -155,15 +175,15 @@
 \description Introduction prose paragraph, quote from the body text, with no first line indent
 
 \marker imt
-\category bookintroductionendtitle
-\description Introduction major title, level 1 (if single level)
+\category introduction
+\description Introduction major title, level 1 - (if single level)
 
 \marker imt1
-\category bookintroductionendtitle
+\category introduction
 \description Introduction major title, level 1 (if multiple levels)
 
 \marker imt2
-\category bookintroductionendtitle
+\category introduction
 \description Introduction major title, level 2
 
 \marker imt3
@@ -393,24 +413,23 @@
 \description A major section division heading, level 3
 
 \marker mt
-\category bookintroductionendtitle
+\category title
 \description The main title of the book (if single level)
 
 \marker mt1
-\category bookintroductionendtitle
+\category title
 \description The main title of the book (if multiple levels)
 
 \marker mt2
-\category bookintroductionendtitle
+\category title
 \description A secondary title usually occurring before the main title
 
 \marker mt3
-\category bookintroductionendtitle
+\category title
 \description A tertiary title occurring after the main title
 
 \marker mt4
-\category bookintroductionendtitle
-\description A small secondary title sometimes occuring within parentheses
+\category title
 
 \marker mte
 \category sectionpara
@@ -799,6 +818,10 @@
 \marker wj
 \category char
 \description For marking the words of Jesus
+
+\marker x
+\category crossreference
+\description Cross reference
 
 \marker xdc
 \category crossreferencechar
