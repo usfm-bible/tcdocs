@@ -953,6 +953,7 @@ Milestone = (
 Milestone.style.enum = (
       [usfm:propval="who"] "ts-s"
     | "ts-e"
+    | "ts"
     | "t-s"
     | "t-e"
     | "qt1-s"

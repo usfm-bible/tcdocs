@@ -1536,6 +1536,7 @@
     <choice>
       <value usfm:propval="who">ts-s</value>
       <value>ts-e</value>
+      <value>ts</value>
       <value>t-s</value>
       <value>t-e</value>
       <value>qt1-s</value>

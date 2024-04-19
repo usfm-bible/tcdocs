@@ -2,6 +2,7 @@
 import os
 from usfmtc.sfmparser import parseusfm, UsfmParserBackend
 from usfmtc.parser import NoParseError
+from usfmtc.extension import Extensions
 from usfmtc.xmlutils import ParentElement, prettyxml, writexml
 from usfmtc.usxgrammar import addmarkers
 from usfmtc.usxparser import USXConverter
@@ -23,14 +24,17 @@ def _readsrc(src):
     else:
         raise FileNotFoundError(src)
 
-def _grammarDoc(gsrc, markers=[]):
+def _grammarDoc(gsrc, extensions=[]):
     if isinstance(gsrc, et.ElementTree):
         rdoc = gsrc
     else:
         data = _readsrc(gsrc)
         rdoc = et.ElementTree(et.fromstring(data))
-    if len(markers):
-        addmarkers(rdoc, markers)
+    for ef in extensions:
+        e = Extensions(ef)
+        dirty = e.applyto(rdoc)
+        if dirty:
+            rdoc.mrkersadded = dirty
     return rdoc
 
 def _usfmGrammar(rdoc, backend=None, start=None):
@@ -42,9 +46,9 @@ def _usfmGrammar(rdoc, backend=None, start=None):
     parser = sfmproc.parseRef(start)
     return parser
 
-def usfmGrammar(gsrc, markers=[], backend=None, start=None):
+def usfmGrammar(gsrc, extensions=[], backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
-    rdoc = _grammarDoc(gsrc, markers)
+    rdoc = _grammarDoc(gsrc, extensions)
     return _usfmGrammar(rdoc, backend, start)
 
 

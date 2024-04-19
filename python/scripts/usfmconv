@@ -16,6 +16,7 @@ parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
 parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
 parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
 parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
+parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
 args = parser.parse_args()
 
 filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm", ".json": "usj"}
@@ -45,7 +46,9 @@ if intype == "usx":
 elif intype == "usj":
     usxdoc = USX.fromUsj(args.infile)
 elif intype == "usfm":
-    grammar = usfmGrammar(args.grammar)
+    args.extfiles.append(os.path.join(os.path.dirname(args.infile), "markers.ext"))
+    extfiles = [x for x in args.extfiles if os.path.exists(x)]
+    grammar = usfmGrammar(args.grammar, extensions=extfiles)
     usxdoc = USX.fromUsfm(args.infile, grammar)
 
 version = usxdoc.version
