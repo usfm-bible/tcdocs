@@ -751,7 +751,7 @@ IntroChar.char.style.enum = (
 NoteCharContent = (
     [usfm:ignore="true"]char.closed?,
     ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
-        | NoteCharEmbed | Milestone | Reference | Break)* # Nested character <char> markup
+        | NoteCharEmbed | Figure | Milestone | Reference | Break)* # Nested character <char> markup
     )
 
 Attributes = (
