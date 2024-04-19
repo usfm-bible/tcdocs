@@ -1,0 +1,83 @@
+<svg class="railroad-diagram" height="221" viewBox="0 0 1624.0 221" width="1624.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<style>/* <![CDATA[ */
+
+    svg.railroad-diagram {
+        background-color: hsl(30,20%,95%);
+    }
+    svg.railroad-diagram path {
+        stroke-width: 2;
+        stroke: black;
+        fill: none;
+    }
+    svg.railroad-diagram text {
+        font-size: 12px;
+        text-anchor: middle;
+        font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram text.label {
+        text-anchor:start;
+    }
+    svg.railroad-diagram text.comment {
+        font-family: DejaVu Sans;
+        font-size: 14px;
+    }
+    svg.railroad-diagram rect{
+        stroke-width: 2;
+        stroke: black;
+        fill: rgb(210, 210, 255);
+    }
+    svg.railroad-diagram rect.group-box {
+        stroke: gray;
+        stroke-dasharray: 10 5;
+        fill: none;
+    }
+    .terminal {
+        font-family: DejaVu Sans;
+    }
+    svg.railroad-diagram g.altterminal rect {
+        fill: rgb(251, 252, 207)
+    }
+
+/* ]]> */
+</style><g>
+<path d="M 20 91 v 20 m 0 -10 h 20"></path></g><path d="M 40 101 h 10"></path><g>
+<path d="M 50 101 h 0.0"></path><path d="M 1574.0 101 h 0.0"></path><g>
+<path d="M 50.0 101 h 0.0"></path><path d="M 1574.0 101 h 0.0"></path><g class="terminal ">
+<path d="M 50.0 101 h 0.0"></path><path d="M 112.5 101 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="50.0" y="90"></rect><text x="81.25" y="105">&#60;usx></text></g><path d="M 112.5 101 h 10"></path><path d="M 122.5 101 h 10"></path><g>
+<path d="M 132.5 101 h 0.0"></path><path d="M 1574.0 101 h 0.0"></path><path d="M 132.5 101 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 152.5 71 h 0.0"></path><path d="M 433.5 71 h 0.0"></path><g class="terminal ">
+<path d="M 152.5 71 h 0.0"></path><path d="M 240.5 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="88.0" x="152.5" y="60"></rect><text x="196.5" y="75">@version</text></g><path d="M 240.5 71 h 10"></path><path d="M 250.5 71 h 10"></path><g class="terminal ">
+<path d="M 260.5 71 h 0.0"></path><path d="M 433.5 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="173.0" x="260.5" y="60"></rect><text x="347.0" y="75">/\d+\.\d+(\.\d+)?/</text></g></g><path d="M 132.5 101 a 10 10 0 0 0 10 -10 v -40 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 152.5 41 h 0.0"></path><path d="M 467.5 41 h 0.0"></path><g class="terminal ">
+<path d="M 152.5 41 h 0.0"></path><path d="M 393.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="241.0" x="152.5" y="30"></rect><text x="273.0" y="45">@noNamespaceSchemaLocation</text></g><path d="M 393.5 41 h 10"></path><path d="M 403.5 41 h 10"></path><g class="terminal ">
+<path d="M 413.5 41 h 0.0"></path><path d="M 467.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="413.5" y="30"></rect><text x="440.5" y="45">TEXT</text></g></g><path d="M 132.5 101 h 20"></path><g class="non-terminal ">
+<path d="M 152.5 101 h 614.25"></path><path d="M 939.75 101 h 614.25"></path><rect height="22" width="173.0" x="766.75" y="90"></rect><text x="853.25" y="105">BookIdentification</text></g><path d="M 1554.0 101 h 20"></path><path d="M 132.5 101 a 10 10 0 0 1 10 10 v 29 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 152.5 150 h 0.0"></path><path d="M 1554.0 150 h 0.0"></path><g>
+<path d="M 152.5 150 h 0.0"></path><path d="M 326.0 150 h 0.0"></path><path d="M 152.5 150 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 172.5 130 h 133.5"></path></g><path d="M 306.0 130 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 152.5 150 h 20"></path><g>
+<path d="M 172.5 150 h 0.0"></path><path d="M 306.0 150 h 0.0"></path><path d="M 172.5 150 h 10"></path><g class="non-terminal ">
+<path d="M 182.5 150 h 0.0"></path><path d="M 296.0 150 h 0.0"></path><rect height="22" width="113.5" x="182.5" y="139"></rect><text x="239.25" y="154">BookHeaders</text></g><path d="M 296.0 150 h 10"></path><path d="M 182.5 150 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 182.5 170 h 113.5"></path></g><path d="M 296.0 170 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 306.0 150 h 20"></path></g><path d="M 326.0 150 h 10"></path><path d="M 336.0 150 h 10"></path><g>
+<path d="M 346.0 150 h 0.0"></path><path d="M 511.0 150 h 0.0"></path><path d="M 346.0 150 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 366.0 130 h 125.0"></path></g><path d="M 491.0 130 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 346.0 150 h 20"></path><g>
+<path d="M 366.0 150 h 0.0"></path><path d="M 491.0 150 h 0.0"></path><path d="M 366.0 150 h 10"></path><g class="non-terminal ">
+<path d="M 376.0 150 h 0.0"></path><path d="M 481.0 150 h 0.0"></path><rect height="22" width="105.0" x="376.0" y="139"></rect><text x="428.5" y="154">BookTitles</text></g><path d="M 481.0 150 h 10"></path><path d="M 376.0 150 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 376.0 170 h 105.0"></path></g><path d="M 481.0 170 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 491.0 150 h 20"></path></g><path d="M 511.0 150 h 10"></path><path d="M 521.0 150 h 10"></path><g>
+<path d="M 531.0 150 h 0.0"></path><path d="M 747.0 150 h 0.0"></path><path d="M 531.0 150 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 551.0 130 h 176.0"></path></g><path d="M 727.0 130 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 531.0 150 h 20"></path><g>
+<path d="M 551.0 150 h 0.0"></path><path d="M 727.0 150 h 0.0"></path><path d="M 551.0 150 h 10"></path><g class="non-terminal ">
+<path d="M 561.0 150 h 0.0"></path><path d="M 717.0 150 h 0.0"></path><rect height="22" width="156.0" x="561.0" y="139"></rect><text x="639.0" y="154">BookIntroduction</text></g><path d="M 717.0 150 h 10"></path><path d="M 561.0 150 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 561.0 170 h 156.0"></path></g><path d="M 717.0 170 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 727.0 150 h 20"></path></g><path d="M 747.0 150 h 10"></path><path d="M 757.0 150 h 10"></path><g>
+<path d="M 767.0 150 h 0.0"></path><path d="M 1059.5 150 h 0.0"></path><path d="M 767.0 150 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path><g>
+<path d="M 787.0 130 h 252.5"></path></g><path d="M 1039.5 130 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><path d="M 767.0 150 h 20"></path><g>
+<path d="M 787.0 150 h 0.0"></path><path d="M 1039.5 150 h 0.0"></path><path d="M 787.0 150 h 10"></path><g class="non-terminal ">
+<path d="M 797.0 150 h 0.0"></path><path d="M 1029.5 150 h 0.0"></path><rect height="22" width="232.5" x="797.0" y="139"></rect><text x="913.25" y="154">BookIntroductionEndTitles</text></g><path d="M 1029.5 150 h 10"></path><path d="M 797.0 150 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 797.0 170 h 232.5"></path></g><path d="M 1029.5 170 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g><path d="M 1039.5 150 h 20"></path></g><path d="M 1059.5 150 h 10"></path><path d="M 1069.5 150 h 10"></path><g>
+<path d="M 1079.5 150 h 0.0"></path><path d="M 1275.5 150 h 0.0"></path><path d="M 1079.5 150 h 20"></path><g>
+<path d="M 1099.5 150 h 156.0"></path></g><path d="M 1255.5 150 h 20"></path><path d="M 1079.5 150 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 1099.5 170 h 0.0"></path><path d="M 1255.5 170 h 0.0"></path><rect height="22" width="156.0" x="1099.5" y="159"></rect><text x="1177.5" y="174">BookChapterLabel</text></g><path d="M 1255.5 170 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path></g><path d="M 1275.5 150 h 10"></path><path d="M 1285.5 150 h 10"></path><g class="non-terminal ">
+<path d="M 1295.5 150 h 0.0"></path><path d="M 1375.0 150 h 0.0"></path><rect height="22" width="79.5" x="1295.5" y="139"></rect><text x="1335.25" y="154">Chapter</text></g><path d="M 1375.0 150 h 10"></path><path d="M 1385.0 150 h 10"></path><g>
+<path d="M 1395.0 150 h 0.0"></path><path d="M 1554.0 150 h 0.0"></path><path d="M 1395.0 150 h 10"></path><g class="non-terminal ">
+<path d="M 1405.0 150 h 0.0"></path><path d="M 1544.0 150 h 0.0"></path><rect height="22" width="139.0" x="1405.0" y="139"></rect><text x="1474.5" y="154">ChapterContent</text></g><path d="M 1544.0 150 h 10"></path><path d="M 1405.0 150 a 10 10 0 0 0 -10 10 v 0 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 1405.0 170 h 139.0"></path></g><path d="M 1544.0 170 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 0 -10 -10"></path></g></g><path d="M 1554.0 150 a 10 10 0 0 0 10 -10 v -29 a 10 10 0 0 1 10 -10"></path></g></g></g><path d="M 1574.0 101 h 10"></path><path d="M 1584.0 101 h 20 m 0 -10 v 20"></path></g></svg>
