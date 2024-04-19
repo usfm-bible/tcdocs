@@ -106,13 +106,16 @@
   <define name="Peripheral">
     <element>
       <name ns="">usx</name>
-      <attribute>
-        <name ns="">version</name>
-        <data type="string">
-          <param name="minLength">3</param>
-          <param name="pattern">\d+\.\d+(\.\d+)?</param>
-        </data>
-      </attribute>
+      <optional>
+        <attribute>
+          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\n\\usfm &#x27;" match="TEXTNWS"/>
+          <name ns="">version</name>
+          <data type="string">
+            <param name="minLength">3</param>
+            <param name="pattern">\d+\.\d+(\.\d+)?</param>
+          </data>
+        </attribute>
+      </optional>
       <optional>
         <attribute>
           <name ns="http://www.w3.org/2001/XMLSchema-instance">noNamespaceSchemaLocation</name>
@@ -128,13 +131,16 @@
   <define name="Scripture">
     <element usfm:stacked="true">
       <name ns="">usx</name>
-      <attribute>
-        <name ns="">version</name>
-        <data type="string">
-          <param name="minLength">3</param>
-          <param name="pattern">\d+\.\d+(\.\d+)?</param>
-        </data>
-      </attribute>
+      <optional>
+        <attribute>
+          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\n\\usfm &#x27;" match="TEXTNWS"/>
+          <name ns="">version</name>
+          <data type="string">
+            <param name="minLength">3</param>
+            <param name="pattern">\d+\.\d+(\.\d+)?</param>
+          </data>
+        </attribute>
+      </optional>
       <optional>
         <attribute>
           <name ns="http://www.w3.org/2001/XMLSchema-instance">noNamespaceSchemaLocation</name>

@@ -35,19 +35,19 @@ alljobs = {
 }
 
 usxenums = {
-    'hdr': 'Headers.para.style',
-    'titles': 'Titles.para.style',
-    'introduction': 'Introductions.para.style',
-    'para': 'VerseParas.para.style',
-    'section': 'SectionParas.para.style',
-    'other': 'OtherParas.para.style',
+    'hdr': 'Header.para.style',
+    'title': 'Title.para.style',
+    'introduction': 'Introduction.para.style',
+    'para': 'VersePara.para.style',
+    'section': 'SectionPara.para.style',
+    'other': 'OtherPara.para.style',
     'list': 'List.para.style',
-    'introchar': 'IntroChars.char.style',
-    'char': 'Chars.char.style',
-    'listchar': 'ListChars.char.style',
-    'ms': 'Milestones',
-    'footnotechar': 'FootnoteChars.char.style',
-    'crossrefchar': 'CrossReferenceChars.char.style',
+    'introchar': 'IntroChar.char.style',
+    'char': 'Char.char.style',
+    'listchar': 'ListChar.char.style',
+    'ms': 'Milestone.style',
+    'footnotechar': 'FootnoteChar.char.style',
+    'crossrefchar': 'CrossReferenceChar.char.style',
 }
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"

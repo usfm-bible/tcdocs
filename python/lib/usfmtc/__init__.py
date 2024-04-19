@@ -139,3 +139,11 @@ class USX:
         """ Add esids to USX object (eid, sids, vids) """
         addesids(self.xml)
 
+    @property
+    def version(self):
+        return self.getroot().get('version', None)
+
+    @version.setter
+    def set_version(self, version):
+        self.getroot().set('version', str(version))
+

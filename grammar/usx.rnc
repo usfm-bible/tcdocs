@@ -95,7 +95,8 @@ USX = ( Peripheral | Scripture )
 
 Peripheral = (
     element usx {
-        attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} },
+        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\n\\usfm '" match="TEXTNWS"]]
+        attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} }?,
         attribute xsi:noNamespaceSchemaLocation { text }?,
 
         (PeripheralBook | PeripheralDividedBook)
@@ -104,7 +105,8 @@ Peripheral = (
 Scripture = (
     [usfm:stacked = "true"]
     element usx {
-        attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} },
+        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\n\\usfm '" match="TEXTNWS"]]
+        attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} }?,
         attribute xsi:noNamespaceSchemaLocation { text }?,
 
         BookIdentification,
