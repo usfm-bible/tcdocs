@@ -108,7 +108,7 @@
       <name ns="">usx</name>
       <optional>
         <attribute>
-          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\n\\usfm &#x27;" match="TEXTNWS"/>
+          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\\usfm &#x27;" match="TEXTNWS"/>
           <name ns="">version</name>
           <data type="string">
             <param name="minLength">3</param>
@@ -1917,5 +1917,33 @@
       <name ns="">optbreak</name>
       <empty/>
     </element>
+  </define>
+  <define name="Internal.style.enum">
+    <choice>
+      <value>id</value>
+      <a:documentation>Initial identifying marker</a:documentation>
+      <value>periph</value>
+      <a:documentation>Peripheral division</a:documentation>
+      <value>usfm</value>
+      <a:documentation>USFM version</a:documentation>
+      <value>c</value>
+      <a:documentation>Chapter</a:documentation>
+      <value>ca</value>
+      <a:documentation>Alternate Chapter number</a:documentation>
+      <value>cp</value>
+      <a:documentation>Chapter publication string</a:documentation>
+      <value>v</value>
+      <a:documentation>Verse</a:documentation>
+      <value>va</value>
+      <a:documentation>Alternative versification</a:documentation>
+      <value>vp</value>
+      <a:documentation>Published verse number</a:documentation>
+      <value>fig</value>
+      <a:documentation>Figure</a:documentation>
+      <value>esb</value>
+      <a:documentation>Sidebar</a:documentation>
+      <value>cat</value>
+      <a:documentation>Category</a:documentation>
+    </choice>
   </define>
 </grammar>

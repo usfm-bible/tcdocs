@@ -22,6 +22,18 @@
 \category char
 \description For the quoted name of a book
 
+\marker c
+\category internal
+\description Chapter
+
+\marker ca
+\category internal
+\description Alternate Chapter number
+
+\marker cat
+\category internal
+\description Category
+
 \marker cd
 \category sectionpara
 \description Chapter Description (Publishing option D, e.g. in Russian Bibles)
@@ -35,8 +47,8 @@
 \description Closure of an Epistle
 
 \marker cp
-\category otherpara
-\description Chapter published style
+\category internal
+\description Chapter publication string
 
 \marker d
 \category versepara
@@ -62,6 +74,10 @@
 \category char
 \description A character style, use emphasized text style
 
+\marker esb
+\category internal
+\description Sidebar
+
 \marker ex
 \category crossreference
 \description Extended cross reference
@@ -77,6 +93,10 @@
 \marker fe
 \category footnote
 \description Endnote
+
+\marker fig
+\category internal
+\description Figure
 
 \marker fk
 \category footnotechar
@@ -137,6 +157,10 @@
 \marker ib
 \category introduction
 \description Introduction blank line
+
+\marker id
+\category internal
+\description Initial identifying marker
 
 \marker ide
 \category header
@@ -289,6 +313,7 @@
 \description Jump link
 
 \marker k
+\attribute lemma
 \category char
 \description For a keyword
 
@@ -483,6 +508,10 @@
 \category versepara
 \description Inscription (paragraph text centered)
 
+\marker periph
+\category internal
+\description Peripheral division
+
 \marker ph
 \category versepara
 \description Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
@@ -652,13 +681,6 @@
 \marker qt5-s
 \category milestone
 
-\marker qte
-\category milestone
-
-\marker qts
-\attribute who
-\category milestone
-
 \marker r
 \category sectionpara
 \description Parallel reference(s)
@@ -792,12 +814,20 @@
 \category milestone
 
 \marker usfm
-\category header
-\description USFM markup version information (may occur if USX was generated from USFM)
+\category internal
+\description USFM version
+
+\marker v
+\category internal
+\description Verse
+
+\marker va
+\category internal
+\description Alternative versification
 
 \marker vp
-\category char
-\description Published verse marker - this is a verse marking that would be used in the published text
+\category internal
+\description Published verse number
 
 \marker w
 \attribute lemma

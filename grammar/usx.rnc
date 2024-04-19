@@ -95,7 +95,7 @@ USX = ( Peripheral | Scripture )
 
 Peripheral = (
     element usx {
-        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\n\\usfm '" match="TEXTNWS"]]
+        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\\usfm '" match="TEXTNWS"]]
         attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} }?,
         attribute xsi:noNamespaceSchemaLocation { text }?,
 
@@ -1154,3 +1154,30 @@ Reference =
 Break = 
     [usfm:match[match="'//'"]]
     element optbreak { empty }
+
+Internal.style.enum = (
+        ## Initial identifying marker
+      "id"
+    |   ## Peripheral division
+      "periph"
+    |   ## USFM version
+      "usfm"
+    |   ## Chapter
+      "c"
+    |   ## Alternate Chapter number
+      "ca"
+    |   ## Chapter publication string
+      "cp"
+    |   ## Verse
+      "v"
+    |   ## Alternative versification
+      "va"
+    |   ## Published verse number
+      "vp"
+    |   ## Figure
+      "fig"
+    |   ## Sidebar
+      "esb"
+    |   ## Category
+      "cat"
+    )
