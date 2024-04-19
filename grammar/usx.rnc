@@ -105,11 +105,12 @@ Peripheral = (
 Scripture = (
     [usfm:stacked = "true"]
     element usx {
-        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\n\\usfm '" match="TEXTNWS"]]
+        BookIdentification,
+
+        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\\usfm '"]]
         attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} }?,
         attribute xsi:noNamespaceSchemaLocation { text }?,
 
-        BookIdentification,
         [usfm:seq = "true"]( BookHeaders*,
         BookTitles*,
         BookIntroduction*,
@@ -388,8 +389,6 @@ Header.para.style.enum = (
       "rem"
     |    ## Status
       "sts"
-    |    ## USFM markup version information (may occur if USX was generated from USFM)
-      "usfm"
     )
 
 BookTitles =

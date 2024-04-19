@@ -144,6 +144,6 @@ class USX:
         return self.getroot().get('version', None)
 
     @version.setter
-    def set_version(self, version):
+    def version(self, version):
         self.getroot().set('version', str(version))
 

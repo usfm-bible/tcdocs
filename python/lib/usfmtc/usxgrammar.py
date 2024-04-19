@@ -3,10 +3,10 @@ import re
 import xml.etree.ElementTree as et
 
 alljobs = {
-    "BookHeaders":          ("bkhdrs", ("Headers.para.style.enum",)),
-    "BookTitles":           ("bktitles", ("Titles.para.style.enum",)),
-    "BookIntroduction":     ("bkintro", ('Introductions.para.style.enum',)),
-    "BookIntroductionEndTitles": ("bkintroend", ("Titles.para.style.enum",)),
+    "BookHeaders":          ("bkhdrs", ("Header.para.style.enum",)),
+    "BookTitles":           ("bktitles", ("Title.para.style.enum",)),
+    "BookIntroduction":     ("bkintro", ('Introduction.para.style.enum',)),
+    "BookIntroductionEndTitles": ("bkintroend", ("Title.para.style.enum",)),
     "ChapterContent":       ("chaptercontent", ),
     "ChapterStart":         ("chapter",),
     "ChapterEnd":           ("chapterend",),
@@ -21,7 +21,7 @@ alljobs = {
     "FootnoteChar":         ("fchar", ("FootnoteVerse", "FootnoteChars.char.style.enum", "char.closed")),
     "List":                 ("list", ("List.para.style.enum",)),
     "ListChar":             ("listchar", ("+char.closed", "ListChar.char.style.enum",)),
-    "Milestone":            ("ms", ("Milestone.enum", "Attributes")),
+    "Milestone":            ("ms", ("Milestone.style.enum", "Attributes")),
     "Para":                 ("p", ("VersePara", "NonVersePara", "Para.para.style.enum", "Para.nonpara.style.enum", "Break")),
     "PeripheralDivision":   ("periph", ("Peripheral.FRT.periph.id.enum", "Peripheral.INT.periph.id.enum",
                                         "Peripheral.BAK.periph.id.enum", "Peripheral.OTH.periph.id.enum", "PeripheralContent")),

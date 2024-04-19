@@ -131,9 +131,10 @@
   <define name="Scripture">
     <element usfm:stacked="true">
       <name ns="">usx</name>
+      <ref name="BookIdentification"/>
       <optional>
         <attribute>
-          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\n\\usfm &#x27;" match="TEXTNWS"/>
+          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\\usfm &#x27;"/>
           <name ns="">version</name>
           <data type="string">
             <param name="minLength">3</param>
@@ -147,7 +148,6 @@
           <text/>
         </attribute>
       </optional>
-      <ref name="BookIdentification"/>
       <group usfm:seq="true">
         <zeroOrMore>
           <ref name="BookHeaders"/>
@@ -553,8 +553,6 @@
       <a:documentation>Remark</a:documentation>
       <value>sts</value>
       <a:documentation>Status</a:documentation>
-      <value>usfm</value>
-      <a:documentation>USFM markup version information (may occur if USX was generated from USFM)</a:documentation>
     </choice>
   </define>
   <define name="BookTitles">
