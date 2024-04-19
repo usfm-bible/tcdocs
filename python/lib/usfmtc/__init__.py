@@ -15,6 +15,8 @@ import xml.etree.ElementTree as et
 def _readsrc(src):
     if hasattr(src, "read"):
         return src.read()
+    elif not isinstance(src, str):
+        return src
     elif len(src) < 128 and os.path.exists(src):
         with open(src, encoding="utf-8") as inf:
             data = inf.read()
@@ -24,17 +26,15 @@ def _readsrc(src):
     else:
         raise FileNotFoundError(src)
 
-def _grammarDoc(gsrc, extensions=[]):
-    if isinstance(gsrc, et.ElementTree):
-        rdoc = gsrc
+def _grammarDoc(gsrc, extensions=[], factory=et):
+    data = _readsrc(gsrc)
+    if isinstance(data, str):
+        rdoc = factory.ElementTree(factory.fromstring(data))
     else:
-        data = _readsrc(gsrc)
-        rdoc = et.ElementTree(et.fromstring(data))
+        rdoc = data
     for ef in extensions:
         e = Extensions(ef)
-        dirty = e.applyto(rdoc)
-        if dirty:
-            rdoc.mrkersadded = dirty
+        dirty = e.applyto(rdoc, factory=factory)
     return rdoc
 
 def _usfmGrammar(rdoc, backend=None, start=None):

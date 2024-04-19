@@ -32,7 +32,7 @@ tests: testresults.log
 
 testresults.log : grammar/usx.rng
 	- $(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -j ${JOBS} ${TESTEXCLUDES} ${TESTSET} -q -o $@ -g $< tests
-	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -m ${MILESTONES} -m "para=s5" -m "hdr=sts" -o $@ -A tests
+	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -E tests/markers.ext -o $@ -A tests
 
 grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@
@@ -42,7 +42,7 @@ dbl: grammar/usx.rng
 
 single: grammar/usx.rng $(TEST)/origin.usfm
 	$(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -l debug ${TESTSET} -P -g $< $(TEST)
-	$(PYTHON) python/scripts/lxmltest.py -g $< -m ${MILESTONES} -m "para=s5" -m "hdr=sts" $(TEST)/origin.xml
+	$(PYTHON) python/scripts/lxmltest.py -g $< -E tests/markers.ext $(TEST)/origin.xml
 
 singledbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}

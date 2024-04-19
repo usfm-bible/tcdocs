@@ -108,7 +108,7 @@ parser.add_argument("directory",help="A single or tree of test directories")
 parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXng grammar")
 parser.add_argument("-D","--do",default="all",help="Do all*, usx, usfm tests")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
-parser.add_argument("-m","--marker",action='append',default=[],help='type=mkr,mka,mkb')
+parser.add_argument("-E","--extfiles",action='append',default=[],help='markers.ext files to include')
 parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
 parser.add_argument("-M","--match",help="Constrain input files to match regex")
 parser.add_argument("--skipfile",help="Logfile name and skip all jobs skipped and passed in that file")
@@ -171,7 +171,7 @@ if args.skipfile and os.path.exists(args.skipfile):
                 if m.group(2) in ("Passed", "Skipped"):
                     skips[m.group(1)] = m.group(3) or m.group(2)
 
-rdoc = _grammarDoc(args.grammar, args.marker)
+rdoc = _grammarDoc(args.grammar, args.extfiles)
 sfmproc = _usfmGrammar(rdoc, start=args.start)
 
 jobs = []
