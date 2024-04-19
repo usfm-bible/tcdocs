@@ -4,7 +4,6 @@ from usfmtc.sfmparser import parseusfm, UsfmParserBackend
 from usfmtc.parser import NoParseError
 from usfmtc.extension import Extensions
 from usfmtc.xmlutils import ParentElement, prettyxml, writexml
-from usfmtc.usxgrammar import addmarkers
 from usfmtc.usxparser import USXConverter
 from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad

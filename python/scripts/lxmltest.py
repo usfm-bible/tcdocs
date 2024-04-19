@@ -4,12 +4,11 @@ from lxml import etree
 import argparse, os, re, sys
 
 try:
-    from usfmtc.usxgrammar import usxenums
+    from usfmtc import _grammarDoc
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.usxgrammar import usxenums
+    from usfmtc import _grammarDoc
 
-from usfmtc import _grammarDoc
 
 relaxns = "{http://relaxng.org/ns/structure/1.0}"
 
