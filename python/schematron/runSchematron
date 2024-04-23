@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import lxml.etree as et
+import lxml.isoschematron as sch
+import argparse, re
+
+def fn_matches(txt, reg):
+    return re.match(reg, txt) is not None
+
+parser = argparse.ArgumentParser()
+parser.add_argument("infile", help="Input USX file")
+parser.add_argument("-t","--test",help="Schematron file")
+parser.add_argument("-x","--xslt",action="store_true",heplp="Output generated xslt")
+args = parser.parse_args()
+
+schema = sch.Schematron(file=args.test, store_xslt=args.xslt, compile_params={'allow-foreign': 'true'})
+if args.xslt:
+    print(schema.validator_xslt)
+doc = et.parse(args.infile)
+schema(doc)
+
