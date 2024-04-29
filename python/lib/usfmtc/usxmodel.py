@@ -178,7 +178,7 @@ def messup(node, parent=None):
         span = int(newnode.get("colspan", "1"))
         if span > 1:
             start = int(re.sub(r"^\D+", "", tag))
-            tag = re.sub(r"\d+", str(start + span - 1), tag)
+            tag = tag + "-" + str(start + span - 1)
             newnode.set("style", tag)
     for k, v in newnode.attrib.items():
         newnode.attrib[k] = protect(v)

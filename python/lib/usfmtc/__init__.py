@@ -7,7 +7,7 @@ from usfmtc.xmlutils import ParentElement, prettyxml, writexml
 from usfmtc.usxparser import USXConverter
 from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
-from usfmtc.usxmodel import addesids, cleanup
+from usfmtc.usxmodel import addesids, cleanup, messup
 from usfmtc.usjproc import usxtousj, usjtousx
 import xml.etree.ElementTree as et
 
