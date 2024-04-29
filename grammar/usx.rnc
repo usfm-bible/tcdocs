@@ -721,7 +721,7 @@ Table =
 TableContent =
     element cell {
         [usfm:ptag[]]
-        attribute style { xsd:string { pattern = "t[hc][rc]?\d+" } },
+        attribute style { xsd:string { pattern = "t[hc][rc]?\d+(-\d+)?" } },
         attribute align { cell.align.enum },
         attribute colspan { xsd:integer }?,
         ([usfm:text[]] text | Char | Figure | Milestone | Verse | Footnote | CrossReference | Break)*
@@ -1155,6 +1155,8 @@ Break =
     [usfm:match[match="'//'"]]
     element optbreak { empty }
 
+# Unused enums for .ext files
+
 Internal.style.enum = (
         ## Initial identifying marker
       "id"
@@ -1181,3 +1183,10 @@ Internal.style.enum = (
     |   ## Category
       "cat"
     )
+
+Cell.style.enum = ( "th1" | "th2" | "th3" | "th4" | "th5" | "th6" | "th7" | "th8" | "th9"
+    | "tc1" | "tc2" | "tc3" | "tc4" | "tc5" | "tc6" | "tc7" | "tc8" | "tc9"
+    | "tcr1" | "tcr2" | "tcr3" | "tcr4" | "tcr5" | "tcr6" | "tcr7" | "tcr8" | "tcr9"
+    | "tcc1" | "tcc2" | "tcc3" | "tcc4" | "tcc5" | "tcc6" | "tcc7" | "tcc8" | "tcc9"
+    | "thc1" | "thc2" | "thc3" | "thc4" | "thc5" | "thc6" | "thc7" | "thc8" | "thc9"
+    | "thr1" | "thr2" | "thr3" | "thr4" | "thr5" | "thr6" | "thr7" | "thr8" | "thr9" )

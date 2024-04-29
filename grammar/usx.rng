@@ -1076,7 +1076,7 @@
         <usfm:ptag/>
         <name ns="">style</name>
         <data type="string">
-          <param name="pattern">t[hc][rc]?\d+</param>
+          <param name="pattern">t[hc][rc]?\d+(-\d+)?</param>
         </data>
       </attribute>
       <attribute>
@@ -1945,6 +1945,64 @@
       <a:documentation>Sidebar</a:documentation>
       <value>cat</value>
       <a:documentation>Category</a:documentation>
+    </choice>
+  </define>
+  <define name="Cell.style.enum">
+    <choice>
+      <value>th1</value>
+      <value>th2</value>
+      <value>th3</value>
+      <value>th4</value>
+      <value>th5</value>
+      <value>th6</value>
+      <value>th7</value>
+      <value>th8</value>
+      <value>th9</value>
+      <value>tc1</value>
+      <value>tc2</value>
+      <value>tc3</value>
+      <value>tc4</value>
+      <value>tc5</value>
+      <value>tc6</value>
+      <value>tc7</value>
+      <value>tc8</value>
+      <value>tc9</value>
+      <value>tcr1</value>
+      <value>tcr2</value>
+      <value>tcr3</value>
+      <value>tcr4</value>
+      <value>tcr5</value>
+      <value>tcr6</value>
+      <value>tcr7</value>
+      <value>tcr8</value>
+      <value>tcr9</value>
+      <value>tcc1</value>
+      <value>tcc2</value>
+      <value>tcc3</value>
+      <value>tcc4</value>
+      <value>tcc5</value>
+      <value>tcc6</value>
+      <value>tcc7</value>
+      <value>tcc8</value>
+      <value>tcc9</value>
+      <value>thc1</value>
+      <value>thc2</value>
+      <value>thc3</value>
+      <value>thc4</value>
+      <value>thc5</value>
+      <value>thc6</value>
+      <value>thc7</value>
+      <value>thc8</value>
+      <value>thc9</value>
+      <value>thr1</value>
+      <value>thr2</value>
+      <value>thr3</value>
+      <value>thr4</value>
+      <value>thr5</value>
+      <value>thr6</value>
+      <value>thr7</value>
+      <value>thr8</value>
+      <value>thr9</value>
     </choice>
   </define>
 </grammar>
