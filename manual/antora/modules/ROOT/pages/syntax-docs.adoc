@@ -5,11 +5,57 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
+A brief explanation of the syntax used throughout this documention is given below.
+
+Most documentation pages for USFM/USX markup contain one or more of the following sections.
+
+* xref:syntax-docs.adoc#_summary[Summary]
+* xref:syntax-docs.adoc#_diagrams[Diagrams]
+* xref:syntax-docs.adoc#_examples[Examples]
+* xref:syntax-docs.adoc#_properties[Properties]
+* xref:syntax-docs.adoc#_publication_issues[Publication Issues]
+
+== Summary
+
+A summary of the 1) *type* of markup found in the current documentation section (e.g. xref:para:index.adoc[paragraphs], xref:char:index.adoc[characters]), xref:note:index.adoc[notes], or 2) a *specific instance* of a markup type (e.g. xref:para:paragraphs/p.adoc[p - paragraph], xref:char:features/nd.adoc[nd - Name of God], xref:note:footnote/index.adoc[footnote]).
+
+=== Description
+
+A short description of the markup.
+
+=== Syntax
+
+A summary of the markup syntax is given in both *USFM* and *USX* syntax. The following conventions are used:
+
+* ``++markup++`` : Monospaced text with a grey background is the explicit marker text required.
+* #__placeholder__# : Red, italic text is a placeholder. The content which should be provided at the position of the placeholder is described below the syntax summary.
+* #__@attribute__# : Required or optional xref:char:attributes.adoc[attributes] are listed as placeholders in red, italic text preceded by an #__@__# symbol.
+* #__placeholder__# or #__@attribute__# content which is required is identified by an *** asterisk.
+
+=== Style Type
+
+If the documentation page is for a specific instance of a markup type, a link to the summary documentation for that marker type is given. For example: xref:para:paragraphs/p.adoc[p] is a type of xref:para:index.adoc[Paragraph].
+
+=== Valid In
+
+The xref:doc:index.adoc[document division], xref:para:index.adoc[paragraph], or xref:note:index.adoc[note] type where the selected markup is valid.
+
+=== Added
+
+The version of USFM/USX when this markup was added.
+
+=== Updated
+
+The version of USFM/USX when this markup was updated, corrected, or possibly deprecated.
+
+[NOTE]
+====
 Throughout this documentation, texts shown between square brackets, with a grey background, in `[monospacedFont]` are the names used for classes or terminals within the USFM/USX RNG schema. These names correspond to the terminal labels shown in syntax diagrams thoughout the documentation.
+====
 
-## Syntax Diagrams
+== Diagrams
 
-'Railroad' diagrams illustrate the syntax for components of the USFM/USX schema. Where a diagram is provided, USFM and USX expressions are given in separate tabs. The railroad diagrams for the paragraph element are shown below:
+'Railroad' diagrams illustrate the syntax for components of the USFM/USX schema. Where a diagram is provided, USFM and USX expressions are given in separate tabs. Railroad diagrams for the xref:para:index.adoc[paragraph] element are shown below:
 
 [tabs]
 ======
@@ -27,4 +73,174 @@ image:para:schema/p_usx.svg[]
 * Markup text which matches a regular expression pattern is shown between 2 forward slashes `/.../`
 * Markup text from an enumeration of options are shown within a dotted outline.
 * Terminals are shown in containers with rounded corners, and labelled in `ALLCAPS`. The defintions for terminal labels are given in the xref:ROOT:glossary.adoc[glossary].
-* A container identifying a markup element is shown with square corners, with a label identifying the element type (e.g. xref:note:footnote/index.adoc[Footnote], xref:note:crossref/index.adoc[CrossReference], xref:char:index.adoc[Char], xref:ms:index.adoc[Milestone], xref:cv:v.adoc[Verse]).
+* A container identifying a markup type is shown with square corners, with a label identifying the type (e.g. xref:note:footnote/index.adoc[Footnote], xref:note:crossref/index.adoc[CrossReference], xref:char:index.adoc[Char], xref:ms:index.adoc[Milestone], xref:cv:v.adoc[Verse]).
+
+== Examples
+
+One or more working text examples in USFM, USX, and USJ are given, usually together with a formatting sample. Examples for xref:para:paragraphs/p.adoc[p - paragraph] are shown below:
+
+[tabs]
+======
+USFM::
++
+.Mark 1.1-4 (GNT)
+[source#src-usfm-para-p_1,usfm,highlight=5;14]
+----
+\id MRK
+\c 1
+\s1 The Preaching of John the Baptist
+\r (Matthew 3.1-12; Luke 3.1-18; John 1.19-28)
+\p
+\v 1 This is the Good News about Jesus Christ, the Son of God.
+\v 2 It began as the prophet Isaiah had written:
+\q1 “God said, ‘I will send my messenger ahead of you
+\q2 to open the way for you.’
+\q1
+\v 3 Someone is shouting in the desert,
+\q2 ‘Get the road ready for the Lord;
+\q2 make a straight path for him to travel!’”
+\p
+\v 4 So John appeared in the desert, baptizing and preaching. “Turn away from your 
+sins and be baptized,” he told the people, “and God will forgive your sins.”
+----
+USX::
++
+.Mark 1.1-4 (GNT)
+[source#src-usx-para-p_1,xml,highlight=6;20]
+----
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <chapter number="1" style="c" sid="MRK 1"/>
+  <para style="s1">The Preaching of John the Baptist</para>
+  <para style="r">(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)</para>
+  <para style="p">
+    <verse number="1" style="v" sid="MRK 1:1" />This is the Good News about Jesus 
+    Christ, the Son of God. <verse eid="MRK 1:1" /><verse number="2" style="v" 
+    sid="MRK 1:2" />It began as the prophet Isaiah had written:</para>
+  <para style="q1" vid="MRK 1:2">“God said, ‘I will send my messenger ahead of you
+    </para>
+  <para style="q2" vid="MRK 1:2">to open the way for you.’<verse eid="MRK 1:2" />
+    </para>
+  <para style="q1">
+    <verse number="3" style="v" sid="MRK 1:3" />Someone is shouting in the desert,
+    </para>
+  <para style="q2" vid="MRK 1:3">‘Get the road ready for the Lord;</para>
+  <para style="q2" vid="MRK 1:3">make a straight path for him to travel!’”
+    <verse eid="MRK 1:3" /></para>
+  <para style="p">
+    <verse number="4" style="v" sid="MRK 1:4" />So John appeared in the desert, 
+    baptizing and preaching. “Turn away from your sins and be baptized,” he told 
+    the people, “and God will forgive your sins.”<verse eid="MRK 1:4" /></para>
+</usx>
+----
+USJ::
++
+.Mark 1.1-4 (GNT)
+[source#src-usj-para-p_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "MRK 1"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["The Preaching of John the Baptist"]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": ["(Matthew 3.1-12; Luke 3.1-18; John 1.19-28)"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "MRK 1:1"
+        },
+        "This is the Good News about Jesus Christ, the Son of God. ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "MRK 1:2"
+        },
+        "It began as the prophet Isaiah had written:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["“God said, ‘I will send my messenger ahead of you"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["to open the way for you.’"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "3",
+          "sid": "MRK 1:3"
+        },
+        "Someone is shouting in the desert, "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["‘Get the road ready for the Lord;"]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["make a straight path for him to travel!’”"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "4",
+          "sid": "MRK 1:4"
+        },
+        "So John appeared in the desert, baptizing and preaching. “Turn away from your sins and be baptized,” he told the people, “and God will forgive your sins.”"
+      ]
+    }
+  ]
+}
+----
+======
+
+image::markers:para/p_1.jpg[Mark 1.1-4 (GNT),300]
+
+== Properties
+
+A list of additional properties for the current markup type or specific markup instance.
+
+== Publication Issues
+
+A list of notes, guidance, or specific concerns related to publishing the content used with the current markup.

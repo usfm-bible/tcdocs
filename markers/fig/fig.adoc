@@ -24,7 +24,7 @@ Syntax::
 #copy#::: Rights holder/copyright information. This material will be used to provide appropriate illustration attribution in publications.
 #caption#::: Illustration caption text.
 Style Type:: xref:fig:index.adoc[Figure]
-Valid In:: 
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`, `[xref:doc:index.adoc#doc-periphbook-periph-content[PeripheralContent]]`
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0 (xref:char:attributes.adoc[attributes] syntax)
