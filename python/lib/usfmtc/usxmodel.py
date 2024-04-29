@@ -96,20 +96,6 @@ def addesids(root):
 
     return root
 
-aligns = { "": "start", "r": "end", "c": "center" }
-def cell_aligns(root):
-    for e in root.findall('.//cell'):
-        if e.get('align', None) is not None:
-            continue
-        s = e.get('style', None)
-        if s is None:
-            continue
-        v = re.match(r"^t[ch](.?)\d+.*$", s)
-        if v is None:
-            continue
-        a = aligns[v.group(1)]
-        e.set('align', a)
-
 def add_specials(t, node, parent, istext=False):
     t = re.sub(r"\\(.)", r"\1", t)      # remove escape markers
     if "~" in t:
