@@ -104,7 +104,7 @@ def cell_aligns(root):
         s = e.get('style', None)
         if s is None:
             continue
-        v = re.match(r"^t[ch](.?)\d+", s)
+        v = re.match(r"^t[ch](.?)\d+.*$", s)
         if v is None:
             continue
         a = aligns[v.group(1)]
@@ -126,9 +126,14 @@ def add_specials(t, node, parent, istext=False):
                 bk.tail = t[j+2:]
                 return t[:j]
     return t
-                
+
+alignments = {
+    "c": "start", "cc": "centre", "cr": "end",
+    "h": "start", "hc": "centre", "hr": "end"
+}
 def cleanup(node, parent=None):
     if node.tag == 'para':
+        # cleanup specials and spaces
         i = -1
         if len(node) and node[i].tag == 'verse' and node[i].get('eid', None) is not None:
             i -= 1
@@ -146,16 +151,61 @@ def cleanup(node, parent=None):
         if src is not None:
             del node.attrib['src']
             node.set('file', src)
+    elif node.tag == "cell":
+        s = node.get("style", "")
+        if "-" in s:
+            start, end = s.split("-")
+            startn = int(re.sub(r"^\D+", "", start))
+            endn = int(end)
+            span = endn - startn + 1
+            node.set("colspan", str(span))
+            node.set("style", start)
+        celltype = re.sub(r"^t(.*?)\d.*$", r"\1", s)
+        node.set("align", alignments.get(celltype, "start"))
     for k, v in node.attrib.items():
         node.attrib[k] = re.sub(r"\\(.)", r"\1", v)
     for c in node:
         cleanup(c, parent=node)
 
+def protect(txt):
+    if txt is not None:
+        return re.sub(r'(["=|\\~/])', r'\\\1', txt)
+    return None
+
+def messup(node, parent=None):
+    ''' Opposite of cleanup, to prepare a USX XML structure for USFM generation.
+        Returns a copy of the structure so as not to polute the core data. '''
+    if parent is None:
+        newnode = et.Element(node.tag, attrib=node.attrib)
+    else:
+        newnode = et.SubElement(parent, node.tag, attrib=node.attrib)
+    newnode.text = protect(node.text)
+    newnode.tail = protect(node.tail)
+
+    if newnode.tag == "figure":
+        src = newnode.get("file", None)
+        if src is not None:
+            del newnode.attrib['file']
+            newnode.set('src', src)
+    elif newnode.tag == "cell":
+        tag = newnode.get("style", "")
+        span = int(newnode.get("colspan", "1"))
+        if span > 1:
+            start = int(re.sub(r"^\D+", "", tag))
+            tag = re.sub(r"\d+", str(start + span - 1), tag)
+            newnode.set("style", tag)
+    for k, v in newnode.attrib.items():
+        newnode.attrib[k] = protect(v)
+    for c in node:
+        messup(c, parent=newnode)
+    return newnode
+
+
 unescapes = {
     "&amp;": '&',
     "&lt;": '<',
     "&gt;": '>',
-    "&quot;": '"',
+    "&quot;": '"',      #'
     "&apos;": "'"
 }
 

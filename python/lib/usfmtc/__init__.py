@@ -7,7 +7,7 @@ from usfmtc.xmlutils import ParentElement, prettyxml, writexml
 from usfmtc.usxparser import USXConverter
 from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
-from usfmtc.usxmodel import addesids, cell_aligns, cleanup
+from usfmtc.usxmodel import addesids, cleanup
 from usfmtc.usjproc import usxtousj, usjtousx
 import xml.etree.ElementTree as et
 
@@ -77,8 +77,7 @@ class USX:
         result = parseusfm(data, grammar, timeout=timeout, isdata=True)
 
         xml = result.asEt(elfactory=elfactory)
-        cleanup(xml)            # convert // and ~ etc.
-        cell_aligns(xml)        # create cell @aligns
+        cleanup(xml)            # normalize space, de-escape chars, cell aligns, etc.
         res = cls(xml)
         return res
 
@@ -119,7 +118,8 @@ class USX:
     def outUsfm(self, grammar, file=None):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         parser = USXConverter(grammar.getroot())
-        res = parser.parse(self.xml)
+        el = messup(self.xml)
+        res = parser.parse(el)
         if res:
             dat = "".join(res.results)
             return self._outwrite(file, dat)
