@@ -587,12 +587,6 @@
       <value>mt4</value>
       <value>mt</value>
       <a:documentation>The main title of the book (if single level)</a:documentation>
-      <value>imt1</value>
-      <a:documentation>Introduction major title, level 1 (if multiple levels)</a:documentation>
-      <value>imt2</value>
-      <a:documentation>Introduction major title, level 2</a:documentation>
-      <value>imt</value>
-      <a:documentation>Introduction major title, level 1 (if single level)</a:documentation>
       <value>rem</value>
       <a:documentation>Remark</a:documentation>
     </choice>
@@ -727,7 +721,6 @@
       <ref name="Para"/>
       <ref name="Section"/>
       <ref name="Chapter"/>
-      <ref name="Figure"/>
       <ref name="Milestone"/>
       <ref name="Footnote"/>
       <ref name="CrossReference"/>
@@ -1259,7 +1252,7 @@
       <a:documentation>Reference to caller of previous footnote</a:documentation>
       <value>fv</value>
       <a:documentation>A verse number within the footnote text</a:documentation>
-      <value usfm:propval="lemma">k</value>
+      <value usfm:propval="key">k</value>
       <a:documentation>For a keyword</a:documentation>
       <value>nd</value>
       <a:documentation>For name of deity</a:documentation>
@@ -1307,11 +1300,11 @@
       <a:documentation>A character style, for small capitalization text</a:documentation>
       <value>sup</value>
       <a:documentation>A character style, for superscript text. Typically for use in critical edition footnotes.</a:documentation>
-      <value usfm:propval="link-href">xt</value>
+      <value usfm:propval="href">xt</value>
       <a:documentation>Inline scripture reference formatting.</a:documentation>
       <value usfm:propval="lemma">w</value>
       <value usfm:propval="gloss">rb</value>
-      <value>jmp</value>
+      <value usfm:propval="href">jmp</value>
       <a:documentation>Jump link</a:documentation>
     </choice>
   </define>
@@ -1719,7 +1712,12 @@
         <ref name="category"/>
       </optional>
       <oneOrMore>
-        <ref name="FootnoteChar"/>
+        <choice>
+          <ref name="FootnoteChar"/>
+          <text>
+            <usfm:text/>
+          </text>
+        </choice>
       </oneOrMore>
       <usfm:endtag before="/${Ws}\\/" beforeout="&#x27;\\&#x27;"/>
     </element>
@@ -1753,7 +1751,10 @@
             <usfm:text/>
           </text>
           <ref name="NoteCharEmbed"/>
+          <ref name="Figure"/>
+          <ref name="Milestone"/>
           <ref name="Reference"/>
+          <ref name="Break"/>
         </choice>
       </zeroOrMore>
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="&#x27;*&#x27;"/>
@@ -1828,7 +1829,10 @@
             <usfm:text/>
           </text>
           <ref name="NoteCharEmbed"/>
+          <ref name="Figure"/>
+          <ref name="Milestone"/>
           <ref name="Reference"/>
+          <ref name="Break"/>
         </choice>
       </oneOrMore>
       <usfm:endtag matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"/>

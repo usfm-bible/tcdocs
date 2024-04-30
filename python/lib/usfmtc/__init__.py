@@ -7,7 +7,7 @@ from usfmtc.xmlutils import ParentElement, prettyxml, writexml
 from usfmtc.usxparser import USXConverter
 from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
-from usfmtc.usxmodel import addesids, cleanup, messup
+from usfmtc.usxmodel import addesids, cleanup, messup, canonicalise
 from usfmtc.usjproc import usxtousj, usjtousx
 import xml.etree.ElementTree as et
 
@@ -133,6 +133,9 @@ class USX:
         else:
             dat = json.dumps(res, indent=2)
             self._outwrite(file, dat)
+
+    def canonicalise(self):
+        canonicalise(self.getroot())
 
     def getroot(self):
         """ Returns root XML element """

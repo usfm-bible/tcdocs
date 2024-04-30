@@ -215,6 +215,38 @@ def strnormal(s, t, mode=0):
             res = res.replace(k, v)
     return res
 
+def canonicalise(node, endofpara=False, factory=et):
+    if node.text is not None:
+        mode = 1 if len(node) else 3
+        node.text = strnormal(node.text, node.tag, mode)
+    lasti = 0
+    for lasti, e in enumerate(reversed(node)):
+        if e.tag not in ('char', 'note'):
+            break
+    lasti = len(node) - 1 - lasti
+    for i, c in enumerate(node):
+        eop = c.tag == 'para' or (endofpara and (i == lasti))
+        canonicalise(c, endofpara=eop)
+        if c.tail is not None:
+            mode = 2 if eop or c.tag != "char" else 0
+            c.tail = strnormal(c.tail, c.tag, mode)
+    if node.tag == "note":
+        style = node.get("style", "")
+        replace = "xt" if style in ("x", "ex") else "ft"
+        if node.text is not None:
+            ft = node.makeelement("char", {"style": replace})
+            ft.text = node.text
+            node.text = None
+            node.insert(0, ft)
+        inserted = 0
+        for i, c in enumerate(list(node)):
+            if c.tail is not None:
+                ft = node.makeelement("char", {"style": replace})
+                node.insert(i + inserted + 1, ft)
+                inserted += 1
+                ft.text = c.tail
+                c.tail = None
+
 def attribnorm(d):
     banned = ('closed', 'status')
     return {k: strnormal(v, None) for k, v in d.items() if k not in banned and not k.startswith(" ")}
@@ -241,7 +273,7 @@ def etCmp(a, b, at=None, bt=None, verbose=False, endofpara=False):
         return False
     lasti = 0
     for lasti, e in enumerate(reversed(a)):
-        if a.tag not in ('char', 'note'):
+        if e.tag not in ('char', 'note'):
             break
     lasti = len(a) - 1 - lasti
     for i, (ac, bc) in enumerate(zip(a, b)):

@@ -408,12 +408,6 @@ Title.para.style.enum = (
       "mt4"
     |   ## The main title of the book (if single level)
       "mt"
-    |   ## Introduction major title, level 1 (if multiple levels)
-      "imt1"
-    |   ## Introduction major title, level 2
-      "imt2"
-    |   ## Introduction major title, level 1 (if single level)
-      "imt"
     |   ## Remark
       "rem"
     )
@@ -503,7 +497,7 @@ BookIntroductionEndTitles =
         ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | Char | Figure | Milestone | Break)*
     }
 
-ChapterContent = (Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
 PeripheralContent = (Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
@@ -806,7 +800,7 @@ Char.char.style.enum = (
     |   ## A verse number within the footnote text
       "fv"
     |   ## For a keyword
-      [usfm:propval="lemma"] "k"
+      [usfm:propval="key"] "k"
     |   ## For name of deity
       "nd"
     |   ## A subject index text item
@@ -854,11 +848,11 @@ Char.char.style.enum = (
     |   ## A character style, for superscript text. Typically for use in critical edition footnotes.
       "sup"
     |   ## Inline scripture reference formatting.
-       [usfm:propval="link-href"] "xt" 
+       [usfm:propval="href"] "xt" 
     | [usfm:propval="lemma"] "w"
     | [usfm:propval="gloss"] "rb"
     |   ## Jump link
-       "jmp"
+      [usfm:propval="href"] "jmp"
     )
 
 CharEmbed = (
@@ -1036,7 +1030,7 @@ Footnote =
         [usfm:match[match="/[^\\\s]+/" after="Hs" afterout="' '"]]
         attribute caller { text },
         category?,
-        FootnoteChar+ 
+        (FootnoteChar | [usfm:text[]] text)+ 
         >> usfm:endtag[before="/${Ws}\\/" beforeout="'\\'"]
     }
 
@@ -1057,7 +1051,7 @@ FootnoteChar =
         attribute style { FootnoteChar.char.style.enum },
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:text[]] text | NoteCharEmbed | Reference)*
+        ([usfm:text[]] text | NoteCharEmbed | Figure | Milestone | Reference | Break)*
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="'*'"]
     }
 
@@ -1106,7 +1100,7 @@ CrossReferenceChar =
         attribute style { CrossReferenceChar.char.style.enum },
         [usfm:ignore="true"]
         char.closed?,
-        ([usfm:text[]] text | NoteCharEmbed | Reference)+
+        ([usfm:text[]] text | NoteCharEmbed | Figure | Milestone | Reference | Break)+
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"]
     }
 CrossReferenceChar.char.style.enum = (

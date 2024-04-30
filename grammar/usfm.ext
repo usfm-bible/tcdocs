@@ -309,11 +309,12 @@
 \description A character style, use italic text
 
 \marker jmp
+\attribute href
 \category char
 \description Jump link
 
 \marker k
-\attribute lemma
+\attribute key
 \category char
 \description For a keyword
 
@@ -774,6 +775,168 @@
 
 \marker t-s
 \category milestone
+
+\marker tc1
+\category cell
+
+\marker tc2
+\category cell
+
+\marker tc3
+\category cell
+
+\marker tc4
+\category cell
+
+\marker tc5
+\category cell
+
+\marker tc6
+\category cell
+
+\marker tc7
+\category cell
+
+\marker tc8
+\category cell
+
+\marker tc9
+\category cell
+
+\marker tcc1
+\category cell
+
+\marker tcc2
+\category cell
+
+\marker tcc3
+\category cell
+
+\marker tcc4
+\category cell
+
+\marker tcc5
+\category cell
+
+\marker tcc6
+\category cell
+
+\marker tcc7
+\category cell
+
+\marker tcc8
+\category cell
+
+\marker tcc9
+\category cell
+
+\marker tcr1
+\category cell
+
+\marker tcr2
+\category cell
+
+\marker tcr3
+\category cell
+
+\marker tcr4
+\category cell
+
+\marker tcr5
+\category cell
+
+\marker tcr6
+\category cell
+
+\marker tcr7
+\category cell
+
+\marker tcr8
+\category cell
+
+\marker tcr9
+\category cell
+
+\marker th1
+\category cell
+
+\marker th2
+\category cell
+
+\marker th3
+\category cell
+
+\marker th4
+\category cell
+
+\marker th5
+\category cell
+
+\marker th6
+\category cell
+
+\marker th7
+\category cell
+
+\marker th8
+\category cell
+
+\marker th9
+\category cell
+
+\marker thc1
+\category cell
+
+\marker thc2
+\category cell
+
+\marker thc3
+\category cell
+
+\marker thc4
+\category cell
+
+\marker thc5
+\category cell
+
+\marker thc6
+\category cell
+
+\marker thc7
+\category cell
+
+\marker thc8
+\category cell
+
+\marker thc9
+\category cell
+
+\marker thr1
+\category cell
+
+\marker thr2
+\category cell
+
+\marker thr3
+\category cell
+
+\marker thr4
+\category cell
+
+\marker thr5
+\category cell
+
+\marker thr6
+\category cell
+
+\marker thr7
+\category cell
+
+\marker thr8
+\category cell
+
+\marker thr9
+\category cell
 
 \marker tl
 \category char
