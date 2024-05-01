@@ -248,8 +248,15 @@ def canonicalise(node, endofpara=False, factory=et):
                 c.tail = None
 
 def attribnorm(d):
-    banned = ('closed', 'status')
+    banned = ('closed', 'status', 'vid')
     return {k: strnormal(v, None) for k, v in d.items() if k not in banned and not k.startswith(" ")}
+
+def listWithoutChapterVerseEnds(node):
+    nodeList = []
+    for child in node:
+        if (child.tag != "verse" and child.tag != "chapter") or child.get("eid") is None:
+            nodeList.append(child)
+    return nodeList
 
 def etCmp(a, b, at=None, bt=None, verbose=False, endofpara=False):
     aattrib = attribnorm(a.attrib)
@@ -261,22 +268,28 @@ def etCmp(a, b, at=None, bt=None, verbose=False, endofpara=False):
     mode = 1 if len(a) else 3
     if strnormal(a.text, a.tag, mode) != strnormal(b.text, b.tag, mode):
         if verbose:
-            print("text or tag: ", a.text, a.tag, b, b.tag)
+            print("text or tag: ", a.text, a.tag, b.text, b.tag)
         return False
-    if len(a) != len(b):
+    lista = listWithoutChapterVerseEnds(a)
+    listb = listWithoutChapterVerseEnds(b)
+    if len(lista) != len(listb):
         if verbose:
-            print("length mismatch: ", len(a), len(b))
-            if len(a) > len(b):
-                print("first item in a not in b: ", a[len(b)])
+            print("length mismatch: ", len(lista), len(listb))
+            commonIndex = min(len(lista), len(listb)) - 1
+            if commonIndex >= 0:
+                print(f'item {commonIndex} in a: {lista[commonIndex]}')
+                print(f'item {commonIndex} in b: {listb[commonIndex]}')
+            if len(lista) > len(listb):
+                print("first item in a not in b: ", lista[len(listb)])
             else:
-                print("first item in b not in a: ", b[len(a)])
+                print("first item in b not in a: ", listb[len(lista)])
         return False
     lasti = 0
-    for lasti, e in enumerate(reversed(a)):
+    for lasti, e in enumerate(reversed(lista)):
         if e.tag not in ('char', 'note'):
             break
-    lasti = len(a) - 1 - lasti
-    for i, (ac, bc) in enumerate(zip(a, b)):
+    lasti = len(lista) - 1 - lasti
+    for i, (ac, bc) in enumerate(zip(lista, listb)):
         act = a.tag if a is not None else None
         bct = b.tag if b is not None else None
         eop = a.tag == 'para' or endofpara and (i == lasti) 
