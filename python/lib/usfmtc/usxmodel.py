@@ -249,7 +249,7 @@ def canonicalise(node, endofpara=False, factory=et):
 
 def attribnorm(d):
     banned = ('closed', 'status', 'vid')
-    return {k: strnormal(v, None) for k, v in d.items() if k not in banned and not k.startswith(" ")}
+    return {k: strnormal(v, None) for k, v in d.items() if k not in banned and not k.startswith(" ") and v is not None and len(v)}
 
 def listWithoutChapterVerseEnds(node):
     nodeList = []

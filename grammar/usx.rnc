@@ -66,6 +66,9 @@ usfm:terminal [name="TEXTNWS" value="/.+(?=${Ws}\\[^~/\\])/"
 usfm:terminal [name="TEXTNOTATTRIB" value="/(?:[^\\|]|\\[\\~/|])+/"
     a:documentation ["Matches simple text up to the start of a sequence of attributes delimited by |"]]
 
+usfm:terminal [name="TEXTNOTATTRIBOPT" value="/(?:[^\\|]|\\[\\~/|])*/"
+    a:documentation ["Matches simple text up to the start of a sequence of attributes delimited by | if present"]]
+
 usfm:terminal [name="PIPE" value="/${hs}*(?<!\\)\|${hs}*/"
     a:documentation ["Matches the attributes list delimiter of |"]]
 
@@ -922,13 +925,13 @@ FigureTwo =
     element figure {
         [usfm:tag [matchid="a"]] attribute style { "fig" },
         char.closed?,
-        [usfm:match[match="TEXTNOTATTRIB"]] attribute alt {xsd:string},
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute src {xsd:string},
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute size {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute loc {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute copy {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute alt {xsd:string}, 
-        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIB"]] attribute ref {xsd:string}
+        [usfm:match[match="TEXTNOTATTRIBOPT"]] attribute alt {xsd:string},
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"]] attribute src {xsd:string},
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"]] attribute size {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"]] attribute loc {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"]] attribute copy {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"]] attribute alt {xsd:string}, 
+        [usfm:match[before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"]] attribute ref {xsd:string}
         >> usfm:endtag[]
     }
 

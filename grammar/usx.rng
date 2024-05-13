@@ -64,6 +64,9 @@
   <usfm:terminal name="TEXTNOTATTRIB" value="/(?:[^\\|]|\\[\\~/|])+/">
     <a:documentation>Matches simple text up to the start of a sequence of attributes delimited by |</a:documentation>
   </usfm:terminal>
+  <usfm:terminal name="TEXTNOTATTRIBOPT" value="/(?:[^\\|]|\\[\\~/|])*/">
+    <a:documentation>Matches simple text up to the start of a sequence of attributes delimited by | if present</a:documentation>
+  </usfm:terminal>
   <usfm:terminal name="PIPE" value="/${hs}*(?&lt;!\\)\|${hs}*/">
     <a:documentation>Matches the attributes list delimiter of |</a:documentation>
   </usfm:terminal>
@@ -1466,37 +1469,37 @@
         <ref name="char.closed"/>
       </optional>
       <attribute>
-        <usfm:match match="TEXTNOTATTRIB"/>
+        <usfm:match match="TEXTNOTATTRIBOPT"/>
         <name ns="">alt</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
         <name ns="">src</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
         <name ns="">size</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
         <name ns="">loc</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
         <name ns="">copy</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
         <name ns="">alt</name>
         <data type="string"/>
       </attribute>
       <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIB"/>
+        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
         <name ns="">ref</name>
         <data type="string"/>
       </attribute>
