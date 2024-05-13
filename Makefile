@@ -47,13 +47,12 @@ single: grammar/usx.rng $(TEST)/origin.usfm
 singledbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}
 
-doc: diagrams manual/antora/modules/ROOT/pages/glossary.adoc
-
+doc: diagrams 
 
 manual/antora/modules/ROOT/pages/glossary.adoc: grammar/usx.rng
 	$(PYTHON) python/scripts/mkglossary -o $@ $<
 
-files: grammar/usx.rng grammar/usfm.ext
+files: grammar/usx.rng grammar/usfm.ext manual/antora/modules/ROOT/pages/glossary.adoc
 
 grammar/usfm.ext : grammar/usx.rng
 	$(PYTHON) python/scripts/usfmmkext -o $@ $<
