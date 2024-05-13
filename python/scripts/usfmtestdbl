@@ -37,69 +37,81 @@ def proconezip(fpath, sfmp, log, relax, args):
     try:
         szip = zipfile.ZipFile(fh)
     except zipfile.BadZipFile as e:
+        zipf.close()
         lognprint(f"{fpath}: Skipped. Bad Zip file source/source.zip {e}", args.quiet, logging.INFO)
         return (fpath, [])
     results = []
     anyfailed = False
-    if args.do in ("all", "usfm"):
-        for f in szip.namelist():
-            if f.lower().endswith('sfm'):
-                m = re.match(r'(\d{2})', f)
-                if m is None or not (0 < int(m.group(1)) < 68):
+    bookcount = 0
+    try:
+        if args.do in ("all", "usfm"):
+            for f in szip.namelist():
+                if f.lower().endswith('sfm'):
+                    m = re.match(r'(\d{2})', f)
+                    if m is None or not (0 < int(m.group(1)) < 68):
+                        continue
+                else:
                     continue
-            else:
-                continue
-            if args.verbose:
-                lognprint(f"{fpath}/{f}", args.quiet)
-            sfmfh = szip.open(f)
-            sfmdat = sfmfh.read().decode("utf-8", errors="ignore")
-            result = None
-            failed = False
-            try:
-                result = USX.fromUsfm(sfmdat, sfmp, timeout=args.timeout or 3600)
-            except NoParseError as e:
-                imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
-                results.append(imsg)
-                lognprint(f"{fpath}/{f}: {imsg}", args.quiet)
-                failed = True
-            except TimeoutError:
-                lognprint(f"{fpath}: Timed out", args.quiet, logging.INFO)
-                results.append("Timed out")
-                failed = True
-            except UnicodeError:
-                lognprint(f"{fpath}: Skipped. Encoding error, probably latin-1?", args.quiet, logging.INFO)
-                results.append("Encoding error")
-                failed = True
-            if result is not None:
-                result.addesids()
-                etreexml = etree.fromstring(et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True))
-                if not relax.validate(etreexml):
-                    #xmsg = str(relax.error_log.last_error)
-                    if failed:
-                        results[-1] += f" |xml>"
-                    else:
-                        results.append(f"{fpath}/{f} |xml>")
-                    lognprint(f"{fpath}/{f}: XML| generated xml invalid", args.quiet, logging.INFO)
-            anyfailed |= failed
-            if failed and args.oneerror:
-                break
-        szip.close()
-    if args.do in ("all", "usx"):
-        usxjobs = [x for x in zipf.namelist() if x.startswith("release/USX_1/") and x.lower().endswith(".USX")]
-        for ausx in usxjobs:
-            with zipf.open(ausx) as xf:
-                doc = etree.parse(xf)
-                if not relax.validate(doc):
-                    #xmsg = str(relax.error_log.last_error)
-                    err = f"{fpath}/{ausx} XML, USX xml invalid"
-                    results.append(err)
-                    lognprint(err, args.quiet, logging.INFO)
-                    anyfailed = True
-                    if args.oneerror:
-                        break
-    zipf.close()
-    lognprint("{}: {}".format(fpath, "Passed" if not anyfailed else "Failed"), args.quiet, logging.INFO)
-    return (fpath, results)
+                if args.verbose:
+                    lognprint(f"{fpath}/{f}", args.quiet)
+                sfmfh = szip.open(f)
+                sfmdat = sfmfh.read().decode("utf-8", errors="ignore")
+                result = None
+                failed = False
+                bookcount += 1
+                try:
+                    result = USX.fromUsfm(sfmdat, sfmp, timeout=args.timeout or 3600)
+                except NoParseError as e:
+                    imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
+                    results.append(imsg)
+                    lognprint(f"{fpath}/{f}: {imsg}", args.quiet)
+                    failed = True
+                except TimeoutError:
+                    lognprint(f"{fpath}: Timed out", args.quiet, logging.INFO)
+                    results.append("Timed out")
+                    failed = True
+                except UnicodeError:
+                    lognprint(f"{fpath}: Skipped. Encoding error, probably latin-1?", args.quiet, logging.INFO)
+                    results.append("Encoding error")
+                    failed = True
+                if result is not None:
+                    result.addesids()
+                    etreexml = etree.fromstring(et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True))
+                    if not relax.validate(etreexml):
+                        #xmsg = str(relax.error_log.last_error)
+                        if failed:
+                            results[-1] += f" |xml>"
+                        else:
+                            results.append(f"{fpath}/{f} |xml>")
+                        lognprint(f"{fpath}/{f}: XML| generated xml invalid", args.quiet, logging.INFO)
+                anyfailed |= failed
+                if failed and args.oneerror:
+                    break
+            szip.close()
+        if args.do in ("all", "usx"):
+            usxjobs = [x for x in zipf.namelist() if x.startswith("release/USX_1/") and x.lower().endswith(".USX")]
+            for ausx in usxjobs:
+                with zipf.open(ausx) as xf:
+                    doc = etree.parse(xf)
+                    if not relax.validate(doc):
+                        #xmsg = str(relax.error_log.last_error)
+                        err = f"{fpath}/{ausx} XML, USX xml invalid"
+                        results.append(err)
+                        lognprint(err, args.quiet, logging.INFO)
+                        anyfailed = True
+                        if args.oneerror:
+                            break
+                    bookcount += 1
+        zipf.close()
+        if bookcount == 0 and not anyfailed:
+            anyfailed = True
+            results = [f"{fpath}: No files found"]
+        lognprint("{}: {}".format(fpath, "Passed" if not anyfailed else "Failed"), args.quiet, logging.INFO)
+        return (fpath, results)
+    except Exception as e:
+        lognprint(f"{fpath}/{f}: {e}", args.quiet, logging.INFO)
+        lognprint("{}: {}".format(fpath, "Crashed"), args.quiet, logging.INFO)
+        return (fpath, [str(e)])
 
 
 parser = argparse.ArgumentParser()

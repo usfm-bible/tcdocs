@@ -37,7 +37,7 @@
   <usfm:terminal name="WSNL" value="/${HS}${NL}/">
     <a:documentation>A sequence of non-newline whitespace up to and including a newline</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TAGEND" value="/(?:${ws}|(?=[\\|]|$))/">
+  <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/">
     <a:documentation>Delimits a marker</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="TEXTEND" value="/(?=${anyws}*\\|$)/">
@@ -1637,7 +1637,7 @@
     <element usfm:stacked="true">
       <name ns="">verse</name>
       <attribute>
-        <usfm:tag usfm:seq="true"/>
+        <usfm:tag usfm:seq="true" after="WS"/>
         <name ns="">style</name>
         <value>v</value>
       </attribute>
@@ -1704,7 +1704,7 @@
         <ref name="Footnote.style.enum"/>
       </attribute>
       <attribute>
-        <usfm:match match="/[^\\\s]+/" after="Hs" afterout="&#x27; &#x27;"/>
+        <usfm:match match="/[^\\\s]+/" after="HS" afterout="&#x27; &#x27;"/>
         <name ns="">caller</name>
         <text/>
       </attribute>
