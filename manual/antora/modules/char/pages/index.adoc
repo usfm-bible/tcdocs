@@ -2,7 +2,7 @@
 
 == Summary
 
-Description:: Character-level container.
+Description:: Character-level container (span).
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\++``#__style__#``++ ++``#__content__#``++\++``#__style__#``++*++``
 * *USX:* ``++<char style="++``#__style__#``++">++``#__content__#``++</char>++``

@@ -1,8 +1,56 @@
-= User Extensions ('z' namespace)
+= User Extensions
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
 endif::[]
 :imagesdir: {localdir}/images
 
-Any 'private-use' marker/style extensions should begin with `+z+`. Example: `+\zMyPara+` or `+<para style="zMyPara">+`. Markers/styles in the `+z+` namespace are not considered part of the USFM/USX standard. An application or processor may provide support for `+z+` extensions, but are not expected to handle the markup or its associated text in any particular way, and are also free to ignore this markup when it is encountered in a text.
+Users may create and use non-standard markup extensions. User created markers should always begin with `+z+`. For Example: `+\zmyp+` or `+<para style="zmyp">+`. User extended markup is NOT considered part of the USFM/USX standard. An application or processor is not required to provide support for user extensions, and is also free to ignore this markup when it is encountered in a text.
+
+== Defining Extensions
+A basic specification for markup extensions used in a text should be provided in a file named `+markers.ext+`. For each marker, supply the following:
+
+#``++\marker++``#:: Marker text
+#``++\category++``#:: Marker category, from the following list:
+* xref:para:index.adoc[Paragraph]
+** `header` - Header/identification paragraph
+** `title` - Book title paragraph
+** `introduction` - Introduction text paragraph
+** `sectionpara` - Section heading paragraph
+** `versepara` - Verse text paragraph
+** `list` - List paragraph (verse text)
+** `otherpara` - Other (non verse text) paragraph
+* xref:note:index.adoc[Note]
+** `crossreference` - Cross Reference container
+** `footnote` - Footnote container
+* xref:char:index.adoc[Character]
+** `char` - Character-level container (span)
+** `introchar` - Introduction text character span
+** `listchar` - List text character span
+** `footnotechar` - Footnote text character span
+** `crossreferencechar` - Cross reference text character span
+* xref:ms:index.adoc[Milestone]
+** `milestone` - Milestone
+* Other
+** `internal` - Internal
+#``++\description++``#:: Marker description
+#``++\attribute++``#:: __As needed__ - Required or optional attribute (used with Character marker categories). If more than one attribute is specified for the marker, provide a separate \attribute field for each. 
+
+== Examples
+
+.markers.ext
+[source#src-markers-ext_1,ext,highlight=]
+----
+\marker zmyp
+\category versepara
+\description An paragraph marker extension.
+----
+
+.markers.ext
+[source#src-markers-ext_2,ext,highlight=]
+----
+\marker zmyc
+\category char
+\description A character marker extension.
+\attribute x-myattr1
+----
