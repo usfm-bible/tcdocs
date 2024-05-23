@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Regular translation footnote.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\f ++``#__caller__#``++ ++``#__content__#``++\f*++``
 * *USX:* ``++<note style="f" ++``#__@caller__#``++>++``#__content__#``++</note>++``
 #caller# *::: Note caller

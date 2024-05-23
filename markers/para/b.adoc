@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Blank line. Use for stanza breaks in poetry, or between poetry and prose.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\b++``
 * *USX:* ``++<para style="b"/>++``
 Style Type:: xref:para:index.adoc[Paragraph]

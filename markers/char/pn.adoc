@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Proper name.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\pn ++``#__content__#``++\pn*++``
 * *USX:* ``++<char style="pn">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Regular paragraph.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\p ++``#__content__#
 * *USX:* ``++<para style="p">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

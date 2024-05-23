@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Continuation (margin) paragraph. Commonly used to resume prose at the margin (without indent) after poetic text or quotation.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\m ++``#__content__#
 * *USX:* ``++<para style="m">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

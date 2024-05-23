@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Published chapter number. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential xref:cv:c.adoc[chapter number] used within the translation editing environment.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\c ++``#__number__# _(see: xref:cv:c.adoc[])_ ``++ \ca ++``#__altnumber__#``++\ca*++`` _(see: xref:cv:ca.adoc[])_
 ** ``++\cp ++``#__pubnumber__#
 * *USX:* ``++<chapter style="c" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``

@@ -21,7 +21,7 @@ In *USFM*, a table is composed by a series of paragraphs marked with xref:para:t
 
 In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing `<row>`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
 ====
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\tcr# ++``#__content__#
 ** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\tcr1-2`
 * *USX:* ``++<cell style="tcr#" ++``#__@colspan @align__#``++>++``#__content__#``++</cell>++``

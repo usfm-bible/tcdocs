@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Quoted book title.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\bk ++``#__content__#``++\bk*++``
 * *USX:* ``++<char style="bk">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

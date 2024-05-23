@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Wordlist / glossary / dictionary entry. Surround a word or phrase with this markup to indicate that it should appear in the glossary.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\w ++``#__content__#``++|++``#__@lemma @strong @srcloc__#``++\w*++``
 * *USX:* ``++<char style="w" ++``#__@lemma @strong @srcloc__#``++>++``#__content__#``++</char>++``
 #lemma#::: Citation form for the term in the glossary _(default attribute)_

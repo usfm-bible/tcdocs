@@ -3,7 +3,7 @@
 == Summary
 
 Description:: Note container. Added inline within the body text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\++``#__noteType__#``++ ++``#__caller__#``++ \cat ++``#__category__#``++\cat* ++``#__content__#``++\++``#__noteType__#``++*++``
 * *USX:* ``++<note style="++``#__noteType__#``++" ++``#__@caller @category__#``++>++``#__content__#``++</note>++``
 #noteType#::: Note type

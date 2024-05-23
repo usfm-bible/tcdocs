@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:para:lists/index.adoc[List] entry total. Use in accounting lists for identifying the _total_ component of a list entry (xref:para:lists/li.adoc[li]). An alternative form to using a xref:para:tables/index.adoc[table] for the same content.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\litl ++``#__content__#``++\litl*++``
 * *USX:* ``++<char style="litl">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

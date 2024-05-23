@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Ruby gloss. Used to annotate the base text with ruby characters.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\rb ++``#__content__#``++|++``#__@gloss__#``++\rb*++``
 * *USX:* ``++<char style="rb" ++``#__@gloss__#``++>++``#__content__#``++</char>++``
 #gloss#::: Ruby gloss characters _(default attribute)_

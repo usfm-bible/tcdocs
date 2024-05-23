@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Explicit page break.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\pb++``
 * *USX:* ``++<para style="pb"/>++``
 Style Type:: xref:para:index.adoc[Paragraph]

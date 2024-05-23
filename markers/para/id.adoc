@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Scripture book identification.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\id ++``#__code__#``++ ++``#__content__#
 * *USX:* ``++<book style="id" ++``@code``++>++``#__content__#``++</book>++``
 #code# *::: A standard 3-character scripture xref:para:identification/books.adoc[book identifier].

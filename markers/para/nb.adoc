@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: No break. Indicates that the paragraph is a continuation of the previous paragraph (regardless of previous paragraph type). Commonly used in cases where the previous paragraph spans the chapter boundary.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\nb ++``#__content__#
 * *USX:* ``++<para style="nb">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

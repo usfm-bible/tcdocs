@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Transliterated words.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\tl ++``#__content__#``++\tl*++``
 * *USX:* ``++<char style="tl">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

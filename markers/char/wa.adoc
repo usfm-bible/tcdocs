@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Aramaic wordist entry.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\wa ++``#__content__#``++\wa*++``
 * *USX:* ``++<char style="wa">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

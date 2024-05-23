@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Proper name within translator's addition.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\addpn ++``#__content__#``++\addpn*++``
 * *USX:* ``++<char style="addpn">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

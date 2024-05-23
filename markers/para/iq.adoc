@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Introduction poetic line.
 * The variable `#` (1-3) represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\iq# ++``#__content__#
 * *USX:* ``++<para style="iq#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

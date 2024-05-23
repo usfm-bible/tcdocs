@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Origin reference.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\fr ++``#__cv-reference__#
 * *USX:* ``++<char style="fr">++``#__cv-reference__#``++</char>++``
 #cv-reference#::: Chapter + verse origin reference. The punctuation character between chapter and verse numbers is specific to the project text, but is commonly a colon `:` or period `.`. Trailing punctuation after the reference is optional.

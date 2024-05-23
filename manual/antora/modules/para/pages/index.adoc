@@ -3,7 +3,7 @@
 == Summary
 
 Description:: Paragraph-level container.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\++``#__style__#``++ ++``#__content__#
 * *USX:* ``++<para style="++``#__style__#``++" ++``#__@vid__#``++>++``#__content__#``++</para>++``
 #style# *::: Paragraph type

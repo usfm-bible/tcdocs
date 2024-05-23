@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Major section reference range. References added under a major section heading to indicate the scope of the section.
 - See also: xref:para:titles-sections/sr.adoc[sr]
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\mr ++``#__content__#
 * *USX:* ``++<para style="mr">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

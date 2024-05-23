@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Letter closing.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\cls ++``#__content__#
 * *USX:* ``++<para style="cls">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

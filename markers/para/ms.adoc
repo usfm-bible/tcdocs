@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Major section heading.
 * The variable `#` (1-3) represents the level of division.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ms# ++``#__content__#
 * *USX:* ``++<para style="ms#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

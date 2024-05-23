@@ -18,7 +18,7 @@ Description:: USFM/USX version specification. Identifies the USFM/USX version wh
 ====
 USX represents most USFM xref:para:index.adoc[paragraph] types as a xref:para:index.adoc[<para>] element. In the case of `\usfm`, the `+{version}+` number is related to the `+{version}+` attribute value for the USX root element `+<usx>+`.
 ====
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\usfm ++``#__version__#
 * *USX:* ``++<usx version="++``#__version__#``++">++``
 #version#::: USFM/USX version number.

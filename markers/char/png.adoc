@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Geographic proper name. Some publications visually distinguish between proper names of people and proper names of geographic places.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\png ++``#__content__#``++\png*++``
 * *USX:* ``++<char style="png">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

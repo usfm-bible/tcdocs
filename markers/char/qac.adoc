@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Acrostic character. Used to mark the acrostic letter within a poetic line.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\qac ++``#__content__#``++\qac*++``
 * *USX:* ``++<char style="qac">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

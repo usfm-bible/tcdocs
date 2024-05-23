@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Peripheral division identifier.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\periph ++``#__title__#``++|++``#__id__# followed by #__content__#
 * *USX:* ``++<periph alt="++``#__title__#``++" ++``#__id__#``++">++``#__content__#``++</periph>++``
 #title# *::: Peripheral division title. May be expressed in the vernacular language.

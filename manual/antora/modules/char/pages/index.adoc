@@ -3,7 +3,7 @@
 == Summary
 
 Description:: Character-level container.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\++``#__style__#``++ ++``#__content__#``++\++``#__style__#``++*++``
 * *USX:* ``++<char style="++``#__style__#``++">++``#__content__#``++</char>++``
 #style# *::: Character type

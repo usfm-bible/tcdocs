@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Centered poetic line.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\qc ++``#__content__#
 * *USX:* ``++<para style="qc">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

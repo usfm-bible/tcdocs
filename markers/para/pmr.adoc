@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Embedded text refrain.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\pmr ++``#__content__#
 * *USX:* ``++<para style="pmr">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

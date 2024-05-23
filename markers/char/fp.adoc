@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Additional paragraph. Use to indicate the start of a new paragraph within a footnote (uncommon).
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\fp ++``#__content__#
 * *USX:* ``++<char style="fp">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

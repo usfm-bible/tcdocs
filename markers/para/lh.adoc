@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: List header. Some lists include an introductory and concluding remark (xref:para:lists/lf.adoc[lf]). They are an integral part of the list content, but are not list items. A list does not require either or both of these elements.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\lh ++``#__content__#
 * *USX:* ``++<para style="lh">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

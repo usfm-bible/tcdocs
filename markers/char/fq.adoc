@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Translation quotation.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\fq ++``#__content__#
 * *USX:* ``++<char style="fq">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

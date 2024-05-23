@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Extended (study Bible) footnote.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ef ++``#__caller__#``++ \cat ++``#__category__#``++\cat* ++``#__content__#``++\ef*++``
 * *USX:* ``++<note style="ef" ++``#__@caller @category__#``++>++``#__content__#``++</note>++``
 #caller# *::: Note caller

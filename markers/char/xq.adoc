@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - Translation quotation. Use of a quotation can help a reader to identify the portion of text which the target references (xref:notes:crossref/xt[xt]) are provided for.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\xq ++``#__content__#
 * *USX:* ``++<char style="xq">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Italic text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\it ++``#__content__#``++\it*++``
 * *USX:* ``++<char style="it">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

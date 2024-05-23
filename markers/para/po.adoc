@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Letter opening.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\po ++``#__content__#
 * *USX:* ``++<para style="po">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Keyword/keyterm.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\k ++``#__content__#``++\k*++``
 * *USX:* ``++<char style="k">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

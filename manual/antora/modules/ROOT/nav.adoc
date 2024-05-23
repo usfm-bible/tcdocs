@@ -1,7 +1,7 @@
 * xref:release-notes.adoc[Release Notes]
 * xref:introduction.adoc[Introduction]
 // tag::nav-topcat[]
-** xref:syntax.adoc[General Syntax]
+** xref:syntax.adoc[General Markup Syntax]
 // ** xref:bidirectional.adoc[Bidirectional Text]
 ** xref:extensions.adoc[User Extensions]
 ** xref:whitespace.adoc[Whitespace]

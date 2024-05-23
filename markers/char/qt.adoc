@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Quoted text. Old Testament quotations in the New Testament, or other quotations.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\qt ++``#__content__#``++\qt*++``
 * *USX:* ``++<char style="qt">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

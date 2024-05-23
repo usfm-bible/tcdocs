@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Cross references list.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\x ++``#__caller__#``++ ++``#__content__#``++\x*++``
 * *USX:* ``++<note style="x" ++``#__@caller__#``++>++``#__content__#``++</note>++``
 #caller# *::: Note caller

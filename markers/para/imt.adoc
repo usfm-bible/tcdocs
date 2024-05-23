@@ -15,7 +15,7 @@ endif::[]
 Description:: Intoduction major title.
 * _Recommended use_ is for the introduction title or other major introduction division (rather than xref:para:introductions/is.adoc[is]) when the introduction text contains numerous sub-divisions.
 * The variable `#` (1-4) represents the level of division. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\imt# ++``#__content__#
 * *USX:* ``++<para style="imt#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

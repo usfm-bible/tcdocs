@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - Published origin text. In some cases the text to be published in the position of the cross reference origin (xref:char:notes/crossref/xo.adoc[xo]) does not follow the usual chapter, verse pattern. A standard origin reference following this pattern is required for validation of the cross reference location. xref:char:notes/crossref/xop.adoc[xop] can be used to supply the content intended for publishing, which is similar to the application of [cp] (published chapter character) and [vp] (published verse character).
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\xop ++``#__content__#``++\xop*++``
 * *USX:* ``++<char style="xop">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Greek wordist entry.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\wg ++``#__content__#``++\wg*++``
 * *USX:* ``++<char style="wg">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

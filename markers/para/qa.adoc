@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Acrostic heading.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\qa ++``#__content__#
 * *USX:* ``++<para style="qa">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Cross Reference - Keyword. The target references (xref:notes:crossref/xt[xt]) relate to this specific keyword quoted from the text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\xk ++``#__content__#
 * *USX:* ``++<char style="xk">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

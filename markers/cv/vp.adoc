@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Published verse number. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential xref:cv:v.adoc[verse number] used within the translation editing environment.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\v ++``#__number__# _(see: xref:cv:v.adoc[])_ `` ++\va ++``#__altnumber__#``++\va*++`` _(see: xref:cv:va.adoc[])_ ``++\vp ++``#__pubnumber__#``++\vp*++``
 * *USX:* ``++<verse style="v" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
 #number# *::: Verse number

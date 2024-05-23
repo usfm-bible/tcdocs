@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:para:lists/index.adoc[List] entry 'key' content.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\lik ++``#__content__#``++\lik*++``
 * *USX:* ``++<char style="lik">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

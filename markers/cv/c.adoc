@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Chapter number.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\c ++``#__number__#`` ++\ca ++``#__altnumber__#``++\ca*++`` _(see: xref:cv:ca.adoc[])_
 ** ``++\cp ++``#__pubnumber__# _(see: xref:cv:cp.adoc[])_
 * *USX:* ``++<chapter style="c" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``

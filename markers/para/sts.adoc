@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Project/file status tracking.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\sts ++``#__content__#
 * *USX:* ``++<para style="sts">++``#__content__#``++</para>++``
 #content#::: The content of the status marker can be defined by the downstream system being used to track project status. For example: A project management approach which identifies 4 stages for a scripture translation's development might record numbers `1`, `2`, `3`, or `4` for xref:para:identification/sts.adoc[sts] content.

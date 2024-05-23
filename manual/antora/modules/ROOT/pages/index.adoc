@@ -6,6 +6,7 @@ Version:: 3.1 Candidate Standard
 
 * xref:ROOT:release-notes.adoc[Release Notes]
 * xref:ROOT:introduction.adoc[Introduction]
+include::../nav.adoc[tag=nav-topcat]
 * xref:doc:index.adoc[Document Structure]
 * xref:cv:index.adoc[Chapters and Verses]
 * xref:para:index.adoc[Paragraphs]

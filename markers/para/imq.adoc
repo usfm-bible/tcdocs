@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction quote from text paragraph (margin).
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\imq ++``#__content__#
 * *USX:* ``++<para style="imq">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

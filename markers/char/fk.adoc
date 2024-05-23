@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Keyword. The footnote relates to a specific keyword quoted from the text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\fk ++``#__content__#
 * *USX:* ``++<char style="fk">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

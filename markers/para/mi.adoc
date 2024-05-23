@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Regular paragraph.
 - See also: xref:para:paragraphs/pmo.adoc[pmo], xref:para:paragraphs/pmc.adoc[pmc]
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\mi ++``#__content__#
 * *USX:* ``++<para style="mi">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

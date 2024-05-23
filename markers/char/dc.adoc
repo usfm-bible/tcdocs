@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Deuterocanonical content. The marked content is relevant for publications which include Deuterocanonlical (DC) books. 
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\dc ++``#__content__#``++\dc*++``
 * *USX:* ``++<char style="dc">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

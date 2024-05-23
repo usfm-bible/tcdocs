@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Scripture reference. For marking scripture references, with an optional machine-readable target location.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ref ++``#__content__#``++|++``#__@loc__#``++\ref*++``
 * *USX:* ``++<ref ++``#__@loc @gen__#``++>++``#__content__#``++</char>++``
 #loc#::: Use for explicitely identifying the target scripture reference. _(default attribute)_

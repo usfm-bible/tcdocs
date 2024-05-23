@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Link text. For associating linking attributes to a span of text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\jmp ++``#__content__#``++|++``#__@link-href @link-title @link-id__#``++\jmp*++``
 * *USX:* ``++<char style="jmp" ++``#__@link-href @link-title @link-id__#``++>++``#__content__#``++</char>++``
 #link-href#::: Identifies the resource being linked to as a URI. _(default attribute)_

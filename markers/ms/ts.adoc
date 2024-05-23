@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Translator's section start and end milestones. For identifying a section (chunk) of text suitable for translating at one time.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ts-s |++``#__@sid__#``++\*++`` / ``++\ts-e |++``#__@eid__#``++\*++``
 * *USX:* ``++<ms style="ts-s" ++``#__@sid__#``++/>++`` / ``++<ms style="ts-e" ++``#__@eid__#``++/>++``
 #sid#, #eid#::: See xref:ms:index.adoc#_attributes[attributes for any milestone].

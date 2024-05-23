@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Autrhor's signature. Signature of the author of a letter or epistle.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\sig ++``#__content__#``++\sig*++``
 * *USX:* ``++<char style="sig">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

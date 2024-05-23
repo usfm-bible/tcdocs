@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Main title.
 * The variable `#` (1-4) represents the level of division.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\mt# ++``#__content__#
 * *USX:* ``++<para style="mt#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

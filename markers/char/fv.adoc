@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Verse number. A verse number occuring in a text quotation (xref:char:notes/footnote/fq.adoc[fq]) or alternative translation (xref:char:notes/footnote/fqa.adoc[fqa]).
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\fv ++``#__content__#``++\fv*++``
 * *USX:* ``++<char style="fv">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

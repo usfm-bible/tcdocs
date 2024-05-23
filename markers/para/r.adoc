@@ -15,7 +15,7 @@ endif::[]
 Description:: Parallel passage reference(s). A list of references to parallel passages, usually added under a section heading.
 - xref:para:titles-sections/r.adoc[r] is not equivalent to xref:para:titles-sections/sr.adoc[sr] which is used to mark references indicating the scope of the following section.
 - See also: xref:para:titles-sections/mr.adoc[mr], xref:para:titles-sections/sr.adoc[sr]
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\r ++``#__content__#
 * *USX:* ``++<para style="r">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

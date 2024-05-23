@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Name of God.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\nd ++``#__content__#``++\nd*++``
 * *USX:* ``++<char style="nd">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

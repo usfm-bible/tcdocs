@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Hebrew wordist entry.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\wh ++``#__content__#``++\wh*++``
 * *USX:* ``++<char style="wh">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

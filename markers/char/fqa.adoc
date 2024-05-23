@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Alternate translation. Used to distinguish between a quotation of the current scripture translation (marked with xref:char:notes/footnote/fq.adoc[fq]) and an alternate translation.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\fqa ++``#__content__#
 * *USX:* ``++<char style="fqa">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

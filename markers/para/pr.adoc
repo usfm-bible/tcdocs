@@ -10,7 +10,7 @@
 
 Description:: Right-aligned paragraph.
 * _Recommended use:_ Text refrain
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\pr ++``#__content__#
 * *USX:* ``++<para style="pr">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

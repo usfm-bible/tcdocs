@@ -1,4 +1,4 @@
-= General Syntax
+= General Markup Syntax
 ifndef::localdir[]
 :source-highlighter: rouge
 :localdir: ../
@@ -7,11 +7,11 @@ endif::[]
 
 There are five general categories of USFM/USX markup:
 
+* xref:cv:index.adoc[Chapters and Verses]
 * xref:para:index.adoc[Paragraphs]
 * xref:char:index.adoc[Characters]
 * xref:note:index.adoc[Notes]
 * xref:ms:index.adoc[Milestones]
-* xref:cv:index.adoc[Chapters and Verses]
 
 == USFM
 

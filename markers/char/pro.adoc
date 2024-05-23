@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Pronunciation annotation.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\pro ++``#__content__#``++\pro*++``
 * *USX:* ``++<char style="pro">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

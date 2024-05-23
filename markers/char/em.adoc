@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Emphasis text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\em ++``#__content__#``++\em*++``
 * *USX:* ``++<char style="em">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

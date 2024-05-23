@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Ordinal number ending.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ord ++``#__content__#``++\ord*++``
 * *USX:* ``++<char style="ord">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

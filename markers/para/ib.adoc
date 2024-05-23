@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction blank line.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ib++``
 * *USX:* ``++<para style="ib"/>++``
 Style Type:: xref:para:index.adoc[Paragraph]

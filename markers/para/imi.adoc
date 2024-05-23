@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction indented continuation (margin) paragraph.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\imi ++``#__content__#
 * *USX:* ``++<para style="imi">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

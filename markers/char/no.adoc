@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Normal text.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\no ++``#__content__#``++\no*++``
 * *USX:* ``++<char style="no">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

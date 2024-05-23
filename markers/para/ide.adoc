@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Specify the character encoding scheme used for the file contents. _(optional)_.
-Syntax::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\ide ++``#__encoding__#
 * *USX:* ``++<para style="ide">++``#__encoding__#``++</para>++``
 #encoding#::: Character encoding scheme (e.g. `CP-1252`, `CP-1251`, `UTF-8`, `UTF-16LE`, `UTF-16BE`, `UTF-32LE`, `UTF-32BE`, or `Custom`). _Texts which rely upon a custom encoding and font solution should be converted to Unicode, if at all possible._
