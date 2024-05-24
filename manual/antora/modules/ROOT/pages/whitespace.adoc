@@ -8,38 +8,38 @@ endif::[]
 [#ws-definition]
 == Definition
 
-In USFM/USX, a white space (*_WS_*) character is xref:ROOT:glossary.adoc[defined] by the pattern ``++/(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)/++``, where:
+In USFM/USX, a 'common whitespace' (*_WS_*) character is xref:ROOT:glossary.adoc[defined] by the pattern ``++/(?:++``#$\{ws\}#``++|++``#$\{nl\}#``++|$)/++``, where:
 
 ws:: ``++/[\u0009\u000D\u000A\u0020]/++``
-** A single simple whitespace character that may be reduced
+** A single whitespace character.
 nl:: ``++/(?:\u000D?\u000A|\u000D)/++``
-** A single newline (as supported by all operating systems)
+** A single newline (as supported by all operating systems).
 
-All other characters, even if formally Unicode whitespace characters, are treated as _content_ characters.
+Common whitespace is found throughout the document _#content#_ for most languages.
 
-*Significant* or _#content#_ whitespace is considered part of the text of the document. It may be reduced but is not deleted.
+_Some_ common whitespace in USFM/USX documents is 'structural whitespace'. Structural (_non-content_) whitespace exists either to aid in the readability of a source file, or to delimit markers. Structural whitespace is identified in the documentation's syntax diagrams (`WS`/`Ws`/`HS`/`Hs`) and is not part of the document _#content#_.
 
-*Structural* or _non-content_ whitespace exists either to aid the layout of a source file or to delimit markers. Structural whitespace is explicitly identified in the syntax diagrams and is not part of a `TEXT` terminal.
+All other characters are always treated as _#content#_ (including other https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%3Awhitespace%3A&g=Lb&i[Unicode whitespace,window=_blank] characters).
 
 [#ws-reducing]
-== Reducing or Eliminating Whitespace
+== Reducing or Eliminating Common Whitespace
 
-* Whitespace is *reduced* according to these rules:
+* Any common whitespace is *reduced* according to these rules:
 
-** Any string of *_WS_* chars including a newline is reduced to a single newline.
-** Any string of *_WS_* chars not including a newline is reduced to a single space.
+** Any string of *_WS_* chars which includes a newline is reduced to a single newline.
+** Any string of *_WS_* chars which does not include a newline is reduced to a single space.
 
-* _#Content#_ whitespace can be *eliminated* when it occurs:
+* Common whitespace can be *eliminated* when it occurs:
 
-** At the start of any element content.
-** At the end of any element content, except inside a xref:char:index.adoc[character] element, when followed by text or another xref:char:index.adoc[character] element.
+** At the start of any element's _#content#_.
+** At the end of any element's _#content#_, except inside a xref:char:index.adoc[character] element, when followed by text or another xref:char:index.adoc[character] element.
 
-* Whitespace *canonicalization* is done as follows:
+* Common whitespace *canonicalization* is done as follows:
 
-** A newline before a xref:char:index.adoc[character] marker is converted to a space. That space is significant _#content#_.
-** Any whitespace before a xref:para:index.adoc[paragraph] marker, including none, is replaced by a newline. This newline is not significant _#content#_.
+** A newline before a xref:char:index.adoc[character] marker is converted to a space. That space is _#content#_.
+** Any whitespace before a xref:para:index.adoc[paragraph] marker, including none, is replaced by a newline. This newline is not _#content#_.
 
 [NOTE]
 ====
-USX documents contain whitespace that delimits aspects of the XML syntax. XML allows for unlimited whitespace wherever it is permitted in the XML syntax, which is typically added for the purpose of formatting for easier reading ('pretty-printing').
+USX documents contain common whitespace that delimits aspects of the XML syntax itself. XML allows for unlimited whitespace wherever it is permitted by the XML syntax, which is typically added for the purpose of formatting for easier reading (i.e. 'pretty-printing').
 ====
