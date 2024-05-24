@@ -14,12 +14,14 @@ endif::[]
 
 Description:: Keyword/keyterm.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
-* *USFM:* ``++\k ++``#__content__#``++\k*++``
-* *USX:* ``++<char style="k">++``#__content__#``++</char>++``
+* *USFM:* ``++\k ++``#__content__#``++|++``#__@key__#``++\k*++``
+* *USX:* ``++<char style="k" ++``#__@key__#``++>++``#__content__#``++</char>++``
+#key#::: A simplified identifier for the keyword. This is useful for digital publications where links to a keyword in a glossary cannot point to texts with special characters (e.g.åäö) or spaces. Also useful to support a glossary where a single glossary entry is represented by more than one surface word. Each keyword surface form can be identified with the same key.  _(default attribute)_
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 1.0
+Updated:: 3.1 (attributes)
 // end::spec[]
 
 == Examples
@@ -28,21 +30,115 @@ Added:: 1.0
 ======
 USFM::
 +
-.Missing
-[source#src-usfm-char-k_1,usfm,highlight=1]
+.Glossary entry keywords (GNT)
+[source#src-usfm-char-k_1,usfm,highlight=1;3;7]
 ----
-Missing
+\id GLO
+\p \k Nazarene\k* Someone from the town of Nazareth. The name was used as a 
+title for Jesus and also as a name for the early Christians (Acts 24.5).
+\p \k Nazirite\k* A person who took a special vow of self-dedication. Such 
+a person was not to drink beer or wine, cut his hair, or touch a dead body 
+(Numbers 6.1-21). The vow could be taken for a certain period of time, but 
+some persons were dedicated to God as Nazirites from their birth.
+\p \k New Moon Festival\k* A religious observance held by the Israelites on 
+the day of each new moon. 
 ----
 USX::
 +
-.Missing
-[source#src-usx-char-k_1,xml,highlight=1]
+.Glossary entry keywords (GNT)
+[source#src-usx-char-k_1,xml,highlight=4;8;14]
 ----
-Missing
+<usx version="3.1">
+  <book code="GLO" style="id"/>
+  <para style="p">
+    <char style="k">Nazarene</char> Someone from the town of Nazareth. The 
+    name was used as a title for Jesus and also as a name for the early 
+    Christians (Acts 24.5).</para>
+  <para style="p">
+    <char style="k">Nazirite</char> A person who took a special vow of
+    self-dedication. Such a person was not to drink beer or wine, cut his hair, 
+    or touch a dead body (Numbers 6.1-21). The vow could be taken for a certain
+    period of time, but some persons were dedicated to God as Nazirites from 
+    their birth.</para>
+  <para style="p">
+    <char style="k">New Moon Festival</char> A religious observance held by the
+    Israelites on the day of each new moon.</para>
+</usx>
 ----
 ======
 
-image::char/missing.jpg[,300]
+image::char/k_1.jpg[Glossary/Word List (GNT),300]
+
+[tabs]
+======
+USFM::
++
+.Glossary entry keywords with key attribute (Swedish SB00 Study Bible; rädda, räddare, räddning are forms of "save" or "rescue")
+[source#src-usfm-char-k_2,usfm,highlight=1;3;7]
+----
+\id GLO
+\p \k rädda|radda\k*, \k räddare|radda\k*, \k räddning|radda\k*\add , frälsa, 
+frälsare, frälsning\add*
+\pi I äldre svenska … gäller påtaglig nöd och fara (\xt  1 Krön 16:35;  Ps 70:6;  
+Jer 14:8;  1 Mack 4:30;  Vish 19:9\xt*).
+\pi Räddning eller frälsning … \w lagens|lag\w* hot om straff, Guds \w vrede\w*. 
+De ord som grundtexten använder (\tl sózein\tl*, \tl sotér\tl*, \tl sotería\tl*) 
+kan även … När sammanhanget utesluter denna missuppfattning används ibland de 
+äldre orden ”frälsa”, ”frälsare” och ”frälsning”, som på ett annat sätt antyder 
+det religiösa motivets totala omfattning ... 
+----
+USX::
++
+.Glossary entry keywords with key attribute (Swedish SB00 Study Bible; rädda, räddare, räddning are forms of "save" or "rescue")
+[source#src-usx-char-k_2,xml,highlight=1]
+----
+<usx version="3.1">
+  <book code="GLO" style="id"/>
+  <para style="mt">Names Index</para>
+  <para style="p">
+    <char style="k" key="radda">rädda</char>, 
+    <char style="k" key="radda">räddare</char>, 
+    <char style="k" key="radda">räddning</char><char style="add">, 
+    frälsa, frälsare, frälsning</char></para>
+  <para style="pi">I äldre svenska … gäller påtaglig nöd och fara 
+    (<char style="xt">1 Krön 16:35; Ps 70:6; Jer 14:8; 1 Mack 4:30; 
+    Vish 19:9</char>).</para>
+  <para style="pi">Räddning eller frälsning … 
+    <char style="w" lemma="lag">lagens</char> hot om straff, Guds 
+    <char style="w">vrede</char>. De ord som grundtexten använder 
+    (<char style="tl">sózein</char>, <char style="tl">sotér</char>, 
+    <char style="tl">sotería</char>) kan även … När sammanhanget utesluter denna
+    missuppfattning används ibland de äldre orden ”frälsa”, ”frälsare” och
+    ”frälsning”, som på ett annat sätt antyder det religiösa motivets totala
+    omfattning ...</para>
+</usx>
+----
+======
+
+[tabs]
+======
+USFM::
++
+.Reference to this glossary from 1TI (Swedish SB00 Study Bible)
+[source#src-usfm-char-k_2a,usfm,highlight=2]
+----
+\f - \fr 2:15 \fq genom sitt moderskap \ft Troligen en anspelning på 1 Mos 3:16: 
+det bidrar till kvinnans \+w räddning|radda\+w* om hon bär barnafödandets börda.\f*
+----
+USX::
++
+.Reference to this glossary from 1TI (Swedish SB00 Study Bible)
+[source#src-usx-char-k_2a,xml,highlight=5]
+----
+<note caller="-" style="f">
+  <char style="fr">2:15 </char>
+  <char style="fq">genom sitt moderskap </char>
+  <char style="ft">Troligen en anspelning på 1 Mos 3:16: det bidrar till kvinnans 
+  <char style="w" lemma="radda">räddning</char> om hon bär barnafödandets 
+  börda.</char>
+</note>
+----
+======
 
 == Properties
 
