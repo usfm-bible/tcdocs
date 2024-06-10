@@ -6,7 +6,7 @@ MILESTONES="ms=zaln-s,zaln-e,k-s,k-e,zms,ts-s,ts-e"
 
 unknown:
 	@- echo "There are various useful targets:"
-	@- echo "files      core files: usx.rng, usfm.ext, etc."
+	@- echo "files      core files: usx.rng, usfm.ext, glossary.adoc, etc."
 	@- echo "diagrams   All the svg and png syntax diagrams"
 	@- echo "tests      Run all the tests"
 	@- echo "single     Run a single test TEST=path"
@@ -47,7 +47,7 @@ single: grammar/usx.rng $(TEST)/origin.usfm
 singledbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}
 
-doc: diagrams 
+doc: files diagrams 
 
 manual/antora/modules/ROOT/pages/glossary.adoc: grammar/usx.rng
 	$(PYTHON) python/scripts/mkglossary -o $@ $<

@@ -309,13 +309,14 @@
 \description A character style, use italic text
 
 \marker jmp
-\attribute href
+\attributes href? link-href?
 \category char
-\description Jump link
+\defattrib href
+\description For associating linking attributes to a span of text
 
 \marker k
-\attribute key
 \category char
+\defattrib key
 \description For a keyword
 
 \marker k1
@@ -646,49 +647,85 @@
 \description For Old Testament quoted text appearing in the New Testament
 
 \marker qt-e
+\attributes eid?
 \category milestone
+\closes qt-s
+\defattrib eid
 
 \marker qt-s
-\attribute who
+\attributes who? sid?
 \category milestone
+\closedby qt-e
+\defattrib who
 
 \marker qt1-e
+\attributes eid?
 \category milestone
+\closes qt1-s
+\defattrib eid
 
 \marker qt1-s
+\attributes who? sid?
 \category milestone
+\closedby qt1-e
+\defattrib who
 
 \marker qt2-e
+\attributes eid?
 \category milestone
+\closes qt2-s
+\defattrib eid
 
 \marker qt2-s
+\attributes who? sid?
 \category milestone
+\closedby qt2-e
+\defattrib who
 
 \marker qt3-e
+\attributes eid?
 \category milestone
+\closes qt3-s
+\defattrib eid
 
 \marker qt3-s
+\attributes who? sid?
 \category milestone
+\closedby qt3-e
+\defattrib who
 
 \marker qt4-e
+\attributes eid?
 \category milestone
+\closes qt4-s
+\defattrib eid
 
 \marker qt4-s
+\attributes who? sid?
 \category milestone
+\closedby qt4-e
+\defattrib who
 
 \marker qt5-e
+\attributes eid?
 \category milestone
+\closes qt5-s
+\defattrib eid
 
 \marker qt5-s
+\attributes who? sid?
 \category milestone
+\closedby qt5-e
+\defattrib who
 
 \marker r
 \category sectionpara
 \description Parallel reference(s)
 
 \marker rb
-\attribute gloss
+\attributes gloss
 \category char
+\defattrib gloss
 
 \marker rem
 \category otherpara
@@ -771,10 +808,16 @@
 \description A character style, for superscript text. Typically for use in critical edition footnotes.
 
 \marker t-e
+\attributes eid?
 \category milestone
+\closes t-s
+\defattrib eid
 
 \marker t-s
+\attributes sid?
 \category milestone
+\closedby t-e
+\defattrib sid
 
 \marker tc1
 \category cell
@@ -970,11 +1013,16 @@
 \category milestone
 
 \marker ts-e
+\attributes eid?
 \category milestone
+\closes ts-s
+\defattrib eid
 
 \marker ts-s
-\attribute who
+\attributes sid?
 \category milestone
+\closedby ts-e
+\defattrib sid
 
 \marker usfm
 \category internal
@@ -993,8 +1041,9 @@
 \description Published verse number
 
 \marker w
-\attribute lemma
+\attributes lemma? strong? srcloc?
 \category char
+\defattrib lemma
 
 \marker wa
 \category char

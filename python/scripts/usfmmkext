@@ -19,9 +19,11 @@ def collectEnums(rdoc):
             if v.tag == "{0}value".format(relaxns):
                 k = v.text.strip()
                 res[k] = {'category': mktype}
-                propval = v.get("{}propval".format(usfmns), None)
-                if propval is not None:
-                    res[k]['attribute'] = propval
+                for a in (("propval", "defattrib"), ("propattribs", "attributes"),
+                          ("propended", "closedby"), ("propends", "closes")):
+                    val = v.get("{}{}".format(usfmns, a[0]), None)
+                    if val is not None:
+                        res[k][a[1]] = val
                 currk = k
             elif v.tag == "{0}documentation".format(ans) and currk in res:
                 res[currk]['description'] = v.text.strip()
