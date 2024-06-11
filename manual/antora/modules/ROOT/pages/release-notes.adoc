@@ -5,81 +5,76 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-== 3.0.1
-_January 2020_
-
-This update is primarily for providing documentation fixes, as well as minor updates to Paratext stylesheets (enable PT9 ColorNames feature; allow \xt in more contexts)
+== 3.1
+_June 2024_
 
 == 3.0
-USFM 3.0 additions or revisions are highlighted throughout this documentation using the badge 'usfm 3.0'
-
 _April 2018_
 
 === Marker Additions
 
-- USFM version identifier: `\usfm`
-- Alternate language table of contents texts: `\toca#``
-- List of witnesses in footnotes (for critical editions): `\fw …\fw*`
-- Target references “added” text: `\xta …\xta*`
-- Superscript: `\sup …\sup*`
-- Translator’s section (chunk) milestones: `\ts-s\*` and `\ts-e\*`
+* USFM version identifier: `\usfm`
+* Alternate language table of contents texts: `\toca#``
+* List of witnesses in footnotes (for critical editions): `\fw …\fw*`
+* Target references “added” text: `\xta …\xta*`
+* Superscript: `\sup …\sup*`
+* Translator’s section (chunk) milestones: `\ts-s\*` and `\ts-e\*`
 
 === Marker Revisions
 
-- Revised syntax for ruby glosses (CJK texts): `\rb …\rb*`
-- Add descriptive attribute gloss for `\rb …\rb*`
-- Added default link-href linking attribute for `\xt …\xt*`
-- Changed common attributes for milestones:
-* Replace single id with separate start `sid` and end `eid` milestone attributes. This update aligns USFM with the corresponding single `<ms>` milestone element in USX, where the id attribute content would not be unique for `<ms>`.
-- Changed name of linking attribute `link-name` to `link-id`.
-- Restored `\pr` for use as “text refrain”.
+* Revised syntax for ruby glosses (CJK texts): `\rb …\rb*`
+* Add descriptive attribute gloss for `\rb …\rb*`
+* Added default link-href linking attribute for `\xt …\xt*`
+* Changed common attributes for milestones:
+** Replace single id with separate start `sid` and end `eid` milestone attributes. This update aligns USFM with the corresponding single `<ms>` milestone element in USX, *here the id attribute content would not be unique for `<ms>`.
+* Changed name of linking attribute `link-name` to `link-id`.
+* Restored `\pr` for use as “text refrain”.
 
 === Syntax and Features
 
-Clarify and support syntax for standalone milestones.
-
-Document best practice for attributes containing multiple values, or multiple parts (see the gloss attribute for `\rb …\rb*`)
+* Clarify and support syntax for standalone milestones.
+* Document best practice for attributes containing multiple values, or multiple parts (see the gloss attribute for `\rb …\rb*`)
 
 == 3.0rc1
 _October 2016_
 
 === Marker Additions
 
-- Letter opening: `\po`
-- List header and footer elements: `\lh` and `\lf`
-- Embedded list: `\lim#`
-- Hebrew note: `\qd`
-- Semantic division: `\sd#`
-- Aramaic wordlist entry: `\wa …\wa*`
-- Geographic proper name (Chinese texts): `\png …\png*`
-- Target references “added” text: `\xta …\xta*`
-- Published cross reference origin text: `\xop …\xop*`
-- Structured list items: `\lik …\lik*` and `\liv# …\liv#*`
-- List item total: `\litl …\litl*`
-- Link text: `\jmp …\jmp*`
-- Common peripheral identifiers
-- Ruby glosses (CJK texts): `\rb …\rb*`
-- Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`
+* Letter opening: `\po`
+* List header and footer elements: `\lh` and `\lf`
+* Embedded list: `\lim#`
+* Hebrew note: `\qd`
+* Semantic division: `\sd#`
+* Aramaic wordlist entry: `\wa …\wa*`
+* Geographic proper name (Chinese texts): `\png …\png*`
+* Target references “added” text: `\xta …\xta*`
+* Published cross reference origin text: `\xop …\xop*`
+* Structured list items: `\lik …\lik*` and `\liv# …\liv#*`
+* List item total: `\litl …\litl*`
+* Link text: `\jmp …\jmp*`
+* Common peripheral identifiers
+* Ruby glosses (CJK texts): `\rb …\rb*`
+* Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`
 
 === Marker Revisions
 
-- Support citation form for wordlist / glossary text (update `\w …\w*`).
-- Support for explicit table cell column spanning.
-- Revised syntax for figures / illustrations applying descriptive attributes: `\fig …\fig*`
-- Deprecated cross reference and footnote DC content markers: `\xdc …\xdc*` and `\fdc …\fdc*`
-- Deprecated combined marker for proper name within translator’s addition: `\addpn …\addpn*`
-- Deprecated numbered running header: `\h#`
-- Deprecated pronunciation info marker: `\pro …\pro*` in favour of ruby annotations proposal.
+* Support citation form for wordlist / glossary text (update `\w …\w*`).
+* Support for explicit table cell column spanning.
+* Revised syntax for figures / illustrations applying descriptive attributes: `\fig …\fig*`
+* Deprecated cross reference and footnote DC content markers: `\xdc …\xdc*` and `\fdc …\fdc*`
+* Deprecated combined marker for proper name within translator’s addition: `\addpn …\addpn*`
+* Deprecated numbered running header: `\h#`
+* Deprecated pronunciation info marker: `\pro …\pro*` in favour of ruby annotations proposal.
 
 === Syntax and Features
 
-- Syntax for assigning word-level descriptive attributes.
-* Descriptive attributes for `\w …\w*`
-* Descriptive attributes for `\fig …\fig*`
-- Syntax for assigning word-level linking attributes.
-- Syntax for milestones.
-* Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`.
-* Syntax for peripheral (`\periph`) identifiers.
+* Syntax for assigning word-level descriptive attributes.
+** Descriptive attributes for `\w …\w*`
+** Descriptive attributes for `\fig …\fig*`
+* Syntax for assigning word-level linking attributes.
+* Syntax for milestones.
+** Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`.
+** Syntax for peripheral (`\periph`) identifiers.
 
 === Standard Reference
 
@@ -98,9 +93,52 @@ _October 2016_
 == 2.1
 
 == 2.05
+_June 2006_
+
+=== Marker Additions
+
+* Added xref:char:features/rq.adoc[\rq] for marking inline quotation references.
 
 == 2.04
+_October 2005_
+
+=== Marker Additions
+
+* Added xref:para:identification/toc.adoc[\toc3] for providing the standard abbreviation for a book.
 
 == 2.03
+_August 2005_
+
+=== Marker Additions
+
+* Added xref:para:identification/toc.adoc[\toc1] and xref:para:identification/toc.adoc[\toc2] for providing and marking long and short table of contents texts.
+* Added xref:char:notes/footnote/fl.adoc[\fl] for marking footnote “label” text items.
+* Added xref:char:notes/footnote/fp.adoc[\fp] for marking footnote additional paragraphs.
 
 == 2.0
+_October 2004_
+
+Changes in USFM from 1.53 to 2.0.
+
+=== Marker Revisions
+
+* Removed `\pdi` and `\pde, and substitute with embedded text markup (see Additions, below)
+* Removed `\wr ...\wr*`. This was really a duplicate of \w …w* used for marking words in the scripture text which are included in the wordlist.
+* Removed `\ps`. This is used in conjunction with xref:para:paragraphs/nb.adoc[\nb] to indicate that the paragraph spans the chapter boundary. It should be sufficient to just start the new chapter with `\nb` and use the appropriate paragraph marker for the previous chapter (`\p`, `\m` etc.)
+
+=== Marker Additions
+
+* Add character style xref:char:features/em.adoc[\em ...\em*] for “emphasis”.
+* In Peripherals:
+** Add `\intro` section to Front Matter (in addition to Preface).
+** Add `\maps` (Maps Index) section to Back Matter.
+** Define xref:para:identification/books.adoc[books] for FRT, BAK, and OTH rather than using the book names XXA, XXB, and XXC for these materials.
+* Add xref:para:titles-sections/sr.adoc[\sr] for marking the text references range listed under a section heading \s.
+* Add the following markers for “embedded text” (see example references – not all versions mark these items the same).
+** xref:para:paragraphs/pm.adoc[\pm] - Embedded text paragraph
+** xref:para:paragraphs/pmo.adoc[\pmo] - Embedded text opening
+** xref:para:paragraphs/pmc.adoc[\pmc] - Embedded text closing
+** xref:para:paragraphs/pmr.adoc[\pmr] - Embedded text refrain
+** xref:para:poetry/qm.adoc[\qm#] - Embedded text poetic line
+* Add character style \pro ...\pro* for indicating pronunciation (in CJK texts). (Deprecated - _See_ xref:char:features/rb.adoc[\rb ...\rb*])
+* Add character style xref:char:features/w.adoc[\wj ...\wj*] for marking words of Jesus.
