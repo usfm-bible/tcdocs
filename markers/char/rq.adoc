@@ -1,6 +1,6 @@
 = rq
 :description: Inline quotation reference(s)
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qt.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/rq.adoc
 :noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
