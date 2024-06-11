@@ -1225,7 +1225,7 @@
     </group>
   </define>
   <define name="FullCharExtra.char.style.enum">
-    <value usfm:propval="link-href">xt</value>
+    <value usfm:propval="href" usfm:propattribs="link-href? href?">xt</value>
   </define>
   <define name="FullChar.char.style.enum">
     <choice>
@@ -1287,7 +1287,7 @@
       <a:documentation>An Aramaic wordlist text item</a:documentation>
       <value>wj</value>
       <a:documentation>For marking the words of Jesus</a:documentation>
-      <value>jmp</value>
+      <value usfm:propval="href" usfm:propattribs="href? link-href?">jmp</value>
       <a:documentation>For associating linking attributes to a span of text</a:documentation>
       <value>no</value>
       <a:documentation>A character style, use normal text</a:documentation>
@@ -1305,10 +1305,8 @@
       <a:documentation>A character style, for superscript text. Typically for use in critical edition footnotes.</a:documentation>
       <value usfm:propval="href">xt</value>
       <a:documentation>Inline scripture reference formatting.</a:documentation>
-      <value usfm:propval="lemma">w</value>
-      <value usfm:propval="gloss">rb</value>
-      <value usfm:propval="href">jmp</value>
-      <a:documentation>Jump link</a:documentation>
+      <value usfm:propval="lemma" usfm:propattribs="lemma? strong? srcloc?">w</value>
+      <value usfm:propval="gloss" usfm:propattribs="gloss">rb</value>
     </choice>
   </define>
   <define name="CharEmbed">
@@ -1439,7 +1437,7 @@
       <attribute usfm:order="-2">
         <usfm:tag matchid="a"/>
         <name ns="">style</name>
-        <value>fig</value>
+        <value usfm:propattribs="src size ref alt? loc? copy?">fig</value>
       </attribute>
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
@@ -1531,23 +1529,23 @@
   </define>
   <define name="Milestone.style.enum">
     <choice>
-      <value usfm:propval="who">ts-s</value>
-      <value>ts-e</value>
+      <value usfm:propval="sid" usfm:propattribs="sid?" usfm:propended="ts-e">ts-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="ts-s">ts-e</value>
       <value>ts</value>
-      <value>t-s</value>
-      <value>t-e</value>
-      <value>qt1-s</value>
-      <value>qt1-e</value>
-      <value>qt2-s</value>
-      <value>qt2-e</value>
-      <value>qt3-s</value>
-      <value>qt3-e</value>
-      <value>qt4-s</value>
-      <value>qt4-e</value>
-      <value>qt5-s</value>
-      <value>qt5-e</value>
-      <value usfm:propval="who">qt-s</value>
-      <value>qt-e</value>
+      <value usfm:propval="sid" usfm:propattribs="sid?" usfm:propended="t-e">t-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="t-s">t-e</value>
+      <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt1-e">qt1-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt1-s">qt1-e</value>
+      <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt2-e">qt2-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt2-s">qt2-e</value>
+      <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt3-e">qt3-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt3-s">qt3-e</value>
+      <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt4-e">qt4-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt4-s">qt4-e</value>
+      <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt5-e">qt5-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt5-s">qt5-e</value>
+      <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e">qt-s</value>
+      <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s">qt-e</value>
     </choice>
   </define>
   <define name="Chapter">

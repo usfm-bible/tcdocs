@@ -773,7 +773,7 @@ CharContent = (
     )
 
 FullCharExtra.char.style.enum = (
-    [usfm:propval="link-href"] "xt" # A target reference(s)
+    [usfm:propval="href" usfm:propattribs="link-href? href?"] "xt" # A target reference(s)
     )
 
 FullChar.char.style.enum = (
@@ -835,7 +835,7 @@ Char.char.style.enum = (
     |   ## For marking the words of Jesus
       "wj"
     |   ## For associating linking attributes to a span of text
-      "jmp"
+      [usfm:propval="href" usfm:propattribs="href? link-href?"] "jmp"
     |   ## A character style, use normal text
       "no"
     |   ## A character style, use italic text
@@ -852,10 +852,8 @@ Char.char.style.enum = (
       "sup"
     |   ## Inline scripture reference formatting.
        [usfm:propval="href"] "xt" 
-    | [usfm:propval="lemma"] "w"
-    | [usfm:propval="gloss"] "rb"
-    |   ## Jump link
-      [usfm:propval="href"] "jmp"
+    | [usfm:propval="lemma" usfm:propattribs="lemma? strong? srcloc?"] "w"
+    | [usfm:propval="gloss" usfm:propattribs="gloss"] "rb"
     )
 
 CharEmbed = (
@@ -914,7 +912,7 @@ Figure = ([usfm:alt="FigureTwo"] FigureThree)
 
 FigureThree = 
     element figure {
-        [usfm:order="-2" usfm:tag [matchid="a"]] attribute style { "fig" },
+        [usfm:order="-2" usfm:tag [matchid="a"]] attribute style { [usfm:propattribs="src size ref alt? loc? copy?"] "fig" },
         [usfm:ignore="true"] char.closed?,
         [usfm:order="-1"] ([usfm:match[match="TEXTNOTATTRIB"]] text?), # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         Attributes?
@@ -948,23 +946,23 @@ Milestone = (
     )
 
 Milestone.style.enum = (
-      [usfm:propval="who"] "ts-s"
-    | "ts-e"
+      [usfm:propval="sid" usfm:propattribs="sid?" usfm:propended="ts-e"] "ts-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="ts-s"] "ts-e"
     | "ts"
-    | "t-s"
-    | "t-e"
-    | "qt1-s"
-    | "qt1-e"
-    | "qt2-s"
-    | "qt2-e"
-    | "qt3-s"
-    | "qt3-e"
-    | "qt4-s"
-    | "qt4-e"
-    | "qt5-s"
-    | "qt5-e"
-    | [usfm:propval="who"] "qt-s"
-    | "qt-e"
+    | [usfm:propval="sid" usfm:propattribs="sid?" usfm:propended="t-e"] "t-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="t-s"] "t-e"
+    | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt1-e"] "qt1-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt1-s"] "qt1-e"
+    | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt2-e"] "qt2-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt2-s"] "qt2-e"
+    | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt3-e"] "qt3-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt3-s"] "qt3-e"
+    | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt4-e"] "qt4-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt4-s"] "qt4-e"
+    | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt5-e"] "qt5-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt5-s"] "qt5-e"
+    | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e"] "qt-s"
+    | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s"] "qt-e"
 )
 
 Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
