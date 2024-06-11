@@ -1,0 +1,85 @@
+= rq
+:description: Inline quotation reference(s)
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/qt.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Inline quotation reference(s). One or more scripture references indicating the source text for the preceding quotation. The references are intended to be formatted within the scripture body text, and not extracted from the text (as xref:note:crossref/x.adoc[cross-references] typically are).
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+* *USFM:* ``++\rq ++``#__content__#``++\rq*++``
+* *USX:* ``++<char style="rq">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
+Added:: 2.05
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Hebrews 1.5 (GNT)
+[source#src-usfm-char-rq_1,usfm]
+----
+\id HEB
+\c 5
+\p ...
+\v 4 The Son was made greater than the angels, just as the name that God gave 
+him is greater than theirs.
+\v 5 For God never said to any of his angels,
+\q1 "You are my Son;
+\q2 today I have become your Father."
+\rq Psa 2.7\rq*
+\b
+\m Nor did God say about any angel,
+\q1 "I will be his Father,
+\q2 and he will be my Son."
+\rq 2Sa 7.14; 1Ch 17.13\rq*
+----
+USX::
++
+.Poetic format, where all text is a quotation
+[source#src-usx-char-rq_1,xml]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.1">
+  <book code="HEB" style="id"/>
+  <chapter number="1" style="c" sid="HEB 1"/>
+  <para style="p">... <verse number="4" style="v" sid="HEB 1:4"/>The Son was made
+    greater than the angels, just as the name that God gave him is greater than
+    theirs. <verse eid="HEB 1:4"/><verse number="5" style="v" sid="HEB 1:5"/>For
+    God never said to any of his angels,</para>
+  <para style="q1" vid="HEB 1:5">"You are my Son;</para>
+  <para style="q2" vid="HEB 1:5">today I have become your Father." 
+    <char style="rq">Psa 2.7</char></para>
+  <para style="b" vid="HEB 1:5"/>
+  <para style="m" vid="HEB 1:5">Nor did God say about any angel,</para>
+  <para style="q1" vid="HEB 1:5">"I will be his Father,</para>
+  <para style="q2" vid="HEB 1:5">and he will be my Son." 
+    <char style="rq">2Sa 7.14; 1Ch 17.13</char><verse eid="HEB 1:5"/></para>
+</usx>
+----
+======
+
+image::char/rq_1.jpg[Heb 1.5 (GNT),300]
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

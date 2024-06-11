@@ -1,0 +1,4 @@
+= rq
+:env-antora:
+
+include::markers:char/rq.adoc[tag=public]
