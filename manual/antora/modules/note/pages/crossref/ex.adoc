@@ -1,4 +1,4 @@
 = ex
 :env-antora:
 
-// include::markers:note/ex.adoc[tag=public]
+include::markers:note/ex.adoc[tag=public]
