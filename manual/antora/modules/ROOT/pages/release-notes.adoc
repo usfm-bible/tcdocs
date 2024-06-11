@@ -13,84 +13,103 @@ _April 2018_
 
 === Marker Additions
 
-* USFM version identifier: `\usfm`
-* Alternate language table of contents texts: `\toca#``
-* List of witnesses in footnotes (for critical editions): `\fw …\fw*`
-* Target references “added” text: `\xta …\xta*`
-* Superscript: `\sup …\sup*`
-* Translator’s section (chunk) milestones: `\ts-s\*` and `\ts-e\*`
+* USFM version identifier: xref:para:identification/usfm.adoc[\usfm].
+* Alternate language table of contents texts: xref:para:identification/toca.adoc[\toca#]
+* Letter opening: xref:para:paragraphs/po.adoc[\po]
+* List header and footer elements: xref:para:lists/lh.adoc[\lh] and xref:para:lists/lf.adoc[\lf]
+* Embedded list: xref:para:lists/lim.adoc[\lim#]
+* Structured list items: xref:char:lists/lik.adoc[\lik ...\lik*] and xref:char:lists/liv.adoc[\liv# ...\liv#*]
+* List item total: xref:char:lists/litl.adoc[\litl ...\litl*]
+* Hebrew note: xref:para:poetry/qd.adoc[\qd]
+* Semantic division: xref:para:titles-sections/sd.adoc[\sd#]
+* Aramaic wordlist entry: xref:char:features/wa.adoc[\wa ...\wa*]
+* Geographic proper name: xref:char:features/png.adoc[\png ...\png*]
+* List of witnesses in footnotes (for critical editions): xref:char:notes/footnote/fw.adoc[\fw ...\fw*]
+* Target references “added” text: xref:char:notes/crossref/xta.adoc[\xta ...\xta*]
+* Published cross reference origin text: xref:char:notes/crossref/xop.adoc[\xop ...\xop*]
+* Link text: xref:char:features/jmp.adoc[\jmp ...\jmp*]
+* Ruby glosses (CJK texts): xref:char:features/rb.adoc[\rb ...\rb*]
+* Superscript: xref:char:format/sup.adoc[\sup ...\sup*]
+* Quotation start/end milestones: xref:ms:qt.adoc[\qt#-s\*] and xref:ms:qt.adoc[\qt#-e\*]
+* Translator’s section (chunk) milestones: xref:ms:ts.adoc[\ts-s\*] and xref:ms:ts.adoc[\ts-e\*]
+* Common xref:periph:books-divs.adoc[peripheral identifiers].
 
 === Marker Revisions
 
-* Revised syntax for ruby glosses (CJK texts): `\rb …\rb*`
-* Add descriptive attribute gloss for `\rb …\rb*`
-* Added default link-href linking attribute for `\xt …\xt*`
-* Changed common attributes for milestones:
-** Replace single id with separate start `sid` and end `eid` milestone attributes. This update aligns USFM with the corresponding single `<ms>` milestone element in USX, *here the id attribute content would not be unique for `<ms>`.
-* Changed name of linking attribute `link-name` to `link-id`.
-* Restored `\pr` for use as “text refrain”.
+* Restored xref:para:paragraphs/pr.adoc[\pr] for use as “text refrain”.
+* Support for explicit xref:char:tables/tc.adoc[table cell column spanning].
+* Support citation form for wordlist/glossary text (update xref:char:features/w.adoc[\w ...\w*]).
+* Revised syntax for figures/illustrations - applying descriptive attributes: xref:fig:fig.adoc[\fig ...\fig*]
+* Deprecated cross reference and footnote DC content markers: xref:char:notes/crossref/xdc.adoc[\xdc ...\xdc*] and xref:char:notes/footnote/fdc.adoc[\fdc ...\fdc*]
+* Deprecated combined marker for proper name within translator’s addition: xref:char:features/addpn.adoc[\addpn ...\addpn*]
+* Deprecated numbered running header: xref:para:identification/h.adoc[\h#]
+* Deprecated pronunciation info marker: xref:char:features/pro.adoc[\pro ...\pro*] in favour of ruby annotations xref:char:features/rb.adoc[\rb ...\rb*]
 
 === Syntax and Features
 
-* Clarify and support syntax for standalone milestones.
-* Document best practice for attributes containing multiple values, or multiple parts (see the gloss attribute for `\rb …\rb*`)
+* Syntax for assigning xref:char:attributes.adoc[character-level attributes].
+** Attributes for xref:char:features/w.adoc[\w ...\w*].
+** Attributes for xref:fig:fig.adoc[\fig ...\fig*].
+* Syntax for assigning word-level xref:char:features/jmp.adoc[linking attributes].
+** Default link-href linking attribute for xref:char:notes/crossref/xt.adoc[\xt ...\xt*].
+* Syntax for xref:ms:index.adoc[milestones].
+* Syntax for peripheral (xref:periph:periph.adoc[\periph]) xref:periph:books-divs.adoc[identifiers].
 
-== 3.0rc1
-_October 2016_
+== 2.5
+_October 2013_
+
+* Stylesheet only configuration update for Paratext 7.5 release.
+
+== 2.4
+_June 2013_
 
 === Marker Additions
 
-* Letter opening: `\po`
-* List header and footer elements: `\lh` and `\lf`
-* Embedded list: `\lim#`
-* Hebrew note: `\qd`
-* Semantic division: `\sd#`
-* Aramaic wordlist entry: `\wa …\wa*`
-* Geographic proper name (Chinese texts): `\png …\png*`
-* Target references “added” text: `\xta …\xta*`
-* Published cross reference origin text: `\xop …\xop*`
-* Structured list items: `\lik …\lik*` and `\liv# …\liv#*`
-* List item total: `\litl …\litl*`
-* Link text: `\jmp …\jmp*`
-* Common peripheral identifiers
-* Ruby glosses (CJK texts): `\rb …\rb*`
-* Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`
+* Support for xref:char:nesting.adoc[nesting] character markup.
+
+== 2.3
+_July 2010_
+
+=== Marker Additions
+
+* Added study Bible cross reference marker xref:note:crossref/ex.adoc[\ex] for adding additional cross-references to the notes project.
 
 === Marker Revisions
 
-* Support citation form for wordlist / glossary text (update `\w …\w*`).
-* Support for explicit table cell column spanning.
-* Revised syntax for figures / illustrations applying descriptive attributes: `\fig …\fig*`
-* Deprecated cross reference and footnote DC content markers: `\xdc …\xdc*` and `\fdc …\fdc*`
-* Deprecated combined marker for proper name within translator’s addition: `\addpn …\addpn*`
-* Deprecated numbered running header: `\h#`
-* Deprecated pronunciation info marker: `\pro …\pro*` in favour of ruby annotations proposal.
-
-=== Syntax and Features
-
-* Syntax for assigning word-level descriptive attributes.
-** Descriptive attributes for `\w …\w*`
-** Descriptive attributes for `\fig …\fig*`
-* Syntax for assigning word-level linking attributes.
-* Syntax for milestones.
-** Quotation start / end milestones: `\qt#-s\*` and `\qt#-e\*`.
-** Syntax for peripheral (`\periph`) identifiers.
-
-=== Standard Reference
-
-* Clarify and document specification regarding whitespace and new lines.
-
-== 2.5
-
-== 2.4
-
-== 2.35
-
-== 2.3
+* DEPRECATED - Study Bible footnote marker `\fs` for marking a footnote summary text.
+* Revised markup specification for study Bible xref:sbar:index.adoc[sidebars] (use any title, paragraph, poetry, table, or special text marker elements).
 
 == 2.2
+_October 2008_
+
+=== Marker Additions
+
+* Added character markers xref:char:notes/crossref/xot.adoc[\xot ...\xot*] and xref:char:notes/crossref/xnt.adoc[\xnt ...\xnt*] for uniquely marking target references to OT and NT passages (use of these markers is optional)
+* Added xref:char:introductions/iqt.adoc[\iqt ...\iqt*] to mark (scripture) quotations appearing in the introduction.
+
+=== Marker Revisions
+
+* xref:para:introductions/imte.adoc[\imte#] now includes an optional numeric variable (multiple levels).
+* No-break space should now be marked using ~ (tilde), not !$
 
 == 2.1
+_April 2007_
+
+=== Marker Additions
+
+* Added xref:para:introductions/ili.adoc[\ili] for marking introduction list items.
+* Reviewed and finalized xref:periph:index.adoc[Peripheral] content markup:
+** Added new back matter books xref:periph:book-cnc.adoc[CNC], xref:periph:book-glo.adoc[GLO], xref:periph:book-tdx.adoc[TDX], xref:periph:book-ndx.adoc[NDX].
+** Added xref:periph:book-int.adoc[INT] book for scripture division Introductions.
+** Updated scheme for marking content divisions in xref:periph:book-frt.adoc[FRT], xref:periph:book-int.adoc[INT], xref:periph:book-bak.adoc[BAK], xref:periph:book-oth.adoc[OTH]
+** Added various new content division markers.
+
+=== Marker Revisions
+
+* Finalized Study Bible Content markup.
+* Reviewed and finalized xref:periph:index.adoc[Peripheral] content markup.
+* Changed xref:char:features/rq.adoc[\rq ...\rq*] from paragraph to character level markup.
+* Changed xref:cv:ca.adoc[\ca ...\ca*] from paragraph to character level markup.
 
 == 2.05
 _June 2006_
