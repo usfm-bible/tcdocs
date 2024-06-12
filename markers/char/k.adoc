@@ -123,7 +123,7 @@ USFM::
 [source#src-usfm-char-k_2a,usfm,highlight=2]
 ----
 \f - \fr 2:15 \fq genom sitt moderskap \ft Troligen en anspelning på 1 Mos 3:16: 
-det bidrar till kvinnans \+w räddning|radda\+w* om hon bär barnafödandets börda.\f*
+det bidrar till kvinnans \w räddning|radda\w* om hon bär barnafödandets börda.\f*
 ----
 USX::
 +

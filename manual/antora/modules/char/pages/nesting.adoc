@@ -119,7 +119,7 @@ USJ::
 ----
 ======
 
-image::char/bknd-nested_1.jpg[Numbers 21.14 (GNT) - \bk \+nd nested,300]
+image::char/bknd-nested_1.jpg[Numbers 21.14 (GNT) - \bk \nd nested,300]
 
 [tabs]
 ======
