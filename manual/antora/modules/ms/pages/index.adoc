@@ -96,50 +96,8 @@ _USFM or USX do not currently define any standalone milestones._ This may change
 ====
 
 == Attributes
-The following optional xref:char:attributes.adoc[attributes] can be added to any USFM milestone marker.
 
-sid:: A unique identifier which can be used to unambiguously identify the starting milestone, and to clearly associate the starting milestone with the ending milestone (`eid`). The `sid` can be composed of any mixture of numbers, letters, and underscores, and should be a unique `sid` throughout the scripture text.
-
-eid:: A unique identifier which can be used to unambiguously identify the ending milestone, and to clearly associate the ending milestone with the starting milestone (`sid`). If an `sid` attribute is used for the starting milestone in a milestone pair, the ending milestone must include `eid`.
-
-Additional attributes may be available for or required by a specific milestone type (e.g the use of the `who` attribute in the following quotation milestone example).
-
-[tabs]
-======
-USFM::
-+
-.USFM: Milestone attributes sid, eid, who
-[source#src-ms-attrib,usfm]
-----
-\p
-\v 1 Early in the morning the chief priests met hurriedly with the elders,
-the teachers of the Law, and the whole Council, and made their plans. They 
-put Jesus in chains, led him away, and handed him over to Pilate.
-\v 2 Pilate questioned him, \qt-s |sid="qt.MRK.15:2.1" who="Pilate"\*“Are 
-you the king of the Jews?”\qt-e |eid="qt.MRK.15:2.1"\*
-\p Jesus answered, \qt-s |sid="qt.MRK.15:2.2" who="Jesus"\*“So you say.”
-\qt-e |eid="qt.MRK.15:2.2"\*
-----
-USX::
-+
-.USX: Milestone attributes sid, eid, who
-[source#src-usx-ms-attrib,xml]
-----
-<para style="p">
-  <verse number="1" style="v" sid="MRK 15:1" /> Early in the morning the 
-  chief priests met hurriedly with the elders, the teachers of the Law, 
-  and the whole Council, and made their plans. They put Jesus in chains, 
-  led him away, and handed him over to Pilate.<verse eid="MRK 15:1" />
-  <verse number="2" style="v" sid="MRK 15:2" />Pilate questioned him, 
-  <ms style="qt-s" sid="qt.MRK.15:2.1" who="Pilate"/>“Are you the king of 
-  the Jews?”<ms style="qt-e" sid="qt.MRK.15:2.1"/>
-</para>
-<para style="p" vid="MRK 15:2">
-  Jesus answered, <ms style="qt-s" sid="qt.MRK.15:2.2" who="Jesus"/>“So 
-  you say.”<ms style="qt-e" eid="qt.MRK.15:2.2"/><verse eid="MRK 15:2"/>
-</para>
-----
-======
+Attributes may be available for or required by a specific milestone type. For example: the #_@who_# attribute for the xref:ms:qt.adoc[qt] milestone.
 
 == Levels
 
