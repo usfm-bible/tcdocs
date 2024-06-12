@@ -51,9 +51,11 @@ A specific numbered marker or style should not be used to indicate a specific oc
 
 == USFM Endmarkers in Footnotes and Cross References
 
-Elements which make up xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content are xref:char:index.adoc[character] level markers, which means that they are defined with a start and end marker. The majority of scripture translation projects working with USFM have followed a syntax for editing footnotes or cross references which does not require the explicit end marker. This was done in order to reduces the amount of markup within the notes text, making it easier to read.
+Elements which make up xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content are xref:char:index.adoc[character] level markers.  *With USFM 3.1*, ending character markers have been made required — except for the markers used to start sections in footnotes and cross references (the note's 'structural elements'). The majority of scripture translation projects working with USFM already follow the implicit closure syntax for footnote or cross reference structural markup. 
 
-Examples of the two markup approaches for notes are given below. Both of these are syntactically acceptable in USFM.
+Examples of the two markup approaches for notes are given below. Both of these are syntactically acceptable in USFM, but the implicit syntax is strongly recommended. Note content _must always occur within a submarker_; there can be no unmarked note content only within the xref:note:index.adoc[note container] itself.
+
+Other xref:char:nesting.adoc[nested] character markers within a notes structural sections _always_ require explicit opening and closing markers.
 
 [tabs]
 ======
@@ -113,13 +115,13 @@ USFM (implicit closure)::
 +
 [source,usfm]
 ----
-\f + \fr 2.4 \fk The \+nd Lord\+nd*: \ft See \+nd Lord\+nd* in Word List.\f*
+\f + \fr 2.4 \fk The \nd Lord\nd*: \ft See \nd Lord\nd* in Word List.\f*
 ----
 USFM (explicit closure)::
 +
 [source,usfm]
 ----
-\f + \fr 2.4 \fr*\fk The \+nd Lord\+nd*: \fk*\ft See \+nd Lord\+nd* in 
+\f + \fr 2.4 \fr*\fk The \nd Lord\nd*: \fk*\ft See \nd Lord\nd* in 
 Word List.\ft*\f*
 ----
 USX::
@@ -133,8 +135,3 @@ USX::
 </note>
 ----
 ======
-
-[NOTE]
-====
-xref:char:nesting.adoc[Nested] character markers within notes _always_ require explicit opening and closing markers.
-====
