@@ -8,10 +8,36 @@ endif::[]
 == 3.1
 _June 2024_
 
+=== Background on USFM 3.1
+
+USFM (Unified Scripture Format Markup) 3.1 primarily represents an effort to standardize a single xref:doc:index.adoc[content model] which can be equally expressed in backslash-based `\` format markers (USFM-FM), XML (USFM-XML), or JSON (USFM-JSON). The common abbreviation for these expressions are *USFM*, *USX*, and *USJ*.
+
+This documentation provides a xref:ROOT:syntax-docs.adoc[summary] of markup syntax, schema railroad diagrams, and example texts for both USFM and USX. USJ is a newer expression. Equivalent example texts in USJ are also being added.
+
+Previous release notes (3.0 and earlier) are expressed only in USFM-FM specific terms.
+
+=== Summary of Updates
+
+The key differences in the grammar from USFM 3.0 to 3.1.0 are:
+
+* xref:doc:index.adoc#doc-book-titles[BookTitles] are optional.
+* xref:doc:index.adoc#doc-book-headers[BookHeaders] include xref:para:identification/sts.adoc[sts].
+* xref:doc:index.adoc#doc-book-identification[BookIdentification] may be any 3 letter code (within reason).
+* Other peripherals may be of any type.
+* xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and other xref:doc:index.adoc#doc-book-chapter-content[Para] (paragraphs) as seperated as different categories (internal)
+* The xref:para:index.adoc[paragraph] #_@vid_# attribute has an extended reference syntax.
+* All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
+* Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note structural elements, and continue to support (and recommend) the common pratice of implicit closure.
+* Note content must occur within a submarker; there can be no unmarked note content only within the xref:note:index.adoc[note container] itself.
+* xref:char:notes/footnote/fv.adoc[fv] is now just a xref:char:notes/index.adoc[character] style and requires explicit closing.
+* Use of the `+` prefix for nested USFM xref:char:index.adoc[character] markup is supported but is _deprecated_. Note that future versions of USFM may remove support for the ``++\+++``#__style__#``++ ++``#__content__#``++\+++``#__style__#``++*++`` syntax entirely.
+* `\` escaping is required and supported for a number of key characters: `\`, `'`, `"`, `|`, `~`, `/`
+* Whitespace rules are xref:ROOT:whitespace.adoc[clarified and formalised].
+
 == 3.0
 _April 2018_
 
-=== Marker Additions
+=== Additions
 
 * USFM version identifier: xref:para:identification/usfm.adoc[\usfm].
 * Alternate language table of contents texts: xref:para:identification/toca.adoc[\toca#]
@@ -34,7 +60,7 @@ _April 2018_
 * Translator’s section (chunk) milestones: xref:ms:ts.adoc[\ts-s\*] and xref:ms:ts.adoc[\ts-e\*]
 * Common xref:periph:books-divs.adoc[peripheral identifiers].
 
-=== Marker Revisions
+=== Revisions
 
 * Restored xref:para:paragraphs/pr.adoc[\pr] for use as “text refrain”.
 * Support for explicit xref:char:tables/tc.adoc[table cell column spanning].
@@ -63,18 +89,18 @@ _October 2013_
 == 2.4
 _June 2013_
 
-=== Marker Additions
+=== Additions
 
 * Support for xref:char:nesting.adoc[nesting] character markup.
 
 == 2.3
 _July 2010_
 
-=== Marker Additions
+=== Additions
 
 * Added study Bible cross reference marker xref:note:crossref/ex.adoc[\ex] for adding additional cross-references to the notes project.
 
-=== Marker Revisions
+=== Revisions
 
 * DEPRECATED - Study Bible footnote marker `\fs` for marking a footnote summary text.
 * Revised markup specification for study Bible xref:sbar:index.adoc[sidebars] (use any title, paragraph, poetry, table, or special text marker elements).
@@ -82,12 +108,12 @@ _July 2010_
 == 2.2
 _October 2008_
 
-=== Marker Additions
+=== Additions
 
 * Added character markers xref:char:notes/crossref/xot.adoc[\xot ...\xot*] and xref:char:notes/crossref/xnt.adoc[\xnt ...\xnt*] for uniquely marking target references to OT and NT passages (use of these markers is optional)
 * Added xref:char:introductions/iqt.adoc[\iqt ...\iqt*] to mark (scripture) quotations appearing in the introduction.
 
-=== Marker Revisions
+=== Revisions
 
 * xref:para:introductions/imte.adoc[\imte#] now includes an optional numeric variable (multiple levels).
 * No-break space should now be marked using ~ (tilde), not !$
@@ -95,7 +121,7 @@ _October 2008_
 == 2.1
 _April 2007_
 
-=== Marker Additions
+=== Additions
 
 * Added xref:para:introductions/ili.adoc[\ili] for marking introduction list items.
 * Reviewed and finalized xref:periph:index.adoc[Peripheral] content markup:
@@ -104,7 +130,7 @@ _April 2007_
 ** Updated scheme for marking content divisions in xref:periph:book-frt.adoc[FRT], xref:periph:book-int.adoc[INT], xref:periph:book-bak.adoc[BAK], xref:periph:book-oth.adoc[OTH]
 ** Added various new content division markers.
 
-=== Marker Revisions
+=== Revisions
 
 * Finalized Study Bible Content markup.
 * Reviewed and finalized xref:periph:index.adoc[Peripheral] content markup.
@@ -114,21 +140,21 @@ _April 2007_
 == 2.05
 _June 2006_
 
-=== Marker Additions
+=== Additions
 
 * Added xref:char:features/rq.adoc[\rq] for marking inline quotation references.
 
 == 2.04
 _October 2005_
 
-=== Marker Additions
+=== Additions
 
 * Added xref:para:identification/toc.adoc[\toc3] for providing the standard abbreviation for a book.
 
 == 2.03
 _August 2005_
 
-=== Marker Additions
+=== Additions
 
 * Added xref:para:identification/toc.adoc[\toc1] and xref:para:identification/toc.adoc[\toc2] for providing and marking long and short table of contents texts.
 * Added xref:char:notes/footnote/fl.adoc[\fl] for marking footnote “label” text items.
@@ -139,13 +165,7 @@ _October 2004_
 
 Changes in USFM from 1.53 to 2.0.
 
-=== Marker Revisions
-
-* Removed `\pdi` and `\pde, and substitute with embedded text markup (see Additions, below)
-* Removed `\wr ...\wr*`. This was really a duplicate of \w …w* used for marking words in the scripture text which are included in the wordlist.
-* Removed `\ps`. This is used in conjunction with xref:para:paragraphs/nb.adoc[\nb] to indicate that the paragraph spans the chapter boundary. It should be sufficient to just start the new chapter with `\nb` and use the appropriate paragraph marker for the previous chapter (`\p`, `\m` etc.)
-
-=== Marker Additions
+=== Additions
 
 * Add character style xref:char:features/em.adoc[\em ...\em*] for “emphasis”.
 * In Peripherals:
@@ -161,3 +181,9 @@ Changes in USFM from 1.53 to 2.0.
 ** xref:para:poetry/qm.adoc[\qm#] - Embedded text poetic line
 * Add character style \pro ...\pro* for indicating pronunciation (in CJK texts). (Deprecated - _See_ xref:char:features/rb.adoc[\rb ...\rb*])
 * Add character style xref:char:features/w.adoc[\wj ...\wj*] for marking words of Jesus.
+
+=== Revisions
+
+* Removed `\pdi` and `\pde, and substitute with embedded text markup (see Additions, below)
+* Removed `\wr ...\wr*`. This was really a duplicate of \w …w* used for marking words in the scripture text which are included in the wordlist.
+* Removed `\ps`. This is used in conjunction with xref:para:paragraphs/nb.adoc[\nb] to indicate that the paragraph spans the chapter boundary. It should be sufficient to just start the new chapter with `\nb` and use the appropriate paragraph marker for the previous chapter (`\p`, `\m` etc.)

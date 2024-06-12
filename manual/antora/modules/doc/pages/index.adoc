@@ -31,7 +31,7 @@ image::schema/id_usx.svg[]
 === Book Identification
 `[BookIdentification]`
 
-* *Paragraphs > Identification >* xref:para:identification/id.adoc[]
+* *Paragraphs > Identification >* xref:para:identification/id.adoc[], xref:para:identification/usfm.adoc[] 
 
 '''
 
@@ -51,7 +51,7 @@ image::schema/bkhdrs_usx.svg[]
 
 An optional collection of one or more xref:para:index.adoc[paragraph] elements for book name and abbreviation texts.
 
-* *Paragraphs > Identification >* xref:para:identification/ide.adoc[], xref:para:identification/h.adoc[], xref:para:identification/toc.adoc[], xref:para:identification/toca.adoc[], xref:para:identification/rem.adoc[], xref:para:identification/usfm.adoc[] 
+* *Paragraphs > Identification >* xref:para:identification/ide.adoc[], xref:para:identification/h.adoc[], xref:para:identification/toc.adoc[], xref:para:identification/toca.adoc[], xref:para:identification/rem.adoc[], xref:para:identification/sts.adoc[] 
 
 '''
 
