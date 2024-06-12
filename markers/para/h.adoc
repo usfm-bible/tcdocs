@@ -21,7 +21,7 @@ Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
 Added:: 1.0
 Updated:: 3.0
-* *Deprecated:* `h#` syntax. It is no longer recommended to use the numbered variable syntax `h#`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
+* _Deprecated_ `h#` syntax. It is no longer recommended to use the numbered variable syntax `h#`, where the variable `#` represented components or 'levels' of text for the running header (e.g. inside, outside, or sub-division/section etc.).
 // end::spec[]
 
 == Examples

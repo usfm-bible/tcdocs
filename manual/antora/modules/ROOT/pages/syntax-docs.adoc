@@ -46,7 +46,7 @@ The version of USFM/USX when this markup was added.
 
 === Updated
 
-The version of USFM/USX when this markup was updated, corrected, or possibly deprecated.
+The version of USFM/USX when this markup was updated, corrected, or possibly _deprecated_.
 
 [NOTE]
 ====
