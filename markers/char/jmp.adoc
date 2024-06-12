@@ -14,21 +14,23 @@ endif::[]
 
 Description:: Link text. For associating linking attributes to a span of text.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
-* *USFM:* ``++\jmp ++``#__content__#``++|++``#__@link-href @link-title @link-id__#``++\jmp*++``
-* *USX:* ``++<char style="jmp" ++``#__@link-href @link-title @link-id__#``++>++``#__content__#``++</char>++``
-#link-href#::: Identifies the resource being linked to as a URI. _(default attribute)_
+* *USFM:* ``++\jmp ++``#__content__#``++|++``#__@href @title @id__#``++\jmp*++``
+* *USX:* ``++<char style="jmp" ++``#__@href @title @id__#``++>++``#__content__#``++</char>++``
+#href#::: Identifies the resource being linked to as a URI. _(default attribute)_
 ** A user-defined URI prefix can be used to help identify the target resource. For example: `x-prj:` might identify another scripture translation project available within the current editing environment, like `x-prj:RSV52 MAT 3:1-4`.
 ** User defined URI prefixes must begin with the prefix `x-`.
-** When a #link-href# specifies a scripture reference, follow the pattern: `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`. Example: `MAT 3:1-4`, where:
+** When an #href# specifies a scripture reference, follow the pattern: `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`. Example: `MAT 3:1-4`, where:
 *** Book names is a standard 3-character scripture xref:para:identification/books.adoc[book identifier].
 *** The chapter + verse separator is a colon `:`.
 *** Verse ranges are indicated using a hyphen.
-#link-title#::: Plain text describing the resource being linked to (for example - to display in a tooltip when hovering over the link).
-#link-id#::: A unique identifier for a specific content location (i.e. an anchor).
+#title#::: Plain text describing the resource being linked to (for example - to display in a tooltip when hovering over the link).
+#id#::: A unique identifier for a specific content location (i.e. an anchor).
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 3.0
+Updated:: 3.1
+* _Deprecated_ the `link-` prefix in the attribute names.
 // end::spec[]
 
 == Examples
@@ -44,7 +46,7 @@ USFM::
 \c 1
 \p
 \v 1 \ef - \fr 1:2 \ft The traditional translation of verse 1, as given in
-\jmp RSV|link-href="x-prj:RSV52 GEN 1:1" link-title="Revised Standard 
+\jmp RSV|href="x-prj:RSV52 GEN 1:1" title="Revised Standard 
 Version"\jmp*, may be appropriate.\ef*
 ----
 USX::
@@ -58,8 +60,8 @@ USX::
     <verse number="1" style="v" sid="GEN 1:1"/>
     <note caller="-" style="ef">
       <char style="fr">1.1: </char><char style="ft">The traditional translation 
-      of verse 1, as given in <char style="jmp" link-href="x-prj:RSV52 GEN 1:1"
-      link-title="Revised Standard Version">RSV</char>, may be appropriate.</char>
+      of verse 1, as given in <char style="jmp" href="x-prj:RSV52 GEN 1:1"
+      title="Revised Standard Version">RSV</char>, may be appropriate.</char>
     </note>
   </para>
 </usx>
@@ -107,8 +109,8 @@ USJ::
                 {
                   "type": "char",
                   "marker": "jmp",
-                  "link-href": "x-prj:RSV52 GEN 1:1",
-                  "link-title": "Revised Standard Version",
+                  "href": "x-prj:RSV52 GEN 1:1",
+                  "title": "Revised Standard Version",
                   "content": ["RSV"]
                 },
                 ", may be appropriate."
@@ -132,8 +134,8 @@ USFM::
 ----
 \p Storehouses, as used here, refers to large buildings with walls and roof, 
 where grain was kept until needed. (See illustration: 
-\jmp Storehouse|link-href="figures/storehouse.png" 
-link-title="Ancient storehouse"\jmp*)
+\jmp Storehouse|href="figures/storehouse.png" 
+title="Ancient storehouse"\jmp*)
 ----
 USX::
 +
@@ -142,8 +144,8 @@ USX::
 ----
 <para style="p">Storehouses, as used here, refers to large buildings with 
 walls and roof, where grain was kept until needed. (See illustration: 
-<char style="jmp" link-href="figures/storehouse.png" 
-link-title="Ancient storehouse">Storehouse</char>)
+<char style="jmp" href="figures/storehouse.png" 
+title="Ancient storehouse">Storehouse</char>)
 ...</para>
 ----
 USJ::
@@ -159,8 +161,8 @@ USJ::
     {
       "type": "char",
       "marker": "jmp",
-      "link-href": "figures/storehouse.png",
-      "link-title": "Ancient storehouse",
+      "href": "figures/storehouse.png",
+      "title": "Ancient storehouse",
       "content": ["Storehouse"]
     },
     ") ..."
@@ -181,7 +183,7 @@ USFM::
 \q1 “Someone is shouting in the desert,
 \q2 ‘Prepare a road for the Lord;
 \q2 make a straight path for him to travel!’ ”
-\esb \cat People\cat*\jmp |link-id="article-john_the_baptist"\jmp*
+\esb \cat People\cat*\jmp |id="article-john_the_baptist"\jmp*
 \ms John the Baptist
 \p John is sometimes called the last “Old Testament prophet” because of the 
 warnings he brought about God's judgment and because he announced the coming 
@@ -200,7 +202,7 @@ USX::
   <para style="q2">‘Prepare a road for the Lord;</para>
   <para style="q2">make a straight path for him to travel!’ ”</para>
   <sidebar style="esb" category="people">
-    <para style="ms"><char style="jmp" link-id="article-john_the_baptist" />John the 
+    <para style="ms"><char style="jmp" id="article-john_the_baptist" />John the 
       Baptist</para>
     <para style="p">John is sometimes called the last “Old Testament prophet” 
       because of the warnings he  brought about God's judgment and because he 
@@ -251,7 +253,7 @@ USJ::
             {
               "type": "char",
               "marker": "jmp",
-              "link-id": "article-john_the_baptist",
+              "id": "article-john_the_baptist",
               "content": []
             },
             "John the Baptist"
@@ -285,7 +287,7 @@ USFM::
 \v 2-6a From Abraham to King David, the following ancestors are listed: Abraham,
 Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was 
 Tamar*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab*), 
-Obed (his mother was \jmp Ruth|link-href="#article-Ruth"\jmp*), Jesse, and King 
+Obed (his mother was \jmp Ruth|href="#article-Ruth"\jmp*), Jesse, and King 
 David.
 ----
 USX::
@@ -300,7 +302,7 @@ USX::
     the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his 
     brothers; then Perez and Zerah (their mother was Tamar), Hezron, Ram, Amminadab, 
     Nahshon, Salmon, Boaz (his mother was Rahab), Obed (his mother was 
-    <char style="jmp" link-href="#article-Ruth">Ruth</char>), Jesse, and King 
+    <char style="jmp" href="#article-Ruth">Ruth</char>), Jesse, and King 
     David.<verse eid="MAT 1:2-6a"/>
   </para>
 </usx>
@@ -334,7 +336,7 @@ USJ::
         {
           "type": "char",
           "marker": "jmp",
-          "link-href": "#article-Ruth",
+          "href": "#article-Ruth",
           "content": ["Ruth"]
         },
         "), Jesse, and King David."
@@ -360,7 +362,7 @@ Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was
 Tamar*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab*), 
 Obed (his mother was Ruth\ef - \fr 1.2-6a: \fq Ruth: \ft A Moabite (Ruth 1.4). 
 Only outstanding women were normally included in Jewish genealogical lists. See 
-article on \jmp Ruth|link-href="#article-Ruth"\jmp*\ef*), Jesse, and King David.
+article on \jmp Ruth|href="#article-Ruth"\jmp*\ef*), Jesse, and King David.
 ----
 USX::
 +
@@ -378,7 +380,7 @@ USX::
       <char style="fr">1.2-6a: </char><char style="fq">Ruth: </char>
         <char style="ft">A Moabite. Only outstanding women were normally included in 
         Jewish genealogical lists. See article on 
-        <char style="jmp" link-href="#article-Ruth">Ruth</char></char></note>), 
+        <char style="jmp" href="#article-Ruth">Ruth</char></char></note>), 
     Jesse, and King David. ...<verse eid="MAT 1:2-6a"/></para>
 </usx>
 ----
@@ -431,7 +433,7 @@ USJ::
                 {
                   "type": "char",
                   "marker": "jmp",
-                  "link-href": "#article-Ruth",
+                  "href": "#article-Ruth",
                   "content": ["Ruth"]
                 }
               ]

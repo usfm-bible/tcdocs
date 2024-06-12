@@ -27,6 +27,8 @@ The key differences in the grammar from USFM 3.0 to 3.1.0 are:
 * xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and other xref:doc:index.adoc#doc-book-chapter-content[Para] (paragraphs) as seperated as different categories (internal)
 * The xref:para:index.adoc[paragraph] #_@vid_# attribute has an extended reference syntax.
 * All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
+* Deprecate the `link-` prefix in xref:char:features/jmp.adoc[jmp] attributes.
+* Add #_@key_# attribute to the xref:char:features/k.adoc[k] character element.
 * Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note structural elements, and continue to support (and recommend) the common pratice of implicit closure.
 * Note content must occur within a submarker; there can be no unmarked note content only within the xref:note:index.adoc[note container] itself.
 * xref:char:notes/footnote/fv.adoc[fv] is now just a xref:char:notes/index.adoc[character] style and requires explicit closing.
@@ -66,10 +68,10 @@ _April 2018_
 * Support for explicit xref:char:tables/tc.adoc[table cell column spanning].
 * Support citation form for wordlist/glossary text (update xref:char:features/w.adoc[\w ...\w*]).
 * Revised syntax for figures/illustrations - applying descriptive attributes: xref:fig:fig.adoc[\fig ...\fig*]
-* Deprecated cross reference and footnote DC content markers: xref:char:notes/crossref/xdc.adoc[\xdc ...\xdc*] and xref:char:notes/footnote/fdc.adoc[\fdc ...\fdc*]
-* Deprecated combined marker for proper name within translator’s addition: xref:char:features/addpn.adoc[\addpn ...\addpn*]
-* Deprecated numbered running header: xref:para:identification/h.adoc[\h#]
-* Deprecated pronunciation info marker: xref:char:features/pro.adoc[\pro ...\pro*] in favour of ruby annotations xref:char:features/rb.adoc[\rb ...\rb*]
+* _Deprecated_ cross reference and footnote DC content markers: xref:char:notes/crossref/xdc.adoc[\xdc ...\xdc*] and xref:char:notes/footnote/fdc.adoc[\fdc ...\fdc*]
+* _Deprecated_ combined marker for proper name within translator’s addition: xref:char:features/addpn.adoc[\addpn ...\addpn*]
+* _Deprecated_ numbered running header: xref:para:identification/h.adoc[\h#]
+* _Deprecated_ pronunciation info marker: xref:char:features/pro.adoc[\pro ...\pro*] in favour of ruby annotations xref:char:features/rb.adoc[\rb ...\rb*]
 
 === Syntax and Features
 
@@ -102,7 +104,7 @@ _July 2010_
 
 === Revisions
 
-* DEPRECATED - Study Bible footnote marker `\fs` for marking a footnote summary text.
+* _Deprecated_ - Study Bible footnote marker `\fs` for marking a footnote summary text.
 * Revised markup specification for study Bible xref:sbar:index.adoc[sidebars] (use any title, paragraph, poetry, table, or special text marker elements).
 
 == 2.2
