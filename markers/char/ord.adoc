@@ -31,14 +31,32 @@ USFM::
 .1st
 [source#src-usfm-char-ord_1,usfm,highlight=1]
 ----
-1\ord st\ord
+\p 1\ord st\ord
 ----
 USX::
 +
 .1st
 [source#src-usx-char-ord_1,xml,highlight=1]
 ----
-1<char style="ord">st</char>
+<para style="p>1<char style="ord">st</char></para>
+----
+USJ::
++
+.1st
+[source#src-usj-char-ord_1,json,highlight=]
+----
+{
+  "type": "para",
+  "marker": "p",
+  "content": [
+    "1",
+    {
+      "type": "char",
+      "marker": "ord",
+      "content": ["st"]
+    }
+  ]
+}
 ----
 ======
 

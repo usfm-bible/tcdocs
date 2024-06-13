@@ -29,8 +29,10 @@ Added:: 1.0
 USFM::
 +
 .Exodus 3.15 (GNT)
-[source#src-usfm-char-nd_1,usfm,highlight=4]
+[source#src-usfm-char-nd_1,usfm,highlight=6]
 ----
+\id EXO
+\c 3
 \p
 \v 14 God said, “I am who I am. You must tell them: ‘The one who is called 
 I AM has sent me to you.’
@@ -41,16 +43,70 @@ forever; this is what all future generations are to call me.
 USX::
 +
 .Exodus 3.15 (GNT)
-[source#src-usx-char-nd_1,xml,highlight=5]
+[source#src-usx-char-nd_1,xml,highlight=8]
 ----
-<para style="p">
-  <verse number="14" style="v" sid="EXO 3:14"/>God said, “I am who I am. You must
-  tell them: ‘The one who is called I AM has sent me to you.’ 
-  <verse eid="EXO 3:14"/><verse number="15" style="v" sid="EXO 3:15"/>Tell the
-  Israelites that I, the <char style="nd">Lord</char>, the God of their ancestors,
-  the God of Abraham, Isaac, and Jacob, have sent you to them. This is my name
-  forever; this is what all future generations are to call me.
-  <verse eid="EXO 3:15"/>
+<usx version="3.1">
+  <book code="EXO" style="id"/>
+  <chapter number="3" style="c" sid="MAT 3"/>
+  <para style="p">
+    <verse number="14" style="v" sid="EXO 3:14"/>God said, “I am who I am. You 
+    must tell them: ‘The one who is called I AM has sent me to you.’ 
+    <verse eid="EXO 3:14"/><verse number="15" style="v" sid="EXO 3:15"/>Tell 
+    the Israelites that I, the <char style="nd">Lord</char>, the God of their 
+    ancestors, the God of Abraham, Isaac, and Jacob, have sent you to them. This 
+    is my name forever; this is what all future generations are to call me.
+    <verse eid="EXO 3:15"/></para>
+</usx>
+----
+USJ::
++
+.Exodus 3.15 (GNT)
+[source#src-usj-char-nd_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "EXO",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "3",
+      "sid": "MAT 3"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "14",
+          "sid": "EXO 3:14"
+        },
+        "God said, “I am who I am. You must tell them: ‘The one who is called I AM has sent me to you.’ ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "15",
+          "sid": "EXO 3:15"
+        },
+        "Tell the Israelites that I, the ",
+        {
+          "type": "char",
+          "marker": "nd",
+          "content": ["Lord"]
+        },
+        ", the God of their ancestors, the God of Abraham, Isaac, and Jacob, have sent you to them. This is my name forever; this is what all future generations are to call me. "
+      ]
+    }
+  ]
+}
 ----
 ======
 

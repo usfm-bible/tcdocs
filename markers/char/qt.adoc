@@ -50,6 +50,56 @@ USX::
 <para style="q2">
   <char style="qt">........................................</char></para>
 ----
+USJ::
++
+.Poetic format, where all text is a quotation
+[source#src-usj-char-qt_1,json]
+----
+{
+  "type": "para",
+  "marker": "q1",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["........................................"]
+    }
+  ]
+},
+{
+  "type": "para",
+  "marker": "q2",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["........................................"]
+    }
+  ]
+},
+{
+  "type": "para",
+  "marker": "q1",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["........................................"]
+    }
+  ]
+},
+{
+  "type": "para",
+  "marker": "q2",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["........................................"]
+    }
+  ]
+}
+----
 ======
 
 [tabs]
@@ -78,6 +128,57 @@ USX::
 <para style="q2">
   <char style="qt">......................................... </char></para>
 ----
+USJ::
++
+.Poetic format, where text is mixed (only some text is a quotation)
+[source#src-usj-char-qt_2,json]
+----
+{
+  "type": "para",
+  "marker": "q1",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["..............."]
+    },
+    " .............. ",
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": [" ........"]
+    }
+  ]
+},
+{
+  "type": "para",
+  "marker": "q2",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["....."]
+    },
+    " ................................"
+  ]
+},
+{
+  "type": "para",
+  "marker": "q1",
+  "content": [".................................................."]
+},
+{
+  "type": "para",
+  "marker": "q2",
+  "content": [
+    {
+      "type": "char",
+      "marker": "qt",
+      "content": ["......................................... "]
+    }
+  ]
+}
+----
 ======
 
 [tabs]
@@ -85,8 +186,10 @@ USX::
 USFM::
 +
 .Mark 1.2-3 (GNT)
-[source#src-usfm-char-qt_3,usfm,highlight=4;5;7;8;9]
+[source#src-usfm-char-qt_3,usfm,highlight=6;7;9;10;11]
 ----
+\id MRK
+\c 1
 \p
 \v 1 This is the Good News about Jesus Christ, the Son of God.
 \v 2 It began as the prophet Isaiah had written:
@@ -97,30 +200,149 @@ USFM::
 \q2 \qt ‘Get the road ready for the Lord;\qt*
 \q2 \qt make a straight path for him to travel!’ ”\qt*
 ----
-USFM::
+USX::
 +
 .Mark 1.2-3 (GNT)
-[source#src-usx-char-qt_3,xml,highlight=4;5;7;8;9]
+[source#src-usx-char-qt_3,xml,highlight=10;13;17;19;21]
 ----
-<para style="p">
-  <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
-  Christ, the Son of God. <verse eid="MRK 1:1"/>
-  <verse number="2" style="v" sid="MRK 1:2"/>It began as the prophet Isaiah had 
-  written:</para>
-<para style="q1" vid="MRK 1:2">
-  <char style="qt">“God said, ‘I will send my messenger ahead of you</char>
-  </para>
-<para style="q2" vid="MRK 1:2">
-  <char style="qt">to open the way for you.’</char>
-  <verse eid="MRK 1:2"/></para>
-<para style="q1">
-  <verse number="3" style="v" sid="MRK 1:3"/>
-  <char style="qt">Someone is shouting in the desert,</char></para>
-<para style="q2" vid="MRK 1:3">
-  <char style="qt">‘Get the road ready for the Lord;</char></para>
-<para style="q2" vid="MRK 1:3">
-  <char style="qt">make a straight path for him to travel!’ ”</char>
-  <verse eid="MRK 1:3"/></para>
+<usx version="3.1">
+  <book code="MRK" style="id"/>
+  <chapter number="1" style="c" sid="MRK 1"/>
+  <para style="p">
+    <verse number="1" style="v" sid="MRK 1:1"/>This is the Good News about Jesus
+    Christ, the Son of God. <verse eid="MRK 1:1"/>
+    <verse number="2" style="v" sid="MRK 1:2"/>It began as the prophet Isaiah 
+    had written:</para>
+  <para style="q1" vid="MRK 1:2">
+    <char style="qt">“God said, ‘I will send my messenger ahead of you</char>
+    </para>
+  <para style="q2" vid="MRK 1:2">
+    <char style="qt">to open the way for you.’</char>
+    <verse eid="MRK 1:2"/></para>
+  <para style="q1">
+    <verse number="3" style="v" sid="MRK 1:3"/>
+    <char style="qt">Someone is shouting in the desert,</char></para>
+  <para style="q2" vid="MRK 1:3">
+    <char style="qt">‘Get the road ready for the Lord;</char></para>
+  <para style="q2" vid="MRK 1:3">
+    <char style="qt">make a straight path for him to travel!’ ”</char>
+    <verse eid="MRK 1:3"/></para>
+</usx>
+----
+USJ::
++
+.Mark 1.2-3 (GNT)
+[source#src-usj-char-qt_3,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "MRK 1"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "MRK 1:1"
+        },
+        "This is the Good News about Jesus Christ, the Son of God. ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "MRK 1:2"
+        },
+        "It began as the prophet Isaiah had written:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "qt",
+          "content": [
+            "“God said, ‘I will send my messenger ahead of you"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        {
+          "type": "char",
+          "marker": "qt",
+          "content": [
+            "to open the way for you.’"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "3",
+          "sid": "MRK 1:3"
+        },
+        {
+          "type": "char",
+          "marker": "qt",
+          "content": [
+            "Someone is shouting in the desert,"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        {
+          "type": "char",
+          "marker": "qt",
+          "content": [
+            "‘Get the road ready for the Lord;"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        {
+          "type": "char",
+          "marker": "qt",
+          "content": [
+            "make a straight path for him to travel!’ ”"
+          ]
+        }
+      ]
+    }
+  ]
+}
 ----
 ======
 
