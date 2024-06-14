@@ -12,7 +12,7 @@ _June 2024_
 
 USFM (Unified Scripture Format Markup) 3.1 primarily represents an effort to standardize a single xref:doc:index.adoc[content model] which can be equally expressed in backslash-based `\` format markers (USFM-FM), XML (USFM-XML), or JSON (USFM-JSON). The common abbreviation for these expressions are *USFM*, *USX*, and *USJ*.
 
-This documentation provides a xref:ROOT:syntax-docs.adoc[summary] of markup syntax, schema railroad diagrams, and example texts for both USFM and USX. USJ is a newer expression. Equivalent example texts in USJ are also being added.
+This documentation provides a xref:ROOT:syntax-docs.adoc[summary] of markup syntax, schema diagrams, and example texts for both USFM and USX. USJ is a newer expression. Equivalent example texts in USJ are also being added.
 
 Previous release notes (3.0 and earlier) are expressed only in USFM-FM specific terms.
 
@@ -24,7 +24,7 @@ The key differences in the grammar from USFM 3.0 to 3.1.0 are:
 * xref:doc:index.adoc#doc-book-headers[BookHeaders] include xref:para:identification/sts.adoc[sts].
 * xref:doc:index.adoc#doc-book-identification[BookIdentification] may be any 3 letter code (within reason).
 * Other peripherals may be of any type.
-* xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and other xref:doc:index.adoc#doc-book-chapter-content[Para] (paragraphs) as seperated as different categories (internal)
+* xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and other xref:doc:index.adoc#doc-book-chapter-content[Para] (paragraphs) are seperated as different categories (internal).
 * The xref:para:index.adoc[paragraph] #_@vid_# attribute has an extended reference syntax.
 * All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
 * Deprecate the `link-` prefix in xref:char:features/jmp.adoc[jmp] attributes.
