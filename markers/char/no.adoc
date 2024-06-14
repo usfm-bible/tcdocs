@@ -40,6 +40,13 @@ USX::
 ----
 Missing
 ----
+USJ::
++
+.Missing
+[source#src-usj-char-no_1,json]
+----
+Missing
+----
 ======
 
 image::char/missing.jpg[,300]

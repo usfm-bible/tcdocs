@@ -40,9 +40,16 @@ USX::
 ----
 Missing
 ----
+USJ::
++
+.Missing
+[source#src-usj-char-it_1,json]
+----
+Missing
+----
 ======
 
-image::char/missing.jpg[,300]
+// image::char/missing.jpg[,300]
 
 == Properties
 
