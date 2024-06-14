@@ -34,17 +34,86 @@ Updated:: 3.0 (attributes)
 ======
 USFM::
 +
-.Glossay word without attributes
-[source#src-usfm-char-w_1,usfm,highlight=1]
+.Glossay word without attributes - Nehemiah 9.31 (GNT)
+[source#src-usfm-char-w_1,usfm,highlight=6]
 ----
-\w gracious\w*
+\id NEH
+\c 9
+\q1
+\v 31 And yet, because your mercy is great,
+\q2 you did not forsake or destroy them.
+\q1 You are a \w gracious\w* and merciful God!
 ----
 USX::
 +
-.Glossay word without attributes
-[source#src-usx-char-w_1,xml,highlight=1]
+.Glossay word without attributes - Nehemiah 9.31 (GNT)
+[source#src-usx-char-w_1,xml,highlight=9]
 ----
-<char style="w">gracious</char>
+<usx version="3.1">
+  <book code="NEH" style="id"/>
+  <chapter number="9" style="c" sid="NEH 9"/>
+  <para style="q1">
+    <verse number="31" style="v" sid="NEH 9:31"/>And yet, because your mercy is
+    great,</para>
+  <para style="q2" vid="NEH 9:31">you did not forsake or destroy them.</para>
+  <para style="q1" vid="NEH 9:31">You are a <char style="w">gracious</char> and
+    merciful God!<verse eid="NEH 9:31"/></para>
+</usx>
+----
+USJ::
++
+.Glossay word without attributes - Nehemiah 9.31 (GNT)
+[source#src-usj-char-w_1,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NEH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "9",
+      "sid": "NEH 9"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "31",
+          "sid": "NEH 9:31"
+        },
+        "And yet, because your mercy is great,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["you did not forsake or destroy them."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        "You are a ",
+        {
+          "type": "char",
+          "marker": "w",
+          "content": ["gracious"]
+        },
+        " and merciful God!"
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -52,17 +121,88 @@ USX::
 ======
 USFM::
 +
-.Glossay word with (unnamed) default "lemma" attribute
-[source#src-usfm-char-w_2,usfm,highlight=1]
+.Glossay word with (unnamed) default "lemma" attribute - Nehemiah 9.31 (GNT)
+[source#src-usfm-char-w_2,usfm,highlight=6]
 ----
-\w gracious|grace\w*
+\id NEH
+\c 9
+\q1
+\v 31 And yet, because your mercy is great,
+\q2 you did not forsake or destroy them.
+\q1 You are a \w gracious|grace\w* and merciful God!
 ----
 USX::
 +
-.Glossay word with "lemma" attribute
-[source#src-usx-char-w_2,xml,highlight=1]
+.Glossay word with "lemma" attribute - Nehemiah 9.31 (GNT)
+[source#src-usx-char-w_2,xml,highlight=10]
 ----
-<char style="w" lemma="grace">gracious</char>
+<usx version="3.1">
+  <book code="NEH" style="id"/>
+  <chapter number="9" style="c" sid="NEH 9"/>
+  <para style="q1">
+    <verse number="31" style="v" sid="NEH 9:31"/>And yet, because your mercy 
+    is great,</para>
+  <para style="q2" vid="NEH 9:31">you did not forsake or destroy them.</para>
+  <para style="q1" vid="NEH 9:31">You are a 
+    <char style="w" lemma="grace">gracious</char> and merciful 
+    God!<verse eid="NEH 9:31"/></para>
+</usx>
+----
+USJ::
++
+.Glossay word with "lemma" attribute - Nehemiah 9.31 (GNT)
+[source#src-usj-char-w_2,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NEH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "9",
+      "sid": "NEH 9"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "31",
+          "sid": "NEH 9:31"
+        },
+        "And yet, because your mercy is great,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["you did not forsake or destroy them."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        "You are a ",
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "grace",
+          "content": [" gracious"]
+        },
+        " and merciful God!"
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -70,17 +210,88 @@ USX::
 ======
 USFM::
 +
-.Glossay word with explicit "lemma" attribute
-[source#src-usfm-char-w_3,usfm,highlight=1]
+.Glossay word with explicit "lemma" attribute - Nehemiah 9.31 (GNT)
+[source#src-usfm-char-w_3,usfm,highlight=6]
 ----
-\w gracious|lemma="grace"\w*
+\id NEH
+\c 9
+\q1
+\v 31 And yet, because your mercy is great,
+\q2 you did not forsake or destroy them.
+\q1 You are a \w gracious|lemma="grace"\w* and merciful God!
 ----
 USX::
 +
-.Glossay word with explicit "lemma" attribute
+.Glossay word with explicit "lemma" attribute - Nehemiah 9.31 (GNT)
 [source#src-usx-char-w_3,xml,highlight=1]
 ----
-<char style="w" lemma="grace">gracious</char>
+<usx version="3.1">
+  <book code="NEH" style="id"/>
+  <chapter number="9" style="c" sid="NEH 9"/>
+  <para style="q1">
+    <verse number="31" style="v" sid="NEH 9:31"/>And yet, because your mercy 
+    is great,</para>
+  <para style="q2" vid="NEH 9:31">you did not forsake or destroy them.</para>
+  <para style="q1" vid="NEH 9:31">You are a 
+    <char style="w" lemma="grace">gracious</char> and merciful 
+    God!<verse eid="NEH 9:31"/></para>
+</usx>
+----
+USJ::
++
+.Glossay word with "lemma" attribute - Nehemiah 9.31 (GNT)
+[source#src-usj-char-w_3,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NEH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "9",
+      "sid": "NEH 9"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "31",
+          "sid": "NEH 9:31"
+        },
+        "And yet, because your mercy is great,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["you did not forsake or destroy them."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        "You are a ",
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "grace",
+          "content": [" gracious"]
+        },
+        " and merciful God!"
+      ]
+    }
+  ]
+}
 ----
 ======
 
@@ -88,25 +299,93 @@ USX::
 ======
 USFM::
 +
-.Glossay word with "lemma" and "strong"
-[source#src-usfm-char-w_4,usfm,highlight=1..3]
+.Glossay word with "lemma" and "strong" - Nehemiah 9.31 (GNT)
+[source#src-usfm-char-w_4,usfm,highlight=6]
 ----
-\w gracious|lemma="grace" strong="G5485"\w*
-\w gracious|strong="G5485"\w*
-\w gracious|strong="H1234,G5485"\w*
+\id NEH
+\c 9
+\q1
+\v 31 And yet, because your mercy is great,
+\q2 you did not forsake or destroy them.
+\q1 You are a \w gracious|lemma="grace" strong="H2587,G5485"\w* and merciful God!
 ----
-USFM::
+USX::
 +
-.Glossay word with "lemma" and "strong"
-[source#src-usx-char-w_4,xml,highlight=1..3]
+.Glossay word with "lemma" and "strong" - Nehemiah 9.31 (GNT)
+[source#src-usx-char-w_4,xml,highlight=10]
 ----
-<char style="w" lemma="grace" strong="G5485">gracious</char>
-<char style="w" strong="G5485">gracious</char>
-<char style="w" strong="H1234,G5485">gracious</char>
+<usx version="3.1">
+  <book code="NEH" style="id"/>
+  <chapter number="9" style="c" sid="NEH 9"/>
+  <para style="q1">
+    <verse number="31" style="v" sid="NEH 9:31"/>And yet, because your mercy 
+    is great,</para>
+  <para style="q2" vid="NEH 9:31">you did not forsake or destroy them.</para>
+  <para style="q1" vid="NEH 9:31">You are a 
+    <char style="w" lemma="grace" strong="H2587,G5485">gracious</char> and 
+    merciful God!<verse eid="NEH 9:31"/></para>
+</usx>
+----
+USJ::
++
+.Glossay word with "lemma" and "strong" - Nehemiah 9.31 (GNT)
+[source#src-usj-char-w_4,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NEH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "9",
+      "sid": "NEH 9"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "31",
+          "sid": "NEH 9:31"
+        },
+        "And yet, because your mercy is great,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": ["you did not forsake or destroy them."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        "You are a ",
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "grace",
+          "strong": "H2587,G5485",
+          "content": ["gracious"]
+        },
+        " and merciful God!"
+      ]
+    }
+  ]
+}
 ----
 ======
 
-//image::char/missing.jpg[,300]
+// image::char/missing.jpg[,300]
 
 == Properties
 

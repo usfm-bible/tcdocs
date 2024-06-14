@@ -28,21 +28,98 @@ Added:: 1.0
 ======
 USFM::
 +
-.Missing
-[source#src-usfm-char-wj_1,usfm,highlight=1]
+.Mark 4:39-40 (GNT)
+[source#src-usfm-char-wj_1,usfm,highlight=4..7]
 ----
-Missing
+\id MRK
+\c 4
+\p 
+\v 39 Jesus stood up and commanded the wind, \wj “Be quiet!”\wj* and he said to 
+the waves, \wj “Be still!”\wj* The wind died down, and there was a great calm. 
+\v 40 Then Jesus said to his disciples, \wj “Why are you frightened? Do you still 
+have no faith?”\wj* 
 ----
 USX::
 +
-.Missing
-[source#src-usx-char-wj_1,xml,highlight=1]
+.Mark 4:39-40 (GNT)
+[source#src-usx-char-wj_1,xml,highlight=6..7;9..10]
 ----
-Missing
+<usx version="3.0">
+  <book code="MRK" style="id"/>
+  <chapter number="4" style="c" sid="MRK 4"/>
+  <para style="p">
+    <verse number="39" style="v" sid="MRK 4:39"/>Jesus stood up and commanded
+    the wind, <char style="wj">“Be quiet!”</char> and he said to the waves, 
+    <char style="wj">“Be still!”</char> The wind died down, and there was a great
+    calm. <verse eid="MRK 4:39"/><verse number="40" style="v" sid="MRK 4:40"/>Then
+    Jesus said to his disciples, <char style="wj">“Why are you frightened? Do
+    you still have no faith?”</char><verse eid="MRK 4:40"/></para>
+</usx>
+----
+USJ::
++
+.Mark 4:39-40 (GNT)
+[source#src-usj-char-wj_1,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "4",
+      "sid": "MRK 4"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "39",
+          "sid": "MRK 4:39"
+        },
+        "Jesus stood up and commanded the wind, ",
+        {
+          "type": "char",
+          "marker": "wj",
+          "content": ["“Be quiet!”"]
+        },
+        " and he said to the waves, ",
+        {
+          "type": "char",
+          "marker": "wj",
+          "content": ["“Be still!”"]
+        },
+        " The wind died down, and there was a great calm. ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "40",
+          "sid": "MRK 4:40"
+        },
+        "Then Jesus said to his disciples, ",
+        {
+          "type": "char",
+          "marker": "wj",
+          "content": ["“Why are you frightened? Do you still have no faith?”"]
+        }
+      ]
+    }
+  ]
+}
 ----
 ======
 
-image::char/missing.jpg[,300]
+// image::char/missing.jpg[,300]
 
 == Properties
 

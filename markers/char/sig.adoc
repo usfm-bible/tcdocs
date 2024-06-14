@@ -29,8 +29,10 @@ Added:: 1.0
 USFM::
 +
 .Colossians 4.18 (GNT)
-[source#src-usfm-char-sig_1,usfm,highlight=2]
+[source#src-usfm-char-sig_1,usfm,highlight=4]
 ----
+\id COL
+\c 4
 \p
 \v 18 With my own hand I write this: \sig Greetings from Paul\sig*. 
 Do not forget my chains!
@@ -39,13 +41,65 @@ Do not forget my chains!
 USX::
 +
 .Colossians 4.18 (GNT)
-[source#src-usx-char-sig_1,xml,highlight=2]
+[source#src-usx-char-sig_1,xml,highlight=6]
 ----
-<para style="p">
-  <verse number="18" style="v" sid="COL 4:18"/>With my own hand I write this: 
-  <char style="sig">Greetings from Paul</char>. Do not forget my chains!</para>
-<para style="cls" vid="COL 4:18">May God's grace be with you.
-  <verse eid="COL 4:18"/></para>
+<usx version="3.1">
+  <book code="COL" style="id"/>
+  <chapter number="4" style="c" sid="COL 4"/>
+  <para style="p">
+    <verse number="18" style="v" sid="COL 4:18"/>With my own hand I write this: 
+    <char style="sig">Greetings from Paul</char>. Do not forget my chains!</para>
+  <para style="cls" vid="COL 4:18">May God's grace be with you.
+    <verse eid="COL 4:18"/></para>
+</usx>
+----
+USJ::
++
+.Colossians 4.18 (GNT)
+[source#src-usj-char-sig_1,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "COL",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "4",
+      "sid": "COL 4"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18",
+          "sid": "COL 4:18"
+        },
+        "With my own hand I write this: ",
+        {
+          "type": "char",
+          "marker": "sig",
+          "content": ["Greetings from Paul"]
+        },
+        ". Do not forget my chains!"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "cls",
+      "content": ["May God's grace be with you. "]
+    }
+  ]
+}
 ----
 ======
 

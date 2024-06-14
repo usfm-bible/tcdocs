@@ -35,16 +35,23 @@ USFM::
 ----
 Missing
 ----
-USFM::
+USX::
 +
 .Missing
 [source#src-usx-char-addpn_1,xml,highlight=1]
 ----
 Missing
 ----
+USJ::
++
+.Missing
+[source#src-usj-char-addpn_1,json]
+----
+Missing
+----
 ======
 
-image::char/missing.jpg[,300]
+// image::char/missing.jpg[,300]
 
 == Properties
 

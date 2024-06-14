@@ -29,8 +29,11 @@ Added:: 1.0
 USFM::
 +
 .Ezra 4.8—6.18 (French - NBS - Nouvelle Bible Segond)
-[source#src-usfm-char-sls_1,usfm,highlight=5..9]
+[source#src-usfm-char-sls_1,usfm,highlight=8..12]
 ----
+\id EZR
+\c 4
+\p ...
 \v 7 Et aux jours d'Artaxerxès, Bishlam, Mitredath, Tabéel et le reste de leurs
 collègues écrivirent à Artaxerxès, roi de Perse. Le texte de la lettre fut 
 écrit en araméen, traduit en araméen.
@@ -45,22 +48,97 @@ Babylone, de Suse, de Déha, d'Elam,\sls*
 USX::
 +
 .Ezra 4.8—6.18 (French - NBS - Nouvelle Bible Segond)
-[source#src-usx-char-sls_1,xml,highlight=7..8;10..13]
+[source#src-usx-char-sls_1,xml,highlight=10..11;14..16]
 ----
-<verse number="7" style="v" sid="EZR 4:7"/>Et aux jours d'Artaxerxès, Bishlam,
-Mitredath, Tabéel et le reste de leurs collègues écrivirent à Artaxerxès, roi de
-Perse. Le texte de la lettre fut écrit en araméen, traduit en araméen.
-<verse eid="EZR 4:7"/></para>
-<para style="p">
-  <verse number="8" style="v" sid="EZR 4:8"/>
-  <char style="sls">Rehoum, chancelier, et Shimshaï, secrétaire, écrivirent au roi
-  Artaxerxès la lettre suivante concernant Jérusalem, savoir:</char>
-  <verse eid="EZR 4:8"/>
-  <verse number="9" style="v" sid="EZR 4:9"/><char style="sls">«Rehoum, 
-  chancelier, Shimshaï, secrétaire, et le reste de leurs collègues, ceux de Dîn, 
-  d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de Babylone, de Suse, de Déha, 
-  d'Elam,</char><verse eid="EZR 4:9"/></para>
-...
+<usx version="3.1">
+  <book code="EZR" style="id"/>
+  <chapter number="4" style="c" sid="EZR 4"/>
+  <para style="p">... <verse number="7" style="v" sid="EZR 4:7"/>Et aux jours
+    d'Artaxerxès, Bishlam, Mitredath, Tabéel et le reste de leurs collègues
+    écrivirent à Artaxerxès, roi de Perse. Le texte de la lettre fut écrit en
+    araméen, traduit en araméen. <verse eid="EZR 4:7"/></para>
+  <para style="p">
+    <verse number="8" style="v" sid="EZR 4:8"/>
+    <char style="sls">Rehoum, chancelier, et Shimshaï, secrétaire, écrivirent au
+      roi Artaxerxès la lettre suivante concernant Jérusalem, savoir:</char>
+    <verse eid="EZR 4:8"/>
+    <verse number="9" style="v" sid="EZR 4:9"/>
+    <char style="sls">«Rehoum, chancelier, Shimshaï, secrétaire, et le reste de
+      leurs collègues, ceux de Dîn, d'Apharsatak, de Tarpel, d'Apharas, d'Erek,
+      de Babylone, de Suse, de Déha, d'Elam,</char>
+    <verse eid="EZR 4:9"/>
+  </para>
+</usx>
+----
+USJ::
++
+.Ezra 4.8—6.18 (French - NBS - Nouvelle Bible Segond)
+[source#src-usj-char-sls_1,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "EZR",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "4",
+      "sid": "EZR 4"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        "... ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "7",
+          "sid": "EZR 4:7"
+        },
+        "Et aux jours d'Artaxerxès, Bishlam, Mitredath, Tabéel et le reste de leurs collègues écrivirent à Artaxerxès, roi de Perse. Le texte de la lettre fut écrit en araméen, traduit en araméen. "
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "8",
+          "sid": "EZR 4:8"
+        },
+        {
+          "type": "char",
+          "marker": "sls",
+          "content": [
+            "Rehoum, chancelier, et Shimshaï, secrétaire, écrivirent au roi Artaxerxès la lettre suivante concernant Jérusalem, savoir:"
+          ]
+        },
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "9",
+          "sid": "EZR 4:9"
+        },
+        {
+          "type": "char",
+          "marker": "sls",
+          "content": [
+            "«Rehoum, chancelier, Shimshaï, secrétaire, et le reste de leurs collègues, ceux de Dîn, d'Apharsatak, de Tarpel, d'Apharas, d'Erek, de Babylone, de Suse, de Déha, d'Elam,"
+          ]
+        }
+      ]
+    }
+  ]
+}
 ----
 ======
 

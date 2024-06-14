@@ -35,7 +35,7 @@ Added:: 3.1
 USFM::
 +
 .Target references in \xt without \ref - Matthew 5.13 (GNT)
-[source#src-usfm-ref_1,usfm,highlight=5]
+[source#src-usfm-ref_1,usfm,highlight=6]
 ----
 \id MAT
 \c 13
@@ -49,7 +49,7 @@ again. It has become worthless, so it is thrown out and people trample on it.
 USX::
 +
 .Corresponding target references with auto-generated ref tags - Matthew 5.13 (GNT)
-[source#src-usx-ref_1,xml,highlight=8..9]
+[source#src-usx-ref_1,xml,highlight=9..11]
 ----
 <usx version="3.1">
   <book code="MAT" style="id"/>
@@ -67,6 +67,82 @@ USX::
     so it is thrown out and people trample on it.<verse eid="MAT 5:13"/></para>
 </usx>
 ----
+USJ::
++
+.Corresponding target references with auto-generated ref tags - Matthew 5.13 (GNT)
+[source#src-usj-ref_1,json,highlight=8..9]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "5",
+      "sid": "MAT 5"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "13",
+          "sid": "MAT 5:13"
+        },
+        {
+          "type": "note",
+          "marker": "x",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "xo",
+              "content": ["5.13: "]
+            },
+            {
+              "type": "char",
+              "marker": "xt",
+              "content": [
+                {
+                  "type": "ref",
+                  "loc": "MRK 9:50",
+                  "gen": "true",
+                  "content": ["Mk 9.50"]
+                },
+                "; ",
+                {
+                  "type": "ref",
+                  "loc": "LUK 14:34",
+                  "gen": "true",
+                  "content": ["Lk 14.34"]
+                },
+                ",",
+                {
+                  "type": "ref",
+                  "loc": "LUK 14:35",
+                  "gen": "true",
+                  "content": ["35"]
+                },
+                "."
+              ]
+            }
+          ]
+        },
+        "“You are like salt for the whole human race. But if salt loses its saltiness, there is no way to make it salty again. It has become worthless, so it is thrown out and people trample on it."
+      ]
+    }
+  ]
+}
+----
 ======
 
 [tabs]
@@ -74,7 +150,7 @@ USX::
 USFM::
 +
 .Target references in \xt with supplied \ref - Matthew 5.13 (GNT)
-[source#src-usfm-ref_2,usfm,highlight=5]
+[source#src-usfm-ref_2,usfm,highlight=6..7]
 ----
 \id MAT
 \c 13
@@ -89,7 +165,7 @@ salty again. It has become worthless, so it is thrown out and people trample on 
 USX::
 +
 .Target references with ref tags - Matthew 5.13 (GNT)
-[source#src-usx-ref_2,xml,highlight=8..9]
+[source#src-usx-ref_2,xml,highlight=9..10]
 ----
 <usx version="3.1">
   <book code="MAT" style="id"/>
@@ -105,6 +181,79 @@ USX::
     saltiness, there is no way to make it salty again. It has become worthless, 
     so it is thrown out and people trample on it.<verse eid="MAT 5:13"/></para>
 </usx>
+----
+USJ::
++
+.Target references with ref tags - Matthew 5.13 (GNT)
+[source#src-usj-ref_2,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "5",
+      "sid": "MAT 5"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "13",
+          "sid": "MAT 5:13"
+        },
+        {
+          "type": "note",
+          "marker": "x",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "xo",
+              "content": ["5.13: "]
+            },
+            {
+              "type": "char",
+              "marker": "xt",
+              "content": [
+                {
+                  "type": "ref",
+                  "loc": "MRK 9:50",
+                  "content": ["Mk 9.50"]
+                },
+                "; ",
+                {
+                  "type": "ref",
+                  "loc": "LUK 14:34",
+                  "content": ["Lk 14.34"]
+                },
+                ",",
+                {
+                  "type": "ref",
+                  "loc": "LUK 14:35",
+                  "content": ["35"]
+                },
+                "."
+              ]
+            }
+          ]
+        },
+        "“You are like salt for the whole human race. But if salt loses its saltiness, there is no way to make it salty again. It has become worthless, so it is thrown out and people trample on it."
+      ]
+    }
+  ]
+}
 ----
 ======
 

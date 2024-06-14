@@ -29,8 +29,10 @@ Added:: 1.0
 USFM::
 +
 .Matthew 27.46 (GNT)
-[source#src-usfm-char-tl_1,usfm,highlight=6..7]
+[source#src-usfm-char-tl_1,usfm,highlight=8..9]
 ----
+\id MAT
+\c 27
 \s1 The Death of Jesus
 \r (Mark 15.33-41; Luke 23.44-49; John 19.28-30)
 \p
@@ -42,17 +44,81 @@ lema sabachthani?”\tl* which means, “My God, my God, why did you abandon me?
 USX::
 +
 .Matthew 27.46 (GNT)
-[source#src-usx-char-tl_1,xml,highlight=7..8]
+[source#src-usx-char-tl_1,xml,highlight=10..11]
 ----
-<para style="s1">The Death of Jesus</para>
-<para style="r">(Mark 15.33-41; Luke 23.44-49; John 19.28-30)</para>
-<para style="p">
-  <verse number="45" style="v" sid="MAT 27:45"/>At noon the whole country was
-  covered with darkness, which lasted for three hours. 
-  <verse eid="MAT 27:45"/><verse number="46" style="v" sid="MAT 27:46"/>At about 
-  three o'clock Jesus cried out with a loud shout, <char style="tl">“Eli, Eli, 
-  lema sabachthani?”</char> which means, “My God, my God, why did you abandon me?”
-  <verse eid="MAT 27:46"/></para>
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <chapter number="27" style="c" sid="MAT 27"/>
+  <para style="s1">The Death of Jesus</para>
+  <para style="r">(Mark 15.33-41; Luke 23.44-49; John 19.28-30)</para>
+  <para style="p">
+    <verse number="45" style="v" sid="MAT 27:45"/>At noon the whole country was
+    covered with darkness, which lasted for three hours. 
+    <verse eid="MAT 27:45"/><verse number="46" style="v" sid="MAT 27:46"/>At 
+    about three o'clock Jesus cried out with a loud shout, <char style="tl">“Eli, 
+    Eli, lema sabachthani?”</char> which means, “My God, my God, why did you 
+    abandon me?”<verse eid="MAT 27:46"/></para>
+</usx>
+----
+USJ::
++
+.Matthew 27.46 (GNT)
+[source#src-usj-char-tl_1,json]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "27",
+      "sid": "MAT 27"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["The Death of Jesus"]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": ["(Mark 15.33-41; Luke 23.44-49; John 19.28-30)"]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "45",
+          "sid": "MAT 27:45"
+        },
+        "At noon the whole country was covered with darkness, which lasted for three hours. ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "46",
+          "sid": "MAT 27:46"
+        },
+        "At about three o'clock Jesus cried out with a loud shout, ",
+        {
+          "type": "char",
+          "marker": "tl",
+          "content": ["“Eli, Eli, lema sabachthani?”"]
+        },
+        " which means, “My God, my God, why did you abandon me?”"
+      ]
+    }
+  ]
+}
 ----
 ======
 
