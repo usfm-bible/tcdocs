@@ -176,8 +176,8 @@ USJ::
 [#chars-with-attrib]
 == Characters Types with Attributes
 
-* xref:char:features/jmp.adoc[jmp - Link text] -- `link-href`, `link-title`, `link-id`
+* xref:char:features/jmp.adoc[jmp - Link text] -- `href`, `title`, `id`
 * xref:char:features/rb.adoc[rb - Ruby gloss] -- `gloss`
 * xref:char:features/w.adoc[w - Wordlist entry] -- `lemma`, `strong`, `srcloc`
-* xref:char:notes/crossref/xt.adoc[xt - Target references] -- `link-href`
+* xref:char:features/ref.adoc[ref - Scripture reference(s)] -- `loc`, `gen`
 * xref:fig:fig.adoc[fig - Figure] -- `alt`, `src`, `size`, `loc`, `copy`, `ref`
