@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily idential to the main title (xref:para:titles-sections/mt.adoc[mt]).
+Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily identical to the main title (xref:para:titles-sections/mt.adoc[mt]).
 * The variable `#` (1-2) represents the level of division.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\mte# ++``#__content__#
