@@ -6,7 +6,7 @@ endif::[]
 :imagesdir: {localdir}/images
 
 == 3.1
-_June 2024_
+_July 2024_
 
 === Background on USFM 3.1
 
@@ -26,13 +26,18 @@ The key differences in the grammar from USFM 3.0 to 3.1.0 are:
 * Other peripherals may be of any type.
 * xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and other xref:doc:index.adoc#doc-book-chapter-content[Para] (paragraphs) are seperated as different categories (internal).
 * The xref:para:index.adoc[paragraph] #_@vid_# attribute has an extended reference syntax.
-* All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
+* xref:char:index.adoc[Character] markers and xref:char:nesting.adoc[nesting]:
+** All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
+** Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note _submarker elements_. They provide structure to the note content. These note submarker elements continue to support (and recommend) the common pratice of implicit closure.
+** Note content must occur within a submarker element; there can be no unmarked note content only within the xref:note:index.adoc[note container] itself.
+** xref:char:notes/footnote/fv.adoc[fv] is now just a xref:char:notes/index.adoc[character] style and requires explicit closing.
+** Use of the `\+` prefix for nested USFM xref:char:index.adoc[character] markup is supported but is _deprecated_. Note that future versions of USFM may remove support for the `\+` syntax entirely.
+* Markings scripture references -- xref:char:features/ref.adoc[ref] and xref:char:notes/crossref/xt.adoc[xt]:
+** Added xref:char:features/ref.adoc[ref] for marking scripture references in all contexts (including xref:char:notes/crossref/xt.adoc[xt]), with an optional machine-readable target location.
+** _Deprecated_ use of the attribute #__@link-href__# with xref:char:notes/crossref/xt.adoc[xt]. Use xref:char:features/ref.adoc[ref].
+** _Deprecated_ use of xref:char:notes/crossref/xt.adoc[xt] outside of xref:note:crossref/x.adoc[cross-reference]. Use: xref:char:features/ref.adoc[ref].
 * Deprecate the `link-` prefix in xref:char:features/jmp.adoc[jmp] attributes.
 * Add #_@key_# attribute to the xref:char:features/k.adoc[k] character element.
-* Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note _submarker elements_. They provide structure to the note content. These note submarker elements continue to support (and recommend) the common pratice of implicit closure.
-* Note content must occur within a submarker element; there can be no unmarked note content only within the xref:note:index.adoc[note container] itself.
-* xref:char:notes/footnote/fv.adoc[fv] is now just a xref:char:notes/index.adoc[character] style and requires explicit closing.
-* Use of the `\+` prefix for nested USFM xref:char:index.adoc[character] markup is supported but is _deprecated_. Note that future versions of USFM may remove support for the `\+` syntax entirely.
 * #_@sid_# and #_@eid_# attributes are not automatically available for all xref:ms:index.adoc[milestones], but may be used when specified directly (e.g. xref:ms:qt.adoc[qt] and xref:ms:ts.adoc[ts])
 * `\` escaping is required and supported for a number of key characters: `\`, `'`, `"`, `|`, `~`, `/`
 * Whitespace rules are xref:ROOT:whitespace.adoc[clarified and formalised].
