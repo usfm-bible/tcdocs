@@ -1,6 +1,6 @@
 {
   "type": "USJ",
-  "version": "0.2.3",
+  "version": "3.1",
   "content": [
     {
       "type": "book",
@@ -164,14 +164,14 @@
               "type": "char",
               "marker": "fqa",
               "content": [
-                "“Whoever is thirsty should come to me and drink. "
-              ]
-            },
-            {
-              "type": "char",
-              "marker": "fv",
-              "content": [
-                "38"
+                "“Whoever is thirsty should come to me and drink. ",
+                {
+                  "type": "char",
+                  "marker": "fv",
+                  "content": [
+                    "38"
+                  ]
+                }
               ]
             },
             {
