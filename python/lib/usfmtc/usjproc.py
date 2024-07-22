@@ -1,7 +1,19 @@
 
 from usfmtc.xmlutils import ParentElement
 
-def usxtousj(input_usx_elmt):
+SPEC_NAME="USJ"
+VERSION_NUM="3.1"
+
+def usxtousj(input_usx):
+    '''The core function for the process.
+    input: parsed XML element for the whole USX
+    output: dict object as per the JSON schema'''
+    output_json, _ = convert_usx(input_usx)
+    output_json['type'] = SPEC_NAME
+    output_json['version'] = VERSION_NUM
+    return output_json
+
+def convert_usx(input_usx_elmt):
     '''Accepts an XML object of USX and returns a Dict corresponding to it.
     Traverses the children, recursively'''
     key = input_usx_elmt.tag
@@ -51,7 +63,7 @@ def usjtousx(adict, elfactory=None):
     if elfactory is None:
         elfactory = ParentElement       # Needed for adding esid_s. Or use lxml
     root = elfactory('usx')
-    root.set('version', '3.0')
+    root.set('version', '3.1')
     for item in adict['content']:
         convert_usj(item, root, elfactory)
     return root
