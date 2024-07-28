@@ -1,0 +1,100 @@
+= lit
+:description: Liturgical note
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/lit.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Liturgical note/comment. May be a guide which tells the reader/worshipper that he should recite a prayer or recitation etc.
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+* *USFM:* ``++\lit ++``#__content__#
+* *USX:* ``++<para style="lit">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Psalm 3 (Russian Synodal, Orthodox Version)
+[source#src-usfm-para-lit_1,usfm,highlight=15]
+----
+\id PSA
+\c 3
+\d
+\v 1 Псалом Давида, когда он бежал от Авессалома, сына своего.
+\p
+\v 2 Господи! как умножились враги мои! Многие восстают на меня;
+\v 3 многие говорят душе моей: «нет ему спасения в Боге».
+\v 4 Но Ты, Господи, щит предо мною, слава моя, и Ты возносишь голову мою.
+\v 5 Гласом моим взываю к Господу, и Он слышит меня со святой горы Своей.
+\v 6 Ложусь я, сплю и встаю, ибо Господь защищает меня.
+\v 7 Не убоюсь тем народа, которые со всех сторон ополчились на меня.
+\v 8 Восстань, Господи! спаси меня, Боже мой! ибо Ты поражаешь в ланиту всех 
+врагов моих; сокрушаешь зубы нечестивых.
+\v 9 От Господа спасение. Над народом Твоим благословение Твое.
+\lit Слава:
+----
+USX::
++
+.Psalm 3 (Russian Synodal, Orthodox Version)
+[source#src-usx-para-lit_1,xml,highlight=23]
+----
+<usx version="3.1">
+  <book code="PSA" style="id"/>
+  <chapter number="3" style="c" sid="XXA 3"/>
+  <para style="d">
+    <verse number="1" style="v" sid="XXA 3:1"/>Псалом Давида, когда он бежал от
+    Авессалома, сына своего.<verse eid="XXA 3:1"/></para>
+  <para style="p">
+    <verse number="2" style="v" sid="XXA 3:2"/>Господи! как умножились враги
+    мои! Многие восстают на меня; <verse eid="XXA 3:2"/><verse number="3"
+      style="v" sid="XXA 3:3"/>многие говорят душе моей: «нет ему спасения в
+    Боге». <verse eid="XXA 3:3"/><verse number="4" style="v" sid="XXA 3:4"/>Но
+    Ты, Господи, щит предо мною, слава моя, и Ты возносишь голову мою. <verse
+      eid="XXA 3:4"/><verse number="5" style="v" sid="XXA 3:5"/>Гласом моим
+    взываю к Господу, и Он слышит меня со святой горы Своей. <verse
+      eid="XXA 3:5"/><verse number="6" style="v" sid="XXA 3:6"/>Ложусь я, сплю и
+    встаю, ибо Господь защищает меня. <verse eid="XXA 3:6"/><verse number="7"
+      style="v" sid="XXA 3:7"/>Не убоюсь тем народа, которые со всех сторон
+    ополчились на меня. <verse eid="XXA 3:7"/><verse number="8" style="v"
+      sid="XXA 3:8"/>Восстань, Господи! спаси меня, Боже мой! ибо Ты поражаешь в
+    ланиту всех врагов моих; сокрушаешь зубы нечестивых. <verse eid="XXA 
+      3:8"/><verse number="9" style="v" sid="XXA 3:9"/>От Господа спасение. Над 
+      народом Твоим благословение Твое.<verse eid="XXA 3:9"/></para>
+  <para style="lit">Слава:</para>
+</usx>
+----
+USJ::
++
+.Psalm 3 (Russian Synodal, Orthodox Version)
+[source#src-usj-para-lit_1,json,highlight=]
+----
+
+----
+======
+
+image::para/lit_1.jpg[Psalm 3 (Russian Synodal Orthodox Version),300]
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: paragraph, publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

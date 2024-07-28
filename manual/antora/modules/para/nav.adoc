@@ -72,6 +72,7 @@
 *** xref:paragraphs/pmr.adoc[pmr - Embedded refrain]
 *** xref:paragraphs/pi.adoc[pi# - Indented]
 *** xref:paragraphs/mi.adoc[mi - Indented continuation]
+*** xref:paragraphs/lit.adoc[lit - Liturgical note]
 *** xref:paragraphs/nb.adoc[nb - No break]
 *** xref:paragraphs/b.adoc[b - Blank line]
 *** _Deprecated_
