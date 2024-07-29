@@ -640,6 +640,14 @@ VersePara.para.style.enum = (
       "b"
     |   ## A Hebrew text heading, to provide description (e.g. Psalms)
       "d"
+    |   ## Paragraph text, level 1 indented, with no first line indent; often used for discourse
+      "mi1"
+    |   ## Paragraph text, level 2 indented, with no first line indent; often used for discourse
+      "mi2"
+    |   ## Paragraph text, level 3 indented, with no first line indent; often used for discourse
+      "mi3"
+    |   ## Paragraph text, level 4 indented, with no first line indent; often used for discourse
+      "mi4"
     |   ## Paragraph text, indented, with no first line indent; often used for discourse
       "mi"
     |   ##  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
@@ -1179,9 +1187,9 @@ Internal.style.enum = (
       "cat"
     )
 
-Cell.style.enum = ( "th1" | "th2" | "th3" | "th4" | "th5" | "th6" | "th7" | "th8" | "th9"
-    | "tc1" | "tc2" | "tc3" | "tc4" | "tc5" | "tc6" | "tc7" | "tc8" | "tc9"
-    | "tcr1" | "tcr2" | "tcr3" | "tcr4" | "tcr5" | "tcr6" | "tcr7" | "tcr8" | "tcr9"
-    | "tcc1" | "tcc2" | "tcc3" | "tcc4" | "tcc5" | "tcc6" | "tcc7" | "tcc8" | "tcc9"
-    | "thc1" | "thc2" | "thc3" | "thc4" | "thc5" | "thc6" | "thc7" | "thc8" | "thc9"
-    | "thr1" | "thr2" | "thr3" | "thr4" | "thr5" | "thr6" | "thr7" | "thr8" | "thr9" )
+Cell.style.enum = ( "th1" | "th2" | "th3" | "th4" | "th5" | "th6" | "th7" | "th8" | "th9" | "th10" | "th11" | "th12"
+    | "tc1" | "tc2" | "tc3" | "tc4" | "tc5" | "tc6" | "tc7" | "tc8" | "tc9" | "tc10" | "tc11" | "tc12"
+    | "tcr1" | "tcr2" | "tcr3" | "tcr4" | "tcr5" | "tcr6" | "tcr7" | "tcr8" | "tcr9" | "tc10" | "tc11" | "tc12"
+    | "tcc1" | "tcc2" | "tcc3" | "tcc4" | "tcc5" | "tcc6" | "tcc7" | "tcc8" | "tcc9" | "tcc10" | "tcc11" | "tcc12"
+    | "thc1" | "thc2" | "thc3" | "thc4" | "thc5" | "thc6" | "thc7" | "thc8" | "thc9" | "thc10" | "thc11" | "tch12"
+    | "thr1" | "thr2" | "thr3" | "thr4" | "thr5" | "thr6" | "thr7" | "thr8" | "thr9" | "thr10" | "thr11" | "thr12")
