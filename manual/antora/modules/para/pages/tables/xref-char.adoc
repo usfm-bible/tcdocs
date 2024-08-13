@@ -5,4 +5,5 @@
 * xref:char:tables/thr.adoc[thr# - Table column head - right aligned]
 * xref:char:tables/tc.adoc[tc# - Table cell]
 * xref:char:tables/tcr.adoc[tcr# - Table cell - right aligned]
+* xref:char:tables/tcc.adoc[tcc# - Table cell - center aligned]
 // end::xrefs-only[]

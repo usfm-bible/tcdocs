@@ -1,6 +1,6 @@
-= thr#
+= tcr#
 :description: Table cell - right aligned
-:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/th.adoc
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/tcr.adoc
 :noindex:
 ifndef::localdir[]
 :source-highlighter: rouge
