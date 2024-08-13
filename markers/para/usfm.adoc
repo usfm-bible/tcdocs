@@ -12,16 +12,19 @@ endif::[]
 
 == Summary
 
-Description:: USFM/USX version specification. Identifies the USFM/USX version which an editor or processor must support to sucessfully handle markup within the file.
+Description:: USFM version specification. Identifies the USFM version which an editor or processor must support to sucessfully handle markup within the file.
 [NOTE]
-.USX syntax note
+.Syntax note
 ====
-USX represents most USFM xref:para:index.adoc[paragraph] types as a xref:para:index.adoc[<para>] element. In the case of `\usfm`, the `+{version}+` number is related to the `+{version}+` attribute value for the USX root element `+<usx>+`.
+USX represents most USFM xref:para:index.adoc[paragraph] types as a xref:para:index.adoc[<para>] element. In the case of `\usfm`, the #__version__# number is related to the #__version__# attribute value for the USX root element `+<usx>+`.
+
+See the xref:doc:index.adoc[Document Structure] page for the syntax diagram highlighting the position of xref:para:identification/usfm.adoc[usfm]. 
 ====
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\usfm ++``#__version__#
 * *USX:* ``++<usx version="++``#__version__#``++">++``
-#version#::: USFM/USX version number.
+#version# *::: USFM/USX version number.
+** Beginning with USFM 3.1, the version the version number is required: ``++\usfm 3.1++`` or ``++<usx version="3.1">++``
 Style Type:: xref:para:index.adoc[Paragraph]
 Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
 // tag::spec[]
