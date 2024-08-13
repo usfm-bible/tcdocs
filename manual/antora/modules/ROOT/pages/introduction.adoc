@@ -5,8 +5,8 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-Standard Format Markers (SFMs) have been used for many years within the Bible translation community for marking the elements within a digital Scripture text. Over time the backslash-based syntax (`\`) was used in diverging ways. In 2002 a working group within the United Bible Societies produced a specification for a single SFM dialect which facilitated the validation and sharing of Scripture content between teams, organizations and technologies. That specification was called Unified Standard Format Markers, or *USFM*.
+Standard Format Markers (SFMs) have been used for many years within the Bible translation community for marking the elements within a digital Scripture text. Over time the backslash-based syntax (`\`) was used in diverging ways. In 2002 a working group within the United Bible Societies produced a specification for a single SFM dialect which facilitated the validation and sharing of Scripture content between teams, organizations and technologies. That specification was called _Unified Standard Format Markers_, or *USFM*.
 
-*USX* is a companion XML-based syntax which is derived from and closely associated to USFM.
+With version *3.1*, USFM (_Unified Scripture Format Markup_) standardizes a single xref:doc:index.adoc[content model] which can be equally expressed in backslash-based `\` format markers (USFM-FM), XML (USFM-XML), or JSON (USFM-JSON). The common abbreviation for these expressions are *USFM*, *USX*, and *USJ*.
 
 include::../nav.adoc[tag=nav-topcat]

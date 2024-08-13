@@ -5,7 +5,7 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
-There are five general categories of USFM/USX markup:
+There are five general categories of USFM markup:
 
 * xref:cv:index.adoc[Chapters and Verses]
 * xref:para:index.adoc[Paragraphs]
@@ -13,9 +13,11 @@ There are five general categories of USFM/USX markup:
 * xref:note:index.adoc[Notes]
 * xref:ms:index.adoc[Milestones]
 
-== USFM
+== Markup Expressions
 
-In *USFM*, all markers begin with a backslash character `\`.
+=== USFM (USFM-FM)
+
+*USFM* is a backslash-based `\` representation of the USFM data model. In USFM, all markers begin with a backslash character `\`.
 
 * xref:para:index.adoc[Paragraph] markers, and the opening marker for xref:char:index.adoc[characters] and xref:note:index.adoc[notes] are followed by a space. Example: ``++\p ++``.
 * xref:char:index.adoc[Character] markers occur in pairs, marking a span of text within a paragraph. The closing marker is identical to the opening marker, terminated with an asterisk character `+*+`. Example: `+\w grace\w*+`.
@@ -23,9 +25,9 @@ In *USFM*, all markers begin with a backslash character `\`.
 * xref:ms:index.adoc[Milestone] markers follow a syntax similar to xref:char:index.adoc[character markers], but using a self-closing syntax which immediately terminates the marker with a second backslash plus asterisk `\*`. Example: `+\\qt-s\*+`
 * xref:cv:c.adoc[Chapters] and xref:cv:v.adoc[verses] are unique elements. Their syntax is similar to a paragraph marker. The chapter or verse number itself is added after the marker and its space. Chapter and verses are also like milestones because they identify the location for the start of a chapter or verse. In USFM there is no marker to indicate the end of a chapter or verse.
 
-== USX
+=== USX (USFM-XML)
 
-*USX* follows the https://www.w3.org/TR/xml/[standard syntax] for XML documents.
+*USX* is an https://www.w3.org/TR/xml/[XML] representation of the USFM data model.
 
 * xref:para:index.adoc[Paragraphs] occur within a `+<para>+` element.
 * xref:char:index.adoc[Character] spans occur within a `+<char>+` element.
@@ -35,7 +37,75 @@ In *USFM*, all markers begin with a backslash character `\`.
 
 Different _types_ of paragraph, character, note, or milestones are identified by a `+style+` attribute. The `+style+` attribute is the value which associates the element with its corresponding USFM marker.
 
-== Numbered Markers/Styles
+=== USJ (USFM-JSON)
+
+*USJ* is a JSON representation of the USFM data model. It is a first-class citizen among the other formats (USFM and USX) and has been added as a target in the test suite maintained by the committee.
+
+JSON (JavaScript Object Notation) is a modern data serialization format supported by many software tools and libraries. It is especially convenient to use in JavaScript-based technologies where it is natively supported.
+
+* xref:cv:index.adoc[Chapters and verses] are treated as milestones – denoting only their absolute position and not encapsulating text or other content within them.
+* xref:cv:c.adoc[Chapter] elements are valid at the outermost level – the same level as id and book headers.
+* xref:cv:v.adoc[Verse] elements, like character elements, are valid within paragraph-like parents at the same level as the textual content.
+* The `type` key has values that refer to the node types in USX. e.g. xref:para:index.adoc[para], xref:char:index.adoc[char], xref:doc:id.adoc[book], xref:cv:c.adoc[chapter], xref:cv:v.adoc[verse], xref:ms:index.adoc[ms].
+* The `marker` key has values that refer to marker names used in USFM and the style attribute in USX.
+* Every attribute in a USX node becomes a key in the corresponding JSON object.
+
+[source,json]
+----
+{
+  "type": "book",
+  "marker": "id",
+  "code": "GEN",
+  "content": []
+},
+{
+  "type": "chapter",
+  "marker": "c",
+  "number": "1",
+  "sid": "GEN 1"
+}
+----
+
+* All objects may have nested content or textual content in an array for the `contents` key whose value is an array.
+
+[source,json]
+----
+{
+  "type": "para",
+  "marker": "ide",
+  "content": ["UTF-8"]
+},
+{
+  "type": "para",
+  "marker": "usfm",
+  "content": ["3.0"]
+},
+{
+  "type": "para",
+  "marker": "is",
+  "content": [
+    "Introduction"
+    ]
+},
+{
+  "type": "para",
+  "marker": "ip",
+  "content": [
+    {
+      "type": "char",
+      "marker": "bk",
+      "content": [
+        "The Gospel according to Mark"
+          ]
+    },
+    " begins with the statement..."
+  ]
+}
+----
+
+== Additional Syntax Notes
+
+=== Numbered Markers/Styles
 Some markers or styles include an optional numeric variable, which is represented in this documentation by a hash character `+#+`. The number indicates:
 
 * A portion of a larger text, or relative weighting of the components of the text, such as `mt1`, `mt2`, `mt3` which are parts of a xref:para:titles-sections/mt.adoc[main title].
@@ -49,7 +119,7 @@ Some markers or styles include an optional numeric variable, which is represente
 A specific numbered marker or style should not be used to indicate a specific occurrence of the element type (i.e. you should not use `s3` to represent the the particular section heading occuring before the "Story of Creation" in Genesis 1.)
 ====
 
-== USFM Endmarkers in Footnotes and Cross References
+=== USFM Endmarkers in Footnotes and Cross References
 
 Elements which make up xref:note:footnote/index.adoc[footnote] or xref:note:crossref/index.adoc[cross reference] content are xref:char:index.adoc[character] level markers.  *With USFM 3.1*, ending character markers have been made required — except for the markers used to start sections in footnotes and cross references (the note's 'structural elements'). The majority of scripture translation projects working with USFM already follow the implicit closure syntax for footnote or cross reference structural markup. 
 
