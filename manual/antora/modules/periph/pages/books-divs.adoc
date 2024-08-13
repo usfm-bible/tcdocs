@@ -8,7 +8,7 @@ endif::[]
 [#periph-book-frt]
 == Front Matter
 
-`FRT` xref:para:identification/books.adoc[book] 
+`FRT` xref:doc:books.adoc[book] 
 
 * xref:book-frt.adoc#periph-frt-title[Title Page] - `title`
 * xref:book-frt.adoc#periph-frt-halftitle[Half Title Page] - `halftitle`
@@ -24,7 +24,7 @@ endif::[]
 [#periph-book-int]
 == Introductions
 
-`INT` xref:para:identification/books.adoc[book] 
+`INT` xref:doc:books.adoc[book] 
 
 * xref:book-int.adoc#periph-int-all[Bible Introduction] - `title`
 * xref:book-int.adoc#periph-int-all[Old Testament Introduction] `intot`
@@ -41,7 +41,7 @@ endif::[]
 [#periph-book-bak]
 == Back Matter
 
-`BAK` xref:para:identification/books.adoc[book] 
+`BAK` xref:doc:books.adoc[book] 
 
 * xref:book-bak.adoc#periph-bak-chron[Chronology] - `chron`
 * xref:book-bak.adoc#periph-bak-measures[Weights and Measures] - `measures`
@@ -53,15 +53,15 @@ endif::[]
 
 Some larger back matter content is maintained it within its own book file. These contents do not use a xref:periph:periph.adoc[periph] division identifier.
 
-* `CNC` xref:para:identification/books.adoc[book] - xref:book-cnc.adoc[Concordance]
-* `GLO` xref:para:identification/books.adoc[book] - xref:book-glo.adoc[Glossary]
-* `TDX` xref:para:identification/books.adoc[book] - xref:book-tdx.adoc[Topical Index]
-* `NDX` xref:para:identification/books.adoc[book] - xref:book-ndx.adoc[Names Index]
+* `CNC` xref:doc:books.adoc[book] - xref:book-cnc.adoc[Concordance]
+* `GLO` xref:doc:books.adoc[book] - xref:book-glo.adoc[Glossary]
+* `TDX` xref:doc:books.adoc[book] - xref:book-tdx.adoc[Topical Index]
+* `NDX` xref:doc:books.adoc[book] - xref:book-ndx.adoc[Names Index]
 
 [#periph-book-oth]
 == Other
 
-`OTH` xref:para:identification/books.adoc[book]
+`OTH` xref:doc:books.adoc[book]
 
 * xref:book-oth.adoc#periph-oth-cover[Cover] - `cover`
 * xref:book-oth.adoc#periph-oth-spine[Spine] - `spine`

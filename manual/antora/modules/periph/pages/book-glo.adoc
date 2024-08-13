@@ -1,6 +1,6 @@
 = Glossary
 
-The `GLO` xref:para:identification/books.adoc[book] can be used for adding a glossary.
+The `GLO` xref:doc:books.adoc[book] can be used for adding a glossary.
 
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]

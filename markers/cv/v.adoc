@@ -19,9 +19,9 @@ xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 #number# *::: Verse number
 #altnumber#::: Verse number for an alternate versification scheme.
 #pubnumber#::: Published verse character. The character(s) (number, letter, or both) which should be displayed in a published text, where it is different than the sequential verse number used within the translation editing environment.
-#sid# *::: Verse start identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse start milestone._
+#sid# *::: Verse start identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:doc:books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse start milestone._
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
-#eid# *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:para:identification/books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
+#eid# *::: Verse end identifier. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:doc:books.adoc[book identifier]. Chapter:verse separator is always a colon `:`. _Required at verse end milestone._
 ** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
 Valid In:: `[xref:doc:index.adoc#scripture[Scripture]]` > `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]

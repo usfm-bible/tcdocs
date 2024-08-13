@@ -1,6 +1,6 @@
 = Topical Index
 
-The `TDX` xref:para:identification/books.adoc[book] can be used for adding a topical index.
+The `TDX` xref:doc:books.adoc[book] can be used for adding a topical index.
 
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]

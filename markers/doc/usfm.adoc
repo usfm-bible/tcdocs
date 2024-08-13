@@ -18,7 +18,7 @@ Description:: USFM version specification. Identifies the USFM version which an e
 ====
 USX represents most USFM xref:para:index.adoc[paragraph] types as a xref:para:index.adoc[<para>] element. In the case of `\usfm`, the #__version__# number is related to the #__version__# attribute value for the USX root element `+<usx>+`.
 
-See the xref:doc:index.adoc[Document Structure] page for the syntax diagram highlighting the position of xref:para:identification/usfm.adoc[usfm]. 
+See the xref:doc:index.adoc[Document Structure] page for the syntax diagram highlighting the position of xref:doc:usfm.adoc[usfm]. 
 ====
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\usfm ++``#__version__#
@@ -72,7 +72,7 @@ USJ::
 ----
 ======
 
-image::para/missing.jpg[,300]
+image::doc/missing.jpg[,300]
 
 == Properties
 

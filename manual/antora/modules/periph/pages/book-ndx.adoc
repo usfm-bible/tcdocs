@@ -1,6 +1,6 @@
 = Names Index
 
-The `NDX` xref:para:identification/books.adoc[book] can be used for adding a names index.
+The `NDX` xref:doc:books.adoc[book] can be used for adding a names index.
 
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]

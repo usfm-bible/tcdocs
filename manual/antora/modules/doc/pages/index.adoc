@@ -31,7 +31,7 @@ image::schema/id_usx.svg[]
 === Book Identification
 `[BookIdentification]`
 
-* *Paragraphs > Identification >* xref:para:identification/id.adoc[], xref:para:identification/usfm.adoc[] 
+* *Document Structure >* xref:doc:id.adoc[], xref:doc:usfm.adoc[] 
 
 '''
 

@@ -47,7 +47,7 @@ _April 2018_
 
 === Additions
 
-* USFM version identifier: xref:para:identification/usfm.adoc[\usfm].
+* USFM version identifier: xref:doc:usfm.adoc[\usfm].
 * Alternate language table of contents texts: xref:para:identification/toca.adoc[\toca#]
 * Letter opening: xref:para:paragraphs/po.adoc[\po]
 * List header and footer elements: xref:para:lists/lh.adoc[\lh] and xref:para:lists/lf.adoc[\lf]
@@ -179,7 +179,7 @@ Changes in USFM from 1.53 to 2.0.
 * In Peripherals:
 ** Add `\intro` section to Front Matter (in addition to Preface).
 ** Add `\maps` (Maps Index) section to Back Matter.
-** Define xref:para:identification/books.adoc[books] for FRT, BAK, and OTH rather than using the book names XXA, XXB, and XXC for these materials.
+** Define xref:doc:books.adoc[books] for FRT, BAK, and OTH rather than using the book names XXA, XXB, and XXC for these materials.
 * Add xref:para:titles-sections/sr.adoc[\sr] for marking the text references range listed under a section heading \s.
 * Add the following markers for “embedded text” (see example references – not all versions mark these items the same).
 ** xref:para:paragraphs/pm.adoc[\pm] - Embedded text paragraph

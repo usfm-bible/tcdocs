@@ -1,0 +1,4 @@
+= usfm
+:env-antora:
+
+include::markers:doc/usfm.adoc[tag=public]

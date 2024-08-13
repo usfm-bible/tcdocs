@@ -16,7 +16,7 @@ Description:: Scripture book identification.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
 * *USFM:* ``++\id ++``#__code__#``++ ++``#__content__#
 * *USX:* ``++<book style="id" ++``@code``++>++``#__content__#``++</book>++``
-#code# *::: A standard 3-character scripture xref:para:identification/books.adoc[book identifier].
+#code# *::: A standard 3-character scripture xref:doc:books.adoc[book identifier].
 #content#::: Additional description _(optional)_
 Style Type:: xref:para:index.adoc[Paragraph]
 Valid In:: `[xref:doc:index.adoc#doc-book-headers[BookHeaders]]`
@@ -64,7 +64,7 @@ USJ::
 ----
 ======
 
-image::para/missing.jpg[,300]
+image::doc/missing.jpg[,300]
 
 == Properties
 

@@ -1,6 +1,6 @@
 = Concordance
 
-The `CNC` xref:para:identification/books.adoc[book] can be used for adding a concordance.
+The `CNC` xref:doc:books.adoc[book] can be used for adding a concordance.
 
 * xref:para:titles-sections/mt.adoc[mt# - Main title]
 * xref:para:introductions/is.adoc[is# - Intro section heading]

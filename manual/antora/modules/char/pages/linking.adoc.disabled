@@ -8,7 +8,7 @@ Following the general syntax for xref:char:attributes.adoc[character-level attri
 ====
 When a link requires a standard scripture reference, follow the pattern: `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`
 
-* Book names must be a standard 3-character scripture xref:para:identification/books.adoc[book identifier].
+* Book names must be a standard 3-character scripture xref:doc:books.adoc[book identifier].
 * The chapter + verse separator is always a colon `:`.
 * Verse ranges are indicated using a hyphen.
 
