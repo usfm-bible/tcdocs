@@ -1,6 +1,6 @@
 = Scripture Markup Documentation
 
-Version:: 3.1
+Release Version:: 3.1
 
 == Contents
 
