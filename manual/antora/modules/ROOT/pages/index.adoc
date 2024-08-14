@@ -1,6 +1,6 @@
-= USFM and USX Documentation
+= Scripture Markup Documentation
 
-Version:: 3.1 Candidate Standard
+Version:: 3.1
 
 == Contents
 

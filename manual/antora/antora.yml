@@ -1,20 +1,20 @@
 name: usfm-usx-docs
-title: USFM / USX Docs
+title: USFM-USX-USJ
 version: latest
-display_version: default
+display_version: 3.1
 asciidoc:
   attributes:
     source-language: usfm@
     xrefstyle: short@
     listing-caption: Example@
 nav:
-- modules/ROOT/nav.adoc
-- modules/doc/nav.adoc
-- modules/cv/nav.adoc
-- modules/para/nav.adoc
-- modules/char/nav.adoc
-- modules/ms/nav.adoc
-- modules/note/nav.adoc
-- modules/sbar/nav.adoc
-- modules/fig/nav.adoc
-- modules/periph/nav.adoc
+  - modules/ROOT/nav.adoc
+  - modules/doc/nav.adoc
+  - modules/cv/nav.adoc
+  - modules/para/nav.adoc
+  - modules/char/nav.adoc
+  - modules/ms/nav.adoc
+  - modules/note/nav.adoc
+  - modules/sbar/nav.adoc
+  - modules/fig/nav.adoc
+  - modules/periph/nav.adoc
