@@ -50,7 +50,6 @@ USFM::
 .Esther-Greek 3.14-15 ('Addition B') (CEV - _adapted_)
 [source#src-usfm-cv-vp_1,usfm,highlight=5;9]
 ----
-...
 \ms1 Addition B
 \cp B
 \s1 A Copy of the Letter 
