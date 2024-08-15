@@ -608,7 +608,7 @@
             <text>
               <usfm:text/>
             </text>
-            <ref name="Char"/>
+            <ref name="CharEmbed"/>
             <ref name="IntroChar"/>
             <ref name="Footnote"/>
             <ref name="CrossReference"/>
@@ -711,7 +711,7 @@
           </text>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Break"/>
@@ -770,7 +770,7 @@
           </text>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="VerseEnd" usfm:ignore="true"/>
@@ -865,7 +865,7 @@
           <text>
             <usfm:text/>
           </text>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Verse"/>
@@ -943,6 +943,14 @@
       <a:documentation>Poetry text stanza break (e.g. stanza break)</a:documentation>
       <value>d</value>
       <a:documentation>A Hebrew text heading, to provide description (e.g. Psalms)</a:documentation>
+      <value>mi1</value>
+      <a:documentation>Paragraph text, level 1 indented, with no first line indent; often used for discourse</a:documentation>
+      <value>mi2</value>
+      <a:documentation>Paragraph text, level 2 indented, with no first line indent; often used for discourse</a:documentation>
+      <value>mi3</value>
+      <a:documentation>Paragraph text, level 3 indented, with no first line indent; often used for discourse</a:documentation>
+      <value>mi4</value>
+      <a:documentation>Paragraph text, level 4 indented, with no first line indent; often used for discourse</a:documentation>
       <value>mi</value>
       <a:documentation>Paragraph text, indented, with no first line indent; often used for discourse</a:documentation>
       <value>m</value>
@@ -996,7 +1004,7 @@
             <usfm:text/>
           </text>
           <ref name="ListChar"/>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Verse"/>
@@ -1090,7 +1098,7 @@
           <text>
             <usfm:text/>
           </text>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Verse"/>
@@ -1127,7 +1135,7 @@
           <text>
             <usfm:text/>
           </text>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Reference"/>
@@ -1315,7 +1323,7 @@
       <choice>
         <group>
           <attribute usfm:stacked="true" usfm:grouping="9">
-            <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
+            <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true" skip="3.0"/>
             <name ns="">style</name>
             <ref name="FullChar.char.style.enum"/>
           </attribute>
@@ -1396,7 +1404,7 @@
           <text>
             <usfm:text/>
           </text>
-          <ref name="Char"/>
+          <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
           <ref name="Footnote"/>
@@ -1638,7 +1646,7 @@
     <element usfm:stacked="true">
       <name ns="">verse</name>
       <attribute>
-        <usfm:tag usfm:seq="true" after="WS"/>
+        <usfm:tag usfm:seq="true" after="WS" beforeout="&#x27;\n&#x27;"/>
         <name ns="">style</name>
         <value>v</value>
       </attribute>
@@ -1963,6 +1971,9 @@
       <value>th7</value>
       <value>th8</value>
       <value>th9</value>
+      <value>th10</value>
+      <value>th11</value>
+      <value>th12</value>
       <value>tc1</value>
       <value>tc2</value>
       <value>tc3</value>
@@ -1972,6 +1983,9 @@
       <value>tc7</value>
       <value>tc8</value>
       <value>tc9</value>
+      <value>tc10</value>
+      <value>tc11</value>
+      <value>tc12</value>
       <value>tcr1</value>
       <value>tcr2</value>
       <value>tcr3</value>
@@ -1981,6 +1995,9 @@
       <value>tcr7</value>
       <value>tcr8</value>
       <value>tcr9</value>
+      <value>tc10</value>
+      <value>tc11</value>
+      <value>tc12</value>
       <value>tcc1</value>
       <value>tcc2</value>
       <value>tcc3</value>
@@ -1990,6 +2007,9 @@
       <value>tcc7</value>
       <value>tcc8</value>
       <value>tcc9</value>
+      <value>tcc10</value>
+      <value>tcc11</value>
+      <value>tcc12</value>
       <value>thc1</value>
       <value>thc2</value>
       <value>thc3</value>
@@ -1999,6 +2019,9 @@
       <value>thc7</value>
       <value>thc8</value>
       <value>thc9</value>
+      <value>thc10</value>
+      <value>thc11</value>
+      <value>tch12</value>
       <value>thr1</value>
       <value>thr2</value>
       <value>thr3</value>
@@ -2008,6 +2031,9 @@
       <value>thr7</value>
       <value>thr8</value>
       <value>thr9</value>
+      <value>thr10</value>
+      <value>thr11</value>
+      <value>thr12</value>
     </choice>
   </define>
 </grammar>

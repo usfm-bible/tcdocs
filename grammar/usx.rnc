@@ -418,7 +418,7 @@ Title.para.style.enum = (
 BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { Introduction.para.style.enum },
-        ([usfm:text[]] text | Char | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
+        ([usfm:text[]] text | CharEmbed | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
     } | Table
 
 Introduction.para.style.enum = (
@@ -497,7 +497,7 @@ Introduction.para.style.enum = (
 BookIntroductionEndTitles =
     element para {
         [usfm:ptag[]] attribute style { Title.para.style.enum },
-        ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | Char | Figure | Milestone | Break)*
+        ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | Break)*
     }
 
 ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
@@ -509,7 +509,7 @@ Section =
         [usfm:grouping="15" usfm:ptag[matchid="a" usfm:stacked="true"]]
         attribute style { SectionPara.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | Footnote | CrossReference | Char | Figure | Milestone | [usfm:ignore="true"] VerseEnd | Reference | Break)*
+        ([usfm:text[]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | [usfm:ignore="true"] VerseEnd | Reference | Break)*
     }
 
 SectionPara.para.style.enum = (
@@ -572,7 +572,7 @@ Para =
         ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum } |
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum }),
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
 VersePara.para.style.enum = (
@@ -681,7 +681,7 @@ List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | ListChar | Char | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+        ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
 List.para.style.enum = (
@@ -729,7 +729,7 @@ TableContent =
         attribute style { xsd:string { pattern = "t[hc][rc]?\d+(-\d+)?" } },
         attribute align { cell.align.enum },
         attribute colspan { xsd:integer }?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Verse | Footnote | CrossReference | Break)*
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Footnote | CrossReference | Break)*
     }
            
 cell.align.enum = (
@@ -745,7 +745,7 @@ IntroChar =
     element char {
         [usfm:tag[matchid="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
         char.closed?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Reference | Footnote | CrossReference | Break)+
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Reference | Footnote | CrossReference | Break)+
         >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]
     }
 IntroChar.char.style.enum = (
@@ -866,7 +866,7 @@ Char.char.style.enum = (
 
 CharEmbed = (
     element char {
-        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true" skip="3.0"]] attribute style { FullChar.char.style.enum },
         ((CharContent, Attributes?) | Attributes)
         >> usfm:endtag[matchref="b" before="'\\'"])
       |
@@ -893,7 +893,7 @@ ListChar = (
     element char {
         [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
         char.closed?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Footnote | CrossReference | Break | Reference)*
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Footnote | CrossReference | Break | Reference)*
         >> usfm:endtag[usfm:many="?"]
     })
 
@@ -1011,7 +1011,7 @@ Verse = ( VerseStart | [usfm:ignore="true"]VerseEnd )
 VerseStart =
     [usfm:stacked = "true"]
     element verse {
-        [usfm:tag[usfm:seq="true" after="WS"]]
+        [usfm:tag[usfm:seq="true" after="WS" beforeout="'\n'"]]
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="WS" afterout="' '"]]
         attribute number { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },

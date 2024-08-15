@@ -423,13 +423,15 @@ escapes = {
 
 class USXConverter(RelaxValidator):
 
-    def __init__(self, grammar):
+    def __init__(self, grammar, **kw):
         super().__init__(grammar)
         self.aliases = {}
         for a in grammar.findall(f"{usfmns}alias"):
             name = a.get("name").replace("usfm:", "")
             self.aliases[name] = a[0]
         self.matchids = []
+        for k, v in kw.items():
+            setattr(self, k, v)
 
     def pushmatch(self, key, value):
         self.matchids.append((key, value))
@@ -490,6 +492,8 @@ class USXConverter(RelaxValidator):
     def usfm_match(self, vel, state):
         if vel.get("noout", "false").lower() in ("true", "1"):
             return True
+        if vel.get("skip", "") == self.outversion:
+            return False
         if (res := self._getmatchfield(vel, 'before')) is not None:
             state.addresult(res)
         if (idcode := vel.get('matchid', None)) is not None:

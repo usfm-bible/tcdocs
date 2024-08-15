@@ -419,6 +419,22 @@
 \category versepara
 \description Paragraph text, indented, with no first line indent; often used for discourse
 
+\marker mi1
+\category versepara
+\description Paragraph text, level 1 indented, with no first line indent; often used for discourse
+
+\marker mi2
+\category versepara
+\description Paragraph text, level 2 indented, with no first line indent; often used for discourse
+
+\marker mi3
+\category versepara
+\description Paragraph text, level 3 indented, with no first line indent; often used for discourse
+
+\marker mi4
+\category versepara
+\description Paragraph text, level 4 indented, with no first line indent; often used for discourse
+
 \marker mr
 \category sectionpara
 \description A major section division references range heading
@@ -822,6 +838,15 @@
 \marker tc1
 \category cell
 
+\marker tc10
+\category cell
+
+\marker tc11
+\category cell
+
+\marker tc12
+\category cell
+
 \marker tc2
 \category cell
 
@@ -849,6 +874,15 @@
 \marker tcc1
 \category cell
 
+\marker tcc10
+\category cell
+
+\marker tcc11
+\category cell
+
+\marker tcc12
+\category cell
+
 \marker tcc2
 \category cell
 
@@ -871,6 +905,9 @@
 \category cell
 
 \marker tcc9
+\category cell
+
+\marker tch12
 \category cell
 
 \marker tcr1
@@ -903,6 +940,15 @@
 \marker th1
 \category cell
 
+\marker th10
+\category cell
+
+\marker th11
+\category cell
+
+\marker th12
+\category cell
+
 \marker th2
 \category cell
 
@@ -930,6 +976,12 @@
 \marker thc1
 \category cell
 
+\marker thc10
+\category cell
+
+\marker thc11
+\category cell
+
 \marker thc2
 \category cell
 
@@ -955,6 +1007,15 @@
 \category cell
 
 \marker thr1
+\category cell
+
+\marker thr10
+\category cell
+
+\marker thr11
+\category cell
+
+\marker thr12
 \category cell
 
 \marker thr2

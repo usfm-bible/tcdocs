@@ -115,9 +115,9 @@ class USX:
         prettyxml(self.xml)
         self._outwrite(file, self.xml, fn=writexml)
 
-    def outUsfm(self, grammar, file=None):
+    def outUsfm(self, grammar, file=None, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
-        parser = USXConverter(grammar.getroot())
+        parser = USXConverter(grammar.getroot(), **kw)
         el = messup(self.xml)
         res = parser.parse(el)
         if res:

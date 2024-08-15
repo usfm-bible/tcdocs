@@ -222,7 +222,7 @@ def expandescape(s):
 class UsfmParserBackend:
     _terminals = {
         'text': lambda **kw : Text(**kw),
-        'ws': lambda **kw: String("\s", **kw),
+        'ws': lambda **kw: String(r"\s", **kw),
         'word': lambda **kw: Text(**kw)
     }
     _grouptypes = {
