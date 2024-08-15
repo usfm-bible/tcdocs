@@ -1,8 +1,8 @@
 name: usfm
 title: USFM-USX-USJ
-version: latest
-display_version: latest
-prerelease: true
+version: 3.1
+display_version: 3.1
+prerelease: false
 asciidoc:
   attributes:
     source-language: usfm@
