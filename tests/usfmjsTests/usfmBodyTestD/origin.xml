@@ -7,7 +7,7 @@
   <para style="s1">The Preaching of John the Baptist<note caller="-" style="x"><char style="xo" closed="false">3.0 </char><char style="xta" closed="false">Compare with </char><char style="xt" closed="false">Mk 1.1-8; Lk 3.1-18; </char><char style="xta" closed="false">and </char><char style="xt" closed="false">Jn 1.19-28 </char><char style="xta" closed="false">parallel passages.</char></note></para>
   <para style="p">
     <verse number="1" style="v" sid="TIT 1:1" />This is the Good News about Jesus Christ, the Son of God. <note caller="+" style="f"><char style="fr" closed="false">1.1: </char><char style="ft" closed="false">Some manuscripts do not have </char><char style="fq" closed="false">the Son of God.</char></note> <verse eid="TIT 1:1" /><verse number="2" style="v" sid="TIT 1:2" />with the certain hope of everlasting life that God, who does not lie, promised before all the ages of time. <verse eid="TIT 1:2" /><verse number="2-7" style="v" sid="TIT 1:2-7" />They presented their offerings in the following order:</para>
-  <table>
+  <table vid="TIT 1:2-7">
     <row style="tr">
       <cell style="th1" align="start">Day </cell>
       <cell style="th2" align="start">Tribe </cell>
@@ -31,11 +31,11 @@
     <row style="tr">
       <cell style="tc1" align="start">Issachar </cell>
       <cell style="tc2" align="start">Nethanel son of Zuar </cell>
-      <cell style="tcr3" align="end">54,400</cell>
+      <cell style="tcr3" align="end">54,400
+      <verse eid="TIT 1:2-7" /></cell>
     </row>
   </table>
-  <para style="p" vid="TIT 1:2-7">
-    <verse eid="TIT 1:2-7" />
+  <para style="p" vid="TIT 1:3">
     <verse number="3" style="v" sid="TIT 1:3" />At the right time, he revealed his word by the message that he trusted me to deliver, by the command of God our savior.<verse eid="TIT 1:3" /></para>
   <para style="s5" />
   <para style="p">
@@ -72,7 +72,7 @@
     <verse number="3" style="v" sid="TIT 2:3" />Él es el resplandor glorioso de Dios,<note caller="c" style="f"><char style="fr" closed="false">1.3: </char><char style="fk" closed="false">Resplandor: </char><char style="ft" closed="false">Cf. Jn 1.4-9,14</char><char style="fdc" closed="false">; también Sab 7.25-26, donde algo parecido se dice de la sabiduría.</char></note> la imagen misma de lo que Dios es y el que sostiene todas las cosas con su palabra poderosa. Después de limpiarnos de nuestros pecados, se ha sentado en el cielo, a la derecha del trono de Dios, <verse eid="TIT 2:3" /><verse number="4" style="v" sid="TIT 2:4" />y ha llegado a ser superior a los ángeles, pues ha recibido en herencia un título mucho más importante que el de ellos. <note caller="-" style="fe"><char style="ft" closed="false">this is some text</char></note> <verse eid="TIT 2:4" /><verse number="5" style="v" sid="TIT 2:5" />to be sensible, pure, good housekeepers, and obedient to their own husbands, so that God's word may not be insulted.<verse eid="TIT 2:5" /></para>
   <para style="s5" />
   <para style="p">
-    <verse number="6" style="v" sid="TIT 2:6" />In the same way, encourage the younger men to use good sense. <char style="xt" link-href="MAT 6:7">7</char> <char style="xt" link-href="MAT 6:7">verse 7</char> <char style="xt" link-href="MAT 6:7">v7</char> <verse eid="TIT 2:6" /><verse number="8" style="v" sid="TIT 2:8" />and a correct message that is above criticism, so that anyone who opposes you may be ashamed because they have nothing bad to say about us.<verse eid="TIT 2:8" /></para>
+    <verse number="6" style="v" sid="TIT 2:6" />In the same way, encourage the younger men to use good sense. <char style="xt" href="MAT 6:7"><ref loc="MAT 6:7" gen="true">7</ref></char> <char style="xt" href="MAT 6:7"><ref loc="MAT 6:7" gen="true">verse 7</ref></char> <char style="xt" href="MAT 6:7"><ref loc="MAT 6:7" gen="true">v7</ref></char> <verse eid="TIT 2:6" /><verse number="8" style="v" sid="TIT 2:8" />and a correct message that is above criticism, so that anyone who opposes you may be ashamed because they have nothing bad to say about us.<verse eid="TIT 2:8" /></para>
   <para style="s5" />
   <para style="p">
     <verse number="9" style="v" sid="TIT 2:9" />
@@ -119,7 +119,7 @@
   <para style="lf" vid="TIT 3:6-9">This was the list of the administrators of the tribes of Israel. <verse eid="TIT 3:6-9" /><verse number="7" style="v" sid="TIT 3:7" />so that having been justified by his grace, we might become heirs with the certain hope of eternal life.<verse eid="TIT 3:7" /></para>
   <para style="s5" />
   <para style="p">
-    <verse number="8" style="v" sid="TIT 3:8" />whoever believes in me should drink. As the scripture says, ‘Streams of life- giving water will pour out from his side.’” <note caller="+" style="f"><char style="fr" closed="false">7.38: </char><char style="ft" closed="false">Jesus' words in verses 37-38 may be translated: </char><char style="fqa" closed="false">“Whoever is thirsty should come to me and drink. </char><char style="fv">8</char> As the scripture says, ‘Streams of life-giving water will pour out from within anyone who believes in me.’”</note><verse eid="TIT 3:8" /></para>
+    <verse number="8" style="v" sid="TIT 3:8" />whoever believes in me should drink. As the scripture says, ‘Streams of life- giving water will pour out from his side.’” <note caller="+" style="f"><char style="fr" closed="false">7.38: </char><char style="ft" closed="false">Jesus' words in verses 37-38 may be translated: </char><char style="fqa" closed="false">“Whoever is thirsty should come to me and drink. <char style="fv">8</char> As the scripture says, ‘Streams of life-giving water will pour out from within anyone who believes in me.’”</char></note><verse eid="TIT 3:8" /></para>
   <para style="s5" />
   <para style="p">
     <verse number="9" style="v" sid="TIT 3:9" />But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless. <verse eid="TIT 3:9" /><verse number="10" style="v" sid="TIT 3:10" />Reject anyone who is causing divisions among you, after one or two warnings, <verse eid="TIT 3:10" /><verse number="11" style="v" sid="TIT 3:11" />knowing that such a person has turned from the right way and is sinning and condemns himself.<verse eid="TIT 3:11" /></para>
