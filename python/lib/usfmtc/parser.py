@@ -231,11 +231,15 @@ class Group(Parser):
                     else:
                         s.cstack.pop()
                         s.lasterror = e
+                        if self.capture:
+                            s.gs.release(self.capture)
                         raise e
                 if n is not None:
                     s.defstack.pop()
                 if self.mode == "|+":
                     if cuts.pos != news.pos and matched and c.mc:
+                        if self.capture:
+                            s.gs.release(self.capture)
                         s.cstack.pop()
                         raise NoParseError(f'Interleave multiply matched {c} in {self}', s)
                     elif cuts.pos != news.pos:  # real match
@@ -260,6 +264,8 @@ class Group(Parser):
             if self.mode in '?|':
                 break
             i += 1
+        if self.capture:
+            s.gs.release(self.capture)
         s.cstack.pop()
         return (self._returnRes(res, s), s)
 

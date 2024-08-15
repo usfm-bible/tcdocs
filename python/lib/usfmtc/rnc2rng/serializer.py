@@ -1,7 +1,7 @@
 # Convert an RELAX NG compact syntax schema to a Node tree
 # This file released to the Public Domain by David Mertz
 from . import parser
-from rnc2rng.parser import (
+from usfmtc.rnc2rng.parser import (
     ANNO_ATTR, ANNOTATION, ANY, ASSIGN, ATTR, CHOICE, DATATAG, DATATYPES,
     DEFAULT_NS, DEFINE, DIV, DOCUMENTATION, ELEM, EMPTY, EXCEPT, GRAMMAR,
     GROUP, INTERLEAVE, LIST, LITERAL, MAYBE, MIXED, NAME, NOT_ALLOWED, NS,

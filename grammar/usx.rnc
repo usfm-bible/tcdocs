@@ -418,7 +418,7 @@ Title.para.style.enum = (
 BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { Introduction.para.style.enum },
-        ([usfm:text[]] text | Char | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
+        ([usfm:text[]] text | CharEmbed | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
     } | Table
 
 Introduction.para.style.enum = (
@@ -497,7 +497,7 @@ Introduction.para.style.enum = (
 BookIntroductionEndTitles =
     element para {
         [usfm:ptag[]] attribute style { Title.para.style.enum },
-        ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | Char | Figure | Milestone | Break)*
+        ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | Break)*
     }
 
 ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
@@ -509,7 +509,7 @@ Section =
         [usfm:grouping="15" usfm:ptag[matchid="a" usfm:stacked="true"]]
         attribute style { SectionPara.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | Footnote | CrossReference | Char | Figure | Milestone | [usfm:ignore="true"] VerseEnd | Reference | Break)*
+        ([usfm:text[]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | [usfm:ignore="true"] VerseEnd | Reference | Break)*
     }
 
 SectionPara.para.style.enum = (
@@ -572,7 +572,7 @@ Para =
         ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum } |
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum }),
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
 VersePara.para.style.enum = (
@@ -640,6 +640,14 @@ VersePara.para.style.enum = (
       "b"
     |   ## A Hebrew text heading, to provide description (e.g. Psalms)
       "d"
+    |   ## Paragraph text, level 1 indented, with no first line indent; often used for discourse
+      "mi1"
+    |   ## Paragraph text, level 2 indented, with no first line indent; often used for discourse
+      "mi2"
+    |   ## Paragraph text, level 3 indented, with no first line indent; often used for discourse
+      "mi3"
+    |   ## Paragraph text, level 4 indented, with no first line indent; often used for discourse
+      "mi4"
     |   ## Paragraph text, indented, with no first line indent; often used for discourse
       "mi"
     |   ##  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
@@ -673,7 +681,7 @@ List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | ListChar | Char | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+        ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
 List.para.style.enum = (
@@ -721,7 +729,7 @@ TableContent =
         attribute style { xsd:string { pattern = "t[hc][rc]?\d+(-\d+)?" } },
         attribute align { cell.align.enum },
         attribute colspan { xsd:integer }?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Verse | Footnote | CrossReference | Break)*
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Footnote | CrossReference | Break)*
     }
            
 cell.align.enum = (
@@ -737,7 +745,7 @@ IntroChar =
     element char {
         [usfm:tag[matchid="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
         char.closed?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Reference | Footnote | CrossReference | Break)+
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Reference | Footnote | CrossReference | Break)+
         >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]
     }
 IntroChar.char.style.enum = (
@@ -768,8 +776,8 @@ Char = (
 
 CharContent = (
     [usfm:ignore="true"]char.closed?,
-    ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
-        | CharEmbed | Figure | Milestone | Footnote | CrossReference | Reference | Break)+ # Nested character <char> markup
+    ( CharEmbed | Figure | Milestone | Footnote | CrossReference | Reference | Break # Nested character <char> markup
+      | [usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text)+
     )
 
 FullCharExtra.char.style.enum = (
@@ -858,7 +866,7 @@ Char.char.style.enum = (
 
 CharEmbed = (
     element char {
-        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
+        ([usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true" skip="3.0"]] attribute style { FullChar.char.style.enum },
         ((CharContent, Attributes?) | Attributes)
         >> usfm:endtag[matchref="b" before="'\\'"])
       |
@@ -885,7 +893,7 @@ ListChar = (
     element char {
         [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
         char.closed?,
-        ([usfm:text[]] text | Char | Figure | Milestone | Footnote | CrossReference | Break | Reference)*
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Footnote | CrossReference | Break | Reference)*
         >> usfm:endtag[usfm:many="?"]
     })
 
@@ -1003,7 +1011,7 @@ Verse = ( VerseStart | [usfm:ignore="true"]VerseEnd )
 VerseStart =
     [usfm:stacked = "true"]
     element verse {
-        [usfm:tag[usfm:seq="true" after="WS"]]
+        [usfm:tag[usfm:seq="true" after="WS" beforeout="'\n'"]]
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="WS" afterout="' '"]]
         attribute number { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },
@@ -1143,7 +1151,9 @@ Reference =
     element ref {
         [usfm:text[match="TEXTNOTATTRIB"  after="ATTRIBTEXTEND"]] text?,
         [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:match[match="TEXTNOTATTRIB"]]
-        attribute loc { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?
+        attribute loc { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?,
+        [usfm:match[match="TEXTNOTATTRIB" noout="true"]]
+        attribute gen { "true" | "false" }?
     } >> usfm:endtag[match="'ref'" matchref=""]
 
 Break = 
@@ -1179,9 +1189,9 @@ Internal.style.enum = (
       "cat"
     )
 
-Cell.style.enum = ( "th1" | "th2" | "th3" | "th4" | "th5" | "th6" | "th7" | "th8" | "th9"
-    | "tc1" | "tc2" | "tc3" | "tc4" | "tc5" | "tc6" | "tc7" | "tc8" | "tc9"
-    | "tcr1" | "tcr2" | "tcr3" | "tcr4" | "tcr5" | "tcr6" | "tcr7" | "tcr8" | "tcr9"
-    | "tcc1" | "tcc2" | "tcc3" | "tcc4" | "tcc5" | "tcc6" | "tcc7" | "tcc8" | "tcc9"
-    | "thc1" | "thc2" | "thc3" | "thc4" | "thc5" | "thc6" | "thc7" | "thc8" | "thc9"
-    | "thr1" | "thr2" | "thr3" | "thr4" | "thr5" | "thr6" | "thr7" | "thr8" | "thr9" )
+Cell.style.enum = ( "th1" | "th2" | "th3" | "th4" | "th5" | "th6" | "th7" | "th8" | "th9" | "th10" | "th11" | "th12"
+    | "tc1" | "tc2" | "tc3" | "tc4" | "tc5" | "tc6" | "tc7" | "tc8" | "tc9" | "tc10" | "tc11" | "tc12"
+    | "tcr1" | "tcr2" | "tcr3" | "tcr4" | "tcr5" | "tcr6" | "tcr7" | "tcr8" | "tcr9" | "tc10" | "tc11" | "tc12"
+    | "tcc1" | "tcc2" | "tcc3" | "tcc4" | "tcc5" | "tcc6" | "tcc7" | "tcc8" | "tcc9" | "tcc10" | "tcc11" | "tcc12"
+    | "thc1" | "thc2" | "thc3" | "thc4" | "thc5" | "thc6" | "thc7" | "thc8" | "thc9" | "thc10" | "thc11" | "tch12"
+    | "thr1" | "thr2" | "thr3" | "thr4" | "thr5" | "thr6" | "thr7" | "thr8" | "thr9" | "thr10" | "thr11" | "thr12")

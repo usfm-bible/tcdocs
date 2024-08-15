@@ -25,23 +25,28 @@ class GlobalState(usfmp.GlobalState):
 
     def _ensure(self, index):
         if index >= len(self.captures):
-            self.captures.extend([""] * (index - len(self.captures) + 1))
+            #self.captures.extend([""] * (index - len(self.captures) + 1))
+            self.captures += [[[]] for i in range(index - len(self.captures) + 1)]
 
     def capture(self, index, txt):
         self._ensure(index)
         if isinstance(txt, (list, tuple)):
             txt = "".join(txt)
-        logger.debug(f"Capture[{index}] = '{self.captures[index]}' + '{txt}'")
-        self.captures[index] += txt
+        logger.debug(f"Capture[{index}][{len(self.captures[index])-1}] = '{txt}'")
+        self.captures[index][-1] = txt
 
     def init(self, index, txt):
         self._ensure(index)
-        logger.debug(f"Init capture[{index}]")
-        self.captures[index] = ""
+        logger.debug(f"Init capture[{index}][{len(self.captures[index])}]")
+        self.captures[index].append("")
+
+    def release(self, index):
+        self.captures[index].pop()
+        logger.debug(f"Pop capture[{index}][{len(self.captures[index])}]")
 
     def getcapture(self, index):
-        logger.debug(f"Get capture[{index}] = '{self.captures[index]}'")
-        return self.captures[index]
+        logger.debug(f"Get capture[{index}][{len(self.captures[index])}] = '{self.captures[index][-1]}'")
+        return self.captures[index][-1]
 
     def pop(self):
         return self.captures.pop()
@@ -222,7 +227,7 @@ def expandescape(s):
 class UsfmParserBackend:
     _terminals = {
         'text': lambda **kw : Text(**kw),
-        'ws': lambda **kw: String("\s", **kw),
+        'ws': lambda **kw: String(r"\s", **kw),
         'word': lambda **kw: Text(**kw)
     }
     _grouptypes = {

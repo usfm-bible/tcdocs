@@ -11,7 +11,7 @@ except ImportError:
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input file")
 parser.add_argument("outfile",nargs="?",help="Output file, with inferred format")
-parser.add_argument("-F","--format",help="Output format [usfm, usx, usj]")
+parser.add_argument("-F","--format",help="Output format [usfm, usx, usj, usfm3.0]")
 parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
 parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
 parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
@@ -36,7 +36,7 @@ if args.logging:
             print("Exception", e)
     log = logging.getLogger('usfmconv')
 
-filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm", ".json": "usj"}
+filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
 fileexts = {"usx": ".xml", "usfm": ".usfm", "usj": ".json"}
 
 inroot, ext = os.path.splitext(args.infile)
@@ -77,6 +77,12 @@ elif args.version is not None:
 if not args.canonical:
     usxdoc.canonicalise()
 
+if outtype == "usfm3.0":
+    outtype = "usfm"
+    outversion = "3.0"
+else:
+    outversion = None
+
 if outtype == "usx":
     if args.esids:
         usxdoc.addesids()
@@ -85,4 +91,4 @@ elif outtype == "usj":
     usxdoc.outUsj(args.outfile)
 elif outtype == "usfm":
     grammarDoc = _grammarDoc(args.grammar)
-    usxdoc.outUsfm(grammarDoc, args.outfile)
+    usxdoc.outUsfm(grammarDoc, args.outfile, outversion=outversion)
