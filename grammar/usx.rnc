@@ -776,8 +776,8 @@ Char = (
 
 CharContent = (
     [usfm:ignore="true"]char.closed?,
-    ([usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text
-        | CharEmbed | Figure | Milestone | Footnote | CrossReference | Reference | Break)+ # Nested character <char> markup
+    ( CharEmbed | Figure | Milestone | Footnote | CrossReference | Reference | Break # Nested character <char> markup
+      | [usfm:match[match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"]] text)+
     )
 
 FullCharExtra.char.style.enum = (
@@ -1151,7 +1151,9 @@ Reference =
     element ref {
         [usfm:text[match="TEXTNOTATTRIB"  after="ATTRIBTEXTEND"]] text?,
         [usfm:match[match="PIPE" matchout="'|'" dump="true"] usfm:match[match="TEXTNOTATTRIB"]]
-        attribute loc { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?
+        attribute loc { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*" } }?,
+        [usfm:match[match="TEXTNOTATTRIB" noout="true"]]
+        attribute gen { "true" | "false" }?
     } >> usfm:endtag[match="'ref'" matchref=""]
 
 Break = 

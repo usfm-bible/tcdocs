@@ -148,6 +148,15 @@ def cleanup(node, parent=None):
             node.set("style", start)
         celltype = re.sub(r"^t(.*?)\d.*$", r"\1", s)
         node.set("align", alignments.get(celltype, "start"))
+    elif node.tag == "char":
+        if node.get('style', '') == "xt" and 'href' in node.attrib \
+                and (len(node) != 1 or node.text is not None or node[0].tag != 'ref'):
+            refnode = et.Element('ref', loc=node.get('href'), gen="true")
+            refnode.text = node.text
+            refnode[:] = node[:]
+            node[:] = [refnode]
+            node.text = None
+            node = refnode
     for k, v in node.attrib.items():
         node.attrib[k] = re.sub(r"\\(.)", r"\1", v)
     for c in node:

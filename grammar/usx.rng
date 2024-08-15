@@ -1218,9 +1218,6 @@
       </optional>
       <oneOrMore>
         <choice>
-          <text>
-            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
-          </text>
           <ref name="CharEmbed"/>
           <ref name="Figure"/>
           <ref name="Milestone"/>
@@ -1228,6 +1225,9 @@
           <ref name="CrossReference"/>
           <ref name="Reference"/>
           <ref name="Break"/>
+          <text>
+            <usfm:match match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
+          </text>
         </choice>
       </oneOrMore>
     </group>
@@ -1920,6 +1920,16 @@
             <usfm:pattern name="VERSE"/>
             <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
           </data>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute>
+          <usfm:match match="TEXTNOTATTRIB" noout="true"/>
+          <name ns="">gen</name>
+          <choice>
+            <value>true</value>
+            <value>false</value>
+          </choice>
         </attribute>
       </optional>
     </element>

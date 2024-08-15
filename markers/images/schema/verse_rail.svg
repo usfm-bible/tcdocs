@@ -44,12 +44,14 @@
 <path d="M 20 31 v 20 m 0 -10 h 20"></path></g><path d="M 40 41 h 10"></path><g>
 <path d="M 50 41 h 0.0"></path><path d="M 556.5 326 h 0.0"></path><g>
 <path d="M 50.0 41 h 0.0"></path><path d="M 50.0 41 h 10"></path><g>
-<path d="M 60.0 41 h 130.75"></path><path d="M 415.75 41 h 130.75"></path><g class="terminal ">
-<path d="M 190.75 41 h 0.0"></path><path d="M 244.75 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="190.75" y="30"></rect><text x="217.75" y="45">'\\'</text></g><path d="M 244.75 41 h 10"></path><path d="M 254.75 41 h 10"></path><g class="terminal ">
-<path d="M 264.75 41 h 0.0"></path><path d="M 310.25 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="264.75" y="30"></rect><text x="287.5" y="45">"v"</text></g><path d="M 310.25 41 h 10"></path><path d="M 320.25 41 h 10"></path><g>
-<path d="M 330.25 41 h 0.0"></path><path d="M 415.75 41 h 0.0"></path><path d="M 330.25 41 h 20"></path><g class="terminal ">
-<path d="M 350.25 41 h 0.0"></path><path d="M 395.75 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="350.25" y="30"></rect><text x="373.0" y="45">' '</text></g><path d="M 395.75 41 h 20"></path><path d="M 330.25 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
-<path d="M 350.25 71 h 4.25"></path><path d="M 391.5 71 h 4.25"></path><rect height="22" rx="10" ry="10" width="37.0" x="354.5" y="60"></rect><text x="373.0" y="75">WS</text></g><path d="M 395.75 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g></g><path d="M 546.5 41 a 10 10 0 0 1 10 10 v 39 a 10 10 0 0 1 -10 10 h -486.5 a 10 10 0 0 0 -10 10 v 9 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 60.0 41 h 110.75"></path><path d="M 435.75 41 h 110.75"></path><g>
+<path d="M 170.75 41 h 0.0"></path><path d="M 264.75 41 h 0.0"></path><path d="M 170.75 41 h 20"></path><g class="terminal ">
+<path d="M 190.75 41 h 0.0"></path><path d="M 244.75 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="190.75" y="30"></rect><text x="217.75" y="45">'\n'</text></g><path d="M 244.75 41 h 20"></path><path d="M 170.75 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
+<path d="M 190.75 71 h 0.0"></path><path d="M 244.75 71 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="190.75" y="60"></rect><text x="217.75" y="75">'\\'</text></g><path d="M 244.75 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g><path d="M 264.75 41 h 10"></path><path d="M 274.75 41 h 10"></path><g class="terminal ">
+<path d="M 284.75 41 h 0.0"></path><path d="M 330.25 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="284.75" y="30"></rect><text x="307.5" y="45">"v"</text></g><path d="M 330.25 41 h 10"></path><path d="M 340.25 41 h 10"></path><g>
+<path d="M 350.25 41 h 0.0"></path><path d="M 435.75 41 h 0.0"></path><path d="M 350.25 41 h 20"></path><g class="terminal ">
+<path d="M 370.25 41 h 0.0"></path><path d="M 415.75 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="45.5" x="370.25" y="30"></rect><text x="393.0" y="45">' '</text></g><path d="M 415.75 41 h 20"></path><path d="M 350.25 41 a 10 10 0 0 1 10 10 v 10 a 10 10 0 0 0 10 10"></path><g class="terminal altterminal">
+<path d="M 370.25 71 h 4.25"></path><path d="M 411.5 71 h 4.25"></path><rect height="22" rx="10" ry="10" width="37.0" x="374.5" y="60"></rect><text x="393.0" y="75">WS</text></g><path d="M 415.75 71 a 10 10 0 0 0 10 -10 v -10 a 10 10 0 0 1 10 -10"></path></g></g><path d="M 546.5 41 a 10 10 0 0 1 10 10 v 39 a 10 10 0 0 1 -10 10 h -486.5 a 10 10 0 0 0 -10 10 v 9 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 60.0 129 h 159.25"></path><path d="M 387.25 129 h 159.25"></path><g class="terminal ">
 <path d="M 219.25 129 h 0.0"></path><path d="M 281.75 129 h 0.0"></path><rect height="22" rx="10" ry="10" width="62.5" x="219.25" y="118"></rect><text x="250.5" y="133">VERSE</text></g><path d="M 281.75 129 h 10"></path><path d="M 291.75 129 h 10"></path><g>
 <path d="M 301.75 129 h 0.0"></path><path d="M 387.25 129 h 0.0"></path><path d="M 301.75 129 h 20"></path><g class="terminal ">

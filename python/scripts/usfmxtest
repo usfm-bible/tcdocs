@@ -142,7 +142,10 @@ jobs = []
 if os.path.isdir(args.directory):
     for dp, dns, fns in os.walk(args.directory):
         if 'metadata.xml' in fns:
-            st = os.stat(os.path.join(dp, "origin.usfm"))
+            try:
+                st = os.stat(os.path.join(dp, "origin.usfm"))
+            except FileNotFoundError:
+                continue
             if st.st_size > args.size * 1024:
                 continue
             jobs.append((dp, st.st_size))
