@@ -1966,8 +1966,12 @@
       <a:documentation>Figure</a:documentation>
       <value>esb</value>
       <a:documentation>Sidebar</a:documentation>
+      <value>esbe</value>
+      <a:documentation>Sidebar ending</a:documentation>
       <value>cat</value>
       <a:documentation>Category</a:documentation>
+      <value>tr</value>
+      <a:documentation>Table Row</a:documentation>
     </choice>
   </define>
   <define name="Cell.style.enum">

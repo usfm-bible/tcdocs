@@ -7,8 +7,67 @@ relaxns = "{http://relaxng.org/ns/structure/1.0}"
 usfmns = "{http://usfm.bible/parse/2023}"
 ans="{http://relaxng.org/ns/compatibility/annotations/1.0}"
 
+hierarchy = {
+    'header':       ["id", "periph"],
+    'title':        ["id", "periph"],
+    'introduction': ["id", "periph"],
+    'sectionpara':  ["id", "periph", "esb"],
+    'versepara':    ["id", "periph", "esb"],
+    'otherpara':    ["id", "periph", "esb"],
+    'list':         ["id", "periph", "esb"],
+    'introchar':    ["introduction"],
+    'char':         ["title", "introduction", "sectionpara", "versepara", "otherpara", "list", "cell", "introchar", "char", "listchar", "footnotechar", "crossreferencechar"],
+    'listchar':     ["list"],
+    'milestone':    ["id", "periph", "introduction", "sectionpara", "versepara", "otherpara", "list", "cell", "introchar", "char", "listchar", "footnotechar", "crossreferencechar"],
+    'footnote':     ["id", "periph", "title", "introduction", "sectionpara",  "otherpara", "list", "cell", "introchar", "char", "listchar"],
+    'footnotechar': ["footnote"],
+    'crossreference':   ["id", "periph", "title", "introduction", "sectionpara",  "otherpara", "list", "cell", "introchar", "char", "listchar"],
+    'crossreferencechar':   ["crossreference"],
+    'cell':         ["tr"]
+    } 
+
+internalhier = {
+    "id":       [],
+    "periph":   ["id"],
+    "usfm":     ["id"],
+    "c":        ["id"],
+    "ca":       ["c"],
+    "cp":       ["cp"],
+    "v":        ["versepara", "list", "tr", "cell"],
+    "va":       ["v"],
+    "vp":       ["v"],
+    "fig":      ["periph", "introduction", "sectionpara", "versepara", "otherpara", "list", "cell", "introchar", "char", "listchar", "footnotechar", "crossreferencechar"],
+    "esb":      ["id", "periph", "introduction"],
+    "esbe":     ["id", "periph", "introduction"],
+    "cat":      ["footnote", "crossreference", "esb"],
+    "tr":       ["id", "periph", "introduction", "esb"],
+    }
+
+def makeOccurs(cat, k, allcats):
+    res = []
+    if cat == 'internal':
+        cats = internalhier.get(k, [])
+    elif cat in hierarchy:
+        cats = hierarchy[cat]
+    else:
+        cats = []
+    return sum((allcats.get(c, [c]) for c in cats), [])
+
+def readstyles(infile):
+    res = {}
+    with open(infile, "r", encoding="utf-8") as inf:
+        for l in inf.readlines():
+            l = l.strip()
+            if l.startswith("\\"):
+                b = l.split(' ', 1)
+                if b[0][1:].lower() == "marker":
+                    currk = b[1] if len(b) > 1 else ""
+                res.setdefault(currk, {})[b[0][1:]] = b[1] if len(b) > 1 else ""
+    return res
+
 def collectEnums(rdoc):
     res = {}
+    allcats = {}
     for e in rdoc.findall('./{0}define'.format(relaxns)):
         name = e.get('name')
         if not name.endswith(".style.enum"):
@@ -25,9 +84,10 @@ def collectEnums(rdoc):
                     if val is not None:
                         res[k][a[1]] = val
                 currk = k
+                allcats.setdefault(mktype, []).append(k)
             elif v.tag == "{0}documentation".format(ans) and currk in res:
                 res[currk]['description'] = v.text.strip()
-    return res
+    return res, allcats
 
 def extstr(mrkr, field):
     res = [f"\\marker {mrkr}"]
@@ -37,18 +97,62 @@ def extstr(mrkr, field):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input RNG XML file")
-parser.add_argument("-o","--outfile",help="Output .ext file")
+parser.add_argument("-o","--outfile",help="Output .ext, .sty file")
+parser.add_argument("-f","--format",help="Output format [*ext, sty]")
+parser.add_argument("-s","--style",help="Input .sty file build on")
 args = parser.parse_args()
 
 rdoc = et.parse(args.infile)
-res = collectEnums(rdoc)
+res, allcats = collectEnums(rdoc)
 if args.outfile is not None:
     outf = open(args.outfile, "w")
+    if args.format is None:
+        if args.outfile.lower().endswith(".sty") or args.style is not None:
+            args.format = "sty"
+        else:
+            args.format = "ext"
 else:
     outf = sys.stdout
+    args.format = "ext" if args.style is None else "sty"
 
-output = [extstr(k, v) for k, v in sorted(res.items())]
-outf.write("\n\n".join(output))
+if args.format == "ext":
+    output = [extstr(k, v) for k, v in sorted(res.items())]
+    outf.write("\n\n".join(output))
+else:
+    if args.style is not None:
+        styles = readstyles(args.style)
+    else:
+        styles = {}
+    missings = []
+    extras = []
+    for k, v in styles.items():
+        if k not in res:
+            cat = 'internal'
+            missings.append(k)
+        else:
+            cat = res[k]['category']
+        v['OccursUnder'] = " ".join(makeOccurs(cat, k, allcats))
+        catlist = internalhier.get(k, []) if cat == "internal" else hierarchy.get(cat, [])
+        v[' OccursUnder'] = cat + ": " + " ".join(catlist)
+    for k, v in res.items():
+        if k in styles:
+            continue
+        cat = v['category']
+        catlist = internalhier.get(k, []) if cat == "internal" else hierarchy.get(cat, [])
+        sty = {'Marker': k, 'OccursUnder': " ".join(makeOccurs(cat, k, allcats)), ' OccursUnder': (cat + ": " + " ".join(catlist))}
+        styles[k] = sty
+        extras.append(k)
+    for k, v in styles.items():
+        outf.write("\n")
+        for a, b in v.items():
+            if a.startswith(" "):
+                continue
+            if " "+a in v:
+                outf.write("# "+v[" "+a] + "\n")
+            outf.write(f"\\{a} {b}\n")
+    if args.outfile:
+        print("Missing markers: "+" ".join(missings))
+        print("Extra markers: "+" ".join(extras))
 
 if args.outfile:
     outf.close()

@@ -78,6 +78,10 @@
 \category internal
 \description Sidebar
 
+\marker esbe
+\category internal
+\description Sidebar ending
+
 \marker ex
 \category crossreference
 \description Extended cross reference
@@ -1069,6 +1073,10 @@
 \marker toca3
 \category header
 \description Alternative language book Abbreviation
+
+\marker tr
+\category internal
+\description Table Row
 
 \marker ts
 \category milestone
