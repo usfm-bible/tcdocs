@@ -1,94 +1,11 @@
 #!/usr/bin/env python3
 
-import argparse, os, sys, logging
+import os, sys
 
 try:
-    from usfmtc import USX, usfmGrammar, _grammarDoc
+    from usfmtc import main
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc import USX, usfmGrammar, _grammarDoc
+    from usfmtc import main
 
-parser = argparse.ArgumentParser()
-parser.add_argument("infile",help="Input file")
-parser.add_argument("outfile",nargs="?",help="Output file, with inferred format")
-parser.add_argument("-F","--format",help="Output format [usfm, usx, usj, usfm3.0]")
-parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
-parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
-parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
-parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
-parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
-parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
-parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
-args = parser.parse_args()
-
-if args.logging:
-    try:
-        loglevel = int(args.logging)
-    except ValueError:
-        loglevel = getattr(logging, args.logging.upper(), None)
-    if isinstance(loglevel, int):
-        parms = {'level': loglevel, 'datefmt': '%d/%b/%Y %H:%M:%S', 'format': '%(asctime)s.%(msecs)03d %(levelname)s:%(module)s(%(lineno)d) %(message)s'}
-        logfh = open("usfmconv.log", "w", encoding="utf-8")
-        parms.update(stream=logfh, filemode="w") #, encoding="utf-8")
-        try:
-            logging.basicConfig(**parms)
-        except FileNotFoundError as e:      # no write access to the log
-            print("Exception", e)
-    log = logging.getLogger('usfmconv')
-
-filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
-fileexts = {"usx": ".xml", "usfm": ".usfm", "usj": ".json"}
-
-inroot, ext = os.path.splitext(args.infile)
-intype = args.informat or filetypes.get(ext.lower(), args.informat)
-if intype is None or intype not in filetypes.values():
-    print(f"Unknown input filetype: {ext}. Please use --informat")
-
-if args.outfile:
-    outroot, outext = os.path.splitext(args.outfile)
-    outtype = args.format or filetypes.get(outext.lower(), args.format)
-else:
-    outtype = args.format
-    outext = fileexts.get(outtype, "")
-    args.outfile = inroot + outext
-if outtype is None or outtype not in filetypes.values():
-    print(f"Unknown output filetype: {outext}. Please use --format")
-
-if not args.grammar:
-    args.grammar = os.path.join(os.path.dirname(__file__), "..", "..", "grammar", "usx.rng")
-
-grammar = None
-if intype == "usx":
-    usxdoc = USX.fromUsx(args.infile)
-elif intype == "usj":
-    usxdoc = USX.fromUsj(args.infile)
-elif intype == "usfm":
-    args.extfiles.append(os.path.join(os.path.dirname(args.infile), "markers.ext"))
-    extfiles = [x for x in args.extfiles if os.path.exists(x)]
-    grammar = usfmGrammar(args.grammar, extensions=extfiles)
-    usxdoc = USX.fromUsfm(args.infile, grammar)
-
-version = usxdoc.version
-if version is None:
-    usxdoc.version = args.version or "3.1"
-elif args.version is not None:
-    usxdoc.version = args.version
-
-if not args.canonical:
-    usxdoc.canonicalise()
-
-if outtype == "usfm3.0":
-    outtype = "usfm"
-    outversion = "3.0"
-else:
-    outversion = None
-
-if outtype == "usx":
-    if args.esids:
-        usxdoc.addesids()
-    usxdoc.outUsx(args.outfile)
-elif outtype == "usj":
-    usxdoc.outUsj(args.outfile)
-elif outtype == "usfm":
-    grammarDoc = _grammarDoc(args.grammar)
-    usxdoc.outUsfm(grammarDoc, args.outfile, outversion=outversion)
+main()

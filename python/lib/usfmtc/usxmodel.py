@@ -316,12 +316,15 @@ def etCmp(a, b, at=None, bt=None, verbose=False, endofpara=False):
 @dataclass
 class USXLoc:
     el: et.Element
-    attrib: str
+    attrib: str     # " text", " tail". Where the .char indexes into
     char: int       
 
-def findel(node, tag, attrib, limit):
+def findel(node, tag, attrib, limits=[]):
+    """ Search for an element with the given tag and attrib matching forwards from
+        node, including down into children. Returns a node. Limits is a list of stop
+        tags that cause the search to fail, returning None. """
     try:
-        res = _findelchild(node, tag, attrib, limit)
+        res = _findelchild(node, tag, attrib, limits)
     except StopIteration:
         return None
     if res is not None:
@@ -329,14 +332,17 @@ def findel(node, tag, attrib, limit):
     start = list(node.parent).index(node)
     for i in range(start + 1, len(node.parent)):
         try:
-            res = _findelchild(c, tag, attrib, limit)
+            res = _findelchild(c, tag, attrib, limits)
         except StopIteration:
             return None
         if res is not None:
             return res
     return None
 
-def _findelchild(node, tag, attrib, limits):
+def _findelchild(node, tag, attrib, limits=[]):
+    """ Recursively search for a node with given tag and attributes returning the node
+        on success or None. Limits is a list of stop tags, which if encountered trigger
+        a StopIteration exception. """
     if node.tag == tag:
         for k, v in attrib.items():
             if node.get(k, None) != v:
@@ -346,15 +352,18 @@ def _findelchild(node, tag, attrib, limits):
     elif node.tag in limits:
         raise StopIteration("Hit the stop")
     for c in node:
-        res = _findelchild(node, tag, attrib, limit)
+        res = _findelchild(node, tag, attrib, limits)
         if res is not None:
             return res
     return None
 
 def findtext(node, limits):
+    """ Iterator returning text strings until an element in limits is encountered """
     yield from _findtextchild(node, limits)
 
 def _findtextchild(node, limits):
+    """ Recursively iterates returning text strings between elements until an element
+        in limits is encountered."""
     if not isempty(node.text):
         yield (node.text, node, " text")
     for c in node:
@@ -366,18 +375,20 @@ def _findtextchild(node, limits):
 
     
 def findref(ref, root, atend=False, parindex=0):
+    """ From a reference, return a USXLoc (element, attribute and char index) """
     if ref.book:
         bk = root.findtext("./book/@code")
         if bk != ref.book:
             raise ValueError("Reference book {} != text book {}".format(ref, bk))
     if ref.chapter is not None and ref.chapter > 0:
-        for parindex, el in enumerate(root[parindex:], start=parindex):
+        for pari, el in enumerate(root[parindex:], start=parindex):
             if el.tag == "chapter" and el.get('number', 0) == ref.chapter:
+                parindex = pari
                 break
         else:
             raise ValueError("Chapter reference {} out of range".format(ref))
     if parindex < len(root) - 1 and ref.verse is not None and ref.verse > 0:
-        el = findel(root[parindex+1], "verse", {"number": ref.verse}, limits=("chapter",))
+        el = findel(root[parindex+1:], "verse", {"number": ref.verse}, limits=("chapter",))
         if el is None:
             raise ValueError("Reference verse {} out of range".format(ref))
     a = ""
@@ -420,6 +431,7 @@ def findref(ref, root, atend=False, parindex=0):
     return res
 
 def copy_range(root, a, b):
+    """ Create a new tree from a starting USXloc to and ending one. """
     factory = cls(root)
     pstack = []
     t = a.el
@@ -434,10 +446,10 @@ def copy_range(root, a, b):
         for i in range(curri-1, -1, -1):
             if t[curri].tag == "chapter":
                 c = factory("chapter", attrib=t[curri].attrib, parent=t)
-                t.append(c)
+                res.append(c)
                 break
     curr = factory(p.tag, attrib=p.attrib, parent=t)
-    t.append(curr)
+    res.append(curr)
     for c in reversed(pstack):
         n = factory(el.tag, attrib=el.attrib, parent=curr)
         curr.append(n)
@@ -451,17 +463,18 @@ def copy_range(root, a, b):
             return res
         curr.text = a.el.text[a.char:]
     if a.attrib != " tail":
-        hit = copy_downto(curr, a.el, b, factory)
+        hit = _copy_downto(curr, a.el, b, factory)
     else:
         if id(b.el) == id(a.el) and b.attrib == " tail":
             curr.tail = a.el.tail[a.char:b.char+1]
             return res
         curr.tail = a.el.tail[a.char:]
     if not hit:
-        copy_upto(curr, a, b)
+        _copy_upto(curr, a, b)
     return res
 
-def copy_downto(curr, el, b, factory):
+def _copy_downto(curr, el, b, factory):
+    """ Copies as much of el into curr until it hits b, or everything """
     n = factory(el.tag, el.attrib, parent=curr)
     curr.append(n)
     if b.attrib == " text" and id(el) == id(b.el):
@@ -470,21 +483,24 @@ def copy_downto(curr, el, b, factory):
     else:
         n.text = el.text
     for c in el:
-        if copy_downto(n, c, b, factory):
+        if _copy_downto(n, c, b, factory):
             return True
     if b.attrib == " tail" and id(el) == id(b.el):
         n.tail = el.tail[:b.char+1]
         return True
     else:
         n.tail = el.tail
+    return False
 
-def copy_upto(curr, el, a, b, factory):
+def _copy_upto(curr, el, a, b, factory):
+    """ Copy from the parent into curr going down each of its children until it hits b.
+        Keep going up until we eventually hit b or the end of the world. """
     p = el.parent
     if p is None:
         raise ValueError("Reference {} not found".format(b))
     pi = list(p).index(el)
     cp = curr.parent
     for e in list(p)[pi+1:]:
-        if copy_downto(cp, e, b, factory):
+        if _copy_downto(cp, e, b, factory):
             return True
-    return copy_upto(cp, p, a, b, factory)
+    return _copy_upto(cp, p, a, b, factory)

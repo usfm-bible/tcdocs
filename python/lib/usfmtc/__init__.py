@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+# nuitka configuration
+# nuitka-project: --onefile
+# nuitka-project: --include-data-files={MAIN_DIRECTORY}/../../../grammar/usx.rng=usx.rng
+# nuitka-project-if: {OS} in ("Windows",):
+#     nuitka-project: --output-filename=usfmconv.exe
+# nuitka-project-else:
+#     nuitka-project: --output-filename=usfmconv.bin
 
 import os
 from usfmtc.sfmparser import parseusfm, UsfmParserBackend
@@ -49,6 +58,34 @@ def usfmGrammar(gsrc, extensions=[], backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
     rdoc = _grammarDoc(gsrc, extensions)
     return _usfmGrammar(rdoc, backend, start)
+
+
+_filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
+
+def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[]):
+    """ Reads a USFM file of a given type or inferred from the filename
+        extension. extfiles allows for extra markers.ext files to extend the grammar"""
+    inroot, ext = os.path.splitext(infpath)
+    intype = informat or _filetypes.get(ext.lower(), informat)
+    if intype is None:
+        return None
+
+    if intype == "usx":
+        usxdoc = USX.fromUsx(infpath)
+    elif intype == "usj":
+        usxdoc = USX.fromUsj(infpath)
+    elif intype.startswith("usfm"):
+        if grammar is None:
+            if gramfile is None:
+                for a in ([], ['..', '..', '..', 'grammar']):
+                    gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
+                    if os.path.exists(gramfile):
+                        break
+            extfiles.append(os.path.join(os.path.dirname(infpath), "markers.ext"))
+            exts = [x for x in extfiles if os.path.exists(x)]
+            grammar = usfmGrammar(gramfile, extensions=exts)
+        usxdoc = USX.fromUsfm(infpath, grammar)
+    return usxdoc
 
 
 class USX:
@@ -134,6 +171,33 @@ class USX:
             dat = json.dumps(res, indent=2)
             self._outwrite(file, dat)
 
+    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None):
+        """ Saves the document to a file in the appropriate format, either given
+            or inferred from the filename extension. """
+        outroot, ext = os.path.splitext(outfpath)
+        outtype = outformat or _filetypes.get(ext.lower(), outformat)
+        if outtype is None:
+            return
+        if outtype == "usx":
+            if addesids:
+                usxdoc.addesids()
+            self.outUsx(outfpath)
+        elif outtype == "usj":
+            self.outUsj(outfpath)
+        elif outtype == "usfm":
+            if grammar is None:
+                if gramfile is None:
+                    for a in ([], ['..', '..', '..', 'grammar']):
+                        gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
+                        if os.path.exists(gramfile):
+                            break
+                grammar = _grammarDoc(gramfile)
+            if outtype == "usfm3.0":
+                outtype = "usfm"
+                if version is None:
+                    version = "3.0"
+            self.outUsfm(grammar, outfpath, outversion=version)
+
     def canonicalise(self):
         canonicalise(self.getroot())
 
@@ -153,3 +217,118 @@ class USX:
     def version(self, version):
         self.getroot().set('version', str(version))
 
+def main():
+
+    import argparse, logging, sys
+    from glob import glob
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("infile",nargs="+",help="Input file")
+    parser.add_argument("-o", "--outfile",help="Output file, with inferred format")
+    parser.add_argument("-F","--format",help="Output format [usfm, usx, usj, usfm3.0]")
+    parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
+    parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
+    parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
+    parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
+    parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
+    parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
+    parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
+    parser.add_argument("-q","--quiet",action="store_true",help="Don't say much")
+    args = parser.parse_args()
+
+    if args.logging:
+        try:
+            loglevel = int(args.logging)
+        except ValueError:
+            loglevel = getattr(logging, args.logging.upper(), None)
+        if isinstance(loglevel, int):
+            parms = {'level':  loglevel, 'datefmt': '%d/%b/%Y %H:%M:%S',
+                     'format': '%(asctime)s.%(msecs)03d %(levelname)s:%(module)s(%(lineno)d) %(message)s'}
+            logfh = open("usfmconv.log", "w", encoding="utf-8")
+            parms.update(stream=logfh, filemode="w") #, encoding="utf-8")
+            try:
+                logging.basicConfig(**parms)
+            except FileNotFoundError as e:      # no write access to the log
+                print("Exception", e)
+        log = logging.getLogger('usfmconv')
+    else:
+        log = None
+
+    def doerror(msg, doexit=True):
+        if log:
+            log.error(msg)
+        if not args.quiet:
+            print(msg)
+        if doexit:
+            sys.exit(1)
+    
+    fileexts = {"usx": ".xml", "usfm": ".usfm", "usj": ".json"}
+
+    def _makeoutfile(infile, oformat):
+        outext = fileexts.get(oformat, None)
+        inroot, ext = os.path.splitext(infile)
+        return inroot + outext if outext else None
+    
+    infiles = sum((glob(x) for x in args.infile), [])
+    if not len(infiles):
+        doerror("No files found in {args.infile}")
+
+    root, ext = os.path.splitext(infiles[0])
+    args.informat = args.informat or _filetypes.get(ext.lower(), args.informat)
+    if args.format is None:
+        if args.outfile is not None and not os.isdir(args.outfile):
+            root, ext = os.path.splitext(args.outfile)
+            args.format = _filetypes.get(ext.lower(), None)
+    ingrammar = None
+    outgrammar = None
+    if args.informat.startswith("usfm") or args.outformat.startswith("usfm"):
+        if args.grammar is None:
+            for a in ([], ['..', '..', '..', 'grammar']):
+                args.grammar = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
+                if os.path.exists(args.grammar):
+                    break
+        if args.informat.startswith("usfm"):
+            args.extfiles.append(os.path.join(os.path.dirname(infiles[0]), "markers.ext"))
+            exts = [x for x in args.extfiles if os.path.exists(x)]
+            ingrammar = usfmGrammar(args.grammar, extensions=exts)
+        if args.format.startswith("usfm"):
+            outgrammar = _grammarDoc(args.grammar)
+
+    for infile in infiles:
+        outfile = None
+        if args.outfile is None:
+            outfile = _makeoutfile(infile, args.format)
+        elif os.path.isdir(args.outfile):
+            outf = _makeoutfile(infile, args.format)
+            if outf is None:
+                doerror(f"invalid output format {args.format} in {args.outfile}")
+            outfile = os.path.join(args.outfile, os.path.basename(outf))
+        elif len(infiles) == 1:
+            outfile = args.outfile
+
+        if not args.quiet:
+            print(f"{infile} -> {outfile}" if outfile else f"{infile}")
+        try:
+            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar)
+        except usfmtc.parse.NoParseError as e:
+            doerror(f"Failed to parse {infile}: {e}", False)
+
+        if len(infiles) == 1 and usxdoc is None:
+            doerror(f"Unable to read in {args.infile}")
+
+        if outfile is None or usxdoc is None:
+            continue
+
+        version = usxdoc.version
+        if version is None:
+            usxdoc.version = args.version or "3.1"
+        elif args.version is not None:
+            usxdoc.version = args.version
+
+        if not args.canonical:
+            usxdoc.canonicalise()
+
+        usxdoc.saveAs(outfile, outformat=args.format, addesids=args.esids, grammar=outgrammar)
+
+if __name__ == "__main__":
+    main()
