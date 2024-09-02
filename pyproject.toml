@@ -18,6 +18,7 @@ classifiers = [
    "Topic :: Text Processing :: Bible"
    ]
 requires-python = ">=3.8"
+#dynamic = ["version"]
 
 dependencies = [
 ]
@@ -32,7 +33,11 @@ Home-Page = "https://github.com/usfm-bible/tcdocs"
 [tool.setuptools.packages.find]
 where = ["python/lib"]
 
-[tool.setuptools.package-data]
+[tool.setuptools.dynamic]
+# version = {attr = "usfmtc.version"}
+
+[tool.setuptools]
+packages = ["usfmtc"]
 
 [tool.bdist_wheel]
 universal = true
