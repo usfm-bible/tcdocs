@@ -119,7 +119,7 @@ See the attributes for xref:char:features/w.adoc[wordlist/glossary entry] for ot
 
 In cases where an attribute value is composed of multiple parts (e.g. a compound word or phrase), separate the parts using a colon `:` within the value string.
 
-See the `gloss` attribute for xref:char:features/w.adoc[ruby glosses] for an example of the use of this syntax.
+See the `gloss` attribute for xref:char:features/rb.adoc[ruby glosses] for an example of the use of this syntax.
 
 == Backward Compatibility
 
