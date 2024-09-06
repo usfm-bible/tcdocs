@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Introduction list entry.
 * The variable `#` (1-2) represents the level of indent. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\ili# ++``#__content__#
 * *USX:* ``++<para style="ili#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

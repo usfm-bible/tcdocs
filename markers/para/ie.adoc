@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction end. Explicitly indicate the end of the introduction material _(optional)_.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\ie++``
 * *USX:* ``++<para style="ie"/>++``
 Style Type:: xref:para:index.adoc[Paragraph]

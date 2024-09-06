@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Semantic division. Use to identify the location of vertical space intended to divide the text into structural or hierachical sections. The purpose of xref:para:titles-sections/sd.adoc[sd] is distinct from xref:para:paragraphs/b.adoc[b] which is _primarily_ used to denote whitespace at poetic stanza breaks.
 * The variable `#` (1-4) represents the level of division being marked.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\sd#++``
 * *USX:* ``++<para style="sd#"/>++``
 Style Type:: xref:para:index.adoc[Paragraph]

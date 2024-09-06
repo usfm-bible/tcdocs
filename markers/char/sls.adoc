@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Secondary language source. Passage of text based on a secondary language or alternate text source. For example: The French NBS02 has large sections of text in EZR and DAN in italics, to represent where the original text is in Aramaic, not Hebrew.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\sls ++``#__content__#``++\sls*++``
 * *USX:* ``++<char style="sls">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

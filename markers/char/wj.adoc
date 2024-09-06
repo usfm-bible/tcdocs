@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Words of Jesus.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\wj ++``#__content__#``++\wj*++``
 * *USX:* ``++<char style="wj">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

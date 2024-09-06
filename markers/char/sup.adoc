@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Superscript text. Typically for use in critical edition footnotes.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\sup ++``#__content__#``++\sup*++``
 * *USX:* ``++<char style="sup">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

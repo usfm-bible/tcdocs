@@ -17,7 +17,7 @@ Description:: Alternate language book name texts. Used to specify an alternate s
 ** `toca1` - Long book name.
 ** `toca2` - Short book name.
 ** `toca3` - Book abbreviation.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\toca# ++``#__content__#
 * *USX:* ``++<para style="toca#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

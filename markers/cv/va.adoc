@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Alternate Verse number. This is required when 2 versification traditions are identified in the same text. Used for providing and marking the verse number used in the alternate versification scheme.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\v ++``#__number__# _(see: xref:cv:v.adoc[])_ `` ++\va ++``#__altnumber__#``++\va*\vp ++``#__altnumber__#``++\vp*++`` _(see: xref:cv:vp.adoc[])_
 * *USX:* ``++<verse style="v" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``
 #number# *::: Verse number

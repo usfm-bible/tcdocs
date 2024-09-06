@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Introduction explanatory or bridge text.
 * _Recommended use:_ Explanation of missing book or section in a short Old Testament, or for attribution sentences found at the end of the 14 Pauline Epistles.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\iex ++``#__content__#
 * *USX:* ``++<para style="iex">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

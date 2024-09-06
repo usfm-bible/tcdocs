@@ -17,7 +17,7 @@ Description:: Remarks/comments. For adding brief comments by a translator, consu
 ====
 Adding names of individuals, initials, or other personal information directly within scripture text files is strongly discouraged.
 ====
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\rem ++``#__content__#
 * *USX:* ``++<para style="rem">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

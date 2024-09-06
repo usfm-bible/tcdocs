@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Main title at introduction end. May be used to repeat the main title at the end of the introduction, or to mark a major title which indicates the end of the introduction. The content is not necessarily identical to the main title (xref:para:titles-sections/mt.adoc[mt]).
 * The variable `#` (1-2) represents the level of division.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\mte# ++``#__content__#
 * *USX:* ``++<para style="mte#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

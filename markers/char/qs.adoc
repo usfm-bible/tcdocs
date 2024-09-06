@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Used to mark the expression “Selah”. Commonly found in Psalms and Habakkuk.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\qs ++``#__content__#``++\qs*++``
 * *USX:* ``++<char style="qs">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

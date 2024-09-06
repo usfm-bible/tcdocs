@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Endnote.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\fe ++``#__caller__#``++ ++``#__content__#``++\fe*++``
 * *USX:* ``++<note style="fe" ++``#__@caller__#``++>++``#__content__#``++</note>++``
 #caller# *::: Note caller
