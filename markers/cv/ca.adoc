@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Alternate chapter number. This is required when 2 versification traditions are identified in the same text. Used for providing and marking the chapter number used in the alternate versification scheme.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\c ++``#__number__# _(see: xref:cv:c.adoc[])_ ``++ \ca ++``#__altnumber__#``++\ca*++``
 ** ``++\cp ++``#__pubnumber__# (see: xref:cv:cp.adoc[])
 * *USX:* ``++<chapter style="c" ++``#__@number @altnumber @pubnumber @sid @eid__#``++/>++``

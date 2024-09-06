@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Keyword/keyterm.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\k ++``#__content__#``++|++``#__@key__#``++\k*++``
 * *USX:* ``++<char style="k" ++``#__@key__#``++>++``#__content__#``++</char>++``
 #key#::: A simplified identifier for the keyword. This is useful for digital publications where links to a keyword in a glossary cannot point to texts with special characters (e.g.åäö) or spaces. Also useful to support a glossary where a single glossary entry is represented by more than one surface word. Each keyword surface form can be identified with the same key.  _(default attribute)_

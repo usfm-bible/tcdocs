@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Translator's addition. Words supplied by the translator in order to make the meaning of the original language clear.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\add ++``#__content__#``++\add*++``
 * *USX:* ``++<char style="add">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

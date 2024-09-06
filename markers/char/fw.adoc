@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:footnote/index.adoc[Footnote] - Witness list. For distinguishing a list of sigla representing witnesses in critical editions.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\fw ++``#__content__#
 * *USX:* ``++<char style="fw">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Quotation start and end milestones. Typically used for indicating the speaker of the text.
 * The variable `#` (1-5) represents the level of nesting of the quotation being marked (i.e. a quote within a quote).
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\qt#-s |++``#__@sid @who__#``++\*++`` / ``++\qt#-e |++``#__@eid__#``++\*++``
 * *USX:* ``++<ms style="qt#-s" ++``#__@sid @who__#``++/>++`` / ``++<ms style="qt#-e" ++``#__@eid__#``++/>++``
 #sid#::: A unique identifier which can be used to unambiguously identify the starting milestone, and to clearly associate the starting milestone with the ending milestone (`eid`). The `sid` can be composed of any mixture of numbers, letters, and underscores.

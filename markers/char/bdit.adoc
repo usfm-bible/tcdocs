@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Bold + italic text.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\bdit ++``#__content__#``++\bdit*++``
 * *USX:* ``++<char style="bdit">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

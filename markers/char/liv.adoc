@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:para:lists/index.adoc[List] entry 'value' content.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\liv ++``#__content__#``++\liv*++``
 * *USX:* ``++<char style="liv">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

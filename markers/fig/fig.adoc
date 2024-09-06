@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Figure / illustration.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\fig ++``#__caption__#``++|++``#__@src @size @ref @alt @loc @copy__#``++\fig*++``
 * *USX:* ``++<figure style="fig" ++``#__@file @size @ref @alt @loc @copy__#``++>++``#__caption__#``++</figure>++``
 `src` (USFM) / `file` (USX) *::: Filename

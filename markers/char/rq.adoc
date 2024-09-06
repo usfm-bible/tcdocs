@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Inline quotation reference(s). One or more scripture references indicating the source text for the preceding quotation. The references are intended to be formatted within the scripture body text, and not extracted from the text (as xref:note:crossref/x.adoc[cross-references] typically are).
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\rq ++``#__content__#``++\rq*++``
 * *USX:* ``++<char style="rq">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

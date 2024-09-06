@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Translator's section start and end milestones. For identifying a section (chunk) of text suitable for translating at one time.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\ts-s |++``#__@sid__#``++\*++`` / ``++\ts-e |++``#__@eid__#``++\*++``
 * *USX:* ``++<ms style="ts-s" ++``#__@sid__#``++/>++`` / ``++<ms style="ts-e" ++``#__@eid__#``++/>++``
 #sid#::: A unique identifier which can be used to unambiguously identify the starting milestone, and to clearly associate the starting milestone with the ending milestone (`eid`). The `sid` can be composed of any mixture of numbers, letters, and underscores.

@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Embedded text closing.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\pmc ++``#__content__#
 * *USX:* ``++<para style="pmc">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

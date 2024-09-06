@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: xref:note:crossref/index.adoc[Cross Reference] - NT target references. The marked target references (xref:notes:crossref/xt[xt]) are relevant for publications which include New Testament (NT) books.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\xnt ++``#__content__#``++\xnt*++``
 * *USX:* ``++<char style="xnt">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

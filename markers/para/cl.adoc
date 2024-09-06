@@ -18,7 +18,7 @@ Description:: Chapter label text.
 ====
 If `cl` is added to a text once _before_ xref:cv:c.adoc[chapter] `1` it represents the label text for “Chapter” to be used throughout the current book. If `cl` is used _after each_ individual xref:cv:c.adoc[chapter], it represents the specific label text to be used for the display of the current chapter (e.g. if numbers are being presented as words, not numerals).
 ====
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\cl ++``#__content__#
 * *USX:* ``++<para style="cl">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

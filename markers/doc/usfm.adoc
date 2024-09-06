@@ -20,7 +20,7 @@ USX represents most USFM xref:para:index.adoc[paragraph] types as a xref:para:in
 
 See the xref:doc:index.adoc[Document Structure] page for the syntax diagram highlighting the position of xref:doc:usfm.adoc[usfm]. 
 ====
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\usfm ++``#__version__#
 * *USX:* ``++<usx version="++``#__version__#``++">++``
 #version# *::: USFM/USX version number.

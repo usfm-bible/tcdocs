@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Hebrew note. A Hebrew musical performance comment similar in content to the Hebrew Psalm descriptive titles (xref:para:titles-sections/d.adoc[d]), but placed at the end of the poetic section.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\qd ++``#__content__#
 * *USX:* ``++<para style="qd">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

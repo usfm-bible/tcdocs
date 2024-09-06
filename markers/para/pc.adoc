@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Centered paragraph.
 * _Recommended use:_ Inscriptions
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\pc ++``#__content__#
 * *USX:* ``++<para style="pc">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]

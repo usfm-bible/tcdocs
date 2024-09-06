@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Introduction quoted text. Inline scripture quotations, or other quoted text, appearing within the introduction.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\iqt ++``#__content__#``++\iqt*++``
 * *USX:* ``++<char style="iqt">++``#__content__#``++</char>++``
 Style Type:: xref:char:index.adoc[Character]

@@ -14,7 +14,7 @@ endif::[]
 
 Description:: Intoduction major title ending. Used to mark a major title indicating the end of the introduction.
 * The variable `#` (1-2) represents the level of division. See xref:ROOT:syntax.adoc[syntax notes] on numbered markers.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\imte# ++``#__content__#
 * *USX:* ``++<para style="imte#">++``#__content__#``++</para>++``
 Style Type:: xref:para:index.adoc[Paragraph]
