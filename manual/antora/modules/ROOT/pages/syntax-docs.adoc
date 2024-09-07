@@ -61,10 +61,10 @@ Throughout this documentation, texts shown between square brackets, with a grey 
 ======
 USFM::
 +
-image:para:schema/p_rail.svg[]
+image::para:schema/p_rail.svg[]
 USX::
 +
-image:para:schema/p_usx.svg[]
+image::para:schema/p_usx.svg[]
 ======
 
 * Diagrams are read from left to right.
