@@ -3,7 +3,7 @@
 == Summary
 
 Description:: Milestone marker.
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\++``#__style__#``++\*++``
 * *USX:* ``++<ms style="++``#__style__#``++"/>++``
 #style# *::: Milestone type

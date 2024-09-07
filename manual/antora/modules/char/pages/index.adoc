@@ -3,7 +3,7 @@
 == Summary
 
 Description:: Character-level container (span).
-xref:ROOT:syntax-docs.adoc#_syntax[Syntax]::
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\++``#__style__#``++ ++``#__content__#``++\++``#__style__#``++*++``
 * *USX:* ``++<char style="++``#__style__#``++">++``#__content__#``++</char>++``
 #style# *::: Character type
