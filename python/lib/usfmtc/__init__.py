@@ -65,8 +65,11 @@ _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", 
 def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[]):
     """ Reads a USFM file of a given type or inferred from the filename
         extension. extfiles allows for extra markers.ext files to extend the grammar"""
-    inroot, ext = os.path.splitext(infpath)
-    intype = informat or _filetypes.get(ext.lower(), informat)
+    if informat is None:
+        inroot, ext = os.path.splitext(infpath)
+        intype = _filetypes.get(ext.lower(), informat)
+    else:
+        intype = informat
     if intype is None:
         return None
 
@@ -81,7 +84,8 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[]):
                     gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
                     if os.path.exists(gramfile):
                         break
-            extfiles.append(os.path.join(os.path.dirname(infpath), "markers.ext"))
+            fname = getattr(infpath, 'name', infpath)
+            extfiles.append(os.path.join(os.path.dirname(fname), "markers.ext"))
             exts = [x for x in extfiles if os.path.exists(x)]
             grammar = usfmGrammar(gramfile, extensions=exts)
         usxdoc = USX.fromUsfm(infpath, grammar)
@@ -174,10 +178,14 @@ class USX:
     def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None):
         """ Saves the document to a file in the appropriate format, either given
             or inferred from the filename extension. """
-        outroot, ext = os.path.splitext(outfpath)
-        outtype = outformat or _filetypes.get(ext.lower(), outformat)
+        if outformat is None:
+            outroot, ext = os.path.splitext(outfpath)
+            outtype = _filetypes.get(ext.lower(), outformat)
+        else:
+            outtype = outformat
         if outtype is None:
             return
+
         if outtype == "usx":
             if addesids:
                 usxdoc.addesids()
@@ -217,7 +225,7 @@ class USX:
     def version(self, version):
         self.getroot().set('version', str(version))
 
-def main():
+def main(hookcli=None, hookusx=None):
 
     import argparse, logging, sys
     from glob import glob
@@ -234,6 +242,9 @@ def main():
     parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
     parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
     parser.add_argument("-q","--quiet",action="store_true",help="Don't say much")
+    parser.add_argument("--nooutput",action="store_true",help="Don't output any data")
+    if hookcli is not None:
+        hookcli(parser)
     args = parser.parse_args()
 
     if args.logging:
@@ -304,7 +315,12 @@ def main():
                 doerror(f"invalid output format {args.format} in {args.outfile}")
             outfile = os.path.join(args.outfile, os.path.basename(outf))
         elif len(infiles) == 1:
-            outfile = args.outfile
+            outfile = arg.outfile
+
+        if infile == "-":
+            infile = sys.stdin
+        if outfile == "-":
+            outfile = sys.stdout
 
         if not args.quiet:
             print(f"{infile} -> {outfile}" if outfile else f"{infile}")
@@ -316,7 +332,10 @@ def main():
         if len(infiles) == 1 and usxdoc is None:
             doerror(f"Unable to read in {args.infile}")
 
-        if outfile is None or usxdoc is None:
+        if hookusx is not None:
+            hookusx(usxdoc, args)
+
+        if args.nooutput or outfile is None or usxdoc is None:
             continue
 
         version = usxdoc.version
