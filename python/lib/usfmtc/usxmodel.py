@@ -422,6 +422,7 @@ def findref(ref, root, atend=False, parindex=0):
     return res
 
 def copy_range(root, a, b):
+    """ Create a new tree from a starting USXloc to an ending one. """
     factory = cls(root)
     pstack = []
     t = a.el
