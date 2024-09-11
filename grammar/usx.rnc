@@ -611,7 +611,8 @@ VersePara.para.style.enum = (
     |   ## Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
       "ph"
     |   ## Paragraph text, with first line indent
-      [usfm:href="paragraphs/p.html"] "p"
+      ## [usfm:href="paragraphs/p.html"] 
+        "p"
     |   ## Poetry text, level 1 indent (if multiple levels)
       "q1"
     |   ## Poetry text, level 2 indent
