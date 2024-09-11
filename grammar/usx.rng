@@ -40,7 +40,7 @@
   <usfm:terminal name="TAGEND" value="/(?:${ws}+|(?=[\\|]|$))/">
     <a:documentation>Delimits a marker</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TEXTEND" value="/(?=${anyws}*\\|$)/">
+  <usfm:terminal name="TEXTEND" value="/(?=${anyws}*\\|//|$)/">
     <a:documentation>Delimits simple text</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="ATTRIBTEXTEND" value="/${Hs}(?=[\\|])/">
@@ -55,7 +55,7 @@
   <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/">
     <a:documentation>Matches an attribute name</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TEXT" value="/([^\\]|\\[/~\\|])+/">
+  <usfm:terminal name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|])+/">
     <a:documentation>Matches simple text up to the next marker</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="TEXTNWS" value="/.+(?=${Ws}\\[^~/\\])/">
@@ -1937,7 +1937,7 @@
   </define>
   <define name="Break">
     <element>
-      <usfm:match match="&#x27;//&#x27;"/>
+      <usfm:match before="&#x27;//&#x27;" match="//"/>
       <name ns="">optbreak</name>
       <empty/>
     </element>
