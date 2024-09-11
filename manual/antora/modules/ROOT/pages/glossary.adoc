@@ -21,12 +21,12 @@ Ws:: Pattern: ``++/++``#$\{anyws\}#``++*/++`` A sequence of zero or more reducab
 allws:: Pattern: ``++/[\u0009-\u000D\u0020\u00A0\u1680\u2000-\u200B\u2028\u2029\u202F\u205F\u3000]/++`` All possible whitespace characters including content whitespace. Matches a single character
 WSNL:: Pattern: ``++/++``#$\{HS\}#``++++``#$\{NL\}#``++/++`` A sequence of non-newline whitespace up to and including a newline
 TAGEND:: Pattern: ``++/(?:++``#$\{ws\}#``+++|(?=[\\|]|$))/++`` Delimits a marker
-TEXTEND:: Pattern: ``++/(?=++``#$\{anyws\}#``++*\\|$)/++`` Delimits simple text
+TEXTEND:: Pattern: ``++/(?=++``#$\{anyws\}#``++*\\|//|$)/++`` Delimits simple text
 ATTRIBTEXTEND:: Pattern: ``++/++``#$\{Hs\}#``++(?=[\\|])/++`` Reducable characters following an attribute value
 ATTRIBTEXT:: Pattern: ``++/(?:\\["\\=~/|]|[^\\"])+/++`` Matches text inside an attribute value (not including the quotes)
 ATTRIBALL:: Pattern: ``++/(?:[^\\=]|\\=)+(?=\\)/++`` Matches a default attribute value string
 ATTRIBNAME:: Pattern: ``++/[a-zA-Z0-9\-_]+?/++`` Matches an attribute name
-TEXT:: Pattern: ``++/([^\\]|\\[/~\\|])+/++`` Matches simple text up to the next marker
+TEXT:: Pattern: ``++/([^\\/]|/(?!/)|\\[/~\\|])+/++`` Matches simple text up to the next marker
 TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\[^~/\\])/++`` Matches simple text without trailing whitespace
 TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
 TEXTNOTATTRIBOPT:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])*/++`` Matches simple text up to the start of a sequence of attributes delimited by | if present
