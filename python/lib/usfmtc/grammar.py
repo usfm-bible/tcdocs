@@ -27,7 +27,7 @@ class UsfmGrammarParser:
         self.back = backend
         self.doc = doc
         self.flattenre = flattenre
-        self.hrefprefix = hrefprefix
+        self.hrefprefix = hrefprefix or ""
         self.defines = {}
         self.vars = {}
         self.parse()

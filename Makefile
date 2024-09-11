@@ -17,7 +17,7 @@ unknown:
 diagrams: markers/images/schema/pngs/p_rail.png
 
 markers/images/schema/pngs/p_rail.png : grammar/usx.rng python/scripts/mkraildiagrams
-	$(PYTHON) python/scripts/mkraildiagrams -g $< -o markers/images/schema -z 1 -p "../" ${LOGGING}
+	$(PYTHON) python/scripts/mkraildiagrams -g $< -o markers/images/schema -z 1 ${LOGGING}
 	- cd markers/images/schema; for f in *.svg; do inkscape -d 300 -o "pngs/$${f%.svg}.png" $$f & done
 
 short: TESTEXCLUDES := -x stress
