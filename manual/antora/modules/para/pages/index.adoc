@@ -18,7 +18,7 @@ include::../nav.adoc[tag=nav-topcat]
 ======
 USFM::
 +
-image::image$schema/p_rail.svg[opts=inline]
+image::image$schema/p_rail.svg[]
 USX::
 +
 image::schema/p_usx.svg[]
