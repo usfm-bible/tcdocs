@@ -1209,7 +1209,7 @@ class Terminal(DiagramItem):
         text = DiagramItem('text', {'x': x + leftGap + self.width / 2, 'y': y + 4}, self.text)
         if self.href is not None:
             a = DiagramItem('a', {'xlink:href':self.href}, text).addTo(self)
-            text.addTo(a)
+            #text.addTo(a)
         else:
             text.addTo(self)
         if self.title is not None:

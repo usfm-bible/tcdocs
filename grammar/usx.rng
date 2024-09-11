@@ -913,7 +913,7 @@
       <a:documentation>Paragraph text, with level 3 hanging indent</a:documentation>
       <value>ph</value>
       <a:documentation>Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)</a:documentation>
-      <value>p</value>
+      <value usfm:href="paragraphs/p.html">p</value>
       <a:documentation>Paragraph text, with first line indent</a:documentation>
       <value>q1</value>
       <a:documentation>Poetry text, level 1 indent (if multiple levels)</a:documentation>

@@ -170,13 +170,13 @@ class UsfmRailRoad:
         return res
 
     def match(self, txt, context, alt=None, **kw):
-        cls = {}
+        cls = {k: kw.get(k, None) for k in ('href',)}
         if alt is None or not len(alt):
             lcontext = context
         else:
             lcontext = self.append_or(context)
-            lcontext.append(self.WrappedRail(rr.Terminal(alt), lcontext))
-            cls = {"cls": "altterminal"}
+            lcontext.append(self.WrappedRail(rr.Terminal(alt, **cls), lcontext))
+            cls["cls"] = "altterminal"
         lcontext.append(self.WrappedRail(rr.Terminal(txt, **cls), lcontext))
         return context
 

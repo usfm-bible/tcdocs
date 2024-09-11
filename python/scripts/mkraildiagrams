@@ -13,6 +13,7 @@ import xml.etree.ElementTree as et
 parser = argparse.ArgumentParser()
 parser.add_argument("-g","--grammar",required=True,help="USX grammar file")
 parser.add_argument("-o","--outdir",required=True,help="Output directory for generated svgs")
+parser.add_argument("-p","--prefix",help="link prefix for any links generated")
 parser.add_argument("-n","--node",help="Process a single node")
 parser.add_argument("-C","--charwidth",type=float,default=6.,help="Average width of characters to use")
 parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
@@ -37,7 +38,7 @@ if args.logging:
 rdoc = et.parse(args.grammar)
 backendsfm = UsfmRailRoad()
 backendxml = XmlRailRoad()
-sfmproc = UsfmGrammarParser(rdoc, backendsfm, flattenre=False)
+sfmproc = UsfmGrammarParser(rdoc, backendsfm, flattenre=False, hrefprefix=args.prefix)
 xmlproc = XmlGrammarParser(rdoc, backendxml)
 
 if args.node:

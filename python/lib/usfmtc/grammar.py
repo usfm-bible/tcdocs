@@ -22,11 +22,12 @@ class UsfmGrammarParser:
         '*': 'append_star',
     }
 
-    def __init__(self, doc, backend, flattenre=True):
+    def __init__(self, doc, backend, flattenre=True, hrefprefix=""):
         self.aliases = {}
         self.back = backend
         self.doc = doc
         self.flattenre = flattenre
+        self.hrefprefix = hrefprefix
         self.defines = {}
         self.vars = {}
         self.parse()
@@ -253,12 +254,16 @@ class UsfmGrammarParser:
         return self.proc_children(e, res, **kw)
 
     def value(self, e, res, **kw):
+        ekw = {}
         pv = e.get(f'{usfmns}propval', None)
         if pv is not None:
             pe = self.elementlist[-1]
             pe.propmap[e.text] = pv
             res.propmap[e.text] = pv
-        return self.back.match('"'+e.text+'"', res)
+        pl = e.get(f'{usfmns}href', None)
+        if pl is not None:
+            ekw['href'] = self.hrefprefix + pl.format(e.text)
+        return self.back.match('"'+e.text+'"', res, **ekw)
 
     def ref(self, e, res, **kw):
         if e is None and 'name' in kw:
