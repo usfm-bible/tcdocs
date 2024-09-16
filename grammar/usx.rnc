@@ -57,7 +57,7 @@ usfm:terminal [name="ATTRIBALL" value="/(?:[^\\=]|\\=)+(?=\\)/"
 usfm:terminal [name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"
     a:documentation ["Matches an attribute name"]]
 
-usfm:terminal [name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|])+/"
+usfm:terminal [name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|])+?/"
     a:documentation ["Matches simple text up to the next marker"]]
 
 usfm:terminal [name="TEXTNWS" value="/.+(?=${Ws}\\[^~/\\])/"
