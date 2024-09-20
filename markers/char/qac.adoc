@@ -29,8 +29,9 @@ Added:: 1.0
 USFM::
 +
 .Lamentations 1.1-2 (Spanish TLA)
-[source#src-usfm-char-qac_1,usfm,highlight=5;15]
+[source#src-usfm-char-qac_1,usfm,highlight=6;16]
 ----
+\id LAM
 \c 1
 \s1 Primer lamento acróstico
 \s2 El profeta
@@ -55,32 +56,170 @@ USFM::
 USX::
 +
 .Lamentations 1.1-2 (Spanish TLA)
-[source#src-usx-char-qac_1,xml,highlight=5;18]
+[source#src-usx-char-qac_1,xml,highlight=7;20]
 ----
-<chapter number="1" style="c" sid="LAM 1"/>
-<para style="s1">Primer lamento acróstico</para>
-<para style="s2">El profeta</para>
-<para style="q1">
-  <verse number="1" style="v" sid="LAM 1:1"/>¡<char style="qac">P</char>obrecita
-  de ti, Jerusalén!</para>
-<para style="q1" vid="LAM 1:1">Antes eras la más famosa</para>
-<para style="q1" vid="LAM 1:1">de todas las ciudades.</para>
-<para style="q1" vid="LAM 1:1">¡Antes estabas llena de gente,</para>
-<para style="q1" vid="LAM 1:1">pero te has quedado muy sola,</para>
-<para style="q1" vid="LAM 1:1">te has quedado viuda!</para>
-<para style="q1" vid="LAM 1:1">¡Fuiste la reina de las naciones,</para>
-<para style="q1" vid="LAM 1:1">pero hoy eres esclava de ellas!
-  <verse eid="LAM 1:1"/></para>
-<para style="b"/>
-<para style="q1">
-  <verse number="2" style="v" sid="LAM 1:2"/>
-  <char style="qac">O</char>lvidada y
-  bañada en lágrimas</para>
-<para style="q1" vid="LAM 1:2">pasas todas las noches.</para>
-<para style="q1" vid="LAM 1:2">Muchos decían que te amaban,</para>
-<para style="q1" vid="LAM 1:2">pero hoy nadie te consuela.</para>
-<para style="q1" vid="LAM 1:2">Los que se decían tus amigos</para>
-<para style="q1" vid="LAM 1:2">hoy son tus enemigos.<verse eid="LAM 1:2"/></para>
+<usx version="3.1">
+  <book code="LAM" style="id"/>
+  <chapter number="1" style="c" sid="LAM 1"/>
+  <para style="s1">Primer lamento acróstico</para>
+  <para style="s2">El profeta</para>
+  <para style="q1">
+    <verse number="1" style="v" sid="LAM 1:1"/>¡<char style="qac">P</char>obrecita
+    de ti, Jerusalén!</para>
+  <para style="q1" vid="LAM 1:1">Antes eras la más famosa</para>
+  <para style="q1" vid="LAM 1:1">de todas las ciudades.</para>
+  <para style="q1" vid="LAM 1:1">¡Antes estabas llena de gente,</para>
+  <para style="q1" vid="LAM 1:1">pero te has quedado muy sola,</para>
+  <para style="q1" vid="LAM 1:1">te has quedado viuda!</para>
+  <para style="q1" vid="LAM 1:1">¡Fuiste la reina de las naciones,</para>
+  <para style="q1" vid="LAM 1:1">pero hoy eres esclava de ellas!<verse
+      eid="LAM 1:1"/></para>
+  <para style="b"/>
+  <para style="q1">
+    <verse number="2" style="v" sid="LAM 1:2"/>
+    <char style="qac">O</char>lvidada
+    y bañada en lágrimas</para>
+  <para style="q1" vid="LAM 1:2">pasas todas las noches.</para>
+  <para style="q1" vid="LAM 1:2">Muchos decían que te amaban,</para>
+  <para style="q1" vid="LAM 1:2">pero hoy nadie te consuela.</para>
+  <para style="q1" vid="LAM 1:2">Los que se decían tus amigos</para>
+  <para style="q1" vid="LAM 1:2">hoy son tus enemigos.<verse eid="LAM 1:2"/></para>
+</usx>
+----
+USJ::
++
+.Lamentations 1.1-2 (Spanish TLA)
+[source#src-usj-char-qac_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "LAM",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "LAM 1"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["Primer lamento acróstico"]
+    },
+    {
+      "type": "para",
+      "marker": "s2",
+      "content": ["El profeta"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "LAM 1:1"
+        },
+        "¡",
+        {
+          "type": "char",
+          "marker": "qac",
+          "content": ["P"]
+        },
+        "obrecita\n    de ti, Jerusalén!"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Antes eras la más famosa"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["de todas las ciudades."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["¡Antes estabas llena de gente,"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["pero te has quedado muy sola,"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["te has quedado viuda!"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["¡Fuiste la reina de las naciones,"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["pero hoy eres esclava de ellas!"]
+    },
+    {
+      "type": "para",
+      "marker": "b"
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2",
+          "sid": "LAM 1:2"
+        },
+        {
+          "type": "char",
+          "marker": "qac",
+          "content": ["O"]
+        },
+        "lvidada\n    y bañada en lágrimas"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["pasas todas las noches."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Muchos decían que te amaban,"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["pero hoy nadie te consuela."]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["Los que se decían tus amigos"]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": ["hoy son tus enemigos."]
+    }
+  ]
+}
 ----
 ======
 

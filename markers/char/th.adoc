@@ -43,6 +43,8 @@ USFM::
 .Numbers 7.12-83 (GNT)
 [source#src-usfm-char-th_1,usfm,highlight=3]
 ----
+\id NUM
+\c 7
 \p
 \v 12-83 They presented their offerings in the following order:
 \tr \th1 Day \th2 Tribe \th3 Leader
@@ -56,44 +58,235 @@ USFM::
 USX::
 +
 .Numbers 7.12-83 (GNT)
-[source#src-usx-char-th_1,xml,highlight=6..8]
+[source#src-usx-char-th_1,xml,highlight=9..11]
 ----
-<para style="p">
-  <verse number="12-83" style="v" sid="NUM 7:12-83"/>They presented their
-  offerings in the following order:</para>
-<table>
-  <row style="tr">
-    <cell style="th1" align="start">Day </cell>
-    <cell style="th2" align="start">Tribe </cell>
-    <cell style="th3" align="start">Leader</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end">1st </cell>
-    <cell style="tc2" align="start">Judah </cell>
-    <cell style="tc3" align="start">Nahshon son of Amminadab</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end">2nd </cell>
-    <cell style="tc2" align="start">Issachar </cell>
-    <cell style="tc3" align="start">Nethanel son of Zuar</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end">3rd </cell>
-    <cell style="tc2" align="start">Zebulun </cell>
-    <cell style="tc3" align="start">Eliab son of Helon</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end">4th </cell>
-    <cell style="tc2" align="start">Reuben </cell>
-    <cell style="tc3" align="start">Elizur son of Shedeur</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end">5th </cell>
-    <cell style="tc2" align="start">Simeon </cell>
-    <cell style="tc3" align="start">Shelumiel son of Zurishaddai</cell>
-  </row>
-  ...
-</table>
+<usx version="3.1">
+  <book code="NUM" style="id"/>
+  <chapter number="7" style="c" sid="NEH 7"/>
+  <para style="p">
+    <verse number="12-83" style="v" sid="NUM 7:12-83"/>They presented their
+    offerings in the following order:</para>
+  <table>
+    <row style="tr">
+      <cell style="th1" align="start">Day </cell>
+      <cell style="th2" align="start">Tribe </cell>
+      <cell style="th3" align="start">Leader</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end">1st </cell>
+      <cell style="tc2" align="start">Judah </cell>
+      <cell style="tc3" align="start">Nahshon son of Amminadab</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end">2nd </cell>
+      <cell style="tc2" align="start">Issachar </cell>
+      <cell style="tc3" align="start">Nethanel son of Zuar</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end">3rd </cell>
+      <cell style="tc2" align="start">Zebulun </cell>
+      <cell style="tc3" align="start">Eliab son of Helon</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end">4th </cell>
+      <cell style="tc2" align="start">Reuben </cell>
+      <cell style="tc3" align="start">Elizur son of Shedeur</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end">5th </cell>
+      <cell style="tc2" align="start">Simeon </cell>
+      <cell style="tc3" align="start">Shelumiel son of Zurishaddai</cell>
+    </row>
+    ...
+  </table>
+</usx>
+----
+USJ::
++
+.Numbers 7.12-83 (GNT)
+[source#src-usj-char-th_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NUM",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "7",
+      "sid": "NEH 7"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "12-83",
+          "sid": "NUM 7:12-83"
+        },
+        "They presented their offerings in the following order:"
+      ]
+    },
+    {
+      "type": "table",
+      "content": [
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "th1",
+              "align": "start",
+              "content": ["Day "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "th2",
+              "align": "start",
+              "content": ["Tribe "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "th3",
+              "align": "start",
+              "content": ["Leader"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "content": ["1st "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Judah "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc3",
+              "align": "start",
+              "content": ["Nahshon son of Amminadab"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "content": ["2nd "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Issachar "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc3",
+              "align": "start",
+              "content": ["Nethanel son of Zuar"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "content": ["3rd "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Zebulun "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc3",
+              "align": "start",
+              "content": ["Eliab son of Helon"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "content": ["4th "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Reuben "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc3",
+              "align": "start",
+              "content": ["Elizur son of Shedeur"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "content": ["5th "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Simeon "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc3",
+              "align": "start",
+              "content": ["Shelumiel son of Zurishaddai"]
+            }
+          ]
+        },
+        " ... "
+      ]
+    }
+  ]
+}
 ----
 ======
 
