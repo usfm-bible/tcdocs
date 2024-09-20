@@ -51,6 +51,8 @@ def addesids(root):
     if root.get('version', None) is None:
         root.set('version', '3.0')
     bkel = root.find('./book')
+    if bkel is None:
+        return
     bk = bkel.get('code', 'UNK').upper()
     bkel.set('code', bk)
     currchap = 0

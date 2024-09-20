@@ -31,21 +31,21 @@ tests: testresults.log
 #	@- echo "usfmxtest on tests: `grep 'Passed' testresults.log | wc -l` passed / `head -n -1 testresults.log | grep -v '^XML:' | wc -l`"
 
 testresults.log : grammar/usx.rng
-	- $(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -j ${JOBS} ${TESTEXCLUDES} ${TESTSET} -q -o $@ -g $< tests
+	- $(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -j ${JOBS} ${TESTEXCLUDES} ${TESTSET} ${EXTRAARGS} -q -o $@ -g $< tests
 	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -E tests/markers.ext -o $@ -A tests
 
 grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@
 
 dbl: grammar/usx.rng
-	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug ${DBLDIR} | tee dbltest.log
+	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} ${EXTRAARGS} -T 300 -l debug ${DBLDIR} | tee dbltest.log
 
 single: grammar/usx.rng $(TEST)/origin.usfm
-	$(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -l debug ${TESTSET} -P -g $< $(TEST)
+	$(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -l debug ${TESTSET} ${EXTRAARGS} -P -g $< $(TEST)
 	$(PYTHON) python/scripts/lxmltest.py -g $< -E tests/markers.ext $(TEST)/origin.xml
 
 singledbl: grammar/usx.rng
-	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} -T 300 -l debug -M ${MATCH} ${DBLDIR}
+	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -C ${CHUNKSIZE} ${EXTRAARGS} -T 300 -l debug -M ${MATCH} ${DBLDIR}
 
 doc: files diagrams 
 

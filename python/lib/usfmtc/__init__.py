@@ -9,6 +9,7 @@ from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
 from usfmtc.usxmodel import addesids, cleanup, messup, canonicalise
 from usfmtc.usjproc import usxtousj, usjtousx
+from usfmtc.usfmparser import USFMParser
 import xml.etree.ElementTree as et
 
 def _readsrc(src):
@@ -27,7 +28,7 @@ def _readsrc(src):
 
 def _grammarDoc(gsrc, extensions=[], factory=et):
     data = _readsrc(gsrc)
-    if isinstance(data, str):
+    if isinstance(data, (str, bytes)):
         rdoc = factory.ElementTree(factory.fromstring(data))
     else:
         rdoc = data
@@ -64,19 +65,26 @@ class USX:
             anet.parse(src, parser=parser)
             res = anet.getroot()
         else:
-            res = et.fromstring(src, parser=parser)
+            try:
+                res = et.fromstring(src, parser=parser)
+            except et.ParseError:
+                return None
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, elfactory=None, timeout=1e7):
+    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error. """
         data = _readsrc(src)
 
+        if altparser:
+            p = USFMParser(data, factory=elfactory or ParentElement)
+            xml = p.parse()
+        else:
         # This can raise usfmtc.parser.NoParseError
-        result = parseusfm(data, grammar, timeout=timeout, isdata=True)
+            result = parseusfm(data, grammar, timeout=timeout, isdata=True)
+            xml = result.asEt(elfactory=elfactory)
 
-        xml = result.asEt(elfactory=elfactory)
         cleanup(xml)            # normalize space, de-escape chars, cell aligns, etc.
         res = cls(xml)
         return res

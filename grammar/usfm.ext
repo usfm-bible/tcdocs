@@ -78,6 +78,10 @@
 \category internal
 \description Sidebar
 
+\marker esbe
+\category internal
+\description End Sidebar
+
 \marker ex
 \category crossreference
 \description Extended cross reference

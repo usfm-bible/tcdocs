@@ -60,7 +60,7 @@ def proconezip(fpath, sfmp, log, relax, args):
                 failed = False
                 bookcount += 1
                 try:
-                    result = USX.fromUsfm(sfmdat, sfmp, timeout=args.timeout or 3600)
+                    result = USX.fromUsfm(sfmdat, sfmp, altparser=args.qusfm, timeout=args.timeout or 3600)
                 except NoParseError as e:
                     imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
                     results.append(imsg)
@@ -120,6 +120,7 @@ parser.add_argument("-g","--grammar",required=True,help="Enhanced usx.rng RELAXn
 parser.add_argument("-D","--do",default="all",help="Do all*, usx, usfm tests")
 parser.add_argument("-S","--start",default="Scripture",help="Starting node for parsing")
 parser.add_argument("-E","--extfiles",action='append',default=[],help='markers.ext files to include')
+parser.add_argument("--qusfm",action="store_true",help="Use the faster non validating usfm parser")
 parser.add_argument("-s","--size",type=float,default=500000,help="Max test file to run in kB")
 parser.add_argument("-M","--match",help="Constrain input files to match regex")
 parser.add_argument("--skipfile",help="Logfile name and skip all jobs skipped and passed in that file")
@@ -182,7 +183,8 @@ if args.skipfile and os.path.exists(args.skipfile):
                 if m.group(2) in ("Passed", "Skipped"):
                     skips[m.group(1)] = m.group(3) or m.group(2)
 
-rdoc = _grammarDoc(args.grammar, args.extfiles)
+with open(args.grammar, "rb") as inf:
+    rdoc = _grammarDoc(inf, args.extfiles, factory=etree)
 sfmproc = _usfmGrammar(rdoc, start=args.start)
 
 jobs = []

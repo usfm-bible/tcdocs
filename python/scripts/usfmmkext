@@ -38,6 +38,7 @@ def extstr(mrkr, field):
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input RNG XML file")
 parser.add_argument("-o","--outfile",help="Output .ext file")
+parser.add_argument("-l","--lists",help="Output lists of markers to this file")
 args = parser.parse_args()
 
 rdoc = et.parse(args.infile)
@@ -53,3 +54,10 @@ outf.write("\n\n".join(output))
 if args.outfile:
     outf.close()
 
+if args.lists:
+    lists = {}
+    for k, v in res.items():
+        lists.setdefault(v.get('category', None), []).append(k)
+    with open(args.lists, "w") as outf:
+        for k, v in sorted(lists.items()):
+            outf.write(f"{k}= {' '.join(v)}\n")
