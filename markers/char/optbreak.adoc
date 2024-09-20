@@ -28,8 +28,9 @@ Added:: 1.0
 USFM::
 +
 .Matthew 9.1 (GNT)
-[source#src-usfm-char-optbreak_1,usfm,highlight=2]
+[source#src-usfm-char-optbreak_1,usfm,highlight=3]
 ----
+\id MAT
 \c 9
 \s1 Jesus Heals a Man // Who Could Not Walk
 \r (Mark 2.1-12; Luke 5.17-26)
@@ -37,11 +38,69 @@ USFM::
 USX::
 +
 .Matthew 9.1 (GNT)
-[source#src-usx-char-optbreak_1,xml,highlight=2]
+[source#src-usx-char-optbreak_1,xml,highlight=5]
 ----
-<chapter number="9" style="c" sid="MAT 9"/>
-<para style="s1">Jesus Heals a Man <optbreak/> Who Could Not Walk</para>
-<para style="r">(Mark 2.1-12; Luke 5.17-26)</para>
+<usx version="3.1">
+  <book code="MAT" style="id"/>
+  <chapter number="9" style="c" sid="MAT 9"/>
+  <para style="s1">Jesus Heals a Man <optbreak/> Who Could Not Walk</para>
+  <para style="r">(<ref loc="MRK 2:1-12">Mark 2.1-12</ref>; <ref
+      loc="LUK 5:17-26">Luke 5.17-26</ref>)</para>
+</usx>
+----
+USJ::
++
+.Matthew 9.1 (GNT)
+[source#src-usj-char-optbreak_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "9",
+      "sid": "MAT 9"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": [
+        "Jesus Heals a Man ",
+        {
+          "type": "optbreak"
+        },
+        " Who Could Not Walk"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": [
+        "(",
+        {
+          "type": "ref",
+          "loc": "MRK 2:1-12",
+          "content": ["Mark 2.1-12"]
+        },
+        "; ",
+        {
+          "type": "ref",
+          "loc": "LUK 5:17-26",
+          "content": ["Luke 5.17-26"]
+        },
+        ")"
+      ]
+    }
+  ]
+}
 ----
 ======
 

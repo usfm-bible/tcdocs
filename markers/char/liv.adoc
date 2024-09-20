@@ -29,8 +29,10 @@ Added:: 3.0
 USFM::
 +
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-usfm-char-lik_1,usfm,highlight=4..16]
+[source#src-usfm-char-lik_1,usfm,highlight=6..18]
 ----
+\id 1CH
+\c 27
 \s1 Administration of the Tribes of Israel
 \lh
 \v 16-22 This is the list of the administrators of the tribes of Israel:
@@ -52,66 +54,327 @@ USFM::
 USFM::
 +
 .1 Chronicles 27:16-22 (GNT - markup adapted)
-[source#src-usx-char-lik_1,xml,highlight=7;11;15;19;23;27;31;35;39;43;47;51;55]
+[source#src-usx-char-lik_1,xml,highlight=10;14;18;22;26;30;34;38;42;46;50;54;58]
 ----
-<para style="s1">Administration of the Tribes of Israel</para>
-<para style="lh">
-  <verse number="16-22" style="v" sid="1CH 27:16-22"/>This is the list of 
-  the administrators of the tribes of Israel:</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Reuben</char>
-  <char style="liv1">Eliezer son of Zichri</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Simeon</char>
-  <char style="liv1">Shephatiah son of Maacah</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Levi</char>
-  <char style="liv1">Hashabiah son of Kemuel</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Aaron</char>
-  <char style="liv1">Zadok</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Judah</char>
-  <char style="liv1">Elihu, one of King David's brothers</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Issachar</char>
-  <char style="liv1">Omri son of Michael</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Zebulun</char>
-  <char style="liv1">Ishmaiah son of Obadiah</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Naphtali</char>
-  <char style="liv1">Jeremoth son of Azriel</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Ephraim</char>
-  <char style="liv1">Hoshea son of Azaziah</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">West Manasseh</char>
-  <char style="liv1">Joel son of Pedaiah</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">East Manasseh</char>
-  <char style="liv1">Iddo son of Zechariah</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Benjamin</char>
-  <char style="liv1">Jaasiel son of Abner</char>
-</para>
-<para style="li1" vid="1CH 27:16-22">
-  <char style="lik">Dan</char>
-  <char style="liv1">Azarel son of Jeroham</char>
-</para>
-<para style="lf" vid="1CH 27:16-22">This was the list of the administrators of 
-  the tribes of Israel.<verse eid="1CH 27:16-22"/></para>
+<usx version="3.1">
+  <book code="1CH" style="id"/>
+  <chapter number="27" style="c" sid="NEH 27"/>
+  <para style="s1">Administration of the Tribes of Israel</para>
+  <para style="lh">
+    <verse number="16-22" style="v" sid="1CH 27:16-22"/>This is the list of 
+    the administrators of the tribes of Israel:</para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Reuben</char>
+    <char style="liv1">Eliezer son of Zichri</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Simeon</char>
+    <char style="liv1">Shephatiah son of Maacah</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Levi</char>
+    <char style="liv1">Hashabiah son of Kemuel</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Aaron</char>
+    <char style="liv1">Zadok</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Judah</char>
+    <char style="liv1">Elihu, one of King David's brothers</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Issachar</char>
+    <char style="liv1">Omri son of Michael</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Zebulun</char>
+    <char style="liv1">Ishmaiah son of Obadiah</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Naphtali</char>
+    <char style="liv1">Jeremoth son of Azriel</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Ephraim</char>
+    <char style="liv1">Hoshea son of Azaziah</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">West Manasseh</char>
+    <char style="liv1">Joel son of Pedaiah</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">East Manasseh</char>
+    <char style="liv1">Iddo son of Zechariah</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Benjamin</char>
+    <char style="liv1">Jaasiel son of Abner</char>
+  </para>
+  <para style="li1" vid="1CH 27:16-22">
+    <char style="lik">Dan</char>
+    <char style="liv1">Azarel son of Jeroham</char>
+  </para>
+  <para style="lf" vid="1CH 27:16-22">This was the list of the administrators of 
+    the tribes of Israel.<verse eid="1CH 27:16-22"/></para>
+</usx>
+----
+USJ::
++
+.1 Chronicles 27:16-22 (GNT - markup adapted)
+[source#src-usj-char-liv_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "1CH",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "27",
+      "sid": "NEH 27"
+    },
+    {
+      "type": "para",
+      "marker": "s1",
+      "content": ["Administration of the Tribes of Israel"]
+    },
+    {
+      "type": "para",
+      "marker": "lh",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "16-22",
+          "sid": "1CH 27:16-22"
+        },
+        "This is the list of the administrators of the tribes of Israel:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Reuben"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Eliezer son of Zichri"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Simeon"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Shephatiah son of Maacah"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Levi"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Hashabiah son of Kemuel"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Aaron"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Zadok"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Judah"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Elihu, one of King David's brothers"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Issachar"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Omri son of Michael"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Zebulun"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Ishmaiah son of Obadiah"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Naphtali"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Jeremoth son of Azriel"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Ephraim"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Hoshea son of Azaziah"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["West Manasseh"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Joel son of Pedaiah"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["East Manasseh"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Iddo son of Zechariah"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Benjamin"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Jaasiel son of Abner"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        {
+          "type": "char",
+          "marker": "lik",
+          "content": ["Dan"]
+        },
+        {
+          "type": "char",
+          "marker": "liv1",
+          "content": ["Azarel son of Jeroham"]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lf",
+      "content": [
+        "This was the list of the administrators of the tribes of Israel."
+      ]
+    }
+  ]
+}
 ----
 ======
 
