@@ -161,7 +161,7 @@ if len(jobs) == 1:
     args.exclude = set()
 
 rdoc = et.parse(args.grammar)
-sfmproc = usfmGrammar(rdoc, args.extfiles, start=args.start)
+sfmproc = usfmGrammar(rdoc, args.extfiles, altparser=args.qusfm, start=args.start)
 newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
 usxrng = etree.RelaxNG(etree=newdoc)
 

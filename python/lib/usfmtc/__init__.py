@@ -9,13 +9,13 @@ from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
 from usfmtc.usxmodel import addesids, cleanup, messup, canonicalise
 from usfmtc.usjproc import usxtousj, usjtousx
-from usfmtc.usfmparser import USFMParser
+from usfmtc.usfmparser import USFMParser, Grammar
 import xml.etree.ElementTree as et
 
 def _readsrc(src):
     if hasattr(src, "read"):
         return src.read()
-    elif not isinstance(src, str):
+    elif not isinstance(src, str):      # we're a parsed xml doc
         return src
     elif len(src) < 128 and os.path.exists(src):
         with open(src, encoding="utf-8") as inf:
@@ -46,9 +46,16 @@ def _usfmGrammar(rdoc, backend=None, start=None):
     parser = sfmproc.parseRef(start)
     return parser
 
-def usfmGrammar(gsrc, extensions=[], backend=None, start=None):
+def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
-    rdoc = _grammarDoc(gsrc, extensions)
+    if len(extensions) or not altparser:
+        rdoc = _grammarDoc(gsrc, extensions)
+    if altparser:
+        res = Grammar()
+        if len(extensions):
+            for e in extensions:
+                res.readmrkrs(e)
+        return res
     return _usfmGrammar(rdoc, backend, start)
 
 
@@ -78,7 +85,7 @@ class USX:
         data = _readsrc(src)
 
         if altparser:
-            p = USFMParser(data, factory=elfactory or ParentElement)
+            p = USFMParser(data, factory=elfactory or ParentElement, grammar=grammar)
             xml = p.parse()
         else:
         # This can raise usfmtc.parser.NoParseError

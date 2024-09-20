@@ -2,6 +2,7 @@
 
 import regex
 import xml.etree.ElementTree as et
+from usfmtc.extension import SFMFile
 
 class Tag(str):
     def __new__(cls, s):
@@ -51,8 +52,8 @@ class Lexer:
 
     tokenre = regex.compile(r'((?:[^\\|/]|\\[\\|\n]|/[^/])+)|([\\|\n]|//)')
     tagre = regex.compile(r'(?:\+?[a-zA-Z_][a-zA-Z_0-9-]*)?\*?')
-    attribsre = regex.compile(r'([a-zA-Z_][a-zA-Z0-9_-]*)\s*=\s*"((?:[^"]|\\")*)"')
-    textrunre = regex.compile(r'(?:[^\\]|\\[^a-zA-Z_*])*')
+    attribsre = regex.compile(r'\s*([a-zA-Z_][a-zA-Z0-9_-]*)\s*=\s*"((?:[^"]|\\")*)"')
+    textrunre = regex.compile(r'(?:[^\\]|\\[^a-zA-Z_*+])*')
 
     def __init__(self, txt):
         self.txt = txt
@@ -102,7 +103,7 @@ class Lexer:
             elif n == '//':
                 res = OptBreak()
                 break
-        if self.cindex == curri:
+        if self.cindex >= curri:
             raise StopIteration
         if lastres:
             self.nexts.append(res)
@@ -113,53 +114,80 @@ class Lexer:
     def readAttrib(self, curri):
         res = {}
         resi = curri
-        for m in self.attribsre.finditer(self.txt[curri:]):
-            res[m.group(1)] = m.group(2)
-            resi = m.end()
+        while (m := self.attribsre.match(self.txt[curri:])):
+            res[m.group(1)] = m.group(2)    # tests say not to strip .strip()
+            if m.end() == 0:
+                break
+            curri += m.end()
         if not len(res):
             m = self.textrunre.match(self.txt[curri:])
             if m:
-                resi = m.end()
-                res = m.group(0).strip()
-        return res, resi + curri
+                curri += m.end()
+                res = m.group(0)            # tests say not to strip .strip()
+        return res, curri
 
-category_markers = {
-    "attrib": "cp vp usfm ca va cat",
-    "cell": "th1 th2 th3 th4 th5 th6 th7 th8 th9 th10 th11 th12 tc1 tc2 tc3 tc4 tc5 tc6 tc7 tc8 tc9 tc10 tc11 tc12 tcr1 tcr2 tcr3 tcr4 tcr5 tcr6 tcr7 tcr8 tcr9 tcc1 tcc2 tcc3 tcc4 tcc5 tcc6 tcc7 tcc8 tcc9 tcc10 tcc11 tcc12 thc1 thc2 thc3 thc4 thc5 thc6 thc7 thc8 thc9 thc10 thc11 tch12 thr1 thr2 thr3 thr4 thr5 thr6 thr7 thr8 thr9 thr10 thr11 thr12",
-    "char": "qac qs add addpn bk dc efm fm fv k nd ndx ord png pn pro qt rq sig sls tl wg wh wa wj jmp no it bdit bd em sc sup w rb",
-    "crossreference": "ex x",
-    "crossreferencechar": "xt xop xo xta xk xq xot xnt xdc",
-    "footnote": "fe f efe ef",
-    "footnotechar": "fr ft fk fqa fq fl fw fdc fp",
-    "header": "ide h1 h2 h3 h toc1 toc2 toc3 toca1 toca2 toca3",
-    "internal": "id periph v fig esb esbe",
-    "chapter": "c",
-    "introchar": "ior iqt",
-    "introduction": "imt1 imt2 imt3 imt4 imte1 imte2 imte imt ib ie ili1 ili2 ili imi imq im io1 io2 io3 io4 iot io ipi ipq ipr iq1 iq2 iq3 iq is1 is2 is",
-    "list": "lh li1 li2 li3 li4 lim1 lim2 lim3 lim4 lim li lf",
-    "listchar": "litl lik liv1 liv2 liv3 liv4 liv5 liv",
-    "milestone": "ts-s ts-e ts t-s t-e qt1-s qt1-e qt2-s qt2-e qt3-s qt3-e qt4-s qt4-e qt5-s qt5-e qt-s qt-e",
-    "otherpara": "rem sts lit pb p1 p2 qa k1 k2",
-    "sectionpara": "ip iex restore ms1 ms2 ms3 ms mr mte1 mte2 mte r s1 s2 s3 s4 sr sp sd1 sd2 sd3 sd4 sd s cl cd",
-    "title": "mt1 mt2 mt3 mt4 mt",
-    "versepara": "cls nb pc pi1 pi2 pi3 pi po pr pmo pmc pmr pm ph1 ph2 ph3 ph p q1 q2 q3 q4 qc qr qm1 qm2 qm3 qm qd q b d mi1 mi2 mi3 mi4 mi m",
-}
+class Grammar:
+    category_markers = {
+        "attrib": "cp vp usfm ca va cat",
+        "cell": "th1 th2 th3 th4 th5 th6 th7 th8 th9 th10 th11 th12 tc1 tc2 tc3 tc4 tc5 tc6 tc7 tc8 tc9 tc10 tc11 tc12 tcr1 tcr2 tcr3 tcr4 tcr5 tcr6 tcr7 tcr8 tcr9 tcc1 tcc2 tcc3 tcc4 tcc5 tcc6 tcc7 tcc8 tcc9 tcc10 tcc11 tcc12 thc1 thc2 thc3 thc4 thc5 thc6 thc7 thc8 thc9 thc10 thc11 tch12 thr1 thr2 thr3 thr4 thr5 thr6 thr7 thr8 thr9 thr10 thr11 thr12",
+        "char": "qac qs add addpn bk dc efm fm fv k nd ndx ord png pn pro qt rq sig sls tl wg wh wa wj jmp no it bdit bd em sc sup w rb",
+        "crossreference": "ex x",
+        "crossreferencechar": "xt xop xo xta xk xq xot xnt xdc",
+        "footnote": "fe f efe ef",
+        "footnotechar": "fr ft fk fqa fq fl fw fdc fp",
+        "header": "ide h1 h2 h3 h toc1 toc2 toc3 toca1 toca2 toca3",
+        "ident": "id",
+        "internal": "periph v fig esb esbe ref tr",
+        "chapter": "c",
+        "introchar": "ior iqt",
+        "introduction": "imt1 imt2 imt3 imt4 imte1 imte2 imte imt ib ie ili1 ili2 ili imi imq im io1 io2 io3 io4 iot io ipi ipq ipr iq1 iq2 iq3 iq is1 is2 is",
+        "list": "lh li1 li2 li3 li4 lim1 lim2 lim3 lim4 lim li lf",
+        "listchar": "litl lik liv1 liv2 liv3 liv4 liv5 liv",
+        "milestone": "ts-s ts-e ts t-s t-e qt1-s qt1-e qt2-s qt2-e qt3-s qt3-e qt4-s qt4-e qt5-s qt5-e qt-s qt-e",
+        "otherpara": "rem sts lit pb p1 p2 qa k1 k2",
+        "sectionpara": "ip iex restore ms1 ms2 ms3 ms mr mte1 mte2 mte r s1 s2 s3 s4 sr sp sd1 sd2 sd3 sd4 sd s cl cd",
+        "title": "mt1 mt2 mt3 mt4 mt",
+        "versepara": "cls nb pc pi1 pi2 pi3 pi po pr pmo pmc pmr pm ph1 ph2 ph3 ph p q1 q2 q3 q4 qc qr qm1 qm2 qm3 qm qd q b d mi1 mi2 mi3 mi4 mi m",
+    }
 
-marker_categories = {t:k for k, v in category_markers.items() for t in v.split(' ')}
+    marker_categories = {t:k for k, v in category_markers.items() for t in v.split(' ')}
 
-attribmap = { 'jmp' : 'href', 'k' : 'key', 'qt-s': 'who', 'qt1-s': 'who', 'qt2-s': 'who',
-    'qt3-s': 'who', 'qt4-s': 'who', 'qt5-s': 'who', 'rb': 'gloss', 't-s': 'sid', 'ts-s': 'sid',
-    'w': 'lemma' }
+    attribmap = { 'jmp' : 'href', 'k' : 'key', 'qt-s': 'who', 'qt1-s': 'who', 'qt2-s': 'who',
+        'qt3-s': 'who', 'qt4-s': 'who', 'qt5-s': 'who', 'rb': 'gloss', 't-s': 'sid', 'ts-s': 'sid',
+        'w': 'lemma', 'ref': 'loc', 'xt': 'href' }
 
-attribtags = { 'cp': 'pubnumber', 'ca': 'altnumber', 'vp': 'pubnumber',
-    'va': 'altnumber', 'cat': 'category', 'usfm': 'version' }
+    attribtags = { 'cp': 'pubnumber', 'ca': 'altnumber', 'vp': 'pubnumber',
+        'va': 'altnumber', 'cat': 'category', 'usfm': 'version'}
+
+    def __init__(self):
+        self.marker_categories = self.marker_categories.copy()
+        self.attribmap = self.attribmap.copy()
+
+    def readmrkrs(self, fname):
+        sfm = SFMFile(fname)
+        for k, v in sfm.markers.items():
+            if 'category' in v:
+                self.marker_categories[k] = v['category'].lower()
+            if 'defattrib' in v:
+                self.attribmap[k] = v['defattrib']
+
+def isfirstText(e):
+    if e.text is not None and len(e.text):
+        return False
+    for c in e:
+        if not isfirstText(c):
+            return False
+        if c.tail is not None and len(c.tail):
+            return False
+    return True
 
 class Node:
-    def __init__(self, parser, usxtag, tag):
+    def __init__(self, parser, usxtag, tag, ispara=False, notag=False):
         self.parser = parser
         self.tag = tag
+        self.ispara = ispara
         parent = parser.stack[-1] if len(parser.stack) else None
-        self.element = parser.factory(usxtag, {} if tag is None else {"style": tag},
+        self.element = parser.factory(usxtag, {} if notag or tag is None else {"style": tag},
                     parent=getattr(parent, 'element', None))
         if parent:
             parent.addNodeElement(self.element)
@@ -177,7 +205,7 @@ class Node:
     def appendText(self, txt):
         if len(self.element):
             if self.element[-1].tail is None or self.element[-1].tail == "":
-                self.element[-1].tail = txt.lstrip() if self.element.text is None or self.element.text == "" else txt
+                self.element[-1].tail = txt.lstrip() if self.ispara and isfirstText(self.element) else txt
             else:
                 self.element[-1].tail += txt
         elif self.element.text is None or self.element.text == "":
@@ -191,7 +219,7 @@ class Node:
         self.clearAttribNodes()
 
     def addDefaultAttrib(self, t):
-        defattrib = attribmap.get(self.tag, None)
+        defattrib = self.parser.grammar.attribmap.get(self.tag, None)
         if defattrib is None and self.tag.endswith("-e"):
             defattrib = 'eid'
         if defattrib is None:
@@ -200,7 +228,7 @@ class Node:
         self.clearAttribNodes()
 
     def addAttribNode(self, node):
-        self.attribnodes.append(self)
+        self.attribnodes.append(node)
 
     def clearAttribNodes(self):
         if not len(self.attribnodes):
@@ -218,9 +246,9 @@ class Node:
         if getattr(self, 'element', None) is None:
             return
         if len(self.element):
-            if self.element[-1].tail is not None:
+            if self.element[-1].tail is not None and self.ispara:
                 self.element[-1].tail = self.element[-1].tail.rstrip()
-        elif self.element.text is not None:
+        elif self.element.text is not None and self.ispara:
             self.element.text = self.element.text.rstrip()
         self.clearAttribNodes()
         
@@ -232,21 +260,26 @@ class IdNode(Node):
             self.element.text = m.group(2)
         self.parser.removeTag('id')
 
+    def addNodeElement(self, e):
+        self.parser.stack[0].element.append(e)
+
 class USXNode(Node):
     def appendText(self, t):
         self.element.set('version', t.strip())
 
 class AttribNode(Node):
     def __init__(self, parser, parent, tag):
+        self.parser = parser
         self.parent = parent
         self.parent.addAttribNode(self)
         self.tag = tag
 
     def addNodeElement(self, e):
         self.parent.addNodeElement(e)
+        self.parser.removeTag(self.tag)
 
     def appendText(self, t):
-        attrib = attribtags[self.tag]
+        attrib = self.parent.parser.grammar.attribtags[self.tag]
         self.parent.element.set(attrib, t.strip())
 
 class NumberNode(Node):
@@ -256,7 +289,7 @@ class NumberNode(Node):
 
     def appendText(self, t):
         if not self.hasarg:
-            b = t.lstrip().split(' ', 1)
+            b = regex.split(r"\s+", t.lstrip(), 1)
             self.element.set('number', b[0].strip())
             self.hasarg = True
         else:
@@ -275,10 +308,17 @@ class NoteNode(Node):
         self.hascaller = False
 
     def appendText(self, t):
+        if not self.hascaller:
+            b = regex.split(r"\s+", t.lstrip(), 1)
+            self.element.set('caller', b[0].strip())
+            self.hascaller = True
+            if len(b) > 1 and len(b[1]):
+                t = b[1]
+            else:
+                return
         if self.hascaller:
             super().appendText(t)
-        self.element.set('caller', t.strip())
-        self.hascaller = True
+            return
 
 class PeriphNode(Node):
     def appendText(self, t):
@@ -289,32 +329,35 @@ class PeriphNode(Node):
                 self.element.set('id', m.group(2))
 
 
-paratypes = ('header', 'introduction', 'list', 'otherpara', 'sectionpara', 'versepara', 'title', 'chapter')
+paratypes = ('header', 'introduction', 'list', 'otherpara', 'sectionpara', 'versepara', 'title', 'chapter', 'ident')
 def setupParser(cls):
     # tag closed types
-    for a in (('introchar', 'char'), ('listchar', 'char'), ('char', 'char'), ('milestone', 'ms'), ):
+    for a in (('introchar', 'char'), ('listchar', 'char'), ('char', 'char'), ('_fig', 'figure')):
         def maketype(c, t):
             def dotype(self, tag):
                 if tag.isend:
                     return self.removeTag(str(tag))
-                return self.addNode(Node(self, c, str(tag)))
+                return self.addNode(Node(self, t, tag.basestr()))
             return dotype
         setattr(cls, a[0], maketype(*a))
     # implicit closed paras
     for a in paratypes:
         def dotype(self, tag):
             self.removeType(paratypes)
-            return self.addNode(Node(self, 'para', str(tag)))
+            return self.addNode(Node(self, 'para', str(tag), ispara=True))
         if not hasattr(cls, a):
             setattr(cls, a, dotype)
 
 
 class USFMParser:
 
-    def __init__(self, txt, factory=None):
+    def __init__(self, txt, factory=None, grammar=None):
         if factory is None:
             factory = et.Element
+        if grammar is None:
+            grammar = Grammar()
         self.factory = factory
+        self.grammar = grammar
         self.lexer = Lexer(txt)
 
     def parse(self):
@@ -327,7 +370,7 @@ class USFMParser:
 
         for t in self.lexer:
             if isinstance(t, Tag):
-                tagtype = marker_categories.get(t.basestr(), 'internal')
+                tagtype = self.grammar.marker_categories.get(t.basestr(), 'internal')
                 if tagtype in ('internal', 'chapter'):
                     tagtype = t.basestr()
                     tagtype = "_"+tagtype
@@ -377,14 +420,14 @@ class USFMParser:
         while len(self.stack):
             curr = self.stack.pop()
             curr.close()
-            if curr is not None and marker_categories.get(curr.tag, None) in t:
+            if curr is not None and self.grammar.marker_categories.get(curr.tag, None) in t:
                 break
         else:
             self.stack = oldstack
         return self.stack[-1]
 
-    def _id(self, tag):
-        parent = self.addNode(IdNode(self, "book", str(tag)))
+    def ident(self, tag):
+        parent = IdNode(self, "book", str(tag))
         return parent
 
     def _c(self, tag):
@@ -392,12 +435,8 @@ class USFMParser:
         return self.addNode(NumberNode(self, "chapter", str(tag)))
 
     def _v(self, tag):
+        self.removeTag('v')
         return self.addNode(NumberNode(self, "verse", str(tag)))
-
-    def _fig(self, tag):
-        if tag.isend:
-            return self.removeTag(str(tag))
-        return self.addNode(Node(self, "figure", str(tag)))
 
     def _esb(self, tag):
         return self.addNode(Node(self, "sidebar", str(tag)))
@@ -409,11 +448,23 @@ class USFMParser:
         self.removeTag(str(tag))
         return self.addNode(PeriphNode(self, "periph", str(tag)))
 
+    def _ref(self, tag):
+        if tag.isend:
+            return self.removeTag(str(tag))
+        return self.addNode(Node(self, 'ref', tag.basestr(), notag=True))
+
+    def _tr(self, tag):
+        self.removeTag('tr')
+        if not len(self.stack) or self.stack[-1].element.tag != "table":
+            self.removeType(paratypes)
+            self.addNode(Node(self, 'table', None))
+        return self.addNode(Node(self, 'row', 'tr'))
+
     def attrib(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
         else:
-            parent = AttribNode(self, self.parent, str(tag))
+            parent = AttribNode(self, self.stack[-1], str(tag))
         self.stack.append(parent)
         return parent
 
@@ -434,16 +485,26 @@ class USFMParser:
         return self.addNode(NoteNode(self, 'note', str(tag)))
 
     def crossreferencechar(self, tag):
-        self.removeType('crossreferencechar')
-        return self.addNode(Node(self, 'char', str(tag)))
+        res = self.removeType('crossreferencechar')
+        if not tag.isend:
+            res = self.addNode(Node(self, 'char', tag.basestr()))
+        return res
 
     def footnotechar(self, tag):
-        self.removeType('footnotechar')
-        return self.addNode(Node(self, 'char', str(tag)))
+        res = self.removeType('footnotechar')
+        if not tag.isend:
+            res = self.addNode(Node(self, 'char', tag.basestr()))
+        return res
+
+    def milestone(self, tag):
+        if tag.isend:
+            return self.removeType('milestone')
+        return self.addNode(Node(self, 'ms', tag.basestr()))
 
     def unknown(self, tag):
         self.addNode(Node(self, 'ms', str(tag)))
-        return self.parent
+        res = self.removeTag(tag)
+        return res
 
 setupParser(USFMParser)
 
