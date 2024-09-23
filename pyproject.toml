@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=62.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usfmtc"
+version = "0.2"
+# (also manually bump version in src/feaxlib/__init__.py)
+authors = [{name = "USFM Technical Committee", email = "fonts@sil.org"}]
+readme = "README.md"
+license = {file = "LICENSE.md"}
+description = "USFM reference parser"
+classifiers = [
+   "Environment :: Console",
+   "Programming Language :: Python :: 3.8",
+   "Intended Audience :: Developers",
+   "License :: OSI Approved :: MIT License",
+   "Topic :: Text Processing :: Bible"
+   ]
+requires-python = ">=3.8"
+#dynamic = ["version"]
+
+dependencies = [
+]
+
+[project.optional-dependencies]
+git = [
+]
+
+[project.urls]
+Home-Page = "https://github.com/usfm-bible/tcdocs"
+
+[tool.setuptools.packages.find]
+where = ["python/lib"]
+
+[tool.setuptools.dynamic]
+# version = {attr = "usfmtc.version"}
+
+#[tool.setuptools]
+#packages = ["usfmtc"]
+
+[tool.bdist_wheel]
+universal = true
+
+[project.scripts]
+usfmconv = "usfmtc:main"
