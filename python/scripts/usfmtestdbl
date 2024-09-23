@@ -18,6 +18,7 @@ except ImportError:
     from usfmtc import USX, _grammarDoc, _usfmGrammar
 from usfmtc.parser import NoParseError, Parser
 from usfmtc.usxmodel import addesids, etCmp, cleanup, partypes
+from usfmtc.usfmparser import Grammar
 import xml.etree.ElementTree as et
 from lxml import etree
 
@@ -185,7 +186,12 @@ if args.skipfile and os.path.exists(args.skipfile):
 
 with open(args.grammar, "rb") as inf:
     rdoc = _grammarDoc(inf, args.extfiles, factory=etree)
-sfmproc = _usfmGrammar(rdoc, start=args.start)
+if args.qusfm:
+    sfmproc = Grammar()
+    for e in args.extfiles:
+        sfmproc.readmrkrs(e)
+else:
+    sfmproc = _usfmGrammar(rdoc, start=args.start)
 
 jobs = []
 skipcount = 0
@@ -218,7 +224,10 @@ if args.jobs != 1 and len(jobs) > 1:
         newdoc = etree.fromstring(newdoctxt)
         rng =  etree.RelaxNG(etree=newdoc)
         proc.usxrng = rng
-        proc.sfmproc = _usfmGrammar(rdoc, start=args.start)
+        if args.qusfm:
+            proc.sfmproc = sfmproc
+        else:
+            proc.sfmproc = _usfmGrammar(rdoc, start=args.start)
         proc.log = log
         proc.args = args
     def doprocone(arg):

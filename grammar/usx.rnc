@@ -1181,6 +1181,8 @@ Internal.style.enum = (
       "va"
     |   ## Published verse number
       "vp"
+    |   ## Table
+      "tr"
     |   ## Figure
       "fig"
     |   ## Sidebar

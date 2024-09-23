@@ -1962,6 +1962,8 @@
       <a:documentation>Alternative versification</a:documentation>
       <value>vp</value>
       <a:documentation>Published verse number</a:documentation>
+      <value>tr</value>
+      <a:documentation>Table</a:documentation>
       <value>fig</value>
       <a:documentation>Figure</a:documentation>
       <value>esb</value>
