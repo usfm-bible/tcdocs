@@ -14,9 +14,11 @@ from usfmtc.usxmodel import etCmp
 import xml.etree.ElementTree as et
 from lxml import etree
 
-def getfname(d, basefile):
+def getfname(d, basefile, strict=False):
     if os.path.isdir(d):
         return os.path.join(d, basefile)
+    elif strict:
+        return basefile
     else:
         return d
 
@@ -37,10 +39,10 @@ def proconedir(d, sfmp, relax, rdoc, args):
     testxml = None
     expected = meta.get('validated', 'pass').lower() == 'pass'
     if args.testset == 1:
-        f = getfname(d, "origin.xml")
+        f = getfname(d, "origin.xml", strict=True)
         if not os.path.exists(f):
             return (not expected, d, "No origin.xml", "")
-        testxml = USX.fromUsx(getfname(d, "origin.xml"))
+        testxml = USX.fromUsx(getfname(d, "origin.xml", strict=True))
         if not os.path.isdir(d):
             ud = d.replace(".xml", "_test.usfm")
             d = ud
@@ -64,7 +66,7 @@ def proconedir(d, sfmp, relax, rdoc, args):
     if result is not None:
         passed = True
         if testxml is None:
-            testxml = USX.fromUsx(getfname(d, args.base or "origin.xml"))
+            testxml = USX.fromUsx(getfname(d, args.base or "origin.xml", strict=True))
         if testxml:
             passed = etCmp(result.getroot(), testxml.getroot(), verbose=args.print)
             if not passed:

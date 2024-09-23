@@ -126,6 +126,12 @@ class Lexer:
                 res = m.group(0)            # tests say not to strip .strip()
         return res, curri
 
+    def readLine(self):
+        m = regex.match(r"(.*?)$", self.txt, pos=self.cindex, flags=regex.M)
+        if m:
+            self.cindex = m.end()
+            self.nexts.append(m.group(1))
+
 class Grammar:
     category_markers = {
         "attrib": "cp vp usfm ca va cat",
@@ -137,14 +143,14 @@ class Grammar:
         "footnotechar": "fr ft fk fqa fq fl fw fdc fp",
         "header": "ide h1 h2 h3 h toc1 toc2 toc3 toca1 toca2 toca3",
         "ident": "id",
-        "internal": "periph v fig esb esbe ref tr",
+        "internal": "periph v fig esb esbe ref tr rem",
         "chapter": "c",
         "introchar": "ior iqt",
         "introduction": "imt1 imt2 imt3 imt4 imte1 imte2 imte imt ib ie ili1 ili2 ili imi imq im io1 io2 io3 io4 iot io ipi ipq ipr iq1 iq2 iq3 iq is1 is2 is",
         "list": "lh li1 li2 li3 li4 lim1 lim2 lim3 lim4 lim li lf",
         "listchar": "litl lik liv1 liv2 liv3 liv4 liv5 liv",
         "milestone": "ts-s ts-e ts t-s t-e qt1-s qt1-e qt2-s qt2-e qt3-s qt3-e qt4-s qt4-e qt5-s qt5-e qt-s qt-e",
-        "otherpara": "rem sts lit pb p1 p2 qa k1 k2",
+        "otherpara": "sts lit pb p1 p2 qa k1 k2",
         "sectionpara": "ip iex restore ms1 ms2 ms3 ms mr mte1 mte2 mte r s1 s2 s3 s4 sr sp sd1 sd2 sd3 sd4 sd s cl cd",
         "title": "mt1 mt2 mt3 mt4 mt",
         "versepara": "cls nb pc pi1 pi2 pi3 pi po pr pmo pmc pmr pm ph1 ph2 ph3 ph p q1 q2 q3 q4 qc qr qm1 qm2 qm3 qm qd q b d mi1 mi2 mi3 mi4 mi m",
@@ -273,6 +279,7 @@ class AttribNode(Node):
         self.parent = parent
         self.parent.addAttribNode(self)
         self.tag = tag
+        self.attribnodes = []
 
     def addNodeElement(self, e):
         self.parent.addNodeElement(e)
@@ -283,8 +290,8 @@ class AttribNode(Node):
         self.parent.element.set(attrib, t.strip())
 
 class NumberNode(Node):
-    def __init__(self, parser, usxtag, tag):
-        super().__init__(parser, usxtag, tag)
+    def __init__(self, parser, usxtag, tag, ispara=False):
+        super().__init__(parser, usxtag, tag, ispara=ispara)
         self.hasarg = False
 
     def appendText(self, t):
@@ -296,6 +303,8 @@ class NumberNode(Node):
             b = ['', t]
         if len(b) > 1 and b[1].strip():
             self.parser.removeTag(self.tag)
+            if self.ispara:
+                self.parser.addNode(Node(self.parser, 'para', 'p'))
             self.parser.stack[-1].appendText(b[1])
 
     def addNodeElement(self, e):
@@ -330,6 +339,7 @@ class PeriphNode(Node):
 
 
 paratypes = ('header', 'introduction', 'list', 'otherpara', 'sectionpara', 'versepara', 'title', 'chapter', 'ident')
+paratags = ('rem', ' table')
 def setupParser(cls):
     # tag closed types
     for a in (('introchar', 'char'), ('listchar', 'char'), ('char', 'char'), ('_fig', 'figure')):
@@ -343,7 +353,7 @@ def setupParser(cls):
     # implicit closed paras
     for a in paratypes:
         def dotype(self, tag):
-            self.removeType(paratypes)
+            self.removeType(paratypes, paratags)
             return self.addNode(Node(self, 'para', str(tag), ispara=True))
         if not hasattr(cls, a):
             setattr(cls, a, dotype)
@@ -413,14 +423,14 @@ class USFMParser:
             self.stack = oldstack
         return self.stack[-1]
 
-    def removeType(self, t):
+    def removeType(self, t, tags=[]):
         if isinstance(t, str):
             t = [t]
         oldstack = self.stack[:]
         while len(self.stack):
             curr = self.stack.pop()
             curr.close()
-            if curr is not None and self.grammar.marker_categories.get(curr.tag, None) in t:
+            if curr is not None and (curr.tag in tags or self.grammar.marker_categories.get(curr.tag, None) in t):
                 break
         else:
             self.stack = oldstack
@@ -428,14 +438,18 @@ class USFMParser:
 
     def ident(self, tag):
         parent = IdNode(self, "book", str(tag))
+        self.lexer.readLine()
         return parent
 
     def _c(self, tag):
-        self.removeType(paratypes)
-        return self.addNode(NumberNode(self, "chapter", str(tag)))
+        self.removeType(paratypes, paratags)
+        return self.addNode(NumberNode(self, "chapter", str(tag), ispara=True))
 
     def _v(self, tag):
         self.removeTag('v')
+        if len(self.stack) and self.stack[-1].tag == "c":
+            self.removeTag('c')
+            self.addNode(Node(self, 'para', 'p'))
         return self.addNode(NumberNode(self, "verse", str(tag)))
 
     def _esb(self, tag):
@@ -456,9 +470,15 @@ class USFMParser:
     def _tr(self, tag):
         self.removeTag('tr')
         if not len(self.stack) or self.stack[-1].element.tag != "table":
-            self.removeType(paratypes)
-            self.addNode(Node(self, 'table', None))
+            self.removeType(paratypes,)
+            self.addNode(Node(self, 'table', ' table', notag=True))
         return self.addNode(Node(self, 'row', 'tr'))
+
+    def _rem(self, tag):
+        self.removeType(paratypes, paratags)
+        res = self.addNode(Node(self, 'para', str(tag), ispara=True))
+        self.lexer.readLine()
+        return res
 
     def attrib(self, tag):
         if tag.isend:

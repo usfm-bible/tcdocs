@@ -108,7 +108,7 @@ def proconezip(fpath, sfmp, log, relax, args):
             anyfailed = True
             results = [f"{fpath}: No files found"]
         lognprint("{}: {}".format(fpath, "Passed" if not anyfailed else "Failed"), args.quiet, logging.INFO)
-        return (fpath, results)
+        return (fpath, [] if not anyfailed else [results])
     except Exception as e:
         lognprint(f"{fpath}/{f}: {e}", args.quiet, logging.INFO)
         lognprint("{}: {}".format(fpath, "Crashed"), args.quiet, logging.INFO)
