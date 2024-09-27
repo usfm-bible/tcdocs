@@ -260,7 +260,7 @@ class Node:
         
 class IdNode(Node):
     def appendText(self, t):
-        m = regex.match(r"\s*(\S{3})\s+(.*?)(?:\n|$)", t)
+        m = regex.match(r"\s*(\S{3})(?:\s+(.*?))?(?:\n|$)", t)
         if m:
             self.element.set('code', m.group(1))
             self.element.text = m.group(2)
