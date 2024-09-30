@@ -18,7 +18,10 @@ def collectEnums(rdoc):
         for i, v in enumerate(e[0]):
             if v.tag == "{0}value".format(relaxns):
                 k = v.text.strip()
-                res[k] = {'category': mktype}
+                if k in res:
+                    res[k]['category'].add(mktype)
+                else:
+                    res[k] = {'category': set([mktype])}
                 for a in (("propval", "defattrib"), ("propattribs", "attributes"),
                           ("propended", "closedby"), ("propends", "closes")):
                     val = v.get("{}{}".format(usfmns, a[0]), None)
@@ -32,7 +35,10 @@ def collectEnums(rdoc):
 def extstr(mrkr, field):
     res = [f"\\marker {mrkr}"]
     for k, v in sorted(field.items()):
-        res.append(f"\\{k} {v}")
+        if k == "category":
+            res.append(f"\\{k} {" ".join(sorted(v))}")
+        else:
+            res.append(f"\\{k} {v}")
     return "\n".join(res)
 
 parser = argparse.ArgumentParser()
@@ -57,7 +63,7 @@ if args.outfile:
 if args.lists:
     lists = {}
     for k, v in res.items():
-        lists.setdefault(v.get('category', None), []).append(k)
+        lists.setdefault(v.get('category', [""])[0], []).append(k)
     with open(args.lists, "w") as outf:
         for k, v in sorted(lists.items()):
             outf.write(f"{k}= {' '.join(v)}\n")
