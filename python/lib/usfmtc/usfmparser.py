@@ -3,6 +3,7 @@
 import regex
 import xml.etree.ElementTree as et
 from usfmtc.extension import SFMFile
+from collections import UserDict, UserString
 
 class Tag(str):
     def __new__(cls, s):
@@ -19,9 +20,10 @@ class Tag(str):
         res.isend = isend
         return res
 
-    def __init__(self, s):
+    def __init__(self, s, l=0, c=0):
         self.isplus = getattr(self, 'isplus', False)
         self.isend = getattr(self, 'isend', False)
+        self.pos = (l, c)
 
     def __repr__(self):
         return "Tag("+str(self)+")"
@@ -38,15 +40,35 @@ class Tag(str):
     def setpos(self, pos):
         self.pos = pos
 
-class AttribText(str):
+class AttribText(UserString):
+    def __init__(self, s, l=0, c=0):
+        super().__init__(s)
+        self.pos = (l, c)
     pass
 
 class OptBreak:
+    def __init__(self, l=0, c=0):
+        self.pos = (l, c)
 
     def __repr__(self):
         return "OptBreak(" + str(self) + ")"
     def __str__(self):
         return "//"
+
+class String(UserString):
+    def __init__(self, s, l=0, c=0):
+        super().__init__(s)
+        self.pos = (l, c)
+
+    def __add__(self, s):
+        return String(str(self) + s)
+
+    pass
+
+class Attribs(UserDict):
+    def __init__(self, l=0, c=0):
+        super().__init__()
+        self.pos = (l, c)
 
 class Lexer:
 
@@ -61,13 +83,15 @@ class Lexer:
     def __iter__(self):
         self.nexts = []
         self.cindex = 0
+        self.lindex = 0
+        self.lpos = 0
         return self
 
     def __next__(self):
         if len(self.nexts):
             return self.nexts.pop(0)
         curri = self.cindex
-        res = ""
+        res = String("", l=self.lindex, c=curri-self.lpos)
         lastres = None
         while (m := self.tokenre.match(self.txt, pos=curri)):
             curri = m.end()
@@ -79,6 +103,8 @@ class Lexer:
             n = m.group(2)
             if n == "\n":
                 res += n
+                self.lindex += 1
+                self.lpos = curri + m.end(2)
                 continue
             elif n == "\\":
                 t = self.tagre.match(self.txt[m.end():])
@@ -92,16 +118,13 @@ class Lexer:
                     break
             elif n == '|':
                 t, curri = self.readAttrib(curri)
-                if isinstance(t, str):
-                    res = AttribText(t)
-                elif len(t):
-                    res = t
-                else:
-                    res = ""
+                if not len(t):
+                    res = String("", l=self.lindex, c=curri-self.lpos)
                     continue
+                res = t
                 break
             elif n == '//':
-                res = OptBreak()
+                res = OptBreak(l=self.lindex, c=curri-self.lpos)
                 break
         if self.cindex >= curri:
             raise StopIteration
@@ -112,7 +135,7 @@ class Lexer:
         return res
 
     def readAttrib(self, curri):
-        res = {}
+        res = Attribs(l=self.lindex, c=curri-self.lpos)
         resi = curri
         while (m := self.attribsre.match(self.txt[curri:])):
             res[m.group(1)] = m.group(2)    # tests say not to strip .strip()
@@ -123,14 +146,14 @@ class Lexer:
             m = self.textrunre.match(self.txt[curri:])
             if m:
                 curri += m.end()
-                res = m.group(0)            # tests say not to strip .strip()
+                res = AttribText(m.group(0), l=self.lindex, c=curri-self.lpos)  # tests say not to strip .strip()
         return res, curri
 
     def readLine(self):
         m = regex.match(r"(.*?)$", self.txt, pos=self.cindex, flags=regex.M)
         if m:
             self.cindex = m.end()
-            self.nexts.append(m.group(1))
+            self.nexts.append(String(m.group(1)))
 
 class Grammar:
     category_markers = {
@@ -211,17 +234,17 @@ class Node:
     def appendText(self, txt):
         if len(self.element):
             if self.element[-1].tail is None or self.element[-1].tail == "":
-                self.element[-1].tail = txt.lstrip() if self.ispara and isfirstText(self.element) else txt
+                self.element[-1].tail = str(txt).lstrip() if self.ispara and isfirstText(self.element) else str(txt)
             else:
-                self.element[-1].tail += txt
+                self.element[-1].tail += str(txt)
         elif self.element.text is None or self.element.text == "":
-            self.element.text = txt.lstrip()
+            self.element.text = str(txt).lstrip()
         else:
-            self.element.text += txt
+            self.element.text += str(txt)
         self.clearAttribNodes()
 
     def addAttributes(self, d):
-        self.element.attrib.update(d)
+        self.element.attrib.update({k:v for k, v in d.items()})
         self.clearAttribNodes()
 
     def addDefaultAttrib(self, t):
@@ -230,7 +253,7 @@ class Node:
             defattrib = 'eid'
         if defattrib is None:
             defattrib = "_unknown_"
-        self.element.set(defattrib, t)
+        self.element.set(defattrib, str(t))
         self.clearAttribNodes()
 
     def addAttribNode(self, node):
@@ -260,7 +283,7 @@ class Node:
         
 class IdNode(Node):
     def appendText(self, t):
-        m = regex.match(r"\s*(\S{3})(?:\s+(.*?))?(?:\n|$)", t)
+        m = regex.match(r"\s*(\S{3})(?:\s+(.*?))?(?:\n|$)", str(t))
         if m:
             self.element.set('code', m.group(1))
             self.element.text = m.group(2)
@@ -271,7 +294,7 @@ class IdNode(Node):
 
 class USXNode(Node):
     def appendText(self, t):
-        self.element.set('version', t.strip())
+        self.element.set('version', str(t).strip())
 
 class AttribNode(Node):
     def __init__(self, parser, parent, tag):
@@ -287,7 +310,7 @@ class AttribNode(Node):
 
     def appendText(self, t):
         attrib = self.parent.parser.grammar.attribtags[self.tag]
-        self.parent.element.set(attrib, t.strip())
+        self.parent.element.set(attrib, str(t).strip())
 
 class NumberNode(Node):
     def __init__(self, parser, usxtag, tag, ispara=False):
@@ -296,11 +319,11 @@ class NumberNode(Node):
 
     def appendText(self, t):
         if not self.hasarg:
-            b = regex.split(r"\s+", t.lstrip(), 1)
+            b = regex.split(r"\s+", str(t).lstrip(), 1)
             self.element.set('number', b[0].strip())
             self.hasarg = True
         else:
-            b = ['', t]
+            b = ['', str(t)]
         if len(b) > 1 and b[1].strip():
             self.parser.removeTag(self.tag)
             if self.ispara:
@@ -318,7 +341,7 @@ class NoteNode(Node):
 
     def appendText(self, t):
         if not self.hascaller:
-            b = regex.split(r"\s+", t.lstrip(), 1)
+            b = regex.split(r"\s+", str(t).lstrip(), 1)
             self.element.set('caller', b[0].strip())
             self.hascaller = True
             if len(b) > 1 and len(b[1]):
@@ -333,7 +356,7 @@ class PeriphNode(Node):
     def appendText(self, t):
         t = t.strip()
         if t:
-            self.element.set('alt', t.strip())
+            self.element.set('alt', str(t).strip())
 
 
 paratypes = ('header', 'introduction', 'list', 'otherpara', 'sectionpara', 'versepara', 'title', 'chapter', 'ident')
@@ -389,13 +412,13 @@ class USFMParser:
                 continue
             if self.parent is None:
                 continue
-            if isinstance(t, dict):
+            if isinstance(t, Attribs):
                 self.parent.addAttributes(t)
             elif isinstance(t, AttribText):
                 self.parent.addDefaultAttrib(t)
             elif isinstance(t, OptBreak):
                 self.parent.appendElement(t)
-            elif isinstance(t, str):
+            elif isinstance(t, String):
                 self.parent.appendText(t)
         return self.stack[0].element
 
