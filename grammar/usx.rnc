@@ -443,12 +443,6 @@ Introduction.para.style.enum = (
       "ib"
     |   ## Introduction ending marker
       "ie"
-    |   ## A list entry, level 1 (if multiple levels)
-      "ili1"
-    |   ## A list entry, level 2
-      "ili2"
-    |   ## A list entry, level 1 (if single level)
-      "ili"
     |   ## Introduction prose paragraph text, indented, with no first line indent
       "imi"
     |   ## Introduction prose paragraph, quote from the body text, with no first line indent
@@ -497,14 +491,14 @@ Introduction.para.style.enum = (
       "lit"
     )
 
-BookIntroList =
+IntroList =
     element para {
-        [usfm:grouping="8" usfm:ptag[]] attribute style { BookIntroList.para.style.enum },
+        [usfm:grouping="8" usfm:ptag[]] attribute style { IntroList.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
-BookIntroList.para.style.enum = (
+IntroList.para.style.enum = (
         ## List header (introductory remark)
       "ilh"
     |   ## A list entry, level 1 (if multiple levels)
