@@ -93,7 +93,7 @@ class UsfmGrammarParser:
             t = re.sub(r"^\{.*\}", "", c.tag)
             if c.tag.startswith(usfmns) and t in self.aliases:
                 base = self.aliases[t]
-                newe = c.makeelement(base.tag, base.attrib.copy())
+                newe = c.makeelement(base.tag, {k: v for k, v in base.attrib.items()})
                 for k, v in c.attrib.items():
                     newe.set(k, self.expandvars(v))
                 if c.text is not None and len(c.text) and hasattr(base, 'default'):

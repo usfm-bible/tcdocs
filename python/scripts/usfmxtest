@@ -14,9 +14,11 @@ from usfmtc.usxmodel import etCmp
 import xml.etree.ElementTree as et
 from lxml import etree
 
-def getfname(d, basefile):
+def getfname(d, basefile, strict=False):
     if os.path.isdir(d):
         return os.path.join(d, basefile)
+    elif strict:
+        return basefile
     else:
         return d
 
@@ -37,10 +39,10 @@ def proconedir(d, sfmp, relax, rdoc, args):
     testxml = None
     expected = meta.get('validated', 'pass').lower() == 'pass'
     if args.testset == 1:
-        f = getfname(d, "origin.xml")
+        f = getfname(d, "origin.xml", strict=True)
         if not os.path.exists(f):
             return (not expected, d, "No origin.xml", "")
-        testxml = USX.fromUsx(getfname(d, "origin.xml"))
+        testxml = USX.fromUsx(getfname(d, "origin.xml", strict=True))
         if not os.path.isdir(d):
             ud = d.replace(".xml", "_test.usfm")
             d = ud
@@ -53,15 +55,18 @@ def proconedir(d, sfmp, relax, rdoc, args):
         if not passresult:
             return (not expected, d, "USFM output failed", "" if passresult == expected else "Unexpected result")
     try:
-        result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp)
+        result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp, altparser=args.qusfm)
         result.addesids()
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
         result = None
+    except ValueError as e:
+        imsg = str(e)
+        result = None
     if result is not None:
         passed = True
         if testxml is None:
-            testxml = USX.fromUsx(getfname(d, args.base or "origin.xml"))
+            testxml = USX.fromUsx(getfname(d, args.base or "origin.xml", strict=True))
         if testxml:
             passed = etCmp(result.getroot(), testxml.getroot(), verbose=args.print)
             if not passed:
@@ -110,6 +115,7 @@ parser.add_argument("-P","--print",action="store_true",help="Print generated xml
 parser.add_argument("-q","--quiet",action="store_true",help="Don't output error reports, just stats")
 parser.add_argument("-o","--output",help="Output error reports to this file")
 parser.add_argument("-E","--extfiles",action='append',default=[],help='markers.ext files to include')
+parser.add_argument("--qusfm",action="store_true",help="Use quick non validating USFM parser")
 parser.add_argument("-j","--jobs",type=int,default=-1,help="Parallel jobs")
 parser.add_argument("-x","--exclude",action="append",default=[],help="Exclude test if tag present")
 parser.add_argument("-i","--include",action="append",default=[],help="Override excludes to include test if tag present")
@@ -157,7 +163,7 @@ if len(jobs) == 1:
     args.exclude = set()
 
 rdoc = et.parse(args.grammar)
-sfmproc = usfmGrammar(rdoc, args.extfiles, start=args.start)
+sfmproc = usfmGrammar(rdoc, args.extfiles, altparser=args.qusfm, start=args.start)
 newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
 usxrng = etree.RelaxNG(etree=newdoc)
 

@@ -18,12 +18,13 @@ from usfmtc.grammar import UsfmGrammarParser
 from usfmtc.diagrams import UsfmRailRoad
 from usfmtc.usxmodel import addesids, cleanup, messup, canonicalise
 from usfmtc.usjproc import usxtousj, usjtousx
+from usfmtc.usfmparser import USFMParser, Grammar
 import xml.etree.ElementTree as et
 
 def _readsrc(src):
     if hasattr(src, "read"):
         return src.read()
-    elif not isinstance(src, str):
+    elif not isinstance(src, str):      # we're a parsed xml doc
         return src
     elif len(src) < 128 and os.path.exists(src):
         with open(src, encoding="utf-8") as inf:
@@ -36,7 +37,7 @@ def _readsrc(src):
 
 def _grammarDoc(gsrc, extensions=[], factory=et):
     data = _readsrc(gsrc)
-    if isinstance(data, str):
+    if isinstance(data, (str, bytes)):
         rdoc = factory.ElementTree(factory.fromstring(data))
     else:
         rdoc = data
@@ -54,15 +55,22 @@ def _usfmGrammar(rdoc, backend=None, start=None):
     parser = sfmproc.parseRef(start)
     return parser
 
-def usfmGrammar(gsrc, extensions=[], backend=None, start=None):
+def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
-    rdoc = _grammarDoc(gsrc, extensions)
+    if len(extensions) or not altparser:
+        rdoc = _grammarDoc(gsrc, extensions)
+    if altparser:
+        res = Grammar()
+        if len(extensions):
+            for e in extensions:
+                res.readmrkrs(e)
+        return res
     return _usfmGrammar(rdoc, backend, start)
 
 
 _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
 
-def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[]):
+def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False):
     """ Reads a USFM file of a given type or inferred from the filename
         extension. extfiles allows for extra markers.ext files to extend the grammar"""
     if informat is None:
@@ -88,7 +96,7 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[]):
             extfiles.append(os.path.join(os.path.dirname(fname), "markers.ext"))
             exts = [x for x in extfiles if os.path.exists(x)]
             grammar = usfmGrammar(gramfile, extensions=exts)
-        usxdoc = USX.fromUsfm(infpath, grammar)
+        usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser)
     return usxdoc
 
 
@@ -100,24 +108,37 @@ class USX:
             elfactory = ParentElement
         tb = et.TreeBuilder(element_factory=elfactory)
         parser = et.XMLParser(target=tb)
-        if hasattr(src, "read") or os.path.exists(src):
-            anet = et.ElementTree()
-            anet.parse(src, parser=parser)
-            res = anet.getroot()
+        if os.path.exists(src):
+            inf = open(src, encoding="utf_8_sig")
         else:
-            res = et.fromstring(src, parser=parser)
+            inf = src
+        if hasattr(inf, "read"):
+            anet = et.ElementTree()
+            anet.parse(inf, parser=parser)
+            res = anet.getroot()
+            if src != inf:
+                inf.close()
+        else:
+            try:
+                res = et.fromstring(src, parser=parser)
+            except et.ParseError:
+                return None
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, elfactory=None, timeout=1e7):
+    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error. """
         data = _readsrc(src)
 
+        if altparser:
+            p = USFMParser(data, factory=elfactory or ParentElement, grammar=grammar)
+            xml = p.parse()
+        else:
         # This can raise usfmtc.parser.NoParseError
-        result = parseusfm(data, grammar, timeout=timeout, isdata=True)
+            result = parseusfm(data, grammar, timeout=timeout, isdata=True)
+            xml = result.asEt(elfactory=elfactory)
 
-        xml = result.asEt(elfactory=elfactory)
         cleanup(xml)            # normalize space, de-escape chars, cell aligns, etc.
         res = cls(xml)
         return res
@@ -239,6 +260,7 @@ def main(hookcli=None, hookusx=None):
     parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
     parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
     parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
+    parser.add_argument("--qusfm",action="store_true",help="Use quick nonvalidating USFM parser")
     parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
     parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
     parser.add_argument("-q","--quiet",action="store_true",help="Don't say much")
@@ -287,7 +309,7 @@ def main(hookcli=None, hookusx=None):
     root, ext = os.path.splitext(infiles[0])
     args.informat = args.informat or _filetypes.get(ext.lower(), args.informat)
     if args.format is None:
-        if args.outfile is not None and not os.isdir(args.outfile):
+        if args.outfile is not None and not os.path.isdir(args.outfile):
             root, ext = os.path.splitext(args.outfile)
             args.format = _filetypes.get(ext.lower(), None)
     ingrammar = None
@@ -301,8 +323,8 @@ def main(hookcli=None, hookusx=None):
         if args.informat.startswith("usfm"):
             args.extfiles.append(os.path.join(os.path.dirname(infiles[0]), "markers.ext"))
             exts = [x for x in args.extfiles if os.path.exists(x)]
-            ingrammar = usfmGrammar(args.grammar, extensions=exts)
-        if args.format.startswith("usfm"):
+            ingrammar = usfmGrammar(args.grammar, altparser=args.qusfm, extensions=exts)
+        if args.format and args.format.startswith("usfm"):
             outgrammar = _grammarDoc(args.grammar)
 
     for infile in infiles:
@@ -315,18 +337,19 @@ def main(hookcli=None, hookusx=None):
                 doerror(f"invalid output format {args.format} in {args.outfile}")
             outfile = os.path.join(args.outfile, os.path.basename(outf))
         elif len(infiles) == 1:
-            outfile = arg.outfile
+            outfile = args.outfile
 
         if infile == "-":
             infile = sys.stdin
         if outfile == "-":
             outfile = sys.stdout
 
+        usxdoc = None
         if not args.quiet:
             print(f"{infile} -> {outfile}" if outfile else f"{infile}")
         try:
-            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar)
-        except usfmtc.parse.NoParseError as e:
+            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar, altparser=args.qusfm)
+        except NoParseError as e:
             doerror(f"Failed to parse {infile}: {e}", False)
 
         if len(infiles) == 1 and usxdoc is None:

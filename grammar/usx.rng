@@ -52,10 +52,10 @@
   <usfm:terminal name="ATTRIBALL" value="/(?:[^\\=]|\\=)+(?=\\)/">
     <a:documentation>Matches a default attribute value string</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/">
+  <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z_][a-zA-Z0-9\-_]*?/">
     <a:documentation>Matches an attribute name</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|])+/">
+  <usfm:terminal name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|])+?/">
     <a:documentation>Matches simple text up to the next marker</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="TEXTNWS" value="/.+(?=${Ws}\\[^~/\\])/">
@@ -66,6 +66,9 @@
   </usfm:terminal>
   <usfm:terminal name="TEXTNOTATTRIBOPT" value="/(?:[^\\|]|\\[\\~/|])*/">
     <a:documentation>Matches simple text up to the start of a sequence of attributes delimited by | if present</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="IGNORELINE" value="/[^\r\n]*/">
+    <a:documentation>Matches anything up to the end of the line. Used for ignoring everything up to the end of a line</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="PIPE" value="/${hs}*(?&lt;!\\)\|${hs}*/">
     <a:documentation>Matches the attributes list delimiter of |</a:documentation>
@@ -552,10 +555,10 @@
       <a:documentation>Alternative language short table of contents text</a:documentation>
       <value>toca3</value>
       <a:documentation>Alternative language book Abbreviation</a:documentation>
-      <value>rem</value>
-      <a:documentation>Remark</a:documentation>
       <value>sts</value>
       <a:documentation>Status</a:documentation>
+      <value>rem</value>
+      <a:documentation>Remark</a:documentation>
     </choice>
   </define>
   <define name="BookTitles">
@@ -734,6 +737,7 @@
   </define>
   <define name="PeripheralContent">
     <choice>
+      <ref name="PeriphPara"/>
       <ref name="Para"/>
       <ref name="Section"/>
       <ref name="Chapter"/>
@@ -834,6 +838,48 @@
       <a:documentation>Chapter label used for translations that add a word such as &quot;Chapter&quot;</a:documentation>
       <value>cd</value>
       <a:documentation>Chapter Description (Publishing option D, e.g. in Russian Bibles)</a:documentation>
+    </choice>
+  </define>
+  <define name="PeriphPara">
+    <element>
+      <name ns="">para</name>
+      <attribute usfm:grouping="15">
+        <usfm:ptag usfm:stacked="true"/>
+        <name ns="">style</name>
+        <ref name="PeriphPara.para.style.enum"/>
+      </attribute>
+      <optional>
+        <attribute>
+          <name ns="">vid</name>
+          <data type="string">
+            <usfm:pattern name="VERSE"/>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+          </data>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <choice>
+          <text>
+            <usfm:text/>
+          </text>
+          <ref name="CharEmbed"/>
+          <ref name="Figure"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Reference"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="PeriphPara.para.style.enum">
+    <choice>
+      <value>p1</value>
+      <a:documentation>Front or back matter text paragraph, level 1 (if multiple levels)</a:documentation>
+      <value>p2</value>
+      <a:documentation>Front or back matter text paragraph, level 2 (if multiple levels)</a:documentation>
     </choice>
   </define>
   <define name="Para">
@@ -966,19 +1012,15 @@
       <a:documentation>Chapter published style</a:documentation>
       <value>pb</value>
       <a:documentation>Page Break used for new reader portions and children&#x27;s bibles where content is controlled by the page</a:documentation>
-      <value>p1</value>
-      <a:documentation>Front or back matter text paragraph, level 1 (if multiple levels)</a:documentation>
-      <value>p2</value>
-      <a:documentation>Front or back matter text paragraph, level 2 (if multiple levels)</a:documentation>
       <value>qa</value>
       <a:documentation>Poetry text, Acrostic marker/heading</a:documentation>
       <value>k1</value>
       <a:documentation>Concordance main entry text or keyword, level 1</a:documentation>
       <value>k2</value>
       <a:documentation>Concordance main entry text or keyword, level 2</a:documentation>
-      <value>rem</value>
-      <a:documentation>Remark</a:documentation>
       <value>sts</value>
+      <a:documentation>Remark</a:documentation>
+      <value>rem</value>
       <a:documentation>Remark</a:documentation>
     </choice>
   </define>
@@ -1938,9 +1980,28 @@
   </define>
   <define name="Break">
     <element>
-      <usfm:match before="&#x27;//&#x27;" match="//"/>
+      <usfm:match before="/\s*\/\//" match="//"/>
       <name ns="">optbreak</name>
       <empty/>
+    </element>
+  </define>
+  <define name="Remark">
+    <element>
+      <name ns="">para</name>
+      <attribute>
+        <usfm:tag usfm:seq="true"/>
+        <name ns="">style</name>
+        <value>rem</value>
+      </attribute>
+      <group usfm:seq="true">
+        <optional>
+          <group>
+            <usfm:match before="/${hs}*/" beforeout="&#x27; &#x27;" match="IGNORELINE" after=""/>
+            <text/>
+          </group>
+        </optional>
+        <usfm:match match="NL" matchout="&#x27;\n&#x27;" dump="true"/>
+      </group>
     </element>
   </define>
   <define name="Internal.style.enum">
@@ -1963,6 +2024,8 @@
       <a:documentation>Alternative versification</a:documentation>
       <value>vp</value>
       <a:documentation>Published verse number</a:documentation>
+      <value>tr</value>
+      <a:documentation>Table</a:documentation>
       <value>fig</value>
       <a:documentation>Figure</a:documentation>
       <value>esb</value>

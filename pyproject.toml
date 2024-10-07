@@ -43,4 +43,8 @@ packages = ["usfmtc"]
 universal = true
 
 [project.scripts]
+<<<<<<< HEAD
 makefeax = "usfmtc:main"
+=======
+usfmconv = "usfmtc:main"
+>>>>>>> 3.1.1
