@@ -252,7 +252,7 @@ BookIdentification.book.code.enum = (
      | "REP" # Reproof
      | "4BA" # 4 Baruch
      | "LAO" # Laodiceans
-     | [usfm:match[]] xsd:string { pattern = "[0-9A-Z]{3}" }
+     | [usfm:match[]] xsd:string { pattern = "[A-Z][A-Z0-9]{2}|[0-9][A-Z][0-9]|[0-9]{2}[A-Z]" }
      )
 
 PeripheralBookIdentification =
@@ -420,7 +420,7 @@ BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { Introduction.para.style.enum },
         ([usfm:text[]] text | CharEmbed | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
-    } | Table | Remark
+    } | Table | IntroList | Remark
 
 Introduction.para.style.enum = (
         ## Introduction major title, level 1 (if multiple levels)
@@ -473,6 +473,8 @@ Introduction.para.style.enum = (
       "ipq"
     |   ## Introduction prose paragraph, right aligned
       "ipr"
+    |   ## Introduction prose paragraph, centred
+      "ipc"
     |   ## Introduction prose paragraph
       "ip"
     |   ## Introduction poetry text, level 1 (if multiple levels)
@@ -491,6 +493,42 @@ Introduction.para.style.enum = (
       "is"
     |   ## Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
       "iex"
+    |   ## For a comment or note inserted for liturgical use
+      "lit"
+    )
+
+BookIntroList =
+    element para {
+        [usfm:grouping="8" usfm:ptag[]] attribute style { BookIntroList.para.style.enum },
+        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+    }
+
+BookIntroList.para.style.enum = (
+        ## List header (introductory remark)
+      "ilh"
+    |   ## A list entry, level 1 (if multiple levels)
+      "ili1"
+    |   ## A list entry, level 2
+      "ili2"
+    |   ## A list entry, level 3
+      "ili3"
+    |   ## A list entry, level 4
+      "ili4"
+    |   ## An embedded list entry, level 1 (if multiple levels)
+      "ilim1"
+    |   ## An embedded list entry, level 2
+      "ilim2"
+    |   ## An embedded list entry, level 3
+      "ilim3"
+    |   ## An embedded list entry, level 4
+      "ilim4"
+    |   ## An embedded list entry, level 1 (if single level)
+      "ilim"
+    |   ## A list entry, level 1 (if single level)
+      "ili"
+    |   ## List footer (introductory remark)
+      "ilf"
     )
 
 BookIntroductionEndTitles =
@@ -928,7 +966,7 @@ ListChar.char.style.enum = (
       "litl"
     |   ## Structured list entry key text
       "lik"
-    |   ## Structured list entrt value 1 content (if multiple values)
+    |   ## Structured list entry value 1 content (if multiple values)
       "liv1"
     |   ## Structured list entry value 2 content
       "liv2"

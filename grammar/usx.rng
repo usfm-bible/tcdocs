@@ -335,7 +335,7 @@
       <value>LAO</value>
       <data type="string">
         <usfm:match/>
-        <param name="pattern">[0-9A-Z]{3}</param>
+        <param name="pattern">[A-Z][A-Z0-9]{2}|[0-9][A-Z][0-9]|[0-9]{2}[A-Z]</param>
       </data>
     </choice>
   </define>
@@ -627,6 +627,7 @@
         </zeroOrMore>
       </element>
       <ref name="Table"/>
+      <ref name="IntroList"/>
       <ref name="Remark"/>
     </choice>
   </define>
@@ -682,6 +683,8 @@
       <a:documentation>Introduction prose paragraph, quote from the body text</a:documentation>
       <value>ipr</value>
       <a:documentation>Introduction prose paragraph, right aligned</a:documentation>
+      <value>ipc</value>
+      <a:documentation>Introduction prose paragraph, centred</a:documentation>
       <value>ip</value>
       <a:documentation>Introduction prose paragraph</a:documentation>
       <value>iq1</value>
@@ -700,6 +703,71 @@
       <a:documentation>Introduction section heading, level 1 (if single level)</a:documentation>
       <value>iex</value>
       <a:documentation>Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)</a:documentation>
+      <value>lit</value>
+      <a:documentation>For a comment or note inserted for liturgical use</a:documentation>
+    </choice>
+  </define>
+  <define name="BookIntroList">
+    <element>
+      <name ns="">para</name>
+      <attribute usfm:grouping="8">
+        <usfm:ptag/>
+        <name ns="">style</name>
+        <ref name="BookIntroList.para.style.enum"/>
+      </attribute>
+      <optional>
+        <attribute>
+          <name ns="">vid</name>
+          <data type="string">
+            <usfm:pattern name="VERSE"/>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+          </data>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <choice>
+          <text>
+            <usfm:text/>
+          </text>
+          <ref name="ListChar"/>
+          <ref name="CharEmbed"/>
+          <ref name="Figure"/>
+          <ref name="Milestone"/>
+          <ref name="Verse"/>
+          <ref name="Reference"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Break"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="BookIntroList.para.style.enum">
+    <choice>
+      <value>ilh</value>
+      <a:documentation>List header (introductory remark)</a:documentation>
+      <value>ili1</value>
+      <a:documentation>A list entry, level 1 (if multiple levels)</a:documentation>
+      <value>ili2</value>
+      <a:documentation>A list entry, level 2</a:documentation>
+      <value>ili3</value>
+      <a:documentation>A list entry, level 3</a:documentation>
+      <value>ili4</value>
+      <a:documentation>A list entry, level 4</a:documentation>
+      <value>ilim1</value>
+      <a:documentation>An embedded list entry, level 1 (if multiple levels)</a:documentation>
+      <value>ilim2</value>
+      <a:documentation>An embedded list entry, level 2</a:documentation>
+      <value>ilim3</value>
+      <a:documentation>An embedded list entry, level 3</a:documentation>
+      <value>ilim4</value>
+      <a:documentation>An embedded list entry, level 4</a:documentation>
+      <value>ilim</value>
+      <a:documentation>An embedded list entry, level 1 (if single level)</a:documentation>
+      <value>ili</value>
+      <a:documentation>A list entry, level 1 (if single level)</a:documentation>
+      <value>ilf</value>
+      <a:documentation>List footer (introductory remark)</a:documentation>
     </choice>
   </define>
   <define name="BookIntroductionEndTitles">
@@ -1518,7 +1586,7 @@
       <value>lik</value>
       <a:documentation>Structured list entry key text</a:documentation>
       <value>liv1</value>
-      <a:documentation>Structured list entrt value 1 content (if multiple values)</a:documentation>
+      <a:documentation>Structured list entry value 1 content (if multiple values)</a:documentation>
       <value>liv2</value>
       <a:documentation>Structured list entry value 2 content</a:documentation>
       <value>liv3</value>

@@ -1,4 +1,15 @@
-# 3-1
+# 3.1.1
+
+- Move p1, p2 from OtherPara to PeriphPara. No longer allowed inside scripture
+- Fix optbreak
+- Add \ipc
+- Add all of the List paragraph styles as BookIntroList prefixed with "i". Support ListChar inside.
+- Add \lit to introductory paragraphs.
+- Book codes must contain at least one letter
+- In usfm.ext \category can have multiple space separated values. Parsers only need handle one.
+
+
+# 3.1
 
 Differences in the grammar from 3-0-5
 
@@ -15,5 +26,4 @@ Differences in the grammar from 3-0-5
 - \\ escaping is required and supported for a number of key characters: \\, ', ", |, ~, //
 - Whitespace rules clarified and formalised
 - fv is now just a character style and needs closing
-
 

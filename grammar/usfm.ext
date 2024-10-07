@@ -178,17 +178,53 @@
 \category introduction sectionpara
 \description Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
 
+\marker ilf
+\category bookintrolist
+\description List footer (introductory remark)
+
+\marker ilh
+\category bookintrolist
+\description List header (introductory remark)
+
 \marker ili
-\category introduction
+\category bookintrolist introduction
 \description A list entry, level 1 (if single level)
 
 \marker ili1
-\category introduction
+\category bookintrolist introduction
 \description A list entry, level 1 (if multiple levels)
 
 \marker ili2
-\category introduction
+\category bookintrolist introduction
 \description A list entry, level 2
+
+\marker ili3
+\category bookintrolist
+\description A list entry, level 3
+
+\marker ili4
+\category bookintrolist
+\description A list entry, level 4
+
+\marker ilim
+\category bookintrolist
+\description An embedded list entry, level 1 (if single level)
+
+\marker ilim1
+\category bookintrolist
+\description An embedded list entry, level 1 (if multiple levels)
+
+\marker ilim2
+\category bookintrolist
+\description An embedded list entry, level 2
+
+\marker ilim3
+\category bookintrolist
+\description An embedded list entry, level 3
+
+\marker ilim4
+\category bookintrolist
+\description An embedded list entry, level 4
 
 \marker im
 \category introduction
@@ -264,6 +300,10 @@
 \marker ip
 \category introduction sectionpara
 \description Division or Section introductory paragraph (study Bible)
+
+\marker ipc
+\category introduction
+\description Introduction prose paragraph, centred
 
 \marker ipi
 \category introduction
@@ -384,7 +424,7 @@
 \description An embedded list entry, level 4
 
 \marker lit
-\category otherpara
+\category introduction otherpara
 \description For a comment or note inserted for liturgical use
 
 \marker litl
@@ -397,7 +437,7 @@
 
 \marker liv1
 \category listchar
-\description Structured list entrt value 1 content (if multiple values)
+\description Structured list entry value 1 content (if multiple values)
 
 \marker liv2
 \category listchar
