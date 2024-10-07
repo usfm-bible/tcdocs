@@ -366,7 +366,7 @@ BookHeaders =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { Header.para.style.enum },
         [usfm:text[]] text?
-    }
+    } | Remark
 
 Header.para.style.enum = (
          ## File encoding information (DEPRECATED)
@@ -401,7 +401,7 @@ BookTitles =
     element para {
         [usfm:ptag[]] attribute style { Title.para.style.enum },
         ([usfm:text[]] text | Footnote | CrossReference | Char | Break)*
-    }
+    } | Remark
 
 Title.para.style.enum = (
         ## The main title of the book (if multiple levels)
@@ -414,15 +414,13 @@ Title.para.style.enum = (
       "mt4"
     |   ## The main title of the book (if single level)
       "mt"
-    |    ## Remark
-      "rem"
     )
 
 BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { Introduction.para.style.enum },
         ([usfm:text[]] text | CharEmbed | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
-    } | Table
+    } | Table | Remark
 
 Introduction.para.style.enum = (
         ## Introduction major title, level 1 (if multiple levels)
@@ -493,8 +491,6 @@ Introduction.para.style.enum = (
       "is"
     |   ## Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
       "iex"
-    |    ## Remark
-      "rem"
     )
 
 BookIntroductionEndTitles =
@@ -590,7 +586,7 @@ Para =
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum }),
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
-    }
+    } | Remark
 
 VersePara.para.style.enum = (
       ## Closure of an Epistle

@@ -222,7 +222,7 @@ escapes = {
 }
 
 def expandescape(s):
-    return re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), m.group(1)), s)
+    return re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), "\\"+m.group(1)), s)
 
 class UsfmParserBackend:
     _terminals = {

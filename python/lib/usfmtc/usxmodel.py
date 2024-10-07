@@ -98,8 +98,13 @@ def addesids(root):
 
     return root
 
+escapes = {
+    '\\' : '\\',
+    'n': '\n'
+}
+
 def add_specials(t, node, parent, istext=False):
-    t = re.sub(r"\\(.)", r"\1", t)      # remove escape markers
+    t = re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), "\\"+m.group(1)), t)
     if "~" in t:
         t = t.replace("~", "\u00A0")
     if "//" in t:

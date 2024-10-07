@@ -517,19 +517,22 @@
     </group>
   </define>
   <define name="BookHeaders">
-    <element>
-      <name ns="">para</name>
-      <attribute usfm:grouping="8">
-        <usfm:ptag/>
-        <name ns="">style</name>
-        <ref name="Header.para.style.enum"/>
-      </attribute>
-      <optional>
-        <text>
-          <usfm:text/>
-        </text>
-      </optional>
-    </element>
+    <choice>
+      <element>
+        <name ns="">para</name>
+        <attribute usfm:grouping="8">
+          <usfm:ptag/>
+          <name ns="">style</name>
+          <ref name="Header.para.style.enum"/>
+        </attribute>
+        <optional>
+          <text>
+            <usfm:text/>
+          </text>
+        </optional>
+      </element>
+      <ref name="Remark"/>
+    </choice>
   </define>
   <define name="Header.para.style.enum">
     <choice>
@@ -562,25 +565,28 @@
     </choice>
   </define>
   <define name="BookTitles">
-    <element>
-      <name ns="">para</name>
-      <attribute>
-        <usfm:ptag/>
-        <name ns="">style</name>
-        <ref name="Title.para.style.enum"/>
-      </attribute>
-      <zeroOrMore>
-        <choice>
-          <text>
-            <usfm:text/>
-          </text>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Char"/>
-          <ref name="Break"/>
-        </choice>
-      </zeroOrMore>
-    </element>
+    <choice>
+      <element>
+        <name ns="">para</name>
+        <attribute>
+          <usfm:ptag/>
+          <name ns="">style</name>
+          <ref name="Title.para.style.enum"/>
+        </attribute>
+        <zeroOrMore>
+          <choice>
+            <text>
+              <usfm:text/>
+            </text>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+            <ref name="Char"/>
+            <ref name="Break"/>
+          </choice>
+        </zeroOrMore>
+      </element>
+      <ref name="Remark"/>
+    </choice>
   </define>
   <define name="Title.para.style.enum">
     <choice>
@@ -593,8 +599,6 @@
       <value>mt4</value>
       <value>mt</value>
       <a:documentation>The main title of the book (if single level)</a:documentation>
-      <value>rem</value>
-      <a:documentation>Remark</a:documentation>
     </choice>
   </define>
   <define name="BookIntroduction">
@@ -623,6 +627,7 @@
         </zeroOrMore>
       </element>
       <ref name="Table"/>
+      <ref name="Remark"/>
     </choice>
   </define>
   <define name="Introduction.para.style.enum">
@@ -695,8 +700,6 @@
       <a:documentation>Introduction section heading, level 1 (if single level)</a:documentation>
       <value>iex</value>
       <a:documentation>Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)</a:documentation>
-      <value>rem</value>
-      <a:documentation>Remark</a:documentation>
     </choice>
   </define>
   <define name="BookIntroductionEndTitles">
@@ -883,45 +886,48 @@
     </choice>
   </define>
   <define name="Para">
-    <element>
-      <name ns="">para</name>
-      <choice>
-        <attribute usfm:grouping="15">
-          <usfm:ptag usfm:stacked="true"/>
-          <name ns="">style</name>
-          <ref name="OtherPara.para.style.enum"/>
-        </attribute>
-        <attribute usfm:grouping="15">
-          <usfm:ptag usfm:stacked="true"/>
-          <name ns="">style</name>
-          <ref name="VersePara.para.style.enum"/>
-        </attribute>
-      </choice>
-      <optional>
-        <attribute>
-          <name ns="">vid</name>
-          <data type="string">
-            <usfm:pattern name="VERSE"/>
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-          </data>
-        </attribute>
-      </optional>
-      <zeroOrMore>
+    <choice>
+      <element>
+        <name ns="">para</name>
         <choice>
-          <text>
-            <usfm:text/>
-          </text>
-          <ref name="CharEmbed"/>
-          <ref name="Figure"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Reference"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Break"/>
+          <attribute usfm:grouping="15">
+            <usfm:ptag usfm:stacked="true"/>
+            <name ns="">style</name>
+            <ref name="OtherPara.para.style.enum"/>
+          </attribute>
+          <attribute usfm:grouping="15">
+            <usfm:ptag usfm:stacked="true"/>
+            <name ns="">style</name>
+            <ref name="VersePara.para.style.enum"/>
+          </attribute>
         </choice>
-      </zeroOrMore>
-    </element>
+        <optional>
+          <attribute>
+            <name ns="">vid</name>
+            <data type="string">
+              <usfm:pattern name="VERSE"/>
+              <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+            </data>
+          </attribute>
+        </optional>
+        <zeroOrMore>
+          <choice>
+            <text>
+              <usfm:text/>
+            </text>
+            <ref name="CharEmbed"/>
+            <ref name="Figure"/>
+            <ref name="Milestone"/>
+            <ref name="Verse"/>
+            <ref name="Reference"/>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+            <ref name="Break"/>
+          </choice>
+        </zeroOrMore>
+      </element>
+      <ref name="Remark"/>
+    </choice>
   </define>
   <define name="VersePara.para.style.enum">
     <choice>
