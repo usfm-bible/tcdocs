@@ -47,7 +47,7 @@
 \description Closure of an Epistle
 
 \marker cp
-\category internal
+\category internal otherpara
 \description Chapter publication string
 
 \marker d
@@ -175,20 +175,56 @@
 \description Introduction ending marker
 
 \marker iex
-\category sectionpara
+\category introduction sectionpara
 \description Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
 
+\marker ilf
+\category bookintrolist
+\description List footer (introductory remark)
+
+\marker ilh
+\category bookintrolist
+\description List header (introductory remark)
+
 \marker ili
-\category introduction
+\category bookintrolist introduction
 \description A list entry, level 1 (if single level)
 
 \marker ili1
-\category introduction
+\category bookintrolist introduction
 \description A list entry, level 1 (if multiple levels)
 
 \marker ili2
-\category introduction
+\category bookintrolist introduction
 \description A list entry, level 2
+
+\marker ili3
+\category bookintrolist
+\description A list entry, level 3
+
+\marker ili4
+\category bookintrolist
+\description A list entry, level 4
+
+\marker ilim
+\category bookintrolist
+\description An embedded list entry, level 1 (if single level)
+
+\marker ilim1
+\category bookintrolist
+\description An embedded list entry, level 1 (if multiple levels)
+
+\marker ilim2
+\category bookintrolist
+\description An embedded list entry, level 2
+
+\marker ilim3
+\category bookintrolist
+\description An embedded list entry, level 3
+
+\marker ilim4
+\category bookintrolist
+\description An embedded list entry, level 4
 
 \marker im
 \category introduction
@@ -262,8 +298,12 @@
 \description Introduction outline title
 
 \marker ip
-\category sectionpara
+\category introduction sectionpara
 \description Division or Section introductory paragraph (study Bible)
+
+\marker ipc
+\category introduction
+\description Introduction prose paragraph, centred
 
 \marker ipi
 \category introduction
@@ -384,7 +424,7 @@
 \description An embedded list entry, level 4
 
 \marker lit
-\category otherpara
+\category introduction otherpara
 \description For a comment or note inserted for liturgical use
 
 \marker litl
@@ -397,7 +437,7 @@
 
 \marker liv1
 \category listchar
-\description Structured list entrt value 1 content (if multiple values)
+\description Structured list entry value 1 content (if multiple values)
 
 \marker liv2
 \category listchar
@@ -515,11 +555,11 @@
 \description Paragraph text, with first line indent
 
 \marker p1
-\category otherpara
+\category periphpara
 \description Front or back matter text paragraph, level 1 (if multiple levels)
 
 \marker p2
-\category otherpara
+\category periphpara
 \description Front or back matter text paragraph, level 2 (if multiple levels)
 
 \marker pb
@@ -748,7 +788,7 @@
 \defattrib gloss
 
 \marker rem
-\category otherpara
+\category header introduction otherpara title
 \description Remark
 
 \marker restore
@@ -820,7 +860,7 @@
 \description A section division references range heading
 
 \marker sts
-\category otherpara
+\category header otherpara
 \description Remark
 
 \marker sup
@@ -1074,6 +1114,10 @@
 \category header
 \description Alternative language book Abbreviation
 
+\marker tr
+\category internal
+\description Table
+
 \marker ts
 \category milestone
 
@@ -1102,7 +1146,7 @@
 \description Alternative versification
 
 \marker vp
-\category internal
+\category char internal
 \description Published verse number
 
 \marker w
@@ -1159,7 +1203,8 @@
 \description A cross-reference quotation from the scripture text
 
 \marker xt
-\category crossreferencechar
+\category char crossreferencechar
+\defattrib href
 \description The cross reference target reference(s), protocanon only
 
 \marker xta
