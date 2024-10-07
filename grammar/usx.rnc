@@ -69,6 +69,9 @@ usfm:terminal [name="TEXTNOTATTRIB" value="/(?:[^\\|]|\\[\\~/|])+/"
 usfm:terminal [name="TEXTNOTATTRIBOPT" value="/(?:[^\\|]|\\[\\~/|])*/"
     a:documentation ["Matches simple text up to the start of a sequence of attributes delimited by | if present"]]
 
+usfm:terminal [name="IGNORELINE" value="/[^\r\n]*/"
+    a:documentation ["Matches anything up to the end of the line. Used for ignoring everything up to the end of a line"]]
+
 usfm:terminal [name="PIPE" value="/${hs}*(?<!\\)\|${hs}*/"
     a:documentation ["Matches the attributes list delimiter of |"]]
 
@@ -388,10 +391,10 @@ Header.para.style.enum = (
       "toca2"
     |    ## Alternative language book Abbreviation
       "toca3"
-    |    ## Remark
-      "rem"
     |    ## Status
       "sts"
+    |    ## Remark
+      "rem"
     )
 
 BookTitles =
@@ -411,7 +414,7 @@ Title.para.style.enum = (
       "mt4"
     |   ## The main title of the book (if single level)
       "mt"
-    |   ## Remark
+    |    ## Remark
       "rem"
     )
 
@@ -490,7 +493,7 @@ Introduction.para.style.enum = (
       "is"
     |   ## Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
       "iex"
-    |   ## Remark
+    |    ## Remark
       "rem"
     )
 
@@ -502,7 +505,7 @@ BookIntroductionEndTitles =
 
 ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
-PeripheralContent = (Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+PeripheralContent = (PeriphPara | Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
 Section =
     element para {
@@ -565,6 +568,20 @@ SectionPara.para.style.enum = (
       "cl"
     |   ## Chapter Description (Publishing option D, e.g. in Russian Bibles)
       "cd"
+    )
+
+PeriphPara = 
+    element para {
+        ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { PeriphPara.para.style.enum }),
+        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+    }
+
+PeriphPara.para.style.enum = (
+        ## Front or back matter text paragraph, level 1 (if multiple levels)
+      "p1"
+    |   ## Front or back matter text paragraph, level 2 (if multiple levels)
+      "p2"
     )
 
 Para = 
@@ -661,10 +678,6 @@ OtherPara.para.style.enum = (
       "cp"
     |   ## Page Break used for new reader portions and children's bibles where content is controlled by the page
       "pb"
-    |   ## Front or back matter text paragraph, level 1 (if multiple levels)
-      "p1"
-    |   ## Front or back matter text paragraph, level 2 (if multiple levels)
-      "p2"
     |   ## Poetry text, Acrostic marker/heading
       "qa"
     |   ## Concordance main entry text or keyword, level 1
@@ -672,9 +685,9 @@ OtherPara.para.style.enum = (
     |   ## Concordance main entry text or keyword, level 2
       "k2"
     |   ## Remark
-      "rem"
-    |   ## Remark
       "sts"
+    |    ## Remark
+      "rem"
 )
 
 List =
@@ -1157,8 +1170,17 @@ Reference =
     } >> usfm:endtag[match="'ref'" matchref=""]
 
 Break = 
-    [usfm:match[before="'//'" match="//"]]
+    [usfm:match[before="/\s*\/\//" match="//"]]
     element optbreak { empty }
+
+Remark =
+    element para {
+        [usfm:tag[usfm:seq="true"]]
+        attribute style { "rem" },
+        [usfm:seq="true"]([usfm:match[before="/${hs}*/" beforeout="' '" match="IGNORELINE" after=""]]
+        (text)? # Brief description of the project (optional)
+        >> usfm:match[match="NL" matchout="'\n'" dump="true"])
+    }
 
 # Unused enums for .ext files
 
