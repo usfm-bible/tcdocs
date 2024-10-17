@@ -41,8 +41,10 @@ Added:: 1.0
 USFM::
 +
 .Numbers 2.10-16 (GNT)
-[source#src-usfm-char-thr_1,usfm,highlight=4]
+[source#src-usfm-char-thr_1,usfm,highlight=6]
 ----
+\id NUM
+\c 2
 \p
 \v 10-16 On the south, those under the banner of the division of Reuben shall 
 camp in their groups, under their leaders, as follows:
@@ -57,37 +59,199 @@ USX::
 .Numbers 2.10-16 (GNT)
 [source#src-usx-char-thr_1,xml,highlight=9]
 ----
-<para style="p">
-  <verse number="10-16" style="v" sid="NUM 2:10-16"/>On the south, those under the
-  banner of the division of Reuben shall camp in their groups, under their
-  leaders, as follows:</para>
-<table>
-  <row style="tr">
-    <cell style="th1" align="start">Tribe </cell>
-    <cell style="th2" align="start">Leader </cell>
-    <cell style="thr3" align="end">Number</cell>
-  </row>
-  <row style="tr">
-    <cell style="tc1" align="start">Reuben </cell>
-    <cell style="tc2" align="start">Elizur son of Shedeur </cell>
-    <cell style="tcr3" align="end">46,500</cell>
-  </row>
-  <row style="tr">
-    <cell style="tc1" align="start">Simeon </cell>
-    <cell style="tc2" align="start">Shelumiel son of Zurishaddai </cell>
-    <cell style="tcr3" align="end">59,300</cell>
-  </row>
-  <row style="tr">
-    <cell style="tc1" align="start">Gad </cell>
-    <cell style="tc2" align="start">Eliasaph son of Deuel </cell>
-    <cell style="tcr3" align="end">45,650</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end" colspan="2">Total: </cell>
-    <cell style="tcr3" align="end">151,450</cell>
-  </row>
-  ...
-</table>
+<usx version="3.1">
+  <book code="NUM" style="id"/>
+  <chapter number="2" style="c" sid="NUM 2"/>
+  <para style="p">
+    <verse number="10-16" style="v" sid="NUM 2:10-16"/>On the south, those under the
+    banner of the division of Reuben shall camp in their groups, under their
+    leaders, as follows:</para>
+  <table>
+    <row style="tr">
+      <cell style="th1" align="start">Tribe </cell>
+      <cell style="th2" align="start">Leader </cell>
+      <cell style="thr3" align="end">Number</cell>
+    </row>
+    <row style="tr">
+      <cell style="tc1" align="start">Reuben </cell>
+      <cell style="tc2" align="start">Elizur son of Shedeur </cell>
+      <cell style="tcr3" align="end">46,500</cell>
+    </row>
+    <row style="tr">
+      <cell style="tc1" align="start">Simeon </cell>
+      <cell style="tc2" align="start">Shelumiel son of Zurishaddai </cell>
+      <cell style="tcr3" align="end">59,300</cell>
+    </row>
+    <row style="tr">
+      <cell style="tc1" align="start">Gad </cell>
+      <cell style="tc2" align="start">Eliasaph son of Deuel </cell>
+      <cell style="tcr3" align="end">45,650</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end" colspan="2">Total: </cell>
+      <cell style="tcr3" align="end">151,450</cell>
+    </row>
+    ...
+  </table>
+</usx>
+----
+USJ::
++
+.Numbers 2.10-16 (GNT)
+[source#src-usj-char-thr_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NUM",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "2",
+      "sid": "NUM 2"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "10-16",
+          "sid": "NUM 2:10-16"
+        },
+        "On the south, those under the banner of the division of Reuben shall camp in their groups, under their leaders, as follows:"
+      ]
+    },
+    {
+      "type": "table",
+      "content": [
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "th1",
+              "align": "start",
+              "content": ["Tribe "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "th2",
+              "align": "start",
+              "content": ["Leader "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "thr3",
+              "align": "end",
+              "content": ["Number"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tc1",
+              "align": "start",
+              "content": ["Reuben "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Elizur son of Shedeur "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["46,500"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tc1",
+              "align": "start",
+              "content": ["Simeon "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Shelumiel son of Zurishaddai "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["59,300"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tc1",
+              "align": "start",
+              "content": ["Gad "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Eliasaph son of Deuel "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["45,650"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "colspan": "2",
+              "content": ["Total: "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["151,450"]
+            }
+          ]
+        },
+        " ... "
+      ]
+    }
+  ]
+}
 ----
 ======
 

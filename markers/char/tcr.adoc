@@ -41,8 +41,10 @@ Added:: 1.0
 USFM::
 +
 .Numbers 2.3-9 (GNT)
-[source#src-usfm-char-tcr_1,usfm,highlight=5..8]
+[source#src-usfm-char-tcr_1,usfm,highlight=7..10]
 ----
+\id NUM
+\c 2
 \p
 \v 3-9 On the east side, those under the banner of the division of Judah 
 shall camp in their groups, under their leaders, as follows:
@@ -55,39 +57,201 @@ shall camp in their groups, under their leaders, as follows:
 USX::
 +
 .Numbers 2.3-9 (GNT)
-[source#src-usx-char-tcr_1,xml,highlight=14;19;24;27..28]
+[source#src-usx-char-tcr_1,xml,highlight=17;22;27;30;31]
 ----
-<para style="p">
-  <verse number="3-9" style="v" sid="NUM 2:3-9"/>On the east side, those under the
-  banner of the division of Judah shall camp in their groups, under their leaders,
-  as follows:</para>
-<table>
-  <row style="tr">
-    <cell style="th1" align="start">Tribe </cell>
-    <cell style="th2" align="start">Leader </cell>
-    <cell style="thr3" align="end">Number</cell>
-  </row>
-  <row style="tr">
-    <cell style="tc1" align="start">Judah </cell>
-    <cell style="tc2" align="start">Nahshon son of Amminadab </cell>
-    <cell style="tcr3" align="end">74,600</cell>
-  </row>
-  <row style="tr">
-    <cell style="tc1" align="start">Issachar </cell>
-    <cell style="tc2" align="start">Nethanel son of Zuar </cell>
-    <cell style="tcr3" align="end">54,400</cell>
-  </row>
-  <row style="tr">
-    <cell style="tc1" align="start">Zebulun </cell>
-    <cell style="tc2" align="start">Eliab son of Helon </cell>
-    <cell style="tcr3" align="end">57,400</cell>
-  </row>
-  <row style="tr">
-    <cell style="tcr1" align="end" colspan="2">Total: </cell>
-    <cell style="tcr3" align="end">186,400</cell>
-  </row>
-  ...
-</table>
+<usx version="3.1">
+  <book code="NUM" style="id"/>
+  <chapter number="2" style="c" sid="NUM 2"/>
+  <para style="p">
+    <verse number="3-9" style="v" sid="NUM 2:3-9"/>On the east side, those under the
+    banner of the division of Judah shall camp in their groups, under their leaders,
+    as follows:</para>
+  <table>
+    <row style="tr">
+      <cell style="th1" align="start">Tribe </cell>
+      <cell style="th2" align="start">Leader </cell>
+      <cell style="thr3" align="end">Number</cell>
+    </row>
+    <row style="tr">
+      <cell style="tc1" align="start">Judah </cell>
+      <cell style="tc2" align="start">Nahshon son of Amminadab </cell>
+      <cell style="tcr3" align="end">74,600</cell>
+    </row>
+    <row style="tr">
+      <cell style="tc1" align="start">Issachar </cell>
+      <cell style="tc2" align="start">Nethanel son of Zuar </cell>
+      <cell style="tcr3" align="end">54,400</cell>
+    </row>
+    <row style="tr">
+      <cell style="tc1" align="start">Zebulun </cell>
+      <cell style="tc2" align="start">Eliab son of Helon </cell>
+      <cell style="tcr3" align="end">57,400</cell>
+    </row>
+    <row style="tr">
+      <cell style="tcr1" align="end" colspan="2">Total: </cell>
+      <cell style="tcr3" align="end">186,400</cell>
+    </row>
+    ...
+  </table>
+</usx>
+----
+USJ::
++
+.Numbers 2.3-9 (GNT)
+[source#src-usj-char-tcr_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "NUM",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "2",
+      "sid": "NUM 2"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "3-9",
+          "sid": "NUM 2:3-9"
+        },
+        "On the east side, those under the banner of the division of Judah shall camp in their groups, under their leaders, as follows:"
+      ]
+    },
+    {
+      "type": "table",
+      "content": [
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "th1",
+              "align": "start",
+              "content": ["Tribe "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "th2",
+              "align": "start",
+              "content": ["Leader "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "thr3",
+              "align": "end",
+              "content": ["Number"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tc1",
+              "align": "start",
+              "content": ["Judah "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Nahshon son of Amminadab "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["74,600"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tc1",
+              "align": "start",
+              "content": ["Issachar "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Nethanel son of Zuar "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["54,400"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tc1",
+              "align": "start",
+              "content": ["Zebulun "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tc2",
+              "align": "start",
+              "content": ["Eliab son of Helon "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["57,400"]
+            }
+          ]
+        },
+        {
+          "type": "table:row",
+          "marker": "tr",
+          "content": [
+            {
+              "type": "table:cell",
+              "marker": "tcr1",
+              "align": "end",
+              "colspan": "2",
+              "content": ["Total: "]
+            },
+            {
+              "type": "table:cell",
+              "marker": "tcr3",
+              "align": "end",
+              "content": ["186,400"]
+            }
+          ]
+        },
+        " ... "
+      ]
+    }
+  ]
+}
 ----
 ======
 
