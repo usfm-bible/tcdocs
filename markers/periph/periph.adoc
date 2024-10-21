@@ -14,8 +14,8 @@ endif::[]
 
 Description:: Peripheral division identifier.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
-* *USFM:* ``++\periph ++``#__title__#``++|++``#__id__# followed by #__content__#
-* *USX:* ``++<periph alt="++``#__title__#``++" ++``#__id__#``++">++``#__content__#``++</periph>++``
+* *USFM:* ``++\periph ++``#__title__#``++|++``#__@id__#; followed by one or more paragraphs of #__content__#
+* *USX:* ``++<periph alt="++``#__title__#``++" ++``#__@id__#``++">++``#__content__#``++</periph>++``
 #title# *::: Peripheral division title. May be expressed in the vernacular language.
 #id#::: A unique xref:periph:books-divs.adoc[peripheral division identifier]. A standard set of identifiers allows processors to easily select content for recognized peripheral divisions.
 #content#::: Peripheral content.
