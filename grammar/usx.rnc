@@ -501,7 +501,7 @@ BookIntroductionEndTitles =
 
 ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
-PeripheralContent = (PeriphPara | Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+PeripheralContent = (Para | Section | PeriphPara | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
 
 Section =
     element para {
@@ -566,12 +566,27 @@ SectionPara.para.style.enum = (
       "cd"
     )
 
-PeriphPara = 
+PeriphPara =
     element para {
-        ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { PeriphPara.para.style.enum }),
+        [usfm:ptag[]] attribute style { PeriphPara.para.style.enum },
+        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
+    } | Remark
+
+OtherPara = 
+    element para {
+        [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum },
+        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        ([usfm:text[]] text | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
+    } | Remark
+
+VersePara = 
+    element para {
+        [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum },
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
-    }
+    } | Remark
+
+Para = VersePara | OtherPara
 
 PeriphPara.para.style.enum = (
         ## Front or back matter text paragraph, level 1 (if multiple levels)
@@ -579,14 +594,6 @@ PeriphPara.para.style.enum = (
     |   ## Front or back matter text paragraph, level 2 (if multiple levels)
       "p2"
     )
-
-Para = 
-    element para {
-        ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum } |
-        [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum }),
-        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
-    } | Remark
 
 VersePara.para.style.enum = (
       ## Closure of an Epistle
@@ -720,6 +727,15 @@ List.para.style.enum = (
     |   ## List footer (introductory remark)
       "lf"
     )
+
+Remark = 
+    element para {
+        [usfm:ptag[]]
+        attribute stype { "rem" },
+        [usfm:seq="true"]([usfm:match[match="/[^\\\n\r]*/"]]
+            (text)? # Brief description of the project (optional)
+        >> usfm:match[match="NL" matchout="'\n'" dump="true"])
+    }
 
 Table = 
     element table {

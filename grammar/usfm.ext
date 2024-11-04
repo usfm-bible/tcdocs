@@ -47,7 +47,7 @@
 \description Closure of an Epistle
 
 \marker cp
-\category internal
+\category internal otherpara
 \description Chapter publication string
 
 \marker d
@@ -175,7 +175,7 @@
 \description Introduction ending marker
 
 \marker iex
-\category sectionpara
+\category introduction sectionpara
 \description Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
 
 \marker ili
@@ -262,7 +262,7 @@
 \description Introduction outline title
 
 \marker ip
-\category sectionpara
+\category introduction sectionpara
 \description Division or Section introductory paragraph (study Bible)
 
 \marker ipi
@@ -513,13 +513,14 @@
 \marker p
 \category versepara
 \description Paragraph text, with first line indent
+[usfm:href="paragraphs/p.html"]
 
 \marker p1
-\category otherpara
+\category periphpara
 \description Front or back matter text paragraph, level 1 (if multiple levels)
 
 \marker p2
-\category otherpara
+\category periphpara
 \description Front or back matter text paragraph, level 2 (if multiple levels)
 
 \marker pb
@@ -748,7 +749,7 @@
 \defattrib gloss
 
 \marker rem
-\category otherpara
+\category header otherpara
 \description Remark
 
 \marker restore
@@ -820,7 +821,7 @@
 \description A section division references range heading
 
 \marker sts
-\category otherpara
+\category header otherpara
 \description Remark
 
 \marker sup
@@ -1106,7 +1107,7 @@
 \description Alternative versification
 
 \marker vp
-\category internal
+\category char internal
 \description Published verse number
 
 \marker w
@@ -1163,7 +1164,8 @@
 \description A cross-reference quotation from the scripture text
 
 \marker xt
-\category crossreferencechar
+\category char crossreferencechar
+\defattrib href
 \description The cross reference target reference(s), protocanon only
 
 \marker xta

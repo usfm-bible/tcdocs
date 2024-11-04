@@ -740,9 +740,9 @@
   </define>
   <define name="PeripheralContent">
     <choice>
-      <ref name="PeriphPara"/>
       <ref name="Para"/>
       <ref name="Section"/>
+      <ref name="PeriphPara"/>
       <ref name="Chapter"/>
       <ref name="Figure"/>
       <ref name="Milestone"/>
@@ -844,63 +844,76 @@
     </choice>
   </define>
   <define name="PeriphPara">
-    <element>
-      <name ns="">para</name>
-      <attribute usfm:grouping="15">
-        <usfm:ptag usfm:stacked="true"/>
-        <name ns="">style</name>
-        <ref name="PeriphPara.para.style.enum"/>
-      </attribute>
-      <optional>
-        <attribute>
-          <name ns="">vid</name>
-          <data type="string">
-            <usfm:pattern name="VERSE"/>
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-          </data>
-        </attribute>
-      </optional>
-      <zeroOrMore>
-        <choice>
-          <text>
-            <usfm:text/>
-          </text>
-          <ref name="CharEmbed"/>
-          <ref name="Figure"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Reference"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-          <ref name="Break"/>
-        </choice>
-      </zeroOrMore>
-    </element>
-  </define>
-  <define name="PeriphPara.para.style.enum">
-    <choice>
-      <value>p1</value>
-      <a:documentation>Front or back matter text paragraph, level 1 (if multiple levels)</a:documentation>
-      <value>p2</value>
-      <a:documentation>Front or back matter text paragraph, level 2 (if multiple levels)</a:documentation>
-    </choice>
-  </define>
-  <define name="Para">
     <choice>
       <element>
         <name ns="">para</name>
-        <choice>
-          <attribute usfm:grouping="15">
-            <usfm:ptag usfm:stacked="true"/>
-            <name ns="">style</name>
-            <ref name="OtherPara.para.style.enum"/>
+        <attribute>
+          <usfm:ptag/>
+          <name ns="">style</name>
+          <ref name="PeriphPara.para.style.enum"/>
+        </attribute>
+        <zeroOrMore>
+          <choice>
+            <text>
+              <usfm:text/>
+            </text>
+            <ref name="CharEmbed"/>
+            <ref name="Figure"/>
+            <ref name="Milestone"/>
+            <ref name="Reference"/>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+            <ref name="Break"/>
+          </choice>
+        </zeroOrMore>
+      </element>
+      <ref name="Remark"/>
+    </choice>
+  </define>
+  <define name="OtherPara">
+    <choice>
+      <element>
+        <name ns="">para</name>
+        <attribute usfm:grouping="15">
+          <usfm:ptag usfm:stacked="true"/>
+          <name ns="">style</name>
+          <ref name="OtherPara.para.style.enum"/>
+        </attribute>
+        <optional>
+          <attribute>
+            <name ns="">vid</name>
+            <data type="string">
+              <usfm:pattern name="VERSE"/>
+              <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+            </data>
           </attribute>
-          <attribute usfm:grouping="15">
-            <usfm:ptag usfm:stacked="true"/>
-            <name ns="">style</name>
-            <ref name="VersePara.para.style.enum"/>
-          </attribute>
-        </choice>
+        </optional>
+        <zeroOrMore>
+          <choice>
+            <text>
+              <usfm:text/>
+            </text>
+            <ref name="Figure"/>
+            <ref name="Milestone"/>
+            <ref name="Reference"/>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+            <ref name="Break"/>
+          </choice>
+        </zeroOrMore>
+      </element>
+      <ref name="Remark"/>
+    </choice>
+  </define>
+  <define name="VersePara">
+    <choice>
+      <element>
+        <name ns="">para</name>
+        <attribute usfm:grouping="15">
+          <usfm:ptag usfm:stacked="true"/>
+          <name ns="">style</name>
+          <ref name="VersePara.para.style.enum"/>
+        </attribute>
         <optional>
           <attribute>
             <name ns="">vid</name>
@@ -927,6 +940,20 @@
         </zeroOrMore>
       </element>
       <ref name="Remark"/>
+    </choice>
+  </define>
+  <define name="Para">
+    <choice>
+      <ref name="VersePara"/>
+      <ref name="OtherPara"/>
+    </choice>
+  </define>
+  <define name="PeriphPara.para.style.enum">
+    <choice>
+      <value>p1</value>
+      <a:documentation>Front or back matter text paragraph, level 1 (if multiple levels)</a:documentation>
+      <value>p2</value>
+      <a:documentation>Front or back matter text paragraph, level 2 (if multiple levels)</a:documentation>
     </choice>
   </define>
   <define name="VersePara.para.style.enum">
@@ -1092,6 +1119,25 @@
       <value>lf</value>
       <a:documentation>List footer (introductory remark)</a:documentation>
     </choice>
+  </define>
+  <define name="Remark">
+    <element>
+      <name ns="">para</name>
+      <attribute>
+        <usfm:ptag/>
+        <name ns="">stype</name>
+        <value>rem</value>
+      </attribute>
+      <group usfm:seq="true">
+        <optional>
+          <group>
+            <usfm:match match="/[^\\\n\r]*/"/>
+            <text/>
+          </group>
+        </optional>
+        <usfm:match match="NL" matchout="&#x27;\n&#x27;" dump="true"/>
+      </group>
+    </element>
   </define>
   <define name="Table">
     <element>

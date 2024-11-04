@@ -30,6 +30,7 @@ TEXT:: Pattern: ``++/([^\\/]|/(?!/)|\\[/~\\|])+?/++`` Matches simple text up to 
 TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\[^~/\\])/++`` Matches simple text without trailing whitespace
 TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
 TEXTNOTATTRIBOPT:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])*/++`` Matches simple text up to the start of a sequence of attributes delimited by | if present
+IGNORELINE:: Pattern: ``++/[^\r\n]*/++`` Matches anything up to the end of the line. Used for ignoring everything up to the end of a line
 PIPE:: Pattern: ``++/++``#$\{hs\}#``++*(?<!\\)\|++``#$\{hs\}#``++*/++`` Matches the attributes list delimiter of |
 TLC:: Pattern: ``++/[0-9A-Z]{3}/++`` Three letter uppercase code including digits
 VERSE:: Pattern: ``++/[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*/++`` Verse number, including ranges and sequences

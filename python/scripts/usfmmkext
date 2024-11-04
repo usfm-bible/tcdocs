@@ -96,7 +96,7 @@ def extstr(mrkr, field):
     res = [f"\\marker {mrkr}"]
     for k, v in sorted(field.items()):
         if k == "category":
-            res.append(f"\\{k} {" ".join(sorted(v))}")
+            res.append(f"\\{k} {' '.join(sorted(v))}")
         else:
             res.append(f"\\{k} {v}")
     return "\n".join(res)
@@ -106,6 +106,7 @@ parser.add_argument("infile",help="Input RNG XML file")
 parser.add_argument("-o","--outfile",help="Output .ext, .sty file")
 parser.add_argument("-f","--format",help="Output format [*ext, sty]")
 parser.add_argument("-s","--style",help="Input .sty file build on")
+parser.add_argument("-l","--lists",help="Output file for list of markers by category")
 args = parser.parse_args()
 
 rdoc = et.parse(args.infile)
