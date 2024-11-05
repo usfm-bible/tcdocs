@@ -151,9 +151,9 @@ def cleanup(node, parent=None):
         celltype = re.sub(r"^t(.*?)\d.*$", r"\1", s)
         node.set("align", alignments.get(celltype, "start"))
     elif node.tag == "char":
-        if node.get('style', '') == "xt" and 'href' in node.attrib \
+        if node.get('style', '') == "xt" and ('href' in node.attrib or 'link-href' in node.attrib) \
                 and (len(node) != 1 or node.text is not None or node[0].tag != 'ref'):
-            refnode = et.Element('ref', loc=node.get('href'), gen="true")
+            refnode = et.Element('ref', loc=node.get('href', node.get('link-href', '')), gen="true")
             refnode.text = node.text
             refnode[:] = node[:]
             node[:] = [refnode]
@@ -191,6 +191,13 @@ def messup(node, parent=None):
             start = int(re.sub(r"^\D+", "", tag))
             tag = tag + "-" + str(start + span - 1)
             newnode.set("style", tag)
+    # convert \xt\ref Genesis 1:1|loc="GEN 1:1"\ref*|link-href="GEN 1:1"\xt*
+    # back to \xt Genesis 1:1|link-href="GEN 1:1"\xt*
+    elif newnode.tag == "char" and node.get('style', '').endswith('xt') and not newnode.text and len(node) == 1:
+        c = node[0]
+        if c.tag == "ref" and not c.tail:
+            newnode.text = protect(c.text)
+            return newnode
     for k, v in newnode.attrib.items():
         newnode.attrib[k] = protect(v)
     for c in node:

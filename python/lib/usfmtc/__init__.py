@@ -10,6 +10,7 @@ from usfmtc.diagrams import UsfmRailRoad
 from usfmtc.usxmodel import addesids, cleanup, messup, canonicalise
 from usfmtc.usjproc import usxtousj, usjtousx
 from usfmtc.usfmparser import USFMParser, Grammar
+from usfmtc.usfmgenerate import usx2usfm
 import xml.etree.ElementTree as et
 
 def _readsrc(src):
@@ -168,10 +169,12 @@ class USX:
         prettyxml(self.xml)
         self._outwrite(file, self.xml, fn=writexml)
 
-    def outUsfm(self, grammar, file=None, **kw):
+    def outUsfm(self, grammar, file=None, altparser=False, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
-        parser = USXConverter(grammar.getroot(), **kw)
         el = messup(self.xml)
+        if altparser:
+            return self._outwrite(file, el, fn=usx2usfm)
+        parser = USXConverter(grammar.getroot(), **kw)
         res = parser.parse(el)
         if res:
             dat = "".join(res.results)
@@ -187,7 +190,7 @@ class USX:
             dat = json.dumps(res, indent=2)
             self._outwrite(file, dat)
 
-    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None):
+    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None, altparser=False):
         """ Saves the document to a file in the appropriate format, either given
             or inferred from the filename extension. """
         if outformat is None:
@@ -205,7 +208,7 @@ class USX:
         elif outtype == "usj":
             self.outUsj(outfpath)
         elif outtype == "usfm":
-            if grammar is None:
+            if grammar is None and not altparser:
                 if gramfile is None:
                     for a in ([], ['..', '..', '..', 'grammar']):
                         gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
@@ -216,7 +219,7 @@ class USX:
                 outtype = "usfm"
                 if version is None:
                     version = "3.0"
-            self.outUsfm(grammar, outfpath, outversion=version)
+            self.outUsfm(grammar, outfpath, outversion=version, altparser=altparser)
 
     def canonicalise(self):
         canonicalise(self.getroot())
@@ -245,7 +248,7 @@ def main(hookcli=None, hookusx=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("infile",nargs="+",help="Input file")
     parser.add_argument("-o", "--outfile",help="Output file, with inferred format")
-    parser.add_argument("-F","--format",help="Output format [usfm, usx, usj, usfm3.0]")
+    parser.add_argument("-F","--outformat",help="Output format [usfm, usx, usj, usfm3.0]")
     parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
     parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
     parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
@@ -299,10 +302,10 @@ def main(hookcli=None, hookusx=None):
 
     root, ext = os.path.splitext(infiles[0])
     args.informat = args.informat or _filetypes.get(ext.lower(), args.informat)
-    if args.format is None:
+    if args.outformat is None:
         if args.outfile is not None and not os.path.isdir(args.outfile):
             root, ext = os.path.splitext(args.outfile)
-            args.format = _filetypes.get(ext.lower(), None)
+            args.outformat = _filetypes.get(ext.lower(), None)
     ingrammar = None
     outgrammar = None
     if args.informat.startswith("usfm") or args.outformat.startswith("usfm"):
@@ -315,7 +318,7 @@ def main(hookcli=None, hookusx=None):
             args.extfiles.append(os.path.join(os.path.dirname(infiles[0]), "markers.ext"))
             exts = [x for x in args.extfiles if os.path.exists(x)]
             ingrammar = usfmGrammar(args.grammar, altparser=args.qusfm, extensions=exts)
-        if args.format and args.format.startswith("usfm"):
+        if args.outformat and args.outformat.startswith("usfm"):
             outgrammar = _grammarDoc(args.grammar)
 
     for infile in infiles:
@@ -361,7 +364,7 @@ def main(hookcli=None, hookusx=None):
         if not args.canonical:
             usxdoc.canonicalise()
 
-        usxdoc.saveAs(outfile, outformat=args.format, addesids=args.esids, grammar=outgrammar)
+        usxdoc.saveAs(outfile, outformat=args.outformat, addesids=args.esids, grammar=outgrammar, altparser=args.qusfm)
 
 if __name__ == "__main__":
     main()
