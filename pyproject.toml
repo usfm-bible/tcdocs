@@ -36,15 +36,11 @@ where = ["python/lib"]
 [tool.setuptools.dynamic]
 # version = {attr = "usfmtc.version"}
 
-[tool.setuptools]
-packages = ["usfmtc"]
+#[tool.setuptools]
+#packages = ["usfmtc"]
 
 [tool.bdist_wheel]
 universal = true
 
 [project.scripts]
-<<<<<<< HEAD
-makefeax = "usfmtc:main"
-=======
 usfmconv = "usfmtc:main"
->>>>>>> 3.1.1
