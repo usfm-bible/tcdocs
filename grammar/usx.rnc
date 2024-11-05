@@ -51,7 +51,7 @@ usfm:terminal [name="ATTRIBTEXTEND" value="/${Hs}(?=[\\|])/"
 usfm:terminal [name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])+/"
     a:documentation ["Matches text inside an attribute value (not including the quotes)"]]
 
-usfm:terminal [name="ATTRIBALL" value="/(?:[^\\=]|\\=)+(?=\\)/"
+usfm:terminal [name="ATTRIBALL" value="/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/"
     a:documentation ["Matches a default attribute value string"]]
 
 usfm:terminal [name="ATTRIBNAME" value="/[a-zA-Z0-9\-_]+?/"
