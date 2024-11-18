@@ -653,12 +653,6 @@
       <a:documentation>Introduction blank line</a:documentation>
       <value>ie</value>
       <a:documentation>Introduction ending marker</a:documentation>
-      <value>ili1</value>
-      <a:documentation>A list entry, level 1 (if multiple levels)</a:documentation>
-      <value>ili2</value>
-      <a:documentation>A list entry, level 2</a:documentation>
-      <value>ili</value>
-      <a:documentation>A list entry, level 1 (if single level)</a:documentation>
       <value>imi</value>
       <a:documentation>Introduction prose paragraph text, indented, with no first line indent</a:documentation>
       <value>imq</value>
@@ -677,6 +671,8 @@
       <a:documentation>Introduction outline title</a:documentation>
       <value>io</value>
       <a:documentation>Introduction outline text, level 1 (if single level)</a:documentation>
+      <value>ipc</value>
+      <a:documentation>Introduction Inscription (paragraph text centered)</a:documentation>
       <value>ipi</value>
       <a:documentation>Introduction prose paragraph, indented, with first line indent</a:documentation>
       <value>ipq</value>
@@ -707,67 +703,40 @@
       <a:documentation>For a comment or note inserted for liturgical use</a:documentation>
     </choice>
   </define>
-  <define name="BookIntroList">
+  <define name="IntroList">
     <element>
       <name ns="">para</name>
-      <attribute usfm:grouping="8">
+      <attribute usfm:grouping="12">
         <usfm:ptag/>
         <name ns="">style</name>
-        <ref name="BookIntroList.para.style.enum"/>
+        <ref name="IntroList.para.style.enum"/>
       </attribute>
-      <optional>
-        <attribute>
-          <name ns="">vid</name>
-          <data type="string">
-            <usfm:pattern name="VERSE"/>
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-          </data>
-        </attribute>
-      </optional>
       <zeroOrMore>
         <choice>
           <text>
             <usfm:text/>
           </text>
-          <ref name="ListChar"/>
           <ref name="CharEmbed"/>
-          <ref name="Figure"/>
-          <ref name="Milestone"/>
-          <ref name="Verse"/>
-          <ref name="Reference"/>
+          <ref name="IntroChar"/>
+          <ref name="ListChar"/>
           <ref name="Footnote"/>
           <ref name="CrossReference"/>
-          <ref name="Break"/>
+          <ref name="Figure"/>
+          <ref name="Milestone"/>
+          <ref name="Reference"/>
+          <ref name="Sidebar"/>
         </choice>
       </zeroOrMore>
     </element>
   </define>
-  <define name="BookIntroList.para.style.enum">
+  <define name="IntroList.para.style.enum">
     <choice>
-      <value>ilh</value>
-      <a:documentation>List header (introductory remark)</a:documentation>
       <value>ili1</value>
       <a:documentation>A list entry, level 1 (if multiple levels)</a:documentation>
       <value>ili2</value>
       <a:documentation>A list entry, level 2</a:documentation>
-      <value>ili3</value>
-      <a:documentation>A list entry, level 3</a:documentation>
-      <value>ili4</value>
-      <a:documentation>A list entry, level 4</a:documentation>
-      <value>ilim1</value>
-      <a:documentation>An embedded list entry, level 1 (if multiple levels)</a:documentation>
-      <value>ilim2</value>
-      <a:documentation>An embedded list entry, level 2</a:documentation>
-      <value>ilim3</value>
-      <a:documentation>An embedded list entry, level 3</a:documentation>
-      <value>ilim4</value>
-      <a:documentation>An embedded list entry, level 4</a:documentation>
-      <value>ilim</value>
-      <a:documentation>An embedded list entry, level 1 (if single level)</a:documentation>
       <value>ili</value>
       <a:documentation>A list entry, level 1 (if single level)</a:documentation>
-      <value>ilf</value>
-      <a:documentation>List footer (introductory remark)</a:documentation>
     </choice>
   </define>
   <define name="BookIntroductionEndTitles">
