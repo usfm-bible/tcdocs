@@ -24,7 +24,7 @@ TAGEND:: Pattern: ``++/(?:++``#$\{ws\}#``+++|(?=[\\|]|$))/++`` Delimits a marker
 TEXTEND:: Pattern: ``++/(?=++``#$\{anyws\}#``++*\\|//|$)/++`` Delimits simple text
 ATTRIBTEXTEND:: Pattern: ``++/++``#$\{Hs\}#``++(?=[\\|])/++`` Reducable characters following an attribute value
 ATTRIBTEXT:: Pattern: ``++/(?:\\["\\=~/|]|[^\\"])+/++`` Matches text inside an attribute value (not including the quotes)
-ATTRIBALL:: Pattern: ``++/(?:[^\\=]|\\=)+(?=\\)/++`` Matches a default attribute value string
+ATTRIBALL:: Pattern: ``++/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/++`` Matches a default attribute value string
 ATTRIBNAME:: Pattern: ``++/[a-zA-Z_][a-zA-Z0-9\-_]*?/++`` Matches an attribute name
 TEXT:: Pattern: ``++/([^\\/]|/(?!/)|\\[/~\\|])+?/++`` Matches simple text up to the next marker
 TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\[^~/\\])/++`` Matches simple text without trailing whitespace

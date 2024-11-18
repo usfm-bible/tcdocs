@@ -49,7 +49,7 @@
   <usfm:terminal name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])+/">
     <a:documentation>Matches text inside an attribute value (not including the quotes)</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="ATTRIBALL" value="/(?:[^\\=]|\\=)+(?=\\)/">
+  <usfm:terminal name="ATTRIBALL" value="/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/">
     <a:documentation>Matches a default attribute value string</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z_][a-zA-Z0-9\-_]*?/">
@@ -701,6 +701,42 @@
       <a:documentation>Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)</a:documentation>
       <value>lit</value>
       <a:documentation>For a comment or note inserted for liturgical use</a:documentation>
+    </choice>
+  </define>
+  <define name="IntroList">
+    <element>
+      <name ns="">para</name>
+      <attribute usfm:grouping="12">
+        <usfm:ptag/>
+        <name ns="">style</name>
+        <ref name="IntroList.para.style.enum"/>
+      </attribute>
+      <zeroOrMore>
+        <choice>
+          <text>
+            <usfm:text/>
+          </text>
+          <ref name="CharEmbed"/>
+          <ref name="IntroChar"/>
+          <ref name="ListChar"/>
+          <ref name="Footnote"/>
+          <ref name="CrossReference"/>
+          <ref name="Figure"/>
+          <ref name="Milestone"/>
+          <ref name="Reference"/>
+          <ref name="Sidebar"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="IntroList.para.style.enum">
+    <choice>
+      <value>ili1</value>
+      <a:documentation>A list entry, level 1 (if multiple levels)</a:documentation>
+      <value>ili2</value>
+      <a:documentation>A list entry, level 2</a:documentation>
+      <value>ili</value>
+      <a:documentation>A list entry, level 1 (if single level)</a:documentation>
     </choice>
   </define>
   <define name="IntroList">

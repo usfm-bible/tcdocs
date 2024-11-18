@@ -51,7 +51,7 @@ usfm:terminal [name="ATTRIBTEXTEND" value="/${Hs}(?=[\\|])/"
 usfm:terminal [name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])+/"
     a:documentation ["Matches text inside an attribute value (not including the quotes)"]]
 
-usfm:terminal [name="ATTRIBALL" value="/(?:[^\\=]|\\=)+(?=\\)/"
+usfm:terminal [name="ATTRIBALL" value="/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/"
     a:documentation ["Matches a default attribute value string"]]
 
 usfm:terminal [name="ATTRIBNAME" value="/[a-zA-Z_][a-zA-Z0-9\-_]*?/"
@@ -491,6 +491,21 @@ Introduction.para.style.enum = (
       "iex"
     |   ## For a comment or note inserted for liturgical use
       "lit"
+    )
+
+IntroList = 
+    element para {
+        [usfm:grouping="12" usfm:ptag[]] attribute style { IntroList.para.style.enum },
+        ([usfm:text[]] text | CharEmbed | IntroChar | ListChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
+    }
+
+IntroList.para.style.enum = (
+        ## A list entry, level 1 (if multiple levels)
+      "ili1"
+    |   ## A list entry, level 2
+      "ili2"
+    |   ## A list entry, level 1 (if single level)
+      "ili"
     )
 
 IntroList = 
