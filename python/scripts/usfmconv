@@ -8,4 +8,6 @@ except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
     from usfmtc import main
 
-main()
+from gooey import Gooey
+
+Gooey(main)()
