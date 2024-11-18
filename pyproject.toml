@@ -21,6 +21,8 @@ requires-python = ">=3.8"
 #dynamic = ["version"]
 
 dependencies = [
+"lxml",
+"rply"
 ]
 
 [project.optional-dependencies]
