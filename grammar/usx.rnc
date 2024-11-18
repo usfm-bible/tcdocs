@@ -422,7 +422,7 @@ BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { Introduction.para.style.enum },
         ([usfm:text[]] text | CharEmbed | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
-    } | Table | BookIntroList
+    } | Table | IntroList
 
 Introduction.para.style.enum = (
         ## Introduction major title, level 1 (if multiple levels)
@@ -463,6 +463,8 @@ Introduction.para.style.enum = (
       "iot"
     |   ## Introduction outline text, level 1 (if single level)
       "io"
+    |   ## Introduction Inscription (paragraph text centered)
+      "ipc"
     |   ## Introduction prose paragraph, indented, with first line indent
       "ipi"
     |   ## Introduction prose paragraph, quote from the body text
@@ -495,38 +497,19 @@ Introduction.para.style.enum = (
       "rem"
     )
 
-IntroList =
+IntroList = 
     element para {
-        [usfm:grouping="8" usfm:ptag[]] attribute style { IntroList.para.style.enum },
-        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-        ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
+        [usfm:grouping="12" usfm:ptag[]] attribute style { IntroList.para.style.enum },
+        ([usfm:text[]] text | CharEmbed | IntroChar | ListChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
     }
 
 IntroList.para.style.enum = (
-        ## List header (introductory remark)
-      "ilh"
-    |   ## A list entry, level 1 (if multiple levels)
+        ## A list entry, level 1 (if multiple levels)
       "ili1"
     |   ## A list entry, level 2
       "ili2"
-    |   ## A list entry, level 3
-      "ili3"
-    |   ## A list entry, level 4
-      "ili4"
-    |   ## An embedded list entry, level 1 (if multiple levels)
-      "ilim1"
-    |   ## An embedded list entry, level 2
-      "ilim2"
-    |   ## An embedded list entry, level 3
-      "ilim3"
-    |   ## An embedded list entry, level 4
-      "ilim4"
-    |   ## An embedded list entry, level 1 (if single level)
-      "ilim"
     |   ## A list entry, level 1 (if single level)
       "ili"
-    |   ## List footer (introductory remark)
-      "ilf"
     )
 
 BookIntroductionEndTitles =
@@ -605,7 +588,6 @@ SectionPara.para.style.enum = (
 PeriphPara = 
     element para {
         ([usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { PeriphPara.para.style.enum }),
-        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
