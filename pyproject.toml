@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usfmtc"
-version = "0.2"
+version = "0.2.1"
 authors = [{name = "USFM Technical Committee", email = "fonts@sil.org"}]
 readme = "python/README.md"
 license = {file = "LICENSE.md"}
@@ -14,14 +14,15 @@ classifiers = [
    "Programming Language :: Python :: 3.8",
    "Intended Audience :: Developers",
    "License :: OSI Approved :: MIT License",
-   "Topic :: Text Processing :: Bible"
+   "Topic :: Text Processing :: Markup"
    ]
 requires-python = ">=3.8"
 #dynamic = ["version"]
 
 dependencies = [
 "lxml",
-"rply"
+"rply",
+"regex"
 ]
 
 [project.optional-dependencies]
@@ -33,6 +34,9 @@ Home-Page = "https://github.com/usfm-bible/tcdocs"
 
 [tool.setuptools.packages.find]
 where = ["python/lib"]
+
+[tool.setuptools.package-data]
+usfmtc = ["*.rng"]
 
 [tool.setuptools.dynamic]
 # version = {attr = "usfmtc.version"}
