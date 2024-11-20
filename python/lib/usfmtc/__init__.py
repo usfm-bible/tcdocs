@@ -2,7 +2,7 @@
 
 # nuitka configuration
 # nuitka-project: --onefile
-# nuitka-project: --include-data-files={MAIN_DIRECTORY}/../../../grammar/usx.rng=usx.rng
+# nuitka-project: --include-data-files={MAIN_DIRECTORY}/usx.rng=usx.rng
 # nuitka-project-if: {OS} in ("Windows",):
 #     nuitka-project: --output-filename=usfmconv.exe
 # nuitka-project-else:
@@ -56,7 +56,7 @@ def _usfmGrammar(rdoc, backend=None, start=None):
     parser = sfmproc.parseRef(start)
     return parser
 
-def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
+def usfmGrammar(gsrc, extensions=[], altparser=True, backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
     if len(extensions) or not altparser:
         rdoc = _grammarDoc(gsrc, extensions)
@@ -71,7 +71,7 @@ def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
 
 _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
 
-def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False):
+def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=True):
     """ Reads a USFM file of a given type or inferred from the filename
         extension. extfiles allows for extra markers.ext files to extend the grammar"""
     if informat is None:
@@ -96,7 +96,7 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], a
             fname = getattr(infpath, 'name', infpath)
             extfiles.append(os.path.join(os.path.dirname(fname), "markers.ext"))
             exts = [x for x in extfiles if os.path.exists(x)]
-            grammar = usfmGrammar(gramfile, extensions=exts)
+            grammar = usfmGrammar(gramfile, extensions=exts, altparser=altparser)
         usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser)
     return usxdoc
 
@@ -127,7 +127,7 @@ class USX:
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7):
+    def fromUsfm(cls, src, grammar, altparser=True, elfactory=None, timeout=1e7):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error. """
         data = _readsrc(src)
@@ -178,7 +178,7 @@ class USX:
         prettyxml(self.xml)
         self._outwrite(file, self.xml, fn=writexml)
 
-    def outUsfm(self, grammar, file=None, altparser=False, **kw):
+    def outUsfm(self, grammar, file=None, altparser=True, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         el = messup(self.xml)
         if altparser:
@@ -199,7 +199,7 @@ class USX:
             dat = json.dumps(res, indent=2)
             self._outwrite(file, dat)
 
-    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None, altparser=False):
+    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None, altparser=True):
         """ Saves the document to a file in the appropriate format, either given
             or inferred from the filename extension. """
         if outformat is None:

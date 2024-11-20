@@ -5,9 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "usfmtc"
 version = "0.2"
-# (also manually bump version in src/feaxlib/__init__.py)
 authors = [{name = "USFM Technical Committee", email = "fonts@sil.org"}]
-readme = "README.md"
+readme = "python/README.md"
 license = {file = "LICENSE.md"}
 description = "USFM reference parser"
 classifiers = [
