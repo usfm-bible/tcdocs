@@ -8,7 +8,7 @@
 # nuitka-project-else:
 #     nuitka-project: --output-filename=usfmconv.bin
 
-import os
+import os, json
 from usfmtc.sfmparser import parseusfm, UsfmParserBackend
 from usfmtc.parser import NoParseError
 from usfmtc.extension import Extensions
@@ -192,7 +192,7 @@ class USX:
 
     def outUsj(self, file=None):
         """ Output USJ from USX object. If file is None returns dict """
-        res, _ = usxtousj(self.xml.getroot())
+        res = usxtousj(self.xml)
         if file is None:
             return res
         else:
