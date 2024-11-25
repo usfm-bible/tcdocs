@@ -211,27 +211,27 @@ USX::
     <table>
       <row style="tr">
         <cell style="th1" align="start">Name</cell>
-        <cell style="th2" align="end">Page</cell>
+        <cell style="thr2" align="end">Page</cell>
         <cell style="th3" align="start">Name</cell>
-        <cell style="th4" align="end">Page</cell>
+        <cell style="thr4" align="end">Page</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Genesis</cell>
-        <cell style="th2" align="end">#</cell>
-        <cell style="th3" align="start">Ecclesiastes</cell>
-        <cell style="th4" align="end">#</cell>
+        <cell style="tc1" align="start">Genesis</cell>
+        <cell style="tcr2" align="end">#</cell>
+        <cell style="tc3" align="start">Ecclesiastes</cell>
+        <cell style="tcr4" align="end">#</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Exodus</cell>
-        <cell style="th2" align="end">#</cell>
-        <cell style="th3" align="start">Song of Songs</cell>
-        <cell style="th4" align="end">#</cell>
+        <cell style="tc1" align="start">Exodus</cell>
+        <cell style="tcr2" align="end">#</cell>
+        <cell style="tc3" align="start">Song of Songs</cell>
+        <cell style="tcr4" align="end">#</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Leviticus</cell>
-        <cell style="th2" align="end">#</cell>
-        <cell style="th3" align="start">Isaiah</cell>
-        <cell style="th4" align="end">#</cell>
+        <cell style="tc1" align="start">Leviticus</cell>
+        <cell style="tcr2" align="end">#</cell>
+        <cell style="tc3" align="start">Isaiah</cell>
+        <cell style="tcr4" align="end">#</cell>
       </row>
       ...
     </table>
@@ -239,15 +239,15 @@ USX::
     <table>
       <row style="tr">
         <cell style="th1" align="start">Name</cell>
-        <cell style="th2" align="end">Page</cell>
+        <cell style="thr2" align="end">Page</cell>
         <cell style="th3" align="start">Name</cell>
-        <cell style="th4" align="end">Page</cell>
+        <cell style="thr4" align="end">Page</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Matthew</cell>
-        <cell style="th2" align="end">#</cell>
-        <cell style="th3" align="start">1 Timothy</cell>
-        <cell style="th4" align="end">#</cell>
+        <cell style="tc1" align="start">Matthew</cell>
+        <cell style="tcr2" align="end">#</cell>
+        <cell style="tc3" align="start">1 Timothy</cell>
+        <cell style="tcr4" align="end">#</cell>
       </row>
       ...
     </table>
@@ -288,25 +288,22 @@ USFM::
 ...
 \periph Table of Abbreviations
 \mt1 Alphabetical List of Biblical Books and Abbreviations
-\tr  \th1 Name \th2 Abbrev.  \thr3 Page
-\tr  \tc1 Acts \tc2 Ac \tcr3 #
-\tr  \tc1 Amos \tc2 Am \tcr3 #
-\tr  \tc1 1 Chronicles \tc2 1Ch \tcr3 #
-\tr  \tc1 2 Chronicles \tc2 2Ch \tcr3 #
-\tr  \tc1 Colossians \tc2 Col \tcr3 #
-\tr  \tc1 1 Corinthians \tc2 1Co \tcr3 #
-\tr  \tc1 2 Corinthians \tc2 2Co \tcr3 #
-\tr  \tc1 Daniel \tc2 Dn \tcr3 #
-\tr  \tc1 Deuteronomy \tc2 Dt \tcr3 #
-\tr  \tc1 Ecclesiastes \tc2 Ec \tcr3 #
-\tr  \tc1 Ephesians \tc2 Eph \tcr3 #
-\tr  \tc1 Esther \tc2 Es \tcr3 #
+\tr  \th1 Name \th2 Abbreviation
+\tr  \tc1 Acts \tc2 Ac
+\tr  \tc1 Amos \tc2 Am
+\tr  \tc1 1 Chronicles \tc2 1Ch
+\tr  \tc1 2 Chronicles \tc2 2Ch
+\tr  \tc1 Colossians \tc2 Col
+\tr  \tc1 1 Corinthians \tc2 1Co
+\tr  \tc1 2 Corinthians \tc2 2Co
+\tr  \tc1 Daniel \tc2 Dn
 ...
 \s1 Other Abbreviations
-\tr  \tc1 Circa (around) \tc2 c \tc3 #
-\tr  \tc1 Old Testament \tc2 OT \tc3 #
-\tr  \tc1 New Testament \tc2 NT \tc3 #
-\tr  \tc1 Septuagint \tc2 LXX \tc3 #
+\tr  \th1 Name \th2 Abbreviation
+\tr  \tc1 Circa (around) \tc2 c
+\tr  \tc1 Old Testament \tc2 OT
+\tr  \tc1 New Testament \tc2 NT
+\tr  \tc1 Septuagint \tc2 LXX
 ----
 USX::
 +
@@ -320,37 +317,63 @@ USX::
     <table>
       <row style="tr">
         <cell style="th1" align="start">Name</cell>
-        <cell style="th2" align="start">Abbrev.</cell>
-        <cell style="th3" align="end">Page</cell>
+        <cell style="th2" align="start">Abbreviation</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Acts</cell>
-        <cell style="th2" align="start">Ac</cell>
-        <cell style="th3" align="end">#</cell>
+        <cell style="tc1" align="start">Acts</cell>
+        <cell style="tc2" align="start">Ac</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Amos</cell>
-        <cell style="th2" align="start">Am</cell>
-        <cell style="th3" align="end">#</cell>
+        <cell style="tc1" align="start">Amos</cell>
+        <cell style="tc2" align="start">Am</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">1 Chronicles</cell>
+        <cell style="tc2" align="start">1Ch</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">2 Chronicles</cell>
+        <cell style="tc2" align="start">2Ch</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Colossians</cell>
+        <cell style="tc2" align="start">Col</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">1 Corinthians</cell>
+        <cell style="tc2" align="start">1Co</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">2 Corinthians</cell>
+        <cell style="tc2" align="start">2Co</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Daniel</cell>
+        <cell style="tc2" align="start">Dan</cell>
       </row>
       ...
     </table>
     <para style="s1">Other Abbreviations</para>
     <table>
       <row style="tr">
-        <cell style="th1" align="start">Term</cell>
+        <cell style="th1" align="start">Name</cell>
         <cell style="th2" align="start">Abbrev.</cell>
-        <cell style="th3" align="end">Page</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Circa (around)</cell>
-        <cell style="th2" align="start">c</cell>
-        <cell style="th3" align="end">#</cell>
+        <cell style="tc1" align="start">Circa (around)</cell>
+        <cell style="tc2" align="start">c</cell>
       </row>
       <row style="tr">
-        <cell style="th1" align="start">Old Testament</cell>
-        <cell style="th2" align="start">OT</cell>
-        <cell style="th3" align="end">#</cell>
+        <cell style="tc1" align="start">Old Testament</cell>
+        <cell style="tc2" align="start">OT</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">New Testament</cell>
+        <cell style="tc2" align="start">NT</cell>
+      </row>
+      <row style="tr">
+        <cell style="tc1" align="start">Septuagint</cell>
+        <cell style="tc2" align="start">LXX</cell>
       </row>
       ...
     </table>

@@ -95,15 +95,15 @@ USX::
       <table>
         <row style="tr">
           <cell style="th1" align="start">Name</cell>
-          <cell style="th2" align="start">Page</cell>
+          <cell style="thr2" align="start">Page</cell>
           <cell style="th3" align="start">Name</cell>
-          <cell style="th3" align="start">Page</cell>
+          <cell style="thr4" align="start">Page</cell>
         </row>
         <row style="tr">
-          <cell style="th1" align="start">Genesis</cell>
-          <cell style="th2" align="start">#</cell>
-          <cell style="th3" align="start">Ecclesiastes</cell>
-          <cell style="th3" align="start">#</cell>
+          <cell style="tc1" align="start">Genesis</cell>
+          <cell style="tcr2" align="cstart">#</cell>
+          <cell style="tc3" align="start">Ecclesiastes</cell>
+          <cell style="tcr4" align="start">#</cell>
         </row>
         ...
       </table>
