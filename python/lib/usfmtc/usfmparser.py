@@ -5,8 +5,14 @@ import xml.etree.ElementTree as et
 from usfmtc.extension import SFMFile
 from collections import UserDict, UserString
 
+
+class Pos:
+    def __init__(self, l, c):
+        self.l = l
+        self.c = c
+
 class Tag(str):
-    def __new__(cls, s):
+    def __new__(cls, s, l=0, c=0):
         isend = False
         isplus = False
         if s.startswith("+"):
@@ -23,7 +29,7 @@ class Tag(str):
     def __init__(self, s, l=0, c=0):
         self.isplus = getattr(self, 'isplus', False)
         self.isend = getattr(self, 'isend', False)
-        self.pos = (l, c)
+        self.pos = Pos(l, c)
 
     def __repr__(self):
         return "Tag("+str(self)+")"
@@ -43,12 +49,12 @@ class Tag(str):
 class AttribText(UserString):
     def __init__(self, s, l=0, c=0):
         super().__init__(s)
-        self.pos = (l, c)
+        self.pos = Pos(l, c)
     pass
 
 class OptBreak:
     def __init__(self, l=0, c=0):
-        self.pos = (l, c)
+        self.pos = Pos(l, c)
 
     def __repr__(self):
         return "OptBreak(" + str(self) + ")"
@@ -58,7 +64,7 @@ class OptBreak:
 class String(UserString):
     def __init__(self, s, l=0, c=0):
         super().__init__(s)
-        self.pos = (l, c)
+        self.pos = Pos(l, c)
 
     def __add__(self, s):
         return String(str(self) + s)
@@ -68,7 +74,7 @@ class String(UserString):
 class Attribs(UserDict):
     def __init__(self, l=0, c=0):
         super().__init__()
-        self.pos = (l, c)
+        self.pos = Pos(l, c)
 
 class Lexer:
 
@@ -113,7 +119,7 @@ class Lexer:
                     curri = m.end() + 1
                     continue
                 else:
-                    res = Tag(t.group(0))
+                    res = Tag(t.group(0), l=self.lindex, c=curri-self.lpos)
                     curri += t.end()
                     break
             elif n == '|':
@@ -179,7 +185,7 @@ class Grammar:
         "versepara": "cls nb pc pi1 pi2 pi3 pi po pr pmo pmc pmr pm ph1 ph2 ph3 ph p q1 q2 q3 q4 qc qr qm1 qm2 qm3 qm qd q b d mi1 mi2 mi3 mi4 mi m",
     }
 
-    marker_categories = {t:k for k, v in category_markers.items() for t in v.split(' ')}
+    marker_categories = {t:k for k, v in category_markers.items() for t in v.split()}
 
     attribmap = { 'jmp' : 'href', 'k' : 'key', 'qt-s': 'who', 'qt1-s': 'who', 'qt2-s': 'who',
         'qt3-s': 'who', 'qt4-s': 'who', 'qt5-s': 'who', 'rb': 'gloss', 't-s': 'sid', 'ts-s': 'sid',
@@ -211,13 +217,13 @@ def isfirstText(e):
     return True
 
 class Node:
-    def __init__(self, parser, usxtag, tag, ispara=False, notag=False):
+    def __init__(self, parser, usxtag, tag, ispara=False, notag=False, pos=None):
         self.parser = parser
         self.tag = tag
         self.ispara = ispara
         parent = parser.stack[-1] if len(parser.stack) else None
         self.element = parser.factory(usxtag, {} if notag or tag is None else {"style": tag},
-                    parent=getattr(parent, 'element', None))
+                    parent=getattr(parent, 'element', None), pos=pos)
         if parent:
             parent.addNodeElement(self.element)
         self.attribnodes = []
@@ -227,7 +233,7 @@ class Node:
 
     def appendElement(self, child):
         if isinstance(child, OptBreak):
-            c = self.parser.factory("optbreak", {}, parent=self.element)
+            c = self.parser.factory("optbreak", {}, parent=self.element, pos=child.pos)
             self.element.append(c)
         self.clearAttribNodes()
 
@@ -297,11 +303,12 @@ class USXNode(Node):
         self.element.set('version', str(t).strip())
 
 class AttribNode(Node):
-    def __init__(self, parser, parent, tag):
+    def __init__(self, parser, parent, tag, pos=None):
         self.parser = parser
         self.parent = parent
         self.parent.addAttribNode(self)
         self.tag = tag
+        self.pos = pos
         self.attribnodes = []
 
     def addNodeElement(self, e):
@@ -313,8 +320,8 @@ class AttribNode(Node):
         self.parent.element.set(attrib, str(t).strip())
 
 class NumberNode(Node):
-    def __init__(self, parser, usxtag, tag, ispara=False):
-        super().__init__(parser, usxtag, tag, ispara=ispara)
+    def __init__(self, parser, usxtag, tag, ispara=False, pos=None):
+        super().__init__(parser, usxtag, tag, ispara=ispara, pos=pos)
         self.hasarg = False
 
     def appendText(self, t):
@@ -327,7 +334,7 @@ class NumberNode(Node):
         if len(b) > 1 and b[1].strip():
             self.parser.removeTag(self.tag)
             if self.ispara:
-                self.parser.addNode(Node(self.parser, 'para', 'p'))
+                self.parser.addNode(Node(self.parser, 'para', 'p'i, pos=self.element.pos))
             self.parser.stack[-1].appendText(b[1])
 
     def addNodeElement(self, e):
@@ -335,8 +342,8 @@ class NumberNode(Node):
         self.parser.stack[-1].addNodeElement(e)
 
 class NoteNode(Node):
-    def __init__(self, parser, usxtag, tag):
-        super().__init__(parser, usxtag, tag)
+    def __init__(self, parser, usxtag, tag, pos=None):
+        super().__init__(parser, usxtag, tag, pos=pos)
         self.hascaller = False
 
     def appendText(self, t):
@@ -384,7 +391,10 @@ class USFMParser:
 
     def __init__(self, txt, factory=None, grammar=None):
         if factory is None:
-            factory = et.Element
+            makeel(tag, attrib, **extras):
+                attrib.update({" "+k:v for k, v in extras.items()})
+                return et.Element(tag, attrib)
+            factory = makeel
         if grammar is None:
             grammar = Grammar()
         self.factory = factory
@@ -467,31 +477,31 @@ class USFMParser:
         if tag.isend:
             return self.removeTag(str(tag))
         elif self.stack[-1].tag == "c":
-            parent = AttribNode(self, self.stack[-1], str(tag))
+            parent = AttribNode(self, self.stack[-1], str(tag), pos=tag.pos)
         else:
-            parent = Node(self, 'para', str(tag), ispara=True)
+            parent = Node(self, 'para', str(tag), ispara=True, pos=tag.pos)
         self.stack.append(parent)
         return parent
 
     def _esb(self, tag):
         self.removeType(paratypes, paratags)
-        return self.addNode(Node(self, "sidebar", str(tag)))
+        return self.addNode(Node(self, "sidebar", str(tag), pos=tag.pos))
 
     def _esbe(self, tag):
         return self.removeTag("esb")
 
     def _periph(self, tag):
         self.removeTag(str(tag))
-        return self.addNode(PeriphNode(self, "periph", str(tag), notag=True))
+        return self.addNode(PeriphNode(self, "periph", str(tag), notag=True, pos=tag.pos))
 
     def _ref(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
-        return self.addNode(Node(self, 'ref', tag.basestr(), notag=True))
+        return self.addNode(Node(self, 'ref', tag.basestr(), notag=True, pos=tag.pos))
 
     def _rem(self, tag):
         self.removeType(paratypes, paratags)
-        res = self.addNode(Node(self, 'para', str(tag), ispara=True))
+        res = self.addNode(Node(self, 'para', str(tag), ispara=True, pos=tag.pos))
         self.lexer.readLine()
         return res
 
@@ -499,23 +509,23 @@ class USFMParser:
         self.removeTag('tr')
         if not len(self.stack) or self.stack[-1].element.tag != "table":
             self.removeType(paratypes,)
-            self.addNode(Node(self, 'table', ' table', notag=True))
-        return self.addNode(Node(self, 'row', 'tr'))
+            self.addNode(Node(self, 'table', ' table', notag=True, pos=tag.pos))
+        return self.addNode(Node(self, 'row', 'tr', pos=tag.pos))
 
     def _v(self, tag):
         self.removeTag('v')
         if len(self.stack) and self.stack[-1].tag == "c":
             self.removeTag('c')
-            self.addNode(Node(self, 'para', 'p'))
-        return self.addNode(NumberNode(self, "verse", str(tag)))
+            self.addNode(Node(self, 'para', 'p', pos=tag.pos))
+        return self.addNode(NumberNode(self, "verse", str(tag), pos=tag.pos))
 
     def _vp(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
         elif self.stack[-1].tag == "v":
-            parent = AttribNode(self, self.stack[-1], str(tag))
+            parent = AttribNode(self, self.stack[-1], str(tag), pos=tag.pos)
         else:
-            parent = Node(self, 'para', tag.basestr())
+            parent = Node(self, 'para', tag.basestr(), pos=tag.pos)
         self.stack.append(parent)
         return parent
 
@@ -523,43 +533,43 @@ class USFMParser:
         if self.grammar.marker_categories.get(self.stack[-1].tag, "") == "crossreferencechar":
             res = self.removeType('crossreferencechar')
         if not tag.isend:
-            res = self.addNode(Node(self, 'char', tag.basestr()))
+            res = self.addNode(Node(self, 'char', tag.basestr(), pos=tag.pos))
         return res
 
     def attrib(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
         else:
-            parent = AttribNode(self, self.stack[-1], str(tag))
+            parent = AttribNode(self, self.stack[-1], str(tag), pos=tag.pos)
         self.stack.append(parent)
         return parent
 
     def cell(self, tag):
         self.removeType('cell')
         if not tag.isend:
-            return self.addNode(Node(self, 'cell', str(tag)))
+            return self.addNode(Node(self, 'cell', str(tag), pos=tag.pos))
         return self.parent
 
     def crossreference(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
-        return self.addNode(NoteNode(self, 'note', str(tag)))
+        return self.addNode(NoteNode(self, 'note', str(tag), pos=tag.pos))
 
     def crossreferencechar(self, tag):
         res = self.removeType('crossreferencechar')
         if not tag.isend:
-            res = self.addNode(Node(self, 'char', tag.basestr()))
+            res = self.addNode(Node(self, 'char', tag.basestr(), pos=tag.pos))
         return res
 
     def footnote(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
-        return self.addNode(NoteNode(self, 'note', str(tag)))
+        return self.addNode(NoteNode(self, 'note', str(tag), pos=tag.pos))
 
     def footnotechar(self, tag):
         res = self.removeType('footnotechar')
         if not tag.isend:
-            res = self.addNode(Node(self, 'char', tag.basestr()))
+            res = self.addNode(Node(self, 'char', tag.basestr(), pos=tag.pos))
         return res
 
     def ident(self, tag):
@@ -570,10 +580,10 @@ class USFMParser:
     def milestone(self, tag):
         if tag.isend:
             return self.removeType('milestone')
-        return self.addNode(Node(self, 'ms', tag.basestr()))
+        return self.addNode(Node(self, 'ms', tag.basestr(), pos=tag.pos))
 
     def unknown(self, tag):
-        self.addNode(Node(self, 'ms', str(tag)))
+        self.addNode(Node(self, 'ms', str(tag), pos=tag.pos))
         res = self.removeTag(tag)
         return res
 

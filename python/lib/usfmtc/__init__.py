@@ -129,7 +129,9 @@ class USX:
     @classmethod
     def fromUsfm(cls, src, grammar, altparser=True, elfactory=None, timeout=1e7):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
-            Raise usfmtc.parser.NoParseError on error. """
+            Raise usfmtc.parser.NoParseError on error.
+            elfactory must take parent and pos named parameters not as attributes
+        """
         data = _readsrc(src)
 
         if altparser:
@@ -333,9 +335,9 @@ def main(hookcli=None, hookusx=None):
     for infile in infiles:
         outfile = None
         if args.outfile is None:
-            outfile = _makeoutfile(infile, args.format)
+            outfile = _makeoutfile(infile, args.outformat)
         elif os.path.isdir(args.outfile):
-            outf = _makeoutfile(infile, args.format)
+            outf = _makeoutfile(infile, args.outformat)
             if outf is None:
                 doerror(f"invalid output format {args.format} in {args.outfile}")
             outfile = os.path.join(args.outfile, os.path.basename(outf))

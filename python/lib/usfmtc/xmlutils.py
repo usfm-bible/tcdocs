@@ -3,12 +3,13 @@ import re
 import xml.etree.ElementTree as et
 
 class ParentElement(et.Element):
-    def __init__(self, tag, attrib=None, parent=None):
+    def __init__(self, tag, attrib=None, parent=None, pos=None):
         et.Element.__init__(self, tag, attrib)
         self.parent = parent
+        self.pos = pos
 
-    def makeelement(self, tag, attrib):
-        return self.__class__(tag, attrib, parent=self)
+    def makeelement(self, tag, attrib, pos=pos):
+        return self.__class__(tag, attrib, parent=self, pos=pos or self.pos)
 
     def __str__(self):
         return "{}[{}]".format(self.tag, " ".join('@{}="{}"'.format(k, v) for k, v in self.attrib.items()))
@@ -18,19 +19,24 @@ class ParentElement(et.Element):
         return "{}/{}".format(p, str(self))
 
     def _getindex(self):
+        ''' Finds my index in my parent, returning both '''
         if self.parent is None:
             return -1, None
         return list(self.parent).index(self), self.parent
 
     def getprevious(self):
+        ''' Returns the previous element with the same parent, if any '''
         i, parent = self._getindex()
         return parent[i-1] if parent is not None and i > 0 else None
 
     def getnext(self):
+        ''' Returns the next element with the same parent, if any '''
         i, parent = self._getindex()
         return parent[i+1] if parent is not None and i < len(parent) - 1 else None
         
     def getnext_sibling(self):
+        ''' Returns the next element, while going up and down the hierarchy.
+            Notice that any text at the start of an element stops any hierarchy descent '''
         i, parent = self._getindex()
         if i < len(parent) - 1:
             return parent[i+1]
@@ -41,6 +47,8 @@ class ParentElement(et.Element):
         return parent
 
     def getprevious_sibling(self):
+        ''' Returns the previous element, while going up and down the hierarchy
+            Notice that any text after an element stops any hierarchy descent '''
         i, parent = self._getindex()
         if i > 0:
             return parent[i-1]
@@ -51,11 +59,13 @@ class ParentElement(et.Element):
         return parent
         
     def addprevious(self, el):
+        ''' Inserts el before the current element in the same parent '''
         i, parent = self._getindex()
         if parent is not None:
             parent.insert(i, el)
 
     def getparent(self):
+        ''' Returns the parent '''
         return self.parent
 
 
