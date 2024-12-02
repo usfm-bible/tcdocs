@@ -294,6 +294,7 @@ PeripheralDividedBookIdentification.book.code.enum = (
      | "BAK" # Back Matter
      | "OTH" # Other Matter
      | "INT" # Introduction }
+     | [usfm:match[]] xsd:string { pattern = "XX[A-Z0-9]" }
      )
 
 PeripheralDivision =
