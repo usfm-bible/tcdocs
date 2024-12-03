@@ -3,6 +3,7 @@ PYTHON ?= python
 CHUNKSIZE ?= 0
 JOBS ?= 0
 MILESTONES="ms=zaln-s,zaln-e,k-s,k-e,zms,ts-s,ts-e"
+EXTRAARGS ?= -V
 
 unknown:
 	@- echo "There are various useful targets:"

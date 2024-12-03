@@ -58,15 +58,15 @@ def _usfmGrammar(rdoc, backend=None, start=None):
 
 def usfmGrammar(gsrc, extensions=[], altparser=True, backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
-    if len(extensions) or not altparser:
-        rdoc = _grammarDoc(gsrc, extensions)
     if altparser:
+        rdoc = _grammarDoc(gsrc, extensions)
+        return _usfmGrammar(rdoc, backend, start)
+    else:
         res = Grammar()
         if len(extensions):
             for e in extensions:
                 res.readmrkrs(e)
         return res
-    return _usfmGrammar(rdoc, backend, start)
 
 
 _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
@@ -134,7 +134,7 @@ class USX:
         """
         data = _readsrc(src)
 
-        if altparser:
+        if not altparser:
             p = USFMParser(data, factory=elfactory or ParentElement, grammar=grammar)
             xml = p.parse()
         else:
@@ -183,7 +183,7 @@ class USX:
     def outUsfm(self, grammar, file=None, altparser=True, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         el = messup(self.xml)
-        if altparser:
+        if not altparser:
             return self._outwrite(file, el, fn=usx2usfm)
         parser = USXConverter(grammar.getroot(), **kw)
         res = parser.parse(el)
@@ -219,7 +219,7 @@ class USX:
         elif outtype == "usj":
             self.outUsj(outfpath)
         elif outtype == "usfm":
-            if grammar is None and not altparser:
+            if grammar is None and altparser:
                 if gramfile is None:
                     for a in ([], ['..', '..', '..', 'grammar']):
                         gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
@@ -265,7 +265,7 @@ def main(hookcli=None, hookusx=None):
     parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
     parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
     parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
-    parser.add_argument("--qusfm",action="store_true",help="Use quick nonvalidating USFM parser")
+    parser.add_argument("-V","--validate",action="store_true",help="Use validating parsers for USFM")
     parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
     parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
     parser.add_argument("-q","--quiet",action="store_true",help="Don't say much")
@@ -328,7 +328,7 @@ def main(hookcli=None, hookusx=None):
         if args.informat.startswith("usfm"):
             args.extfiles.append(os.path.join(os.path.dirname(infiles[0]), "markers.ext"))
             exts = [x for x in args.extfiles if os.path.exists(x)]
-            ingrammar = usfmGrammar(args.grammar, altparser=args.qusfm, extensions=exts)
+            ingrammar = usfmGrammar(args.grammar, altparser=args.validate, extensions=exts)
         if args.outformat and args.outformat.startswith("usfm"):
             outgrammar = _grammarDoc(args.grammar)
 
@@ -353,7 +353,7 @@ def main(hookcli=None, hookusx=None):
         if not args.quiet:
             print(f"{infile} -> {outfile}" if outfile else f"{infile}")
         try:
-            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar, altparser=args.qusfm)
+            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar, altparser=args.validate)
         except NoParseError as e:
             doerror(f"Failed to parse {infile}: {e}", False)
 
@@ -375,7 +375,7 @@ def main(hookcli=None, hookusx=None):
         if not args.canonical:
             usxdoc.canonicalise()
 
-        usxdoc.saveAs(outfile, outformat=args.outformat, addesids=args.esids, grammar=outgrammar, altparser=args.qusfm)
+        usxdoc.saveAs(outfile, outformat=args.outformat, addesids=args.esids, grammar=outgrammar, altparser=args.validate)
 
 if __name__ == "__main__":
     main()
