@@ -491,22 +491,7 @@ Introduction.para.style.enum = (
     |   ## Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
       "iex"
     |   ## For a comment or note inserted for liturgical use
-      "lit"
-    )
-
-IntroList = 
-    element para {
-        [usfm:grouping="12" usfm:ptag[]] attribute style { IntroList.para.style.enum },
-        ([usfm:text[]] text | CharEmbed | IntroChar | ListChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
-    }
-
-IntroList.para.style.enum = (
-        ## A list entry, level 1 (if multiple levels)
-      "ili1"
-    |   ## A list entry, level 2
-      "ili2"
-    |   ## A list entry, level 1 (if single level)
-      "ili"
+      "ilit"
     )
 
 IntroList = 
@@ -758,15 +743,6 @@ List.para.style.enum = (
     |   ## List footer (introductory remark)
       "lf"
     )
-
-Remark = 
-    element para {
-        [usfm:ptag[]]
-        attribute stype { "rem" },
-        [usfm:seq="true"]([usfm:match[match="/[^\\\n\r]*/"]]
-            (text)? # Brief description of the project (optional)
-        >> usfm:match[match="NL" matchout="'\n'" dump="true"])
-    }
 
 Table = 
     element table {

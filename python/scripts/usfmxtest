@@ -115,7 +115,7 @@ parser.add_argument("-P","--print",action="store_true",help="Print generated xml
 parser.add_argument("-q","--quiet",action="store_true",help="Don't output error reports, just stats")
 parser.add_argument("-o","--output",help="Output error reports to this file")
 parser.add_argument("-E","--extfiles",action='append',default=[],help='markers.ext files to include')
-parser.add_argument("-V",,"--validate",action="store_true",help="Use validating parsers for USFM")
+parser.add_argument("-V","--validate",action="store_true",help="Use validating parsers for USFM")
 parser.add_argument("-j","--jobs",type=int,default=-1,help="Parallel jobs")
 parser.add_argument("-x","--exclude",action="append",default=[],help="Exclude test if tag present")
 parser.add_argument("-i","--include",action="append",default=[],help="Override excludes to include test if tag present")

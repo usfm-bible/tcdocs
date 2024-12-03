@@ -8,7 +8,7 @@ class ParentElement(et.Element):
         self.parent = parent
         self.pos = pos
 
-    def makeelement(self, tag, attrib, pos=pos):
+    def makeelement(self, tag, attrib, pos=None):
         return self.__class__(tag, attrib, parent=self, pos=pos or self.pos)
 
     def __str__(self):

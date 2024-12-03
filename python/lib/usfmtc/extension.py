@@ -58,11 +58,11 @@ class Extensions(SFMFile):
 
     def applyto(self, rdoc, factory=et):
         res = False     # nothing added
-        allcats = set([x.get('category', None) for x in self.markers.values()])
+        allcats = set([x.get('category', "").split()[0] for x in self.markers.values()])
         for a in allcats:
             if a not in categories:
                 continue
-            ms = [k for k, v in self.markers.items() if v.get('category', None) == a]
+            ms = [k for k, v in self.markers.items() if a in v.get('category', "").split()]
             enum = categories[a]+".style.enum"
             e = rdoc.find('./{0}define[@name="{1}"]/{0}choice'.format(relaxns, enum))
             allmks = set([v.text for v in e.findall(f'./{relaxns}value')])

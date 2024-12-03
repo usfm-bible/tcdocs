@@ -334,7 +334,7 @@ class NumberNode(Node):
         if len(b) > 1 and b[1].strip():
             self.parser.removeTag(self.tag)
             if self.ispara:
-                self.parser.addNode(Node(self.parser, 'para', 'p'i, pos=self.element.pos))
+                self.parser.addNode(Node(self.parser, 'para', 'p', pos=self.element.pos))
             self.parser.stack[-1].appendText(b[1])
 
     def addNodeElement(self, e):
@@ -391,7 +391,7 @@ class USFMParser:
 
     def __init__(self, txt, factory=None, grammar=None):
         if factory is None:
-            makeel(tag, attrib, **extras):
+            def makeel(tag, attrib, **extras):
                 attrib.update({" "+k:v for k, v in extras.items()})
                 return et.Element(tag, attrib)
             factory = makeel
