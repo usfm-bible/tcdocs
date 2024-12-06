@@ -1,0 +1,3 @@
+= Content Category
+
+include::../nav.adoc[tag=nav-topcat]
