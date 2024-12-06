@@ -1,0 +1,4 @@
+* xref:index.adoc[]
+// tag::nav-topcat[]
+** xref:cat.adoc[cat - Content Category]
+// end::nav-topcat[]
