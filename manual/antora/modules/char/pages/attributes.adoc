@@ -45,9 +45,9 @@ Nearly all USX elements contain a required `style` attribute. For xref:para:inde
 
 == Default Attribute
 
-*In USFM*, when content is supplied in the position of an attribute, but without an explicit attribute name, the specification defines a single default. This allows a commonly used attribute (the default) to be added with as little additional markup in the text as possible.
+*In USFM*, when content is supplied in the position of an attribute, but without an explicit attribute name, the specification defines a single default. This allows a commonly used attribute (the default) to be added with as little additional markup as possible.
 
-The concept of a "default attribute" is only valid in USFM. *In USX*, attributes always need to be expressed fully as `attribute="value"` together.
+The concept and syntax of a "default attribute" is only valid in USFM. *In USX*, attributes always need to be expressed fully as `attribute="value"` together.
 
 [tabs]
 ======
@@ -127,9 +127,9 @@ Pre-existing markers which formally provide attributes in USFM/USX 3 (or newer) 
 
 == User Defined Attributes
 
-Using the general syntax above, attributes may be added to any character markers beyond the formalized set in the current version of the USFM/USX specification. These will not be considered canonical, and software supporting USFM/USX is not required to process user-defined attributes.
+Using the general syntax above, attributes may be added to any character markers beyond the formally defined set in the current version of the USFM/USX specification. These will not be considered canonical, and there are no specific requirements defining how software supporting USFM/USX must process user-defined attributes.
 
-User defined attributes must begin with the prefix `+x-+`.
+User defined attributes should begin with the prefix `+x+` or `+z+`.
 
 [tabs]
 ======
