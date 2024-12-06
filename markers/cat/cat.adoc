@@ -1,0 +1,552 @@
+= cat
+:description: Note Category
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/cat/cat.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Note Category.
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\cat ++``#__category__#``++\cat*++``
+* *USX:* #__category__# is expressed as an attribute applied to a `[xref:note:footnote/index.adoc[Footnote]]`, `[xref:note:crossref/index.adoc[CrossReference]]`, `[xref:sbar:index.adoc[Sidebar]]` element. +
+``++<note caller="-" style="ef" ++``#__@category__#``++>++``#__content__#``++</note>++`` +
+``++<sidebar style="esb" ++``#__@category__#``++>++``#__content__#``++</sidebar>++``
+#category#::: A single category term, or a space separated list of categories. Each category is a single word (e.g. "people"), and may be single character (e.g. "1").
+Valid In:: `[xref:note:footnote/index.adoc[Footnote]]`, `[xref:note:crossref/index.adoc[CrossReference]]`, `[xref:sbar:index.adoc[Sidebar]]`
+// tag::spec[]
+Added:: 2.1
+// end::spec[]
+
+== Diagrams
+
+[tabs]
+======
+USFM::
++
+image::schema/cat_rail.svg[]
+USX::
++
+image::schema/cat_usx.svg[]
+======
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Category in extended footnotes - Matthew 1.2-11 (GNTUK Study Bible)
+[source#src-usfm-cat_1,usfm,highlight=9,11,13]
+----
+\id MAT
+\c 1
+\p
+\v 1 This is the list of the ancestors of Jesus Christ, a descendant of David, 
+who was a descendant of Abraham.
+\p
+\v 2-6a From Abraham to King David, the following ancestors are listed: Abraham,
+Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was Tamar
+\ef - \cat People\cat*\fr 1.2-6a: \fq Tamar: \ft Bore her twin sons out of wedlock
+(Gen 38.6-30).\ef*), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was 
+Rahab\ef - \cat People\cat*\fr 1.2-6a: \fq Rahab: \ft A prostitute in Jericho 
+(Josh 2.1-21; 6.17-25; Jas 2.25).\ef*), Obed (his mother was Ruth\ef - 
+\cat People\cat*\fr 1.2-6a: \fq Ruth: \ft A Moabite (Ruth 1.4). Only outstanding 
+women were normally included in Jewish genealogical lists.\ef*), Jesse, and 
+King David.
+\p
+\v 6b-11 From David to the time when the people of Israel were taken into exile in
+Babylon\ef - \fr 1.6b-11: \fq exile in Babylon: \ft In 597 \sc BC\sc* King 
+Nebuchadnezzar of Babylonia conquered Jerusalem and took many of its inhabitants as 
+prisoners to his country (2 Kgs 24.10-16; 2 Chr 36.9-10).\ef*, the following 
+ancestors are listed: ...
+----
+USX::
++
+.Category in sidebars - Matthew 1.2-11 (GNTUK Study Bible)
+[source#src-usx-cat_1,xml,highlight=12,17,22]
+----
+<usx version="3.0">
+  <book code="MAT" style="id"/>
+  <chapter number="1" style="c" sid="MAT 1"/>
+  <para style="p">
+    <verse number="1" style="v" sid="MAT 1:1"/>This is the list of the 
+    ancestors of Jesus Christ, a descendant of David, who was a descendant 
+    of Abraham.<verse eid="MAT 2:1"/></para>
+  <para style="p">
+    <verse number="2-6a" style="v" sid="MAT 1:2-6a"/>From Abraham to King David,
+    the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his
+    brothers; then Perez and Zerah (their mother was 
+    Tamar<note caller="-" style="ef" category="People">
+      <char style="fr" closed="false">1.2-6a: </char>
+      <char style="fq" closed="false">Tamar: </char>
+      <char style="ft" closed="false">Bore her twin sons out of wedlock 
+      (Gen 38.6-30).</char></note>), Hezron, Ram, Amminadab, Nahshon, Salmon, 
+    Boaz (his mother was Rahab<note caller="-" style="ef" category="People">
+      <char style="fr" closed="false">1.2-6a: </char>
+      <char style="fq" closed="false">Rahab: </char>
+      <char style="ft" closed="false">A prostitute in Jericho (Josh 2.1-21;
+    6.17-25; Jas 2.25).</char></note>), Obed (his mother was 
+    Ruth<note caller="-" style="ef" category="People">
+      <char style="fr" closed="false">1.2-6a: </char>
+      <char style="fq" closed="false">Ruth: </char>
+      <char style="ft" closed="false">A Moabite (Ruth 1.4). Only outstanding
+    women were normally included in Jewish genealogical lists.</char></note>),
+    Jesse, and King David.<verse eid="MAT 1:2-6a"/></para>
+  <para style="p">
+    <verse number="6b-11" style="v" sid="MAT 1:6b-11"/>From David to the 
+    time when the people of Israel were taken into exile in 
+    Babylon<note caller="-" style="ef"><char style="fr" closed="false">1.6b-11: 
+    </char><char style="fq" closed="false">exile in Babylon: 
+    </char><char style="ft" closed="false">In 597 
+    </char><char style="sc">BC</char> King Nebuchadnezzar of Babylonia conquered 
+    Jerusalem and took many of its inhabitants as prisoners to his country (2 Kgs 
+    24.10-16; 2 Chr 36.9-10).</note>, the following ancestors are listed: 
+    ...<verse eid="MAT 1:6b-11"/></para>
+  <chapter eid="MAT 1"/>
+</usx>
+----
+USJ::
++
+.Category in sidebars - Matthew 1.2-11 (GNTUK Study Bible)
+[source#src-usj-cat_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1",
+      "sid": "MAT 1"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1",
+          "sid": "MAT 1:1"
+        },
+        "This is the list of the ancestors of Jesus Christ, a descendant of David, who was a descendant of Abraham."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2-6a",
+          "sid": "MAT 1:2-6a"
+        },
+        "From Abraham to King David, the following ancestors are listed: Abraham, Isaac, Jacob, Judah and his brothers; then Perez and Zerah (their mother was Tamar",
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "category": "People",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["1.2-6a: "]
+            },
+            {
+              "type": "char",
+              "marker": "fq",
+              "content": ["Tamar: "]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": ["Bore her twin sons out of wedlock (Gen 38.6-30)."]
+            }
+          ]
+        },
+        "), Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz (his mother was Rahab",
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "category": "People",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["1.2-6a: "]
+            },
+            {
+              "type": "char",
+              "marker": "fq",
+              "content": ["Rahab: "]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "A prostitute in Jericho (Josh 2.1-21; 6.17-25; Jas 2.25)."
+              ]
+            }
+          ]
+        },
+        "), Obed (his mother was Ruth",
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "category": "People",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["1.2-6a: "]
+            },
+            {
+              "type": "char",
+              "marker": "fq",
+              "content": ["Ruth: "]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "A Moabite (Ruth 1.4). Only outstanding women were normally included in Jewish genealogical lists."
+              ]
+            }
+          ]
+        },
+        "), Jesse, and King David."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "6b-11",
+          "sid": "MAT 1:6b-11"
+        },
+        "From David to the time when the people of Israel were taken into exile in Babylon",
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["1.6b-11: "]
+            },
+            {
+              "type": "char",
+              "marker": "fq",
+              "content": ["exile in Babylon: "]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": ["In 597 "]
+            },
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["BC"]
+            },
+            " King Nebuchadnezzar of Babylonia conquered Jerusalem and took many of its inhabitants as prisoners to his country (2 Kgs 24.10-16; 2 Chr 36.9-10)."
+          ]
+        },
+        ", the following ancestors are listed: ..."
+      ]
+    }
+  ]
+}
+----
+======
+
+image::cat/cat_1.jpg[Matthew 1.2-11 (GNTUK Study Bible),400]
+
+[tabs]
+======
+USFM::
++
+.Current Column - Matthew 2.4 (CEV Learning Bible)
+[source#src-usfm-cat_2,usfm,highlight=7]
+----
+\id MAT
+\c 2
+\p ...
+\v 4 \ef - \fr 2.4: \fk Chief Priests\ef*\ef - \fr 2.4: \fk Teachers of the 
+Law\ef*He called together all the chief priests and the teachers of the Law and 
+asked them, “Where will the Messiah be born?”
+\esb \cat Ideas\cat*
+\ms Dates in B.C. and A.D.
+\p The initials \sc b.c.\sc* have traditionally been an abbreviation for “Before 
+Christ.” If \bk Luke\bk*'s dating is correct, then Jesus was born at least four 
+years before the years known as \sc a.d.\sc* began. (\sc a.d.\sc* stands for the 
+Latin phrase “in the year of our Lord”). Christian dating was actually not 
+introduced until \sc a.d.\sc* 526 by a monk named Dionysius Exiguus. He was given 
+the job of creating a calendar for the feasts of the church. He fixed the birth 
+of Jesus in the Roman year 754, which was selected as the first year of the 
+Christian era beginning on January 1. Dionysius apparently misjudged Herod's 
+reign by about five years.
+\p The initials \sc b.c.\sc*e. (Before the Common Era) and c.e. (in the Common 
+Era) are sometimes used for the traditional \sc b.c.\sc* and \sc a.d.\sc*
+\esbe
+\p
+\v 5 \ef - \fr 2.5: \fk Prophet\ef*“In the town of Bethlehem in Judea,” they 
+answered. “For this is what the prophet wrote:
+----
+USX::
++
+.Current Column - Matthew 2.4 (CEV Learning Bible)
+[source#src-usx-cat_2,xml,highlight=13]
+----
+<usx version="3.0">
+  <book code="MAT" style="id"/>
+  <chapter number="2" style="c" sid="MAT 2"/>
+  <para style="p">... 
+  <verse number="4" style="v" sid="MAT 2:4"/><note caller="-" style="ef">
+      <char style="fr" closed="false">2.4: </char>
+      <char style="fk" closed="false">Chief Priests</char></note><note 
+      caller="-" style="ef">
+      <char style="fr" closed="false">2.4: </char>
+      <char style="fk" closed="false">Teachers of the Law</char></note>He
+    called together all the chief priests and the teachers of the Law and asked
+    them, “Where will the Messiah be born?”</para>
+  <sidebar style="esb" category="Ideas">
+    <para style="ms" vid="MAT 2:4">Dates in B.C. and A.D.</para>
+    <para style="p" vid="MAT 2:4">The initials <char style="sc">b.c.</char> have
+      traditionally been an abbreviation for “Before Christ.” If 
+      <char style="bk">Luke</char>'s dating is correct, then Jesus was born at 
+      least four years before the years known as <char style="sc">a.d.</char> 
+      began. (<char style="sc">a.d.</char> stands for the Latin phrase “in the 
+      year of our Lord”). Christian dating was actually not introduced until 
+      <char style="sc">a.d.</char> 526 by a monk named Dionysius Exiguus. He was
+      given the job of creating a calendar for the feasts of the church. He
+      fixed the birth of Jesus in the Roman year 754, which was selected as the
+      first year of the Christian era beginning on January 1. Dionysius
+      apparently misjudged Herod's reign by about five years.</para>
+    <para style="p" vid="MAT 2:4">The initials <char style="sc">b.c.</char>e.
+      (Before the Common Era) and c.e. (in the Common Era) are sometimes used
+      for the traditional <char style="sc">b.c.</char> and 
+      <char style="sc">a.d.</char><verse eid="MAT 2:4"/></para>
+  </sidebar>
+  <para style="p">
+    <verse number="5" style="v" sid="MAT 2:5"/>
+    <note caller="-" style="ef">
+      <char style="fr" closed="false">2.5: </char>
+      <char style="fk" closed="false">Prophet</char>
+    </note>“In the town of
+    Bethlehem in Judea,” they answered. “For this is what the prophet 
+    wrote:<verse eid="MAT 2:5"/></para>
+  <chapter eid="MAT 2"/>
+</usx>
+----
+USJ::
++
+.Current Column - Matthew 2.4 (CEV Learning Bible)
+[source#src-usj-cat_2,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": []
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "2",
+      "sid": "MAT 2"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        "... ",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "4",
+          "sid": "MAT 2:4"
+        },
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["2.4: "]
+            },
+            {
+              "type": "char",
+              "marker": "fk",
+              "content": ["Chief Priests"]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["2.4: "]
+            },
+            {
+              "type": "char",
+              "marker": "fk",
+              "content": ["Teachers of the Law"]
+            }
+          ]
+        },
+        "He called together all the chief priests and the teachers of the Law and asked them, “Where will the Messiah be born?”"
+      ]
+    },
+    {
+      "type": "sidebar",
+      "marker": "esb",
+      "category": "Ideas",
+      "content": [
+        {
+          "type": "para",
+          "marker": "ms",
+          "content": ["Dates in B.C. and A.D."]
+        },
+        {
+          "type": "para",
+          "marker": "p",
+          "content": [
+            "The initials ",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["b.c."]
+            },
+            " have traditionally been an abbreviation for “Before Christ.” If ",
+            {
+              "type": "char",
+              "marker": "bk",
+              "content": ["Luke"]
+            },
+            "'s dating is correct, then Jesus was born at least four years before the years known as ",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["a.d."]
+            },
+            " began. (",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["a.d."]
+            },
+            " stands for the Latin phrase “in the year of our Lord”). Christian dating was actually not introduced until ",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["a.d."]
+            },
+            " 526 by a monk named Dionysius Exiguus. He was given the job of creating a calendar for the feasts of the church. He fixed the birth of Jesus in the Roman year 754, which was selected as the first year of the Christian era beginning on January 1. Dionysius apparently misjudged Herod's reign by about five years."
+          ]
+        },
+        {
+          "type": "para",
+          "marker": "p",
+          "content": [
+            "The initials ",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["b.c."]
+            },
+            "e. (Before the Common Era) and c.e. (in the Common Era) are sometimes used for the traditional ",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["b.c."]
+            },
+            " and ",
+            {
+              "type": "char",
+              "marker": "sc",
+              "content": ["a.d."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "5",
+          "sid": "MAT 2:5"
+        },
+        {
+          "type": "note",
+          "marker": "ef",
+          "caller": "-",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": ["2.5: "]
+            },
+            {
+              "type": "char",
+              "marker": "fk",
+              "content": ["Prophet"]
+            }
+          ]
+        },
+        "“In the town of Bethlehem in Judea,” they answered. “For this is what the prophet wrote:"
+      ]
+    }
+  ]
+}
+----
+======
+
+image::cat/cat_2.jpg[Matthew 2.4 (CEV Learning Bible),550]
+
+== Properties
+
+TextType:: NoteText
+TextProperties:: publishable, vernacular, note
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
