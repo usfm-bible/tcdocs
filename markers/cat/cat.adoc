@@ -549,4 +549,4 @@ TextProperties:: publishable, vernacular, note
 
 // end::public[]
 
-== Discussion
+== Discussions
