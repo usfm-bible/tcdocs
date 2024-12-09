@@ -7,12 +7,13 @@ from collections import UserDict, UserString
 
 
 class Pos:
-    def __init__(self, l, c):
+    def __init__(self, l, c, **kw):
         self.l = l
         self.c = c
+        self.kw = kw
 
 class Tag(str):
-    def __new__(cls, s, l=0, c=0):
+    def __new__(cls, s, l=0, c=0, **kw):
         isend = False
         isplus = False
         if s.startswith("+"):
@@ -22,6 +23,7 @@ class Tag(str):
             isend = True
             s = s[:-1]
         res = super().__new__(cls, s)
+        res.kw = kw
         res.isplus = isplus
         res.isend = isend
         return res
@@ -47,14 +49,16 @@ class Tag(str):
         self.pos = pos
 
 class AttribText(UserString):
-    def __init__(self, s, l=0, c=0):
+    def __init__(self, s, l=0, c=0, **kw):
         super().__init__(s)
         self.pos = Pos(l, c)
+        self.kw = kw
     pass
 
 class OptBreak:
-    def __init__(self, l=0, c=0):
+    def __init__(self, l=0, c=0, **kw):
         self.pos = Pos(l, c)
+        self.kw = kw
 
     def __repr__(self):
         return "OptBreak(" + str(self) + ")"
@@ -62,9 +66,10 @@ class OptBreak:
         return "//"
 
 class String(UserString):
-    def __init__(self, s, l=0, c=0):
+    def __init__(self, s, l=0, c=0, **kw):
         super().__init__(s)
         self.pos = Pos(l, c)
+        self.kw = kw
 
     def __add__(self, s):
         return String(str(self) + s)
@@ -72,25 +77,28 @@ class String(UserString):
     pass
 
 class Attribs(UserDict):
-    def __init__(self, l=0, c=0):
+    def __init__(self, l=0, c=0, **kw):
         super().__init__()
         self.pos = Pos(l, c)
+        self.kw = kw
 
 class Lexer:
 
     tokenre = regex.compile(r'((?:[^\\|/]|\\[\\|\n]|/[^/])+)|([\\|\n]|//)')
-    tagre = regex.compile(r'(?:\+?[a-zA-Z_][a-zA-Z_0-9-]*)?\*?')
+    tagre = regex.compile(r'(?:\+?[a-zA-Z_][a-zA-Z_0-9^-]*)?\*?')
     attribsre = regex.compile(r'\s*([a-zA-Z_][a-zA-Z0-9_-]*)\s*=\s*"((?:\\"|[^"])*)"')
     textrunre = regex.compile(r'(?:[^\\]|\\[^a-zA-Z_*+])*')
 
-    def __init__(self, txt):
+    def __init__(self, txt, expanded=False):
         self.txt = txt
+        self.expanded = expanded
 
     def __iter__(self):
         self.nexts = []
         self.cindex = 0
         self.lindex = 0
         self.lpos = 0
+        self.currxpand = None
         return self
 
     def __next__(self):
@@ -119,7 +127,9 @@ class Lexer:
                     curri = m.end() + 1
                     continue
                 else:
-                    res = Tag(t.group(0), l=self.lindex, c=curri-self.lpos)
+                    tagname = self.processtag(t.group(0))
+                    extras = {"xp": self.currxpand} if self.expanded else {}
+                    res = Tag(tagname, l=self.lindex, c=curri-self.lpos, **extras)
                     curri += t.end()
                     break
             elif n == '|':
@@ -161,6 +171,13 @@ class Lexer:
             self.cindex = m.end()
             self.nexts.append(String(m.group(1)))
 
+    def processtag(self, t):
+        i = t.find("^")
+        if self.expanded and i >= 0:
+            self.currxpand = t[i+1:]
+            return t[:i]
+        return t
+
 class Grammar:
     category_markers = {
         "attrib": "cp vp usfm ca va cat",
@@ -184,8 +201,14 @@ class Grammar:
         "title": "mt1 mt2 mt3 mt4 mt",
         "versepara": "cls nb pc pi1 pi2 pi3 pi po pr pmo pmc pmr pm ph1 ph2 ph3 ph p q1 q2 q3 q4 qc qr qm1 qm2 qm3 qm qd q b d mi1 mi2 mi3 mi4 mi m",
     }
+    category_tags = {
+        "char": ("char", "crossreferencechar", "footnotechar", "introchar", "listchar"),
+        "para": ("header", "introduction", "list", "otherpara", "sectionpara", "title", "versepara"),
+        "ms": ("milestone", )
+    }
 
     marker_categories = {t:k for k, v in category_markers.items() for t in v.split()}
+    marker_tags = {t:k for k, v in category_tags.items() for t in v}
 
     attribmap = { 'jmp' : 'href', 'k' : 'key', 'qt-s': 'who', 'qt1-s': 'who', 'qt2-s': 'who',
         'qt3-s': 'who', 'qt4-s': 'who', 'qt5-s': 'who', 'rb': 'gloss', 't-s': 'sid', 'ts-s': 'sid',
@@ -217,13 +240,15 @@ def isfirstText(e):
     return True
 
 class Node:
-    def __init__(self, parser, usxtag, tag, ispara=False, notag=False, pos=None):
+    def __init__(self, parser, usxtag, tag, ispara=False, notag=False, pos=None, **kw):
         self.parser = parser
         self.tag = tag
         self.ispara = ispara
         parent = parser.stack[-1] if len(parser.stack) else None
-        self.element = parser.factory(usxtag, {} if notag or tag is None else {"style": tag},
-                    parent=getattr(parent, 'element', None), pos=pos)
+        attribs = kw
+        if not notag and tag is not None:
+            attribs['style'] = tag
+        self.element = parser.factory(usxtag, attribs, parent=getattr(parent, 'element', None), pos=pos)
         if parent:
             parent.addNodeElement(self.element)
         self.attribnodes = []
@@ -303,7 +328,7 @@ class USXNode(Node):
         self.element.set('version', str(t).strip())
 
 class AttribNode(Node):
-    def __init__(self, parser, parent, tag, pos=None):
+    def __init__(self, parser, parent, tag, pos=None, **kw):
         self.parser = parser
         self.parent = parent
         self.parent.addAttribNode(self)
@@ -320,8 +345,8 @@ class AttribNode(Node):
         self.parent.element.set(attrib, str(t).strip())
 
 class NumberNode(Node):
-    def __init__(self, parser, usxtag, tag, ispara=False, pos=None):
-        super().__init__(parser, usxtag, tag, ispara=ispara, pos=pos)
+    def __init__(self, parser, usxtag, tag, ispara=False, pos=None, **kw):
+        super().__init__(parser, usxtag, tag, ispara=ispara, pos=pos, **kw)
         self.hasarg = False
 
     def appendText(self, t):
@@ -342,8 +367,8 @@ class NumberNode(Node):
         self.parser.stack[-1].addNodeElement(e)
 
 class NoteNode(Node):
-    def __init__(self, parser, usxtag, tag, pos=None):
-        super().__init__(parser, usxtag, tag, pos=pos)
+    def __init__(self, parser, usxtag, tag, pos=None, **kw):
+        super().__init__(parser, usxtag, tag, pos=pos, **kw)
         self.hascaller = False
 
     def appendText(self, t):
@@ -365,31 +390,16 @@ class PeriphNode(Node):
         if t:
             self.element.set('alt', str(t).strip())
 
+class UnknownNode(Node):
+    pass
+
 
 paratypes = ('header', 'introduction', 'list', 'otherpara', 'sectionpara', 'versepara', 'title', 'chapter', 'ident')
 paratags = ('rem', ' table')
-def setupParser(cls):
-    # tag closed types
-    for a in (('introchar', 'char'), ('listchar', 'char'), ('char', 'char'), ('_fig', 'figure')):
-        def maketype(c, t):
-            def dotype(self, tag):
-                if tag.isend:
-                    return self.removeTag(str(tag))
-                return self.addNode(Node(self, t, tag.basestr()))
-            return dotype
-        setattr(cls, a[0], maketype(*a))
-    # implicit closed paras
-    for a in paratypes:
-        def dotype(self, tag):
-            self.removeType(paratypes, paratags)
-            return self.addNode(Node(self, 'para', str(tag), ispara=True))
-        if not hasattr(cls, a):
-            setattr(cls, a, dotype)
-
 
 class USFMParser:
 
-    def __init__(self, txt, factory=None, grammar=None):
+    def __init__(self, txt, factory=None, grammar=None, expanded=False, strict=False):
         if factory is None:
             def makeel(tag, attrib, **extras):
                 attrib.update({" "+k:v for k, v in extras.items()})
@@ -399,7 +409,32 @@ class USFMParser:
             grammar = Grammar()
         self.factory = factory
         self.grammar = grammar
-        self.lexer = Lexer(txt)
+        self._setup(expanded=expanded)
+        self.lexer = Lexer(txt, expanded=expanded)
+
+    def _setup(s, expanded=False):
+        clsself = s.__class__
+        # tag closed types
+        for a in (('introchar', 'char'), ('listchar', 'char'), ('char', 'char'), ('_fig', 'figure')):
+            def maketype(c, t):
+                def dotype(self, tag):
+                    if tag.isend:
+                        return self.removeTag(str(tag))
+                    return self.addNode(Node(self, t, tag.basestr()))
+                return dotype
+            setattr(clsself, a[-1], maketype(*a))
+        # implicit closed paras
+        for a in paratypes:
+            if expanded:
+                def dotype(self, tag):
+                    self.removeType(paratypes, paratags)
+                    return self.addNode(Node(self, 'para', str(tag), ispara=True, xpand=tag.xp))
+            else:
+                def dotype(self, tag):
+                    self.removeType(paratypes, paratags)
+                    return self.addNode(Node(self, 'para', str(tag), ispara=True))
+            if not hasattr(clsself, a):
+                setattr(clsself, a, dotype)
 
     def parse(self):
         self.result = []
@@ -449,6 +484,8 @@ class USFMParser:
         while len(self.stack):
             curr = self.stack.pop()
             if curr.tag == tag:
+                if curr.element.tag == "unk":
+                    curr.element.tag = "char"
                 break
         else:
             self.stack = oldstack
@@ -460,12 +497,31 @@ class USFMParser:
         oldstack = self.stack[:]
         while len(self.stack):
             curr = self.stack.pop()
+            e = curr.element
+            if e.tag == "usx":
+                self.stack.append(curr)
+                break
             curr.close()
-            if curr is not None and (curr.tag in tags or self.grammar.marker_categories.get(curr.tag, None) in t):
+            cat = self.grammar.marker_categories.get(e.tag, None)
+            if e.tag == "unk":
+                e.tag = self.grammar.marker_tags.get(t[0], "para")
+                if e.tag == 'para' and e.parent is not None:
+                    parent = e.parent
+                    while parent is not None and parent.tag not in ("usx", "para"):
+                        parent = parent.parent
+                    if parent.tag != "usx":
+                        i, p = parent._getindex()
+                        if p is not None:
+                            e.parent.remove(e)
+                            p.insert(i+1, e)
+                            e.parent = p
+                            self.removeType(t, tags=tags)
+                break
+            if curr.tag in tags or cat in t:
                 break
         else:
             self.stack = oldstack
-        return self.stack[-1]
+        return self.stack[-1] if len(self.stack) else None
 
 #### Event methods
 
@@ -583,11 +639,18 @@ class USFMParser:
         return self.addNode(Node(self, 'ms', tag.basestr(), pos=tag.pos))
 
     def unknown(self, tag):
-        self.addNode(Node(self, 'ms', str(tag), pos=tag.pos))
-        res = self.removeTag(tag)
+        if strict:
+            if len(self.stack):
+                raise SyntaxError(f"Unknown tag {tag} in {self.stack[-1]}")
+            else:
+                raise SyntaxError(f"Unknown tag {tag}")
+            return None
+        if not tag.isend:
+            res = self.addNode(UnknownNode(self, 'unk', str(tag), pos=tag.pos))
+        else:
+            res = self.removeTag(str(tag))
+            res.tag = "char"
         return res
-
-setupParser(USFMParser)
 
 def main():
     import sys
