@@ -173,7 +173,7 @@ class USX:
             fn(file, dat)
         return True
 
-    def outUsx(self, file=None):
+    def outUsx(self, file=None, **kw):
         """ Output pretty XML USX. If file is None returns string """
         if self.xml is None:
             return None
@@ -192,16 +192,17 @@ class USX:
             return self._outwrite(file, dat)
         return False
 
-    def outUsj(self, file=None):
+    def outUsj(self, file=None, ensure_ascii=False, **kw):
         """ Output USJ from USX object. If file is None returns dict """
         res = usxtousj(self.xml)
         if file is None:
             return res
         else:
-            dat = json.dumps(res, indent=2)
+            dat = json.dumps(res, indent=2, ensure_ascii=ensure_ascii)
             self._outwrite(file, dat)
 
-    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None, gramfile=None, version=None, altparser=True):
+    def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None,
+                gramfile=None, version=None, altparser=True, **kw):
         """ Saves the document to a file in the appropriate format, either given
             or inferred from the filename extension. """
         if outformat is None:
@@ -215,9 +216,9 @@ class USX:
         if outtype == "usx":
             if addesids:
                 usxdoc.addesids()
-            self.outUsx(outfpath)
+            self.outUsx(outfpath, **kw)
         elif outtype == "usj":
-            self.outUsj(outfpath)
+            self.outUsj(outfpath, **kw)
         elif outtype == "usfm":
             if grammar is None and altparser:
                 if gramfile is None:
@@ -230,7 +231,7 @@ class USX:
                 outtype = "usfm"
                 if version is None:
                     version = "3.0"
-            self.outUsfm(grammar, outfpath, outversion=version, altparser=altparser)
+            self.outUsfm(grammar, outfpath, outversion=version, altparser=altparser, **kw)
 
     def canonicalise(self):
         canonicalise(self.getroot())
@@ -262,11 +263,14 @@ def main(hookcli=None, hookusx=None):
     parser.add_argument("-F","--outformat",help="Output format [usfm, usx, usj, usfm3.0]")
     parser.add_argument("-I","--informat",help="Input format [usfm, usx, usj]")
     parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
-    parser.add_argument("-e","--esids",action="store_true",help="Add esids, vids, sids, etc. to USX output")
+    parser.add_argument("-e","--esids",action="store_true",
+                        help="Add esids, vids, sids, etc. to USX output")
     parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
-    parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
+    parser.add_argument("-x","--extfiles",action="append",default=[],
+                        help="markers.ext files to include")
     parser.add_argument("-V","--validate",action="store_true",help="Use validating parsers for USFM")
     parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
+    parser.add_argument("-A","--ascii",action="store_true",help="Output as ASCII only in json")
     parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
     parser.add_argument("-q","--quiet",action="store_true",help="Don't say much")
     parser.add_argument("--nooutput",action="store_true",help="Don't output any data")
@@ -353,7 +357,8 @@ def main(hookcli=None, hookusx=None):
         if not args.quiet:
             print(f"{infile} -> {outfile}" if outfile else f"{infile}")
         try:
-            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar, altparser=args.validate)
+            usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar,
+                              altparser=args.validate)
         except NoParseError as e:
             doerror(f"Failed to parse {infile}: {e}", False)
 
@@ -375,7 +380,8 @@ def main(hookcli=None, hookusx=None):
         if not args.canonical:
             usxdoc.canonicalise()
 
-        usxdoc.saveAs(outfile, outformat=args.outformat, addesids=args.esids, grammar=outgrammar, altparser=args.validate)
+        usxdoc.saveAs(outfile, outformat=args.outformat, addesids=args.esids,
+                      grammar=outgrammar, altparser=args.validate, ensure_ascii=args.ascii)
 
 if __name__ == "__main__":
     main()
