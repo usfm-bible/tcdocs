@@ -97,15 +97,28 @@ usfm:alias [name="usfm:text" def="match" usfm:match[match="TEXT" after="TEXTEND"
 
 start = USX
 
-USX = ( Peripheral | Scripture )
+USX = ( Peripheral | PeripheralDivided | Scripture )
 
 Peripheral = (
     element usx {
+        PeripheralBookIdentification,
+
         [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\\usfm '" match="TEXTNWS"]]
         attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} }?,
         attribute xsi:noNamespaceSchemaLocation { text }?,
 
-        (PeripheralBook | PeripheralDividedBook)
+        PeripheralBook
+    })
+
+PeripheralDivided = (
+    element usx {
+        PeripheralDividedBookIdentification,
+
+        [usfm:match [before="/${Ws}\\usfm${HS}/" beforeout="'\\usfm '" match="TEXTNWS"]]
+        attribute version { xsd:string { minLength = "3" pattern = "\d+\.\d+(\.\d+)?"} }?,
+        attribute xsi:noNamespaceSchemaLocation { text }?,
+
+        PeripheralDividedBook
     })
 
 Scripture = (
@@ -129,7 +142,6 @@ Scripture = (
     })
 
 PeripheralBook = (
-    PeripheralBookIdentification,
     BookHeaders*,
     BookTitles+,
     BookIntroduction*,
@@ -137,7 +149,7 @@ PeripheralBook = (
     PeripheralContent+
     )
 
-PeripheralDividedBook = ( PeripheralDividedBookIdentification, (PeripheralDivision | PeripheralOther))
+PeripheralDividedBook = ( PeripheralDivision* | PeripheralOther)
 
 BookIdentification =
     element book {

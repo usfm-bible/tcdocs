@@ -4,10 +4,10 @@ import argparse, os, sys, logging, re, itertools
 from multiprocessing import Pool
 
 try:
-    from usfmtc import USX, usfmGrammar
+    from usfmtc import USX, usfmGrammar, _grammarDoc
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc import USX, usfmGrammar
+    from usfmtc import USX, usfmGrammar, _grammarDoc
 
 from usfmtc.parser import NoParseError
 from usfmtc.usxmodel import etCmp
@@ -162,10 +162,10 @@ else:
 if len(jobs) == 1:
     args.exclude = set()
 
-rdoc = et.parse(args.grammar)
+rdoc = etree.parse(args.grammar)
+usxdoc = _grammarDoc(rdoc, args.extfiles, factory=etree)
 sfmproc = usfmGrammar(rdoc, args.extfiles, altparser=args.validate, start=args.start)
-newdoc = etree.fromstring(et.tostring(rdoc.getroot(), encoding="utf-8", xml_declaration=True))
-usxrng = etree.RelaxNG(etree=newdoc)
+usxrng = etree.RelaxNG(etree=usxdoc)
 
 if args.jobs > -1 and args.jobs != 1 and len(jobs) > 1:
     if args.jobs == 0:

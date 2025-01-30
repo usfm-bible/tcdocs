@@ -1,9 +1,7 @@
 <usx version="3.0">
   <book code="GEN" style="id" />
   <para style="ide" />
-  <para style="rem" />
-  <para style="h" />
-  <para style="mt1" />
+  <para style="rem">\h\mt1</para>
   <chapter number="1" style="c" sid="GEN 1" />
   <para style="s1" />
   <para style="m">

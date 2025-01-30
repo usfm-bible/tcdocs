@@ -1,6 +1,7 @@
 
 import re
 import xml.etree.ElementTree as et
+from dataclasses import dataclass
 
 class ParentElement(et.Element):
     def __init__(self, tag, attrib=None, parent=None, pos=None):
@@ -143,7 +144,12 @@ def prettyxml(node, last=None, indent="", width=2):
 def isempty(s):
     if s is None:
         return True
-    if any(c not in " \t" for c in s):
+    if any(c not in " \t\n" for c in s):
         return False
     return True
 
+def hastext(self):
+    if self.head is not None:
+        return not isempty(self.head.tail)
+    else:
+        return not isempty(self.parent.text)

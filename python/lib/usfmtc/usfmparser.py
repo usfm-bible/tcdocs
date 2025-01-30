@@ -26,6 +26,7 @@ class Tag(str):
         res.kw = kw
         res.isplus = isplus
         res.isend = isend
+        res.pos = (l, c)
         return res
 
     def __init__(self, s, l=0, c=0):
@@ -225,7 +226,8 @@ class Grammar:
         sfm = SFMFile(fname)
         for k, v in sfm.markers.items():
             if 'category' in v:
-                self.marker_categories[k] = v['category'].lower()
+                b = v['category'].split()[0]
+                self.marker_categories[k] = b.lower()
             if 'defattrib' in v:
                 self.attribmap[k] = v['defattrib']
 
@@ -395,7 +397,7 @@ class UnknownNode(Node):
 
 
 paratypes = ('header', 'introduction', 'list', 'otherpara', 'sectionpara', 'versepara', 'title', 'chapter', 'ident')
-paratags = ('rem', ' table')
+paratags = ('rem', ' table', 'sidebar')
 
 class USFMParser:
 
@@ -411,6 +413,7 @@ class USFMParser:
         self.grammar = grammar
         self._setup(expanded=expanded)
         self.lexer = Lexer(txt, expanded=expanded)
+        self.strict = strict
 
     def _setup(s, expanded=False):
         clsself = s.__class__
@@ -422,7 +425,7 @@ class USFMParser:
                         return self.removeTag(str(tag))
                     return self.addNode(Node(self, t, tag.basestr()))
                 return dotype
-            setattr(clsself, a[-1], maketype(*a))
+            setattr(clsself, a[0], maketype(*a))
         # implicit closed paras
         for a in paratypes:
             if expanded:
@@ -484,7 +487,7 @@ class USFMParser:
         while len(self.stack):
             curr = self.stack.pop()
             if curr.tag == tag:
-                if curr.element.tag == "unk":
+                if getattr(curr, 'element', "") == "unk":
                     curr.element.tag = "char"
                 break
         else:
@@ -497,12 +500,16 @@ class USFMParser:
         oldstack = self.stack[:]
         while len(self.stack):
             curr = self.stack.pop()
-            e = curr.element
-            if e.tag == "usx":
-                self.stack.append(curr)
-                break
-            curr.close()
-            cat = self.grammar.marker_categories.get(e.tag, None)
+            if hasattr(curr, 'element'):
+                e = curr.element
+                if e.tag in ("usx", "periph") or e.tag in tags:
+                    self.stack.append(curr)
+                    break
+                curr.close()
+            else:
+                curr.close()
+                continue
+            cat = self.grammar.marker_categories.get(e.get("style", ""), None)
             if e.tag == "unk":
                 e.tag = self.grammar.marker_tags.get(t[0], "para")
                 if e.tag == 'para' and e.parent is not None:
@@ -517,7 +524,7 @@ class USFMParser:
                             e.parent = p
                             self.removeType(t, tags=tags)
                 break
-            if curr.tag in tags or cat in t:
+            elif e.tag in tags or cat in t:
                 break
         else:
             self.stack = oldstack
@@ -527,7 +534,7 @@ class USFMParser:
 
     def _c(self, tag):
         self.removeType(paratypes, paratags)
-        return self.addNode(NumberNode(self, "chapter", str(tag), ispara=True))
+        return self.addNode(NumberNode(self, "chapter", str(tag), ispara=True, pos=tag.pos))
 
     def _cp(self, tag):
         if tag.isend:
@@ -595,13 +602,12 @@ class USFMParser:
     def attrib(self, tag):
         if tag.isend:
             return self.removeTag(str(tag))
-        else:
-            parent = AttribNode(self, self.stack[-1], str(tag), pos=tag.pos)
+        parent = AttribNode(self, self.stack[-1], str(tag), pos=tag.pos)
         self.stack.append(parent)
         return parent
 
     def cell(self, tag):
-        self.removeType('cell')
+        self.removeType('cell', tags=["row"])
         if not tag.isend:
             return self.addNode(Node(self, 'cell', str(tag), pos=tag.pos))
         return self.parent
@@ -612,7 +618,7 @@ class USFMParser:
         return self.addNode(NoteNode(self, 'note', str(tag), pos=tag.pos))
 
     def crossreferencechar(self, tag):
-        res = self.removeType('crossreferencechar')
+        res = self.removeType('crossreferencechar', tags=["note"])
         if not tag.isend:
             res = self.addNode(Node(self, 'char', tag.basestr(), pos=tag.pos))
         return res
@@ -623,13 +629,13 @@ class USFMParser:
         return self.addNode(NoteNode(self, 'note', str(tag), pos=tag.pos))
 
     def footnotechar(self, tag):
-        res = self.removeType('footnotechar')
+        res = self.removeType('footnotechar', tags=["note"])
         if not tag.isend:
             res = self.addNode(Node(self, 'char', tag.basestr(), pos=tag.pos))
         return res
 
     def ident(self, tag):
-        parent = IdNode(self, "book", str(tag))
+        parent = IdNode(self, "book", str(tag), pos=tag.pos)
         self.lexer.readLine()
         return parent
 
@@ -639,7 +645,7 @@ class USFMParser:
         return self.addNode(Node(self, 'ms', tag.basestr(), pos=tag.pos))
 
     def unknown(self, tag):
-        if strict:
+        if self.strict:
             if len(self.stack):
                 raise SyntaxError(f"Unknown tag {tag} in {self.stack[-1]}")
             else:

@@ -3,6 +3,6 @@
         <description>Word and Character Markers. From examples in USFM documentation.
 		
 		Currently failing because of location of verse end for MAT 6:9</description>
-        <validated>pass</validated>
+        <validated>fail</validated>
         <tags></tags>
 </test-metadata>

@@ -2,6 +2,7 @@
 import re
 from dataclasses import dataclass
 from usfmtc.xmlutils import isempty
+from usfmtc.usfmparser import Grammar
 import xml.etree.ElementTree as et
 
 # This should be read from usx.rng
@@ -40,8 +41,11 @@ def _addvids(lastp, endp, base, v, endv, atend=False):
     if id(res) == id(endp) and base is not None:
         base.addprevious(endv)
     elif res.tag == "table":
+        lastr = res
         if len(res):
-            res[-1][-1].append(endv)
+            while len(lastr[-1]):
+                lastr = lastr[-1]
+        lastr.append(endv)
     else:
         res.append(endv)
     return res
@@ -104,6 +108,8 @@ escapes = {
 }
 
 def add_specials(t, node, parent, istext=False):
+    if t is None:
+        return t
     t = re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), "\\"+m.group(1)), t)
     if "~" in t:
         t = t.replace("~", "\u00A0")
@@ -124,18 +130,26 @@ alignments = {
     "c": "start", "cc": "centre", "cr": "end",
     "h": "start", "hc": "centre", "hr": "end"
 }
+_wssre = re.compile(r"^[ \t\n]+")
+_wsere = re.compile(r"[ \t\n]+$")
+def _stripws(s, atend=False):
+    if s is None:
+        return None
+    return _wsere.sub("", s) if atend else _wssre.sub("", s)
+
 def cleanup(node, parent=None):
     if node.tag == 'para':
         # cleanup specials and spaces
         i = -1
         if len(node) and node[i].tag == 'verse' and node[i].get('eid', None) is not None:
             i -= 1
+        node.text = _stripws(node.text)
         if len(node) >= -i:
             if node[i].tail is not None:
-                node[i].tail = node[i].tail.rstrip()
+                node[i].tail = _stripws(node[i].tail, atend=True)
                 node[i].tail = add_specials(node[i].tail, node, parent)
         elif node.text is not None:
-            node.text = re.sub(r"^[ \t\n]*(.*?)[ \t\n]*$", r"\1", node.text)
+            node.text = _stripws(node.text, atend=True)
             node.text = add_specials(node.text, node, parent, istext=True)
     elif node.tag in ('chapter', 'verse'):
         node.text = None
@@ -326,6 +340,52 @@ def etCmp(a, b, at=None, bt=None, verbose=False, endofpara=False):
                 print("tail or attributes: \"{}\", \"{}\" (at end of para={})".format(strnormal(ac.tail, act, mode), strnormal(bc.tail, bct, mode), str(eop)))
             return False
     return True
+
+@dataclass(slots=True, eq=False)
+class Xmlloc:
+    parent: et.Element
+    head:   et.Element
+
+
+def iterusx(root, blocks=[], filt=[], unblocks=False, grammar=None, until=None):
+    """ Iterates over root yielding Xmlloc for each node. Once until is hit,
+        iteration stops (after yielding the until). blocks prunes any node whose
+        style has a category listed in blocks. The test is inverted if unblocks is True.
+        filt is a list of functions that all must pass for the value to be yielded """
+    if not len(filt):
+        def test(e):
+            return True
+    else:
+        def test(e):
+            for f in filt:
+                if not f(e):
+                    return False
+            return True
+    if grammar is None:
+        grammar = Grammar()
+
+    _catre = re.compile(r"[_^].*$")
+    def category(s):
+        s = _catre.sub("", s)
+        return grammar.marker_categories.get(s, "")
+
+    def runiter(root):
+        this = Xmlloc(root, None)
+        if test(this):
+            yield this
+        if until is not None and this == until:
+            return
+        for c in list(root):
+            if (category(c.get('style', '')) in blocks) ^ (not unblocks):
+                yield from runiter(c)
+            this = Xmlloc(root, c)
+            if test(this):
+                yield this
+            if until is None and this == until:
+                return
+
+    yield from runiter(root)
+
 
 @dataclass
 class USXLoc:

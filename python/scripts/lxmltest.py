@@ -31,10 +31,14 @@ parser.add_argument("-E","--extfiles",action='append',default=[],help='markers.e
 parser.add_argument("-q","--quiet",action="store_true",help="Only output final results")
 parser.add_argument("-o","--output",help="Output error reports to this file")
 parser.add_argument("-A","--append",action="store_true",help="Append error reports")
+parser.add_argument("-R","--rngout",help="Save generated rng file")
 args = parser.parse_args()
 
 usxdoc = etree.parse(args.grammar)
 newdoc = _grammarDoc(usxdoc, args.extfiles, factory=etree)
+if args.rngout:
+    with open(args.rngout, "w", encoding="utf-8") as outf:
+        outf.write(etree.tounicode(newdoc, pretty_print=True))
 usxrng = etree.RelaxNG(etree=newdoc)
 
 jobfiles = []

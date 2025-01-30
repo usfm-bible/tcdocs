@@ -106,12 +106,14 @@
   <define name="USX">
     <choice>
       <ref name="Peripheral"/>
+      <ref name="PeripheralDivided"/>
       <ref name="Scripture"/>
     </choice>
   </define>
   <define name="Peripheral">
     <element>
       <name ns="">usx</name>
+      <ref name="PeripheralBookIdentification"/>
       <optional>
         <attribute>
           <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\\usfm &#x27;" match="TEXTNWS"/>
@@ -128,10 +130,30 @@
           <text/>
         </attribute>
       </optional>
-      <choice>
-        <ref name="PeripheralBook"/>
-        <ref name="PeripheralDividedBook"/>
-      </choice>
+      <ref name="PeripheralBook"/>
+    </element>
+  </define>
+  <define name="PeripheralDivided">
+    <element>
+      <name ns="">usx</name>
+      <ref name="PeripheralDividedBookIdentification"/>
+      <optional>
+        <attribute>
+          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\\usfm &#x27;" match="TEXTNWS"/>
+          <name ns="">version</name>
+          <data type="string">
+            <param name="minLength">3</param>
+            <param name="pattern">\d+\.\d+(\.\d+)?</param>
+          </data>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute>
+          <name ns="http://www.w3.org/2001/XMLSchema-instance">noNamespaceSchemaLocation</name>
+          <text/>
+        </attribute>
+      </optional>
+      <ref name="PeripheralDividedBook"/>
     </element>
   </define>
   <define name="Scripture">
@@ -179,7 +201,6 @@
   </define>
   <define name="PeripheralBook">
     <group>
-      <ref name="PeripheralBookIdentification"/>
       <zeroOrMore>
         <ref name="BookHeaders"/>
       </zeroOrMore>
@@ -198,13 +219,12 @@
     </group>
   </define>
   <define name="PeripheralDividedBook">
-    <group>
-      <ref name="PeripheralDividedBookIdentification"/>
-      <choice>
+    <choice>
+      <zeroOrMore>
         <ref name="PeripheralDivision"/>
-        <ref name="PeripheralOther"/>
-      </choice>
-    </group>
+      </zeroOrMore>
+      <ref name="PeripheralOther"/>
+    </choice>
   </define>
   <define name="BookIdentification">
     <element>

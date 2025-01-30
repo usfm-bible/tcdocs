@@ -56,7 +56,7 @@ def _usfmGrammar(rdoc, backend=None, start=None):
     parser = sfmproc.parseRef(start)
     return parser
 
-def usfmGrammar(gsrc, extensions=[], altparser=True, backend=None, start=None):
+def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
     """ Create UsfmGrammarParser from gsrc as used by USX.fromUsfm """
     if altparser:
         rdoc = _grammarDoc(gsrc, extensions)
@@ -68,10 +68,9 @@ def usfmGrammar(gsrc, extensions=[], altparser=True, backend=None, start=None):
                 res.readmrkrs(e)
         return res
 
-
 _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
 
-def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=True):
+def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False):
     """ Reads a USFM file of a given type or inferred from the filename
         extension. extfiles allows for extra markers.ext files to extend the grammar"""
     if informat is None:
@@ -127,7 +126,7 @@ class USX:
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, altparser=True, elfactory=None, timeout=1e7):
+    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error.
             elfactory must take parent and pos named parameters not as attributes
@@ -180,7 +179,7 @@ class USX:
         prettyxml(self.xml)
         self._outwrite(file, self.xml, fn=writexml)
 
-    def outUsfm(self, grammar, file=None, altparser=True, **kw):
+    def outUsfm(self, grammar, file=None, altparser=False, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         el = messup(self.xml)
         if not altparser:
@@ -202,7 +201,7 @@ class USX:
             self._outwrite(file, dat)
 
     def saveAs(self, outfpath, outformat=None, addesids=False, grammar=None,
-                gramfile=None, version=None, altparser=True, **kw):
+                gramfile=None, version=None, altparser=False, **kw):
         """ Saves the document to a file in the appropriate format, either given
             or inferred from the filename extension. """
         if outformat is None:
@@ -266,9 +265,8 @@ def main(hookcli=None, hookusx=None):
     parser.add_argument("-e","--esids",action="store_true",
                         help="Add esids, vids, sids, etc. to USX output")
     parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
-    parser.add_argument("-x","--extfiles",action="append",default=[],
-                        help="markers.ext files to include")
-    parser.add_argument("-V","--validate",action="store_true",help="Use validating parsers for USFM")
+    parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
+    parser.add_argument("-V","--validate",action="store_true",default=False,help="Use validating parser for USFM")
     parser.add_argument("-C","--canonical",action="store_true",help="Do not canonicalise")
     parser.add_argument("-A","--ascii",action="store_true",help="Output as ASCII only in json")
     parser.add_argument("-l","--logging",help="Set logging level to usfmxtest.log")
