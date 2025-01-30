@@ -346,6 +346,10 @@ class AttribNode(Node):
         attrib = self.parent.parser.grammar.attribtags[self.tag]
         self.parent.element.set(attrib, str(t).strip())
 
+    def dumped(self):
+        attrib = self.parent.parser.grammar.attribtags[self.tag]
+        self.parent.element.attrib.pop(attrib, None)
+
 class NumberNode(Node):
     def __init__(self, parser, usxtag, tag, ispara=False, pos=None, **kw):
         super().__init__(parser, usxtag, tag, ispara=ispara, pos=pos, **kw)
@@ -418,7 +422,7 @@ class USFMParser:
     def _setup(s, expanded=False):
         clsself = s.__class__
         # tag closed types
-        for a in (('introchar', 'char'), ('listchar', 'char'), ('char', 'char'), ('_fig', 'figure')):
+        for a in (('introchar', 'char'), ('listchar', 'char'), ('_fig', 'figure')):
             def maketype(c, t):
                 def dotype(self, tag):
                     if tag.isend:
@@ -438,7 +442,6 @@ class USFMParser:
                     return self.addNode(Node(self, 'para', str(tag), ispara=True))
             if not hasattr(clsself, a):
                 setattr(clsself, a, dotype)
-
     def parse(self):
         self.result = []
         self.stack = []
@@ -611,6 +614,17 @@ class USFMParser:
         if not tag.isend:
             return self.addNode(Node(self, 'cell', str(tag), pos=tag.pos))
         return self.parent
+
+    def char(self, tag):
+        if tag.isend:
+            return self.removeTag(str(tag))
+        if len(self.stack) and isinstance(self.stack[-1], AttribNode) \
+                and self.stack[-1].tag in ("cp", "vp"):
+            a = self.stack[-1]
+            self.removeTag(a.tag)
+            a.dumped()
+            self.addNode(Node(self, 'char', a.tag))
+        return self.addNode(Node(self, 'char', tag.basestr()))
 
     def crossreference(self, tag):
         if tag.isend:
