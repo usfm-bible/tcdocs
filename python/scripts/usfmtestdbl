@@ -1,14 +1,15 @@
 #!/usr/bin/env -S python3 -u
 
-import argparse, zipfile, os, sys, itertools, re
+import argparse, zipfile, os, sys, itertools, re, tempfile
 from multiprocessing import Pool, get_context, current_process, set_start_method
 from math import sqrt
+from subprocess import check_output, CalledProcessError, DEVNULL
 import logging
 import logging.config
 
 def lognprint(s, q, level=logging.DEBUG):
     log.log(level, s)
-    if not q:
+    if not q and level > logging.DEBUG:
         print(s, flush=True)
 
 try:
@@ -61,7 +62,7 @@ def proconezip(fpath, sfmp, log, relax, args):
                 failed = False
                 bookcount += 1
                 try:
-                    result = USX.fromUsfm(sfmdat, sfmp, altparser=args.validate, timeout=args.timeout or 3600)
+                    result = USX.fromUsfm(sfmdat, sfmp, altparser=args.validate, timeout=args.timeout or 3600, strict=True)
                 except NoParseError as e:
                     imsg = " {} at {} in {}".format(e.msg, e.state.pos, f).replace("\r", "\\r")
                     results.append(imsg)
@@ -75,16 +76,32 @@ def proconezip(fpath, sfmp, log, relax, args):
                     lognprint(f"{fpath}: Skipped. Encoding error, probably latin-1?", args.quiet, logging.INFO)
                     results.append("Encoding error")
                     failed = True
+                except SyntaxError as e:
+                    lognprint(f"{fpath}/{f}: {e}", args.quiet, logging.INFO)
+                    failed = True
                 if result is not None:
                     result.addesids()
-                    etreexml = etree.fromstring(et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True))
+                    restxt = et.tostring(result.getroot(), encoding="utf-8", xml_declaration=True)
+                    etreexml = etree.fromstring(restxt)
                     if not relax.validate(etreexml):
-                        #xmsg = str(relax.error_log.last_error)
+                        xmsg = str(relax.error_log.last_error)
+                        lognprint(f"{fpath}/{f}: {xmsg}", args.quiet, logging.DEBUG)
                         if failed:
                             results[-1] += f" |xml>"
                         else:
                             results.append(f"{fpath}/{f} |xml>")
                         lognprint(f"{fpath}/{f}: XML| generated xml invalid", args.quiet, logging.INFO)
+                        failed = True
+                        if args.jing:
+                            with tempfile.NamedTemporaryFile(delete=False) as outf:
+                                fname = outf.name
+                                outf.write(restxt)
+                            try:
+                                report = check_output(f"jing {args.grammar} {fname}", shell=True, stderr=DEVNULL, encoding="utf-8")
+                            except CalledProcessError as e:
+                                report = e.output
+                            lognprint(f"{fpath}/{f}: {report}", args.quiet, logging.DEBUG)
+                            os.unlink(fname)
                 anyfailed |= failed
                 if failed and args.oneerror:
                     break
@@ -95,7 +112,8 @@ def proconezip(fpath, sfmp, log, relax, args):
                 with zipf.open(ausx) as xf:
                     doc = etree.parse(xf)
                     if not relax.validate(doc):
-                        #xmsg = str(relax.error_log.last_error)
+                        xmsg = str(relax.error_log.last_error)
+                        lognprint(f"{fpath}/{ausx}: {xmsg}", args.quiet, logging.DEBUG)
                         err = f"{fpath}/{ausx} XML, USX xml invalid"
                         results.append(err)
                         lognprint(err, args.quiet, logging.INFO)
@@ -105,12 +123,12 @@ def proconezip(fpath, sfmp, log, relax, args):
                     bookcount += 1
         zipf.close()
         if bookcount == 0 and not anyfailed:
-            anyfailed = True
             results = [f"{fpath}: No files found"]
+            lognprint(results[0], args.quiet, logging.INFO)
         lognprint("{}: {}".format(fpath, "Passed" if not anyfailed else "Failed"), args.quiet, logging.INFO)
         return (fpath, [] if not anyfailed else [results])
     except Exception as e:
-        lognprint(f"{fpath}/{f}: {e}", args.quiet, logging.INFO)
+        lognprint(f"{fpath}/{f}: {type(e)} {e}", args.quiet, logging.INFO)
         lognprint("{}: {}".format(fpath, "Crashed"), args.quiet, logging.INFO)
         return (fpath, [str(e)])
 
@@ -127,6 +145,7 @@ parser.add_argument("-M","--match",help="Constrain input files to match regex")
 parser.add_argument("--skipfile",help="Logfile name and skip all jobs skipped and passed in that file")
 parser.add_argument("-O","--oneerror",action="store_true",help="Bail on a zip after the first faulty sfm file")
 parser.add_argument("-T","--timeout",type=int,help="Maximum time to process a file in seconds")
+parser.add_argument("-J","--jing",action="store_true",default=False,help="Run jing on failed xml files")
 parser.add_argument("-j","--jobs",type=int,default=0,help="Parallel jobs, single=1")
 parser.add_argument("-C","--chunks",type=int,help="Size of parallel chunks")
 parser.add_argument("-v","--verbose",action="store_true",help="Print things like error messages")

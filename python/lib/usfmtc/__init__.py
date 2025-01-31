@@ -70,7 +70,7 @@ def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
 
 _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
 
-def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False):
+def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False, strict=False):
     """ Reads a USFM file of a given type or inferred from the filename
         extension. extfiles allows for extra markers.ext files to extend the grammar"""
     if informat is None:
@@ -96,7 +96,7 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], a
             extfiles.append(os.path.join(os.path.dirname(fname), "markers.ext"))
             exts = [x for x in extfiles if os.path.exists(x)]
             grammar = usfmGrammar(gramfile, extensions=exts, altparser=altparser)
-        usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser)
+        usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser, strict=strict)
     return usxdoc
 
 
@@ -126,7 +126,7 @@ class USX:
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7):
+    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7, strict=False):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error.
             elfactory must take parent and pos named parameters not as attributes
@@ -134,7 +134,7 @@ class USX:
         data = _readsrc(src)
 
         if not altparser:
-            p = USFMParser(data, factory=elfactory or ParentElement, grammar=grammar)
+            p = USFMParser(data, factory=elfactory or ParentElement, grammar=grammar, strict=strict)
             xml = p.parse()
         else:
         # This can raise usfmtc.parser.NoParseError
@@ -214,7 +214,7 @@ class USX:
 
         if outtype == "usx":
             if addesids:
-                usxdoc.addesids()
+                self.addesids()
             self.outUsx(outfpath, **kw)
         elif outtype == "usj":
             self.outUsj(outfpath, **kw)
@@ -264,6 +264,7 @@ def main(hookcli=None, hookusx=None):
     parser.add_argument("-g","--grammar",help="Grammar file to use, if needed")
     parser.add_argument("-e","--esids",action="store_true",
                         help="Add esids, vids, sids, etc. to USX output")
+    parser.add_argument("-S","--strict",action="store_true",default=False,help="Be strict in parsing")
     parser.add_argument("-v","--version",default=None,help="Set USFM version [3.1]")
     parser.add_argument("-x","--extfiles",action="append",default=[],help="markers.ext files to include")
     parser.add_argument("-V","--validate",action="store_true",default=False,help="Use validating parser for USFM")
@@ -356,9 +357,11 @@ def main(hookcli=None, hookusx=None):
             print(f"{infile} -> {outfile}" if outfile else f"{infile}")
         try:
             usxdoc = readFile(infile, informat=args.informat, grammar=ingrammar,
-                              altparser=args.validate)
+                              altparser=args.validate, strict=args.strict)
         except NoParseError as e:
             doerror(f"Failed to parse {infile}: {e}", False)
+        except SyntaxError as e:
+            doerror(f"{e}", False)
 
         if len(infiles) == 1 and usxdoc is None:
             doerror(f"Unable to read in {args.infile}")

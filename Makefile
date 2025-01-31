@@ -39,7 +39,7 @@ grammar/usx.rng : grammar/usx.rnc
 	$(PYTHON) python/scripts/urnc2rng $< $@
 
 dbl: grammar/usx.rng
-	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -j ${JOBS} -C ${CHUNKSIZE} ${EXTRAARGS} -T 300 -l debug ${DBLDIR} | tee dbltest.log
+	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -j ${JOBS} -C ${CHUNKSIZE} ${EXTRAARGS} -T 300 -J -l debug ${DBLDIR} | tee dbltest.log
 
 single: grammar/usx.rng $(TEST)/origin.usfm
 	$(PYTHON) python/scripts/usfmxtest -E tests/markers.ext -l debug ${TESTSET} ${EXTRAARGS} -P -g $< $(TEST)

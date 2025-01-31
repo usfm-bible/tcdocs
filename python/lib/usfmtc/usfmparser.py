@@ -12,6 +12,9 @@ class Pos:
         self.c = c
         self.kw = kw
 
+    def __str__(self):
+        return f"{self.l}:{self.c}"
+
 class Tag(str):
     def __new__(cls, s, l=0, c=0, **kw):
         isend = False
@@ -85,10 +88,10 @@ class Attribs(UserDict):
 
 class Lexer:
 
-    tokenre = regex.compile(r'((?:[^\\|/]|\\[\\|\n]|/[^/])+)|([\\|\n]|//)')
+    tokenre = regex.compile(r'((?:[^\\|/\n]|\\[\\|\n]|/(?!/))+)|([\\|\n]|//)')
     tagre = regex.compile(r'(?:\+?[a-zA-Z_][a-zA-Z_0-9^-]*)?\*?')
     attribsre = regex.compile(r'\s*([a-zA-Z_][a-zA-Z0-9_-]*)\s*=\s*"((?:\\"|[^"])*)"')
-    textrunre = regex.compile(r'(?:[^\\]|\\[^a-zA-Z_*+])*')
+    textrunre = regex.compile(r'(?:[^\\\n]|\\[^a-zA-Z_*+])*')
 
     def __init__(self, txt, expanded=False):
         self.txt = txt
@@ -119,7 +122,7 @@ class Lexer:
             if n == "\n":
                 res += n
                 self.lindex += 1
-                self.lpos = curri + m.end(2)
+                self.lpos = m.end(2)
                 continue
             elif n == "\\":
                 t = self.tagre.match(self.txt[m.end():])
@@ -170,6 +173,8 @@ class Lexer:
         m = regex.match(r"(.*?)$", self.txt, pos=self.cindex, flags=regex.M)
         if m:
             self.cindex = m.end()
+            self.lindex += 1
+            self.lpos = self.cindex
             self.nexts.append(String(m.group(1)))
 
     def processtag(self, t):
@@ -178,6 +183,13 @@ class Lexer:
             self.currxpand = t[i+1:]
             return t[:i]
         return t
+
+    def appendtag(self, t):
+        tag = Tag(t, l=self.lindex, c=self.lpos)
+        self.nexts.append(tag)
+
+    def currpos(self):
+        return f"{self.lindex}:{self.cindex-self.lpos+1}"
 
 class Grammar:
     category_markers = {
@@ -320,7 +332,7 @@ class IdNode(Node):
         if m:
             self.element.set('code', m.group(1))
             self.element.text = m.group(2)
-        self.parser.removeTag('id')
+        self.parser.removeTag('id', absentok=True)
 
     def addNodeElement(self, e):
         self.parser.stack[0].element.append(e)
@@ -345,6 +357,9 @@ class AttribNode(Node):
     def appendText(self, t):
         attrib = self.parent.parser.grammar.attribtags[self.tag]
         self.parent.element.set(attrib, str(t).strip())
+        fn = getattr(self.parser, "_"+self.tag+"_", None)
+        if fn is not None:
+            fn(str(t).strip())
 
     def dumped(self):
         attrib = self.parent.parser.grammar.attribtags[self.tag]
@@ -358,19 +373,27 @@ class NumberNode(Node):
     def appendText(self, t):
         if not self.hasarg:
             b = regex.split(r"\s+", str(t).lstrip(), 1)
-            self.element.set('number', b[0].strip())
-            self.hasarg = True
+            v = b[0].strip()
+            if len(v):
+                self.element.set('number', v)
+                self.hasarg = True
         else:
             b = ['', str(t)]
         if len(b) > 1 and b[1].strip():
-            self.parser.removeTag(self.tag)
+            self.parser.removeTag(self.tag, absentok=True)
             if self.ispara:
                 self.parser.addNode(Node(self.parser, 'para', 'p', pos=self.element.pos))
+            self.parser.parent = self.parser.stack[-1]  # I don't like this locatoin for this
             self.parser.stack[-1].appendText(b[1])
 
     def addNodeElement(self, e):
         self.parser.removeTag(self.tag)
         self.parser.stack[-1].addNodeElement(e)
+
+    def close(self):
+        if self.parser.strict and not self.hasarg:
+            raise SyntaxError(f"Missing number in {self.tag} at {self.element.pos}")
+        super().close()
 
 class NoteNode(Node):
     def __init__(self, parser, usxtag, tag, pos=None, **kw):
@@ -405,7 +428,7 @@ paratags = ('rem', ' table', 'sidebar')
 
 class USFMParser:
 
-    def __init__(self, txt, factory=None, grammar=None, expanded=False, strict=False):
+    def __init__(self, txt, factory=None, grammar=None, expanded=False, strict=False, version=3.0):
         if factory is None:
             def makeel(tag, attrib, **extras):
                 attrib.update({" "+k:v for k, v in extras.items()})
@@ -418,6 +441,7 @@ class USFMParser:
         self._setup(expanded=expanded)
         self.lexer = Lexer(txt, expanded=expanded)
         self.strict = strict
+        self.version = version
 
     def _setup(s, expanded=False):
         clsself = s.__class__
@@ -442,6 +466,7 @@ class USFMParser:
                     return self.addNode(Node(self, 'para', str(tag), ispara=True))
             if not hasattr(clsself, a):
                 setattr(clsself, a, dotype)
+
     def parse(self):
         self.result = []
         self.stack = []
@@ -483,18 +508,20 @@ class USFMParser:
         self.stack.append(node)
         return node
 
-    def removeTag(self, tag):
-        tag = str(tag).rstrip('*')
-        tag = str(tag).lstrip('+')
+    def removeTag(self, tag, absentok=False):
+        tag = str(tag).rstrip('*').lstrip('+')
         oldstack = self.stack[:]
         while len(self.stack):
             curr = self.stack.pop()
+            curr.close()
             if curr.tag == tag:
                 if getattr(curr, 'element', "") == "unk":
                     curr.element.tag = "char"
                 break
         else:
             self.stack = oldstack
+            if self.strict and not absentok:
+                raise SyntaxError(f"Closing {tag} with no opening, at {self.lexer.currpos()}")
         return self.stack[-1]
 
     def removeType(self, t, tags=[]):
@@ -557,7 +584,7 @@ class USFMParser:
         return self.removeTag("esb")
 
     def _periph(self, tag):
-        self.removeTag(str(tag))
+        self.removeTag(str(tag), absentok=True)
         return self.addNode(PeriphNode(self, "periph", str(tag), notag=True, pos=tag.pos))
 
     def _ref(self, tag):
@@ -566,20 +593,25 @@ class USFMParser:
         return self.addNode(Node(self, 'ref', tag.basestr(), notag=True, pos=tag.pos))
 
     def _rem(self, tag):
+        if self.version < 3.2:
+            return self.otherpara(tag)
+        if tag.isend:
+            return self.removeTag(str(tag))
         self.removeType(paratypes, paratags)
         res = self.addNode(Node(self, 'para', str(tag), ispara=True, pos=tag.pos))
         self.lexer.readLine()
+        self.lexer.appendtag("rem*")
         return res
 
     def _tr(self, tag):
-        self.removeTag('tr')
+        self.removeTag('tr', absentok=True)
         if not len(self.stack) or self.stack[-1].element.tag != "table":
             self.removeType(paratypes,)
             self.addNode(Node(self, 'table', ' table', notag=True, pos=tag.pos))
         return self.addNode(Node(self, 'row', 'tr', pos=tag.pos))
 
     def _v(self, tag):
-        self.removeTag('v')
+        self.removeTag('v', absentok=True)
         if len(self.stack) and self.stack[-1].tag == "c":
             self.removeTag('c')
             self.addNode(Node(self, 'para', 'p', pos=tag.pos))
@@ -591,7 +623,7 @@ class USFMParser:
         elif self.stack[-1].tag == "v":
             parent = AttribNode(self, self.stack[-1], str(tag), pos=tag.pos)
         else:
-            parent = Node(self, 'para', tag.basestr(), pos=tag.pos)
+            parent = Node(self, 'char', tag.basestr(), pos=tag.pos)
         self.stack.append(parent)
         return parent
 
@@ -655,15 +687,15 @@ class USFMParser:
 
     def milestone(self, tag):
         if tag.isend:
-            return self.removeType('milestone')
+            return self.removeTag(str(tag))
         return self.addNode(Node(self, 'ms', tag.basestr(), pos=tag.pos))
 
     def unknown(self, tag):
         if self.strict:
             if len(self.stack):
-                raise SyntaxError(f"Unknown tag {tag} in {self.stack[-1]}")
+                raise SyntaxError(f"Unknown tag {tag} in {self.stack[-1].tag} at {self.lexer.currpos()}")
             else:
-                raise SyntaxError(f"Unknown tag {tag}")
+                raise SyntaxError(f"Unknown tag {tag} at {self.lexer.currpos()}")
             return None
         if not tag.isend:
             res = self.addNode(UnknownNode(self, 'unk', str(tag), pos=tag.pos))
@@ -671,6 +703,14 @@ class USFMParser:
             res = self.removeTag(str(tag))
             res.tag = "char"
         return res
+
+    def _usfm_(self, val):
+        v = re.sub(r"(\d+(?:\.\d+)).*$", r"\1", val)
+        try:
+            version = float(v)
+        except ValueError:
+            return
+        self.version = version
 
 def main():
     import sys

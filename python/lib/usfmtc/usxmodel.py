@@ -9,7 +9,7 @@ import xml.etree.ElementTree as et
 allpartypes = {
     'Section': """ms mse ms1 ms2 ms2e ms3 ms3e mr s s1 s2 s3 s4 s1e s2e s3e s4e sr r sp
                     sd sd1 sd2 sd3 sd4 periph iex ip mte mte1 mte2 cl cd""",
-    'NonVerse': """lit cp pb p1 p2 k1 k2 rem sts"""
+    'NonVerse': """lit cp pb p1 p2 k1 k2 rem sts qa"""
 }
 
 partypes = {e: k for k, v in allpartypes.items() for e in v.split()}
@@ -252,6 +252,10 @@ def strnormal(s, t, mode=0):
             res = res.replace(k, v)
     return res
 
+notechars = [
+    "fr ft fk fqa fq fl fw fdc fp".split(),
+    "xt xop xo xta xk xq xot xnt xdc".split()]
+
 def canonicalise(node, endofpara=False, factory=et):
     if node.text is not None:
         mode = 1 if len(node) else 3
@@ -283,6 +287,18 @@ def canonicalise(node, endofpara=False, factory=et):
                 inserted += 1
                 ft.text = c.tail
                 c.tail = None
+        for i, c in enumerate(list(node)):
+            if c.get('style', '') not in notechars[0 if replace == "ft" else 1]:
+                if len(node) == 1:
+                    ft = node.makeelement("char", {"style": replace})
+                    ft.append(c)
+                    c.parent = ft
+                elif i == 0:
+                    node[1].insert(0, c)
+                else:
+                    node[i-1].append(c)
+                node.remove(c)
+                break
 
 def attribnorm(d):
     banned = ('closed', 'status', 'vid', 'version')

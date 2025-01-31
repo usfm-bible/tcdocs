@@ -1210,7 +1210,7 @@ Remark =
         [usfm:tag[usfm:seq="true"]]
         attribute style { "rem" },
         [usfm:seq="true"]([usfm:match[before="/${hs}*/" beforeout="' '" match="IGNORELINE" after=""]]
-        (text)? # Brief description of the project (optional)
+        (text)?         # Anything
         >> usfm:match[match="NL" matchout="'\n'" dump="true"])
     }
 
