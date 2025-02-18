@@ -8,7 +8,7 @@ The `INT` xref:doc:books.adoc[book] and its xref:periph:periph.adoc[divisions] c
 
 #id#::
 *One of:*
-* Bible Introduction - `title`
+* Bible Introduction - `intbible`
 * Old Testament Introduction `intot`
 * Pentateuch Introduction - `intpent`
 * History Introduction - `inthistory`
