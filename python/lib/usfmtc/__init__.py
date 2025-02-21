@@ -126,7 +126,7 @@ class USX:
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar, altparser=False, elfactory=None, timeout=1e7, strict=False):
+    def fromUsfm(cls, src, grammar=None, altparser=False, elfactory=None, timeout=1e7, strict=False):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error.
             elfactory must take parent and pos named parameters not as attributes
@@ -219,13 +219,6 @@ class USX:
         elif outtype == "usj":
             self.outUsj(outfpath, **kw)
         elif outtype == "usfm":
-            if grammar is None and altparser:
-                if gramfile is None:
-                    for a in ([], ['..', '..', '..', 'grammar']):
-                        gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
-                        if os.path.exists(gramfile):
-                            break
-                grammar = _grammarDoc(gramfile)
             if outtype == "usfm3.0":
                 outtype = "usfm"
                 if version is None:
@@ -323,11 +316,9 @@ def main(hookcli=None, hookusx=None):
     ingrammar = None
     outgrammar = None
     if args.informat.startswith("usfm") or args.outformat.startswith("usfm"):
-        if args.grammar is None:
-            for a in ([], ['..', '..', '..', 'grammar']):
-                args.grammar = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
-                if os.path.exists(args.grammar):
-                    break
+        if args.validate and args.grammar is None:
+            doerror(f"A validating parser generator requires a --grammar RNG file")
+            return
         if args.informat.startswith("usfm"):
             args.extfiles.append(os.path.join(os.path.dirname(infiles[0]), "markers.ext"))
             exts = [x for x in args.extfiles if os.path.exists(x)]
