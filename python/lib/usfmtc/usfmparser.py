@@ -78,7 +78,21 @@ class String(UserString):
     def __add__(self, s):
         return String(str(self) + s)
 
-    pass
+    def addToNode(self, node, position, lstrip=False):
+        cp = self.pos.c
+        s = str(self)
+        if lstrip:
+            t = s.lstrip()
+            if len(t) < len(s):
+                cp += len(s) - len(t)
+        else:
+            t = s
+        currt = getattr(node, position, None)
+        if currt is None:
+            setattr(node, position, t)
+            setattr(node, position+"pos", Pos(self.pos.l, cp, **self.pos.kw))
+        else:
+            setattr(node, position, currt+t)
 
 class Attribs(UserDict):
     def __init__(self, l=0, c=0, **kw):
@@ -88,20 +102,39 @@ class Attribs(UserDict):
 
 class Lexer:
 
-    tokenre = regex.compile(r'((?:[^\\|/\n]|\\[\\|\n]|/(?!/))+)|([\\|\n]|//)')
-    tagre = regex.compile(r'(?:\+?[a-zA-Z_][a-zA-Z_0-9^-]*)?\*?')
-    attribsre = regex.compile(r'\s*([a-zA-Z_][a-zA-Z0-9_-]*)\s*=\s*"((?:\\"|[^"])*)"')
-    textrunre = regex.compile(r'(?:[^\\\n]|\\[^a-zA-Z_*+])*')
+    tokenre = regex.compile(r'''    # the next token in text
+        ((?: [^\\|/\r\n]            # string component consists of: normal characters
+           | \\ (?:[\\|] | \r?\n)           # escaped specials
+           | / (?!/)                        # / sequence, not //
+          )+                            # one or more of these
+        )
+        | ( [\\|] | \r?\n | // )    # then specials: tag start or attributes start, newline, //   
+    ''', regex.X)
+    tagre = regex.compile(r'''
+        (?: \+? [a-zA-Z_][a-zA-Z_0-9^-]* )?  # optional + then the usfm tag spec
+        \*?                                  # may have a final *
+    ''', regex.X)
+    attribsre = regex.compile(r'''      # An attribute list
+        \s* ([a-zA-Z_][a-zA-Z0-9_-]*)   # whitespace? identifier
+        \s* = \s*                       # =
+        " ( (?:\\" | [^"])* ) "         # " (escaped " or non quote)* "
+    ''', regex.X)
+    textrunre = regex.compile(r'''
+        (?: [^\\\n] | \\[^a-zA-Z_*+] )*     # nonmagic or escaped single char
+    ''', regex.X)
+    afterattribs = regex.compile(r'\s*\\')
 
-    def __init__(self, txt, expanded=False):
+    def __init__(self, txt, expanded=False, strict=False):
         self.txt = txt
         self.expanded = expanded
+        self.strict = strict
 
     def __iter__(self):
         self.nexts = []
         self.cindex = 0
         self.lindex = 0
         self.lpos = 0
+        self.lengths = []       # only valid if self.strict
         self.currxpand = None
         return self
 
@@ -119,16 +152,27 @@ class Lexer:
             else:
                 lastres = res
             n = m.group(2)
-            if n == "\n":
+
+            if n in ("\r\n", "\n"):
                 res += n
+                self.lengths.append(m.end(2) - self.lpos)
                 self.lindex += 1
                 self.lpos = m.end(2)
                 continue
             elif n == "\\":
                 t = self.tagre.match(self.txt[m.end():])
-                if not t:
-                    res += self.txt[m.end()]
-                    curri = m.end() + 1
+                if not t or not t.end():
+                    if m.end() < len(self.txt) - 1:
+                        s = self.text[m.end()+1]
+                    if s == "\r" and m.end() < len(self.text) - 2:
+                        s += self.text[m.end()+2]
+                    if s in ("\r\n", "\n"):
+                        self.lengths.append(m.end() + len(s) - self.lpos)
+                        self.lindex += 1
+                        self.lpos += self.lengths[-1]
+                    else:
+                        res += s
+                    curri += len(s)
                     continue
                 else:
                     tagname = self.processtag(t.group(0))
@@ -158,7 +202,9 @@ class Lexer:
         res = Attribs(l=self.lindex, c=curri-self.lpos)
         resi = curri
         while (m := self.attribsre.match(self.txt[curri:])):
-            res[m.group(1)] = m.group(2)    # tests say not to strip .strip()
+            if self.strict and "\r" in m.group(2) or "\n" in m.group(2):
+                raise SyntaxError(f"Newlines not allowed in attributes: {m.group(0)} at {self.currpos()}")
+            res[m.group(1)] = m.group(2)    # tests say not to strip()
             if m.end() == 0:
                 break
             curri += m.end()
@@ -166,7 +212,9 @@ class Lexer:
             m = self.textrunre.match(self.txt[curri:])
             if m:
                 curri += m.end()
-                res = AttribText(m.group(0), l=self.lindex, c=curri-self.lpos)  # tests say not to strip .strip()
+                res = AttribText(m.group(0), l=self.lindex, c=curri-self.lpos)  # tests say not to strip()
+        if self.strict and not self.afterattribs.match(self.txt[curri:]):
+            raise SyntaxError(f"Bad end of attributes: {m.group(0)} at {self.currpos()}")
         return res, curri
 
     def readLine(self):
@@ -279,13 +327,13 @@ class Node:
     def appendText(self, txt):
         if len(self.element):
             if self.element[-1].tail is None or self.element[-1].tail == "":
-                self.element[-1].tail = str(txt).lstrip() if self.ispara and isfirstText(self.element) else str(txt)
+                txt.addToNode(self.element[-1], 'tail', lstrip = self.ispara and isfirstText(self.element))
             else:
-                self.element[-1].tail += str(txt)
+                txt.addToNode(self.element[-1], 'tail')
         elif self.element.text is None or self.element.text == "":
-            self.element.text = str(txt).lstrip()
+            txt.addToNode(self.element, 'text', lstrip=True)
         else:
-            self.element.text += str(txt)
+            txt.addToNode(self.element, 'text')
         self.clearAttribNodes()
 
     def addAttributes(self, d):
@@ -439,7 +487,7 @@ class USFMParser:
         self.factory = factory
         self.grammar = grammar
         self._setup(expanded=expanded)
-        self.lexer = Lexer(txt, expanded=expanded)
+        self.lexer = Lexer(txt, expanded=expanded, strict=strict)
         self.strict = strict
         self.version = version
 

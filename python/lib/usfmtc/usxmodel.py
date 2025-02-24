@@ -363,8 +363,8 @@ class Xmlloc:
     head:   et.Element
 
 
-def iterusx(root, blocks=[], filt=[], unblocks=False, grammar=None, until=None):
-    """ Iterates over root yielding Xmlloc for each node. Once until is hit,
+def iterusx(root, parindex=0, start=None, blocks=[], filt=[], unblocks=False, grammar=None, until=None):
+    """ Iterates over root yielding an Xmlloc for each node. Once until is hit,
         iteration stops (after yielding the until). blocks prunes any node whose
         style has a category listed in blocks. The test is inverted if unblocks is True.
         filt is a list of functions that all must pass for the value to be yielded """
@@ -385,13 +385,15 @@ def iterusx(root, blocks=[], filt=[], unblocks=False, grammar=None, until=None):
         s = _catre.sub("", s)
         return grammar.marker_categories.get(s, "")
 
-    def runiter(root):
+    def runiter(root, start=None):
         this = Xmlloc(root, None)
-        if test(this):
+        if start is None and test(this):
             yield this
         if until is not None and this == until:
             return
         for c in list(root):
+            if start is not None and start != c:
+                continue
             if (category(c.get('style', '')) in blocks) ^ (not unblocks):
                 yield from runiter(c)
             this = Xmlloc(root, c)
@@ -400,7 +402,7 @@ def iterusx(root, blocks=[], filt=[], unblocks=False, grammar=None, until=None):
             if until is None and this == until:
                 return
 
-    yield from runiter(root)
+    yield from runiter(root[parindex:], start=start)
 
 
 @dataclass
