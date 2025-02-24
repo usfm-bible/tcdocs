@@ -328,10 +328,14 @@ class Node:
         if len(self.element):
             if self.element[-1].tail is None or self.element[-1].tail == "":
                 txt.addToNode(self.element[-1], 'tail', lstrip = self.ispara and isfirstText(self.element))
+            elif self.parser.strict:
+                raise SyntaxError(f"Follow on tail {txt} in element {self.element[-1].tag}[{self.element[-1].get('style','')}] at {self.element[-1].pos}")
             else:
                 txt.addToNode(self.element[-1], 'tail')
         elif self.element.text is None or self.element.text == "":
             txt.addToNode(self.element, 'text', lstrip=True)
+        elif self.parser.strict:
+            raise SyntaxError(f"Follow on text {txt} in element {self.element.tag}[{self.element.get('style','')}] at {self.element[-1].pos}")
         else:
             txt.addToNode(self.element, 'text')
         self.clearAttribNodes()

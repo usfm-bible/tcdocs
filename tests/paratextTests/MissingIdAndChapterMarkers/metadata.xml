@@ -2,5 +2,6 @@
 <test-metadata>
         <description>MissingIdAndChapterMarkers. From paratext test suite</description>
         <validated>fail</validated>
+        <pytest>idbk</pytest>
         <tags></tags>
 </test-metadata>

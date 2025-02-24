@@ -108,7 +108,7 @@ class USX:
             elfactory = ParentElement
         tb = et.TreeBuilder(element_factory=elfactory)
         parser = et.XMLParser(target=tb)
-        if os.path.exists(src):
+        if isinstance(src, str) and os.path.exists(src):
             inf = open(src, encoding="utf_8_sig")
         else:
             inf = src

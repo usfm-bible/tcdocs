@@ -2,5 +2,6 @@
 <test-metadata>
         <description>id is a mandatory marker</description>
         <validated>fail</validated>
+        <pytest>idbk</pytest>
         <tags></tags>
 </test-metadata>

@@ -55,7 +55,7 @@ def proconedir(d, sfmp, relax, rdoc, args):
         if not passresult:
             return (not expected, d, "USFM output failed", "" if passresult == expected else "Unexpected result")
     try:
-        result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp, altparser=args.validate)
+        result = USX.fromUsfm(getfname(d, "origin_test.usfm" if args.testset == 1 else "origin.usfm"), sfmp, altparser=args.validate, strict=True)
         result.addesids()
     except NoParseError as e:
         imsg = " {} at {}".format(e.msg, e.state.pos).replace("\r", "\\r")
