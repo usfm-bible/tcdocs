@@ -107,5 +107,6 @@ def usfm(projectdir, projectfile):
                     xf = doc.findtext('.//pytest')
                     if xf:
                         u.xfails = xf.split(' ')
+            u.addesids()
             return u
 
