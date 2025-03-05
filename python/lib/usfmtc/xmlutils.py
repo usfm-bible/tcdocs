@@ -65,6 +65,11 @@ class ParentElement(et.Element):
         if parent is not None:
             parent.insert(i, el)
 
+    def addnext(self, el):
+        i, parent = self._getindex()
+        if parent is not None:
+            parent.insert(i+1, el)
+
     def getparent(self):
         ''' Returns the parent '''
         return self.parent

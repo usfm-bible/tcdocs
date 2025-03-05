@@ -8,7 +8,7 @@
 # nuitka-project-else:
 #     nuitka-project: --output-filename=usfmconv.bin
 
-import os, json
+import os, json, io
 from usfmtc.sfmparser import parseusfm, UsfmParserBackend
 from usfmtc.parser import NoParseError
 from usfmtc.extension import Extensions
@@ -70,7 +70,7 @@ def usfmGrammar(gsrc, extensions=[], altparser=False, backend=None, start=None):
 
 _filetypes = {".xml": "usx", ".usx": "usx", ".usfm": "usfm", ".sfm": "usfm3.0", ".json": "usj"}
 
-def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False, strict=False):
+def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], altparser=False, strict=False, keepparser=False):
     """ Reads a USFM file of a given type or inferred from the filename
         extension. extfiles allows for extra markers.ext files to extend the grammar"""
     if informat is None:
@@ -86,7 +86,7 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], a
     elif intype == "usj":
         usxdoc = USX.fromUsj(infpath)
     elif intype.startswith("usfm"):
-        if grammar is None:
+        if altparser and grammar is None:
             if gramfile is None:
                 for a in ([], ['..', '..', '..', 'grammar']):
                     gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
@@ -96,7 +96,7 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], a
             extfiles.append(os.path.join(os.path.dirname(fname), "markers.ext"))
             exts = [x for x in extfiles if os.path.exists(x)]
             grammar = usfmGrammar(gramfile, extensions=exts, altparser=altparser)
-        usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser, strict=strict)
+        usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser, strict=strict, keepparser=keepparser)
     return usxdoc
 
 
@@ -126,7 +126,7 @@ class USX:
         return cls(res)
 
     @classmethod
-    def fromUsfm(cls, src, grammar=None, altparser=False, elfactory=None, timeout=1e7, strict=False):
+    def fromUsfm(cls, src, grammar=None, altparser=False, elfactory=None, timeout=1e7, strict=False, keepparser=False):
         """ Parses USFM using UsfmGrammarParser grammar and creates USX object.
             Raise usfmtc.parser.NoParseError on error.
             elfactory must take parent and pos named parameters not as attributes
@@ -138,11 +138,14 @@ class USX:
             xml = p.parse()
         else:
         # This can raise usfmtc.parser.NoParseError
+            p = None
             result = parseusfm(data, grammar, timeout=timeout, isdata=True)
             xml = result.asEt(elfactory=elfactory)
 
         cleanup(xml)            # normalize space, de-escape chars, cell aligns, etc.
         res = cls(xml)
+        if keepparser:
+            res.parser = p
         return res
 
     @classmethod
@@ -155,18 +158,18 @@ class USX:
     def __init__(self, xml):
         self.xml = xml      # an Element, not an ElementTree
 
-    def _outwrite(self, file, dat, fn=None):
+    def _outwrite(self, file, dat, fn=None, args={}):
         if fn is None:
             fn = lambda f, d: f.write(d)
         if file is None:
             fh = io.StringIO()
-            fn(fh, dat)
+            fn(fh, dat, **args)
             res = fh.getvalue()
             fh.close()
             return res
         if not hasattr(file, "read"):
             fh = open(file, "w", encoding="utf-8")
-            fn(fh, dat)
+            fn(fh, dat, **args)
             fh.close()
         else:
             fn(file, dat)
@@ -179,11 +182,13 @@ class USX:
         prettyxml(self.xml)
         self._outwrite(file, self.xml, fn=writexml)
 
-    def outUsfm(self, grammar, file=None, altparser=False, **kw):
+    def outUsfm(self, grammar=None, file=None, altparser=False, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         el = messup(self.xml)
         if not altparser:
-            return self._outwrite(file, el, fn=usx2usfm)
+            if grammar is None:
+                grammar = Grammar
+            return self._outwrite(file, el, fn=usx2usfm, args={'grammar': grammar})
         parser = USXConverter(grammar.getroot(), **kw)
         res = parser.parse(el)
         if res:

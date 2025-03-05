@@ -76,7 +76,7 @@ class String(UserString):
         self.kw = kw
 
     def __add__(self, s):
-        return String(str(self) + s)
+        return String(str(self) + s, l=self.pos.l, c=self.pos.c, **self.kw)
 
     def addToNode(self, node, position, lstrip=False):
         cp = self.pos.c
@@ -167,7 +167,7 @@ class Lexer:
                     if s == "\r" and m.end() < len(self.text) - 2:
                         s += self.text[m.end()+2]
                     if s in ("\r\n", "\n"):
-                        self.lengths.append(m.end() + len(s) - self.lpos)
+                        self.lengths.append(m.end() - self.lpos)
                         self.lindex += 1
                         self.lpos += self.lengths[-1]
                     else:
@@ -220,8 +220,9 @@ class Lexer:
     def readLine(self):
         m = regex.match(r"(.*?)$", self.txt, pos=self.cindex, flags=regex.M)
         if m:
-            self.cindex = m.end()
+            self.cindex = m.end() + 1
             self.lindex += 1
+            self.lengths.append(self.cindex - self.lpos)
             self.lpos = self.cindex
             self.nexts.append(String(m.group(1)))
 
@@ -436,7 +437,7 @@ class NumberNode(Node):
             if self.ispara:
                 self.parser.addNode(Node(self.parser, 'para', 'p', pos=self.element.pos))
             self.parser.parent = self.parser.stack[-1]  # I don't like this locatoin for this
-            self.parser.stack[-1].appendText(b[1])
+            self.parser.stack[-1].appendText(String(b[1], t.pos.l, t.pos.c + len(str(t))-len(b[1]), **t.pos.kw))
 
     def addNodeElement(self, e):
         self.parser.removeTag(self.tag)
@@ -503,7 +504,7 @@ class USFMParser:
                 def dotype(self, tag):
                     if tag.isend:
                         return self.removeTag(str(tag))
-                    return self.addNode(Node(self, t, tag.basestr()))
+                    return self.addNode(Node(self, t, tag.basestr(), pos=tag.pos))
                 return dotype
             setattr(clsself, a[0], maketype(*a))
         # implicit closed paras
@@ -511,11 +512,11 @@ class USFMParser:
             if expanded:
                 def dotype(self, tag):
                     self.removeType(paratypes, paratags)
-                    return self.addNode(Node(self, 'para', str(tag), ispara=True, xpand=tag.xp))
+                    return self.addNode(Node(self, 'para', str(tag), pos=tag.pos, ispara=True, xpand=tag.xp))
             else:
                 def dotype(self, tag):
                     self.removeType(paratypes, paratags)
-                    return self.addNode(Node(self, 'para', str(tag), ispara=True))
+                    return self.addNode(Node(self, 'para', str(tag), pos=tag.pos, ispara=True))
             if not hasattr(clsself, a):
                 setattr(clsself, a, dotype)
 

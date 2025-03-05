@@ -183,9 +183,12 @@ def cleanup(node, parent=None):
     for c in node:
         cleanup(c, parent=node)
 
-def protect(txt):
+_attribre = re.compile(r'(["=|\\~/])')
+_textre = re.compile(r'([=|\\~/])')
+
+def protect(txt, noquote=False):
     if txt is not None:
-        return re.sub(r'(["=|\\~/])', r'\\\1', txt)
+        return (_textre if noquote else _attribre).sub(r'\\\1', txt)
     return None
 
 def messup(node, parent=None):
@@ -195,8 +198,8 @@ def messup(node, parent=None):
         newnode = et.Element(node.tag, attrib=node.attrib)
     else:
         newnode = et.SubElement(parent, node.tag, attrib=node.attrib)
-    newnode.text = protect(node.text)
-    newnode.tail = protect(node.tail)
+    newnode.text = protect(node.text, noquote=True)
+    newnode.tail = protect(node.tail, noquote=True)
 
     if newnode.tag == "figure":
         src = newnode.get("file", None)
@@ -212,11 +215,11 @@ def messup(node, parent=None):
             newnode.set("style", tag)
     # convert \xt\ref Genesis 1:1|loc="GEN 1:1"\ref*|link-href="GEN 1:1"\xt*
     # back to \xt Genesis 1:1|link-href="GEN 1:1"\xt*
-    elif newnode.tag == "char" and node.get('style', '').endswith('xt') and not newnode.text and len(node) == 1:
-        c = node[0]
-        if c.tag == "ref" and not c.tail:
-            newnode.text = protect(c.text)
-            return newnode
+#    elif newnode.tag == "char" and node.get('style', '').endswith('xt') and not newnode.text and len(node) == 1:
+#        c = node[0]
+#        if c.tag == "ref" and not c.tail:
+#            newnode.text = protect(c.text)
+#            return newnode
     for k, v in newnode.attrib.items():
         newnode.attrib[k] = protect(v)
     for c in node:
@@ -258,7 +261,7 @@ notechars = [
 
 def canonicalise(node, endofpara=False, factory=et):
     if node.text is not None:
-        mode = 1 if len(node) else 3
+        mode = 1 # if len(node) else 3
         node.text = strnormal(node.text, node.tag, mode)
     lasti = 0
     for lasti, e in enumerate(reversed(node)):
@@ -266,10 +269,10 @@ def canonicalise(node, endofpara=False, factory=et):
             break
     lasti = len(node) - 1 - lasti
     for i, c in enumerate(node):
-        eop = c.tag == 'para' or (endofpara and (i == lasti))
+        eop = c.tag == 'para' or (endofpara and (i == lasti) and not c.tail)
         canonicalise(c, endofpara=eop)
         if c.tail is not None:
-            mode = 2 if eop or c.tag != "char" else 0
+            mode = 2 if eop or c.tag in ("para", "sidebar") else 0
             c.tail = strnormal(c.tail, c.tag, mode)
     if node.tag == "note":
         style = node.get("style", "")
@@ -367,7 +370,16 @@ def iterusx(root, parindex=0, start=None, blocks=[], filt=[], unblocks=False, gr
     """ Iterates over root yielding an Xmlloc for each node. Once until is hit,
         iteration stops (after yielding the until). blocks prunes any node whose
         style has a category listed in blocks. The test is inverted if unblocks is True.
-        filt is a list of functions that all must pass for the value to be yielded """
+        filt is a list of functions that all must pass for the value to be yielded.
+        until may be a function that tests a node for it being the last node. """
+    def makefn(b):
+        if b is None:
+            return lambda e: False
+        elif callable(b):
+            return b
+        else:
+            return lambda e: e == b
+
     if not len(filt):
         def test(e):
             return True
@@ -377,32 +389,40 @@ def iterusx(root, parindex=0, start=None, blocks=[], filt=[], unblocks=False, gr
                 if not f(e):
                     return False
             return True
-    if grammar is None:
+    if len(blocks) and grammar is None:
         grammar = Grammar()
+
+    untilfn = makefn(until)
+    startfn = makefn(start)
 
     _catre = re.compile(r"[_^].*$")
     def category(s):
         s = _catre.sub("", s)
         return grammar.marker_categories.get(s, "")
 
-    def runiter(root, start=None):
-        this = Xmlloc(root, None)
-        if start is None and test(this):
-            yield this
-        if until is not None and this == until:
-            return
-        for c in list(root):
-            if start is not None and start != c:
-                continue
-            if (category(c.get('style', '')) in blocks) ^ (not unblocks):
-                yield from runiter(c)
-            this = Xmlloc(root, c)
-            if test(this):
+    def runiter(root, parindex=None, started=True):
+        if parindex is None:
+            this = Xmlloc(root, None)
+            if not started and startfn(root):
+                started = True
+            if started and test(this):
                 yield this
-            if until is None and this == until:
-                return
+            if untilfn(root):
+                return (started, True)
+        roots = list(root) if parindex is None else root[parindex:]
+        for c in roots:
+            if not len(blocks) or ((category(c.get('style', '')) in blocks) ^ (not unblocks)):
+                started, finished = yield from runiter(c, started=started)
+            if finished:
+                return (started, True)
+            this = Xmlloc(root, c)
+            if started and test(this):
+                yield this
+            if untilfn(c):
+                return (started, True)
+        return (started, False)
 
-    yield from runiter(root[parindex:], start=start)
+    yield from runiter(root, parindex=parindex, started=start is None)
 
 
 @dataclass

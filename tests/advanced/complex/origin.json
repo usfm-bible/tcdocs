@@ -1,0 +1,336 @@
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MAT",
+      "content": [
+        "A correct but complex example"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "h",
+      "content": [
+        "Matthew"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "toc1",
+      "content": [
+        "Matthew"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "toc2",
+      "content": [
+        "Mat"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "toc3",
+      "content": [
+        "Mt"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "mt2",
+      "content": [
+        "The Gospel According to"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "mt1",
+      "content": [
+        "Matthew"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "is",
+      "content": [
+        "Some introductory matterial"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "im",
+      "content": [
+        {
+          "type": "char",
+          "marker": "k",
+          "content": [
+            "Book:"
+          ]
+        },
+        " Matthew. Matthew wrote a gospel"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        "Matthew's gospel is aimed at a Jewish audience of its time."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "iot",
+      "content": [
+        "Outline"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "io1",
+      "content": [
+        "Genealogy ",
+        {
+          "type": "char",
+          "marker": "ior",
+          "content": [
+            "1:1-1:17"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "io1",
+      "content": [
+        "Birth of Jesus ",
+        {
+          "type": "char",
+          "marker": "ior",
+          "content": [
+            "1:18-2:23"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "io2",
+      "content": [
+        "Visit of the Wise Men ",
+        {
+          "type": "char",
+          "marker": "ior",
+          "content": [
+            "2:1-2:12"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "io2",
+      "content": [
+        "Flight to Egypt ",
+        {
+          "type": "char",
+          "marker": "ior",
+          "content": [
+            "2:13-2:18"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "io2",
+      "content": [
+        "His Return ",
+        {
+          "type": "char",
+          "marker": "ior",
+          "content": [
+            "2:19-2:23"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1"
+    },
+    {
+      "type": "para",
+      "marker": "s",
+      "content": [
+        "The Genealogy of Jesus Christ"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": [
+        "(Luke 3:23-38)"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1"
+        },
+        "This is the genealogy of Jesus Christ, the son of David, the son of Abraham."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2"
+        },
+        "Abraham was the father of Isaac, and"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li",
+      "content": [
+        "Isaac was he father of Jacob, and"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li",
+      "content": [
+        "Jacob was the father of Judah and his brothers,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "s",
+      "content": [
+        "The Birth of Jesus Christ"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "r",
+      "content": [
+        "(Luke 2:1-7)"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "18"
+        },
+        "Now the birth of Jesus Christ took place this way. When his mother Mary had been",
+        {
+          "type": "char",
+          "marker": "w",
+          "lemma": "betroth",
+          "content": [
+            "betrothed"
+          ]
+        },
+        " to Joseph...",
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "19"
+        },
+        "And her husband Joseph, being a just man..."
+      ]
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "2"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "5"
+        },
+        "They told him, \"In Bethlehem of Judea, for so it is written by the prophet:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "6"
+        },
+        "'And you, O Bethlehem, in the land of Judah,"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        "are by no means least among the rulers of Judah;"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q1",
+      "content": [
+        "for from you shall come a ruler"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "q2",
+      "content": [
+        "who will shepherd my people Israel.'\"",
+        {
+          "type": "note",
+          "marker": "x",
+          "caller": "+",
+          "content": [
+            {
+              "type": "char",
+              "marker": "xo",
+              "content": [
+                "2:6"
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "xt",
+              "content": [
+                {
+                  "type": "ref",
+                  "loc": "MIC 5:2",
+                  "content": [
+                    "Micah 5:2"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
