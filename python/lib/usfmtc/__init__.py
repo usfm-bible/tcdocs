@@ -10,7 +10,6 @@ from usfmtc.diagrams import UsfmRailRoad
 from usfmtc.usxmodel import addesids, cleanup, messup, canonicalise
 from usfmtc.usjproc import usxtousj, usjtousx
 from usfmtc.usfmparser import USFMParser, Grammar
-from usfmtc.usfmgenerate import usx2usfm
 import xml.etree.ElementTree as et
 
 def _readsrc(src):
@@ -173,6 +172,7 @@ class USX:
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         el = messup(self.xml)
         if altparser:
+            from usfmtc.usfmgenerate import usx2usfm
             return self._outwrite(file, el, fn=usx2usfm)
         parser = USXConverter(grammar.getroot(), **kw)
         res = parser.parse(el)
