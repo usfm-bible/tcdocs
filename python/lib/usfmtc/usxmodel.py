@@ -154,6 +154,14 @@ def cleanup(node, parent=None):
     elif node.tag in ('chapter', 'verse'):
         node.text = None
     elif node.tag == "figure":
+        fig2 = node.get("_unknown_", None)      # convert USFM2 to USFM3
+        if fig2 is not None:
+            bits = fig2.split("|")      # \fig_DESC|FILE|SIZE|LOC|COPY|CAP|REF\fig*
+            if node.text is not None and len(node.text):
+                node.set("alt", node.text.strip())
+            for i, a in ("src", "size", "loc", "copy", "caption", "ref"):
+                if len(bits[i]):
+                    node.set(a, bits[i].strip())
         src = node.get("src", None)
         if src is not None:
             del node.attrib['src']

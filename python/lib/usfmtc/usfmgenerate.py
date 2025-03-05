@@ -118,12 +118,12 @@ def usx2usfm(outf, root, grammar=None):
                 emit("\\{}".format(s))
                 append_attribs(el, emit, attribmap=attribmap)
                 emit("\\*")
-            elif el.tag == "ref" and el.get('gen', 'false').lower() != 'true':
+            elif el.tag == "ref":
                 emit("\\ref ")
             elif el.tag == "usx":
                 version = el.get("version", "3.1")
-            #elif el.tag in ("annot", "table", "usfm", "text"):
-            #    pass
+            elif el.tag in ("table", ):
+                pass
             else:
                 raise SyntaxError(el.tag)
             if el.text is not None and len(el.text.lstrip()):
