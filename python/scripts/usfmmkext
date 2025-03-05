@@ -96,7 +96,7 @@ def extstr(mrkr, field):
     res = [f"\\marker {mrkr}"]
     for k, v in sorted(field.items()):
         if k == "category":
-            res.append(f"\\{k} {' '.join(sorted(v))}")
+            res.append(f'\\{k} {" ".join(sorted(v))}')
         else:
             res.append(f"\\{k} {v}")
     return "\n".join(res)

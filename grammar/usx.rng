@@ -1783,7 +1783,7 @@
     <element usfm:stacked="true">
       <name ns="">verse</name>
       <attribute>
-        <usfm:tag usfm:seq="true" after="WS" beforeout="&#x27;\n&#x27;"/>
+        <usfm:tag usfm:seq="true" after="WS" beforeout="&#x27;\n\\&#x27;"/>
         <name ns="">style</name>
         <value>v</value>
       </attribute>

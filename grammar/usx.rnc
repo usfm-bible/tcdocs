@@ -1056,7 +1056,7 @@ Verse = ( VerseStart | [usfm:ignore="true"]VerseEnd )
 VerseStart =
     [usfm:stacked = "true"]
     element verse {
-        [usfm:tag[usfm:seq="true" after="WS" beforeout="'\n'"]]
+        [usfm:tag[usfm:seq="true" after="WS" beforeout="'\n\\'"]]
         attribute style { "v" },
         [usfm:match[usfm:seq="true" after="WS" afterout="' '"]]
         attribute number { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } },

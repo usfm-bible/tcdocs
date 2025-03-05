@@ -190,6 +190,10 @@
 \category introlist
 \description A list entry, level 2
 
+\marker ilit
+\category introduction
+\description For a comment or note inserted for liturgical use
+
 \marker im
 \category introduction
 \description Introduction prose paragraph, with no first line indent (may occur after poetry)
@@ -388,7 +392,7 @@
 \description An embedded list entry, level 4
 
 \marker lit
-\category introduction otherpara
+\category otherpara
 \description For a comment or note inserted for liturgical use
 
 \marker litl
