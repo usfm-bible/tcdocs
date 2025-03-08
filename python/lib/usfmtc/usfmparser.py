@@ -190,6 +190,8 @@ class Lexer:
             elif n == '//':
                 res = OptBreak(l=self.lindex, c=curri-self.lpos)
                 break
+        else:
+            lastres = None
         if self.cindex >= curri:
             raise StopIteration
         if lastres:
@@ -254,7 +256,7 @@ class Grammar:
         "internal": "periph v fig esb esbe ref tr rem",
         "chapter": "c",
         "introchar": "ior iqt",
-        "introduction": "imt1 imt2 imt3 imt4 imte1 imte2 imte imt ib ie ili1 ili2 ili imi imq im io1 io2 io3 io4 iot io ipi ipq ipr iq1 iq2 iq3 iq is1 is2 is",
+        "introduction": "imt1 imt2 imt3 imt4 imte1 imte2 imte imt ib ie ili1 ili2 ili imi imq im io1 io2 io3 io4 iot io ipi ipq ipr ip iq1 iq2 iq3 iq is1 is2 is",
         "list": "lh li1 li2 li3 li4 lim1 lim2 lim3 lim4 lim li lf",
         "listchar": "litl lik liv1 liv2 liv3 liv4 liv5 liv",
         "milestone": "ts-s ts-e ts t-s t-e qt1-s qt1-e qt2-s qt2-e qt3-s qt3-e qt4-s qt4-e qt5-s qt5-e qt-s qt-e",
@@ -751,7 +753,7 @@ class USFMParser:
                 raise SyntaxError(f"Unknown tag {tag} at {self.lexer.currpos()}")
             return None
         if not tag.isend:
-            res = self.addNode(UnknownNode(self, 'unk', str(tag), pos=tag.pos))
+            res = self.addNode(UnknownNode(self, 'ms', str(tag), pos=tag.pos, _bare="1"))
         else:
             res = self.removeTag(str(tag))
             res.tag = "char"

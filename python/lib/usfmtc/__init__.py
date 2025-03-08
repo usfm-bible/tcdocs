@@ -92,11 +92,12 @@ def readFile(infpath, informat=None, gramfile=None, grammar=None, extfiles=[], a
                     gramfile = os.path.join(os.path.dirname(__file__), *a, "usx.rng")
                     if os.path.exists(gramfile):
                         break
+        if grammar is None:
             fname = getattr(infpath, 'name', infpath)
             extfiles.append(os.path.join(os.path.dirname(fname), "markers.ext"))
             exts = [x for x in extfiles if os.path.exists(x)]
             grammar = usfmGrammar(gramfile, extensions=exts, altparser=altparser)
-        usxdoc = USX.fromUsfm(infpath, grammar, altparser=altparser, strict=strict, keepparser=keepparser)
+        usxdoc = USX.fromUsfm(infpath, grammar=grammar, altparser=altparser, strict=strict, keepparser=keepparser)
     return usxdoc
 
 
@@ -172,7 +173,7 @@ class USX:
             fn(fh, dat, **args)
             fh.close()
         else:
-            fn(file, dat)
+            fn(file, dat, **args)
         return True
 
     def outUsx(self, file=None, **kw):
@@ -182,12 +183,12 @@ class USX:
         prettyxml(self.xml)
         self._outwrite(file, self.xml, fn=writexml)
 
-    def outUsfm(self, grammar=None, file=None, altparser=False, **kw):
+    def outUsfm(self, file=None, grammar=None, altparser=False, **kw):
         """ Output USFM from USX object. grammar is et doc. If file is None returns string """
         el = messup(self.xml)
         if not altparser:
             if grammar is None:
-                grammar = Grammar
+                grammar = Grammar()
             return self._outwrite(file, el, fn=usx2usfm, args={'grammar': grammar})
         parser = USXConverter(grammar.getroot(), **kw)
         res = parser.parse(el)

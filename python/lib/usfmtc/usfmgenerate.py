@@ -59,7 +59,7 @@ def iterels(el, events):
     if 'end' in events:
         yield ('end', el)
 
-def usx2usfm(outf, root, grammar=None):
+def usx2usfm(outf, root, grammar=None, lastel=None):
     if grammar is None:
         attribmap = {}
         mcats = {}
@@ -67,7 +67,6 @@ def usx2usfm(outf, root, grammar=None):
         attribmap = grammar.attribmap
         mcats = grammar.marker_categories
     emit = Emitter(outf)
-    lastel = None
     version = "3.1"
     paraelements = ("chapter", "para", "row", "sidebar", "verse")
     for (ev, el) in iterels(root, ("start", "end")):
@@ -104,7 +103,7 @@ def usx2usfm(outf, root, grammar=None):
                 if "category" in el.attrib:
                     emit("\\cat {0}\\cat*".format(el.get("category")))
             elif el.tag == "unmatched":
-                emit("\\" + el.get(marker))
+                emit("\\" + el.get("style", " "))
             elif el.tag == "figure":
                 emit("\\{} ".format(s))
             elif el.tag == "cell":
@@ -116,8 +115,10 @@ def usx2usfm(outf, root, grammar=None):
                 emit("//")
             elif el.tag == "ms":
                 emit("\\{}".format(s))
+                isbare = el.get("_bare", "").lower() in ("1", "true")
+                el.attrib.pop("_bare", None)
                 append_attribs(el, emit, attribmap=attribmap)
-                emit("\\*")
+                emit("\\*" if not isbare else " ")
             elif el.tag == "ref":
                 emit("\\ref ")
             elif el.tag == "usx":
@@ -155,3 +156,4 @@ def usx2usfm(outf, root, grammar=None):
             elif el.tag == "book" and float(version) >= 3.1:
                 emit("\n\\usfm {}".format(version))
             lastel = el
+    return lastel

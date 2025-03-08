@@ -159,9 +159,10 @@ def cleanup(node, parent=None):
             bits = fig2.split("|")      # \fig_DESC|FILE|SIZE|LOC|COPY|CAP|REF\fig*
             if node.text is not None and len(node.text):
                 node.set("alt", node.text.strip())
-            for i, a in ("src", "size", "loc", "copy", "caption", "ref"):
-                if len(bits[i]):
+            for i, a in enumerate(("src", "size", "loc", "copy", "caption", "ref")):
+                if i < len(bits) and len(bits[i]):
                     node.set(a, bits[i].strip())
+            del node.attrib["_unknown_"]
         src = node.get("src", None)
         if src is not None:
             del node.attrib['src']
@@ -418,6 +419,7 @@ def iterusx(root, parindex=0, start=None, blocks=[], filt=[], unblocks=False, gr
             if untilfn(root):
                 return (started, True)
         roots = list(root) if parindex is None else root[parindex:]
+        finished = False
         for c in roots:
             if not len(blocks) or ((category(c.get('style', '')) in blocks) ^ (not unblocks)):
                 started, finished = yield from runiter(c, started=started)
