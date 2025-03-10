@@ -251,8 +251,6 @@ def strnormal(s, t, mode=0):
     '''
     if s is None:
         return ""
-    if not len(s.lstrip()):
-        return ""
     res = re.sub("[\n\\s]+", " ", s) if t in ('para', 'char') else s
     if mode & 1 == 1:
         res = res.lstrip()
