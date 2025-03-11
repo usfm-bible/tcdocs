@@ -2,8 +2,7 @@
 import re
 
 def escaped(s):
-    return s
-    return re.sub(r'([\\|"/])', r'\\\1', s)
+    return re.sub(r'([\\|"]|//)', r'\\\1', s)
 
 def proc_start_ms(el, tag, pref, emit, ws):
     if "style" not in el.attrib:
@@ -140,9 +139,9 @@ def usx2usfm(outf, root, grammar=None, lastel=None):
         elif ev == "end":
             if lastel is not None and lastel.tail is not None:
                 if el.tag in ("para", "row", "sidebar"):
-                    emit(lastel.tail.rstrip())
+                    emit(lastel.tail.rstrip(), text=True)
                 else:
-                    emit(lastel.tail)
+                    emit(lastel.tail, text=True)
             if el.tag == "note":
                 emit("\\{}*".format(s))
             elif el.tag in ("char", "link", "figure") and mcats.get(s, "") not in ('footnotechar', 'crossreferencechar'):

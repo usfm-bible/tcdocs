@@ -113,17 +113,6 @@ def add_specials(t, node, parent, istext=False):
     t = re.sub(r'\\(.)', lambda m: escapes.get(m.group(1), "\\"+m.group(1)), t)
     if "~" in t:
         t = t.replace("~", "\u00A0")
-    if "//" in t:
-        j = t.index("//")
-        bk = parent.makeelement("optbreak", {})
-        for i, c in enumerate(parent):
-            if id(c) == id(node):
-                if istext:
-                    node.append(bk)
-                else:
-                    parent.insert(i+1, bk)
-                bk.tail = t[j+2:]
-                return t[:j]
     return t
 
 alignments = {
@@ -207,8 +196,10 @@ def messup(node, parent=None):
         newnode = et.Element(node.tag, attrib=node.attrib)
     else:
         newnode = et.SubElement(parent, node.tag, attrib=node.attrib)
-    newnode.text = protect(node.text, noquote=True)
-    newnode.tail = protect(node.tail, noquote=True)
+    #newnode.text = protect(node.text, noquote=True)
+    #newnode.tail = protect(node.tail, noquote=True)
+    newnode.text = node.text
+    newnode.tail = node.tail
 
     if newnode.tag == "figure":
         src = newnode.get("file", None)
@@ -229,8 +220,8 @@ def messup(node, parent=None):
 #        if c.tag == "ref" and not c.tail:
 #            newnode.text = protect(c.text)
 #            return newnode
-    for k, v in newnode.attrib.items():
-        newnode.attrib[k] = protect(v)
+    #for k, v in newnode.attrib.items():
+    #    newnode.attrib[k] = protect(v)
     for c in node:
         messup(c, parent=newnode)
     return newnode
