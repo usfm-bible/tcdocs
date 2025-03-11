@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usfmtc"
-version = "0.2.5"
+version = "0.2.6"
 authors = [{name = "USFM Technical Committee", email = "fonts@sil.org"}]
 readme = "python/README.md"
 license = {file = "LICENSE.md"}

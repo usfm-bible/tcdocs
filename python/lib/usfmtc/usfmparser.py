@@ -163,9 +163,9 @@ class Lexer:
                 t = self.tagre.match(self.txt[m.end():])
                 if not t or not t.end():
                     if m.end() < len(self.txt) - 1:
-                        s = self.txt[m.end()+1]
+                        s = self.txt[m.end()]
                     if s == "\r" and m.end() < len(self.text) - 2:
-                        s += self.txt[m.end()+2]
+                        s += self.txt[m.end()+1]
                     if s in ("\r\n", "\n"):
                         self.lengths.append(m.end() - self.lpos)
                         self.lindex += 1

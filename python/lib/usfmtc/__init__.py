@@ -229,7 +229,7 @@ class USX:
                 outtype = "usfm"
                 if version is None:
                     version = "3.0"
-            self.outUsfm(grammar, outfpath, outversion=version, altparser=altparser, **kw)
+            self.outUsfm(grammar=grammar, file=outfpath, outversion=version, altparser=altparser, **kw)
 
     def canonicalise(self):
         canonicalise(self.getroot())
@@ -309,9 +309,12 @@ def main(hookcli=None, hookusx=None):
         inroot, ext = os.path.splitext(infile)
         return inroot + outext if outext else None
     
-    infiles = sum((glob(x) for x in args.infile), [])
+    if args.infile == ["-"]:
+        infiles = args.infile
+    else:
+        infiles = sum((glob(x) for x in args.infile), [])
     if not len(infiles):
-        doerror("No files found in {args.infile}")
+        doerror(f"No files found in {args.infile}")
 
     root, ext = os.path.splitext(infiles[0])
     args.informat = args.informat or _filetypes.get(ext.lower(), args.informat)
