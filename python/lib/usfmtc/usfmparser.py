@@ -78,6 +78,9 @@ class String(UserString):
     def __add__(self, s):
         return String(str(self) + s, l=self.pos.l, c=self.pos.c, **self.kw)
 
+    def be(self, s):
+        return String(str(s), l=self.pos.l, c=self.pos.c, **self.kw)
+
     def addToNode(self, node, position, lstrip=False):
         cp = self.pos.c
         s = str(self)
@@ -461,7 +464,7 @@ class NoteNode(Node):
             self.element.set('caller', b[0].strip())
             self.hascaller = True
             if len(b) > 1 and len(b[1]):
-                t = b[1]
+                t = t.be(b[1])
             else:
                 return
         if self.hascaller:
