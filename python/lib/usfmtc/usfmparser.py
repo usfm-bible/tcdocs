@@ -352,7 +352,7 @@ class Node:
 
     def addDefaultAttrib(self, t):
         defattrib = self.parser.grammar.attribmap.get(self.tag, None)
-        if defattrib is None and self.tag.endswith("-e"):
+        if defattrib is None and self.tag is not None and self.tag.endswith("-e"):
             defattrib = 'eid'
         if defattrib is None:
             defattrib = "_unknown_"
