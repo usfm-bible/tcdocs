@@ -1,4 +1,4 @@
-import usfmtc.railroad as rr
+import usfmtc_internal.railroad as rr
 
 usfmns = "{http://usfm.bible/parse/2023}"
 

@@ -2,10 +2,10 @@
 
 import sys, os
 try:
-    from usfmtc.rnc2rng import parser, serializer
+    from _usfmtc.rnc2rng import parser, serializer
 except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.rnc2rng import parser, serializer
+    from _usfmtc.rnc2rng import parser, serializer
 
 def main():
 

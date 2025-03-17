@@ -65,10 +65,13 @@ def pytest_generate_tests(metafunc):
 
 def zip_getfiles(zipname):
     allfiles = []
-    with zipfile.ZipFile(zipname, "r") as zf:
-        for fn in zf.namelist():
-            if fn.lower().endswith(".usx"):
-                allfiles.append((zipname, fn))
+    try:
+        with zipfile.ZipFile(zipname, "r") as zf:
+            for fn in zf.namelist():
+                if fn.lower().endswith(".usx"):
+                    allfiles.append((zipname, fn))
+    except zipfile.BadZipFile:
+        pass
     return allfiles
 
 def dir_getfiles(pdir):
@@ -109,4 +112,27 @@ def usfm(projectdir, projectfile):
                         u.xfails = xf.split(' ')
             u.addesids()
             return u
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_sessionfinish(session, exitstatus):
+    if session.config.option.tbstyle == "auto":
+        session.config.option.tbstyle = "no"
+        session.config.option.no_summary = True
+    yield
+    tr = session.config.pluginmanager.get_plugin("terminalreporter")
+    if tr is None:
+        return
+    reports = tr.getreports("failed")
+    summary = {}
+    base = session.config.option.dir
+    for r in reports:
+        m = re.match(r"^(.*?)\[(.*?)-(.*?)\]", r.location[2])
+        if m:
+            test, zfile, zcontent = m.groups()
+            zname = os.path.relpath(zfile, base)
+            summary.setdefault(test, {}).setdefault(zname, []).append(os.path.splitext(os.path.basename(zcontent))[0])
+    tr.write_line("")
+    for t, i in sorted(summary.items()):
+        for k, v in sorted(i.items()):
+            tr.write_line("{}:{} ({}): {}".format(t, k, len(v), ", ".join(v)))
 

@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
 import os, sys, argparse, logging
+from usfmtc.validating.usfmgrammar import UsfmGrammarParser, XmlGrammarParser
+
 try:
-    from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
+    from usfmtc_internal.usxgrammar import alljobs
 except ImportError:
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc.grammar import UsfmGrammarParser, XmlGrammarParser
-from usfmtc.usxgrammar import alljobs
-from usfmtc.diagrams import UsfmRailRoad, XmlRailRoad
+    from usfmtc_internal.usxgrammar import alljobs
+from usfmtc_internal.diagrams import UsfmRailRoad, XmlRailRoad
 import xml.etree.ElementTree as et
 
 parser = argparse.ArgumentParser()

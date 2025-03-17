@@ -39,6 +39,15 @@ def test_textinnotes(usfm):
                 failure = e.tail.strip()
         if failure is not None:
             failfor(usfm, 'textinnotes',
-                    f'Text: "{failure}" found inside note at {n.get("vid", "UNK")}')
+                    f'Text: "{failure}" found inside note at {usfm.fname} {n.get("vid", "UNK")}')
             return
+
+def test_verseinsidebar(usfm):
+    errors = []
+    for s in usfm.getroot().findall(".//sidebar"):
+        for v in s.findall(".//verse"):
+            errors.append(v.get("sid", ""))
+    if len(errors):
+        failfor(usfm, 'verseinsidebar',
+                f"The following verses occur in sidebars: {usfm.fname} {errors}")
 
