@@ -9,39 +9,15 @@ def pytest_addoption(parser):
     parser.addoption("-M","--matchdir",help="Only process directories that match this regular expression")
 
 def pytest_report_teststatus(report, config):
-    category, short, verbose = report.outcome, '.', report.outcome.upper()
-    short = "F"
-    if report.passed:
-        short = "."
-    elif report.skipped:
-        short = "s"
-    if report.when in ('setup', 'teardown', 'collect'):
-        if category == "failed":
-            category = "error"
-            short = 'E'
+    restype = {"passed": "", "failed": "+", "skipped": "-"}
+    failtype = {"test_simple.py::test_textinnotes": "n"}
+    if report.when == "call":
+        tid = report.nodeid[:report.nodeid.find("[")]
+        if report.outcome == "failed":
+            short = failtype.get(tid, restype["failed"])
         else:
-            category = ""
-    if config.getvalue('verbose') < 0:
-        short = None
-    return (category, short, verbose)
-
-@pytest.hookimpl(hookwrapper=True)
-def pytest_sessionfinish(session, exitstatus):
-    if session.config.option.tbstyle == "auto":
-        session.config.option.tbstyle = "short" if session.config.getvalue("verbose") >= 0 else "no"
-    yield
-    tr = session.config.pluginmanager.get_plugin("terminalreporter")
-    if tr is None:
-        return
-    reports = tr.getreports("failed")
-    summary = {}
-    for r in reports:
-        mod, f = r.location[2].split("[")
-        f = os.path.splitext(os.path.basename(f.rstrip("]")))[0]
-        summary.setdefault(mod, []).append(f)
-    tr.write_line("")
-    for k, v in sorted(summary.items()):
-        tr.write_line("{} ({}): {}".format(k, len(v), ", ".join(v)))
+            short = restype[report.outcome]
+        return report.outcome, short, report.outcome.upper()
 
 def pytest_generate_tests(metafunc):
     jobs = []
