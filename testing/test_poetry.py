@@ -1,4 +1,5 @@
 import pytest
+from shared import *
 
 def test_threeq2s(usfm):
     q2count = 0
@@ -6,6 +7,7 @@ def test_threeq2s(usfm):
         if p.tag == "q2":
             q2count += 1
             if q2count > 2 and p.get('vid', '') != "ISA 44:24":
-                pytest.fail(f"Found {q2count} consecutive \\q2 at {p.get('vid', '')}")
+                failfor(usfm, "threeq2s",
+                        f"Found {q2count} consecutive \\q2 at {p.get('vid', '')} in {usfm.name}")
         else:
             q2count = 0

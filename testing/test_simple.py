@@ -1,15 +1,5 @@
 import pytest
-
-def notempty(s):
-    if s is None:
-        return False
-    return len(s.strip()) != 0
-
-def failfor(usfm, tcode, s):
-    if tcode in usfm.xfails:
-        pytest.xfail(s)
-    else:
-        pytest.fail(s)
+from shared import *
 
 def test_idbk(usfm):
     ''' Tests that a file has a book code '''

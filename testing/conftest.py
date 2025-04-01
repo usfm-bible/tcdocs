@@ -8,20 +8,10 @@ def pytest_addoption(parser):
     parser.addoption("-D","--dir",help="Directory to search for test data (tests, usx files, dbl zips)")
     parser.addoption("-M","--matchdir",help="Only process directories that match this regular expression")
 
-def pytest_report_teststatus(report, config):
-    restype = {"passed": "", "failed": "+", "skipped": "-"}
-    failtype = {"test_simple.py::test_textinnotes": "n"}
-    if report.when == "call":
-        tid = report.nodeid[:report.nodeid.find("[")]
-        if report.outcome == "failed":
-            short = failtype.get(tid, restype["failed"])
-        else:
-            short = restype[report.outcome]
-        return report.outcome, short, report.outcome.upper()
-
 def pytest_generate_tests(metafunc):
     jobs = []
     basedir = metafunc.config.getoption("dir")
+    print(basedir)
     if basedir is None:
         basedir = os.path.join(os.path.dirname(__file__), '..', "tests")
     for dp, db, fn in os.walk(basedir):
@@ -29,8 +19,11 @@ def pytest_generate_tests(metafunc):
             if f.lower().endswith(".zip"):
                 jobs.extend(zip_getfiles(os.path.join(dp, f)))
             elif f.lower() == "origin.xml" or f.lower().endswith(".usx"):
-                jobs.extend(dir_getfiles(dp))
+                jobs.extend(dir_gettestfiles(dp))
                 break
+            elif f.lower().endswith(".usfm") or f.lower().endswith(".sfm"):
+                if basedir == dp:
+                    jobs.append((dp, f))
     m = None
     matchr = metafunc.config.getoption("matchdir")
     if matchr is not None:
@@ -50,7 +43,7 @@ def zip_getfiles(zipname):
         pass
     return allfiles
 
-def dir_getfiles(pdir):
+def dir_gettestfiles(pdir):
     allfiles = []
     for fn in os.listdir(pdir):
         if fn.lower().endswith(".usx"):
@@ -75,7 +68,7 @@ def usfm(projectdir, projectfile):
     elif os.path.isdir(projectdir):
         testfile = os.path.join(projectdir, projectfile)
         if os.path.exists(testfile):
-            u = usfmtc.readFile(testfile, informat="usx")
+            u = usfmtc.readFile(testfile, informat="usx" if projectfile.endswith(".xml") else None)
             u.fname = projectfile
             u.base = projectdir
             u.xfails = []
@@ -88,6 +81,17 @@ def usfm(projectdir, projectfile):
                         u.xfails = xf.split(' ')
             u.addesids()
             return u
+
+def pytest_report_teststatus(report, config):
+    restype = {"passed": "", "failed": "+", "skipped": "-"}
+    failtype = {"test_simple.py::test_textinnotes": "n"}
+    if report.when == "call":
+        tid = report.nodeid[:report.nodeid.find("[")]       # "module::testfn[zipfilepath-inzippath]"
+        if report.outcome == "failed":
+            short = failtype.get(tid, restype["failed"])
+        else:
+            short = restype[report.outcome]
+        return report.outcome, short, report.outcome.upper()
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_sessionfinish(session, exitstatus):
