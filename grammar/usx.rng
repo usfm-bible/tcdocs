@@ -55,13 +55,16 @@
   <usfm:terminal name="ATTRIBNAME" value="/[a-zA-Z_][a-zA-Z0-9\-_]*?/">
     <a:documentation>Matches an attribute name</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|])+?/">
+  <usfm:terminal name="USV" value="/\\u[0-9a-fA-F]{4}|\\U[0-9a-fA-F]{8}/">
+    <a:documentation>Matches \u or \U</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="TEXT" value="/([^\\/]|/(?!/)|\\[/~\\|]|${USV})+?/">
     <a:documentation>Matches simple text up to the next marker</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TEXTNWS" value="/.+(?=${Ws}\\[^~/\\])/">
+  <usfm:terminal name="TEXTNWS" value="/.+(?=${Ws}\\[^~/\\]|${USV})/">
     <a:documentation>Matches simple text without trailing whitespace</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="TEXTNOTATTRIB" value="/(?:[^\\|]|\\[\\~/|])+/">
+  <usfm:terminal name="TEXTNOTATTRIB" value="/(?:[^\\|]|\\[\\~/|]|${USV})+/">
     <a:documentation>Matches simple text up to the start of a sequence of attributes delimited by |</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="TEXTNOTATTRIBOPT" value="/(?:[^\\|]|\\[\\~/|])*/">
@@ -87,6 +90,12 @@
   </usfm:terminal>
   <usfm:terminal name="HREF" value="/(.*\/\/\/?(.*\/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)/">
     <a:documentation>href bible reference</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="HEX4" value="/[0-9a-fA-F]{4}/">
+    <a:documentation>Four hex digits for a BMP USV</a:documentation>
+  </usfm:terminal>
+  <usfm:terminal name="HEX8" value="/[0-9a-fA-F]{8}/">
+    <a:documentation>Four hex digits for a USV not in the BMP</a:documentation>
   </usfm:terminal>
   <usfm:alias name="usfm:tag" def="match">
     <usfm:match before="&#x27;\\&#x27;" after="TAGEND" afterout="&#x27; &#x27;"/>

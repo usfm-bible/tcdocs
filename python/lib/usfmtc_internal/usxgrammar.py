@@ -22,6 +22,7 @@ alljobs = {
     "List":                 ("list", ("List.para.style.enum",)),
     "ListChar":             ("listchar", ("+char.closed", "ListChar.char.style.enum",)),
     "Milestone":            ("ms", ("Milestone.style.enum", "Attributes")),
+    "NoteCharEmbed":        ("notec", ("NoteCharContent", "Char.char.style.enum")),
     "Para":                 ("p", ("VersePara", "NonVersePara", "VersePara.para.style.enum", "OtherPara.para.style.enum", "Para.nonpara.style.enum", "Break")),
     "PeripheralDivision":   ("periph", ("Peripheral.FRT.periph.id.enum", "Peripheral.INT.periph.id.enum",
                                         "Peripheral.BAK.periph.id.enum", "Peripheral.OTH.periph.id.enum", "PeripheralContent")),
