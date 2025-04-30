@@ -1,3 +1,15 @@
+# 3.2
+
+- Split the para marker category into versepara and otherpara. Disallow \v in otherpara.
+- Add acknowledgement of \u and \U to the grammar.
+    - They are not expanded in the grammar. This is best done in a lexer.
+- \rem ignores everything to the end of the line including other markers.
+    - It is delimeted by the end of line and not the start of a new paragraph.
+- Added the idea of a peripheral divided book
+    - This is a file of peripheral sections or peripheral content (one big unlabelled section) 
+    - The following books are considered peripheral divided books: XXA-XXC, FRT, OTH, BAK, INT
+
+
 # 3.1.1
 
 - Move p1, p2 from OtherPara to PeriphPara. No longer allowed inside scripture
@@ -11,7 +23,7 @@
 
 # 3.1
 
-Differences in the grammar from 3-0-5
+General differences in the grammar from 3-0-5
 
 - BookTitles are optional
 - BOM is allowed
