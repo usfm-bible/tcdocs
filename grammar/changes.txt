@@ -7,7 +7,8 @@
     - It is delimeted by the end of line and not the start of a new paragraph.
 - Added the idea of a peripheral divided book
     - This is a file of peripheral sections or peripheral content (one big unlabelled section) 
-    - The following books are considered peripheral divided books: XXA-XXC, FRT, OTH, BAK, INT
+    - These books are considered peripheral divided books: XXA-XXC, FRT, OTH, BAK, INT
+    - These books are considered non divided peripheral books: CNC, GLO, TDX, NDX
 
 
 # 3.1.1
