@@ -26,9 +26,10 @@ ATTRIBTEXTEND:: Pattern: ``++/++``#$\{Hs\}#``++(?=[\\|])/++`` Reducable characte
 ATTRIBTEXT:: Pattern: ``++/(?:\\["\\=~/|]|[^\\"])+/++`` Matches text inside an attribute value (not including the quotes)
 ATTRIBALL:: Pattern: ``++/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/++`` Matches a default attribute value string
 ATTRIBNAME:: Pattern: ``++/[a-zA-Z_][a-zA-Z0-9\-_]*?/++`` Matches an attribute name
-TEXT:: Pattern: ``++/([^\\/]|/(?!/)|\\[/~\\|])+?/++`` Matches simple text up to the next marker
-TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\[^~/\\])/++`` Matches simple text without trailing whitespace
-TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
+USV:: Pattern: ``++/\\u[0-9a-fA-F]{4}|\\U[0-9a-fA-F]{8}/++`` Matches \u or \U
+TEXT:: Pattern: ``++/([^\\/]|/(?!/)|\\[/~\\|]|++``#$\{USV\}#``++)+?/++`` Matches simple text up to the next marker
+TEXTNWS:: Pattern: ``++/.+(?=++``#$\{Ws\}#``++\\[^~/\\]|++``#$\{USV\}#``++)/++`` Matches simple text without trailing whitespace
+TEXTNOTATTRIB:: Pattern: ``++/(?:[^\\|]|\\[\\~/|]|++``#$\{USV\}#``++)+/++`` Matches simple text up to the start of a sequence of attributes delimited by |
 TEXTNOTATTRIBOPT:: Pattern: ``++/(?:[^\\|]|\\[\\~/|])*/++`` Matches simple text up to the start of a sequence of attributes delimited by | if present
 IGNORELINE:: Pattern: ``++/[^\r\n]*/++`` Matches anything up to the end of the line. Used for ignoring everything up to the end of a line
 PIPE:: Pattern: ``++/++``#$\{hs\}#``++*(?<!\\)\|++``#$\{hs\}#``++*/++`` Matches the attributes list delimiter of |
@@ -37,3 +38,5 @@ VERSE:: Pattern: ``++/[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*/
 VID:: Pattern: ``++/[A-Z1-4]{3} ?[‏a-z0-9,\-:\p{L}\p{Mn}]*/++`` USX eid, sid, vid references
 MID:: Pattern: ``++/[\p{L}\d_\-\.:]+/++`` Milestone sid or eid any identifier, in effect
 HREF:: Pattern: ``++/(.*\/\/\/?(.*\/?)+)|((prj:[A-Za-z\-0-9]{3,8} )?[A-Z1-4]{3} \d+:\d+(\-\d+)?)|(#[^\s]+)/++`` href bible reference
+HEX4:: Pattern: ``++/[0-9a-fA-F]{4}/++`` Four hex digits for a BMP USV
+HEX8:: Pattern: ``++/[0-9a-fA-F]{8}/++`` Four hex digits for a USV not in the BMP

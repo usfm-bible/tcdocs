@@ -1,5 +1,7 @@
 # Lists and Tables
 
+Approved for addition to USFM 4.
+
 ## Introduction
 
 Currently USFM has no way of identifying and attributing lists and tables. Yes there is a \<table\> element in USX, but this is not stored in USFM and has to be inferred. It also, therefore, cannot hold attributes (for example @aid \- see U25002) that while available in USX/J are not available in USFM.

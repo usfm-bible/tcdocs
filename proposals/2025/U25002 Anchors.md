@@ -1,5 +1,7 @@
 # Anchors and Inline Referencing
 
+Approved for addition USFM 3.2.
+
 ## Introduction
 
 Aligning data between a scripture file and another data source is a difficult problem to solve. On one level it is far better to keep such data outside of the scripture file and to link it to the appropriate place in the scripture file using some kind of referencing scheme, such as described in U23003. But some locations, particularly to text outside of the standard C:V structure can be hard to reference. Are there ways in which we can introduce extra reference points into a scripture file without cluttering the file and making text processing of the file nigh on impossible?

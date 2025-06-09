@@ -1,8 +1,10 @@
 # Explicitly Marked Unicode
 
-**A Unicode Scalar Value (USV) Representation Standard**
+A Unicode Scalar Value (USV) Representation Standard
 
 K. Spielmann
+
+Approved for addition to USFM 3.2.
 
 ## Executive Summary
 

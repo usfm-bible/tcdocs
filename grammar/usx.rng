@@ -169,22 +169,24 @@
     <element usfm:stacked="true">
       <name ns="">usx</name>
       <ref name="BookIdentification"/>
-      <optional>
-        <attribute>
-          <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\\usfm &#x27;"/>
-          <name ns="">version</name>
-          <data type="string">
-            <param name="minLength">3</param>
-            <param name="pattern">\d+\.\d+(\.\d+)?</param>
-          </data>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <name ns="http://www.w3.org/2001/XMLSchema-instance">noNamespaceSchemaLocation</name>
-          <text/>
-        </attribute>
-      </optional>
+      <group usfm:seq="true">
+        <optional>
+          <attribute>
+            <usfm:match before="/${Ws}\\usfm${HS}/" beforeout="&#x27;\\usfm &#x27;"/>
+            <name ns="">version</name>
+            <data type="string">
+              <param name="minLength">3</param>
+              <param name="pattern">\d+\.\d+(\.\d+)?</param>
+            </data>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute>
+            <name ns="http://www.w3.org/2001/XMLSchema-instance">noNamespaceSchemaLocation</name>
+            <text/>
+          </attribute>
+        </optional>
+      </group>
       <group usfm:seq="true">
         <zeroOrMore>
           <ref name="BookHeaders"/>
@@ -444,16 +446,21 @@
     </choice>
   </define>
   <define name="PeripheralDivision">
-    <element usfm:stacked="true">
+    <element usfm:stacked="true" usfm:seq="true">
       <usfm:match usfm:order="-3" before="/${Ws}\\periph${HS}/" beforeout="&#x27;\\periph &#x27;" match="&#x27;&#x27;"/>
       <name ns="">periph</name>
-      <optional>
-        <attribute>
-          <usfm:match match="TEXTNOTATTRIB" usfm:seq="true"/>
-          <name ns="">alt</name>
-          <text/>
-        </attribute>
-      </optional>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <optional>
+          <attribute>
+            <usfm:match match="TEXTNOTATTRIB" usfm:seq="true"/>
+            <name ns="">alt</name>
+            <text/>
+          </attribute>
+        </optional>
+      </group>
       <attribute usfm:grouping="15">
         <usfm:match before="/${PIPE}${Hs}id=?&quot;/" beforeout="&#x27;|id=&quot;&#x27;" after="&#x27;&quot;&#x27;" usfm:seq="true"/>
         <name ns="">id</name>
@@ -467,21 +474,23 @@
           </data>
         </choice>
       </attribute>
-      <zeroOrMore>
-        <ref name="BookHeaders"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="BookTitles"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="BookIntroduction"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="BookIntroductionEndTitles"/>
-      </zeroOrMore>
-      <zeroOrMore>
-        <ref name="PeripheralContent"/>
-      </zeroOrMore>
+      <group usfm:seq="true">
+        <zeroOrMore>
+          <ref name="BookHeaders"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="BookTitles"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="BookIntroduction"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="BookIntroductionEndTitles"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="PeripheralContent"/>
+        </zeroOrMore>
+      </group>
     </element>
   </define>
   <define name="Peripheral.FRT.periph.id.enum">
@@ -643,6 +652,9 @@
           <name ns="">style</name>
           <ref name="Introduction.para.style.enum"/>
         </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
         <zeroOrMore>
           <choice>
             <text>
@@ -744,6 +756,9 @@
         <name ns="">style</name>
         <ref name="IntroList.para.style.enum"/>
       </attribute>
+      <optional>
+        <ref name="AttributesPre"/>
+      </optional>
       <zeroOrMore>
         <choice>
           <text>
@@ -831,6 +846,9 @@
         <name ns="">style</name>
         <ref name="SectionPara.para.style.enum"/>
       </attribute>
+      <optional>
+        <ref name="AttributesPre"/>
+      </optional>
       <optional>
         <attribute>
           <name ns="">vid</name>
@@ -922,6 +940,9 @@
           <name ns="">style</name>
           <ref name="PeriphPara.para.style.enum"/>
         </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
         <zeroOrMore>
           <choice>
             <text>
@@ -949,6 +970,9 @@
           <name ns="">style</name>
           <ref name="OtherPara.para.style.enum"/>
         </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
         <optional>
           <attribute>
             <name ns="">vid</name>
@@ -984,6 +1008,9 @@
           <name ns="">style</name>
           <ref name="VersePara.para.style.enum"/>
         </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
         <optional>
           <attribute>
             <name ns="">vid</name>
@@ -1136,6 +1163,9 @@
         <ref name="List.para.style.enum"/>
       </attribute>
       <optional>
+        <ref name="AttributesPre"/>
+      </optional>
+      <optional>
         <attribute>
           <name ns="">vid</name>
           <data type="string">
@@ -1209,6 +1239,9 @@
             <name ns="">style</name>
             <value>tr</value>
           </attribute>
+          <optional>
+            <ref name="AttributesPre"/>
+          </optional>
           <oneOrMore>
             <choice>
               <ref name="Verse" usfm:ignore="true"/>
@@ -1229,6 +1262,9 @@
           <param name="pattern">t[hc][rc]?\d+(-\d+)?</param>
         </data>
       </attribute>
+      <optional>
+        <ref name="AttributesPre"/>
+      </optional>
       <attribute>
         <name ns="">align</name>
         <ref name="cell.align.enum"/>
@@ -1276,6 +1312,9 @@
       <optional>
         <ref name="char.closed"/>
       </optional>
+      <optional>
+        <ref name="AttributesPre"/>
+      </optional>
       <oneOrMore>
         <choice>
           <text>
@@ -1320,10 +1359,10 @@
   </define>
   <define name="Attributes">
     <group>
-      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true" noout="true"/>
       <oneOrMore>
         <attribute usfm:fallback-from="style">
-          <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
+          <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL" noout="true"/>
           <anyName>
             <except>
               <choice>
@@ -1337,6 +1376,28 @@
       </oneOrMore>
     </group>
   </define>
+  <define name="AttributesPre">
+    <group>
+      <group>
+        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+        <oneOrMore>
+          <attribute usfm:fallback-from="style">
+            <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
+            <anyName>
+              <except>
+                <choice>
+                  <name ns="">style</name>
+                  <name ns="">closed</name>
+                </choice>
+              </except>
+            </anyName>
+            <data type="string"/>
+          </attribute>
+        </oneOrMore>
+      </group>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+    </group>
+  </define>
   <define name="Char">
     <element usfm:stacked="true">
       <name ns="">char</name>
@@ -1345,16 +1406,20 @@
         <name ns="">style</name>
         <ref name="FullChar.char.style.enum"/>
       </attribute>
-      <choice>
+      <group usfm:seq="true">
         <group>
-          <ref name="CharContent"/>
+          <optional>
+            <ref name="AttributesPre"/>
+          </optional>
+          <optional>
+            <ref name="CharContent"/>
+          </optional>
           <optional>
             <ref name="Attributes"/>
           </optional>
         </group>
-        <ref name="Attributes"/>
-      </choice>
-      <usfm:endtag usfm:seq="true"/>
+        <usfm:endtag usfm:seq="true"/>
+      </group>
     </element>
   </define>
   <define name="CharContent">
@@ -1467,38 +1532,42 @@
     <element>
       <name ns="">char</name>
       <choice>
-        <group>
-          <attribute usfm:stacked="true" usfm:grouping="9">
+        <group usfm:stacked="true">
+          <attribute usfm:grouping="9">
             <usfm:tag matchid="b" before="&#x27;\\&#x27;" usfm:seq="true" skip="3.0"/>
             <name ns="">style</name>
             <ref name="FullChar.char.style.enum"/>
           </attribute>
-          <choice>
-            <group>
+          <group usfm:seq="true">
+            <optional>
+              <ref name="AttributesPre"/>
+            </optional>
+            <optional>
               <ref name="CharContent"/>
-              <optional>
-                <ref name="Attributes"/>
-              </optional>
-            </group>
-            <ref name="Attributes"/>
-          </choice>
+            </optional>
+            <optional>
+              <ref name="Attributes"/>
+            </optional>
+          </group>
           <usfm:endtag matchref="b" before="&#x27;\\&#x27;"/>
         </group>
-        <group>
-          <attribute usfm:stacked="true" usfm:grouping="9">
+        <group usfm:stacked="true">
+          <attribute usfm:grouping="9">
             <usfm:tag matchid="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
             <name ns="">style</name>
             <ref name="FullChar.char.style.enum"/>
           </attribute>
-          <choice>
-            <group>
+          <group usfm:seq="true">
+            <optional>
+              <ref name="AttributesPre"/>
+            </optional>
+            <optional>
               <ref name="CharContent"/>
-              <optional>
-                <ref name="Attributes"/>
-              </optional>
-            </group>
-            <ref name="Attributes"/>
-          </choice>
+            </optional>
+            <optional>
+              <ref name="Attributes"/>
+            </optional>
+          </group>
           <usfm:endtag matchref="a" before="&#x27;\\+&#x27;"/>
         </group>
       </choice>
@@ -1513,10 +1582,15 @@
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
-        <ref name="NoteCharContent"/>
-        <optional>
-          <ref name="Attributes"/>
-        </optional>
+        <group usfm:seq="true">
+          <optional>
+            <ref name="AttributesPre"/>
+          </optional>
+          <ref name="NoteCharContent"/>
+          <optional>
+            <ref name="Attributes"/>
+          </optional>
+        </group>
         <usfm:endtag matchref="c" before="&#x27;\\&#x27;"/>
       </element>
       <element>
@@ -1526,10 +1600,15 @@
           <name ns="">style</name>
           <ref name="Char.char.style.enum"/>
         </attribute>
-        <ref name="NoteCharContent"/>
-        <optional>
-          <ref name="Attributes"/>
-        </optional>
+        <group usfm:seq="true">
+          <optional>
+            <ref name="AttributesPre"/>
+          </optional>
+          <ref name="NoteCharContent"/>
+          <optional>
+            <ref name="Attributes"/>
+          </optional>
+        </group>
         <usfm:endtag matchref="b" before="&#x27;\\+&#x27;"/>
       </element>
     </choice>
@@ -1544,6 +1623,9 @@
       </attribute>
       <optional>
         <ref name="char.closed"/>
+      </optional>
+      <optional>
+        <ref name="AttributesPre"/>
       </optional>
       <zeroOrMore>
         <choice>
@@ -1596,7 +1678,10 @@
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
-      <group usfm:order="-1">
+      <optional>
+        <ref name="AttributesPre"/>
+      </optional>
+      <group usfm:order="-1" usfm:seq="true">
         <optional>
           <text>
             <usfm:match match="TEXTNOTATTRIB"/>
@@ -1606,56 +1691,64 @@
       <optional>
         <ref name="Attributes"/>
       </optional>
-      <usfm:endtag usfm:order="4"/>
+      <usfm:endtag usfm:order="4" usfm:seq="true"/>
     </element>
   </define>
   <define name="FigureTwo">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">figure</name>
-      <attribute>
-        <usfm:tag matchid="a"/>
-        <name ns="">style</name>
-        <value>fig</value>
-      </attribute>
-      <optional>
-        <ref name="char.closed"/>
-      </optional>
-      <attribute>
-        <usfm:match match="TEXTNOTATTRIBOPT"/>
-        <name ns="">alt</name>
-        <data type="string"/>
-      </attribute>
-      <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
-        <name ns="">src</name>
-        <data type="string"/>
-      </attribute>
-      <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
-        <name ns="">size</name>
-        <data type="string"/>
-      </attribute>
-      <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
-        <name ns="">loc</name>
-        <data type="string"/>
-      </attribute>
-      <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
-        <name ns="">copy</name>
-        <data type="string"/>
-      </attribute>
-      <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
-        <name ns="">alt</name>
-        <data type="string"/>
-      </attribute>
-      <attribute>
-        <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
-        <name ns="">ref</name>
-        <data type="string"/>
-      </attribute>
-      <usfm:endtag/>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:tag matchid="a"/>
+          <name ns="">style</name>
+          <value>fig</value>
+        </attribute>
+        <optional>
+          <ref name="char.closed"/>
+        </optional>
+        <attribute>
+          <usfm:match match="TEXTNOTATTRIBOPT"/>
+          <name ns="">alt</name>
+          <data type="string"/>
+        </attribute>
+      </group>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
+          <name ns="">src</name>
+          <data type="string"/>
+        </attribute>
+        <attribute>
+          <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
+          <name ns="">size</name>
+          <data type="string"/>
+        </attribute>
+      </group>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
+          <name ns="">loc</name>
+          <data type="string"/>
+        </attribute>
+        <attribute>
+          <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
+          <name ns="">copy</name>
+          <data type="string"/>
+        </attribute>
+      </group>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
+          <name ns="">alt</name>
+          <data type="string"/>
+        </attribute>
+        <attribute>
+          <usfm:match before="PIPE" beforeout="|" match="TEXTNOTATTRIBOPT"/>
+          <name ns="">ref</name>
+          <data type="string"/>
+        </attribute>
+      </group>
+      <usfm:endtag usfm:seq="true"/>
     </element>
   </define>
   <define name="char.closed">
@@ -1716,13 +1809,18 @@
         <name ns="">style</name>
         <value>c</value>
       </attribute>
-      <attribute>
-        <usfm:match after="TAGEND" afterout="&#x27; &#x27;" usfm:seq="true"/>
-        <name ns="">number</name>
-        <data type="string">
-          <param name="pattern">[1-9][0-9]*</param>
-        </data>
-      </attribute>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <attribute>
+          <usfm:match after="TAGEND" afterout="&#x27; &#x27;"/>
+          <name ns="">number</name>
+          <data type="string">
+            <param name="pattern">[1-9][0-9]*</param>
+          </data>
+        </attribute>
+      </group>
       <optional>
         <attribute>
           <name ns="">sid</name>
@@ -1796,15 +1894,20 @@
         <name ns="">style</name>
         <value>v</value>
       </attribute>
-      <attribute>
-        <usfm:match usfm:seq="true" after="WS" afterout="&#x27; &#x27;"/>
-        <name ns="">number</name>
-        <data type="string">
-          <usfm:pattern name="VERSE"/>
-          <param name="minLength">1</param>
-          <param name="pattern">[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
-        </data>
-      </attribute>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <attribute>
+          <usfm:match after="WS" afterout="&#x27; &#x27;"/>
+          <name ns="">number</name>
+          <data type="string">
+            <usfm:pattern name="VERSE"/>
+            <param name="minLength">1</param>
+            <param name="pattern">[1-9][0-9]*[\p{L}\p{Mn}]*(‏?[\-,][0-9]+[\p{L}\p{Mn}]*)*</param>
+          </data>
+        </attribute>
+      </group>
       <optional>
         <attribute>
           <usfm:tag dump="true" before="/\\va${HS}/" beforeout="&#x27;\\va &#x27;" after="/\\va\*${Hs}/" afterout="&#x27;\\va* &#x27;"/>
@@ -1851,30 +1954,39 @@
     </element>
   </define>
   <define name="Footnote">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">note</name>
-      <attribute>
-        <usfm:tag matchid="a"/>
-        <name ns="">style</name>
-        <ref name="Footnote.style.enum"/>
-      </attribute>
-      <attribute>
-        <usfm:match match="/[^\\\s]+/" after="HS" afterout="&#x27; &#x27;"/>
-        <name ns="">caller</name>
-        <text/>
-      </attribute>
-      <optional>
-        <ref name="category"/>
-      </optional>
-      <oneOrMore>
-        <choice>
-          <ref name="FootnoteChar"/>
-          <text>
-            <usfm:text/>
-          </text>
-        </choice>
-      </oneOrMore>
-      <usfm:endtag before="/${Ws}\\/" beforeout="&#x27;\\&#x27;"/>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:tag matchid="a"/>
+          <name ns="">style</name>
+          <ref name="Footnote.style.enum"/>
+        </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+      </group>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:match match="/[^\\\s]+/" after="HS" afterout="&#x27; &#x27;"/>
+          <name ns="">caller</name>
+          <text/>
+        </attribute>
+        <group usfm:seq="true">
+          <optional>
+            <ref name="category"/>
+          </optional>
+          <oneOrMore>
+            <choice>
+              <ref name="FootnoteChar"/>
+              <text>
+                <usfm:text/>
+              </text>
+            </choice>
+          </oneOrMore>
+        </group>
+      </group>
+      <usfm:endtag before="/${Ws}\\/" beforeout="&#x27;\\&#x27;" usfm:seq="true"/>
     </element>
   </define>
   <define name="Footnote.style.enum">
@@ -1890,29 +2002,36 @@
     </choice>
   </define>
   <define name="FootnoteChar">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">char</name>
-      <attribute usfm:grouping="8">
-        <usfm:tag matchid="b"/>
-        <name ns="">style</name>
-        <ref name="FootnoteChar.char.style.enum"/>
-      </attribute>
-      <optional>
-        <ref name="char.closed" usfm:ignore="true"/>
-      </optional>
+      <group usfm:seq="true">
+        <attribute usfm:grouping="8">
+          <usfm:tag matchid="b"/>
+          <name ns="">style</name>
+          <ref name="FootnoteChar.char.style.enum"/>
+        </attribute>
+        <optional>
+          <ref name="char.closed" usfm:ignore="true"/>
+        </optional>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+      </group>
       <zeroOrMore>
-        <choice>
-          <text>
-            <usfm:text/>
-          </text>
-          <ref name="NoteCharEmbed"/>
-          <ref name="Figure"/>
-          <ref name="Milestone"/>
-          <ref name="Reference"/>
-          <ref name="Break"/>
-        </choice>
+        <group usfm:seq="true">
+          <choice>
+            <text>
+              <usfm:text/>
+            </text>
+            <ref name="NoteCharEmbed"/>
+            <ref name="Figure"/>
+            <ref name="Milestone"/>
+            <ref name="Reference"/>
+            <ref name="Break"/>
+          </choice>
+        </group>
       </zeroOrMore>
-      <usfm:endtag matchref="b" noout="true" usfm:many="?" after="&#x27;*&#x27;"/>
+      <usfm:endtag matchref="b" noout="true" usfm:many="?" after="&#x27;*&#x27;" usfm:seq="true"/>
     </element>
   </define>
   <define name="FootnoteChar.char.style.enum">
@@ -1938,25 +2057,32 @@
     </choice>
   </define>
   <define name="CrossReference">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">note</name>
-      <attribute>
-        <usfm:tag matchid="a"/>
-        <name ns="">style</name>
-        <ref name="CrossReference.style.enum"/>
-      </attribute>
-      <attribute>
-        <usfm:match match="/[^\\\s]+/" after="Hs" afterout="&#x27; &#x27;"/>
-        <name ns="">caller</name>
-        <text/>
-      </attribute>
-      <optional>
-        <ref name="category"/>
-      </optional>
-      <zeroOrMore>
-        <ref name="CrossReferenceChar"/>
-      </zeroOrMore>
-      <usfm:endtag/>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:tag matchid="a"/>
+          <name ns="">style</name>
+          <ref name="CrossReference.style.enum"/>
+        </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <attribute>
+          <usfm:match match="/[^\\\s]+/" after="Hs" afterout="&#x27; &#x27;"/>
+          <name ns="">caller</name>
+          <text/>
+        </attribute>
+      </group>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="category"/>
+        </optional>
+        <zeroOrMore>
+          <ref name="CrossReferenceChar"/>
+        </zeroOrMore>
+      </group>
+      <usfm:endtag usfm:seq="true"/>
     </element>
   </define>
   <define name="CrossReference.style.enum">
@@ -1977,6 +2103,9 @@
       </attribute>
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
+      </optional>
+      <optional>
+        <ref name="AttributesPre"/>
       </optional>
       <oneOrMore>
         <choice>
@@ -2016,27 +2145,34 @@
     </choice>
   </define>
   <define name="Sidebar">
-    <element>
+    <element usfm:stacked="true">
       <name ns="">sidebar</name>
-      <attribute>
-        <usfm:ptag/>
-        <name ns="">style</name>
-        <value>esb</value>
-      </attribute>
-      <optional>
-        <ref name="category"/>
-      </optional>
+      <group usfm:seq="true">
+        <attribute>
+          <usfm:ptag/>
+          <name ns="">style</name>
+          <value>esb</value>
+        </attribute>
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <optional>
+          <ref name="category"/>
+        </optional>
+      </group>
       <oneOrMore>
-        <choice>
-          <ref name="Section"/>
-          <ref name="Para"/>
-          <ref name="List"/>
-          <ref name="Table"/>
-          <ref name="Footnote"/>
-          <ref name="CrossReference"/>
-        </choice>
+        <group usfm:seq="true">
+          <choice>
+            <ref name="Section"/>
+            <ref name="Para"/>
+            <ref name="List"/>
+            <ref name="Table"/>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+          </choice>
+        </group>
       </oneOrMore>
-      <usfm:ptag dump="true" afterout="&#x27;\n&#x27;">esbe</usfm:ptag>
+      <usfm:ptag dump="true" afterout="&#x27;\n&#x27;" usfm:seq="true">esbe</usfm:ptag>
     </element>
   </define>
   <define name="category">
@@ -2049,35 +2185,42 @@
     </attribute>
   </define>
   <define name="Reference">
-    <element>
-      <usfm:tag match="&#x27;ref&#x27;" dump="true"/>
+    <element usfm:stacked="true">
+      <usfm:tag match="&#x27;ref&#x27;" dump="true" usfm:seq="true"/>
       <name ns="">ref</name>
-      <optional>
-        <text>
-          <usfm:text match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
-        </text>
-      </optional>
-      <optional>
-        <attribute>
-          <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-          <usfm:match match="TEXTNOTATTRIB"/>
-          <name ns="">loc</name>
-          <data type="string">
-            <usfm:pattern name="VERSE"/>
-            <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
-          </data>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute>
-          <usfm:match match="TEXTNOTATTRIB" noout="true"/>
-          <name ns="">gen</name>
-          <choice>
-            <value>true</value>
-            <value>false</value>
-          </choice>
-        </attribute>
-      </optional>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <optional>
+          <text>
+            <usfm:text match="TEXTNOTATTRIB" after="ATTRIBTEXTEND"/>
+          </text>
+        </optional>
+      </group>
+      <group usfm:seq="true">
+        <optional>
+          <attribute>
+            <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+            <usfm:match match="TEXTNOTATTRIB"/>
+            <name ns="">loc</name>
+            <data type="string">
+              <usfm:pattern name="VERSE"/>
+              <param name="pattern">[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*</param>
+            </data>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute>
+            <usfm:match match="TEXTNOTATTRIB" noout="true"/>
+            <name ns="">gen</name>
+            <choice>
+              <value>true</value>
+              <value>false</value>
+            </choice>
+          </attribute>
+        </optional>
+      </group>
     </element>
     <usfm:endtag match="&#x27;ref&#x27;" matchref=""/>
   </define>

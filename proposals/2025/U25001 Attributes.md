@@ -1,6 +1,6 @@
 # Generalised Attributes
 
-Reorganised ready for final standardisation
+Reorganised ready for final standardisation. Add to USFM 3.2.
 
 ## Specification
 
@@ -8,7 +8,7 @@ Both USX and USJ have a mechanism for the addition of arbitrary attributes to an
 
 Character styles (\<char\>) and milestones (\<ms\>) already have a generalised mechanism through the | attributes separator. This mechanism is sufficient for those limited cases, but even then not without problems. In XML and JSON, the attributes occur at the head of the node. Since the attribute can affect the processing of the content, it helps for stream processing situations for the attributes to be before the content.
 
-The extension to the USFM syntax is to allow any node/marker to have attributes up front. Currently they are assumed to be 'at the back' as in a \\w. During v3 of the standard this current behaviour for \<char\> elements remain. But we also allow them at the front and also in elements such as \<para\>, \<verse\>, \<chapter\>, etc.
+The extension to the USFM syntax is to allow any node/marker to have attributes up front. Currently they are assumed to be 'at the back' as in a \\w. During v3 of the standard this current behaviour for \<char\> elements remain. But we also allow them at the front and also in the elements: \<para\>, \<verse\>, \<chapter\>, \<note\>, \<cell\>, \<figure\>, \<link\>, \<periph\>, \<ref\>, \<row\>, \<sidebar\>. (\<table\>, \<list\> are represented in USFM by milestones.) 
 
 The syntax is similar to that of attribute lists but with a separator between the list and the node contents. The grammar is:
 
