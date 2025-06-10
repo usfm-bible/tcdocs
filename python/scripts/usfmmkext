@@ -43,6 +43,16 @@ internalhier = {
     "tr":       ["id", "periph", "introduction", "esb"],
     }
 
+aid_categories = ["fig", "versepara", "sectionpara", "introduction", "esb", "footnote", "crossreference"]
+aid_excludes = ["b", "ib"]
+
+attributes = {
+    "c":    ["altnnumber", "pubnumber"],
+    "v":    ["altnnumber", "pubnumber"],
+}
+
+attribute_markers = "ca cp va vp cat usfm".split()
+
 def makeOccurs(cat, k, allcats):
     res = []
     if cat == 'internal':
@@ -77,29 +87,78 @@ def collectEnums(rdoc):
         for i, v in enumerate(e[0]):
             if v.tag == "{0}value".format(relaxns):
                 k = v.text.strip()
+                cat = mktype
                 if k in res:
-                    res[k]['category'].add(mktype)
+                    res[k]['category'].add(cat)
                 else:
-                    res[k] = {'category': set([mktype])}
+                    res[k] = {'category': set([cat])}
                 for a in (("propval", "defattrib"), ("propattribs", "attributes"),
                           ("propended", "closedby"), ("propends", "closes")):
                     val = v.get("{}{}".format(usfmns, a[0]), None)
                     if val is not None:
-                        res[k][a[1]] = val
+                        res[k][a[1]] = val.split() if a[1] == "attributes" else val
                 currk = k
                 allcats.setdefault(mktype, []).append(k)
             elif v.tag == "{0}documentation".format(ans) and currk in res:
                 res[currk]['description'] = v.text.strip()
     return res, allcats
 
+def addInfo(markers):
+    for k, v in markers.items():
+        if k not in aid_excludes:
+            takesaid = k in aid_categories
+            if not takesaid:
+                for c in v.get('category', []):
+                    if (takesaid := c in aid_categories):
+                        break
+            if takesaid:
+                v.setdefault("attributes", []).append("aid")
+
 def extstr(mrkr, field):
     res = [f"\\marker {mrkr}"]
     for k, v in sorted(field.items()):
-        if k == "category":
+        if k in ("category", "attributes"):
             res.append(f'\\{k} {" ".join(sorted(v))}')
         else:
             res.append(f"\\{k} {v}")
     return "\n".join(res)
+
+def createStyles(markers, sfile):
+    if sfile is not None:
+        styles = readstyles(sfile)
+    else:
+        styles = {}
+    missings = []
+    extras = []
+    for k, v in styles.items():
+        if k not in markers:
+            cat = 'internal'
+            missings.append(k)
+        else:
+            cat = markers[k]['category']
+        v['OccursUnder'] = " ".join(makeOccurs(cat, k, allcats))
+        catlist = internalhier.get(k, []) if cat == "internal" else hierarchy.get(cat, [])
+        v[' OccursUnder'] = cat + ": " + " ".join(catlist)
+    for k, v in markers.items():
+        if k in styles:
+            continue
+        cat = v['category']
+        catlist = internalhier.get(k, []) if cat == "internal" else hierarchy.get(cat, [])
+        sty = {'Marker': k, 'OccursUnder': " ".join(makeOccurs(cat, k, allcats)), ' OccursUnder': (cat + ": " + " ".join(catlist))}
+        styles[k] = sty
+        extras.append(k)
+    return (styles, missings, extras)
+
+def writeStyles(styles, outf):
+    for k, v in styles.items():
+        outf.write("\n")
+        for a, b in v.items():
+            if a.startswith(" "):
+                continue
+            if " "+a in v:
+                outf.write("# "+v[" "+a] + "\n")
+            outf.write(f"\\{a} {b}\n")
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("infile",help="Input RNG XML file")
@@ -111,6 +170,8 @@ args = parser.parse_args()
 
 rdoc = et.parse(args.infile)
 res, allcats = collectEnums(rdoc)
+addInfo(res)
+
 if args.outfile is not None:
     outf = open(args.outfile, "w")
     if args.format is None:
@@ -126,37 +187,8 @@ if args.format == "ext":
     output = [extstr(k, v) for k, v in sorted(res.items())]
     outf.write("\n\n".join(output))
 else:
-    if args.style is not None:
-        styles = readstyles(args.style)
-    else:
-        styles = {}
-    missings = []
-    extras = []
-    for k, v in styles.items():
-        if k not in res:
-            cat = 'internal'
-            missings.append(k)
-        else:
-            cat = res[k]['category']
-        v['OccursUnder'] = " ".join(makeOccurs(cat, k, allcats))
-        catlist = internalhier.get(k, []) if cat == "internal" else hierarchy.get(cat, [])
-        v[' OccursUnder'] = cat + ": " + " ".join(catlist)
-    for k, v in res.items():
-        if k in styles:
-            continue
-        cat = v['category']
-        catlist = internalhier.get(k, []) if cat == "internal" else hierarchy.get(cat, [])
-        sty = {'Marker': k, 'OccursUnder': " ".join(makeOccurs(cat, k, allcats)), ' OccursUnder': (cat + ": " + " ".join(catlist))}
-        styles[k] = sty
-        extras.append(k)
-    for k, v in styles.items():
-        outf.write("\n")
-        for a, b in v.items():
-            if a.startswith(" "):
-                continue
-            if " "+a in v:
-                outf.write("# "+v[" "+a] + "\n")
-            outf.write(f"\\{a} {b}\n")
+    styles, missings, extras = createStyles(res, args.style)
+    writeStyles(styles, outf)
     if args.outfile:
         print("Missing markers: "+" ".join(missings))
         print("Extra markers: "+" ".join(extras))

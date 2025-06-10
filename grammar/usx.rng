@@ -449,9 +449,27 @@
     <element usfm:stacked="true" usfm:seq="true">
       <usfm:match usfm:order="-3" before="/${Ws}\\periph${HS}/" beforeout="&#x27;\\periph &#x27;" match="&#x27;&#x27;"/>
       <name ns="">periph</name>
-      <group usfm:seq="true">
+      <group usfm:alt="PeripheralDivisionThree" usfm:stacked="true">
         <optional>
-          <ref name="AttributesPre"/>
+          <group>
+            <group>
+              <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+              <attribute usfm:grouping="8">
+                <usfm:match before="&#x27;id=&quot;&#x27;" after="&quot;"/>
+                <name ns="">id</name>
+                <choice>
+                  <ref name="Peripheral.FRT.periph.id.enum"/>
+                  <ref name="Peripheral.INT.periph.id.enum"/>
+                  <ref name="Peripheral.BAK.periph.id.enum"/>
+                  <ref name="Peripheral.OTH.periph.id.enum"/>
+                  <data type="string">
+                    <param name="pattern">x\-[\p{L}_\-\.:]+</param>
+                  </data>
+                </choice>
+              </attribute>
+            </group>
+            <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+          </group>
         </optional>
         <optional>
           <attribute>
@@ -461,19 +479,6 @@
           </attribute>
         </optional>
       </group>
-      <attribute usfm:grouping="15">
-        <usfm:match before="/${PIPE}${Hs}id=?&quot;/" beforeout="&#x27;|id=&quot;&#x27;" after="&#x27;&quot;&#x27;" usfm:seq="true"/>
-        <name ns="">id</name>
-        <choice>
-          <ref name="Peripheral.FRT.periph.id.enum"/>
-          <ref name="Peripheral.INT.periph.id.enum"/>
-          <ref name="Peripheral.BAK.periph.id.enum"/>
-          <ref name="Peripheral.OTH.periph.id.enum"/>
-          <data type="string">
-            <param name="pattern">x\-[\p{L}_\-\.:]+</param>
-          </data>
-        </choice>
-      </attribute>
       <group usfm:seq="true">
         <zeroOrMore>
           <ref name="BookHeaders"/>
@@ -492,6 +497,20 @@
         </zeroOrMore>
       </group>
     </element>
+  </define>
+  <define name="PeripheralDivisionThree">
+    <group>
+      <optional>
+        <attribute>
+          <usfm:match match="TEXTNOTATTRIB" usfm:seq="true"/>
+          <name ns="">alt</name>
+          <text/>
+        </attribute>
+      </optional>
+      <optional>
+        <ref name="Attributes"/>
+      </optional>
+    </group>
   </define>
   <define name="Peripheral.FRT.periph.id.enum">
     <choice>
@@ -971,16 +990,7 @@
           <ref name="OtherPara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="AttributesPre"/>
-        </optional>
-        <optional>
-          <attribute>
-            <name ns="">vid</name>
-            <data type="string">
-              <usfm:pattern name="VERSE"/>
-              <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-            </data>
-          </attribute>
+          <ref name="VAttributesPre"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -999,6 +1009,33 @@
       <ref name="Remark"/>
     </choice>
   </define>
+  <define name="VAttributesPre">
+    <group>
+      <group>
+        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+        <group usfm:stacked="true">
+          <optional>
+            <attribute>
+              <usfm:match before="&#x27;vid=&quot;&#x27;" after="&quot;"/>
+              <name ns="">vid</name>
+              <data type="string">
+                <usfm:pattern name="VERSE"/>
+                <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+              </data>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute>
+              <usfm:match before="&#x27;aid=&quot;&#x27;" after="&quot;"/>
+              <name ns="">aid</name>
+              <data type="string"/>
+            </attribute>
+          </optional>
+        </group>
+      </group>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+    </group>
+  </define>
   <define name="VersePara">
     <choice>
       <element>
@@ -1009,16 +1046,7 @@
           <ref name="VersePara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="AttributesPre"/>
-        </optional>
-        <optional>
-          <attribute>
-            <name ns="">vid</name>
-            <data type="string">
-              <usfm:pattern name="VERSE"/>
-              <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-            </data>
-          </attribute>
+          <ref name="VAttributesPre"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1163,16 +1191,7 @@
         <ref name="List.para.style.enum"/>
       </attribute>
       <optional>
-        <ref name="AttributesPre"/>
-      </optional>
-      <optional>
-        <attribute>
-          <name ns="">vid</name>
-          <data type="string">
-            <usfm:pattern name="VERSE"/>
-            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-          </data>
-        </attribute>
+        <ref name="VAttributesPre"/>
       </optional>
       <zeroOrMore>
         <choice>
@@ -1395,7 +1414,7 @@
           </attribute>
         </oneOrMore>
       </group>
-      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true" after="Hs" afterout="&#x27; &#x27;"/>
     </group>
   </define>
   <define name="Char">
@@ -1496,7 +1515,7 @@
       <a:documentation>For the signature of the author of an Epistle</a:documentation>
       <value>sls</value>
       <a:documentation>To represent where the original text is in a secondary language or from an alternate text source</a:documentation>
-      <value>tl</value>
+      <value usfm:propval="lang">wl</value>
       <a:documentation>For transliterated words</a:documentation>
       <value>wg</value>
       <a:documentation>A Greek Wordlist text item</a:documentation>
@@ -1549,7 +1568,7 @@
               <ref name="Attributes"/>
             </optional>
           </group>
-          <usfm:endtag matchref="b" before="&#x27;\\&#x27;"/>
+          <usfm:endtag matchref="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
         </group>
         <group usfm:stacked="true">
           <attribute usfm:grouping="9">
@@ -1568,50 +1587,53 @@
               <ref name="Attributes"/>
             </optional>
           </group>
-          <usfm:endtag matchref="a" before="&#x27;\\+&#x27;"/>
+          <usfm:endtag matchref="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
         </group>
       </choice>
     </element>
   </define>
   <define name="NoteCharEmbed">
-    <choice>
-      <element>
-        <name ns="">char</name>
-        <attribute usfm:stacked="true" usfm:grouping="9">
-          <usfm:tag matchid="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
-          <name ns="">style</name>
-          <ref name="Char.char.style.enum"/>
-        </attribute>
-        <group usfm:seq="true">
-          <optional>
-            <ref name="AttributesPre"/>
-          </optional>
-          <ref name="NoteCharContent"/>
-          <optional>
-            <ref name="Attributes"/>
-          </optional>
-        </group>
-        <usfm:endtag matchref="c" before="&#x27;\\&#x27;"/>
-      </element>
-      <element>
-        <name ns="">char</name>
-        <attribute usfm:stacked="true" usfm:grouping="9">
-          <usfm:tag matchid="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
-          <name ns="">style</name>
-          <ref name="Char.char.style.enum"/>
-        </attribute>
-        <group usfm:seq="true">
-          <optional>
-            <ref name="AttributesPre"/>
-          </optional>
-          <ref name="NoteCharContent"/>
-          <optional>
-            <ref name="Attributes"/>
-          </optional>
-        </group>
-        <usfm:endtag matchref="b" before="&#x27;\\+&#x27;"/>
-      </element>
-    </choice>
+    <ref name="NoteCharEmbedEmpty" usfm:alt="NoteCharEmbedPlus"/>
+  </define>
+  <define name="NoteCharEmbedEmpty">
+    <element usfm:stacked="true">
+      <name ns="">char</name>
+      <attribute usfm:stacked="true" usfm:grouping="9">
+        <usfm:tag matchid="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
+        <name ns="">style</name>
+        <ref name="Char.char.style.enum"/>
+      </attribute>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <ref name="NoteCharContent"/>
+        <optional>
+          <ref name="Attributes"/>
+        </optional>
+      </group>
+      <usfm:endtag matchref="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
+    </element>
+  </define>
+  <define name="NoteCharEmbedPlus">
+    <element usfm:stacked="true">
+      <name ns="">char</name>
+      <attribute usfm:stacked="true" usfm:grouping="9">
+        <usfm:tag matchid="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
+        <name ns="">style</name>
+        <ref name="Char.char.style.enum"/>
+      </attribute>
+      <group usfm:seq="true">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <ref name="NoteCharContent"/>
+        <optional>
+          <ref name="Attributes"/>
+        </optional>
+      </group>
+      <usfm:endtag matchref="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
+    </element>
   </define>
   <define name="ListChar">
     <element>
@@ -1678,10 +1700,24 @@
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
-      <optional>
-        <ref name="AttributesPre"/>
-      </optional>
-      <group usfm:order="-1" usfm:seq="true">
+      <group usfm:alt="FigureThreeAttribs">
+        <optional>
+          <ref name="AttributesPre"/>
+        </optional>
+        <group usfm:seq="true">
+          <optional>
+            <text>
+              <usfm:match match="TEXTNOTATTRIB"/>
+            </text>
+          </optional>
+        </group>
+      </group>
+      <usfm:endtag usfm:order="4" usfm:seq="true"/>
+    </element>
+  </define>
+  <define name="FigureThreeAttribs">
+    <group>
+      <group usfm:seq="true">
         <optional>
           <text>
             <usfm:match match="TEXTNOTATTRIB"/>
@@ -1691,8 +1727,7 @@
       <optional>
         <ref name="Attributes"/>
       </optional>
-      <usfm:endtag usfm:order="4" usfm:seq="true"/>
-    </element>
+    </group>
   </define>
   <define name="FigureTwo">
     <element usfm:stacked="true">
@@ -2226,7 +2261,7 @@
   </define>
   <define name="Break">
     <element>
-      <usfm:match before="/\s*\/\//" match="//"/>
+      <usfm:match before="Hs" match="&#x27;//&#x27;" after="Hs"/>
       <name ns="">optbreak</name>
       <empty/>
     </element>
@@ -2256,20 +2291,10 @@
       <a:documentation>Initial identifying marker</a:documentation>
       <value>periph</value>
       <a:documentation>Peripheral division</a:documentation>
-      <value>usfm</value>
-      <a:documentation>USFM version</a:documentation>
       <value>c</value>
       <a:documentation>Chapter</a:documentation>
-      <value>ca</value>
-      <a:documentation>Alternate Chapter number</a:documentation>
-      <value>cp</value>
-      <a:documentation>Chapter publication string</a:documentation>
       <value>v</value>
       <a:documentation>Verse</a:documentation>
-      <value>va</value>
-      <a:documentation>Alternative versification</a:documentation>
-      <value>vp</value>
-      <a:documentation>Published verse number</a:documentation>
       <value>tr</value>
       <a:documentation>Table</a:documentation>
       <value>fig</value>
@@ -2278,10 +2303,24 @@
       <a:documentation>Sidebar</a:documentation>
       <value>esbe</value>
       <a:documentation>Sidebar ending</a:documentation>
-      <value>cat</value>
-      <a:documentation>Category</a:documentation>
       <value>tr</value>
       <a:documentation>Table Row</a:documentation>
+    </choice>
+  </define>
+  <define name="Attribute.style.enum">
+    <choice>
+      <value>cat</value>
+      <a:documentation>Category</a:documentation>
+      <value>ca</value>
+      <a:documentation>Alternate Chapter number</a:documentation>
+      <value>cp</value>
+      <a:documentation>Chapter publication string</a:documentation>
+      <value>va</value>
+      <a:documentation>Alternative versification</a:documentation>
+      <value>vp</value>
+      <a:documentation>Published verse number</a:documentation>
+      <value>usfm</value>
+      <a:documentation>USFM version</a:documentation>
     </choice>
   </define>
   <define name="Cell.style.enum">

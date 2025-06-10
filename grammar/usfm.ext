@@ -27,30 +27,34 @@
 \description Chapter
 
 \marker ca
-\category internal
+\category attribute
 \description Alternate Chapter number
 
 \marker cat
-\category internal
+\category attribute
 \description Category
 
 \marker cd
+\attributes aid
 \category sectionpara
 \description Chapter Description (Publishing option D, e.g. in Russian Bibles)
 
 \marker cl
+\attributes aid
 \category sectionpara
 \description Chapter label used for translations that add a word such as "Chapter"
 
 \marker cls
+\attributes aid
 \category versepara
 \description Closure of an Epistle
 
 \marker cp
-\category internal otherpara
+\category attribute otherpara
 \description Chapter publication string
 
 \marker d
+\attributes aid
 \category versepara
 \description A Hebrew text heading, to provide description (e.g. Psalms)
 
@@ -59,10 +63,12 @@
 \description Deuterocanonical/LXX additions or insertions in the Protocanonical text
 
 \marker ef
+\attributes aid
 \category footnote
 \description Study note
 
 \marker efe
+\attributes aid
 \category footnote
 \description Extended study endnote
 
@@ -75,6 +81,7 @@
 \description A character style, use emphasized text style
 
 \marker esb
+\attributes aid
 \category internal
 \description Sidebar
 
@@ -83,10 +90,12 @@
 \description Sidebar ending
 
 \marker ex
+\attributes aid
 \category crossreference
 \description Extended cross reference
 
 \marker f
+\attributes aid
 \category footnote
 \description Footnote
 
@@ -95,10 +104,12 @@
 \description Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
 
 \marker fe
+\attributes aid
 \category footnote
 \description Endnote
 
 \marker fig
+\attributes aid
 \category internal
 \description Figure
 
@@ -171,10 +182,12 @@
 \description File encoding information (DEPRECATED)
 
 \marker ie
+\attributes aid
 \category introduction
 \description Introduction ending marker
 
 \marker iex
+\attributes aid
 \category introduction sectionpara
 \description Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
 
@@ -191,70 +204,87 @@
 \description A list entry, level 2
 
 \marker ilit
+\attributes aid
 \category introduction
 \description For a comment or note inserted for liturgical use
 
 \marker im
+\attributes aid
 \category introduction
 \description Introduction prose paragraph, with no first line indent (may occur after poetry)
 
 \marker imi
+\attributes aid
 \category introduction
 \description Introduction prose paragraph text, indented, with no first line indent
 
 \marker imq
+\attributes aid
 \category introduction
 \description Introduction prose paragraph, quote from the body text, with no first line indent
 
 \marker imt
+\attributes aid
 \category introduction
 \description Introduction major title, level 1 - (if single level)
 
 \marker imt1
+\attributes aid
 \category introduction
 \description Introduction major title, level 1 (if multiple levels)
 
 \marker imt2
+\attributes aid
 \category introduction
 \description Introduction major title, level 2
 
 \marker imt3
+\attributes aid
 \category introduction
 \description Introduction major title, level 3
 
 \marker imt4
+\attributes aid
 \category introduction
 \description Introduction major title, level 4 (usually within parenthesis)
 
 \marker imte
+\attributes aid
 \category introduction
 \description Introduction major title at introduction end, level 1 (if single level)
 
 \marker imte1
+\attributes aid
 \category introduction
 \description Introduction major title at introduction end, level 1 (if multiple levels)
 
 \marker imte2
+\attributes aid
 \category introduction
 \description Introduction major title at introduction end, level 2
 
 \marker io
+\attributes aid
 \category introduction
 \description Introduction outline text, level 1 (if single level)
 
 \marker io1
+\attributes aid
 \category introduction
 \description Introduction outline text, level 1 (if multiple levels)
 
 \marker io2
+\attributes aid
 \category introduction
 \description Introduction outline text, level 2
 
 \marker io3
+\attributes aid
 \category introduction
 \description Introduction outline text, level 3
 
 \marker io4
+\attributes aid
 \category introduction
 \description Introduction outline text, level 4
 
@@ -262,42 +292,52 @@
 \category introchar
 
 \marker iot
+\attributes aid
 \category introduction
 \description Introduction outline title
 
 \marker ip
+\attributes aid
 \category introduction sectionpara
 \description Division or Section introductory paragraph (study Bible)
 
 \marker ipc
+\attributes aid
 \category introduction
 \description Introduction prose paragraph, centred
 
 \marker ipi
+\attributes aid
 \category introduction
 \description Introduction prose paragraph, indented, with first line indent
 
 \marker ipq
+\attributes aid
 \category introduction
 \description Introduction prose paragraph, quote from the body text
 
 \marker ipr
+\attributes aid
 \category introduction
 \description Introduction prose paragraph, right aligned
 
 \marker iq
+\attributes aid
 \category introduction
 \description Introduction poetry text, level 1 (if single level)
 
 \marker iq1
+\attributes aid
 \category introduction
 \description Introduction poetry text, level 1 (if multiple levels)
 
 \marker iq2
+\attributes aid
 \category introduction
 \description Introduction poetry text, level 2
 
 \marker iq3
+\attributes aid
 \category introduction
 \description Introduction poetry text, level 3
 
@@ -305,14 +345,17 @@
 \category introchar
 
 \marker is
+\attributes aid
 \category introduction
 \description Introduction section heading, level 1 (if single level)
 
 \marker is1
+\attributes aid
 \category introduction
 \description Introduction section heading, level 1 (if multiple levels)
 
 \marker is2
+\attributes aid
 \category introduction
 \description Introduction section heading, level 2
 
@@ -424,46 +467,57 @@
 \description Structured list entry value 5 content
 
 \marker m
+\attributes aid
 \category versepara
 \description Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
 
 \marker mi
+\attributes aid
 \category versepara
 \description Paragraph text, indented, with no first line indent; often used for discourse
 
 \marker mi1
+\attributes aid
 \category versepara
 \description Paragraph text, level 1 indented, with no first line indent; often used for discourse
 
 \marker mi2
+\attributes aid
 \category versepara
 \description Paragraph text, level 2 indented, with no first line indent; often used for discourse
 
 \marker mi3
+\attributes aid
 \category versepara
 \description Paragraph text, level 3 indented, with no first line indent; often used for discourse
 
 \marker mi4
+\attributes aid
 \category versepara
 \description Paragraph text, level 4 indented, with no first line indent; often used for discourse
 
 \marker mr
+\attributes aid
 \category sectionpara
 \description A major section division references range heading
 
 \marker ms
+\attributes aid
 \category sectionpara
 \description A major section division heading, level 1 (if single level)
 
 \marker ms1
+\attributes aid
 \category sectionpara
 \description A major section division heading, level 1 (if multiple levels)
 
 \marker ms2
+\attributes aid
 \category sectionpara
 \description A major section division heading, level 2
 
 \marker ms3
+\attributes aid
 \category sectionpara
 \description A major section division heading, level 3
 
@@ -487,18 +541,22 @@
 \category title
 
 \marker mte
+\attributes aid
 \category sectionpara
 \description The main title of the book repeated at the end of the book, level 1 (if single level)
 
 \marker mte1
+\attributes aid
 \category sectionpara
 \description The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
 
 \marker mte2
+\attributes aid
 \category sectionpara
 \description A secondary title occurring before or after the 'ending' main title
 
 \marker nb
+\attributes aid
 \category versepara
 \description Paragraph text, with no break from previous paragraph text (at chapter boundary)
 
@@ -519,6 +577,7 @@
 \description For the text portion of an ordinal number
 
 \marker p
+\attributes aid
 \category versepara
 \description Paragraph text, with first line indent
 [usfm:href="paragraphs/p.html"]
@@ -536,6 +595,7 @@
 \description Page Break used for new reader portions and children's bibles where content is controlled by the page
 
 \marker pc
+\attributes aid
 \category versepara
 \description Inscription (paragraph text centered)
 
@@ -544,50 +604,62 @@
 \description Peripheral division
 
 \marker ph
+\attributes aid
 \category versepara
 \description Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
 
 \marker ph1
+\attributes aid
 \category versepara
 \description Paragraph text, with level 1 hanging indent (if multiple levels)
 
 \marker ph2
+\attributes aid
 \category versepara
 \description Paragraph text, with level 2 hanging indent
 
 \marker ph3
+\attributes aid
 \category versepara
 \description Paragraph text, with level 3 hanging indent
 
 \marker pi
+\attributes aid
 \category versepara
 \description Paragraph text, level 1 indent (if single level), with first line indent; often used for discourse
 
 \marker pi1
+\attributes aid
 \category versepara
 \description Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse
 
 \marker pi2
+\attributes aid
 \category versepara
 \description Paragraph text, level 2 indent, with first line indent; often used for discourse
 
 \marker pi3
+\attributes aid
 \category versepara
 \description Paragraph text, level 3 indent, with first line indent; often used for discourse
 
 \marker pm
+\attributes aid
 \category versepara
 \description Embedded text paragraph
 
 \marker pmc
+\attributes aid
 \category versepara
 \description Embedded text closing
 
 \marker pmo
+\attributes aid
 \category versepara
 \description Embedded text opening
 
 \marker pmr
+\attributes aid
 \category versepara
 \description Embedded text refrain
 
@@ -600,10 +672,12 @@
 \description For a geographic proper name
 
 \marker po
+\attributes aid
 \category versepara
 \description Letter opening
 
 \marker pr
+\attributes aid
 \category versepara
 \description Text refrain (paragraph right-aligned)
 
@@ -612,22 +686,27 @@
 \description For indicating pronunciation in CJK texts (DEPRECATED - used char@style rb)
 
 \marker q
+\attributes aid
 \category versepara
 \description Poetry text, level 1 indent (if single level)
 
 \marker q1
+\attributes aid
 \category versepara
 \description Poetry text, level 1 indent (if multiple levels)
 
 \marker q2
+\attributes aid
 \category versepara
 \description Poetry text, level 2 indent
 
 \marker q3
+\attributes aid
 \category versepara
 \description Poetry text, level 3 indent
 
 \marker q4
+\attributes aid
 \category versepara
 \description Poetry text, level 4 indent
 
@@ -640,30 +719,37 @@
 \description Poetry text, Acrostic markup of the first character of a line of acrostic poetry
 
 \marker qc
+\attributes aid
 \category versepara
 \description Poetry text, centered
 
 \marker qd
+\attributes aid
 \category versepara
 \description A Hebrew musical performance annotation, similar in content to Hebrew descriptive title.
 
 \marker qm
+\attributes aid
 \category versepara
 \description Poetry text, embedded, level 1 indent (if single level)
 
 \marker qm1
+\attributes aid
 \category versepara
 \description Poetry text, embedded, level 1 indent (if multiple levels)
 
 \marker qm2
+\attributes aid
 \category versepara
 \description Poetry text, embedded, level 2 indent
 
 \marker qm3
+\attributes aid
 \category versepara
 \description Poetry text, embedded, level 3 indent
 
 \marker qr
+\attributes aid
 \category versepara
 \description Poetry text, Right Aligned
 
@@ -682,7 +768,7 @@
 \defattrib eid
 
 \marker qt-s
-\attributes who? sid?
+\attributes sid? who?
 \category milestone
 \closedby qt-e
 \defattrib who
@@ -694,7 +780,7 @@
 \defattrib eid
 
 \marker qt1-s
-\attributes who? sid?
+\attributes sid? who?
 \category milestone
 \closedby qt1-e
 \defattrib who
@@ -706,7 +792,7 @@
 \defattrib eid
 
 \marker qt2-s
-\attributes who? sid?
+\attributes sid? who?
 \category milestone
 \closedby qt2-e
 \defattrib who
@@ -718,7 +804,7 @@
 \defattrib eid
 
 \marker qt3-s
-\attributes who? sid?
+\attributes sid? who?
 \category milestone
 \closedby qt3-e
 \defattrib who
@@ -730,7 +816,7 @@
 \defattrib eid
 
 \marker qt4-s
-\attributes who? sid?
+\attributes sid? who?
 \category milestone
 \closedby qt4-e
 \defattrib who
@@ -742,12 +828,13 @@
 \defattrib eid
 
 \marker qt5-s
-\attributes who? sid?
+\attributes sid? who?
 \category milestone
 \closedby qt5-e
 \defattrib who
 
 \marker r
+\attributes aid
 \category sectionpara
 \description Parallel reference(s)
 
@@ -761,6 +848,7 @@
 \description Remark
 
 \marker restore
+\attributes aid
 \category sectionpara
 \description Comment about when text was restored
 
@@ -769,22 +857,27 @@
 \description A cross-reference indicating the source text for the preceding quotation.
 
 \marker s
+\attributes aid
 \category sectionpara
 \description A section heading, level 1 (if single level)
 
 \marker s1
+\attributes aid
 \category sectionpara
 \description A section heading, level 1 (if multiple levels)
 
 \marker s2
+\attributes aid
 \category sectionpara
 \description A section heading, level 2 (e.g. Proverbs 22-24)
 
 \marker s3
+\attributes aid
 \category sectionpara
 \description A section heading, level 3 (e.g. Genesis "The First Day") (\s3 can take a \v!)
 
 \marker s4
+\attributes aid
 \category sectionpara
 \description A section heading, level 4
 
@@ -793,22 +886,27 @@
 \description A character style, for small capitalization text
 
 \marker sd
+\attributes aid
 \category sectionpara
 \description Vertical space used to divide the text into sections, level 1 (if single level)
 
 \marker sd1
+\attributes aid
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)
 
 \marker sd2
+\attributes aid
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 2
 
 \marker sd3
+\attributes aid
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 3
 
 \marker sd4
+\attributes aid
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 4
 
@@ -821,10 +919,12 @@
 \description To represent where the original text is in a secondary language or from an alternate text source
 
 \marker sp
+\attributes aid
 \category sectionpara
 \description A heading, to identify the speaker (e.g. Job)
 
 \marker sr
+\attributes aid
 \category sectionpara
 \description A section division references range heading
 
@@ -1103,7 +1203,7 @@
 \defattrib sid
 
 \marker usfm
-\category internal
+\category attribute
 \description USFM version
 
 \marker v
@@ -1111,15 +1211,15 @@
 \description Verse
 
 \marker va
-\category internal
+\category attribute
 \description Alternative versification
 
 \marker vp
-\category char internal
+\category attribute char
 \description Published verse number
 
 \marker w
-\attributes lemma? strong? srcloc?
+\attributes lemma? srcloc? strong?
 \category char
 \defattrib lemma
 
@@ -1140,6 +1240,7 @@
 \description For marking the words of Jesus
 
 \marker x
+\attributes aid
 \category crossreference
 \description Cross reference
 

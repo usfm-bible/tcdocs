@@ -322,21 +322,30 @@ PeripheralDividedBookIdentification.book.code.enum = (
 PeripheralDivision =
     [usfm:stacked="true" usfm:seq="true" usfm:match[usfm:order="-3" before="/${Ws}\\periph${HS}/" beforeout="'\\periph '" match="''"]]
     element periph {
-        [usfm:seq="true"](AttributesPre?,
+        [usfm:alt="PeripheralDivisionThree" usfm:stacked="true"](
+            ([usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+            ([usfm:grouping="8" usfm:match[before="'id=&quot;'" after="&quot;"]]
+                attribute id {
+                      Peripheral.FRT.periph.id.enum
+                    | Peripheral.INT.periph.id.enum
+                    | Peripheral.BAK.periph.id.enum
+                    | Peripheral.OTH.periph.id.enum
+                    | xsd:string { pattern = "x\-[\p{L}_\-\.:]+" } })
+        >> usfm:match[match="PIPE" matchout="'|'" dump="true"])?,
         [usfm:match[match="TEXTNOTATTRIB" usfm:seq="true"]] attribute alt { text }?),
-        [usfm:grouping="15" usfm:match[before="/${PIPE}${Hs}id=?&quot;/" beforeout="'|id=&quot;'" after="'&quot;'" usfm:seq="true"]]
-        attribute id {
-              Peripheral.FRT.periph.id.enum
-            | Peripheral.INT.periph.id.enum
-            | Peripheral.BAK.periph.id.enum
-            | Peripheral.OTH.periph.id.enum
-            | xsd:string { pattern = "x\-[\p{L}_\-\.:]+" } },
         [usfm:seq="true"](BookHeaders*,
         BookTitles*,
         BookIntroduction*,
         BookIntroductionEndTitles*,
         PeripheralContent*)
     }
+
+PeripheralDivisionThree = (
+        [usfm:match[match="TEXTNOTATTRIB" usfm:seq="true"]] attribute alt { text }?,
+        Attributes?
+    )
+ 
+
 
 Peripheral.FRT.periph.id.enum = (
       "title"
@@ -618,16 +627,24 @@ PeriphPara =
 OtherPara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum },
-        AttributesPre?,
-        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        VAttributesPre?,
         ([usfm:text[]] text | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
     } | Remark
+
+VAttributesPre = (
+        ([usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+          ([usfm:stacked="true"]
+          ([usfm:match[before="'vid=&quot;'" after="&quot;"]]
+            attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+          [usfm:match[before="'aid=&quot;'" after="&quot;"]]
+            attribute aid { xsd:string }?))
+          >> usfm:match[match="PIPE" matchout="'|'" dump="true"])
+    )
 
 VersePara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum },
-        AttributesPre?,
-        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        VAttributesPre?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     } | Remark
 
@@ -742,8 +759,7 @@ OtherPara.para.style.enum = (
 List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
-        AttributesPre?,
-        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
+        VAttributesPre?,
         ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
@@ -836,7 +852,7 @@ AttributesPre = (
        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
                 second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
         attribute * - (style | closed) {xsd:string}+)
-    >> usfm:match[match="PIPE" matchout="'|'" dump="true"]
+    >> usfm:match[match="PIPE" matchout="'|'" dump="true" after="Hs" afterout="' '"]
 )
 
 Char = (
@@ -906,7 +922,7 @@ Char.char.style.enum = (
     |   ## To represent where the original text is in a secondary language or from an alternate text source
       "sls"
     |   ## For transliterated words
-      "tl"
+      [usfm:propval="lang"] "wl"
     |   ## A Greek Wordlist text item
       "wg"
     |   ## A Hebrew wordlist text item
@@ -941,23 +957,29 @@ CharEmbed = (
     element char {
         [usfm:stacked="true"]([usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true" skip="3.0"]] attribute style { FullChar.char.style.enum },
         [usfm:seq="true"](AttributesPre?, CharContent?, Attributes?)
-        >> usfm:endtag[matchref="b" before="'\\'"])
+        >> usfm:endtag[matchref="b" before="'\\'" usfm:seq="true"])
       |
         [usfm:stacked="true"]([usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
         [usfm:seq="true"](AttributesPre?, CharContent?, Attributes?)
-        >> usfm:endtag[matchref="a" before="'\\+'"])
+        >> usfm:endtag[matchref="a" before="'\\+'" usfm:seq="true"])
     })
 
-NoteCharEmbed = (
+NoteCharEmbed = ( [usfm:alt="NoteCharEmbedPlus"] NoteCharEmbedEmpty )
+
+NoteCharEmbedEmpty = (
+    [usfm:stacked="true"]
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
         [usfm:seq="true"](AttributesPre?, NoteCharContent, Attributes?)
-        >> usfm:endtag[matchref="c" before="'\\'"]
-    } |
+        >> usfm:endtag[matchref="c" before="'\\'" usfm:seq="true"]
+    })
+
+NoteCharEmbedPlus = (
+    [usfm:stacked="true"]
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { Char.char.style.enum },
         [usfm:seq="true"](AttributesPre?, NoteCharContent, Attributes?)
-        >> usfm:endtag[matchref="b" before="'\\+'"]
+        >> usfm:endtag[matchref="b" before="'\\+'" usfm:seq="true"]
     })
 
 ListChar = (
@@ -993,11 +1015,15 @@ FigureThree =
     element figure {
         [usfm:order="-2" usfm:tag [matchid="a"]] attribute style { [usfm:propattribs="src size ref alt? loc? copy?"] "fig" },
         [usfm:ignore="true"] char.closed?,
-        AttributesPre?,
-        [usfm:order="-1" usfm:seq="true"] ([usfm:match[match="TEXTNOTATTRIB"]] text?), # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
-        Attributes?
+        [usfm:alt="FigureThreeAttribs"](AttributesPre?,
+        [usfm:seq="true"] ([usfm:match[match="TEXTNOTATTRIB"]] text?)) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4" usfm:seq="true"]
     }
+
+FigureThreeAttribs = (
+        [usfm:seq="true"] ([usfm:match[match="TEXTNOTATTRIB"]] text?), # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        Attributes?
+)
 
 FigureTwo =
     [usfm:stacked="true"]
@@ -1240,7 +1266,7 @@ Reference =
     } >> usfm:endtag[match="'ref'" matchref=""]
 
 Break = 
-    [usfm:match[before="/\s*\/\//" match="//"]]
+    [usfm:match[before="Hs" match="'//'" after="Hs"]]
     element optbreak { empty }
 
 Remark =
@@ -1259,20 +1285,10 @@ Internal.style.enum = (
       "id"
     |   ## Peripheral division
       "periph"
-    |   ## USFM version
-      "usfm"
     |   ## Chapter
       "c"
-    |   ## Alternate Chapter number
-      "ca"
-    |   ## Chapter publication string
-      "cp"
     |   ## Verse
       "v"
-    |   ## Alternative versification
-      "va"
-    |   ## Published verse number
-      "vp"
     |   ## Table
       "tr"
     |   ## Figure
@@ -1281,10 +1297,23 @@ Internal.style.enum = (
       "esb"
     |   ## Sidebar ending
       "esbe"
-    |   ## Category
-      "cat"
     |   ## Table Row
       "tr"
+    )
+
+Attribute.style.enum = (
+        ## Category
+      "cat"
+    |   ## Alternate Chapter number
+      "ca"
+    |   ## Chapter publication string
+      "cp"
+    |   ## Alternative versification
+      "va"
+    |   ## Published verse number
+      "vp"
+    |   ## USFM version
+      "usfm"
     )
 
 Cell.style.enum = ( "th1" | "th2" | "th3" | "th4" | "th5" | "th6" | "th7" | "th8" | "th9" | "th10" | "th11" | "th12"

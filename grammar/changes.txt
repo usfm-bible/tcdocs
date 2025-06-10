@@ -1,7 +1,10 @@
 # 3.2
 
+- Move attribute lists to the front of the marker content and add to paragraphs,
+  etc. The current position at the end is still supported for parsing. (U25001)
+- Introduce @aid attribute. (U25002)
 - Split the para marker category into versepara and otherpara. Disallow \v in otherpara.
-- Add acknowledgement of \u and \U to the grammar.
+- Add acknowledgement of \u and \U to the grammar. (U25004)
     - They are not expanded in the grammar. This is best done in a lexer.
 - \rem ignores everything to the end of the line including other markers.
     - It is delimeted by the end of line and not the start of a new paragraph.
