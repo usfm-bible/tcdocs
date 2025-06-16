@@ -1,4 +1,4 @@
-= thr#
+= thc#
 :description: Table column heading - center aligned
 :url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/thc.adoc
 :noindex:
@@ -12,7 +12,7 @@ endif::[]
 
 == Summary
 
-Description:: Table column heading cell - centre aligned.
+Description:: Table column heading cell - center aligned.
 * The variable `#` represents the table column number.
 [NOTE]
 .Syntax notes
@@ -25,7 +25,7 @@ xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\thc# ++``#__content__#
 ** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\thc1-2`
 * *USX:* ``++<cell style="thc#" ++``#__@colspan @align__#``++>++``#__content__#``++</cell>++``
-#colspan.#::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="thc1" colspan="2" align="start">+`
+#colspan.#::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="thc1" colspan="2" align="center">+`
 #align#::: Cell alignment = `start` | `center` | `end`. Represents 'left', 'center', and 'right' respectively in left-to-right direction texts, and 'right', 'center', 'left' in right-to-left direction texts.
 #content#::: The cell text.
 Style Type:: xref:char:index.adoc[Character]
@@ -40,222 +40,28 @@ Added:: 1.0
 ======
 USFM::
 +
-.Numbers 2.10-16 (GNT)
-[source#src-usfm-char-thc_1,usfm,highlight=6]
+.Missing
+[source#src-usfm-char-tcc_1,usfm,highlight=1]
 ----
-\id NUM
-\c 2
-\p
-\v 10-16 On the south, those under the banner of the division of Reuben shall 
-camp in their groups, under their leaders, as follows:
-\tr \th1 Tribe \thc2 Leader \thr3 Number
-\tr \tc1 Reuben \tcc2 Elizur son of Shedeur \tcr3 46,500
-\tr \tc1 Simeon \tcc2 Shelumiel son of Zurishaddai \tcr3 59,300
-\tr \tc1 Gad \tcc2 Eliasaph son of Deuel \tcr3 45,650
-\tr \tcr1-2 Total: \tcr3 151,450
+Missing
 ----
 USX::
 +
-.Numbers 2.10-16 (GNT)
-[source#src-usx-char-thr_1,xml,highlight=9]
+.Missing
+[source#src-usx-char-tcc_1,xml,highlight=1]
 ----
-<usx version="3.1">
-  <book code="NUM" style="id"/>
-  <chapter number="2" style="c" sid="NUM 2"/>
-  <para style="p">
-    <verse number="10-16" style="v" sid="NUM 2:10-16"/>On the south, those under the
-    banner of the division of Reuben shall camp in their groups, under their
-    leaders, as follows:</para>
-  <table>
-    <row style="tr">
-      <cell style="th1" align="start">Tribe </cell>
-      <cell style="thc2" align="start">Leader </cell>
-      <cell style="thr3" align="end">Number</cell>
-    </row>
-    <row style="tr">
-      <cell style="tc1" align="start">Reuben </cell>
-      <cell style="tcc2" align="start">Elizur son of Shedeur </cell>
-      <cell style="tcr3" align="end">46,500</cell>
-    </row>
-    <row style="tr">
-      <cell style="tc1" align="start">Simeon </cell>
-      <cell style="tcc2" align="start">Shelumiel son of Zurishaddai </cell>
-      <cell style="tcr3" align="end">59,300</cell>
-    </row>
-    <row style="tr">
-      <cell style="tc1" align="start">Gad </cell>
-      <cell style="tcc2" align="start">Eliasaph son of Deuel </cell>
-      <cell style="tcr3" align="end">45,650</cell>
-    </row>
-    <row style="tr">
-      <cell style="tcr1" align="end" colspan="2">Total: </cell>
-      <cell style="tcr3" align="end">151,450</cell>
-    </row>
-    ...
-  </table>
-</usx>
+Missing
 ----
 USJ::
 +
-.Numbers 2.10-16 (GNT)
-[source#src-usj-char-thr_1,json,highlight=]
+.Missing
+[source#src-usj-char-tcc_1,json,highlight=1]
 ----
-{
-  "type": "USJ",
-  "version": "3.1",
-  "content": [
-    {
-      "type": "book",
-      "marker": "id",
-      "code": "NUM",
-      "content": []
-    },
-    {
-      "type": "chapter",
-      "marker": "c",
-      "number": "2",
-      "sid": "NUM 2"
-    },
-    {
-      "type": "para",
-      "marker": "p",
-      "content": [
-        {
-          "type": "verse",
-          "marker": "v",
-          "number": "10-16",
-          "sid": "NUM 2:10-16"
-        },
-        "On the south, those under the banner of the division of Reuben shall camp in their groups, under their leaders, as follows:"
-      ]
-    },
-    {
-      "type": "table",
-      "content": [
-        {
-          "type": "table:row",
-          "marker": "tr",
-          "content": [
-            {
-              "type": "table:cell",
-              "marker": "th1",
-              "align": "start",
-              "content": ["Tribe "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "thc2",
-              "align": "start",
-              "content": ["Leader "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "thr3",
-              "align": "end",
-              "content": ["Number"]
-            }
-          ]
-        },
-        {
-          "type": "table:row",
-          "marker": "tr",
-          "content": [
-            {
-              "type": "table:cell",
-              "marker": "tc1",
-              "align": "start",
-              "content": ["Reuben "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcc2",
-              "align": "start",
-              "content": ["Elizur son of Shedeur "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcr3",
-              "align": "end",
-              "content": ["46,500"]
-            }
-          ]
-        },
-        {
-          "type": "table:row",
-          "marker": "tr",
-          "content": [
-            {
-              "type": "table:cell",
-              "marker": "tc1",
-              "align": "start",
-              "content": ["Simeon "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcc2",
-              "align": "start",
-              "content": ["Shelumiel son of Zurishaddai "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcr3",
-              "align": "end",
-              "content": ["59,300"]
-            }
-          ]
-        },
-        {
-          "type": "table:row",
-          "marker": "tr",
-          "content": [
-            {
-              "type": "table:cell",
-              "marker": "tc1",
-              "align": "start",
-              "content": ["Gad "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcc2",
-              "align": "start",
-              "content": ["Eliasaph son of Deuel "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcr3",
-              "align": "end",
-              "content": ["45,650"]
-            }
-          ]
-        },
-        {
-          "type": "table:row",
-          "marker": "tr",
-          "content": [
-            {
-              "type": "table:cell",
-              "marker": "tcr1",
-              "align": "end",
-              "colspan": "2",
-              "content": ["Total: "]
-            },
-            {
-              "type": "table:cell",
-              "marker": "tcr3",
-              "align": "end",
-              "content": ["151,450"]
-            }
-          ]
-        },
-        " ... "
-      ]
-    }
-  ]
-}
+Missing
 ----
 ======
 
-image::char/thc_1.jpg[Numbers 2.10-16 (GNT),300]
+// image::char/missing.jpg[,300]
 
 == Properties
 

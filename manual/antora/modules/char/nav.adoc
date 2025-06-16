@@ -84,6 +84,7 @@
 // tag::nav-tables[]
 *** xref:tables/th.adoc[th# - Table column head]
 *** xref:tables/thr.adoc[thr# - Table column head - right aligned]
+*** xref:tables/thc.adoc[thc# - Table column head - center aligned]
 *** xref:tables/tc.adoc[tc# - Table cell]
 *** xref:tables/tcr.adoc[tcr# - Table cell - right aligned]
 *** xref:tables/tcc.adoc[tcc# - Table cell - center aligned]

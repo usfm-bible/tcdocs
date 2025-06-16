@@ -75,7 +75,7 @@ USFM::
 ----
 \id FRT
 ...
-\periph Half Title Page
+\periph Half Title Page|id="halftitle"
 \mt1 Holy Bible
 \pc Good News Translation
 \pc \fig |gntLogo.jpg|span||||\fig*
@@ -186,7 +186,7 @@ USFM::
 ----
 \id FRT
 ...
-\periph Table of Contents
+\periph Table of Contents|id="contents"
 \mt Contents
 \s Old Testament
 \tr  \th1 Name  \thr2 Page \th3 Name \thr4 Page
@@ -286,7 +286,7 @@ USFM::
 ----
 \id FRT
 ...
-\periph Table of Abbreviations
+\periph Table of Abbreviations|id="abbreviations"
 \mt1 Alphabetical List of Biblical Books and Abbreviations
 \tr  \th1 Name \th2 Abbreviation
 \tr  \tc1 Acts \tc2 Ac
