@@ -26,7 +26,7 @@ endif::[]
 
 `INT` xref:doc:books.adoc[book] 
 
-* xref:book-int.adoc#periph-int-all[Bible Introduction] - `title`
+* xref:book-int.adoc#periph-int-all[Bible Introduction] - `intbible`
 * xref:book-int.adoc#periph-int-all[Old Testament Introduction] `intot`
 * xref:book-int.adoc#periph-int-all[Pentateuch Introduction] - `intpent`
 * xref:book-int.adoc#periph-int-all[History Introduction] - `inthistory`
