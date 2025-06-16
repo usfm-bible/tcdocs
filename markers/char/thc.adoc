@@ -1,0 +1,75 @@
+= thc#
+:description: Table column heading - center aligned
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/thc.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Table column heading cell - center aligned.
+* The variable `#` represents the table column number.
+[NOTE]
+.Syntax notes
+====
+In *USFM*, a table is composed by a series of paragraphs marked with xref:para:tables/tr.adoc[\tr]. The content for cells is marked with xref:char:tables/index.adoc[character types for tables], such as xref:char:tables/th.adoc[\th#].
+
+In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing `<row>`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
+====
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\thc# ++``#__content__#
+** Use a dash `-` between a range of column numbers to indicate that the columns should be spanned. Example: `\thc1-2`
+* *USX:* ``++<cell style="thc#" ++``#__@colspan @align__#``++>++``#__content__#``++</cell>++``
+#colspan.#::: Column spanning is indicated with an optional `colspan` attribute. Example: `+<cell style="thc1" colspan="2" align="center">+`
+#align#::: Cell alignment = `start` | `center` | `end`. Represents 'left', 'center', and 'right' respectively in left-to-right direction texts, and 'right', 'center', 'left' in right-to-left direction texts.
+#content#::: The cell text.
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
+Added:: 1.0
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Missing
+[source#src-usfm-char-tcc_1,usfm,highlight=1]
+----
+Missing
+----
+USX::
++
+.Missing
+[source#src-usx-char-tcc_1,xml,highlight=1]
+----
+Missing
+----
+USJ::
++
+.Missing
+[source#src-usj-char-tcc_1,json,highlight=1]
+----
+Missing
+----
+======
+
+// image::char/missing.jpg[,300]
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

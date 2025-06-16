@@ -1,0 +1,4 @@
+= thc#
+:env-antora:
+
+include::markers:char/thc.adoc[tag=public]
