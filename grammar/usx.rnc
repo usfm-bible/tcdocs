@@ -861,7 +861,7 @@ Char.char.style.enum = (
     |   ## To represent where the original text is in a secondary language or from an alternate text source
       "sls"
     |   ## For transliterated words
-      "tl"
+      [usfm:propval="lang"] "tl"
     |   ## A Greek Wordlist text item
       "wg"
     |   ## A Hebrew wordlist text item
@@ -870,6 +870,8 @@ Char.char.style.enum = (
       "wa"
     |   ## For marking the words of Jesus
       "wj"
+    |   ## Indicating words in a foreign language and perhaps script
+      [usfm:propval="lang"] "wl"
     |   ## For associating linking attributes to a span of text
       [usfm:propval="href" usfm:propattribs="href? link-href?"] "jmp"
     |   ## A character style, use normal text
