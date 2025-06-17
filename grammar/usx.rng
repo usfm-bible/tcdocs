@@ -990,7 +990,7 @@
           <ref name="OtherPara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="VAttributesPre"/>
+          <ref name="AttributesPre"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1009,33 +1009,6 @@
       <ref name="Remark"/>
     </choice>
   </define>
-  <define name="VAttributesPre">
-    <group>
-      <group>
-        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-        <group usfm:stacked="true">
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;vid=&quot;&#x27;" after="&quot;"/>
-              <name ns="">vid</name>
-              <data type="string">
-                <usfm:pattern name="VERSE"/>
-                <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-              </data>
-            </attribute>
-          </optional>
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;aid=&quot;&#x27;" after="&quot;"/>
-              <name ns="">aid</name>
-              <data type="string"/>
-            </attribute>
-          </optional>
-        </group>
-      </group>
-      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-    </group>
-  </define>
   <define name="VersePara">
     <choice>
       <element>
@@ -1046,7 +1019,7 @@
           <ref name="VersePara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="VAttributesPre"/>
+          <ref name="AttributesPre"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1191,7 +1164,7 @@
         <ref name="List.para.style.enum"/>
       </attribute>
       <optional>
-        <ref name="VAttributesPre"/>
+        <ref name="AttributesPre"/>
       </optional>
       <zeroOrMore>
         <choice>

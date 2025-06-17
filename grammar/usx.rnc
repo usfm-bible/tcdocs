@@ -627,24 +627,14 @@ PeriphPara =
 OtherPara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum },
-        VAttributesPre?,
+        AttributesPre?,
         ([usfm:text[]] text | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
     } | Remark
-
-VAttributesPre = (
-        ([usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-          ([usfm:stacked="true"]
-          ([usfm:match[before="'vid=&quot;'" after="&quot;"]]
-            attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-          [usfm:match[before="'aid=&quot;'" after="&quot;"]]
-            attribute aid { xsd:string }?))
-          >> usfm:match[match="PIPE" matchout="'|'" dump="true"])
-    )
 
 VersePara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum },
-        VAttributesPre?,
+        AttributesPre?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     } | Remark
 
@@ -759,7 +749,7 @@ OtherPara.para.style.enum = (
 List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
-        VAttributesPre?,
+        AttributesPre?,
         ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
