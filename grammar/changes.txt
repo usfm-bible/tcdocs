@@ -1,3 +1,8 @@
+# 3.1.2
+
+- Add \wl with @lang as optional default attribute
+- Add optional default @lang attribute to \tl
+
 # 3.1.1
 
 - Move p1, p2 from OtherPara to PeriphPara. No longer allowed inside scripture
