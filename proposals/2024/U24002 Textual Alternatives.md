@@ -1,18 +1,18 @@
 # Textual Alternatives
 
-M. Hosken
+Approved for 3.1.2
 
 ## Executive Summary
 
 This is a proposal to add a new character style `\ta` which allows for alternate text based on a text identifier. While a full Anglicisation project would result in a separate text, it is often convenient to run both texts together during translation and development. Consider the alternative spelling of color/colour. This would be represented as
 
 ```
-so he made him a robe of many \ta colors|uk="colours"\ta*.
+so he made him a robe of many \ta colors|a-uk="colours"\ta*.
 
-then the \ta rooster|aus="cockerel" uk="cock"\ta* crowed a third time.
+then the \ta rooster|a-aus="cockerel" a-uk="cock"\ta* crowed a third time.
 
 Haj so kerela jekh manuś saves si les sǎ e lumǎ haj xasarela pesqo \ta
-ʒivipen|a="gi" b="ilo" c="ʒivimos" d="ʒivimos"\ta*?
+ʒivipen|a-a="gi" a-b="ilo" a-c="ʒivimos" a-d="ʒivimos"\ta*?
 ```
 
 The new marker is a simple character style with arbitrary attributes.
@@ -20,6 +20,8 @@ The new marker is a simple character style with arbitrary attributes.
 ## Justification
 
 While there are more complex models for describing alternative text, as discussed below, the committee decided that the likelihood of there being much tooling support for this marker was low and therefore that it should be kept as simple as possible. Should this new marker prove popular, there is nothing to stop more complex models being added around it for larger runs of text. Where particular styling (at the character level) is required for a particular alternative, this can be achieved through using empty default strings, which are supported in a character style when there are attributes.
+
+Rather than just have any attributes be alternate identifiers, only those following `a-` have this function. This allows for other attributes to be added at a later stage. This would add the capability to add wildcards to the \Attributes field in markers.ext as in `a-*`. Such a change will be added in 3.2.
 
 ## Discussion
 
