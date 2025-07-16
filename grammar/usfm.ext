@@ -857,7 +857,7 @@
 \description Parallel reference(s)
 
 \marker rb
-\attributes gloss gloss?
+\attributes gloss
 \category char
 \defattrib gloss
 
@@ -965,6 +965,10 @@
 \category milestone
 \closedby t-e
 \defattrib sid
+
+\marker ta
+\category char
+\description Text alternatives
 
 \marker tc1
 \attributes align colspan? content?
@@ -1242,6 +1246,12 @@
 \attributes align colspan? content?
 \category cell
 
+\marker tl
+\attributes lang?
+\category char
+\defattrib lang
+\description For transliterated words
+
 \marker toc1
 \category header
 \description Long table of contents text
@@ -1327,7 +1337,7 @@
 \attributes lang?
 \category char
 \defattrib lang
-\description For transliterated words
+\description Indicating words in a foreign language and perhaps script
 
 \marker x
 \attributes aid? cat?

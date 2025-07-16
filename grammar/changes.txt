@@ -13,6 +13,10 @@
     - These books are considered peripheral divided books: XXA-XXC, FRT, OTH, BAK, INT
     - These books are considered non divided peripheral books: CNC, GLO, TDX, NDX
 
+# 3.1.2
+
+- Add \wl with @lang as optional default attribute
+- Add optional default @lang attribute to \tl
 
 # 3.1.1
 
