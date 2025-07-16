@@ -892,6 +892,8 @@ Char.char.style.enum = (
        [usfm:propval="href"] "xt" 
     | [usfm:propval="lemma" usfm:propattribs="lemma? strong? srcloc?"] "w"
     | [usfm:propval="gloss" usfm:propattribs="gloss"] "rb"
+    |   ## Text alternatives
+       "ta"
     )
 
 CharEmbed = (
