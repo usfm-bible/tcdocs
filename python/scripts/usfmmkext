@@ -43,12 +43,20 @@ internalhier = {
     "tr":       ["id", "periph", "introduction", "esb"],
     }
 
-aid_categories = ["fig", "versepara", "sectionpara", "introduction", "esb", "footnote", "crossreference"]
-aid_excludes = ["b", "ib"]
+attrib_categories = {
+    'aid':  "fig versepara sectionpara introduction esb footnote crossreference".split(),
+    'vid':  "versepara sectionpara list lit qa".split(),
+    'cat':  "footnote esb crossreference".split()
+}
 
 attributes = {
-    "c":    ["altnnumber", "pubnumber"],
-    "v":    ["altnnumber", "pubnumber"],
+    "c":    "number altnumber? pubnumber?",
+    "v":    "number altnumber? pubnumber?",
+    "fig":  "alt? copy? file? src? loc? ref size caption",
+    "xt":   "href?",
+    "ref":  "gen? loc",
+    "jmp":  "title? id?",
+    "cell": "colspan? align content?"
 }
 
 attribute_markers = "ca cp va vp cat usfm".split()
@@ -89,9 +97,9 @@ def collectEnums(rdoc):
                 k = v.text.strip()
                 cat = mktype
                 if k in res:
-                    res[k]['category'].add(cat)
+                    res[k]['category'].append(cat)
                 else:
-                    res[k] = {'category': set([cat])}
+                    res[k] = {'category': [cat]}
                 for a in (("propval", "defattrib"), ("propattribs", "attributes"),
                           ("propended", "closedby"), ("propends", "closes")):
                     val = v.get("{}{}".format(usfmns, a[0]), None)
@@ -105,23 +113,42 @@ def collectEnums(rdoc):
 
 def addInfo(markers):
     for k, v in markers.items():
-        if k not in aid_excludes:
-            takesaid = k in aid_categories
-            if not takesaid:
+        for a, categories in attrib_categories.items():
+            takesa = k in categories
+            if not takesa:
                 for c in v.get('category', []):
-                    if (takesaid := c in aid_categories):
+                    if (takesa := c in categories):
                         break
-            if takesaid:
-                v.setdefault("attributes", []).append("aid")
+            if takesa:
+                v.setdefault("attributes", []).append(a+"?")
+        default = v.get("defattrib", None)
+        if default and ('attributes' not in v or default not in v['attributes']):
+            v.setdefault("attributes", []).append(default+"?")
+        extras = []
+        if k in attributes:
+            extras = attributes[k].split()
+        else:
+            for c in v.get('category', []):
+                if c in attributes:
+                    extras = attributes[c].split()
+        if len(extras):
+            v.setdefault("attributes", []).extend(extras)
 
 def extstr(mrkr, field):
     res = [f"\\marker {mrkr}"]
     for k, v in sorted(field.items()):
         if k in ("category", "attributes"):
-            res.append(f'\\{k} {" ".join(sorted(v))}')
+            res.append(f'\\{k} {" ".join(sorted(set(v)))}')
         else:
             res.append(f"\\{k} {v}")
     return "\n".join(res)
+
+def makeattribs(markers):
+    res = {}
+    for k, v in markers.items():
+        for a in set(v.get('attributes', [])):
+            res.setdefault(a, []).append(k)
+    return res
 
 def createStyles(markers, sfile):
     if sfile is not None:
@@ -198,8 +225,13 @@ if args.outfile:
 
 if args.lists:
     lists = {}
+    attribs = makeattribs(res)
     for k, v in res.items():
         lists.setdefault(v.get('category', [""])[0], []).append(k)
     with open(args.lists, "w") as outf:
         for k, v in sorted(lists.items()):
             outf.write(f"{k}= {' '.join(v)}\n")
+        outf.write("attribvals = {\n")
+        for k, v in sorted(attribs.items()):
+            outf.write(f'    "{k}": "{" ".join(v)}".split(),\n')
+        outf.write("}\n")

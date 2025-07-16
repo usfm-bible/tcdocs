@@ -7,6 +7,7 @@
 \description For chinese words to be dot underline & underline (DEPRECATED - used nested char@style pn)
 
 \marker b
+\attributes aid? vid?
 \category versepara
 \description Poetry text stanza break (e.g. stanza break)
 
@@ -23,6 +24,7 @@
 \description For the quoted name of a book
 
 \marker c
+\attributes altnumber? number pubnumber?
 \category internal
 \description Chapter
 
@@ -35,17 +37,17 @@
 \description Category
 
 \marker cd
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Chapter Description (Publishing option D, e.g. in Russian Bibles)
 
 \marker cl
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Chapter label used for translations that add a word such as "Chapter"
 
 \marker cls
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Closure of an Epistle
 
@@ -54,7 +56,7 @@
 \description Chapter publication string
 
 \marker d
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description A Hebrew text heading, to provide description (e.g. Psalms)
 
@@ -63,12 +65,12 @@
 \description Deuterocanonical/LXX additions or insertions in the Protocanonical text
 
 \marker ef
-\attributes aid
+\attributes aid? cat?
 \category footnote
 \description Study note
 
 \marker efe
-\attributes aid
+\attributes aid? cat?
 \category footnote
 \description Extended study endnote
 
@@ -81,7 +83,7 @@
 \description A character style, use emphasized text style
 
 \marker esb
-\attributes aid
+\attributes aid? cat?
 \category internal
 \description Sidebar
 
@@ -90,12 +92,12 @@
 \description Sidebar ending
 
 \marker ex
-\attributes aid
+\attributes aid? cat?
 \category crossreference
 \description Extended cross reference
 
 \marker f
-\attributes aid
+\attributes aid? cat?
 \category footnote
 \description Footnote
 
@@ -104,12 +106,12 @@
 \description Footnote text, applies to Deuterocanon only (DEPRECATED - use char@style dc)
 
 \marker fe
-\attributes aid
+\attributes aid? cat?
 \category footnote
 \description Endnote
 
 \marker fig
-\attributes aid
+\attributes aid? alt? caption copy? file? loc? ref size src?
 \category internal
 \description Figure
 
@@ -170,6 +172,7 @@
 \description Running header text, right side of page (DEPRECATED)
 
 \marker ib
+\attributes aid?
 \category introduction
 \description Introduction blank line
 
@@ -182,12 +185,12 @@
 \description File encoding information (DEPRECATED)
 
 \marker ie
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction ending marker
 
 \marker iex
-\attributes aid
+\attributes aid? vid?
 \category introduction sectionpara
 \description Introduction explanatory or bridge text (e.g. explanation of missing book in Short Old Testament)
 
@@ -204,87 +207,87 @@
 \description A list entry, level 2
 
 \marker ilit
-\attributes aid
+\attributes aid?
 \category introduction
 \description For a comment or note inserted for liturgical use
 
 \marker im
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph, with no first line indent (may occur after poetry)
 
 \marker imi
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph text, indented, with no first line indent
 
 \marker imq
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph, quote from the body text, with no first line indent
 
 \marker imt
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title, level 1 - (if single level)
 
 \marker imt1
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title, level 1 (if multiple levels)
 
 \marker imt2
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title, level 2
 
 \marker imt3
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title, level 3
 
 \marker imt4
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title, level 4 (usually within parenthesis)
 
 \marker imte
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title at introduction end, level 1 (if single level)
 
 \marker imte1
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title at introduction end, level 1 (if multiple levels)
 
 \marker imte2
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction major title at introduction end, level 2
 
 \marker io
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction outline text, level 1 (if single level)
 
 \marker io1
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction outline text, level 1 (if multiple levels)
 
 \marker io2
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction outline text, level 2
 
 \marker io3
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction outline text, level 3
 
 \marker io4
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction outline text, level 4
 
@@ -292,52 +295,52 @@
 \category introchar
 
 \marker iot
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction outline title
 
 \marker ip
-\attributes aid
+\attributes aid? vid?
 \category introduction sectionpara
 \description Division or Section introductory paragraph (study Bible)
 
 \marker ipc
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph, centred
 
 \marker ipi
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph, indented, with first line indent
 
 \marker ipq
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph, quote from the body text
 
 \marker ipr
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction prose paragraph, right aligned
 
 \marker iq
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction poetry text, level 1 (if single level)
 
 \marker iq1
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction poetry text, level 1 (if multiple levels)
 
 \marker iq2
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction poetry text, level 2
 
 \marker iq3
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction poetry text, level 3
 
@@ -345,17 +348,17 @@
 \category introchar
 
 \marker is
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction section heading, level 1 (if single level)
 
 \marker is1
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction section heading, level 1 (if multiple levels)
 
 \marker is2
-\attributes aid
+\attributes aid?
 \category introduction
 \description Introduction section heading, level 2
 
@@ -364,12 +367,13 @@
 \description A character style, use italic text
 
 \marker jmp
-\attributes href? link-href?
+\attributes href? id? link-href? title?
 \category char
 \defattrib href
 \description For associating linking attributes to a span of text
 
 \marker k
+\attributes key?
 \category char
 \defattrib key
 \description For a keyword
@@ -383,30 +387,37 @@
 \description Concordance main entry text or keyword, level 2
 
 \marker lf
+\attributes vid?
 \category list
 \description List footer (introductory remark)
 
 \marker lh
+\attributes vid?
 \category list
 \description List header (introductory remark)
 
 \marker li
+\attributes vid?
 \category list
 \description A list entry, level 1 (if single level)
 
 \marker li1
+\attributes vid?
 \category list
 \description A list entry, level 1 (if multiple levels)
 
 \marker li2
+\attributes vid?
 \category list
 \description A list entry, level 2
 
 \marker li3
+\attributes vid?
 \category list
 \description A list entry, level 3
 
 \marker li4
+\attributes vid?
 \category list
 \description A list entry, level 4
 
@@ -415,26 +426,32 @@
 \description Structured list entry key text
 
 \marker lim
+\attributes vid?
 \category list
 \description An embedded list entry, level 1 (if single level)
 
 \marker lim1
+\attributes vid?
 \category list
 \description An embedded list entry, level 1 (if multiple levels)
 
 \marker lim2
+\attributes vid?
 \category list
 \description An embedded list entry, level 2
 
 \marker lim3
+\attributes vid?
 \category list
 \description An embedded list entry, level 3
 
 \marker lim4
+\attributes vid?
 \category list
 \description An embedded list entry, level 4
 
 \marker lit
+\attributes vid?
 \category otherpara
 \description For a comment or note inserted for liturgical use
 
@@ -467,57 +484,57 @@
 \description Structured list entry value 5 content
 
 \marker m
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
 
 \marker mi
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, indented, with no first line indent; often used for discourse
 
 \marker mi1
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 1 indented, with no first line indent; often used for discourse
 
 \marker mi2
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 2 indented, with no first line indent; often used for discourse
 
 \marker mi3
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 3 indented, with no first line indent; often used for discourse
 
 \marker mi4
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 4 indented, with no first line indent; often used for discourse
 
 \marker mr
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A major section division references range heading
 
 \marker ms
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A major section division heading, level 1 (if single level)
 
 \marker ms1
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A major section division heading, level 1 (if multiple levels)
 
 \marker ms2
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A major section division heading, level 2
 
 \marker ms3
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A major section division heading, level 3
 
@@ -541,22 +558,22 @@
 \category title
 
 \marker mte
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description The main title of the book repeated at the end of the book, level 1 (if single level)
 
 \marker mte1
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description The main title of the book repeat /ed at the end of the book, level 1 (if multiple levels)
 
 \marker mte2
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A secondary title occurring before or after the 'ending' main title
 
 \marker nb
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with no break from previous paragraph text (at chapter boundary)
 
@@ -577,7 +594,7 @@
 \description For the text portion of an ordinal number
 
 \marker p
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with first line indent
 [usfm:href="paragraphs/p.html"]
@@ -595,7 +612,7 @@
 \description Page Break used for new reader portions and children's bibles where content is controlled by the page
 
 \marker pc
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Inscription (paragraph text centered)
 
@@ -604,62 +621,62 @@
 \description Peripheral division
 
 \marker ph
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with level 1 hanging indent (if single level) (DEPRECATED - use para@style li#)
 
 \marker ph1
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with level 1 hanging indent (if multiple levels)
 
 \marker ph2
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with level 2 hanging indent
 
 \marker ph3
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, with level 3 hanging indent
 
 \marker pi
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 1 indent (if single level), with first line indent; often used for discourse
 
 \marker pi1
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 1 indent (if multiple levels), with first line indent; often used for discourse
 
 \marker pi2
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 2 indent, with first line indent; often used for discourse
 
 \marker pi3
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Paragraph text, level 3 indent, with first line indent; often used for discourse
 
 \marker pm
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Embedded text paragraph
 
 \marker pmc
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Embedded text closing
 
 \marker pmo
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Embedded text opening
 
 \marker pmr
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Embedded text refrain
 
@@ -672,12 +689,12 @@
 \description For a geographic proper name
 
 \marker po
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Letter opening
 
 \marker pr
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Text refrain (paragraph right-aligned)
 
@@ -686,31 +703,32 @@
 \description For indicating pronunciation in CJK texts (DEPRECATED - used char@style rb)
 
 \marker q
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, level 1 indent (if single level)
 
 \marker q1
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, level 1 indent (if multiple levels)
 
 \marker q2
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, level 2 indent
 
 \marker q3
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, level 3 indent
 
 \marker q4
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, level 4 indent
 
 \marker qa
+\attributes vid?
 \category otherpara
 \description Poetry text, Acrostic marker/heading
 
@@ -719,37 +737,37 @@
 \description Poetry text, Acrostic markup of the first character of a line of acrostic poetry
 
 \marker qc
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, centered
 
 \marker qd
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description A Hebrew musical performance annotation, similar in content to Hebrew descriptive title.
 
 \marker qm
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, embedded, level 1 indent (if single level)
 
 \marker qm1
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, embedded, level 1 indent (if multiple levels)
 
 \marker qm2
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, embedded, level 2 indent
 
 \marker qm3
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, embedded, level 3 indent
 
 \marker qr
-\attributes aid
+\attributes aid? vid?
 \category versepara
 \description Poetry text, Right Aligned
 
@@ -834,12 +852,12 @@
 \defattrib who
 
 \marker r
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Parallel reference(s)
 
 \marker rb
-\attributes gloss
+\attributes gloss gloss?
 \category char
 \defattrib gloss
 
@@ -848,7 +866,7 @@
 \description Remark
 
 \marker restore
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Comment about when text was restored
 
@@ -857,27 +875,27 @@
 \description A cross-reference indicating the source text for the preceding quotation.
 
 \marker s
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A section heading, level 1 (if single level)
 
 \marker s1
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A section heading, level 1 (if multiple levels)
 
 \marker s2
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A section heading, level 2 (e.g. Proverbs 22-24)
 
 \marker s3
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A section heading, level 3 (e.g. Genesis "The First Day") (\s3 can take a \v!)
 
 \marker s4
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A section heading, level 4
 
@@ -886,27 +904,27 @@
 \description A character style, for small capitalization text
 
 \marker sd
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Vertical space used to divide the text into sections, level 1 (if single level)
 
 \marker sd1
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 1 (if multiple levels)
 
 \marker sd2
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 2
 
 \marker sd3
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 3
 
 \marker sd4
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description Semantic division location (vertical space used to divide the text into sections), level 4
 
@@ -919,12 +937,12 @@
 \description To represent where the original text is in a secondary language or from an alternate text source
 
 \marker sp
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A heading, to identify the speaker (e.g. Job)
 
 \marker sr
-\attributes aid
+\attributes aid? vid?
 \category sectionpara
 \description A section division references range heading
 
@@ -949,215 +967,280 @@
 \defattrib sid
 
 \marker tc1
+\attributes align colspan? content?
 \category cell
 
 \marker tc10
+\attributes align colspan? content?
 \category cell
 
 \marker tc11
+\attributes align colspan? content?
 \category cell
 
 \marker tc12
+\attributes align colspan? content?
 \category cell
 
 \marker tc2
+\attributes align colspan? content?
 \category cell
 
 \marker tc3
+\attributes align colspan? content?
 \category cell
 
 \marker tc4
+\attributes align colspan? content?
 \category cell
 
 \marker tc5
+\attributes align colspan? content?
 \category cell
 
 \marker tc6
+\attributes align colspan? content?
 \category cell
 
 \marker tc7
+\attributes align colspan? content?
 \category cell
 
 \marker tc8
+\attributes align colspan? content?
 \category cell
 
 \marker tc9
+\attributes align colspan? content?
 \category cell
 
 \marker tcc1
+\attributes align colspan? content?
 \category cell
 
 \marker tcc10
+\attributes align colspan? content?
 \category cell
 
 \marker tcc11
+\attributes align colspan? content?
 \category cell
 
 \marker tcc12
+\attributes align colspan? content?
 \category cell
 
 \marker tcc2
+\attributes align colspan? content?
 \category cell
 
 \marker tcc3
+\attributes align colspan? content?
 \category cell
 
 \marker tcc4
+\attributes align colspan? content?
 \category cell
 
 \marker tcc5
+\attributes align colspan? content?
 \category cell
 
 \marker tcc6
+\attributes align colspan? content?
 \category cell
 
 \marker tcc7
+\attributes align colspan? content?
 \category cell
 
 \marker tcc8
+\attributes align colspan? content?
 \category cell
 
 \marker tcc9
+\attributes align colspan? content?
 \category cell
 
 \marker tch12
+\attributes align colspan? content?
 \category cell
 
 \marker tcr1
+\attributes align colspan? content?
 \category cell
 
 \marker tcr2
+\attributes align colspan? content?
 \category cell
 
 \marker tcr3
+\attributes align colspan? content?
 \category cell
 
 \marker tcr4
+\attributes align colspan? content?
 \category cell
 
 \marker tcr5
+\attributes align colspan? content?
 \category cell
 
 \marker tcr6
+\attributes align colspan? content?
 \category cell
 
 \marker tcr7
+\attributes align colspan? content?
 \category cell
 
 \marker tcr8
+\attributes align colspan? content?
 \category cell
 
 \marker tcr9
+\attributes align colspan? content?
 \category cell
 
 \marker th1
+\attributes align colspan? content?
 \category cell
 
 \marker th10
+\attributes align colspan? content?
 \category cell
 
 \marker th11
+\attributes align colspan? content?
 \category cell
 
 \marker th12
+\attributes align colspan? content?
 \category cell
 
 \marker th2
+\attributes align colspan? content?
 \category cell
 
 \marker th3
+\attributes align colspan? content?
 \category cell
 
 \marker th4
+\attributes align colspan? content?
 \category cell
 
 \marker th5
+\attributes align colspan? content?
 \category cell
 
 \marker th6
+\attributes align colspan? content?
 \category cell
 
 \marker th7
+\attributes align colspan? content?
 \category cell
 
 \marker th8
+\attributes align colspan? content?
 \category cell
 
 \marker th9
+\attributes align colspan? content?
 \category cell
 
 \marker thc1
+\attributes align colspan? content?
 \category cell
 
 \marker thc10
+\attributes align colspan? content?
 \category cell
 
 \marker thc11
+\attributes align colspan? content?
 \category cell
 
 \marker thc2
+\attributes align colspan? content?
 \category cell
 
 \marker thc3
+\attributes align colspan? content?
 \category cell
 
 \marker thc4
+\attributes align colspan? content?
 \category cell
 
 \marker thc5
+\attributes align colspan? content?
 \category cell
 
 \marker thc6
+\attributes align colspan? content?
 \category cell
 
 \marker thc7
+\attributes align colspan? content?
 \category cell
 
 \marker thc8
+\attributes align colspan? content?
 \category cell
 
 \marker thc9
+\attributes align colspan? content?
 \category cell
 
 \marker thr1
+\attributes align colspan? content?
 \category cell
 
 \marker thr10
+\attributes align colspan? content?
 \category cell
 
 \marker thr11
+\attributes align colspan? content?
 \category cell
 
 \marker thr12
+\attributes align colspan? content?
 \category cell
 
 \marker thr2
+\attributes align colspan? content?
 \category cell
 
 \marker thr3
+\attributes align colspan? content?
 \category cell
 
 \marker thr4
+\attributes align colspan? content?
 \category cell
 
 \marker thr5
+\attributes align colspan? content?
 \category cell
 
 \marker thr6
+\attributes align colspan? content?
 \category cell
 
 \marker thr7
+\attributes align colspan? content?
 \category cell
 
 \marker thr8
+\attributes align colspan? content?
 \category cell
 
 \marker thr9
+\attributes align colspan? content?
 \category cell
-
-\marker tl
-\category char
-\description For transliterated words
 
 \marker toc1
 \category header
@@ -1207,6 +1290,7 @@
 \description USFM version
 
 \marker v
+\attributes altnumber? number pubnumber?
 \category internal
 \description Verse
 
@@ -1239,8 +1323,14 @@
 \category char
 \description For marking the words of Jesus
 
+\marker wl
+\attributes lang?
+\category char
+\defattrib lang
+\description For transliterated words
+
 \marker x
-\attributes aid
+\attributes aid? cat?
 \category crossreference
 \description Cross reference
 
@@ -1273,6 +1363,7 @@
 \description A cross-reference quotation from the scripture text
 
 \marker xt
+\attributes href?
 \category char crossreferencechar
 \defattrib href
 \description The cross reference target reference(s), protocanon only
