@@ -1,3 +1,4 @@
+import pytest
 
 def notempty(s):
     if s is None:

@@ -1,6 +1,6 @@
 # Anchors and Inline Referencing
 
-Approved for addition USFM 3.2.
+Approved for addition USFM 3.2 due to them being applied to paragraphs.
 
 ## Introduction
 
@@ -58,45 +58,3 @@ NUM t.mytable_5_2
 
 The `t` namespace refers to a cell in a table. The identifier has 3 components, separated by `_`. The first is an identifier as specified in the table@aid attribute. Its character set is further limited to not include `_` in the attribute value. The second component is a number that specifies the row and the last component is a number specifying the column in that row. `_` is used because it is not considered a pattern syntax character. Pattern syntax characters are not allowed in identifiers within U23003.
 
-## Issues
-
-Material after this point is discussion that resulted in the description above and may refer to ideas that are not described.
-
-#### Attribute name
-
-The attribute name of `aid` is proposed. Is this most suitable? A shorter name of `a` may be more convenient but it clashes with the `\a` marker which can be confusing for users. But the `\a` marker is no longer being proposed. Thus `a` is open.
-
-#### Tables
-
-In order to support cell referencing, do we need to reduce the reference back to a single separator and use something like `mytable3:5`. This would completely break any namespacing. So we either find a different way or we allow multiple separators: `t:mytable/3/5`  
-The problem here is that this would require an extension to the U23003 grammar, which makes this a special case. One way forward might be to use `t:mytable!r3!c5!2` for the second word in the cell. The reason for `r` and `c` is to fit the row and column into a U23003 grammatical structure using ids.
-
-#### Identifiable Elements
-
-The elements not currently eligible for receiving an @aid are: book, cell, chapter, char, link, ms, optbreak, periph, ref, row, usx, verse and allowed in: figure, note, para, sidebar, table.
-
-Note we explicitly do not allow the attribute on milestones because the likelihood of its abuse is so huge.
-
-Do we want to extend this facility to things like \<char\>?
-
-#### Namespace Structure
-
-Should we explicitly limit namespaces to digits and a single lowercase letter. The reason for lowercase letters is that for some texts there is a desire for chapters to take letters instead of digits as in A:3. There is not likely to be a long list of namespaces. By using a single namespace letter we are making the reference structure clearer.  
-Namespaces could potentially stack. Thus if there is a table with a \\k in it then one might say `t:k:well:3:5`. Life can start to get confusing. There is no need for this capability yet.
-
-## Discussion
-
-Please enter any comments in this discussion area rather than adding comments to this doc. The conclusion of any discussion will be then transferred into the main document above this heading. The advantage of this approach is that the discussion can be kept as part of the history of the document once it is placed in the tcdocs repository. Please also keep styling to that which conforms to markdown export.
-
-DJG: There seems to be inconsistency between `k:ark` and `k.ark` Is this accidental or is the implication that they should be treated as equal? (and hence there be code to make sure that they are). I think this should be probably be clarified.  
-	As per U23003 there should be no semantic difference between k:ark and k.ark  
-MH: You are correct. `k:ark` and `k.ark` are equivalent in every way.
-
-DJG: The statement that a glossary has no `C:V` structure is true for the printed form, but if notes are in use in Paratext glossaries, it  archives the entire glossary state at each new / modified note. The use of `C:V` structure in the glossary is thus sometimes recommended as a work-around to stop paratext grinding to a halt. Breaking the glossary into chapters and verses also helps with change-tracking for back-translations.  Glossaries may also have ‘chapters’ for the different letters of the alphabet, and thus be printed using `\c 1 \cl A`  even if verse numbers are not in use. I offer this comment as a note of the status-quo about how USFM is in use, not to request a rewrite, but perhaps a minor re-wording, e.g.  “no significant / agreed / canonical C:V structure” would be in order.  
-But this should not be relied on in referencing.
-
-JK: Re: the attribute name 'aid': aid is fine with me. I like that the 'id' part helps to express its purpose.
-
-JK: Re: Separators for table row and column: I think tables are an additional structure being added just above the word and character level. For that reason I think that the additional separator character makes sense (since we have the practice in 23003 of having different characters for different aspects of a reference like \!word and \+character). So NUM t:census\_first/2/1, rather than NUM t:census\_first\!r2\!c1.
-
-JK: Re extending this to \<char\>: It would steer people away from creating user-defined attributes when they wish to be able to point to specific texts by name. However, I suppose the clear downside is the likelihood of abuse (rather than using u23003 references), right?

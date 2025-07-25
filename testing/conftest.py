@@ -46,7 +46,7 @@ def zip_getfiles(zipname):
 def dir_gettestfiles(pdir):
     allfiles = []
     for fn in os.listdir(pdir):
-        if fn.lower().endswith(".usx"):
+        if fn.lower().endswith(".usx") or fn.lower().endswith("sfm"):
             allfiles.append((pdir, fn))
     if not len(allfiles):
         testfile = os.path.join(pdir, "origin.xml")
@@ -58,9 +58,13 @@ def dir_gettestfiles(pdir):
 def usfm(projectdir, projectfile):
     if projectdir.lower().endswith(".zip"):
         with zipfile.ZipFile(projectdir, "r") as zf:
+            if "markers.ext" in zf.namelist():
+                extsfiles = [zf.open("markers.ext", "r")]
+            else:
+                extsfiles = []
             if projectfile in zf.namelist():
                 with zf.open(projectfile, "r") as inf:
-                    u = usfmtc.readFile(inf, informat="usx")
+                    u = usfmtc.readFile(inf, informat="usx", extfiles=extsfiles)
                     u.fname = projectfile
                     u.base = projectdir
                     u.xfails = []
@@ -84,7 +88,8 @@ def usfm(projectdir, projectfile):
 
 def pytest_report_teststatus(report, config):
     restype = {"passed": "", "failed": "+", "skipped": "-"}
-    failtype = {"test_simple.py::test_textinnotes": "n"}
+    failtype = {"test_simple.py::test_textinnotes": "n",
+                "test_sumply.py::test_attributes": "a"}
     if report.when == "call":
         tid = report.nodeid[:report.nodeid.find("[")]       # "module::testfn[zipfilepath-inzippath]"
         if report.outcome == "failed":

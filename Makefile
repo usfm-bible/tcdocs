@@ -56,5 +56,5 @@ manual/antora/modules/ROOT/pages/glossary.adoc: grammar/usx.rng
 files: grammar/usx.rng grammar/usfm.ext manual/antora/modules/ROOT/pages/glossary.adoc
 
 grammar/usfm.ext : grammar/usx.rng
-	$(PYTHON) python/scripts/usfmmkext -o $@ $<
+	$(PYTHON) python/scripts/usfmmkext -o $@ -l grammar/usfm.lists $<
 

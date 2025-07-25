@@ -1,6 +1,6 @@
 # Lists and Tables
 
-Approved for addition to USFM 4.
+Approved for addition to USFM 3.2 as optional. In USFM 4 the additions will become required.
 
 ## Introduction
 
@@ -29,23 +29,3 @@ A paragraph closing milestone may not be followed by any text but only by the st
 
 For backward compatibility the milestones are not required unless a list or table boundary is ambiguous or if attributes are to be provided to the corresponding \<table\> or \<list\> elements. If a starting milestone occurs, a closing milestone is required before any element that would currently indicate an end of table or list (e.g. `\p`).
 
-## Issues
-
-### Required or Not Required?
-
-Currently it is proposed that \<list\> is a required element around a list and that the USFM milestones are only required if needed, but if they occur they must occur as a pair. Do we want to relax some of those constraints to improve backward compatibility or tighten them to ensure greater consistency?  
-For backward compatibility, the milestones are not required. Clearly, if the milestones are taking attributes such as @aid or even @cat, then a milestone has to exist to carry the information. If one side is marked, it is required that the other be marked. I.e. the milestones must occur in a pair and are not free to be used independently.  
-Probably will be required in a later version.
-
-## Discussion
-
-Please enter any comments in this discussion area rather than adding comments to this doc. The conclusion of any discussion will be then transferred into the main document above this heading. The advantage of this approach is that the discussion can be kept as part of the history of the document once it is placed in the tcdocs repository. Please also keep styling to that which conforms to markdown export.
-
-### Required?
-
-DJG: From the above, it is not clear if `\list-s … \list-e` and `\table-s … \table-e` are intended to be required elements or optional for where there is ambiguity / a need for an @aid. If an attribute is needed then the milestones are necessary to hold the attribute.
-
-### Implications
-
-Would it be appropriate to convert `\esb` and `\esbe` into milestones to correspond to \<sidebar\>? If USFM were being invented from scratch, then this would make sense. But given the existing standard, there is no such expectation. Rather than calling `\esb` and `\esbe` paragraphs, we can call them 'bare milestones' in that they have no explicit closing marker and cannot take attributes. But neither are they paragraphs that can take content other than other paragraphs.  
-USFM has a number of what are best described as bare milestones: `\b`, `\pb`, `\esb`, `\esbe`. These bare milestones are such that they close the previous paragraph (they are paragraph level milestones).  

@@ -990,7 +990,7 @@
           <ref name="OtherPara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="VAttributesPre"/>
+          <ref name="AttributesPre"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1009,33 +1009,6 @@
       <ref name="Remark"/>
     </choice>
   </define>
-  <define name="VAttributesPre">
-    <group>
-      <group>
-        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-        <group usfm:stacked="true">
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;vid=&quot;&#x27;" after="&quot;"/>
-              <name ns="">vid</name>
-              <data type="string">
-                <usfm:pattern name="VERSE"/>
-                <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
-              </data>
-            </attribute>
-          </optional>
-          <optional>
-            <attribute>
-              <usfm:match before="&#x27;aid=&quot;&#x27;" after="&quot;"/>
-              <name ns="">aid</name>
-              <data type="string"/>
-            </attribute>
-          </optional>
-        </group>
-      </group>
-      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
-    </group>
-  </define>
   <define name="VersePara">
     <choice>
       <element>
@@ -1046,7 +1019,7 @@
           <ref name="VersePara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="VAttributesPre"/>
+          <ref name="AttributesPre"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1191,7 +1164,7 @@
         <ref name="List.para.style.enum"/>
       </attribute>
       <optional>
-        <ref name="VAttributesPre"/>
+        <ref name="AttributesPre"/>
       </optional>
       <zeroOrMore>
         <choice>
@@ -1515,7 +1488,7 @@
       <a:documentation>For the signature of the author of an Epistle</a:documentation>
       <value>sls</value>
       <a:documentation>To represent where the original text is in a secondary language or from an alternate text source</a:documentation>
-      <value usfm:propval="lang">wl</value>
+      <value usfm:propval="lang">tl</value>
       <a:documentation>For transliterated words</a:documentation>
       <value>wg</value>
       <a:documentation>A Greek Wordlist text item</a:documentation>
@@ -1525,6 +1498,8 @@
       <a:documentation>An Aramaic wordlist text item</a:documentation>
       <value>wj</value>
       <a:documentation>For marking the words of Jesus</a:documentation>
+      <value usfm:propval="lang">wl</value>
+      <a:documentation>Indicating words in a foreign language and perhaps script</a:documentation>
       <value usfm:propval="href" usfm:propattribs="href? link-href?">jmp</value>
       <a:documentation>For associating linking attributes to a span of text</a:documentation>
       <value>no</value>
@@ -1545,6 +1520,8 @@
       <a:documentation>Inline scripture reference formatting.</a:documentation>
       <value usfm:propval="lemma" usfm:propattribs="lemma? strong? srcloc?">w</value>
       <value usfm:propval="gloss" usfm:propattribs="gloss">rb</value>
+      <value>ta</value>
+      <a:documentation>Text alternatives</a:documentation>
     </choice>
   </define>
   <define name="CharEmbed">

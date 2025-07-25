@@ -627,24 +627,14 @@ PeriphPara =
 OtherPara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum },
-        VAttributesPre?,
+        AttributesPre?,
         ([usfm:text[]] text | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
     } | Remark
-
-VAttributesPre = (
-        ([usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-          ([usfm:stacked="true"]
-          ([usfm:match[before="'vid=&quot;'" after="&quot;"]]
-            attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
-          [usfm:match[before="'aid=&quot;'" after="&quot;"]]
-            attribute aid { xsd:string }?))
-          >> usfm:match[match="PIPE" matchout="'|'" dump="true"])
-    )
 
 VersePara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum },
-        VAttributesPre?,
+        AttributesPre?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     } | Remark
 
@@ -759,7 +749,7 @@ OtherPara.para.style.enum = (
 List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
-        VAttributesPre?,
+        AttributesPre?,
         ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
@@ -922,7 +912,7 @@ Char.char.style.enum = (
     |   ## To represent where the original text is in a secondary language or from an alternate text source
       "sls"
     |   ## For transliterated words
-      [usfm:propval="lang"] "wl"
+      [usfm:propval="lang"] "tl"
     |   ## A Greek Wordlist text item
       "wg"
     |   ## A Hebrew wordlist text item
@@ -931,6 +921,8 @@ Char.char.style.enum = (
       "wa"
     |   ## For marking the words of Jesus
       "wj"
+    |   ## Indicating words in a foreign language and perhaps script
+      [usfm:propval="lang"] "wl"
     |   ## For associating linking attributes to a span of text
       [usfm:propval="href" usfm:propattribs="href? link-href?"] "jmp"
     |   ## A character style, use normal text
@@ -951,6 +943,8 @@ Char.char.style.enum = (
        [usfm:propval="href"] "xt" 
     | [usfm:propval="lemma" usfm:propattribs="lemma? strong? srcloc?"] "w"
     | [usfm:propval="gloss" usfm:propattribs="gloss"] "rb"
+    |   ## Text alternatives
+       "ta"
     )
 
 CharEmbed = (
