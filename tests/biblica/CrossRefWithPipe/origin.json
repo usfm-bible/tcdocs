@@ -57,18 +57,11 @@
               "content": [
                 "; also in ",
                 {
-                  "type": "char",
-                  "marker": "xt",
-                  "href": "GEN 2:6",
-                  "content": [
-                    {
-                      "type": "ref",
-                      "loc": "GEN 2:6",
-                      "content": [
-                        "verse 6"
-                      ]
-                    }
-                  ]
+				  "type": "ref",
+				  "loc": "GEN 2:6",
+				  "content": [
+					"verse 6"
+				  ]
                 }
               ]
             }

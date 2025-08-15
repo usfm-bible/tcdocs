@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <test-metadata>
-        <description>handles usfmBodyTestD
-        NOTE: currently fails because of whitespace differences in table cells. Should whitespace be ignored?</description>
+        <description>handles usfmBodyTestD</description>
         <validated>pass</validated>
-        <tags>clarify</tags>
 </test-metadata>

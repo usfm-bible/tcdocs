@@ -766,25 +766,22 @@
         },
         "In the same way, encourage the younger men to use good sense. ",
         {
-          "type": "char",
-          "marker": "xt",
-          "link-href": "MAT 6:7",
+          "type": "ref",
+          "loc": "MAT 6:7",
           "content": [
             "7"
           ]
         },
         {
-          "type": "char",
-          "marker": "xt",
-          "link-href": "MAT 6:7",
+          "type": "ref",
+          "loc": "MAT 6:7",
           "content": [
             "verse 7"
           ]
         },
         {
-          "type": "char",
-          "marker": "xt",
-          "link-href": "MAT 6:7",
+          "type": "ref",
+          "loc": "MAT 6:7",
           "content": [
             "v7"
           ]

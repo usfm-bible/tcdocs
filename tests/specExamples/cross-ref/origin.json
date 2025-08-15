@@ -124,36 +124,32 @@
       "marker": "cd",
       "content": [
         {
-          "type": "char",
-          "marker": "xt",
-          "href": "GEN 2:1",
+          "type": "ref",
+          "loc": "GEN 2:1",
           "content": [
             "1"
           ]
         },
         " Бог благословляет седьмой день; ",
         {
-          "type": "char",
-          "marker": "xt",
-          "href": "GEN 2:8",
+          "type": "ref",
+          "loc": "GEN 2:8",
           "content": [
             "8"
           ]
         },
         " человек в раю Едемском; четыре реки; дерево познания добра и зла. ",
         {
-          "type": "char",
-          "marker": "xt",
-          "href": "GEN 2:18",
+          "type": "ref",
+          "loc": "GEN 2:18",
           "content": [
             "18"
           ]
         },
         " Человек дает названия животным. ",
         {
-          "type": "char",
-          "marker": "xt",
-          "href": "GEN 2:21",
+          "type": "ref",
+          "loc": "GEN 2:21",
           "content": [
             "21"
           ]
