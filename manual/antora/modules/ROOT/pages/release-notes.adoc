@@ -5,6 +5,20 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
+== 3.1.1
+
+=== Additions
+
+* Add xref:para:introductions/ipc.adoc[ipc] to correspond to xref:para:paragraphs/pc.adoc[pc].
+
+=== Revisions
+
+* Move p1, p2 from OtherPara to PeriphPara (i.e. they are not used in scripture files).
+* Fix xref:char:breaks/optbreak.adoc[optbreak].
+* Allow xref:para:paragraphs/lit.adoc[lit] in book xref:doc:index.adoc#doc-book-intro[introduction].
+* xref:doc:books.adoc[Book codes] must contain at least one letter.
+* xref:ROOT:extensions.adoc[Markers.ext] #``++\category++``# may contain multiple entries.
+
 == 3.1
 _July 2024_
 

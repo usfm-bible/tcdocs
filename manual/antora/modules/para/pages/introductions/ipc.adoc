@@ -1,0 +1,4 @@
+= ipc
+:env-antora:
+
+include::markers:para/ipc.adoc[tag=public]
