@@ -1,0 +1,63 @@
+= ipc
+:description: Introduction centered paragraph
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/para/ipc.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Introduction centered paragraph.
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\ipc ++``#__content__#
+* *USX:* ``++<para style="ipc">++``#__content__#``++</para>++``
+Style Type:: xref:para:index.adoc[Paragraph]
+Valid In:: `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`
+// tag::spec[]
+Added:: 3.1.1
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Missing
+[source#src-usfm-para-ipc_1,usfm,highlight=]
+----
+Missing
+----
+USX::
++
+.Missing
+[source#src-usx-para-ipc_1,xml,highlight=]
+----
+Missing
+----
+USJ::
++
+.Missing
+[source#src-usj-para-ipc_1,json,highlight=]
+----
+Missing
+----
+======
+
+image::para/missing.jpg[,300]
+
+== Properties
+
+TextType:: Other
+TextProperties:: paragraph, publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
