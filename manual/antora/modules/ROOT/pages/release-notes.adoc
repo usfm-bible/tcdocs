@@ -5,6 +5,16 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
+== 3.1.2
+
+=== Additions
+
+* Add #__lang__# attribute to xref:char:features/tl.adoc[tl] and xref:char:features/tl.adoc[wl]
+* Add character style ta (U24002)
+* Add new marker categories:
+** cell (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)
+** attribute (cp, vp, usfm, ca, va, cat) indicates the contents are an attribute in USX
+
 == 3.1.1
 
 === Additions

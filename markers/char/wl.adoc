@@ -1,0 +1,73 @@
+= wl
+:description: Non-vernacular word(s)
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/wl.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Non-vernacular words.
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\wl ++``#__content__#``++|++``#__@lang__#``++\wl*++``
+* *USX:* ``++<char style="wl" ++``#__@lang__#``++>++``#__content__#``++</char>++``
+#lang#::: Source language of the text according to ISO639-1 (2 letter codes) _(default attribute)_
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
+Added:: 3.1.2
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Luke 2.21 (GNT)
+[source#src-usfm-char-wl_1,usfm,highlight=4]
+----
+\p
+\v 21 A week later, when the time came for the baby to be 
+circumcised\f + \fr 1:1 \fk Circumcised \ft A sign of the Abrahamic covenant. 
+Romanian:\wl tăiat împrejur|lang="ro"\wl*\f*, he was named Jesus, the name which 
+the angel had given him before he had been conceived. 
+----
+USX::
++
+.Unknown example source
+[source#src-usx-char-wl_1,xml,highlight=10]
+----
+<usx version="3.1.2">
+  <book code="LUK" style="id"/>
+  <chapter number="2" style="c" sid="LUK 2"/>
+  <para style="p">
+    <verse number="21" style="v" sid="LUK 2:21"/>A week later, when the time 
+    came for the baby to be circumcised<note caller="+" style="f">
+      <char style="fr" closed="false">2.21 </char>
+      <char style="fk" closed="false">Circumcised</char>
+      <char style="ft" closed="false">A sign of the Abrahamic covenant.
+      Romanian:<char style="wl" lang="ro">tăiat împrejur</char></char></note>, 
+      he was named Jesus, the name which the angel had given him before he 
+      had been conceived.<verse eid="LUK 2:21"/></para>
+</usx>
+----
+======
+
+image::char/missing.jpg[,300]
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

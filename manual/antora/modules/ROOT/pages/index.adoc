@@ -1,6 +1,6 @@
 = Scripture Markup Documentation
 
-Pre-release Version:: 3.1.2
+Release Version:: 3.1.2
 
 == Contents
 
