@@ -22,6 +22,7 @@
 *** xref:features/ref.adoc[ref - Scripture reference]
 *** xref:features/sig.adoc[sig - Author's signature]
 *** xref:features/sls.adoc[sls - Secondary source]
+*** xref:features/ta.adoc[ta - Text alternatives]
 *** xref:features/tl.adoc[tl - Transliterated words]
 *** xref:features/wl.adoc[wl - Non-vernacular words]
 *** xref:features/w.adoc[w - Wordlist entry]
