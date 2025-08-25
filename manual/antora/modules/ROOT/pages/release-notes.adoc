@@ -13,7 +13,7 @@ endif::[]
 * Add character style xref:char:features/ta.adoc[ta] (U24002)
 * Add new marker xref:ROOT:extensions.adoc#ext-category[categories]:
 ** cell (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)
-** attribute (cp, vp, usfm, ca, va, cat) indicates the contents are an attribute in USX
+** attribute (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat]) indicates the contents are an attribute in USX.
 
 == 3.1.1
 
