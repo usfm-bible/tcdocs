@@ -1359,7 +1359,7 @@
       <a:documentation>For the signature of the author of an Epistle</a:documentation>
       <value>sls</value>
       <a:documentation>To represent where the original text is in a secondary language or from an alternate text source</a:documentation>
-      <value>tl</value>
+      <value usfm:propval="lang">tl</value>
       <a:documentation>For transliterated words</a:documentation>
       <value>wg</value>
       <a:documentation>A Greek Wordlist text item</a:documentation>
@@ -1369,6 +1369,8 @@
       <a:documentation>An Aramaic wordlist text item</a:documentation>
       <value>wj</value>
       <a:documentation>For marking the words of Jesus</a:documentation>
+      <value usfm:propval="lang">wl</value>
+      <a:documentation>Indicating words in a foreign language and perhaps script</a:documentation>
       <value usfm:propval="href" usfm:propattribs="href? link-href?">jmp</value>
       <a:documentation>For associating linking attributes to a span of text</a:documentation>
       <value>no</value>
@@ -1389,6 +1391,8 @@
       <a:documentation>Inline scripture reference formatting.</a:documentation>
       <value usfm:propval="lemma" usfm:propattribs="lemma? strong? srcloc?">w</value>
       <value usfm:propval="gloss" usfm:propattribs="gloss">rb</value>
+      <value>ta</value>
+      <a:documentation>Text alternatives</a:documentation>
     </choice>
   </define>
   <define name="CharEmbed">
@@ -1628,6 +1632,7 @@
       <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt5-s">qt5-e</value>
       <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e">qt-s</value>
       <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s">qt-e</value>
+      <value usfm:propval="ref" usfm:propattribs="ref h?">vid</value>
     </choice>
   </define>
   <define name="Chapter">
