@@ -1805,6 +1805,7 @@
       <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt5-s">qt5-e</value>
       <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e">qt-s</value>
       <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s">qt-e</value>
+      <value usfm:propval="ref" usfm:propattribs="ref h?">vid</value>
     </choice>
   </define>
   <define name="Chapter">

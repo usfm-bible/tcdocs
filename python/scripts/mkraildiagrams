@@ -3,12 +3,8 @@
 import os, sys, argparse, logging
 from usfmtc.validating.usfmgrammar import UsfmGrammarParser, XmlGrammarParser
 
-try:
-    from usfmtc_internal.usxgrammar import alljobs
-except ImportError:
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
-    from usfmtc_internal.usxgrammar import alljobs
-from usfmtc_internal.diagrams import UsfmRailRoad, XmlRailRoad
+from usfmtc.diagrams.usxgrammar import alljobs
+from usfmtc.diagrams.diagrams import UsfmRailRoad, XmlRailRoad
 import xml.etree.ElementTree as et
 
 parser = argparse.ArgumentParser()
@@ -60,7 +56,10 @@ for k, j in jobs.items():
         back = backendsfm if a[1] else backendxml
         proc = sfmproc if a[1] else xmlproc
         p = proc
-        if p.parseRef('Scripture' if k == 'all' else k, flattens=keeps, flattenall=(k=='all')) is None:
+        try:
+            if p.parseRef('Scripture' if k == 'all' else k, flattens=keeps, flattenall=(k=='all')) is None:
+                continue
+        except IndexError:
             continue
         outfile = os.path.join(args.outdir, "{}_{}.svg".format(j[0], a[0]))
         with open(outfile, "w", encoding="utf-8") as outf:
