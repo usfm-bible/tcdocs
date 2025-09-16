@@ -1,4 +1,4 @@
-# USFMTC Development Policy
+# USFMTC Versioning
 
 USFM Technical Committee  
 April 2025
