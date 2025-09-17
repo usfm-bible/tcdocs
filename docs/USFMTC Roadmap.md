@@ -29,6 +29,8 @@ The transition from 3.0 to 3.1 is hard to document because 3.0 is not formally s
 - \\ is required to escape certain characters: \\ ' " | \~ //  
 - Whitespace rules and canonicalisation rules are given  
 - \\fv is now simply a character style and requires closing
+- \\k gains an optional @key attribute
+- \\mi# add markers with number. E.g. \\mi2
 
 ### 3.1.1 \- released
 
