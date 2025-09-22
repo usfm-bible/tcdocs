@@ -452,7 +452,7 @@ Title.para.style.enum = (
 BookIntroduction =
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { Introduction.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
         ([usfm:text[]] text | CharEmbed | IntroChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
     } | Table | IntroList | Remark
 
@@ -530,7 +530,7 @@ Introduction.para.style.enum = (
 IntroList = 
     element para {
         [usfm:grouping="12" usfm:ptag[]] attribute style { IntroList.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
         ([usfm:text[]] text | CharEmbed | IntroChar | ListChar | Footnote | CrossReference | Figure | Milestone | Reference | Sidebar)*
     }
 
@@ -557,7 +557,7 @@ Section =
     element para {
         [usfm:grouping="15" usfm:ptag[matchid="a" usfm:stacked="true"]]
         attribute style { SectionPara.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
         attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | [usfm:ignore="true"] VerseEnd | Reference | Break)*
     }
@@ -620,21 +620,23 @@ SectionPara.para.style.enum = (
 PeriphPara =
     element para {
         [usfm:ptag[]] attribute style { PeriphPara.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
     } | Remark
 
 OtherPara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { OtherPara.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
+        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | Figure | Milestone | Reference | Footnote | CrossReference | Break)*
     } | Remark
 
 VersePara = 
     element para {
         [usfm:grouping="15" usfm:ptag[usfm:stacked="true"]] attribute style { VersePara.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
+        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     } | Remark
 
@@ -749,7 +751,8 @@ OtherPara.para.style.enum = (
 List =
     element para {
         [usfm:grouping="8" usfm:ptag[]] attribute style { List.para.style.enum },
-        AttributesPre?,
+        AttributesPreAll?,
+        attribute vid { [usfm:pattern[name="VERSE"]] xsd:string { pattern = "[A-Z1-4]{3} ?[a-z0-9\-:]*(&#x200F;?[\-,][0-9]+)*" } }?,
         ([usfm:text[]] text | ListChar | CharEmbed | Figure | Milestone | Verse | Reference | Footnote | CrossReference | Break)*
     }
 
@@ -788,7 +791,7 @@ Table =
             attribute style {
                 ("tr") # Table row
             },
-            AttributesPre?,
+            AttributesPreAll?,
             ([usfm:ignore="true"]Verse | TableContent)+
         }+
     }
@@ -815,7 +818,7 @@ cell.align.enum = (
 IntroChar =
     element char {
         [usfm:tag[matchid="a" usfm:seq="true"]] attribute style { IntroChar.char.style.enum },
-        char.closed?, AttributesPre?,
+        char.closed?, AttributesPreAll?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Reference | Footnote | CrossReference | Break)+
         >> usfm:endtag[usfm:order="3" ahead="/[^\\]/" usfm:many="?" usfm:seq="true"]
     }
@@ -837,6 +840,14 @@ Attributes = (
         attribute * - (_default | style | closed) {xsd:string}+)
 )
 
+AttributesPreAll = (
+    [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
+       ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
+        attribute * - (_default | style | closed | vid) {xsd:string}+)
+    >> usfm:match[match="PIPE" matchout="'|'" dump="true" after="Hs" afterout="' '"]
+)
+
 AttributesPre = (
     [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
@@ -856,7 +867,7 @@ Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[matchid="a" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        [usfm:seq="true"]((AttributesPre?, CharContent?, AttributesNoAttrib?)
+        [usfm:seq="true"]((AttributesPreAll?, CharContent?, AttributesNoAttrib?)
         >> usfm:endtag[usfm:seq="true"])  # required
     })
 
@@ -959,11 +970,11 @@ Char.char.style.enum = (
 CharEmbed = (
     element char {
         [usfm:stacked="true"]([usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true" skip="3.0"]] attribute style { FullChar.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, CharContent?, AttributesNoAttrib?)
+        [usfm:seq="true"](AttributesPreAll?, CharContent?, AttributesNoAttrib?)
         >> usfm:endtag[matchref="b" before="'\\'" usfm:seq="true"])
       |
         [usfm:stacked="true"]([usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, CharContent?, AttributesNoAttrib?)
+        [usfm:seq="true"](AttributesPreAll?, CharContent?, AttributesNoAttrib?)
         >> usfm:endtag[matchref="a" before="'\\+'" usfm:seq="true"])
     })
 
@@ -973,7 +984,7 @@ NoteCharEmbedEmpty = (
     [usfm:stacked="true"]
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, NoteCharContent, AttributesNoAttrib?)
+        [usfm:seq="true"](AttributesPreAll?, NoteCharContent, AttributesNoAttrib?)
         >> usfm:endtag[matchref="c" before="'\\'" usfm:seq="true"]
     })
 
@@ -981,14 +992,14 @@ NoteCharEmbedPlus = (
     [usfm:stacked="true"]
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, NoteCharContent, AttributesNoAttrib?)
+        [usfm:seq="true"](AttributesPreAll?, NoteCharContent, AttributesNoAttrib?)
         >> usfm:endtag[matchref="b" before="'\\+'" usfm:seq="true"]
     })
 
 ListChar = (
     element char {
         [usfm:tag[matchid="a"]] attribute style { ListChar.char.style.enum },
-        char.closed?, AttributesPre?,
+        char.closed?, AttributesPreAll?,
         ([usfm:text[]] text | CharEmbed | Figure | Milestone | Footnote | CrossReference | Break | Reference)*
         >> usfm:endtag[usfm:many="?"]
     })
@@ -1018,8 +1029,9 @@ FigureThree =
     element figure {
         [usfm:order="-2" usfm:tag [matchid="a"]] attribute style { [usfm:propattribs="src size ref alt? loc? copy?"] "fig" },
         [usfm:ignore="true"] char.closed?,
-        [usfm:alt="FigureThreeAttribs"](AttributesPre?,
-        [usfm:seq="true"] ([usfm:match[match="TEXTNOTATTRIB"]] text?)) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
+        # [usfm:alt="FigureThreeAttribs"](AttributesPreAll?,
+        AttributesPreAll?,
+        [usfm:seq="true"] ([usfm:match[match="TEXTNOTATTRIB"]] text?, AttributesNoAttrib?) # Nested character <char> markup. Can an attributed char have sub char markup? ATM no.
         >> usfm:endtag[usfm:order="4" usfm:seq="true"]
     }
 
@@ -1167,7 +1179,7 @@ FootnoteChar =
         [usfm:seq="true"]([usfm:grouping="8" usfm:tag[matchid="b"]]
         attribute style { FootnoteChar.char.style.enum },
         [usfm:ignore="true"]
-        char.closed?, AttributesPre?),
+        char.closed?, AttributesPreAll?),
         [usfm:seq="true"]([usfm:text[]] text | NoteCharEmbed | Figure | Milestone | Reference | Break)*
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="'*'" usfm:seq="true"]
     }
@@ -1218,7 +1230,7 @@ CrossReferenceChar =
         [usfm:tag[matchid="b"]]
         attribute style { CrossReferenceChar.char.style.enum },
         [usfm:ignore="true"]
-        char.closed?, AttributesPre?,
+        char.closed?, AttributesPreAll?,
         ([usfm:text[]] text | NoteCharEmbed | Figure | Milestone | Reference | Break)+
         >> usfm:endtag[matchref="b" noout="true" usfm:many="?" after="/\*${Hs}/"]
     }

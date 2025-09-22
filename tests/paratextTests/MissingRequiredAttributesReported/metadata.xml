@@ -2,5 +2,5 @@
 <test-metadata>
         <description>MissingRequiredAttributesReported. From paratext test suite
         Should fail because required gloss attribute for \rb is missing</description>
-        <validated>fail</validated>
+        <validated>pass</validated>
 </test-metadata>

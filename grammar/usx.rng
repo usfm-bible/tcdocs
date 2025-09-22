@@ -672,7 +672,7 @@
           <ref name="Introduction.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -776,7 +776,7 @@
         <ref name="IntroList.para.style.enum"/>
       </attribute>
       <optional>
-        <ref name="AttributesPre"/>
+        <ref name="AttributesPreAll"/>
       </optional>
       <zeroOrMore>
         <choice>
@@ -866,7 +866,7 @@
         <ref name="SectionPara.para.style.enum"/>
       </attribute>
       <optional>
-        <ref name="AttributesPre"/>
+        <ref name="AttributesPreAll"/>
       </optional>
       <optional>
         <attribute>
@@ -960,7 +960,7 @@
           <ref name="PeriphPara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
         </optional>
         <zeroOrMore>
           <choice>
@@ -990,7 +990,16 @@
           <ref name="OtherPara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
+        </optional>
+        <optional>
+          <attribute>
+            <name ns="">vid</name>
+            <data type="string">
+              <usfm:pattern name="VERSE"/>
+              <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+            </data>
+          </attribute>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1019,7 +1028,16 @@
           <ref name="VersePara.para.style.enum"/>
         </attribute>
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
+        </optional>
+        <optional>
+          <attribute>
+            <name ns="">vid</name>
+            <data type="string">
+              <usfm:pattern name="VERSE"/>
+              <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+            </data>
+          </attribute>
         </optional>
         <zeroOrMore>
           <choice>
@@ -1164,7 +1182,16 @@
         <ref name="List.para.style.enum"/>
       </attribute>
       <optional>
-        <ref name="AttributesPre"/>
+        <ref name="AttributesPreAll"/>
+      </optional>
+      <optional>
+        <attribute>
+          <name ns="">vid</name>
+          <data type="string">
+            <usfm:pattern name="VERSE"/>
+            <param name="pattern">[A-Z1-4]{3} ?[a-z0-9\-:]*(‏?[\-,][0-9]+)*</param>
+          </data>
+        </attribute>
       </optional>
       <zeroOrMore>
         <choice>
@@ -1232,7 +1259,7 @@
             <value>tr</value>
           </attribute>
           <optional>
-            <ref name="AttributesPre"/>
+            <ref name="AttributesPreAll"/>
           </optional>
           <oneOrMore>
             <choice>
@@ -1305,7 +1332,7 @@
         <ref name="char.closed"/>
       </optional>
       <optional>
-        <ref name="AttributesPre"/>
+        <ref name="AttributesPreAll"/>
       </optional>
       <oneOrMore>
         <choice>
@@ -1369,6 +1396,30 @@
       </oneOrMore>
     </group>
   </define>
+  <define name="AttributesPreAll">
+    <group>
+      <group>
+        <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true"/>
+        <oneOrMore>
+          <attribute usfm:fallback-from="style">
+            <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL"/>
+            <anyName>
+              <except>
+                <choice>
+                  <name ns="">_default</name>
+                  <name ns="">style</name>
+                  <name ns="">closed</name>
+                  <name ns="">vid</name>
+                </choice>
+              </except>
+            </anyName>
+            <data type="string"/>
+          </attribute>
+        </oneOrMore>
+      </group>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true" after="Hs" afterout="&#x27; &#x27;"/>
+    </group>
+  </define>
   <define name="AttributesPre">
     <group>
       <group>
@@ -1426,7 +1477,7 @@
       <group usfm:seq="true">
         <group>
           <optional>
-            <ref name="AttributesPre"/>
+            <ref name="AttributesPreAll"/>
           </optional>
           <optional>
             <ref name="CharContent"/>
@@ -1563,7 +1614,7 @@
           </attribute>
           <group usfm:seq="true">
             <optional>
-              <ref name="AttributesPre"/>
+              <ref name="AttributesPreAll"/>
             </optional>
             <optional>
               <ref name="CharContent"/>
@@ -1582,7 +1633,7 @@
           </attribute>
           <group usfm:seq="true">
             <optional>
-              <ref name="AttributesPre"/>
+              <ref name="AttributesPreAll"/>
             </optional>
             <optional>
               <ref name="CharContent"/>
@@ -1609,7 +1660,7 @@
       </attribute>
       <group usfm:seq="true">
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
         </optional>
         <ref name="NoteCharContent"/>
         <optional>
@@ -1629,7 +1680,7 @@
       </attribute>
       <group usfm:seq="true">
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
         </optional>
         <ref name="NoteCharContent"/>
         <optional>
@@ -1651,7 +1702,7 @@
         <ref name="char.closed"/>
       </optional>
       <optional>
-        <ref name="AttributesPre"/>
+        <ref name="AttributesPreAll"/>
       </optional>
       <zeroOrMore>
         <choice>
@@ -1704,17 +1755,18 @@
       <optional>
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
-      <group usfm:alt="FigureThreeAttribs">
+      <optional>
+        <ref name="AttributesPreAll"/>
+      </optional>
+      <group usfm:seq="true">
         <optional>
-          <ref name="AttributesPre"/>
+          <text>
+            <usfm:match match="TEXTNOTATTRIB"/>
+          </text>
         </optional>
-        <group usfm:seq="true">
-          <optional>
-            <text>
-              <usfm:match match="TEXTNOTATTRIB"/>
-            </text>
-          </optional>
-        </group>
+        <optional>
+          <ref name="AttributesNoAttrib"/>
+        </optional>
       </group>
       <usfm:endtag usfm:order="4" usfm:seq="true"/>
     </element>
@@ -2054,7 +2106,7 @@
           <ref name="char.closed" usfm:ignore="true"/>
         </optional>
         <optional>
-          <ref name="AttributesPre"/>
+          <ref name="AttributesPreAll"/>
         </optional>
       </group>
       <zeroOrMore>
@@ -2145,7 +2197,7 @@
         <ref name="char.closed" usfm:ignore="true"/>
       </optional>
       <optional>
-        <ref name="AttributesPre"/>
+        <ref name="AttributesPreAll"/>
       </optional>
       <oneOrMore>
         <choice>

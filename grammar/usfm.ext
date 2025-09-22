@@ -660,6 +660,10 @@
 \category versepara
 \description Paragraph text, level 3 indent, with first line indent; often used for discourse
 
+\marker pl
+\category char
+\description Inline subheadings
+
 \marker pm
 \attributes aid? vid?
 \category versepara
@@ -1307,6 +1311,11 @@
 \marker va
 \category attribute
 \description Alternative versification
+
+\marker vid
+\attributes h? ref
+\category milestone
+\defattrib ref
 
 \marker vp
 \category attribute char
