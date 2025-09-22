@@ -9,7 +9,7 @@ except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
     from usfmtc import USX, usfmGrammar
 
-from usfmtc.parser import NoParseError
+from usfmtc import NoParseError
 from usfmtc.usxmodel import etCmp
 import xml.etree.ElementTree as et
 from lxml import etree
