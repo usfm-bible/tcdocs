@@ -1474,6 +1474,8 @@
       <a:documentation>A subject index text item</a:documentation>
       <value>ord</value>
       <a:documentation>For the text portion of an ordinal number</a:documentation>
+      <value>pl</value>
+      <a:documentation>Inline subheadings</a:documentation>
       <value>png</value>
       <a:documentation>For a geographic proper name</a:documentation>
       <value>pn</value>

@@ -49,6 +49,7 @@ The transition from 3.0 to 3.1 is hard to document because 3.0 is not formally s
   * cell (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)  
   * attribute (cp, vp, usfm, ca, va, cat) indicates the contents are an attribute in USX  
 - Add vid milestone to specify current reference from [U25008](https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25008%20vid.md)
+- Add \\pl inline subheading character style [U25009](https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25009%20Pl%20Marker.md)
 
 ## 3.2
 
