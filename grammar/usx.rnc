@@ -48,7 +48,7 @@ usfm:terminal [name="TEXTEND" value="/(?=${anyws}*\\|//|$)/"
 usfm:terminal [name="ATTRIBTEXTEND" value="/${Hs}(?=[\\|])/"
     a:documentation ["Reducable characters following an attribute value"]]
 
-usfm:terminal [name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])+/"
+usfm:terminal [name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])*/"
     a:documentation ["Matches text inside an attribute value (not including the quotes)"]]
 
 usfm:terminal [name="ATTRIBALL" value="/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/"
@@ -834,22 +834,29 @@ Attributes = (
     [usfm:match[match="PIPE" matchout="'|'" dump="true" noout="true"]]
        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
                 second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL" noout="true"]]
-        attribute * - (style | closed) {xsd:string}+)
+        attribute * - (_default | style | closed) {xsd:string}+)
 )
 
 AttributesPre = (
     [usfm:match[match="PIPE" matchout="'|'" dump="true"]]
        ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
                 second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL"]]
-        attribute * - (style | closed) {xsd:string}+)
+        attribute * - (_default | style | closed | caller | align | colspan | number | category | loc | gen | vid | altnumber | pubnumber | sid) {xsd:string}+)
     >> usfm:match[match="PIPE" matchout="'|'" dump="true" after="Hs" afterout="' '"]
+)
+
+AttributesNoAttrib = (
+    [usfm:match[match="PIPE" matchout="'|'" dump="true" noout="true"]]
+       ([usfm:fallback-from="style" usfm:matchpair[first="ATTRIBNAME" between="'=&quot;'"
+                second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="'&quot;'" fallback="ATTRIBALL" noout="true"]]
+        attribute _default {xsd:string}+)
 )
 
 Char = (
     [usfm:stacked="true"]
     element char {
         [usfm:grouping="12" usfm:tag[matchid="a" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        [usfm:seq="true"]((AttributesPre?, CharContent?, Attributes?)
+        [usfm:seq="true"]((AttributesPre?, CharContent?, AttributesNoAttrib?)
         >> usfm:endtag[usfm:seq="true"])  # required
     })
 
@@ -952,11 +959,11 @@ Char.char.style.enum = (
 CharEmbed = (
     element char {
         [usfm:stacked="true"]([usfm:grouping="9" usfm:tag[matchid="b" before="'\\'" usfm:seq="true" skip="3.0"]] attribute style { FullChar.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, CharContent?, Attributes?)
+        [usfm:seq="true"](AttributesPre?, CharContent?, AttributesNoAttrib?)
         >> usfm:endtag[matchref="b" before="'\\'" usfm:seq="true"])
       |
         [usfm:stacked="true"]([usfm:grouping="9" usfm:tag[matchid="a" before="'\\+'" usfm:seq="true"]] attribute style { FullChar.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, CharContent?, Attributes?)
+        [usfm:seq="true"](AttributesPre?, CharContent?, AttributesNoAttrib?)
         >> usfm:endtag[matchref="a" before="'\\+'" usfm:seq="true"])
     })
 
@@ -966,7 +973,7 @@ NoteCharEmbedEmpty = (
     [usfm:stacked="true"]
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="c" before="'\\'" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, NoteCharContent, Attributes?)
+        [usfm:seq="true"](AttributesPre?, NoteCharContent, AttributesNoAttrib?)
         >> usfm:endtag[matchref="c" before="'\\'" usfm:seq="true"]
     })
 
@@ -974,7 +981,7 @@ NoteCharEmbedPlus = (
     [usfm:stacked="true"]
     element char {
         [usfm:stacked="true" usfm:grouping="9" usfm:tag[matchid="b" before="'\\+'" usfm:seq="true"]] attribute style { Char.char.style.enum },
-        [usfm:seq="true"](AttributesPre?, NoteCharContent, Attributes?)
+        [usfm:seq="true"](AttributesPre?, NoteCharContent, AttributesNoAttrib?)
         >> usfm:endtag[matchref="b" before="'\\+'" usfm:seq="true"]
     })
 

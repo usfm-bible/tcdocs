@@ -46,7 +46,7 @@
   <usfm:terminal name="ATTRIBTEXTEND" value="/${Hs}(?=[\\|])/">
     <a:documentation>Reducable characters following an attribute value</a:documentation>
   </usfm:terminal>
-  <usfm:terminal name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])+/">
+  <usfm:terminal name="ATTRIBTEXT" value="/(?:\\[&quot;\\=~/|]|[^\\&quot;])*/">
     <a:documentation>Matches text inside an attribute value (not including the quotes)</a:documentation>
   </usfm:terminal>
   <usfm:terminal name="ATTRIBALL" value="/(?:[^\\=|]|\\[\\=|~/])+(?=\\)/">
@@ -1358,6 +1358,7 @@
           <anyName>
             <except>
               <choice>
+                <name ns="">_default</name>
                 <name ns="">style</name>
                 <name ns="">closed</name>
               </choice>
@@ -1378,8 +1379,20 @@
             <anyName>
               <except>
                 <choice>
+                  <name ns="">_default</name>
                   <name ns="">style</name>
                   <name ns="">closed</name>
+                  <name ns="">caller</name>
+                  <name ns="">align</name>
+                  <name ns="">colspan</name>
+                  <name ns="">number</name>
+                  <name ns="">category</name>
+                  <name ns="">loc</name>
+                  <name ns="">gen</name>
+                  <name ns="">vid</name>
+                  <name ns="">altnumber</name>
+                  <name ns="">pubnumber</name>
+                  <name ns="">sid</name>
                 </choice>
               </except>
             </anyName>
@@ -1388,6 +1401,18 @@
         </oneOrMore>
       </group>
       <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true" after="Hs" afterout="&#x27; &#x27;"/>
+    </group>
+  </define>
+  <define name="AttributesNoAttrib">
+    <group>
+      <usfm:match match="PIPE" matchout="&#x27;|&#x27;" dump="true" noout="true"/>
+      <oneOrMore>
+        <attribute usfm:fallback-from="style">
+          <usfm:matchpair first="ATTRIBNAME" between="&#x27;=&quot;&#x27;" second="ATTRIBTEXT" after="/&quot;${Hs}/" afterout="&#x27;&quot;&#x27;" fallback="ATTRIBALL" noout="true"/>
+          <name ns="">_default</name>
+          <data type="string"/>
+        </attribute>
+      </oneOrMore>
     </group>
   </define>
   <define name="Char">
@@ -1407,7 +1432,7 @@
             <ref name="CharContent"/>
           </optional>
           <optional>
-            <ref name="Attributes"/>
+            <ref name="AttributesNoAttrib"/>
           </optional>
         </group>
         <usfm:endtag usfm:seq="true"/>
@@ -1544,7 +1569,7 @@
               <ref name="CharContent"/>
             </optional>
             <optional>
-              <ref name="Attributes"/>
+              <ref name="AttributesNoAttrib"/>
             </optional>
           </group>
           <usfm:endtag matchref="b" before="&#x27;\\&#x27;" usfm:seq="true"/>
@@ -1563,7 +1588,7 @@
               <ref name="CharContent"/>
             </optional>
             <optional>
-              <ref name="Attributes"/>
+              <ref name="AttributesNoAttrib"/>
             </optional>
           </group>
           <usfm:endtag matchref="a" before="&#x27;\\+&#x27;" usfm:seq="true"/>
@@ -1588,7 +1613,7 @@
         </optional>
         <ref name="NoteCharContent"/>
         <optional>
-          <ref name="Attributes"/>
+          <ref name="AttributesNoAttrib"/>
         </optional>
       </group>
       <usfm:endtag matchref="c" before="&#x27;\\&#x27;" usfm:seq="true"/>
@@ -1608,7 +1633,7 @@
         </optional>
         <ref name="NoteCharContent"/>
         <optional>
-          <ref name="Attributes"/>
+          <ref name="AttributesNoAttrib"/>
         </optional>
       </group>
       <usfm:endtag matchref="b" before="&#x27;\\+&#x27;" usfm:seq="true"/>
