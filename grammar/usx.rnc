@@ -846,6 +846,8 @@ Char.char.style.enum = (
       "ndx"
     |   ## For the text portion of an ordinal number
       "ord"
+    |   ## Inline subheadings
+      "pl"
     |   ## For a geographic proper name
       "png"
     |   ## For a proper name
