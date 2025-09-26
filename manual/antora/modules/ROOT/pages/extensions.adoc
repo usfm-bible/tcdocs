@@ -11,7 +11,7 @@ Users may create and use non-standard markup extensions. User created markers sh
 A basic specification for markup extensions used in a text should be provided in a file named `+markers.ext+`. For each marker, supply the following:
 
 #``++\marker++``#:: Marker text
-#``++\category++``#:: Marker category, from the following list:
+[#ext-category]#``++\category++``#:: Marker category, from the following list:
 * xref:para:index.adoc[Paragraph]
 ** `header` - Header/identification paragraph
 ** `title` - Book title paragraph
@@ -32,6 +32,8 @@ A basic specification for markup extensions used in a text should be provided in
 * xref:ms:index.adoc[Milestone]
 ** `milestone` - Milestone
 * Other
+** `attribute` - Indicates that the contents are an attribute in USX (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat])
+** `cell` - tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12
 ** `internal` - Internal
 #``++\description++``#:: Marker description
 #``++\attribute++``#:: __As needed__ - Required or optional attribute (used with Character marker categories). If more than one attribute is specified for the marker, provide a separate \attribute field for each. 

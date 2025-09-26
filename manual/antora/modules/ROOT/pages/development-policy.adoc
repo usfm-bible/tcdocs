@@ -1,0 +1,189 @@
+= Development Policy
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+_USFM Technical Committee (USFMTC), April 2025_
+
+== Introduction
+
+This document describes the development policy for the USFMTC with regard to versioning and stability. What can be assumed about newer versions of the standard going forward?
+
+The USFMTC is concerned to minimise the effect of changes in version on implementers. While it cannot predict the future, it hopes that it can give plenty of warning and opportunity for implementers to be ready for new releases.
+
+Notice that the versioning scheme here is a semantic versioning scheme but it is _not semver_. It is close. But since this is a grammar and not an API. It does not hold entirely.
+
+'''
+
+USFM has a 3 level version number: `x.y.z`. A change in `z` is considered a *third* level change. A change in `y` a *second* level change, and change in `x` a *first* level change.
+
+In summary, *second* and *third* level changes are syntactic _expansions_, with a *third* level only expanding the marker lists for various syntactic categories—meaning very minimal changes are needed to the parser and generator. A second level change involves an arbitrary syntactic expansion, and a *first* level change involves a syntactic _contraction_.
+
+'''
+
+The USFM parser policy considers both a parser and a generator for each version. The standard describes both what is acceptable at a version and what will be generated at that version. What can be parsed is usually much wider than what will be generated.
+
+[NOTE]
+====
+This policy will only take effect from *3.1.2* and later.
+====
+
+== Versioning
+
+=== Increasing the Third Level
+
+The primary purpose of a third level increment is to fix minor bugs, improve documentation, and not to rock the boat too much.
+
+A parser at level `x.y.z+1` will parse all that `x.y.z` will parse, which in turn means all that `x.y` will parse which in turn means all that any version after `x` will parse.
+
+If a document parses at `x.y.z` then if it is generated with a `x.y.z+1` generator it will still parse with an `x.y.z` parser. This is true for all third level values less than `z+1`.
+
+Strictly speaking a third level change can involve syntactic expansion, but the expansion is minimal. USFM contrasts syntactic changes and syntactic content changes. Since the grammar is based around categories, a third level change only increases the contents of some of those categories. It does not change the relationships between them. It could be implemented through additions to the `marker.ext` and no changes to the parser or generator. Parsers  will typically update to incorporate those changes into their internal category lists.
+
+A third level change may also mark existing behaviour (syntax) as _deprecated_.
+
+Third level changes can be used as soon as they are approved, before any particular release. So, for example, if a marker is added at a third level for 3.1.2, it can be used with https://docs.usfm.bible/usfm/3.1.1/index.html[3.1.1] data simply by adding it to the `markers.ext` file. The release of 3.1.2 removes the need for it to be in a `markers.ext` file in the future.
+
+==== Examples
+
+* In https://docs.usfm.bible/usfm/3.1.1/index.html[3.1.1], xref:para:lists/li.adoc[li] is added to the introductory paragraphs section (as xref:para:introductions/ili.adoc[ili]), thus allowing lists in introductions. There is no syntax change.{wj}footnote:[Strictly speaking this was implemented with a syntax change, but can be modeled without, according to the rules here. https://docs.usfm.bible/usfm/3.1.1/index.html[3.1.1] was released before this document was written.] and the addition is merely allowing other xref:para:index.adoc[paragraph types] in the introduction that weren't allowed before. Any document not using this feature is still conformant to https://docs.usfm.bible/usfm/3.1/index.html[3.1(.0)]
+
+=== Increasing the Second Level
+
+A second level increase is a more general syntactic _expansion_. This means that an `x.y+1` parser will parse anything before it back to `x`. But an `x.y+1` generated file is only parsable by parsers of `x.y+1` or greater. There is no backward compatibility that an `x.y+1` generated file can be parsed by an `x.y` parser, even if the content is identical. Thus if a `x.y` file is parsed and generated at `x.y+1` it is not necessarily parsable by an `x.y` parser.
+
+Having said this, it is intended that an `x.y+1` generator be configurable to generate `x.y` conformant syntax for documents that conform to an `x.y` (or earlier) content model.
+
+==== Examples
+
+* In 3.2 we intend to add syntax to USFM to allow attributes to be stored at the start of a node immediately after the marker (for all nodes). This will change how documents are stored, but it will still parse xref:char:index.adoc[char] nodes with xref:char:attributes.adoc[attributes] at the end just as you can in https://docs.usfm.bible/usfm/3.1/index.html[3.1]. The older syntax would also be deprecated and a 3.2 generator will produce output not parsable by a https://docs.usfm.bible/usfm/3.1/index.html[3.1] parser. Thus if a document has attributes at the start of nodes, it can be read by a https://docs.usfm.bible/usfm/3.1/index.html[3.1] parser by parsing it as 3.2 and outputting it as https://docs.usfm.bible/usfm/3.1/index.html[3.1]. But since 3.2 adds the ability to add attributes to paragraphs (for example), this may mean information is lost going back to https://docs.usfm.bible/usfm/3.1/index.html[3.1.z]
+* In 3.2 we intend to add a new node to the USX model that encapsulates a xref:para:lists/index.adoc[list]. This `<list>` node is optional in 3.2. It is serialisable into USFM using xref:ms:index.adoc[milestones]. It is also _optional_, thus a 3.1.z file can be read by a 3.2 parser and generate 3.1.z conformant output, if there are no `<list>` elements. This is added to 3.2 rather than 3.1.2 because it adds a new node to the USX model.
+
+[CAUTION]
+====
+Second level changes are not to be used until the full second level release.
+====
+
+=== Increasing the First Level
+
+A first level increase is considered a syntactic _contraction_. This means that no new syntactic elements are added, but syntax is removed. This allows for the removal of deprecated items and syntactic structures.
+
+There is no backward compatibility between `x+1` and `x`. The only time there is backward compatibility is that `x+1.0` is intended to be a formal restriction of `x.last`. That is if a file is generated by an `x.last` generator, it will be parsable as `x+1.0`. In effect, all that happens in creating `x+1.0` is that we remove everything we deprecated previously, and we add nothing. This means that `x.last` (at the 3rd level) must have deprecated whatever is to be removed at the first level change and so only generate output that conforms to the first level change.
+
+The point of the first level change is that going forward, _there is no requirement for a parser to parse any version before the new first level_. Thus a `4.` parser does not parse any `3.` files, except those from the last version in version `3.` which are in effect `4.` files. The impact on users is that they must use the new syntax and may not use any removed syntax from the previous major version. This is a breaking change for their data.
+
+Most often, deprecations will have been announced quite a while before a first level release. These deprecations will often require community discussion due to the breaking with backward compatibility and requiring tool chains to update.
+
+==== Examples
+* In 4.0 we intend to remove the capability of storing attributes at the end of xref:char:index.adoc[char] nodes in USFM and require their storage immediately after the marker, as in 3.2. Thus 3.2 generated files will parse in 4.0.
+* In 4.0 `<list>` nodes, as defined in 3.2, will become mandatory. This places a requirement on a late 3.2.z generator to insert them if missing.
+
+== In Table Form
+
+[cols="1,1,1,1,3", options="header", stripes="even"]
+|===
+|Parser
+|Data
+|Parser can parse
+|Generator can generate
+|Notes
+
+|3.1
+|3.1
+|Y
+|Y
+|
+
+|3.1
+|3.1.1
+|Y
+|Y
+|via `markers.ext`
+
+|3.1.1
+|3.1
+|Y
+|Y
+|
+
+|3.1.1
+|3.1.2
+|Y
+|Y
+|via `markers.ext`
+
+|3.2
+|3.1
+|Y
+|Y
+|
+
+|3.2
+|3.1.1
+|Y
+|Y
+|
+
+|3.2.1
+|3.3
+|Y
+|N
+|
+
+|3.3
+|3.1
+|Y
+|Y
+|
+
+|3.3
+|4.0
+|Y
+|Y
+|via `markers.ext`
+
+|3.3.1
+|4.0
+|Y
+|Y
+|Since 4.0 is a formal restriction of 3.3.1
+
+|3.3.1
+|4.0.1
+|Y
+|N
+|via `markers.ext`
+
+|3.3.1
+|4.1
+|N
+|N
+|
+
+|4.0
+|3.1.*
+|Y
+|N
+|
+
+|4.0
+|3.2.*
+|Y
+|N
+|
+
+|4.0
+|3.3.*
+|Y
+|Y
+|
+
+|4.0.1
+|3.3.*
+|Y
+|Y
+|
+
+|===

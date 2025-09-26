@@ -1,0 +1,81 @@
+= ta
+:description: Text alternatives
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/ta.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Text alternatives. A character style which allows for specifying alternate texts based on a text identifier. Some examples contexts for use are:
+* Minor dialectal variations.
+* Key term differences (e.g. the word used for God in Shangdi or Shen editions of the Chinese Bible).
+* Differences in how numbers are presented (e.g. 120, one hundred twenty, one hundred and twenty).
+* In a Back Translation, highlighting alternative senses of a word, or different ways to render a word or phrase.
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\ta ++``#__content__#``++|++``#__@a-<identifier>__#``++\ta*++``
+* *USX:* ``++<char style="ta" ++``#__@a-<identifier>__#``++>++``#__content__#``++</char>++``
+#a-<identifier>#::: One or more attributes for providing text altervatives. Each attribte should be begin with `a-`
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
+Added:: 3.1.2
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.Jeremiah 13.23 (GNT)
+[source#src-usfm-char-ta_1,usfm,highlight=4]
+----
+\id JER
+\c 13
+\p ...
+\v 23 Can people change the \ta color|a-uk="colour" of their skin, or a leopard 
+remove its spots? If they could, then you that do nothing but evil could learn 
+to do what is right.
+----
+USX::
++
+.Jeremiah 13.23 (GNT)
+[source#src-usx-char-ta_1,xml,highlight=10..11]
+----
+<usx version="3.1">
+  <book code="JER" style="id"/>
+  <chapter number="13" style="c" sid="JER 13"/>
+  <para style="p">
+    <verse number="23" style="v" sid="JER 13:23" />Can people change the 
+    <char style="ta" a-uk="colour">color</char> of their skin, or a leopard 
+    remove its spots? If they could, then you that do nothing but evil could 
+    learn to do what is right.<verse eid="XXA 13:23" /></para>
+</usx>
+----
+USJ::
++
+.Jeremiah 13.23 (GNT)
+[source#src-usj-char-ta_1,json]
+----
+Missing
+----
+======
+
+image::char/missing.jpg[,300]
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

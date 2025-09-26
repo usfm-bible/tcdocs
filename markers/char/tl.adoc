@@ -14,12 +14,14 @@ endif::[]
 
 Description:: Transliterated words.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
-* *USFM:* ``++\tl ++``#__content__#``++\tl*++``
-* *USX:* ``++<char style="tl">++``#__content__#``++</char>++``
+* *USFM:* ``++\tl ++``#__content__#``++|++``#__@lang__#``++\tl*++``
+* *USX:* ``++<char style="tl" ++``#__@lang__#``++>++``#__content__#``++</char>++``
+#lang#::: Source language of the transliterated text according to ISO639-1 (2 letter codes) _(default attribute)_
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
 Added:: 1.0
+Updated:: 3.1.2 (attributes)
 // end::spec[]
 
 == Examples

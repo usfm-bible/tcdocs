@@ -7,4 +7,5 @@
 ** xref:whitespace.adoc[Whitespace]
 ** xref:syntax-docs.adoc[Documentation Syntax]
 ** xref:glossary.adoc[Glossary of Terms]
+** xref:development-policy.adoc[Development Policy]
 // end::nav-topcat[]
