@@ -9,6 +9,8 @@ endif::[]
 
 _Incomplete_
 
+* Add milestone xref:ms:vid.adoc[vid] (U25008)
+
 == 3.1.2
 
 === Additions
