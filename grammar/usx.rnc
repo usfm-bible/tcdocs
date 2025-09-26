@@ -846,6 +846,8 @@ Char.char.style.enum = (
       "ndx"
     |   ## For the text portion of an ordinal number
       "ord"
+    |   ## Inline subheading
+      "pl"
     |   ## For a geographic proper name
       "png"
     |   ## For a proper name
@@ -1003,6 +1005,7 @@ Milestone.style.enum = (
     | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt5-s"] "qt5-e"
     | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e"] "qt-s"
     | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s"] "qt-e"
+    | [usfm:propval="ref" usfm:propattribs="ref h?"] "vid"
 )
 
 Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )

@@ -843,6 +843,10 @@
 \closedby t-e
 \defattrib sid
 
+\marker ta
+\category char
+\description Text alternatives
+
 \marker tc1
 \category cell
 
@@ -1052,6 +1056,7 @@
 
 \marker tl
 \category char
+\defattrib lang
 \description For transliterated words
 
 \marker toc1
@@ -1109,6 +1114,11 @@
 \category internal
 \description Alternative versification
 
+\marker vid
+\attributes ref h?
+\category milestone
+\defattrib ref
+
 \marker vp
 \category char internal
 \description Published verse number
@@ -1133,6 +1143,11 @@
 \marker wj
 \category char
 \description For marking the words of Jesus
+
+\marker wl
+\category char
+\defattrib lang
+\description Indicating words in a foreign language and perhaps script
 
 \marker x
 \category crossreference
