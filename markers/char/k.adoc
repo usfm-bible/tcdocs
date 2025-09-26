@@ -162,9 +162,10 @@ USX::
   <book code="GLO" style="id"/>
   <chapter number="18" style="c" pubnumber="R" sid="GLO 18"/>
   <para style="p">
-    <char style="k">rädda|radda</char>, <char style="k">räddare|radda</char>, 
-    <char style="k">räddning|radda</char><char style="add">, frälsa, frälsare,
-    frälsning</char></para>
+    <char style="k" key="radda">rädda</char>, 
+    <char style="k" key="radda">räddare</char>, 
+    <char style="k" key="radda">räddning</char><char style="add">, 
+    frälsa, frälsare, frälsning</char></para>
   <para style="pi">I äldre svenska … gäller påtaglig nöd och fara (<char
       style="xt">1 Krön 16:35; Ps 70:6; Jer 14:8; 1 Mack 4:30; Vish 
       19:9</char>).</para>
@@ -206,24 +207,35 @@ USJ::
         {
           "type": "char",
           "marker": "k",
-          "content": ["rädda|radda"]
+          "key": "radda",
+          "content": [
+            "rädda"
+          ]
         },
         ", ",
         {
           "type": "char",
           "marker": "k",
-          "content": ["räddare|radda"]
+          "key": "radda",
+          "content": [
+            "räddare"
+          ]
         },
         ", ",
         {
           "type": "char",
           "marker": "k",
-          "content": ["räddning|radda"]
+          "key": "radda",
+          "content": [
+            "räddning"
+          ]
         },
         {
           "type": "char",
           "marker": "add",
-          "content": [", frälsa, frälsare, frälsning"]
+          "content": [
+            ", frälsa, frälsare, frälsning"
+          ]
         }
       ]
     },
@@ -235,7 +247,9 @@ USJ::
         {
           "type": "char",
           "marker": "xt",
-          "content": ["1 Krön 16:35; Ps 70:6; Jer 14:8; 1 Mack 4:30; Vish 19:9"]
+          "content": [
+            "1 Krön 16:35; Ps 70:6; Jer 14:8; 1 Mack 4:30; Vish 19:9"
+          ]
         },
         ")."
       ]
@@ -249,31 +263,41 @@ USJ::
           "type": "char",
           "marker": "w",
           "lemma": "lag",
-          "content": ["lagens"]
+          "content": [
+            "lagens"
+          ]
         },
         "hot om straff, Guds ",
         {
           "type": "char",
           "marker": "w",
-          "content": ["vrede"]
+          "content": [
+            "vrede"
+          ]
         },
         ". De ord som grundtexten använder (",
         {
           "type": "char",
           "marker": "tl",
-          "content": ["sózein"]
+          "content": [
+            "sózein"
+          ]
         },
         ", ",
         {
           "type": "char",
           "marker": "tl",
-          "content": ["sotér"]
+          "content": [
+            "sotér"
+          ]
         },
         ", ",
         {
           "type": "char",
           "marker": "tl",
-          "content": ["sotería"]
+          "content": [
+            "sotería"
+          ]
         },
         ") kan även … När sammanhanget utesluter denna missuppfattning används ibland de äldre orden ”frälsa”, ”frälsare” och ”frälsning”, som på ett annat sätt antyder det religiösa motivets totala omfattning ..."
       ]
