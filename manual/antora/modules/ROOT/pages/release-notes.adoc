@@ -5,6 +5,34 @@ ifndef::localdir[]
 endif::[]
 :imagesdir: {localdir}/images
 
+== 3.2
+
+_Incomplete_
+
+== 3.1.2
+
+=== Additions
+
+* Add #__lang__# attribute to xref:char:features/tl.adoc[tl] and xref:char:features/tl.adoc[wl]
+* Add character style xref:char:features/ta.adoc[ta] (U24002)
+* Add new marker xref:ROOT:extensions.adoc#ext-category[categories]:
+** cell (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)
+** attribute (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat]) indicates the contents are an attribute in USX.
+
+== 3.1.1
+
+=== Additions
+
+* Add xref:para:introductions/ipc.adoc[ipc] to correspond to xref:para:paragraphs/pc.adoc[pc].
+
+=== Revisions
+
+* Move p1, p2 from OtherPara to PeriphPara (i.e. they are not used in scripture files).
+* Fix xref:char:breaks/optbreak.adoc[optbreak].
+* Allow xref:para:paragraphs/lit.adoc[lit] in book xref:doc:index.adoc#doc-book-intro[introduction].
+* xref:doc:books.adoc[Book codes] must contain at least one letter.
+* xref:ROOT:extensions.adoc[Markers.ext] #``++\category++``# may contain multiple entries.
+
 == 3.1
 _July 2024_
 
