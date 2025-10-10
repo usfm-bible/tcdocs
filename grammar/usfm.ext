@@ -570,6 +570,10 @@
 \category versepara
 \description Paragraph text, level 3 indent, with first line indent; often used for discourse
 
+\marker pl
+\category char
+\description Inline subheading
+
 \marker pm
 \category versepara
 \description Embedded text paragraph

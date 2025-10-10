@@ -769,8 +769,6 @@
       <ref name="Section"/>
       <ref name="Chapter"/>
       <ref name="Milestone"/>
-      <ref name="Footnote"/>
-      <ref name="CrossReference"/>
       <ref name="List"/>
       <ref name="Table"/>
       <ref name="Sidebar"/>
@@ -784,8 +782,6 @@
       <ref name="Chapter"/>
       <ref name="Figure"/>
       <ref name="Milestone"/>
-      <ref name="Footnote"/>
-      <ref name="CrossReference"/>
       <ref name="List"/>
       <ref name="Table"/>
       <ref name="Sidebar"/>
@@ -1639,7 +1635,15 @@
   </define>
   <define name="Chapter">
     <choice>
-      <ref name="ChapterStart"/>
+      <group>
+        <ref name="ChapterStart"/>
+        <zeroOrMore>
+          <choice>
+            <ref name="Footnote"/>
+            <ref name="CrossReference"/>
+          </choice>
+        </zeroOrMore>
+      </group>
       <ref name="ChapterEnd" usfm:ignore="true"/>
     </choice>
   </define>

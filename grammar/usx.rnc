@@ -519,9 +519,9 @@ BookIntroductionEndTitles =
         ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | Break)*
     }
 
-ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+ChapterContent = (Para | Section | Chapter | Milestone | List | Table | Sidebar)
 
-PeripheralContent = (PeriphPara | Para | Section | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+PeripheralContent = (PeriphPara | Para | Section | Chapter | Figure | Milestone | List | Table | Sidebar)
 
 Section =
     element para {
@@ -1008,7 +1008,7 @@ Milestone.style.enum = (
     | [usfm:propval="ref" usfm:propattribs="ref h?"] "vid"
 )
 
-Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
+Chapter = ( ( ChapterStart, (Footnote | CrossReference)*) | [usfm:ignore = "true"]ChapterEnd )
 
 ChapterStart =
     [usfm:stacked="true"]
