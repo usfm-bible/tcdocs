@@ -323,16 +323,17 @@ PeripheralDivision =
     [usfm:stacked="true" usfm:seq="true" usfm:match[usfm:order="-3" before="/${Ws}\\periph${HS}/" beforeout="'\\periph '" match="''"]]
     element periph {
         [usfm:alt="PeripheralDivisionThree" usfm:stacked="true"](
+            [usfm:match[match="TEXTNOTATTRIB" usfm:seq="true"]] attribute alt { text }?,
             ([usfm:match[match="PIPE" matchout="'|'" dump="true"]]
-            ([usfm:grouping="8" usfm:match[before="'id=&quot;'" after="&quot;"]]
+            ([usfm:grouping="8" usfm:match[before="'id=&quot;'" after="'&quot;'"]]
                 attribute id {
                       Peripheral.FRT.periph.id.enum
                     | Peripheral.INT.periph.id.enum
                     | Peripheral.BAK.periph.id.enum
                     | Peripheral.OTH.periph.id.enum
                     | xsd:string { pattern = "x\-[\p{L}_\-\.:]+" } })
-        >> usfm:match[match="PIPE" matchout="'|'" dump="true"])?,
-        [usfm:match[match="TEXTNOTATTRIB" usfm:seq="true"]] attribute alt { text }?),
+#        >> usfm:match[match="PIPE" matchout="'|'" dump="true"])?),
+        )?),
         [usfm:seq="true"](BookHeaders*,
         BookTitles*,
         BookIntroduction*,
@@ -549,9 +550,9 @@ BookIntroductionEndTitles =
         ([usfm:text[ahead="'\'"]] text | Footnote | CrossReference | CharEmbed | Figure | Milestone | Break)*
     }
 
-ChapterContent = (Para | Section | Chapter | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+ChapterContent = (Para | Section | Chapter | Milestone | List | Table | Sidebar)
 
-PeripheralContent = (Para | Section | PeriphPara | Chapter | Figure | Milestone | Footnote | CrossReference | List | Table | Sidebar)
+PeripheralContent = (Para | Section | PeriphPara | Chapter | Figure | Milestone | List | Table | Sidebar)
 
 Section =
     element para {
@@ -1088,7 +1089,7 @@ Milestone.style.enum = (
     | [usfm:propval="ref" usfm:propattribs="ref h?"] "vid"
 )
 
-Chapter = ( ChapterStart | [usfm:ignore = "true"]ChapterEnd )
+Chapter = ( ( ChapterStart, (Footnote | CrossReference)*) | [usfm:ignore = "true"]ChapterEnd )
 
 ChapterStart =
     [usfm:stacked="true"]

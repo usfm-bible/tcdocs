@@ -56,7 +56,7 @@
 <path d="M 282.0 81 h 0.0"></path><path d="M 427.0 81 h 0.0"></path><g class="terminal ">
 <path d="M 282.0 81 h 0.0"></path><path d="M 353.0 81 h 0.0"></path><rect height="22" rx="10" ry="10" width="71.0" x="282.0" y="70"></rect><text x="317.5" y="85">@style</text></g><path d="M 353.0 81 h 10"></path><path d="M 363.0 81 h 10"></path><g class="terminal ">
 <path d="M 373.0 81 h 0.0"></path><path d="M 427.0 81 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="373.0" y="70"></rect><text x="400.0" y="85">"tr"</text></g></g><path d="M 262.0 111 h 20"></path><g class="non-terminal ">
-<path d="M 282.0 111 h 179.25"></path><path d="M 591.75 111 h 179.25"></path><rect height="22" width="130.5" x="461.25" y="100"></rect><text x="526.5" y="115">AttributesPre</text></g><path d="M 771.0 111 h 20"></path><path d="M 262.0 111 a 10 10 0 0 1 10 10 v 20 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 282.0 111 h 166.5"></path><path d="M 604.5 111 h 166.5"></path><rect height="22" width="156.0" x="448.5" y="100"></rect><text x="526.5" y="115">AttributesPreAll</text></g><path d="M 771.0 111 h 20"></path><path d="M 262.0 111 a 10 10 0 0 1 10 10 v 20 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 282.0 151 h 0.0"></path><path d="M 771.0 151 h 0.0"></path><path d="M 282.0 151 h 10"></path><g>
 <path d="M 292.0 151 h 0.0"></path><path d="M 761.0 151 h 0.0"></path><path d="M 292.0 151 h 20"></path><g class="non-terminal ">
 <path d="M 312.0 151 h 183.25"></path><path d="M 557.75 151 h 183.25"></path><rect height="22" width="62.5" x="495.25" y="140"></rect><text x="526.5" y="155">Verse</text></g><path d="M 741.0 151 h 20"></path><path d="M 292.0 151 a 10 10 0 0 1 10 10 v 110 a 10 10 0 0 0 10 10"></path><g>

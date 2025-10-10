@@ -63,10 +63,10 @@
 <path d="M 161.0 41 h 0.0"></path><path d="M 314.5 41 h 0.0"></path><g class="terminal ">
 <path d="M 161.0 41 h 0.0"></path><path d="M 240.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="79.5" x="161.0" y="30"></rect><text x="200.75" y="45">@closed</text></g><path d="M 240.5 41 h 10"></path><path d="M 250.5 41 h 10"></path><g class="terminal ">
 <path d="M 260.5 41 h 0.0"></path><path d="M 314.5 41 h 0.0"></path><rect height="22" rx="10" ry="10" width="54.0" x="260.5" y="30"></rect><text x="287.5" y="45">BOOL</text></g></g><path d="M 141.0 338 h 20"></path><g>
-<path d="M 161.0 338 h 93.5"></path><path d="M 425.0 338 h 93.5"></path><g>
-<path d="M 254.5 338 h 0.0"></path><path d="M 425.0 338 h 0.0"></path><path d="M 254.5 338 h 20"></path><g>
-<path d="M 274.5 338 h 130.5"></path></g><path d="M 405.0 338 h 20"></path><path d="M 254.5 338 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
-<path d="M 274.5 358 h 0.0"></path><path d="M 405.0 358 h 0.0"></path><rect height="22" width="130.5" x="274.5" y="347"></rect><text x="339.75" y="362">AttributesPre</text></g><path d="M 405.0 358 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path></g></g><path d="M 518.5 338 h 20"></path><path d="M 141.0 338 a 10 10 0 0 1 10 10 v 68 a 10 10 0 0 0 10 10"></path><g>
+<path d="M 161.0 338 h 80.75"></path><path d="M 437.75 338 h 80.75"></path><g>
+<path d="M 241.75 338 h 0.0"></path><path d="M 437.75 338 h 0.0"></path><path d="M 241.75 338 h 20"></path><g>
+<path d="M 261.75 338 h 156.0"></path></g><path d="M 417.75 338 h 20"></path><path d="M 241.75 338 a 10 10 0 0 1 10 10 v 0 a 10 10 0 0 0 10 10"></path><g class="non-terminal ">
+<path d="M 261.75 358 h 0.0"></path><path d="M 417.75 358 h 0.0"></path><rect height="22" width="156.0" x="261.75" y="347"></rect><text x="339.75" y="362">AttributesPreAll</text></g><path d="M 417.75 358 a 10 10 0 0 0 10 -10 v 0 a 10 10 0 0 1 10 -10"></path></g></g><path d="M 518.5 338 h 20"></path><path d="M 141.0 338 a 10 10 0 0 1 10 10 v 68 a 10 10 0 0 0 10 10"></path><g>
 <path d="M 161.0 426 h 63.5"></path><path d="M 455.0 426 h 63.5"></path><path d="M 224.5 426 a 10 10 0 0 0 10 -10 v -9 a 10 10 0 0 1 10 -10"></path><g>
 <path d="M 244.5 397 h 190.5"></path></g><path d="M 435.0 397 a 10 10 0 0 1 10 10 v 9 a 10 10 0 0 0 10 10"></path><path d="M 224.5 426 h 20"></path><g>
 <path d="M 244.5 426 h 0.0"></path><path d="M 435.0 426 h 0.0"></path><path d="M 244.5 426 h 10"></path><g>

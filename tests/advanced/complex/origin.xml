@@ -15,19 +15,19 @@
   <para style="io2">Visit of the Wise Men <char style="ior">2:1-2:12</char></para>
   <para style="io2">Flight to Egypt <char style="ior">2:13-2:18</char></para>
   <para style="io2">His Return <char style="ior">2:19-2:23</char></para>
-  <chapter style="c" number="1" />
+  <chapter style="c" number="1" sid="MAT 1"/>
   <para style="s">The Genealogy of Jesus Christ</para>
   <para style="r">(Luke 3:23-38)</para>
-  <para style="p"><verse style="v" number="1" />This is the genealogy of Jesus Christ, the son of David, the son of Abraham.</para>
-  <para style="li"><verse style="v" number="2" />Abraham was the father of Isaac, and</para>
+  <para style="p"><verse style="v" number="1" sid="MAT 1:1"/>This is the genealogy of Jesus Christ, the son of David, the son of Abraham.</para>
+  <para style="li"><verse style="v" number="2" sid="MAT 1:2"/>Abraham was the father of Isaac, and</para>
   <para style="li">Isaac was he father of Jacob, and</para>
   <para style="li">Jacob was the father of Judah and his brothers,</para>
   <para style="s">The Birth of Jesus Christ</para>
   <para style="r">(Luke 2:1-7)</para>
-  <para style="p"><verse style="v" number="18" />Now the birth of Jesus Christ took place this way. When his mother Mary had been <char style="w" lemma="betroth">betrothed</char> to Joseph...<verse style="v" number="19" />And her husband Joseph, being a just man...</para>
-  <chapter style="c" number="2" />
-  <para style="p"><verse style="v" number="5" />They told him, &quot;In Bethlehem of Judea, for so it is written by the prophet:</para>
-  <para style="q1"><verse style="v" number="6" />&apos;And you, O Bethlehem, in the land of Judah,</para>
+  <para style="p"><verse style="v" number="18" sid="MAT 1:18"/>Now the birth of Jesus Christ took place this way. When his mother Mary had been <char style="w" lemma="betroth">betrothed</char> to Joseph...<verse style="v" number="19" sid="MAT 1:19"/>And her husband Joseph, being a just man...</para>
+  <chapter style="c" number="2" sid="MAT 2"/>
+  <para style="p"><verse style="v" number="5" sid="MAT 2:5"/>They told him, &quot;In Bethlehem of Judea, for so it is written by the prophet:</para>
+  <para style="q1"><verse style="v" number="6" sid="MAT 2:6"/>&apos;And you, O Bethlehem, in the land of Judah,</para>
   <para style="q2">are by no means least among the rulers of Judah;</para>
   <para style="q1">for from you shall come a ruler</para>
   <para style="q2">who will shepherd my people Israel.&apos;&quot;<note style="x" caller="+"><char style="xo">2:6 </char><char style="xt"><ref loc="MIC 5:2">Micah 5:2</ref></char></note></para></usx>
