@@ -10,7 +10,7 @@ endif::[]
 === Additions
 
 * Add #__lang__# attribute to xref:char:features/tl.adoc[tl] and xref:char:features/tl.adoc[wl]
-* Add character style xref:char:features/ta.adoc[ta] (U24002)
+* Add character style xref:char:features/ta.adoc[ta] (https://github.com/usfm-bible/tcdocs/blob/main/proposals/2024/U24002%20Textual%20Alternatives.md[U24002])
 * Add new marker xref:ROOT:extensions.adoc#ext-category[categories]:
 ** cell (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)
 ** attribute (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat]) indicates the contents are an attribute in USX.
