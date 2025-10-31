@@ -3,4 +3,5 @@
 // tag::nav-topcat[]
 ** xref:qt.adoc[qt# - Quotations]
 ** xref:ts.adoc[ts - Translator's section]
+** xref:vid.adoc[vid - Current reference identifier]
 // end::nav-topcat[]

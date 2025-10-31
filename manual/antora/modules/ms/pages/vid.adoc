@@ -1,0 +1,4 @@
+= vid
+:env-antora:
+
+include::markers:ms/vid.adoc[tag=public]
