@@ -743,7 +743,7 @@ OtherPara.para.style.enum = (
       "k1"
     |   ## Concordance main entry text or keyword, level 2
       "k2"
-    |   ## Remark
+    |   ## Status
       "sts"
     |    ## Remark
       "rem"
