@@ -15,6 +15,7 @@ The following namespaces are proposed:
 | a | @aid identifier |
 | k | Glossary entry |
 | t | Tables also specified by @aid but only in a table element. Allows row.column sub referencing |
+| p | Peripheral identifier
 
 ## The aid Attribute
 
@@ -58,3 +59,5 @@ NUM t.mytable_5_2
 
 The `t` namespace refers to a cell in a table. The identifier has 3 components, separated by `_`. The first is an identifier as specified in the table@aid attribute. Its character set is further limited to not include `_` in the attribute value. The second component is a number that specifies the row and the last component is a number specifying the column in that row. `_` is used because it is not considered a pattern syntax character. Pattern syntax characters are not allowed in identifiers within U23003.
 
+### Peripherals
+Referencing a peripheral via its id is to create a range across the whole peripheral.
