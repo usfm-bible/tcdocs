@@ -30,10 +30,11 @@ As an extreme example we could use `en-t-wsg+sil.MAT 1:1!f!5+6` for the 6th char
 
 The purpose of this document is to propose a normative basic standard for scripture references. Notice it is not concerned with localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in other directions: 
 
-* To be recognisable as a standard book, chapter, verse reference.  
-* To be able to reference text in other translations.  
-* To be able to reference a word or even part of a word within a verse.  
-* To be able to reference any text, even non scriptural text, within a text file.  
+* To be recognisable as a standard book, chapter, verse reference.
+* To be able to reference text in other translations.
+* To be able to reference a word or even part of a word within a verse.
+* To be able to reference any text, even non scriptural text, within a text file. This does not include syntactic characters like <> around an element tag in USX or = or " in attributes in USFM, etc. These are not part of the data model.
+* To treat USFM, USX and USJ files identically. References are to data in the data model, not a particular serialisation. The closest serialisation to the underlying data model is USX.
 * To be able to inject / associate material (notes, implicit information, illustrations, etc.) directly into the text with surgical precision.  
 * To allow milestone-dependent features without having to insert milestone markers into the text
 
@@ -157,7 +158,7 @@ Accurate word segmentation is a difficult problem, particularly for non-wordspac
 
 Linguistically accurate word segmentation is not required. The reason for character locations to be identified by word is that it makes indexing by humans easier. Humans are not expected to come up with character level references over a long range of characters. So refining a range to a word first before counting characters is helpful. Thus it is sufficient for a ‘word’ in this context, to be defined as a sequence of non-space characters whether those characters are strictly word-forming or not. This also mitigates any arguments over what is truly a word or not in a particular language.
 
-While the USFM standard considers any space characters other than those in ASCII (i.e. space, tab, carriage return, newline) to be content characters that must not be changed, they are not considered word-forming in any way. They are also often effectively invisible in that it is not possible to count how many space characters are in a sequence. Punctuation characters are also non-word-forming, but are visible and countable. Therefore we include them as being referenceable. Also this mitigates the question of when a punctuation character gets used as a word-forming character. A marker is treated as a space. Multiple spaces are treated as a single space. The precise set of space characters is given in the main grammar. ZWSP (U+200B) is included as a space character.
+While the USFM standard considers any space characters other than those in ASCII (i.e. space, tab, carriage return, newline) to be content characters that must not be changed, they are not considered word-forming in any way. They are also often effectively invisible in that it is not possible to count how many space characters are in a sequence. Punctuation characters are also non-word-forming, but are visible and countable. Therefore we include them as being referenceable. Also this mitigates the question of when a punctuation character gets used as a word-forming character. A marker delimits a word, but may itself be considered part of the final character of that word. Multiple spaces are treated as a single space. The precise set of space characters is given in the main grammar. ZWSP (U+200B) is included as a space character.
 
 ```py
 ws = " " | [\u00A0\u1680\u2000-\u200F\u202A-\u202F\u205F
@@ -168,7 +169,7 @@ In summary, a word is a sequence of non-space characters. In addition a marker o
 
 `"anthro\f + \ft human\f*pomorphic"`
 
-is two words.
+is two words, with the `+` and `human` not being counted, since they are part of a note. See later for access to note and other text not considered part of the main scripture text.
 
 Word and character indexing are 1 based, that is the first word is numbered 1 and so on. As with verse numbers, we reserve the word "end" to signify the last word in a verse. 
 
@@ -200,7 +201,7 @@ Mrkref = "!" id ("[" digits "]")? (wordrefSep WordrefOnly)?
 
 ## Notes
 
-Notes include footnotes and cross references. They are anchored following a particular character. As stated earlier a character reference is a range including all the non scriptural text following the character. For example, consider this USFM fragment:
+Notes correspond to <note> elements in the USX and include footnotes and cross references. They are anchored following a particular character, and are considered part of the preceding character (and so word). As stated earlier a character reference is a range including all the non scriptural text following the character. For example, consider this USFM fragment:
 
 ```
 \v 2 Hello\f + \fr 1:2\ft A greeting\f* everyone
@@ -226,9 +227,11 @@ It is awkward to refer to a section heading in terms of the verse that precedes 
 
 The subheading text in the `\s1`[^1] is associated with 1:14 rather than 1:13. We might reference the word Four via `1:14!s1!3`.
 
-By saying that non verse paragraphs are associated with the first word in the following verse paragraph, we get around any confusion. For example, if a subheading occurs before a paragraph that does not start with a new verse, then the subheading is associated with the first word of the new paragraph, and so as part of the previous verse.
+By saying that non verse paragraphs are associated with the first word in the following verse paragraph, we get around any confusion. For example, if a subheading occurs before a paragraph that does not start with a new verse, then the subheading is associated with the first word of the new paragraph, and so as part of the previous verse. Notice that here we are deviating from a strict refinement model. In effect, we refine inwards if appropriate, but if something in the reference is best dealt with by expanding the refinement, we do that. In this case, an expansion of the refinement goes out to the paragraph and all preceding subheading paragraphs.
 
 Section heading markers are identified in the USFM grammar with a marker category of `sectionpara`. The current list as of 3.1.1 is cd, cl, iex, mr, ms, ms1, ms2, ms3, mte, mte1, mte2, r, restore, s, s1, s2, s3, s4, sd, sd1, sd2, sd3, sd4, sp, sr.
+
+The `\\\\cl` marker is interesting. There are two ways it is used, either before the first chapter or following any particular chapter. In both cases it is a paragraph marker. Following a chapter it is treated like any other section heading. Before chapter one it is referenceable like an introductory paragraph.
 
 ## Introductory Paragraphs
 
@@ -253,7 +256,7 @@ Character markers may take attributes. For example:
 \v 1 L'\w Éternel|strong="H3068"\w* \w dit|strong="H559" x-morph="strongMorph:TH8799"\w* à \w Abram|strong="H87"\w*: Va-t-\w en|strong="H3212" x-morph="strongMorph:TH8798"\w* de ton.
 ```
 
-Things can get messy when auto generated text gets involved\! For some strange reason we want to refer to the strong attribute for the 8th word en (L',  Éternel, dit, à, Abram, :, Va-t-, en). It has a value of H3212. There are different ways of writing the reference. `1:1!8!strong` counts to the 8th word. Notice that while there is no space before the `\w`, it is considered a separate word. Alternatively the reference might be: `1:1!w[4]!strong` which counts `\w` and then gets the strong attribute.
+Things can get messy when auto generated text gets involved\! For some strange reason we want to refer to the strong attribute for the 8th word en (L',  Éternel, dit, à, Abram, :, Va-t-, en). It has a value of H3212. There are different ways of writing the reference. `1:1!8!strong` counts to the 8th word. Notice that while there is no space before the `\w`, it is considered a separate word. In this example case, the 8th word cannot be refined by the `strong`. Instead we expand the refinement to the containing element (`w`) and then refine back to the attribute. Alternatively the reference might be: `1:1!w[4]!strong` which counts `\w` and then gets the strong attribute.
 
 To make things easier, we consider a marker's attributes to be associated with every character in the main text of the marker. Milestones, of course, have no main text in the marker and so the attributes can only be referenced via the milestone marker, as per the second reference in the example above.
 
@@ -265,7 +268,9 @@ Another example is:
 \v 2 Hello\f + \cat rephrase\cat*\fr 1:2\ft A greeting\f* everyone
 ```
 
-One might think that the category may be referenced as `1:2!f!cat`. This makes sense in USFM markup terms, with the cat marker inside the footnote. But the underlying data model is USX and in USX the cat becomes a category attribute. This means that cat is not the correct reference. Instead it is `1:2!f!category`. Also `greeting` is still the 3rd word and not the 4th in the footnote. In addition, since we are working with a USX based model, the caller is accessed as an attribute as in `1:2!f!caller`. Verse numbers are also `2:1!number` for example.
+One might think that the category may be referenced as `1:2!f!cat`. This makes sense in USFM markup terms, with the cat marker inside the footnote. But the underlying data model is closest to USX and in USX the cat becomes a category attribute. This means that cat is not the correct reference. Instead it is `1:2!f!category`. Also `greeting` is still the 3rd word and not the 4th in the footnote. In addition, since we are working with a USX based model, the caller is accessed as an attribute as in `1:2!f!caller`. Verse numbers are also `2:1!number` for example.
+
+Attribute names are not referenceable since you need to include the attribute name in the reference to reference the name, which seems rather circular and redundant.
 
 ## Paragraphs
 
