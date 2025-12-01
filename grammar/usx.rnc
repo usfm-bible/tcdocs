@@ -1006,6 +1006,8 @@ Milestone.style.enum = (
     | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e"] "qt-s"
     | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s"] "qt-e"
     | [usfm:propval="ref" usfm:propattribs="ref h?"] "vid"
+    | [usfm:propended="wj-e"] "wj-s"
+    | [usfm:propends="wj-s"] "wj-e"
 )
 
 Chapter = ( ( ChapterStart, (Footnote | CrossReference)*) | [usfm:ignore = "true"]ChapterEnd )
