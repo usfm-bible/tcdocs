@@ -54,10 +54,14 @@ tagstyles = {
 }
 
 def test_attributes(usfm):
+    currc = "0"
+    currv = "0"
     def mkerror(e, a):
         res = f"attribute {a} missing from {e.tag}/{e.get('style', '')}"
         if e.get('vid', None) is not None:
             res += f" {e.get('vid')}"
+        else:
+            res += f"{usfm.book} {currc}:{currv}"
         return res
 
     grammar = usfm.grammar
@@ -75,7 +79,14 @@ def test_attributes(usfm):
             failures.append(mkerror(e, "style"))
         a.discard("style")
         s = tagstyles.get(e.tag, e.get("style", ''))
-        if s in ("fig", "rem") or s.startswith("z"):
+        if s == "c":
+            currc = e.get("number")
+        elif s == "v":
+            oldv = currv
+            currv = e.get("number")
+            if currv is None:
+                currv = oldv
+        elif s in ("fig", "rem") or s.startswith("z"):
             continue            # so many figs fail that the error is worthless
         for k in grammar.attributes.get(s, []):
             if k.endswith("?"):
