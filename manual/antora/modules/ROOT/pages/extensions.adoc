@@ -11,7 +11,7 @@ Users may create and use non-standard markup extensions. User created markers sh
 A basic specification for markup extensions used in a text should be provided in a file named `+markers.ext+`. For each marker, supply the following:
 
 #``++\marker++``#:: Marker text
-#``++\category++``#:: Marker category, from the following list:
+[#ext-category]#``++\category++``#:: Marker category, from the following list:
 * xref:para:index.adoc[Paragraph]
 ** `header`:: A header/identification paragraph. These are the paragraphs that occur before any titles or introduction
 ** `title`:: A book title paragraph occuring before and possibly after introductory material
@@ -36,6 +36,7 @@ A basic specification for markup extensions used in a text should be provided in
 * Other
 ** `internal`:: Has explicitly programmed behaviour that is not covered by other categories. An extension marker may not be labelled internal.
 ** `attribute`:: A special kind of internal marker that is treated as a separate marker in USFM but as an attribute in USX/USJ.
+** `cell` - tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12
 #``++\description++``#:: Marker description
 #``++\attribute++``#:: __As needed__ - Required or optional attribute (used with Character marker categories). If more than one attribute is specified for the marker, provide a separate \attribute field for each. 
 

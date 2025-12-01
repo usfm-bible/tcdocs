@@ -1544,7 +1544,7 @@
       <value>ord</value>
       <a:documentation>For the text portion of an ordinal number</a:documentation>
       <value>pl</value>
-      <a:documentation>Inline subheadings</a:documentation>
+      <a:documentation>Inline subheading</a:documentation>
       <value>png</value>
       <a:documentation>For a geographic proper name</a:documentation>
       <value>pn</value>
@@ -1878,6 +1878,8 @@
       <value usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt-e">qt-s</value>
       <value usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="qt-s">qt-e</value>
       <value usfm:propval="ref" usfm:propattribs="ref h?">vid</value>
+      <value usfm:propended="wj-e">wj-s</value>
+      <value usfm:propends="wj-s">wj-e</value>
     </choice>
   </define>
   <define name="Chapter">

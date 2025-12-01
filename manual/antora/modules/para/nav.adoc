@@ -25,6 +25,7 @@
 *** xref:introductions/ipq.adoc[ipq - Intro quote]
 *** xref:introductions/imq.adoc[imq - Intro quote margin]
 *** xref:introductions/ipr.adoc[ipr - Intro right-aligned]
+*** xref:introductions/ipc.adoc[ipc - Intro centered]
 *** xref:introductions/iq.adoc[iq# - Intro poetic line]
 *** xref:introductions/ili.adoc[ili# - Intro list entry]
 *** xref:introductions/ib.adoc[ib - Intro blank line]

@@ -36,7 +36,7 @@ testresults.log : grammar/usx.rng
 	- $(PYTHON) python/scripts/lxmltest.py -g grammar/usx.rng -E tests/markers.ext -o $@ -A tests
 
 grammar/usx.rng : grammar/usx.rnc
-	$(PYTHON) python/scripts/urnc2rng $< $@
+	urnc2rng $< $@
 
 dbl: grammar/usx.rng
 	$(PYTHON) python/scripts/usfmtestdbl -g $< --oneerror --skipfile=skipmelist.txt -j ${JOBS} -C ${CHUNKSIZE} ${EXTRAARGS} -T 300 -J -l debug ${DBLDIR} | tee dbltest.log

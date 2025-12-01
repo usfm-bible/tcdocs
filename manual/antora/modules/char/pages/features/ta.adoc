@@ -1,0 +1,4 @@
+= ta
+:env-antora:
+
+include::markers:char/ta.adoc[tag=public]
