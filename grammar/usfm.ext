@@ -662,7 +662,7 @@
 
 \marker pl
 \category char
-\description Inline subheadings
+\description Inline subheading
 
 \marker pm
 \attributes aid? vid?
@@ -1341,6 +1341,14 @@
 \marker wj
 \category char
 \description For marking the words of Jesus
+
+\marker wj-e
+\category milestone
+\closes wj-s
+
+\marker wj-s
+\category milestone
+\closedby wj-e
 
 \marker wl
 \attributes lang?
