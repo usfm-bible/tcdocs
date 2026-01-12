@@ -46,17 +46,20 @@ The current basic reference consists of a book ID, a chapter number and a verse 
 
 ```py
 Reflist = RefRange (ws* refsep ws* RefRange)*
-refsep = ";" | ","
 RefRange = Reference (ws* "-" ws* Reference)?
-Reference = FullRef | ContextRef | NameRef
+Reference = FullRef | ContextRef | NameRef
+
 FullRef = BookId (ws+ Chapter (chaptersep Verse)? Wordref?)?
 ContextRef = Chapter (chaptersep Verse)? Wordref?
     	| Verse Wordref? | WordrefOnly Mrkref* | Charref Mrkref*
+refsep = ";" | ","
 ```
 
 What is being described is a list of references, although the list may degenerate to a single reference. The core concept is that everything in a reference is a range, whether it is explicitly expressed as a range or as a single reference. For example `GEN 1` is implicitly the range `GEN 1:1-1:31`. Even a verse is a range of words inside the verse. We can consider `GEN 1:23` to be a sequence of refinements. We start with the book `GEN`, which is effectively `GEN 1:1-50:33`. This is refined by the chapter number to just the range above, and then verse 23 refines the chapter to just the verse. That verse is itself a range of words in the verse and so on all the way down to a range of characters.
 
-A reference may consist of a full reference or a contextual reference. We will return to named references in a much later section. A full reference starts with a book id and has the necessary chapter and verse if needed. But it is awkward to always use full references. Notice I did not say `GEN 1:1-GEN 1:31` and people do not express references that way. They may well use `GEN 1:1-31`. The second reference in the range is a contextual reference. It is based on the previous reference (`GEN 1:1`) and is considered relative to it. To formalise and disambiguate contextual references. A contextual reference is relative to the parent of the previous reference. Thus `GEN 1:1` is a verse with chapter 1 as its parent. Thus `31` is relative to `GEN 1`. This also works for `GEN 1-31`. Here the first reference is a chapter and its parent is the book, thus the `31` here is relative to `GEN` and so is a chapter.
+An implementation will typically have three top level objects. The Reference is the most limited object and refers to a single location in the text. Given that a reference is also a range, the precise location is interpretted either as the end of the range or the beginning depending on application context. Typically a reference refers to the start of a range, but when it is the second in an explicit range then the end of its range is used. A RefRange consists of a starting and ending reference. They may both be the same (in which case the second is optional), since the first reference is interpretted as its start and the second its end. A Reflist is the most generic and may consist of a list of RefRanges (which in turn may be references).
+
+A reference may consist of a full reference or a contextual reference. We will return to named references in a much later section. A full reference starts with a book id and has the necessary chapter and verse if needed.  It is awkward to always use full references. Notice that the example did not say `GEN 1:1-GEN 1:31`. People do not express references that way. They may well use `GEN 1:1-31`. The second reference in the range is a contextual reference. It is based on the previous reference (`GEN 1:1`) and is considered relative to it. To formalise and disambiguate contextual references. A contextual reference is relative to the parent of the previous reference. Thus `GEN 1:1` is a verse with chapter 1 as its parent. Thus `31` is relative to `GEN 1`. This also works for `GEN 1-31`. Here the first reference is a chapter and its parent is the book, thus the `31` here is relative to `GEN` and so is a chapter.
 
 The book of Jude has only one chapter. What therefore does `JUD 1-4` mean? It could mean Jude chapters 1-4. But that is not valid. Instead interpreting the range as `JUD 1:1-1:4` makes better sense.  In effect a reference to JUD is both a full book range and also a chapter range already. When refining JUD, we in effect are refining JUD 1\. This only applies to primary text references (being discussed now). For other types of references, JUD refers to the whole book.
 
@@ -292,11 +295,16 @@ We can reference the q1 paragraph as `LUK 8:10!q1` with or without the `[1]`. A 
 Referencing paragraphs not within the standard CV structure can be problematic, having to count what can be a lot of introductory paragraphs, and then to see them go out of alignment if a paragraph gets inserted. An alternative approach is to label paragraphs in some way. The specification for a reference is extended to support non CV addressing of material.
 
 ```py
-Reference = FullRef | ContextRef | NameRefNameRef = BookId (ws+ Namespace chaptersep Nameval) Wordref?Namespace = letter+
+Reference = FullRef | ContextRef | NameRef
+NameRef = BookId (ws+ Namespace chaptersep Nameval) Wordref?
+Namespace = letter+
 Nameval = NameInit NameChar*
-NameChar = [\p{L}\p{Nl}\p{Other_ID_Start}\p{Mn}\p{Mc}		\p{Nd}\p{Pc}\p{Other_ID_Continue}		-\p{Pattern_Syntax}-\p{Pattern_White_Space}]
-NameInit =  [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax}		-\p{Pattern_White_Space}]
-Other_ID_Start = [\u1885\u1886\u2118\u212E\u309B\u309C]Other_ID_Continue = \u00B7\u0387\u1369-\u1371\u19DA\u200C\u200D\u30FB\uFF65]Pattern_Space = [\u0009-\u000D\u0020\u00B5\u200E\u200F\u2028\u2029]
+NameChar = [\p{L}\p{Nl}\p{Other_ID_Start}\p{Mn}\p{Mc}
+		    \p{Nd}\p{Pc}\p{Other_ID_Continue} -\p{Pattern_Syntax}-\p{Pattern_White_Space}]
+NameInit =  [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax} -\p{Pattern_White_Space}]
+Other_ID_Start = [\u1885\u1886\u2118\u212E\u309B\u309C]
+Other_ID_Continue = \u00B7\u0387\u1369-\u1371\u19DA\u200C\u200D\u30FB\uFF65]
+Pattern_Space = [\u0009-\u000D\u0020\u00B5\u200E\u200F\u2028\u2029]
 ```
 
 Pattern\_Syntax is too long to include but does include all standard ASCII punctuation. Notice that hyphen: `-` is in this list and so would not be allowed as part of an identifier, which is just as well given it is used to specify reference ranges.
@@ -317,12 +325,16 @@ Here we bring together all the grammar fragments into a complete grammar:
 
 ```py
 Reflist = RefRange (ws* refsep ws* RefRange)*
-refsep = ";" | ","
 RefRange = Reference (ws* "-" ws* Reference)?
-Reference = FullRef | ContextRef | NameRefNameRef = BookId ws+ Namespace chaptersep Nameval Wordref?Namespace = letter+
+Reference = FullRef | ContextRef | NameRef
+
+NameRef = BookId ws+ Namespace chaptersep Nameval Wordref?
+Namespace = letter+
 Nameval = NameInit NameChar*
-NameChar = [\p{L}\p{Nl}\p{Other_ID_Start}\p{Mn}\p{Mc}		\p{Nd}\p{Pc}\p{Other_ID_Continue}		-\p{Pattern_Syntax}-\p{Pattern_White_Space}]
-NameInit =  [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax}		-\p{Pattern_White_Space}]
+NameChar = [\p{L}\p{Nl}\p{Other_ID_Start}\p{Mn}\p{Mc}
+		    \p{Nd}\p{Pc}\p{Other_ID_Continue}-\p{Pattern_Syntax}-\p{Pattern_White_Space}]
+NameInit = [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax}
+    		-\p{Pattern_White_Space}]
 
 FullRef = BookId (ws+ Chapter (chaptersep Verse)? Wordref?)?
 ContextRef = Chapter (chaptersep Verse)? Wordref?
@@ -345,6 +357,7 @@ Extval = letter{5,8}
 Transcode = id
 Productid = id
 
+refsep = ";" | ","
 chaptersep = ":" | "."
 Chapter = digits
 Verse = digits Subverse? | Subverse | "end"
@@ -511,7 +524,8 @@ EBNF (Extended Backus Naur Form) is the most commonly used grammar for describin
 ```py
 letter       = "a" | "b" | ... | "z" | "A" | ... | "Z" ;
 digit        = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
-hex_digit    = digit | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c"                     | "d" | "e" | "f" ;
+hex_digit    = digit | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c"
+                     | "d" | "e" | "f" ;
 char       	= letter | digit | unicode_escape ;
 unicode_escape = "\u" hex_digit hex_digit hex_digit hex_digit ;
 string     	= '"' { char } '"' ;

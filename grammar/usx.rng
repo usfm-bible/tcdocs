@@ -2005,7 +2005,7 @@
       </group>
       <optional>
         <attribute>
-          <usfm:tag dump="true" before="/\\va${HS}/" beforeout="&#x27;\\va &#x27;" after="/\\va\*${Hs}/" afterout="&#x27;\\va* &#x27;"/>
+          <usfm:tag before="/\\va${HS}/" beforeout="&#x27;\\va &#x27;" after="/\\va\*${Hs}/" afterout="&#x27;\\va* &#x27;"/>
           <name ns="">altnumber</name>
           <data type="string">
             <usfm:pattern name="VERSE"/>
@@ -2016,7 +2016,7 @@
       </optional>
       <optional>
         <attribute>
-          <usfm:tag dump="true" before="/\\vp${HS}/" beforeout="&#x27;\\vp &#x27;" after="/\\vp\*${Hs}/" afterout="&#x27;\\vp* &#x27;"/>
+          <usfm:tag before="/\\vp${HS}/" beforeout="&#x27;\\vp &#x27;" after="/\\vp\*${Hs}/" afterout="&#x27;\\vp* &#x27;"/>
           <name ns="">pubnumber</name>
           <data type="string">
             <param name="minLength">1</param>

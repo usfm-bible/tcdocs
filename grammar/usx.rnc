@@ -1135,9 +1135,9 @@ VerseStart =
         [usfm:seq="true"](AttributesPre?,
         [usfm:match[after="WS" afterout="' '"]]
         attribute number { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,][0-9]+[\p{L}\p{Mn}]*)*" } }),
-        [usfm:tag[dump="true" before="/\\va${HS}/" beforeout="'\\va '" after="/\\va\*${Hs}/" afterout="'\\va* '"]]
+        [usfm:tag[before="/\\va${HS}/" beforeout="'\\va '" after="/\\va\*${Hs}/" afterout="'\\va* '"]]
         attribute altnumber { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*[\p{L}\p{Mn}]*(&#x200F;?[\-,:][0-9]+[\p{L}\p{Mn}]*)*" } }?,
-        [usfm:tag[dump="true" before="/\\vp${HS}/" beforeout="'\\vp '" after="/\\vp\*${Hs}/" afterout="'\\vp* '"]]
+        [usfm:tag[before="/\\vp${HS}/" beforeout="'\\vp '" after="/\\vp\*${Hs}/" afterout="'\\vp* '"]]
         attribute pubnumber { xsd:string { minLength = "1" } }?,
         [usfm:ignore="true"]
         attribute sid { [usfm:pattern[name="VID"]] xsd:string { pattern = "[A-Z1-4]{3} ?[&#x200F;a-z0-9,\-:\p{L}\p{Mn}]*" } }?,
