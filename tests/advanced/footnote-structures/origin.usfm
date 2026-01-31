@@ -1,0 +1,7 @@
+\id MRK a footnote test
+\h Mark
+\c 1
+\p
+\v 1 The first verse\f + \fr 1:1 \ft A footnote about \fk footnotes \ft Which may be called
+\fv 3\fv*\fq notes \ft in \fl other translations \ft or \fqa footies \ft very very rarely.\f*
+\v 2 the second verse

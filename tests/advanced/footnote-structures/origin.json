@@ -1,0 +1,128 @@
+{
+  "type": "USJ",
+  "version": "3.0",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "MRK",
+      "content": [
+        "a footnote test"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "h",
+      "content": [
+        "Mark"
+      ]
+    },
+    {
+      "type": "chapter",
+      "marker": "c",
+      "number": "1"
+    },
+    {
+      "type": "para",
+      "marker": "p",
+      "content": [
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "1"
+        },
+        "The first verse",
+        {
+          "type": "note",
+          "marker": "f",
+          "caller": "+",
+          "content": [
+            {
+              "type": "char",
+              "marker": "fr",
+              "content": [
+                "1:1 "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "A footnote about "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "fk",
+              "content": [
+                "footnotes "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "Which may be called ",
+                {
+                  "type": "char",
+                  "marker": "fv",
+                  "content": [
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "fq",
+              "content": [
+                "notes "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "in "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "fl",
+              "content": [
+                "other translations "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "or "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "fqa",
+              "content": [
+                "footies "
+              ]
+            },
+            {
+              "type": "char",
+              "marker": "ft",
+              "content": [
+                "very very rarely."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "verse",
+          "marker": "v",
+          "number": "2"
+        },
+        "the second verse"
+      ]
+    }
+  ]
+}

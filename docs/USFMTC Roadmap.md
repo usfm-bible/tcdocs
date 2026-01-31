@@ -31,6 +31,8 @@ The transition from 3.0 to 3.1 is hard to document because 3.0 is not formally s
 - \\fv is now simply a character style and requires closing
 - \\k gains an optional @key attribute
 - \\mi# add markers with number. E.g. \\mi2
+- @link-href is no longer global and is only for use in \\jmp and \\xt
+- Added @gen to \\ref to indicate that the \\ref has been inserted automatically, not by a user directly
 
 ### 3.1.1 \- released
 

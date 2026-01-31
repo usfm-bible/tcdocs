@@ -28,7 +28,7 @@ As an extreme example we could use `en-t-wsg+sil.MAT 1:1!f!5+6` for the 6th char
 
 # Introduction
 
-The purpose of this document is to propose a normative basic standard for scripture references. Notice it is not concerned with localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in other directions: 
+This document is a normative basic standard for scripture references. Notice it is not concerned with localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in other directions: 
 
 * To be recognisable as a standard book, chapter, verse reference.
 * To be able to reference text in other translations.
@@ -38,37 +38,38 @@ The purpose of this document is to propose a normative basic standard for script
 * To be able to inject / associate material (notes, implicit information, illustrations, etc.) directly into the text with surgical precision.  
 * To allow milestone-dependent features without having to insert milestone markers into the text
 
-This proposal will examine all of these extensions and propose a grammar for a scripture reference list that includes scripture reference ranges.
-
 # Basic Reference
 
-The current basic reference consists of a book ID, a chapter number and a verse number, which may have an informal Verse subsection reference (e.g. a).
+The current basic reference consists of a book ID, a chapter number and a verse number, which may have an informal verse subsection reference (e.g. a). The `Wordref` and `Charref` grammatical elements are discussed later.
 
 ```py
 Reflist = RefRange (ws* refsep ws* RefRange)*
-RefRange = Reference (ws* "-" ws* Reference)?
+RefRange = Reference (ws* bidi? "-" ws* Reference)?
 Reference = FullRef | ContextRef | NameRef
 
 FullRef = BookId (ws+ Chapter (chaptersep Verse)? Wordref?)?
 ContextRef = Chapter (chaptersep Verse)? Wordref?
     	| Verse Wordref? | WordrefOnly Mrkref* | Charref Mrkref*
 refsep = ";" | ","
+bidi = "\u200E" | "\u200F"
 ```
 
 What is being described is a list of references, although the list may degenerate to a single reference. The core concept is that everything in a reference is a range, whether it is explicitly expressed as a range or as a single reference. For example `GEN 1` is implicitly the range `GEN 1:1-1:31`. Even a verse is a range of words inside the verse. We can consider `GEN 1:23` to be a sequence of refinements. We start with the book `GEN`, which is effectively `GEN 1:1-50:33`. This is refined by the chapter number to just the range above, and then verse 23 refines the chapter to just the verse. That verse is itself a range of words in the verse and so on all the way down to a range of characters.
 
 An implementation will typically have three top level objects. The Reference is the most limited object and refers to a single location in the text. Given that a reference is also a range, the precise location is interpretted either as the end of the range or the beginning depending on application context. Typically a reference refers to the start of a range, but when it is the second in an explicit range then the end of its range is used. A RefRange consists of a starting and ending reference. They may both be the same (in which case the second is optional), since the first reference is interpretted as its start and the second its end. A Reflist is the most generic and may consist of a list of RefRanges (which in turn may be references).
 
-A reference may consist of a full reference or a contextual reference. We will return to named references in a much later section. A full reference starts with a book id and has the necessary chapter and verse if needed.  It is awkward to always use full references. Notice that the example did not say `GEN 1:1-GEN 1:31`. People do not express references that way. They may well use `GEN 1:1-31`. The second reference in the range is a contextual reference. It is based on the previous reference (`GEN 1:1`) and is considered relative to it. To formalise and disambiguate contextual references. A contextual reference is relative to the parent of the previous reference. Thus `GEN 1:1` is a verse with chapter 1 as its parent. Thus `31` is relative to `GEN 1`. This also works for `GEN 1-31`. Here the first reference is a chapter and its parent is the book, thus the `31` here is relative to `GEN` and so is a chapter.
+A reference may consist of a full reference or a contextual reference. We will return to named references (`NameRef`) in a much later section. A full reference starts with a book id and has the necessary chapter and verse if needed.  It is awkward to always use full references. Notice that the example did not say `GEN 1:1-GEN 1:31`. People do not express references that way. They may well use `GEN 1:1-31`. The second reference in the range is a contextual reference. It is based on the previous reference (`GEN 1:1`) and is considered relative to it. To formalise and disambiguate contextual references. A contextual reference is relative to the parent of the previous reference. Thus `GEN 1:1` is a verse with chapter 1 as its parent. Thus `31` is relative to `GEN 1`. This also works for `GEN 1-31`. Here the first reference is a chapter and its parent is the book, thus the `31` here is relative to `GEN` and so is a chapter. There is another shorthand used in scripture references which is not supported. For example some people will use GEN 1:23-4. An implementation may support this if it wants, but it is not required and such references should never be generated.
 
-The book of Jude has only one chapter. What therefore does `JUD 1-4` mean? It could mean Jude chapters 1-4. But that is not valid. Instead interpreting the range as `JUD 1:1-1:4` makes better sense.  In effect a reference to JUD is both a full book range and also a chapter range already. When refining JUD, we in effect are refining JUD 1\. This only applies to primary text references (being discussed now). For other types of references, JUD refers to the whole book.
+The book of Jude has only one chapter. What therefore does `JUD 1-4` mean? It could mean Jude chapters 1-4. But that is not valid. Instead interpreting the range as `JUD 1:1-1:4` makes better sense.  In effect a reference to JUD is both a full book range and also a chapter range already. When refining JUD, we in effect are refining JUD 1. This only applies to primary text references (being discussed now). For other types of references, JUD refers to the whole book.
 
-Unfortunately, it is not possible to resolve whether a book is single chapter or not within the grammar itself and so identifying that `JUD 1-4` in effect means `JUD 1:1-1:4` is up to the processor. This is no different from deciding whether `MAT 3:158` is out of range, is not achievable via the grammar and only by the processor.
+Unfortunately, it is not possible to resolve whether a book is single chapter or not within the grammar itself and so identifying that `JUD 1-4` in effect means `JUD 1:1-1:4` is up to the processor. This is no different from deciding whether `MAT 3:158` is out of range, which is also not achievable via the grammar and only by the processor.
+
+In right to left script contexts, it is sometimes necessary to add bidirectional control characters to the reference to give appropriate layout.
 
 ## Chapter Verse
 
 ```py
-chaptersep = ":" | "."
+chaptersep = bidi? ( ":" | "." )
 Chapter = digits
 Verse = digits Subverse? | Subverse | "end"
 Subverse = letter

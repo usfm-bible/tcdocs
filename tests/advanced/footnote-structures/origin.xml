@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<usx version="3.0"><book style="id" code="MRK">a footnote test</book>
+  <para style="h">Mark</para>
+  <chapter style="c" number="1" sid="MRK 1" />
+  <para style="p"><verse style="v" number="1" sid="MRK 1:1" />The first verse<note style="f" caller="+"><char style="fr">1:1 </char><char style="ft">A footnote about </char><char style="fk">footnotes </char><char style="ft">Which may be called <char style="fv">3</char></char><char style="fq">notes </char><char style="ft">in </char><char style="fl">other translations </char><char style="ft">or </char><char style="fqa">footies </char><char style="ft">very very rarely.</char></note>
+<verse eid="MRK 1:1" /><verse style="v" number="2" sid="MRK 1:2" />the second verse<verse eid="MRK 1:2" /></para>
+  <chapter eid="MRK 1" /></usx>
