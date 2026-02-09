@@ -1,4 +1,4 @@
-# Scripture Referencing Standard
+# USFM Scripture Referencing Standard
 
 M. Hosken and USFM Technical Committee
 
@@ -44,7 +44,7 @@ The current basic reference consists of a book ID, a chapter number and a verse 
 
 ```py
 Reflist = RefRange (ws* refsep ws* RefRange)*
-RefRange = Reference (ws* bidi? "-" ws* Reference)?
+RefRange = Reference (ws* "-" ws* Reference)?
 Reference = FullRef | ContextRef | NameRef
 
 FullRef = BookId (ws+ Chapter (chaptersep Verse)? Wordref?)?
@@ -111,6 +111,9 @@ Region = letter{2}
 Variant = letter{5,8}
 Ns = letter
 Extval = letter{5,8}
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" |
+   	"k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" |
+   	"u" | "v" | "w" | "x" | "y" | "z"
 ```
 
 The language tag component consists of a [BCP47 language tag](https://www.rfc-editor.org/info/bcp47). The only difference is that the language tag is expressed entirely in lowercase. Notice that the components of a language tag are separated by `-`. For details of the grammar of a language tag, see the full grammar. Only a subset of BCP47 is used here, but it is nearly full and sufficient for identifying translations.
@@ -129,6 +132,12 @@ The implications of this naming scheme is for some kind of registry or registrie
 
 ```py
 Productid = id
+id = idinit , idmid* , [ idfinal ]
+idinit = letter | "_" 
+idmid = letter | digit | "_"
+idfinal = letter | digit
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+digits = digit+
 ```
 
 When it comes to a verse reference, the product ID is unlikely to be needed. The product ID may be used to identify different scripture products associated with the translation. Examples of products would be various study editions. Again, there needs to be a list for each translation id of the recognised product ids. How this is managed is outside the scope of this standard.
@@ -162,11 +171,11 @@ Accurate word segmentation is a difficult problem, particularly for non-wordspac
 
 Linguistically accurate word segmentation is not required. The reason for character locations to be identified by word is that it makes indexing by humans easier. Humans are not expected to come up with character level references over a long range of characters. So refining a range to a word first before counting characters is helpful. Thus it is sufficient for a ‘word’ in this context, to be defined as a sequence of non-space characters whether those characters are strictly word-forming or not. This also mitigates any arguments over what is truly a word or not in a particular language.
 
-While the USFM standard considers any space characters other than those in ASCII (i.e. space, tab, carriage return, newline) to be content characters that must not be changed, they are not considered word-forming in any way. They are also often effectively invisible in that it is not possible to count how many space characters are in a sequence. Punctuation characters are also non-word-forming, but are visible and countable. Therefore we include them as being referenceable. Also this mitigates the question of when a punctuation character gets used as a word-forming character. A marker delimits a word, but may itself be considered part of the final character of that word. Multiple spaces are treated as a single space. The precise set of space characters is given in the main grammar. ZWSP (U+200B) is included as a space character.
+While the USFM standard considers any space characters other than those in ASCII (i.e. space, tab, carriage return, newline) to be content characters that must not be changed, they are not considered word-forming in any way. They are also often effectively invisible in that it is not possible to count how many space characters are in a sequence. Punctuation characters are also non-word-forming, but are visible and countable. Therefore we include them as being referenceable. Also this mitigates the question of when a punctuation character gets used as a word-forming character. A marker delimits a word, but may itself be considered part of the final character of that word. Multiple spaces may include content spaces, but they are ignored for referencing purposes. The precise set of space characters is given in the main grammar. ZWSP (U+200B) is included as a space character. Bidi controls are also treated as word delimiting.
 
 ```py
-ws = " " | [\u00A0\u1680\u2000-\u200F\u202A-\u202F\u205F
-        	\u2066-\u2069\u3000]
+ws = " " | [\u00A0\u1680\u2000-\u200B\u200E\u200F\u202A-\u202F
+            \u205F\u2066-\u2069\u3000]
 ```
 
 In summary, a word is a sequence of non-space characters. In addition a marker or element delimits a word. Thus
@@ -222,14 +231,19 @@ It is awkward to refer to a section heading in terms of the verse that precedes 
 ```
 \c 1
 \p
-\v 12 At once the Spirit made him go into the desert, \v 13 where he stayed 40 days, being tempted by Satan. Wild animals were there also, but angels came and helped him.
+\v 12 At once the Spirit made him go into the desert,
+\v 13 where he stayed 40 days, being tempted by Satan.
+Wild animals were there also, but angels came and helped him.
 \s1 Jesus Calls Four Fishermen
 \r (Mt 4.12-22; Lk 4.14-15; 5.1-11)
 \p
-\v 14 After John had been put in prison, Jesus went to Galilee and preached the Good News from God.
+\v 14 After John had been put in prison, Jesus went to Galilee
+and preached the Good News from God.
 ```
 
 The subheading text in the `\s1`[^1] is associated with 1:14 rather than 1:13. We might reference the word Four via `1:14!s1!3`.
+
+[^1]:  Markers themselves are not strictly part of any text, they are metadata governing the structure and formatting of the text. References are only concerned with text.
 
 By saying that non verse paragraphs are associated with the first word in the following verse paragraph, we get around any confusion. For example, if a subheading occurs before a paragraph that does not start with a new verse, then the subheading is associated with the first word of the new paragraph, and so as part of the previous verse. Notice that here we are deviating from a strict refinement model. In effect, we refine inwards if appropriate, but if something in the reference is best dealt with by expanding the refinement, we do that. In this case, an expansion of the refinement goes out to the paragraph and all preceding subheading paragraphs.
 
@@ -244,7 +258,12 @@ With no verse to anchor to, referencing introductory material can be problematic
 ```
 \id MRK - Good News Study Bible - Notes Material
 \is1 The Story
-\ip \bk Mark's\bk* story of Jesus is told quickly and with an abundance of details that enhance its dramatic impact. Jesus appears suddenly in Judea, where he joins those who are being baptized in the Jordan by John the Baptist. Just as suddenly, he returns to Galilee, where he proclaims the message that the \w kingdom of god\w* is about to arrive…
+\ip \bk Mark's\bk* story of Jesus is told quickly and with an
+abundance of details that enhance its dramatic impact. Jesus
+appears suddenly in Judea, where he joins those who are being
+baptized in the Jordan by John the Baptist. Just as suddenly,
+he returns to Galilee, where he proclaims the message that the
+\w kingdom of god\w* is about to arrive…
 \c 1
 \p
 \v 1 sample verse
@@ -257,7 +276,9 @@ There are a couple of ways to refer to the word  kingdom here. `MRK 0!ip!53` inv
 Character markers may take attributes. For example:
 
 ```
-\v 1 L'\w Éternel|strong="H3068"\w* \w dit|strong="H559" x-morph="strongMorph:TH8799"\w* à \w Abram|strong="H87"\w*: Va-t-\w en|strong="H3212" x-morph="strongMorph:TH8798"\w* de ton.
+\v 1 L'\w Éternel|strong="H3068"\w* \w dit|strong="H559"
+x-morph="strongMorph:TH8799"\w* à \w Abram|strong="H87"\w*:
+Va-t-\w en|strong="H3212" x-morph="strongMorph:TH8798"\w* de ton.
 ```
 
 Things can get messy when auto generated text gets involved\! For some strange reason we want to refer to the strong attribute for the 8th word en (L',  Éternel, dit, à, Abram, :, Va-t-, en). It has a value of H3212. There are different ways of writing the reference. `1:1!8!strong` counts to the 8th word. Notice that while there is no space before the `\w`, it is considered a separate word. In this example case, the 8th word cannot be refined by the `strong`. Instead we expand the refinement to the containing element (`w`) and then refine back to the attribute. Alternatively the reference might be: `1:1!w[4]!strong` which counts `\w` and then gets the strong attribute.
@@ -282,8 +303,11 @@ This mechanism also allows for further limiting a verse range to a particular pa
 
 ```
 \p
-\v 9 Then the \w disciples\w* said, “Teacher! What is the meaning of this parable?” they asked Jesus.
-\v 10 So Jesus said, “God gave you the knowledge to know about his kingdom. But in order to fulfil that which is written in scripture, I am telling them with parables. Therefore
+\v 9 Then the \w disciples\w* said, “Teacher! What is the
+meaning of this parable?” they asked Jesus.
+\v 10 So Jesus said, “God gave you the knowledge to know about his
+kingdom. But in order to fulfil that which is written in scripture,
+I am telling them with parables. Therefore
 \q1 ‘They will look but not see [it],
 \q2 they will listen but they don't understand’
 \m he told like that the disciples.
@@ -301,10 +325,13 @@ NameRef = BookId (ws+ Namespace chaptersep Nameval) Wordref?
 Namespace = letter+
 Nameval = NameInit NameChar*
 NameChar = [\p{L}\p{Nl}\p{Other_ID_Start}\p{Mn}\p{Mc}
-		    \p{Nd}\p{Pc}\p{Other_ID_Continue} -\p{Pattern_Syntax}-\p{Pattern_White_Space}]
-NameInit =  [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax} -\p{Pattern_White_Space}]
+		    \p{Nd}\p{Pc}\p{Other_ID_Continue} -\p{Pattern_Syntax}
+            -\p{Pattern_White_Space}]
+NameInit =  [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax}
+            -\p{Pattern_White_Space}]
 Other_ID_Start = [\u1885\u1886\u2118\u212E\u309B\u309C]
-Other_ID_Continue = \u00B7\u0387\u1369-\u1371\u19DA\u200C\u200D\u30FB\uFF65]
+Other_ID_Continue = \u00B7\u0387\u1369-\u1371\u19DA\u200C\u200D
+            \u30FB\uFF65]
 Pattern_Space = [\u0009-\u000D\u0020\u00B5\u200E\u200F\u2028\u2029]
 ```
 
@@ -333,7 +360,8 @@ NameRef = BookId ws+ Namespace chaptersep Nameval Wordref?
 Namespace = letter+
 Nameval = NameInit NameChar*
 NameChar = [\p{L}\p{Nl}\p{Other_ID_Start}\p{Mn}\p{Mc}
-		    \p{Nd}\p{Pc}\p{Other_ID_Continue}-\p{Pattern_Syntax}-\p{Pattern_White_Space}]
+		    \p{Nd}\p{Pc}\p{Other_ID_Continue} -\p{Pattern_Syntax}
+            -\p{Pattern_White_Space}]
 NameInit = [\p{L}\p{Nl}\p{Other_ID_Start}-\p{Pattern_Syntax}
     		-\p{Pattern_White_Space}]
 
@@ -359,7 +387,7 @@ Transcode = id
 Productid = id
 
 refsep = ";" | ","
-chaptersep = ":" | "."
+chaptersep = bidi? ":" | "."
 Chapter = digits
 Verse = digits Subverse? | Subverse | "end"
 Subverse = letter
@@ -376,8 +404,9 @@ idmid = letter | digit | "_"
 idfinal = letter | digit
 digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 digits = digit+
-ws = " " | [\u00A0\u1680\u2000-\u200F\u202A-\u202F\u205F
-        	\u2066-\u2069\u3000]
+ws = " " | [\u00A0\u1680\u2000-\u200B\u200E\u200F\u202A-\u202F
+            \u205F\u2066-\u2069\u3000]
+bidi = [\u200E\u200F]
 letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" |
    	"k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" |
    	"u" | "v" | "w" | "x" | "y" | "z"
@@ -518,6 +547,8 @@ The following is the standard list of book codes for purposes of interchange.
 | TDX | B0 | Topical Index |
 | NDX | B1 | Names Index |
 
+[^2]:  Current Paratext 9 Index code
+
 # Appendix 2\. RegexBNF Grammar
 
 EBNF (Extended Backus Naur Form) is the most commonly used grammar for describing other grammars. But it is hard to read and so we use a regular expression based grammar commonly referred to as RegexBNF for the grammar in this document. We formally specify this grammar in  EBNF:
@@ -569,8 +600,13 @@ Reference = FullRef | ContextRef | NameRef ;
 NameRef = BookId , ws+ , Namespace , chaptersep , Nameval , [ Wordref ] ;
 Namespace = letter+ ;
 Nameval = NameInit , NameChar* ;
-NameChar = <<A Unicode character that is a letter, a number letter, an "other" ID start character, a mark, a nonspacing mark, a decimal digit, a connector punctuation, or an "other" ID continue character, but not a pattern syntax or pattern whitespace character>> ;
-NameInit = <<A Unicode character that is a letter, a number letter, or an "other" ID start character, but not a pattern syntax or pattern whitespace character>> ;
+NameChar = <<A Unicode character that is a letter, a number letter,
+    an "other" ID start character, a mark, a nonspacing mark,
+    a decimal digit, a connector punctuation, or an "other" ID continue
+    character, but not a pattern syntax or pattern whitespace character>> ;
+NameInit = <<A Unicode character that is a letter, a number letter,
+    or an "other" ID start character, but not a pattern syntax or pattern
+    whitespace character>> ;
 
 ---
 
@@ -625,6 +661,9 @@ letter = "a" | "b" | ... | "z" ;
 capital = "A" | "B" | ... | "Z" ;
 ```
 
-[^1]:  Markers themselves are not strictly part of any text, they are metadata governing the structure and formatting of the text. References are only concerned with text.
+# Changes
 
-[^2]:  Current Paratext 9 Index code
+## 1.0
+
+- Initial release Feb 2026
+
