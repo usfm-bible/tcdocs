@@ -26,6 +26,8 @@ MAT 2-4        # chapters 2 to 4 of Matthew
 
 As an extreme example we could use `en-t-wsg+sil.MAT 1:1!f!5+6` for the 6th character in the 5th word in the first footnote in Matthew chapter 1 verse 1 in the wsg back translation (into English) SIL project. Although this is overkill for nearly all situations and nobody would ever type such a thing\!
 
+
+
 # Introduction
 
 This document is a normative basic standard for scripture references. Notice it is not concerned with localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in other directions: 
@@ -37,6 +39,60 @@ This document is a normative basic standard for scripture references. Notice it 
 * To treat USFM, USX and USJ files identically. References are to data in the data model, not a particular serialisation. The closest serialisation to the underlying data model is USX.
 * To be able to inject / associate material (notes, implicit information, illustrations, etc.) directly into the text with surgical precision.  
 * To allow milestone-dependent features without having to insert milestone markers into the text
+
+---
+# Executive Summary (Alternate)
+
+This document defines a **normative, serialization-independent scheme for scripture references**.
+All references in this scheme are treated as **ranges**, which may be progressively refined—from book, to chapter, to verse, to word, and finally to character.
+
+The scheme is designed to allow **precise, unambiguous identification of any textual content in a scripture file**, independent of whether that content is represented in USFM, USX, or USJ. References operate on the underlying data model rather than on any particular file serialization.
+
+In particular, the scheme supports referencing:
+
+* verses, words, and individual characters
+* notes (footnotes, cross-references), section headings, and introductory material
+* marker attributes and other associated non-scriptural text
+* content across translations and scripture products
+
+### Examples
+
+```
+MAT 2:1!3        # third word of Matthew chapter 2 verse 1
+MAT 2:1!3-4      # words 3–4 of Matthew chapter 2 verse 1
+MAT 2:1!3-2!4    # word 3 of Matthew 2:1 to verse 2 word 4
+MAT 2:1!3-2:4    # word 3 of Matthew 2:1 to chapter 2 verse 4
+MAT 2:1-4        # verses 1 to 4 of Matthew chapter 2
+MAT 2-4          # chapters 2 to 4 of Matthew
+```
+
+As an extreme example, the reference:
+
+```
+en-t-wsg+sil.MAT 1:1!f!5+6
+```
+
+identifies the **6th character of the 5th word in the first footnote** attached to Matthew 1:1 in the *wsg* back translation (into English) for the SIL project. While such references are rarely written by hand, they illustrate the expressive power and precision of the scheme.
+
+# Introduction (Alternate)
+
+This document defines a **normative, foundational standard for scripture references**. It is not concerned with localized reference conventions (even for English), but with a **general, language-independent reference scheme**.
+
+Existing informal scripture reference conventions resolve references within a single translation and typically only to the verse level. This standard extends that model to support a broader and more precise set of requirements, while remaining recognizable as a conventional book-chapter-verse reference.
+
+Specifically, the scheme is designed:
+
+* to remain recognizable as a standard book, chapter, and verse reference
+* to reference text across different translations and scripture products
+* to reference individual words or parts of words within a verse
+* to reference any textual content within a scripture file, including non-scriptural material such as notes and headings
+  (excluding syntactic markup characters, such as  <> around an element tag in USX or a backslash \\ in USFM, which are not part of the underlying data model)
+* to treat USFM, USX, and USJ files identically by referencing the shared data model rather than any particular serialization
+  (with USX being closest to that underlying model)
+* to allow notes, implicit information, illustrations, and similar material to be associated with the text with precise positional control
+* to support milestone-dependent features without requiring the insertion of milestone markers into the text
+
+  ---
 
 # Basic Reference
 
