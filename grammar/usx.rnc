@@ -1100,7 +1100,7 @@ ChapterStart =
         attribute style { "c" },
         [usfm:seq="true"](AttributesPre?,
         [usfm:match[after="TAGEND" afterout="' '"]]
-        attribute number { xsd:string { pattern = "[1-9][0-9]*" } }),
+        attribute number { xsd:string { pattern = "[1-9][0-9]?|1[0-4][0-9]|15[01]" } }),
         attribute sid { [usfm:pattern[name="VID"]] xsd:string { minLength = "1" pattern = "[A-Z1-4]{3} ?[0-9]+" } }?,
         [usfm:match [before="/\\ca${HS}/" beforeout="'\\ca '" after="/\\ca\*${Hs}/" afterout="'\\ca* '"]]
         attribute altnumber { [usfm:pattern[name="VERSE"]] xsd:string { minLength = "1" pattern = "[1-9][0-9]*\p{L}?(&#x200F;?[\-,][0-9]+\p{L}?)*" } }?,

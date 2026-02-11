@@ -69,4 +69,5 @@ The transition from 3.0 to 3.1 is hard to document because 3.0 is not formally s
 
 - \<list\> is required from [U25003](https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25003%20Lists%20and%20Tables.md)  
 - \\xt may not be used as a general character style. It is only used in cross references.  
+- , is not allowed in \v, while - is.
 - 

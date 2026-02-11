@@ -8,10 +8,10 @@ Version 1.0
 
 This document introduces a scheme for biblical references. It aims to allow the referencing of any content in a scripture file down to the character level. In particular it features the ability to reference:
 
-* words & characters  
-* notes (footnotes, etc.), section headings, introductory material  
-* marker attributes  
-* across scripture sources
+- words & characters  
+- notes (footnotes, etc.), section headings, introductory material  
+- marker attributes  
+- across scripture sources
 
 Some examples
 
@@ -32,13 +32,13 @@ As an extreme example we could use `en-t-wsg+sil.MAT 1:1!f!5+6` for the 6th char
 
 This document is a normative basic standard for scripture references. Notice it is not concerned with localised references, even for English. There already exists an informal specification for scripture references which resolves within a particular translation down to the verse level. But there are desires to extend this reference in other directions: 
 
-* To be recognisable as a standard book, chapter, verse reference.
-* To be able to reference text in other translations.
-* To be able to reference a word or even part of a word within a verse.
-* To be able to reference any text, even non scriptural text, within a text file. This does not include syntactic characters like <> around an element tag in USX or = or " in attributes in USFM, etc. These are not part of the data model.
-* To treat USFM, USX and USJ files identically. References are to data in the data model, not a particular serialisation. The closest serialisation to the underlying data model is USX.
-* To be able to inject / associate material (notes, implicit information, illustrations, etc.) directly into the text with surgical precision.  
-* To allow milestone-dependent features without having to insert milestone markers into the text
+- To be recognisable as a standard book, chapter, verse reference.
+- To be able to reference text in other translations.
+- To be able to reference a word or even part of a word within a verse.
+- To be able to reference any text, even non scriptural text, within a text file. This does not include syntactic characters like <> around an element tag in USX or = or " in attributes in USFM, etc. These are not part of the data model.
+- To treat USFM, USX and USJ files identically. References are to data in the data model, not a particular serialisation. The closest serialisation to the underlying data model is USX.
+- To be able to inject / associate material (notes, implicit information, illustrations, etc.) directly into the text with surgical precision.  
+- To allow milestone-dependent features without having to insert milestone markers into the text
 
 ---
 # Executive Summary (Alternate)
@@ -214,10 +214,10 @@ At the other end of the scale is the desire to reference words or even character
 
 There are various issues to address with this model:
 
-* What constitutes a word? Most languages have a clear word break (a space), but some do not. Care needs to be taken in specifying a word break model.  
-* Scripture can contain both primary scripture text and also out of band associated text in the same scripture file, like footnotes or other items.  
-* At the character level there is the question of what constitutes a character? Is text, in Unicode terms, interpreted as NFD or NFC? Is punctuation considered part of a ‘word’?  
-* How are word and character references included in a reference unambiguously?
+- What constitutes a word? Most languages have a clear word break (a space), but some do not. Care needs to be taken in specifying a word break model.  
+- Scripture can contain both primary scripture text and also out of band associated text in the same scripture file, like footnotes or other items.  
+- At the character level there is the question of what constitutes a character? Is text, in Unicode terms, interpreted as NFD or NFC? Is punctuation considered part of a ‘word’?  
+- How are word and character references included in a reference unambiguously?
 
 Since a scripture reference is designed to identify the same ranges regardless of the serialisation of the text, whether in USFM, USX or USJ, the text is analysed without any character level markup. For example, \\\~ in USFM is a single \~ character and not two characters. Likewise \&emdash; in USX is a single character and not a word.
 
