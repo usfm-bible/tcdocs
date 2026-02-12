@@ -504,8 +504,6 @@ Introduction.para.style.enum = (
       "ipq"
     |   ## Introduction prose paragraph, right aligned
       "ipr"
-    |   ## Introduction prose paragraph, centred
-      "ipc"
     |   ## Introduction prose paragraph
       "ip"
     |   ## Introduction poetry text, level 1 (if multiple levels)
