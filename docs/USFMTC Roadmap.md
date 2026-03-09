@@ -16,23 +16,25 @@ The following documents are in discussion at the USFMTC. Comments are welcomed:
 Versions 3.1 and 3.1.1 are already released. Explain why there is no list for 3.1 and introduction of USJ, main differences etc.  
 The transition from 3.0 to 3.1 is hard to document because 3.0 is not formally specified, and 3.1 is about resolving ambiguities and regularising the grammar. The main differences in 3.1 are:
 
+- BookIdentification may be any 3 letter/digit code (USX loosen)
+- BookTitles are optional (USX loosen)
+- Other peripherals may be of any type (USX loosen)
+- @vid has extended reference syntax (USX loosen)
+- Bookheaders support \\sts (USX extend)
+- \\k gains an optional @key attribute (USX extend)
+- Added @gen to \\ref to indicate that the \\ref has been inserted automatically, not by a user directly (USX extend)
+- @link-href is no longer global and is only for use in \\jmp and \\xt (USX tighten)
+
+- Byte Order Mark is allowed at the start of the file (USFM loosen)
+- \+ is optional before a marker since closure is now unambiguous (USFM loosen)
+- Character styles must close explicitly. The only markers with implicit closure are paragraph markers and note (footnote or cross reference) structural markers (USFM tighten)
+- \\ is required to escape certain characters: \\ ' " | \~ // (USFM tighten)
+- \\fv is now simply a character style and requires closing (USFM tighten)
+
 - USFM, USX and USJ all have the same content model, based on USX.  
-- BookTitles are optional  
-- Byte Order Mark is allowed at the start of the file  
-- BookIdentification may be any 3 letter/digit code  
-- Other peripherals may be of any type  
-- Bookheaders support \\sts  
 - Distinguish Section, Verse and Other paragraph types in the grammar  
-- @vid has extended reference syntax  
-- Character styles must close explicitly. The only markers with implicit closure are paragraph markers and note (footnote or cross reference) structural markers  
-- \+ is optional before a marker since closure is now unambiguous  
-- \\ is required to escape certain characters: \\ ' " | \~ //  
 - Whitespace rules and canonicalisation rules are given  
-- \\fv is now simply a character style and requires closing
-- \\k gains an optional @key attribute
 - \\mi# add markers with number. E.g. \\mi2
-- @link-href is no longer global and is only for use in \\jmp and \\xt
-- Added @gen to \\ref to indicate that the \\ref has been inserted automatically, not by a user directly
 
 ### 3.1.1 \- released
 
