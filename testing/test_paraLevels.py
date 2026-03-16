@@ -3,6 +3,7 @@ import re
 from shared import *
 
 def test_paraLevels(usfm):
+    ''' Requires numeric markers like \\q1 to not jump to \\q3 '''
     leveledMarkers = ["q", "qm", "li", "lim", "iq", "ili", "io"]
     currentPrefix = None
     currentLevel = -1

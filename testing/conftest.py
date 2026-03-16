@@ -11,26 +11,25 @@ def pytest_addoption(parser):
 def pytest_generate_tests(metafunc):
     jobs = []
     basedir = metafunc.config.getoption("dir")
-    print(basedir)
     if basedir is None:
         basedir = os.path.join(os.path.dirname(__file__), '..', "tests")
-    for dp, db, fn in os.walk(basedir):
-        for f in fn:
-            if f.lower().endswith(".zip"):
-                jobs.extend(zip_getfiles(os.path.join(dp, f)))
-            elif f.lower() == "origin.xml" or f.lower().endswith(".usx"):
-                jobs.extend(dir_gettestfiles(dp))
-                break
-            elif f.lower().endswith(".usfm") or f.lower().endswith(".sfm"):
-                if basedir == dp:
-                    jobs.append((dp, f))
+    dp = basedir
+    for f in os.listdir(os.path.expanduser(basedir)):
+        if f.lower().endswith(".zip"):
+            jobs.extend(zip_getfiles(os.path.join(dp, f)))
+        elif f.lower() == "origin.xml" or f.lower().endswith(".usx"):
+            jobs.extend(dir_gettestfiles(dp))
+            break
+        elif f.lower().endswith(".usfm") or f.lower().endswith(".sfm"):
+            jobs.append((dp, f))
     m = None
     matchr = metafunc.config.getoption("matchdir")
     if matchr is not None:
         m = re.compile(matchr)
         jobs = [j for j in jobs if m.search(j[0])]
     if len(jobs):
-        metafunc.parametrize(("projectdir", "projectfile"), jobs, scope="session")
+        metafunc.parametrize(("projectdir", "projectfile"), jobs, scope="module",
+                indirect=("projectdir", "projectfile"))
 
 def zip_getfiles(zipname):
     allfiles = []
@@ -45,7 +44,7 @@ def zip_getfiles(zipname):
 
 def dir_gettestfiles(pdir):
     allfiles = []
-    for fn in os.listdir(pdir):
+    for fn in os.listdir(os.path.expanduser(pdir)):
         if fn.lower().endswith(".usx") or fn.lower().endswith("sfm"):
             allfiles.append((pdir, fn))
     if not len(allfiles):
@@ -85,6 +84,22 @@ def usfm(projectdir, projectfile):
                         u.xfails = xf.split(' ')
             u.addesids()
             return u
+
+@pytest.fixture(scope="module")
+def projectdir(request):
+    return request.param
+
+@pytest.fixture(scope="module")
+def projectfile(request):
+    return request.param
+
+@pytest.fixture(scope="module")
+def grammar(projectdir):
+    if os.path.isdir(projectdir):
+        mksext = [os.path.join(projectdir, 'markers.ext')]
+    mksext = [f for f in mksext if os.path.exists(f)]
+    res = usfmtc.usfmGrammar(None, extentions=mksext)
+    return res
 
 def pytest_report_teststatus(report, config):
     restype = {"passed": "", "failed": "+", "skipped": "-"}

@@ -3,6 +3,7 @@ from shared import *
 from usfmtc.usxmodel import iterusx
 
 def test_chapterVerse(usfm):
+    ''' Requires chapters and verses to be monotonically sequentially increasing from 1 '''
     nextChapter = 1
     nextVerse = 1;
     failures=[]
@@ -32,3 +33,20 @@ def test_chapterVerse(usfm):
                 nextVerse = int(verseEnd) + 1
     if len(failures):
         failfor(usfm, 'chapter_verse', f"{usfm.fname}:\n    " + "\n    ".join(failures))
+
+def test_chapterHeadings(usfm, grammar):
+    ''' Do not allow headings immediately preceding a chapter. The chapter should come first. '''
+    hasheading = False
+    failures = []
+    for node in usfm.getroot():     # only need top level paragraphs
+        if node.tag == "chapter" and hasheading:
+            failures.append(f"chapter {node.get('number', 0)} has preceding headings")
+        if node.tag != "para":
+            continue
+        s = node.get('style', None)
+        if s is None:
+            failures.append(f"missing style for paragraph at {node.pos}")
+            continue
+        hasheading = grammar.marker_categories.get(s, '') in ('subpara', 'title')
+    if len(failures):
+        failfor(usfm, 'chapter_headings', f"{usfm.fname}:\n    " + "\n    ".join(failures))

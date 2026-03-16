@@ -54,6 +54,7 @@ tagstyles = {
 }
 
 def test_attributes(usfm):
+    ''' Ensures all required attributes exist and reports on extra attributes'''
     currc = "0"
     currv = "0"
     def mkerror(e, a):
