@@ -13,8 +13,8 @@ def pytest_generate_tests(metafunc):
     basedir = metafunc.config.getoption("dir")
     if basedir is None:
         basedir = os.path.join(os.path.dirname(__file__), '..', "tests")
-    dp = basedir
-    for f in os.listdir(os.path.expanduser(basedir)):
+    dp = os.path.expanduser(basedir)
+    for f in os.listdir(dp):
         if f.lower().endswith(".zip"):
             jobs.extend(zip_getfiles(os.path.join(dp, f)))
         elif f.lower() == "origin.xml" or f.lower().endswith(".usx"):
@@ -95,9 +95,8 @@ def projectfile(request):
 
 @pytest.fixture(scope="module")
 def grammar(projectdir):
-    if os.path.isdir(projectdir):
-        mksext = [os.path.join(projectdir, 'markers.ext')]
-    mksext = [f for f in mksext if os.path.exists(f)]
+    mksext = [os.path.join(projectdir, 'markers.ext')] if os.path.isdir(projectdir) else []
+    # mksext = [f for f in mksext if os.path.exists(f)]
     res = usfmtc.usfmGrammar(None, extentions=mksext)
     return res
 
@@ -112,6 +111,10 @@ def pytest_report_teststatus(report, config):
         else:
             short = restype[report.outcome]
         return report.outcome, short, report.outcome.upper()
+    if report.when == "setup":
+        if report.skipped:
+            short = ""
+            return report.outcome, short, report.outcome.upper()
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_sessionfinish(session, exitstatus):

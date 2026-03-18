@@ -29,7 +29,7 @@ def test_textinnotes(usfm):
         for e in n:
             if notempty(e.tail):
                 failure = e.tail.strip()
-        if failure is not None:
+        if failure is not None and len(failure):
             failfor(usfm, 'textinnotes',
                     f'Text: "{failure}" found inside note at {usfm.fname} {n.get("vid", "UNK")}')
             return
