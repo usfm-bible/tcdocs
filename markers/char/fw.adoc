@@ -38,7 +38,7 @@ USFM::
 ----
 \f ⸀ \fr 28,14 \ft υπο \fw B D 0148. 892\f*
 ----
-USFM::
+USX::
 +
 .Matthew 28.14 (Nestle-Aland 29)
 [source#src-usx-char-fw_1,xml,highlight=4]
