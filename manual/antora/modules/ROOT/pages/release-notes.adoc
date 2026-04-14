@@ -9,24 +9,24 @@ endif::[]
 
 === Additions
 
-* Add #__lang__# attribute to xref:char:features/tl.adoc[tl] and xref:char:features/tl.adoc[wl]
-* Add character style xref:char:features/ta.adoc[ta] (https://github.com/usfm-bible/tcdocs/blob/main/proposals/2024/U24002%20Textual%20Alternatives.md[U24002])
+* Add #__lang__# attribute to xref:char:index.adoc[character] types xref:char:features/tl.adoc[tl] and xref:char:features/tl.adoc[wl]
+* Add character type xref:char:features/ta.adoc[ta] (https://github.com/usfm-bible/tcdocs/blob/main/proposals/2024/U24002%20Textual%20Alternatives.md[U24002])
 * Add new marker xref:ROOT:extensions.adoc#ext-category[categories]:
-** cell (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)
-** attribute (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat]) indicates the contents are an attribute in USX.
+** `cell` (tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12)
+** `attribute` (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat]) indicates that the contents are an attribute in USX.
 * Add xref:ms:vid.adoc[vid] milestone to specify current reference (https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25008%20vid.md[U25008])
 
 == 3.1.1
 
 === Additions
 
-* Add xref:para:introductions/ipc.adoc[ipc] to correspond to xref:para:paragraphs/pc.adoc[pc].
+* Add xref:para:index.adoc[paragraph] type xref:para:introductions/ipc.adoc[ipc] to correspond to xref:para:paragraphs/pc.adoc[pc].
 
 === Revisions
 
 * Move p1, p2 from OtherPara to PeriphPara (i.e. they are not used in scripture files).
 * Fix xref:char:breaks/optbreak.adoc[optbreak].
-* Allow xref:para:paragraphs/lit.adoc[lit] in book xref:doc:index.adoc#doc-book-intro[introduction].
+* Allow xref:para:index.adoc[paragraph] type xref:para:paragraphs/lit.adoc[lit] in book xref:doc:index.adoc#doc-book-intro[introductions].
 * xref:doc:books.adoc[Book codes] must contain at least one letter.
 * xref:ROOT:extensions.adoc[Markers.ext] #``++\category++``# may contain multiple entries.
 
@@ -35,28 +35,29 @@ _July 2024_
 
 === Background on USFM 3.1
 
-USFM (Unified Scripture Format Markup) 3.1 primarily represents an effort to standardize a single xref:doc:index.adoc[content model] which can be equally expressed in backslash-based `\` format markers (USFM-FM), XML (USFM-XML), or JSON (USFM-JSON). The common abbreviation for these expressions are *USFM*, *USX*, and *USJ*.
+USFM (Unified Scripture Format Markup) 3.1 primarily represents an effort to resolve ambiguities, and to standardize a single xref:doc:index.adoc[content model] which can be equally expressed in backslash-based `\` format markers (USFM-FM), XML (USFM-XML), or JSON (USFM-JSON). The common abbreviations for these expressions are *USFM*, *USX*, and *USJ*.
 
 This documentation provides a xref:ROOT:syntax-docs.adoc[summary] of markup syntax, schema diagrams, and example texts for both USFM and USX. USJ is a newer expression. Equivalent example texts in USJ are also being added.
 
-Previous release notes (3.0 and earlier) are expressed only in USFM-FM specific terms.
+Previous release notes (3.0 and earlier) are expressed only in USFM specific terms.
 
 === Summary of Updates
 
 The key differences in the grammar from USFM 3.0 to 3.1.0 are:
 
 * xref:doc:index.adoc#doc-book-titles[BookTitles] are optional.
-* xref:doc:index.adoc#doc-book-headers[BookHeaders] include xref:para:identification/sts.adoc[sts].
+* Byte Order Mark is allowed at the start of the file.
 * xref:doc:index.adoc#doc-book-identification[BookIdentification] may be any 3 letter code (within reason).
 * Other peripherals may be of any type.
-* xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and other xref:doc:index.adoc#doc-book-chapter-content[Para] (paragraphs) are seperated as different categories (internal).
+* xref:doc:index.adoc#doc-book-headers[BookHeaders] include xref:para:index.adoc[paragraph] type xref:para:identification/sts.adoc[sts].
+* Distinguish xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and Other xref:doc:index.adoc#doc-book-chapter-content[paragraph] types in the grammar (internal).
 * The xref:para:index.adoc[paragraph] #_@vid_# attribute has an extended reference syntax.
 * xref:char:index.adoc[Character] markers and xref:char:nesting.adoc[nesting]:
 ** All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
-** Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note _submarker elements_. They provide structure to the note content. These note submarker elements continue to support (and recommend) the common pratice of implicit closure.
-** Note content must occur within a submarker element; there can be no unmarked note content only within the xref:note:index.adoc[note container] itself.
-** xref:char:notes/footnote/fv.adoc[fv] is now just a xref:char:notes/index.adoc[character] style and requires explicit closing.
+** Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note _structural elements_. Only these markers continue to support implicit closure.
+** Note content must occur within a note structural element. There should be no unmarked note content occuring only within the xref:note:index.adoc[note container] itself.
 ** Use of the `\+` prefix for nested USFM xref:char:index.adoc[character] markup is supported but is _deprecated_. Note that future versions of USFM may remove support for the `\+` syntax entirely.
+* xref:char:notes/footnote/fv.adoc[fv] is now just a xref:char:notes/index.adoc[character] style and requires explicit closing.
 * Markings scripture references -- xref:char:features/ref.adoc[ref] and xref:char:notes/crossref/xt.adoc[xt]:
 ** Added xref:char:features/ref.adoc[ref] for marking scripture references in all contexts (including xref:char:notes/crossref/xt.adoc[xt]), with an optional machine-readable target location.
 ** _Deprecated_ use of the attribute #__@link-href__# with xref:char:notes/crossref/xt.adoc[xt]. Use xref:char:features/ref.adoc[ref].
