@@ -7,7 +7,7 @@
 *** xref:footnote/f.adoc[f - Footnote]
 *** xref:footnote/fe.adoc[fe - Endnote]
 *** xref:footnote/ef.adoc[ef - Extended Note]
-*** xref:footnote/efe.adoc[ef - Extended Endnote]
+*** xref:footnote/efe.adoc[efe - Extended Endnote]
 // end::nav-footnotes[]
 // ** Cross References
 // tag::nav-topcat[]
