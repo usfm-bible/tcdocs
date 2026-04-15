@@ -27,6 +27,7 @@ The key differences in the grammar from USFM 3.0 to 3.1.0 are:
 * xref:doc:index.adoc#doc-book-headers[BookHeaders] include xref:para:identification/sts.adoc[sts].
 * Distinguish xref:doc:index.adoc#doc-book-chapter-content[Section], xref:doc:index.adoc#doc-book-chapter-content[Verse], and Other xref:doc:index.adoc#doc-book-chapter-content[paragraph] types in the grammar (internal).
 * The xref:para:index.adoc[paragraph] #_@vid_# attribute has an extended reference syntax.
+* The xref:para:index.adoc[paragraph] type mi# supports 3 indent levels.
 * xref:char:index.adoc[Character] markers and xref:char:nesting.adoc[nesting]:
 ** All xref:char:index.adoc[character] elements must be closed _explicitly_, with the exception of note structural elements (below).
 ** Note specific xref:char:notes/index.adoc[character] elements (i.e. `f`... xref:char:notes/footnote/fr.adoc[fr], xref:char:notes/footnote/fq.adoc[fq], xref:char:notes/footnote/ft.adoc[ft], or `x`... xref:char:notes/crossref/xo.adoc[xo], xref:char:notes/crossref/xt.adoc[xt] etc.) are considered note _structural elements_. Only these markers continue to support implicit closure.
