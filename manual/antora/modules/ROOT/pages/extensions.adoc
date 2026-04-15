@@ -11,6 +11,7 @@ Users may create and use non-standard markup extensions. User created markers sh
 A basic specification for markup extensions used in a text should be provided in a file named `+markers.ext+`. For each marker, supply the following:
 
 #``++\marker++``#:: Marker text
+[#ext-category]
 #``++\category++``#:: Marker category, from the following list:
 * xref:para:index.adoc[Paragraph]
 ** `header` - Header/identification paragraph
