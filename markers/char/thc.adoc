@@ -13,7 +13,7 @@ endif::[]
 == Summary
 
 Description:: Table column heading cell - center aligned.
-* The variable `#` represents the table column number.
+* The variable `#` represents the table column number (required).
 [NOTE]
 .Syntax notes
 ====
