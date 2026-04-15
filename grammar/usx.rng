@@ -1027,8 +1027,6 @@
       <a:documentation>Paragraph text, level 2 indented, with no first line indent; often used for discourse</a:documentation>
       <value>mi3</value>
       <a:documentation>Paragraph text, level 3 indented, with no first line indent; often used for discourse</a:documentation>
-      <value>mi4</value>
-      <a:documentation>Paragraph text, level 4 indented, with no first line indent; often used for discourse</a:documentation>
       <value>mi</value>
       <a:documentation>Paragraph text, indented, with no first line indent; often used for discourse</a:documentation>
       <value>m</value>
