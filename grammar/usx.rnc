@@ -678,8 +678,6 @@ VersePara.para.style.enum = (
       "mi2"
     |   ## Paragraph text, level 3 indented, with no first line indent; often used for discourse
       "mi3"
-    |   ## Paragraph text, level 4 indented, with no first line indent; often used for discourse
-      "mi4"
     |   ## Paragraph text, indented, with no first line indent; often used for discourse
       "mi"
     |   ##  Paragraph text, with no first line indent (may occur after poetry) aka: Paragraph Continuation
