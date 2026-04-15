@@ -13,13 +13,13 @@ endif::[]
 == Summary
 
 Description:: Table column heading cell.
-* The variable `#` represents the table column number.
+* The variable `#` represents the table column number (required).
 [NOTE]
 .Syntax notes
 ====
 In *USFM*, a table is composed by a series of paragraphs marked with xref:para:tables/tr.adoc[\tr]. The content for cells is marked with xref:char:tables/index.adoc[character types for tables], such as xref:char:tables/th.adoc[\th#].
 
-In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing `<row>`s and `<cell>`s. See xref:para:tables/index.adoc[Paragraphs > Tables].
+In *USX* the sequence of xref:para:tables/tr.adoc[\tr] rows is composed within a `+<table>...</table>+` containing ``<row>``s and ``<cell>``s. See xref:para:tables/index.adoc[Paragraphs > Tables].
 ====
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\th# ++``#__content__#
