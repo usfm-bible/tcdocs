@@ -18,7 +18,7 @@ endif::[]
 
 === Revisions
 
-* xref:cv:v.adoc[v] is not allowed in xref:para:index.adoc[paragraphs] of xref:ROOT:extensions.adoc#ext-category[category] `otherPara` or `sectionPara`
+* xref:cv:v.adoc[v] is not allowed in xref:para:index.adoc[paragraphs] of xref:ROOT:extensions.adoc#ext-category[category] `otherpara` or `sectionpara`
 
 == 3.1.2
 
