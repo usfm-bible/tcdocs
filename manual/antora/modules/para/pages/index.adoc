@@ -5,11 +5,12 @@
 Description:: Paragraph-level container.
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\++``#__style__#``++ ++``#__content__#
-* *USX:* ``++<para style="++``#__style__#``++" ++``#__@vid__#``++>++``#__content__#``++</para>++``
+* *USX:* ``++<para style="++``#__style__#``++" ++``#__@vid @h__#``++>++``#__content__#``++</para>++``
 #style# *::: Paragraph type
 include::../nav.adoc[tag=nav-topcat]
 #vid#::: Required to re-identify the current verse whenever the previous xref:para:index.adoc[paragraph] or xref:para:tables/index.adoc[table] closed prior the end of the current verse text. A standard book + chapter + verse scripture reference. Book names must be a standard 3-character xref:doc:books.adoc[book identifier]. The Chapter + verse separator is always a colon '`:`'.
 *** Pattern: `+[A-Z1-4]{3} ?[a-z0-9\-:]*+`
+#h#::: Running header text. _Only used when a paragraph is a part of a fragment of scripture_ (e.g. a scripture module), and the fragment includes a xref:ms:vid.adoc[vid] (current reference identifier) milestone.
 #content#::: Paragraph content
 
 == Diagrams
