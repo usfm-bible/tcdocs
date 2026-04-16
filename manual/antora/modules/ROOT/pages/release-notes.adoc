@@ -17,7 +17,7 @@ endif::[]
 * Fix xref:char:breaks/optbreak.adoc[optbreak].
 * Allow xref:para:index.adoc[paragraph] type xref:para:paragraphs/lit.adoc[lit] in book xref:doc:index.adoc#doc-book-intro[introductions].
 * xref:doc:books.adoc[Book codes] must contain at least one letter.
-* xref:ROOT:extensions.adoc[Markers.ext] #``++\category++``# may contain multiple entries.
+* xref:ROOT:extensions.adoc[Markers.ext] #_\category_# may contain multiple entries.
 
 == 3.1
 _July 2024_
