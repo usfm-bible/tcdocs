@@ -13,9 +13,14 @@ endif::[]
 == Summary
 
 Description:: Current reference identifier. For indicating what the current reference is within a fragment of scripture (e.g. a scripture module), and to provide the current header text (xref:para:identification/h.adoc[h]). This can be used instead of inserting a xref:cv:c.adoc[c] and xref:cv:v.adoc[v] marker in the text fragment.
+[NOTE]
+.Syntax notes
+====
+In *USFM* `++\vid\*++` is presented as a xref:ms:index.adoc[milestone]. In **USX** the attribute values from this milestone are expressed within the following xref:para:index.adoc[paragraph] element as #__@h__# and #__@vid__#, rather than by the addition of an `<ms/>` element.
+====
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
-* *USFM:* ``++\vid |++``#__@ref @h__#``++\*++``
-* *USX:* ``++<ms style="vid" ++``#__@ref @h__#``++/>++``
+* *USFM:* ``++\vid|++``#__@h @ref__#``++\*++``
+* *USX:* ``++<para style="++``#__style__#``++" h="++``#__@h__#``++" vid="++``#__@ref__#``++">++``#__content__#``++</para>++``
 #ref*#::: Use for identifying the current scripture reference. _(default attribute)_
 ** Follows the pattern: `+[A-Z1-4]{3}(-[A-Z1-4]{3})? ?[a-z0-9\-:]*+`.
 ** Example: `MAT 3:1-4`, where:
@@ -26,7 +31,7 @@ xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 Style Type:: xref:ms:index.adoc[Milestone]
 Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`
 // tag::spec[]
-Added:: 3.1.2
+Added:: 3.1.2 (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25008%20vid.md[U25008^])
 // end::spec[]
 
 == Examples
@@ -54,8 +59,7 @@ USX::
 [source#src-usx-ms-vid_1,xml,highlight=2]
 ----
 <usx version="3.1.2">
-  <ms style="vid" ref="MRK 4:26" h="Mark"/>
-  <para style="s1">The Seed Growing Secretly</para>
+  <para style="s1" h="Mark" vid="MRK 4:26">The Seed Growing Secretly</para>
   <para style="p"><verse style="v" number="26" />Jesus also said, “The kingdom 
   of God is like a man who scatters seed on the ground.
   <verse style="v" number="27" />Night and day he sleeps and wakes, and the seed 
