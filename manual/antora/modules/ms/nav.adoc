@@ -1,6 +1,8 @@
 * xref:index.adoc[]
 // ** Milestones
 // tag::nav-topcat[]
+** xref:list.adoc[list - List start/end]
+** xref:table.adoc[table - Table start/end]
 ** xref:qt.adoc[qt# - Quotations]
 ** xref:ts.adoc[ts - Translator's section]
 ** xref:vid.adoc[vid - Current reference identifier]

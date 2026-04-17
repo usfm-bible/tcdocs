@@ -10,7 +10,7 @@ endif::[]
 === Additions
 
 * Add explicit xref:ROOT:syntax-usv.adoc[Unicode USV representation] for USFM (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25004%20Explicit%20Unicode.md[U25004^]).
-* An optional `list` element in USX, and two pairs of xref:ms:index.adoc[milestones] in USFM to represent the start and end of a list or table (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25003%20Lists%20and%20Tables.md[U25003^]).
+* An optional `list` element in USX, and two pairs of xref:ms:index.adoc[milestones] in USFM to represent the start and end of a xref:ms:list.adoc[list] or xref:ms:table.adoc[table] (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25003%20Lists%20and%20Tables.md[U25003^]).
 * Use a `++*++` (wildcard) to attribute in markers.ext (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2024/U24002%20Textual%20Alternatives.md[U24002^]). E.g. `++a-*++` to allow anything with an `++a-++` prefix.
 * Generalised node initial attributes (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25001%20Attributes.md[U25001^]). E.g. `\ip |aid="author"| The author is unknown`.
 * Anchors and inline referencing (TC proposal: https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25002%20Anchors.md[U25002^])
