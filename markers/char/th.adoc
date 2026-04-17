@@ -47,6 +47,7 @@ USFM::
 \c 7
 \p
 \v 12-83 They presented their offerings in the following order:
+\table-s\*
 \tr \th1 Day \th2 Tribe \th3 Leader
 \tr \tcr1 1st \tc2 Judah \tc3 Nahshon son of Amminadab
 \tr \tcr1 2nd \tc2 Issachar \tc3 Nethanel son of Zuar
@@ -54,13 +55,14 @@ USFM::
 \tr \tcr1 4th \tc2 Reuben \tc3 Elizur son of Shedeur
 \tr \tcr1 5th \tc2 Simeon \tc3 Shelumiel son of Zurishaddai
 ...
+\table-e\*
 ----
 USX::
 +
 .Numbers 7.12-83 (GNT)
 [source#src-usx-char-th_1,xml,highlight=9..11]
 ----
-<usx version="3.1">
+<usx version="3.2">
   <book code="NUM" style="id"/>
   <chapter number="7" style="c" sid="NEH 7"/>
   <para style="p">

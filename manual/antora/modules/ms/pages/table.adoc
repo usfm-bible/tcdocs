@@ -1,0 +1,4 @@
+= table-s / table-e
+:env-antora:
+
+include::markers:ms/table.adoc[tag=public]

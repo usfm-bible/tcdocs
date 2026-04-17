@@ -1,10 +1,8 @@
 = Tables
 
-include::../../nav.adoc[tag=nav-tables]
-
 .Alternate structures for tables in USFM and USX
 ****
-In *USFM*, a table is composed by a series of paragraphs marked with `\tr`.
+In *USFM*, a table is composed of a series of paragraphs marked with `\tr`.
 
 include::../../nav.adoc[tag=nav-tables]
 
@@ -12,7 +10,7 @@ The content for cells is marked with xref:char:tables/index.adoc[character types
 
 include::para:/tables/xref-char.adoc[tag=xrefs-only]
 
-USX represents most USFM xref:para:index.adoc[paragraph] and xref:char:index.adoc[character] types with corresponding `<para>` and `<char>` tags. For tables, the structures are different. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container.
+*USX* represents most USFM xref:para:index.adoc[paragraph] and xref:char:index.adoc[character] types with corresponding `<para>` and `<char>` tags. For tables, the structures are different. In *USX* the sequence of `\tr` rows is composed within a `+<table>...</table>+` container. In USFM >= 3.2 this table container can also be expressed in USFM syntax using a xref:ms:table.adoc[table start and end] milestone pair.
 
 [tabs]
 ======
@@ -21,8 +19,10 @@ USFM::
 .USFM table structure
 [source#src-usfm-para-tr_1,usfm]
 ----
-\tr \tc1 {cell 1 content} \tc2 {cell 2 content}
-\tr \tc1 {cell 3 content} \tc2 {cell 4 content}
+\table-s\*
+\tr \tc1 row 1, col 1 content \tc2 row 1, col 2 content
+\tr \tc1 row 2, col 1 content \tc2 row 2, col 2 content
+\table-e\*
 ----
 USX::
 +
@@ -31,14 +31,21 @@ USX::
 ----
 <table>
    <row>
-      <cell style="[char@style]" align="start">{cell 1 content}</cell>
-      <cell style="[char@style]" align="start">{cell 2 content}</cell>
+      <cell style="[char@style]" align="start">row 1, col 1 content</cell>
+      <cell style="[char@style]" align="start">row 1, col 2 content</cell>
    </row>
    <row>
-      <cell style="[char@style]" align="start">{cell 3 content}</cell>
-      <cell style="[char@style]" align="start">{cell 4 content}</cell>
+      <cell style="[char@style]" align="start">row 2, col 1 content</cell>
+      <cell style="[char@style]" align="start">row 2, col 2 content</cell>
    </row>
 </table>
+----
+USJ::
++
+.USX table structure
+[source#src-usj-table_1,json]
+----
+
 ----
 ======
 ****

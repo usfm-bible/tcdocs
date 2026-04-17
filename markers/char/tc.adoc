@@ -48,18 +48,20 @@ USFM::
 \p
 \v 3-9 On the east side, those under the banner of the division of Judah 
 shall camp in their groups, under their leaders, as follows:
+\table-s\*
 \tr \th1 Tribe \th2 Leader \thr3 Number
 \tr \tc1 Judah \tc2 Nahshon son of Amminadab \tcr3 74,600
 \tr \tc1 Issachar \tc2 Nethanel son of Zuar \tcr3 54,400
 \tr \tc1 Zebulun \tc2 Eliab son of Helon \tcr3 57,400
 \tr \tcr1-2 Total: \tcr3 186,400
+\table-e\*
 ----
 USX::
 +
 .Numbers 2.3-9 (GNT)
 [source#src-usx-char-tc_1,xml,highlight=15..16;20..21;25..26]
 ----
-<usx version="3.1">
+<usx version="3.2">
   <book code="NUM" style="id"/>
   <chapter number="2" style="c" sid="NUM 2"/>
   <para style="p">
@@ -102,7 +104,7 @@ USJ::
 ----
 {
   "type": "USJ",
-  "version": "3.1",
+  "version": "3.2",
   "content": [
     {
       "type": "book",
