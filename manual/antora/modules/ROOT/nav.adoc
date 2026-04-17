@@ -5,6 +5,7 @@
 // ** xref:bidirectional.adoc[Bidirectional Text]
 ** xref:extensions.adoc[User Extensions]
 ** xref:whitespace.adoc[Whitespace]
+** xref:syntax-usv.adoc[Representing Unicode Scalar Values]
 ** xref:syntax-docs.adoc[Documentation Syntax]
 ** xref:glossary.adoc[Glossary of Terms]
 ** xref:development-policy.adoc[Development Policy]
