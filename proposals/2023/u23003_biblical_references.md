@@ -239,7 +239,7 @@ If there is more than one occurrence of a marker in a range and we want to refer
 
 ## Section Headings
 
-It is awkward to refer to a section heading in terms of the verse that precedes it. In effect, section paragraphs are associated with the text that follows them, rather than the text that precedes them. Consider this example USFM fragment:
+It is awkward to refer to a section heading in terms of the verse that precedes it. In effect, section paragraphs are associated with the paragraph that follows them, rather than the verse that precedes them. Consider this example USFM fragment:
 
 ```
 \c 1
@@ -247,22 +247,75 @@ It is awkward to refer to a section heading in terms of the verse that precedes 
 \v 12 At once the Spirit made him go into the desert,
 \v 13 where he stayed 40 days, being tempted by Satan.
 Wild animals were there also, but angels came and helped him.
-\s1 Jesus Calls Four Fishermen
+\s Jesus Calls Four Fishermen
 \r (Mt 4.12-22; Lk 4.14-15; 5.1-11)
 \p
 \v 14 After John had been put in prison, Jesus went to Galilee
 and preached the Good News from God.
 ```
 
-The subheading text in the `\s1`[^1] is associated with 1:14 rather than 1:13. We might reference the word Four via `1:14!s1!3`.
+It is helpful at this stage to consider the USX representation, since that closest to the content model the SRS references into.
 
-[^1]:  Markers themselves are not strictly part of any text, they are metadata governing the structure and formatting of the text. References are only concerned with text.
+```
+<chapter number="1">
+<para style="p">
+<verse numer="12" sid="MRK 1:12"/>At once the Spirit made him go into the desert,
+<verse eid="MRK 1:12"/><verse number=13" sid="MRK 1:13"/>where he stayed 40 days, being tempted by Satan.
+Wild animals were there also, but angels came and helped him.<verse eid="MRK 1:13"/>
+</para>
+<para style="s">Jesus Calls Four Fishermen</para>
+<para style="r">(Mt 4.12-22; Lk 4.14-15; 5.1-11)</para>
+<para style="p">
+<verse number="14" side="MRK 1:14"/>After John had been put in prison, Jesus went to Galilee
+and preached the Good News from God.
+```
 
-By saying that non verse paragraphs are associated with the first word in the following verse paragraph, we get around any confusion. For example, if a subheading occurs before a paragraph that does not start with a new verse, then the subheading is associated with the first word of the new paragraph, and so as part of the previous verse. Notice that here we are deviating from a strict refinement model. In effect, we refine inwards if appropriate, but if something in the reference is best dealt with by expanding the refinement, we do that. In this case, an expansion of the refinement goes out to the paragraph and all preceding subheading paragraphs.
+Notice that verse 13 finishes before the section heading and verse 14 doesn't start until after the section headings. We consider the section headings to be associated with the following paragraph. This provides a framework that allows the reference to the section heading to be MRK 1:14!s.
 
-Section heading markers are identified in the USFM grammar with a marker category of `sectionpara`. The current list as of 3.1.1 is cd, cl, iex, mr, ms, ms1, ms2, ms3, mte, mte1, mte2, r, restore, s, s1, s2, s3, s4, sd, sd1, sd2, sd3, sd4, sp, sr.
+This paragraph is aimed at implementors and goes into the depth of how the reference MRK 1:14!s works. The first thing to notice about the s is that it is a paragraph. The first step in locating the paragraph is that we search forwards within the current range (v 14) for any matching paragraph within the verse. But section paragraphs are outside any verse so searching within any verse will not find it. The search within v 14 comes up empty. So we search forward through the paragraphs associated with the paragraph the verse starts in. Section headings are associated with the verse paragraph that follows them and thus the s and r paragraphs are searched in that order (so if there are two s paragraphs the first in document order is s[1] (or simply s) and the second, s[2]. For more precise control, we say that p[0] is the p paragraph containing the start of the verse, p[-1] is the p paragraph preceding p[0]. s[-1] scans back from the current paragraph to find our subheading. Thus s[-1] == s == s[1]. s[2] will be empty in this example. s[-2] is the subheading before the one in this example, which could not exist and so be empty. Thus negative indexing allows access to elements outside the current range. For the purposes of such referencing the subheadings are considered both inside and outside the range, depending on what you are doing. They are not inside the range for the purposes of word indexing, character style referencing or note referencing. Thus, for example, if the subheading had a footnote in it, it would have to be referenced as MRK 1:14!s!f and not MRK 1:14!f[-1]. Negative indexing of non paragraph elements are scoped by the paragraph the current range starts in. Consider this algorithm:
+
+- Is the index 0?
+    - search up the containing element hierarchy for a style matching the referencing marker
+    - Return the entire element if found or empty if not
+- else is the index negative?
+    - Scan up the hierarchy until an element with the same type as that of the reference marker is found
+    - if an element is found, set the current start to the start of that element otherwise leave it where it is
+    - starting from the current start find backwards matching elements of the style of the reference marker
+        - for each one increment the index until it hits 0
+        - if we hit the start of the parent element of the start, return empty else return the element found
+- else (the index is positive)
+    - search within the current range for the element matching the reference marker decrementing the count each time until 0
+    - if hit 0, return the matching element
+    - if we hit the end of the current range and the reference marker is a section heading
+        - scan forwards through all the section headings before the paragraph containing the start of the range for elements matching the marker, decrementing the count each time
+        - if we hit 0, return the element found
+        - if we hit the containing paragraph of the start of the range
+	    - continue scanning after the current paragraph, even if the paragraphs are in the current range, decrementing the count on each match until 0 or we hit the end of the document
+	    - if hit 0 return the element else return empty
+
+For the purposes of this algorithm, paragraphs of type other are considered as section paragraphs, that is they associate forward with the next paragraph. The last step of the positive index where the scan continues after the current paragraph is provided to allow matching of other paragraphs after the final verse paragraph in a document.
+
+Section heading markers are identified in the USFM grammar with a marker category of `sectionpara`. The current list as of 3.1.1 is cd, cl, iex, mr, ms, ms1, ms2, ms3, mte, mte1, mte2, r, restore, s, s1, s2, s3, s4, sd, sd1, sd2, sd3, sd4, sp, sr. The current other paragraph markers are: lit, cp, pb, qa, k1, k2, sts, rem.
 
 The `\\\\cl` marker is interesting. There are two ways it is used, either before the first chapter or following any particular chapter. In both cases it is a paragraph marker. Following a chapter it is treated like any other section heading. Before chapter one it is referenceable like an introductory paragraph.
+
+## Paragraphs
+
+This mechanism also allows for further limiting a verse range to a particular paragraph within that verse range. This isn't strictly non-scriptural text, but it applies. Consider the following fragment, which occurs in LUK 8:
+
+```
+\p
+\v 9 Then the \w disciples\w* said, “Teacher! What is the
+meaning of this parable?” they asked Jesus.
+\v 10 So Jesus said, “God gave you the knowledge to know about his
+kingdom. But in order to fulfil that which is written in scripture,
+I am telling them with parables. Therefore
+\q1 ‘They will look but not see [it],
+\q2 they will listen but they don't understand’
+\m he told like that the disciples.
+```
+
+We can reference the q1 paragraph as `LUK 8:10!q1` with or without the `[1]`. A key question is: how can we reference the text from the start of verse 10 up to the start of the q1 paragraph? The reference `LUK 8:10` consists of everything in this example following `\v 10`.  We need, somehow, to be able to reference the containing paragraph. And this is what we allow. The containing paragraph is considered to be the first paragraph before a reference. Thus `LUK 8:10!p` references just the text in the verse in its containing paragraph (which is of type p). Unfortunately, this makes implementing reference range extraction something beyond what a regular expression can handle (even if it could handle all the rest\!)
 
 ## Introductory Paragraphs
 
@@ -294,11 +347,7 @@ x-morph="strongMorph:TH8799"\w* à \w Abram|strong="H87"\w*:
 Va-t-\w en|strong="H3212" x-morph="strongMorph:TH8798"\w* de ton.
 ```
 
-Things can get messy when auto generated text gets involved\! For some strange reason we want to refer to the strong attribute for the 8th word en (L',  Éternel, dit, à, Abram, :, Va-t-, en). It has a value of H3212. There are different ways of writing the reference. `1:1!8!strong` counts to the 8th word. Notice that while there is no space before the `\w`, it is considered a separate word. In this example case, the 8th word cannot be refined by the `strong`. Instead we expand the refinement to the containing element (`w`) and then refine back to the attribute. Alternatively the reference might be: `1:1!w[4]!strong` which counts `\w` and then gets the strong attribute.
-
-To make things easier, we consider a marker's attributes to be associated with every character in the main text of the marker. Milestones, of course, have no main text in the marker and so the attributes can only be referenced via the milestone marker, as per the second reference in the example above.
-
-Due to the overloading of `!` there is a constraint that attribute names cannot be the same as contained marker names.
+Things can get messy when auto generated text gets involved\! For some strange reason we want to refer to the strong attribute for the 8th word en (L',  Éternel, dit, à, Abram, :, Va-t-, en). It has a value of H3212. There are different ways of writing the reference. `1:1!8@strong` counts to the 8th word. Notice that while there is no space before the `\w`, it is considered a separate word. In this example case, the 8th word cannot be refined by the `strong`. Instead we expand the refinement to the containing element (`w`) and then refine back to the attribute. Alternatively the reference might be: `1:1!w[4]@strong` which counts `\w` and then gets the strong attribute. The `@` character is used to identify that the following string is an attribute reference. The processor works its way up the marker hiearchy looking for the given attribute in the elements it encounters, returning empty if none is found.
 
 Another example is:
 
@@ -306,27 +355,9 @@ Another example is:
 \v 2 Hello\f + \cat rephrase\cat*\fr 1:2\ft A greeting\f* everyone
 ```
 
-One might think that the category may be referenced as `1:2!f!cat`. This makes sense in USFM markup terms, with the cat marker inside the footnote. But the underlying data model is closest to USX and in USX the cat becomes a category attribute. This means that cat is not the correct reference. Instead it is `1:2!f!category`. Also `greeting` is still the 3rd word and not the 4th in the footnote. In addition, since we are working with a USX based model, the caller is accessed as an attribute as in `1:2!f!caller`. Verse numbers are also `2:1!number` for example.
+One might think that the category may be referenced as `1:2!f!cat`. This makes sense in USFM markup terms, with the cat marker inside the footnote. But the underlying data model is closest to USX and in USX the cat becomes a category attribute. This means that cat is not the correct reference. Instead it is `1:2!f@category`. Also `greeting` is still the 3rd word and not the 4th in the footnote. In addition, since we are working with a USX based model, the caller is accessed as an attribute as in `1:2!f!caller`. Verse numbers are also `2:1@number` for example.
 
 Attribute names are not referenceable since you need to include the attribute name in the reference to reference the name, which seems rather circular and redundant.
-
-## Paragraphs
-
-This mechanism also allows for further limiting a verse range to a particular paragraph within that verse range. This isn't strictly non-scriptural text, but it applies. Consider the following fragment, which occurs in LUK 8:
-
-```
-\p
-\v 9 Then the \w disciples\w* said, “Teacher! What is the
-meaning of this parable?” they asked Jesus.
-\v 10 So Jesus said, “God gave you the knowledge to know about his
-kingdom. But in order to fulfil that which is written in scripture,
-I am telling them with parables. Therefore
-\q1 ‘They will look but not see [it],
-\q2 they will listen but they don't understand’
-\m he told like that the disciples.
-```
-
-We can reference the q1 paragraph as `LUK 8:10!q1` with or without the `[1]`. A key question is: how can we reference the text from the start of verse 10 up to the start of the q1 paragraph? The reference `LUK 8:10` consists of everything in this example following `\v 10`.  We need, somehow, to be able to reference the containing paragraph. And this is what we allow. The containing paragraph is considered to be the first paragraph before a reference. Thus `LUK 8:10!p` references just the text in the verse in its containing paragraph (which is of type p). Unfortunately, this makes implementing reference range extraction something beyond what a regular expression can handle (even if it could handle all the rest\!)
 
 # Identifiers
 
@@ -385,7 +416,7 @@ ContextRef = Chapter (chaptersep Verse)? Wordref?
 BookId = (TransId booksep)? BookCode
 booksep = ":" | "."
 BookCode = capital (capital | digit){2}
-  	| digit (capital{2} | digit capital | capital digit)
+  	    | digit (capital{2} | digit capital | capital digit)
 TransId = Langtag ("+" Transcode ("+" Productid)?)?
 Langtag = Lang ("-" Script)? ("-" Region)? ("-" Variant)*
            	("-" Ns ("-" Extval)+)*
@@ -410,6 +441,7 @@ Wordref = (wordrefSep WordrefOnly | Mrkref) Mrkref*
 charrefSep = "+"
 Charref = (digits | "end") "+"?
 Mrkref = "!" id ("[" digits "]")? (wordrefSep WordrefOnly)?
+        | "@" id (wordrefSep WordrefOnly)?
 
 id = idinit idmid* idfinal?
 idinit = letter | "_"
@@ -420,12 +452,12 @@ digits = digit+
 ws = " " | [\u00A0\u1680\u2000-\u200B\u200E\u200F\u202A-\u202F
             \u205F\u2066-\u2069\u3000]
 bidi = [\u200E\u200F]
-letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" |
-   	"k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" |
-   	"u" | "v" | "w" | "x" | "y" | "z"
-capital = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" |
-    	"K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" |
-    	"U" | "V" | "W" | "X" | "Y" | "Z"
+letter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+   	    | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+   	    | "u" | "v" | "w" | "x" | "y" | "z"
+capital = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+    	| "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+    	| "U" | "V" | "W" | "X" | "Y" | "Z"
 ```
 
 # Appendix 1\. Book Codes
