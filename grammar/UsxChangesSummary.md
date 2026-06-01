@@ -28,7 +28,11 @@ There is no changed to the meaning of the markers.
 
 # New Character Styles
 
-## `efm` - need confirmation that we really need This
+## `pl` - Inline subheading
+
+Added for inline headings that some projects use so semantic meaning could be given to the text rather than just using a style like `bd'.
+
+There is [a proposal](https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25009%20Pl%20Marker.md) for this style. The online documentaion will be updated soon.
 
 ## `ta` - Text alternatives
 
@@ -58,6 +62,12 @@ The purpose of the `lit` marker is still for liturgical notes/comments, but it c
 
 See [lit documention](https://docs.usfm.bible/usfm/3.1.2/para/paragraphs/lit.html) for more details.
 
+## `IntroList` category added to schema
+
+The `IntroList` category was added to the schema to allow styles like `ili1` to use `ListChar` character styles like `lik`.
+
+This means that the embedded `ListChar` elements for lists in scripture content may also be used in introduction lists. See [scripture content lists](https://docs.usfm.bible/usfm/3.1.2/para/lists/index.html) for examples.
+
 # Changes to attributes
 
 ## Optional `lang` attribute added to `tl` marker
@@ -68,9 +78,21 @@ See [tl documentation](https://docs.usfm.bible/usfm/3.1.2/char/features/tl.html)
 
 ## Most attribute checking removed from schema
 
-The USX 3.0 schema had many rules about attributes that made the schema stricter than the new USX 3.1 schema. Unknown attributes will not cause problems for tools processing USX, 
+The USX 3.0 schema had many rules about attributes that made the schema stricter than the new USX 3.1 schema. Unknown attributes will not cause problems for tools processing USX,
 
-# Appendix A - Paratext 9.5 styles that are not in USX 3.1 schema
+# Appendix A - Styles that were added and later Deprecated
+
+A couple of styles were added in earlier discussion by the USFM/USX committee, and were later deprecated as not being needed. These styles are unlikely to occur in any project data.
+
+# `efm` - Reference to caller of previous footnote in a study Bible
+
+This was initially added to be used in study Bible content like the existing `fm` marker, but later discussion decided the additional marker wasn't needed.
+
+# `t-s` and `t-e' - milestone markers
+
+Added milestone markers that were later deprecated.
+
+# Appendix B - Paratext 9.5 styles that are not in USX 3.1 schema
 
 This appendix lists the styles in the Paratext 9.5 usfm_sb.sty stylesheet that are not included in the USX 3.1 schema to help anyone trying to determine why a style is not part of the schema.
 
