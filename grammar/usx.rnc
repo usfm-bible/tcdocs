@@ -830,7 +830,7 @@ Char.char.style.enum = (
       "bk"
     |   ## Deuterocanonical/LXX additions or insertions in the Protocanonical text
       "dc"
-    |   ## Reference to caller of previous footnote in a study Bible
+    |   ## Reference to caller of previous footnote in a study Bible [deprecated]
       "efm"
     |   ## Reference to caller of previous footnote
       "fm"
@@ -989,6 +989,7 @@ Milestone.style.enum = (
       [usfm:propval="sid" usfm:propattribs="sid?" usfm:propended="ts-e"] "ts-s"
     | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="ts-s"] "ts-e"
     | "ts"
+      ## Unknown meaning [deprecated]
     | [usfm:propval="sid" usfm:propattribs="sid?" usfm:propended="t-e"] "t-s"
     | [usfm:propval="eid" usfm:propattribs="eid?" usfm:propends="t-s"] "t-e"
     | [usfm:propval="who" usfm:propattribs="who? sid?" usfm:propended="qt1-e"] "qt1-s"
