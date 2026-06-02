@@ -203,7 +203,9 @@
         <optional>
           <ref name="BookChapterLabel"/>
         </optional>
-        <ref name="Chapter"/>
+        <optional>
+          <ref name="Chapter"/>
+        </optional>
         <oneOrMore>
           <ref name="ChapterContent"/>
         </oneOrMore>

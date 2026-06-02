@@ -2,7 +2,6 @@
 
 import os, sys, argparse, logging
 from usfmtc.validating.usfmgrammar import UsfmGrammarParser, XmlGrammarParser
-
 from usfmtc.diagrams.usxgrammar import alljobs
 from usfmtc.diagrams.diagrams import UsfmRailRoad, XmlRailRoad
 import xml.etree.ElementTree as et

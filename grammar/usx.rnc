@@ -145,9 +145,7 @@ Scripture = (
         BookIntroduction*,
         BookIntroductionEndTitles*,
         BookChapterLabel?,
-        Chapter,
-        # Chapter is used to separate intro from scripture text.
-        # All books will have chapter including the single chapter books: OBA, PHM, 2JN, 3JN, JUD
+        Chapter?,
         ChapterContent+ )
     })
 
