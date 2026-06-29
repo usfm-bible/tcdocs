@@ -34,14 +34,44 @@ def test_textinnotes(usfm):
                     f'Text: "{failure}" found inside note at {usfm.fname} {n.get("vid", "UNK")}')
             return
 
-def test_verseinsidebar(usfm):
+def test_badtextloc(usfm):
+    ''' Tests for text in the wrong places in the file '''
     errors = []
-    for s in usfm.getroot().findall(".//sidebar"):
-        for v in s.findall(".//verse"):
-            errors.append(v.get("sid", ""))
+    badlocs = set(["row", "table", "list", "sidebar", "ms"])
+    for eloc, isin in usfm.iterusx():
+        if isin:
+            if eloc.tag in badlocs and notempty(eloc.text):
+                errors.append(eloc.get('vid', str(eloc)))
+        elif eloc.parent is None or eloc.parent.tag in badlocs:
+            if notempty(eloc.tail):
+                errors.append(eloc.get('vid', str(eloc)))
     if len(errors):
-        failfor(usfm, 'verseinsidebar',
-                f"The following verses occur in sidebars: {usfm.fname} {errors}")
+        failfor(usfm, 'badtextloc',
+                f"The following elements contain text they should not in {usfm.name}: {errors}")
+
+def test_badverseloc(usfm):
+    ''' Test for all the places \\v should not occur '''
+    errors = []
+    for eloc, isin in usfm.iterusx():
+        if eloc.tag != "verse" or not isin or eloc.get('sid', None) is None:
+            continue
+        p = eloc.parent
+        if p.tag == "para" and p.parent is None:
+            continue
+        elif p.tag == "cell":
+            for a in ("row", "table"):
+                p = p.parent
+                if p is None or p.tag != a:
+                    break
+            else:
+                if p.parent is None:
+                    continue
+        else:
+            continue
+        errors.append(eloc.get('sid', eloc.get('number')))
+    if len(errors):
+        failfor(usfm, 'badverseloc',
+                f"The following verses occur in bad locations: {usfm.fname} {errors}")
 
 tagstyles = {
     "chapter": "c",
@@ -103,3 +133,24 @@ def test_attributes(usfm):
     if len(failures):
         failfor(usfm, 'attributes', f"{usfm.fname}:\n    " + "\n    ".join(failures))
 
+def test_initref(usfm):
+    currchap = None
+    currverse = None
+    for i, e in enumerate(usfm.getroot()):
+        if e.tag == "chapter":
+            currchap = e.get("number")
+            continue
+        s = e.get("style", None)
+        if usfm.grammar.marker_categories.get(s, '') == "versepara":
+            if e.get("vid", None) is not None or s == "d" \
+                    or (currchap is not None \
+                    and (currverse is not None or (len(e) and e[0].tag == "verse"))):
+                break   # we're done testing
+            else:
+                breakpoint()
+                failfor(usfm, "noinitref",
+                    f"Initial reference missing in {usfm.fname} at {e.pos}")
+        elif e.tag == "ms" and s == "vid":
+            if e.get('ref', None) is not None:
+                currchap = "1"      # we don't care about the reference itself
+                currverse = "1"     # we don't care what the actual value is

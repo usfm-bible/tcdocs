@@ -67,6 +67,7 @@ def usfm(projectdir, projectfile):
                     u.fname = projectfile
                     u.base = projectdir
                     u.xfails = []
+                    u.addesids()
                     return u
     elif os.path.isdir(projectdir):
         testfile = os.path.join(projectdir, projectfile)

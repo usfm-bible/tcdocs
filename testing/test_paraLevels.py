@@ -5,6 +5,7 @@ from shared import *
 def test_paraLevels(usfm):
     ''' Requires numeric markers like \\q1 to not jump to \\q3 '''
     leveledMarkers = ["q", "qm", "li", "lim", "iq", "ili", "io"]
+    skipMarkers = ["qr"]
     currentPrefix = None
     currentLevel = -1
     lastVerse = None
@@ -13,7 +14,7 @@ def test_paraLevels(usfm):
         if node.tag != "para":
             continue
         style = node.get("style")
-        if style == None:
+        if style == None or style in skipMarkers:
             continue
         paraVerse = node.get("sid")
         if paraVerse == None:
