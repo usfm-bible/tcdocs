@@ -92,6 +92,20 @@ The chapter number is always a number in ASCII digits. Likewise for the verse. B
 
 There are also bridged verses in some translations, e.g. `LUK 11:34-35`. There is no special treatment for bridged verses. They are treated as a normal verse range. If a range is required, for example we want to extend to the end of that paragraph an initial thought might be `LUK 11:34-35-36` but this is identical in meaning to `LUK 11:34-36`. The correspondence also extends to verse lists, which are simply treated as reference lists.
 
+In some rare cases, there is verse text between the chapter and the first verse, for example some versification schemes have \d material before verse 1 in a Psalm:
+
+```
+\c 7
+\cl Psalm 7
+\s1 Prayer for Deliverance from Enemies
+\d A Shiggaion
+\q1
+\v 1 O Yahweh, my God, in you I have taken refuge.
+```
+
+To access this material a reference of PSA 7:0 may be used.
+
+
 ### Versification Schemes
 
 Different translations may work to different versifications. For example: the NIV has `MAL 3:1-18; 4:1-6` while a typical French translation will have `MAL 3:1-24`. A scripture reference is interpretted according to the versification of the scripture being referenced. Thus references to other translations are assumed to be interpretted according to that translation referenced and not the translation from where it was referenced. A higher level protocol (e.g. Module format) may override this to say that references within its file are interpreted according to a different versification. The handling of such matters is outside the scope of this standard.
@@ -284,14 +298,14 @@ This paragraph is aimed at implementors and goes into the depth of how the refer
         - for each one increment the index until it hits 0
         - if we hit the start of the parent element of the start, return empty else return the element found
 - else (the index is positive)
-    - search within the current range for the element matching the reference marker decrementing the count each time until 0
-    - if hit 0, return the matching element
-    - if we hit the end of the current range and the reference marker is a section heading
+    - if the reference marker is a section heading
         - scan forwards through all the section headings before the paragraph containing the start of the range for elements matching the marker, decrementing the count each time
         - if we hit 0, return the element found
-        - if we hit the containing paragraph of the start of the range
-	    - continue scanning after the current paragraph, even if the paragraphs are in the current range, decrementing the count on each match until 0 or we hit the end of the document
-	    - if hit 0 return the element else return empty
+        - if we hit the containing paragraph, stop scanning
+    - search within the current range for the element matching the reference marker decrementing the count each time until 0
+    - if hit 0, return the matching element
+	- continue scanning after the current paragraph, even if the paragraphs are in the current range, decrementing the count on each match until 0 or we hit the end of the document
+	- if hit 0 return the element else return empty
 
 For the purposes of this algorithm, paragraphs of type other are considered as section paragraphs, that is they associate forward with the next paragraph. The last step of the positive index where the scan continues after the current paragraph is provided to allow matching of other paragraphs after the final verse paragraph in a document.
 
