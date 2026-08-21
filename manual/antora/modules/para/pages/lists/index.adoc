@@ -1,6 +1,93 @@
 = Lists
 
+.Lists in USFM and USX
+****
+In *USFM*, a list is composed of a series of paragraphs marked with a sub-set of paragraph types for lists.
+
 include::../../nav.adoc[tag=nav-lists]
+
+Selected character spans within a list item are marked with xref:char:lists/index.adoc[character types for lists].
+
+include::para:/lists/xref-char.adoc[tag=xrefs-only]
+
+*USX* predictably represents USFM list xref:para:index.adoc[paragraph] and xref:char:index.adoc[character] types with corresponding `<para>` and `<char>` tags. *USX* >= 3.2 adds a new `<list>`...`</list>` container which is expressed in USFM syntax using a xref:ms:list.adoc[list start and end] milestone pair.
+
+[tabs]
+======
+USFM::
++
+.USFM list structure
+[source#src-usfm-list_1,usfm]
+----
+\list-s\*
+\lh optional list header
+\li1 list entry 1
+\li1 list entry 2
+\li3 list entry 3
+\lf optional list footer
+\list-e\*
+----
+USX::
++
+.USX list structure
+[source#src-usx-list_1,xml]
+----
+<list>
+<para style="lh">optional list header</para>
+<para style="li1">list entry 1</para>
+<para style="li1">list entry 2</para>
+<para style="li1">list entry 3</para>
+<para style="lf">optional list footer</para>
+</list>
+----
+USJ::
++
+.USX list structure
+[source#src-usj-list_1,json]
+----
+
+{
+  "content": [
+    {
+      "type": "para",
+      "marker": "lh",
+      "content": [
+        "optional list header"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        "list entry 1"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        "list entry 2"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "li1",
+      "content": [
+        "list entry 3"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "lf",
+      "content": [
+        "optional list footer"
+      ]
+    },
+  ]
+}
+----
+======
+****
 
 == Diagrams
 

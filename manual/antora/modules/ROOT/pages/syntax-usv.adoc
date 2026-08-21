@@ -1,0 +1,58 @@
+= Representing Unicode Scalar Values
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+== Background
+
+Both USX (XML) and USJ (JSON) have a standard syntax for representing *Unicode Scalar Value*s (USVs) as part of content. In order to be fully compatible with those formats, the USFM format marker expression needs a way of inserting USVs by number into a text.
+
+Using USVs may be characterized as “syntactic sugar” which allows for an alternate representation of characters for those who may desire to use it. A use-case occurs where using USV codes could make working with whitespace or invisible characters easier, and allow for easier corrections for those who are comfortable using the syntax.
+
+== Standard Representations
+
+=== USX – XML Numeric Character References (NCRs)
+
+XML supports direct Unicode Numeric Character References (NCRs), expressed as `&#xXXXX;`:
+
+* `&#x` is a prefix indicating a hexadecimal NCR.
+* `XXXX` is the Unicode code point in uppercase hexadecimal.
+* `;` terminates the NCR.
+
+This format is natively supported in XML and requires no additional processing.
+
+==== Examples
+
+* `++&#x0020;++` (Space, U+0020)
+* `++&#x1F600;++` (Grinning Face - &#x1F600;, U+1F600)
+
+=== USJ – JSON Unicode Escape Sequences
+
+JSON natively supports Basic Multilingual Plane (BMP) characters using \uXXXX (UTF-16):
+
+* `\uXXXX` (direct JSON-compatible encoding)
+
+Code points beyond U+FFFF require surrogate pairs. So, while `\uXXXXXXXX` is the full Unicode representation, JSON parsers must preprocess to surrogate pairs:
+
+* `\U0001F600` (U+1F600) becomes → \uD83D\uDE00
+
+==== Examples
+
+* `\u0020` (Space, U+0020)
+* `\uD83D\uDE00` (Grinning Face - &#x1F600;, U+1F600)
+
+=== USFM Representation
+
+USVs should be represented based on the approach used by Python and many other programming languages, and similar to USJ (JSON).
+
+* For BMP characters (≤ U+FFFF):
+** `\uXXXX` (4-digit uppercase hexadecimal Unicode code point)
+* For characters beyond BMP (U+10000 to U+10FFFF):
+** `\UXXXXXXXX` (8-digit uppercase hexadecimal Unicode code point)
+
+==== Examples
+
+* `\u0020` (Space, U+0020)
+* `\U0001F600` (Grinning Face -&#x1F600;, U+1F600)

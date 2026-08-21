@@ -1,0 +1,4 @@
+= list-s / list-e
+:env-antora:
+
+include::markers:ms/list.adoc[tag=public]

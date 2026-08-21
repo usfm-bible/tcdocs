@@ -1,0 +1,43 @@
+= table-s / table-e
+:description: Table start and end milestones
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/ms/table.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Table start and end milestones.
+[NOTE]
+.Syntax notes
+====
+In *USFM* versions < 3.2 it was not possible to explicitely identify the start and end of a xref:para:tables/index.adoc[table] (it needed to be inferred), or to assign attributes to a table. This milestone pair resolves this need. In all versions of **USX** a corresponding `<table>`...`</table>` container is used.
+====
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\table-s\*++``#__table content__##``++\table-e\*++``
+* *USX:* ``++<table>++``#__table content__#``++</table>++``
+Style Type:: xref:ms:index.adoc[Milestone]
+Valid In:: `[xref:doc:index.adoc#doc-book-chapter-content[ChapterContent]]`
+// tag::spec[]
+Added:: 3.2
+// end::spec[]
+
+== Examples
+
+See: xref:para:tables/index.adoc[Tables]
+
+== Properties
+
+StyleType:: xref:ms:index.adoc[Milestone]
+OccursUnder:: `[ChapterContent]`
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion

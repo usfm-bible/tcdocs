@@ -29,7 +29,7 @@ Added:: 3.0
 USFM::
 +
 .Nehemiah 7.6-14 (GNT - markup adapted)
-[source#src-usfm-char-litl_1,usfm,highlight=11;13;15;17;19;21;23]
+[source#src-usfm-char-litl_1,usfm,highlight=12;14;16;18;20;22;24]
 ----
 \pm
 \v 6 These are the people of the province who came up from the captivity of 
@@ -39,7 +39,7 @@ to Jerusalem and Judah, each to his own town,
 Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):
 \b
 \pm The list of the men of Israel:
-\b
+\list-s\*
 \lim1
 \v 8 the descendants of Parosh - \litl 2,172\litl*
 \lim1
@@ -55,13 +55,14 @@ Mordecai, Bilshan, Mispereth, Bigvai, Nehum and Baanah):
 \lim1
 \v 14 of Zaccai - \litl 760\litl*
 ...
+\list-e\*
 ----
 USX::
 +
 .Nehemiah 7.6-14 (GNT - markup adapted)
-[source#src-usx-char-litl_1,xml,highlight=18;21;24;28;31;34;37]
+[source#src-usx-char-litl_1,xml,highlight=19;22;25;29;32;35;38]
 ----
-<usx version="3.1">
+<usx version="3.2">
   <book code="NEH" style="id"/>
   <chapter number="7" style="c" sid="NEH 7"/>
   <para style="pm">
@@ -75,29 +76,30 @@ USX::
   <para style="b" vid="NEH 7:7"/>
   <para style="pm" vid="NEH 7:7">The list of the men of 
     Israel:<verse eid="NEH 7:7"/></para>
-  <para style="b"/>
-  <para style="lim1">
-    <verse number="8" style="v" sid="NEH 7:8"/>the descendants of Parosh - 
-    <char style="litl">2,172</char><verse eid="NEH 7:8"/></para>
-  <para style="lim1">
-    <verse number="9" style="v" sid="NEH 7:9"/>of Shephatiah - 
-    <char style="litl">372</char><verse eid="NEH 7:9"/></para>
-  <para style="lim1">
-    <verse number="10" style="v" sid="NEH 7:10"/>of Arah - 
-    <char style="litl">652</char><verse eid="NEH 7:10"/></para>
-  <para style="lim1">
-    <verse number="11" style="v" sid="NEH 7:11"/>of Pahath-Moab (through the
-    line of Jeshua and Joab) - 
-    <char style="litl">2,818</char><verse eid="NEH 7:11"/></para>
-  <para style="lim1">
-    <verse number="12" style="v" sid="NEH 7:12"/>of Elam - 
-    <char style="litl">1,254</char><verse eid="NEH 7:12"/></para>
-  <para style="lim1">
-    <verse number="13" style="v" sid="NEH 7:13"/>of Zattu - 
-    <char style="litl">845</char><verse eid="NEH 7:13"/></para>
-  <para style="lim1">
-    <verse number="14" style="v" sid="NEH 7:14"/>of Zaccai - 
-    <char style="litl">760</char><verse eid="NEH 7:14"/></para>
+  <list>
+    <para style="lim1">
+      <verse number="8" style="v" sid="NEH 7:8"/>the descendants of Parosh - 
+      <char style="litl">2,172</char><verse eid="NEH 7:8"/></para>
+    <para style="lim1">
+      <verse number="9" style="v" sid="NEH 7:9"/>of Shephatiah - 
+      <char style="litl">372</char><verse eid="NEH 7:9"/></para>
+    <para style="lim1">
+      <verse number="10" style="v" sid="NEH 7:10"/>of Arah - 
+      <char style="litl">652</char><verse eid="NEH 7:10"/></para>
+    <para style="lim1">
+      <verse number="11" style="v" sid="NEH 7:11"/>of Pahath-Moab (through the
+      line of Jeshua and Joab) - 
+      <char style="litl">2,818</char><verse eid="NEH 7:11"/></para>
+    <para style="lim1">
+      <verse number="12" style="v" sid="NEH 7:12"/>of Elam - 
+      <char style="litl">1,254</char><verse eid="NEH 7:12"/></para>
+    <para style="lim1">
+      <verse number="13" style="v" sid="NEH 7:13"/>of Zattu - 
+      <char style="litl">845</char><verse eid="NEH 7:13"/></para>
+    <para style="lim1">
+      <verse number="14" style="v" sid="NEH 7:14"/>of Zaccai - 
+      <char style="litl">760</char><verse eid="NEH 7:14"/></para>
+  </list>
 </usx>
 ----
 USJ::

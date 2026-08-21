@@ -1,0 +1,4 @@
+= efe
+:env-antora:
+
+include::markers:note/efe.adoc[tag=public]

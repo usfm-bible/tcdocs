@@ -11,32 +11,32 @@ Users may create and use non-standard markup extensions. User created markers sh
 A basic specification for markup extensions used in a text should be provided in a file named `+markers.ext+`. For each marker, supply the following:
 
 #``++\marker++``#:: Marker text
-[#ext-category]#``++\category++``#:: Marker category, from the following list:
+[#ext-category]
+#``++\category++``#:: Marker category, from the following list:
 * xref:para:index.adoc[Paragraph]
-** `header`:: A header/identification paragraph. These are the paragraphs that occur before any titles or introduction
-** `title`:: A book title paragraph occuring before and possibly after introductory material
-** `introduction`:: Introduction text paragraph
-** `sectionpara`:: Section heading paragraph occuring before and associated with a following paragraph. May not include verses
-** `versepara`:: Verse text paragraph may include verses
-** `list`:: List paragraph (verse text)
-** `otherpara`:: Other (non verse text) paragraph
-** `cell`:: A table cell acts much like a paragraph.
+** `header` - Header/identification paragraph
+** `title` - Book title paragraph
+** `introduction` - Introduction text paragraph
+** `sectionpara` - Section heading paragraph
+** `versepara` - Verse text paragraph
+** `list` - List paragraph (verse text)
+** `otherpara` - Other (non verse text) paragraph
 * xref:note:index.adoc[Note]
-** `crossreference`:: Cross Reference container
-** `footnote`:: Footnote container
+** `crossreference` - Cross Reference container
+** `footnote` - Footnote container
 * xref:char:index.adoc[Character]
-** `char`:: Character-level container (span). Must be explicitly closed, in USFM.
-** `introchar`:: Introduction text character span only found in introduction paragraphs
-** `listchar`:: List text character span only found in list paragraphs
-** `footnotechar`:: Footnote text character span only found in footnotes. Are implicitly closed by another footnotechar or the end of the footnote, in USFM.
-** `crossreferencechar`:: Cross reference text character span only found in crossreferences. Are implicitly closed by another crossreferencechar or the end of the crossreference, in USFM.
+** `char` - Character-level container (span)
+** `introchar` - Introduction text character span
+** `listchar` - List text character span
+** `footnotechar` - Footnote text character span
+** `crossreferencechar` - Cross reference text character span
 * xref:ms:index.adoc[Milestone]
-** `milestone`:: Milestone
-** `standalone`:: A milestone with no parameters. In USFM it has no final `\*` closer.
+** `milestone` - Milestone
 * Other
-** `internal`:: Has explicitly programmed behaviour that is not covered by other categories. An extension marker may not be labelled internal.
-** `attribute`:: A special kind of internal marker that is treated as a separate marker in USFM but as an attribute in USX/USJ.
+** `attribute` - Indicates that the contents are an attribute in USX (xref:cv:cp.adoc[cp], xref:cv:vp.adoc[vp], xref:cv:ca.adoc[ca], xref:cv:va.adoc[va], xref:doc:usfm.adoc[usfm], xref:cat:cat.adoc[cat])
 ** `cell` - tc1..12, tcc1..12, tcr1..12, th1..12, thc1..12, thr1..12
+** `standalone` - A bare milestone with no attibutes or delimeter.
+** `internal` - Internal
 #``++\description++``#:: Marker description
 #``++\attribute++``#:: __As needed__ - Required or optional attribute (used with Character marker categories). If more than one attribute is specified for the marker, provide a separate \attribute field for each. 
 

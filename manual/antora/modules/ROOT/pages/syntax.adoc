@@ -106,13 +106,15 @@ JSON (JavaScript Object Notation) is a modern data serialization format supporte
 == Additional Syntax Notes
 
 === Numbered Markers/Styles
-Some markers or styles include an optional numeric variable, which is represented in this documentation by a hash character `+#+`. The number indicates:
+Some markers or styles include a numeric variable, which is represented in this documentation by a hash character `+#+`. The number indicates:
 
 * A portion of a larger text, or relative weighting of the components of the text, such as `mt1`, `mt2`, `mt3` which are parts of a xref:para:titles-sections/mt.adoc[main title].
 * The level of a division or section (hierarchy).
 * The level of indentation relative to other like elements, as in poetry (xref:para:poetry/q.adoc[q#]) or lists (xref:para:lists/li.adoc[li#]) or outlines (xref:para:introductions/io.adoc[io#]).
 
-*marker = marker1* — The _unnumbered_ version of a marker or style should only be used when one level of this marker exists within the text (only). _Numbered_ markers should always be used when more than one level of the marker exists within the text.
+*marker = marker1* — An _unnumbered_ version of a marker or style should only be used when one level of this marker exists within the text (only). _Numbered_ markers should always be used when more than one level of the marker exists within the text.
+
+Numbered markers are _required_ in xref:char:tables/index.adoc[character types for tables] (table cells).
 
 [CAUTION]
 ====
