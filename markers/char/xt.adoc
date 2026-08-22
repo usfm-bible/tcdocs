@@ -16,7 +16,7 @@ Description:: xref:note:crossref/index.adoc[Cross Reference] - Target references
 * Supply an explicit target reference by enclosing the reference string with xref:char:features/ref.adoc[ref].
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\xt ++``#__content__#
-* *USX:* ``++<char style="xt">++``#__content__#``++</char>++`
+* *USX:* ``++<char style="xt">++``#__content__#`++</char>++`
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`, `[xref:note:footnote/index.adoc[Footnote]]`, `[xref:note:crossref/index.adoc[CrossReference]]`
 // tag::spec[]
