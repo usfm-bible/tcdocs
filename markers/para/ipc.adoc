@@ -28,28 +28,89 @@ Added:: 3.1.1
 ======
 USFM::
 +
-.Missing
-[source#src-usfm-para-ipc_1,usfm,highlight=]
+.Introduction to Galatians (CEVUK)
+[source#src-usfm-para-ipc_1,usfm,highlight=6]
 ----
-Missing
+\id GAL
+\ip Faith is the only way to be saved. Paul insists that this was true already 
+for Abraham, who had received God's promise by faith. And Paul leaves no doubt 
+about what his own faith means to him:
+\ib
+\ipc I have been nailed to the cross with Christ. I have died, but Christ lives 
+in me. And I now live by faith in the Son of God, who loved me and gave his life 
+for me.
+\ipr (2.19b,20)
+\iot A quick look at this book
 ----
 USX::
 +
-.Missing
+.Introduction to Galatians (CEVUK)
 [source#src-usx-para-ipc_1,xml,highlight=]
 ----
-Missing
+<usx version="3.1">
+  <book code="GAL" style="id"/>
+  <para style="ip">Faith is the only way to be saved. Paul insists that this was 
+  true already for Abraham, who had received God's promise by faith. And Paul 
+  leaves no doubt about what his own faith means to him:</para>
+  <para style="ib"/>
+  <para style="ipc">I have been nailed to the cross with Christ. I have died, but 
+  Christ lives in me. And I now live by faith in the Son of God, who loved me and 
+  gave his life for me.</para>
+  <para style="ipr">(2.19b,20)</para>
+  <para style="iot">A quick look at this book</para> 
+</usx>
 ----
 USJ::
 +
 .Missing
 [source#src-usj-para-ipc_1,json,highlight=]
 ----
-Missing
+{
+  "type": "USJ",
+  "version": "3.1",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "GAL",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        "Faith is the only way to be saved. Paul insists that this was true already for Abraham, who had received God's promise by faith. And Paul leaves no doubt about what his own faith means to him:"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "ib",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "ipc",
+      "content": [
+        "I have been nailed to the cross with Christ. I have died, but Christ lives in me. And I now live by faith in the Son of God, who loved me and gave his life for me."
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "ipr",
+      "content": ["(2.19b,20)"]
+    },
+    {
+      "type": "para",
+      "marker": "iot",
+      "content": ["A quick look at this book"]
+    },
+    " ... "
+  ]
+}
 ----
 ======
 
-image::para/missing.jpg[,300]
+image::para/ipc_1.jpg[Introduction to Galatians (CEV),400]
 
 == Properties
 
