@@ -1,7 +1,7 @@
 # U25009 Paragraph Label (\\pl ... \\pl\*) Marker
 
 **Submitted by:** K. Spielmann  
-**Proposed for:** USFM 3.2
+**Proposed for:** USFM 3.1.2
 
 This proposal introduces a new character style marker, `\pl ...\pl*`, to be used specifically for in-line subheadings at the beginning of paragraphs.
 
