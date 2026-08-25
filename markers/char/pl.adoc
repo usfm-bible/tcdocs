@@ -1,0 +1,143 @@
+= pl
+:description: Paragraph label
+:url-repo: https://github.com/usfm-bible/tcdocs/blob/main/markers/char/pl.adoc
+:noindex:
+ifndef::localdir[]
+:source-highlighter: rouge
+:localdir: ../
+endif::[]
+:imagesdir: {localdir}/images
+
+// tag::public[]
+
+== Summary
+
+Description:: Paragraph label. In-line subheading at the beginning of a paragraph.
+xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
+* *USFM:* ``++\pl ++``#__content__#``++\pl*++``
+* *USX:* ``++<char style="pl">++``#__content__#``++</char>++``
+Style Type:: xref:char:index.adoc[Character]
+Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
+// tag::spec[]
+Added:: 3.1.2
+// end::spec[]
+
+== Examples
+
+[tabs]
+======
+USFM::
++
+.1 Corinthians Introduction
+[source#src-usfm-char-pl_1,usfm,highlight=1]
+----
+\id 1CO
+\mt1 1 Corinthians
+\is1 Message about this letter
+\ip \pl Author's name:\pl* Paul
+\ip \pl Year written:\pl* Approximately 56 \sc a.d.\sc*
+\ip \pl Important matter:\pl* Through Christ's apostle, Paul, some of the people 
+of Corinth city, having put their faith in Jesus, started meeting together. 
+Among these believers, useless laws, habits, and different kinds of sins entered. 
+Divisions and parties of believers formed among them. Paul wrote this letter so 
+that all these wrong ways and things against God's law should be put right.
+----
+USX::
++
+.1 Corinthians Introduction
+[source#src-usx-char-pl_1,xml,highlight=1]
+----
+<usx version="3.1.2">
+  <book code="1CO" style="id"/>
+  <para style="1s1">Message about this letter</para>
+  <para style="ip"><char style="pl">Author's name:</char> Paul</para>
+  <para style="ip"><char style="pl">Year written:</char> Approximately 56 
+    <char style="sc">a.d.</char></para>
+  <para style="ip"><char style="pl">Important matter:</char> Through Christ's 
+  apostle, Paul, some of the people of Corinth city, having put their faith 
+  in Jesus, started meeting together. Among these believers, useless laws, 
+  habits, and different kinds of sins entered. Divisions and parties of believers 
+  formed among them. Paul wrote this letter so that all these wrong ways and 
+  things against God's law should be put right.</para>
+</usx>
+----
+USJ::
++
+.Missing
+[source#src-usj-char-pl_1,json,highlight=]
+----
+{
+  "type": "USJ",
+  "version": "3.1.2",
+  "content": [
+    {
+      "type": "book",
+      "marker": "id",
+      "code": "1CO",
+      "content": []
+    },
+    {
+      "type": "para",
+      "marker": "is1",
+      "content": ["Message about this letter"]
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        {
+          "type": "char",
+          "marker": "pl",
+          "content": ["Author's name:"]
+        },
+        " Paul"
+      ]
+    },
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        {
+          "type": "char",
+          "marker": "pl",
+          "content": ["Year written:"]
+        },
+        " Approximately 56 ",
+        {
+          "type": "char",
+          "marker": "sc",
+          "content": ["a.d."]
+        }
+      ]
+    }
+    {
+      "type": "para",
+      "marker": "ip",
+      "content": [
+        {
+          "type": "char",
+          "marker": "pl",
+          "content": ["Important matter:"]
+        },
+        "  Through Christ's apostle, Paul, some of the people of Corinth city, having put their faith in Jesus, started meeting together. Among these believers, useless laws, habits, and different kinds of sins entered. Divisions and parties of believers formed among them. Paul wrote this letter so that all these wrong ways and things against God's law should be put right."
+      ]
+    }
+  ]
+}
+----
+======
+
+image::char/pl_1.jpg[1 Corinthians Introduction,400]
+
+== Properties
+
+TextType:: VerseText
+TextProperties:: publishable, vernacular
+
+== Publication Issues
+
+// end::public[]
+
+== Discussion
+
+Links to open repository Issues
