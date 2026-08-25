@@ -39,7 +39,7 @@ But Joseph knew that God would someday keep his promise to his people:
 But God will take care of you and lead you out of Egypt to the land he 
 promised Abraham, Isaac, and Jacob.”
 \ipr (50.24)
-\iot A QUICK LOOK AT THIS BOOK
+\iot A quick look at this book
 ...
 ----
 USX::
@@ -58,8 +58,7 @@ USX::
   care of you and lead you out of Egypt to the land he promised Abraham, Isaac,
   and Jacob.”</para>
   <para style="ipr">(50.24)</para>
-  <para style="iot">A QUICK LOOK
-  AT THIS BOOK</para> ... 
+  <para style="iot">A quick look at this book</para>
 </usx>
 ----
 USX::
@@ -104,7 +103,7 @@ USX::
     {
       "type": "para",
       "marker": "iot",
-      "content": ["A QUICK LOOK AT THIS BOOK"]
+      "content": ["A quick look at this book"]
     },
     " ... "
   ]
