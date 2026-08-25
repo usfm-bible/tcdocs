@@ -14,6 +14,7 @@
 *** xref:features/k.adoc[k - Keyword/keyterm]
 *** xref:features/nd.adoc[nd - Name of God]
 *** xref:features/ord.adoc[ord - Ordinal ending]
+*** xref:features/pl.adoc[pl - Paragraph label]
 *** xref:features/pn.adoc[pn - Proper name]
 *** xref:features/png.adoc[png - Geographic name]
 *** xref:features/qt.adoc[qt - Quoted text]
