@@ -20,7 +20,7 @@ Description:: Text alternatives. A character style which allows for specifying a
 xref:ROOT:syntax-docs.adoc#_syntax[Syntax image:ROOT:help.svg[]]::
 * *USFM:* ``++\ta ++``#__content__#``++|++``#__@a-<identifier>__#``++\ta*++``
 * *USX:* ``++<char style="ta" ++``#__@a-<identifier>__#``++>++``#__content__#``++</char>++``
-#a-<identifier>#::: One or more attributes for providing text altervatives. Each attribte should be begin with `a-`
+#a-<identifier>#::: One or more attributes for providing text alternatives. Each attribute should be begin with `a-`
 Style Type:: xref:char:index.adoc[Character]
 Valid In:: `[xref:doc:index.adoc#doc-book-titles[BookTitles]]`, `[xref:doc:index.adoc#doc-book-intro[BookIntroduction]]`, `[xref:doc:index.adoc#doc-book-intro-end-titles[BookIntroductionEndTitles]]`, `[xref:para:titles-sections/index.adoc[Section]]`, `[Para]` (xref:para:paragraphs/index.adoc[Body Paragraphs], xref:para:poetry/index.adoc[Poetry]), `[xref:para:lists/index.adoc[List]]`, `[xref:para:tables/index.adoc[Table]]`
 // tag::spec[]
@@ -39,9 +39,9 @@ USFM::
 \id JER
 \c 13
 \p ...
-\v 23 Can people change the \ta color|a-uk="colour" of their skin, or a leopard 
-remove its spots? If they could, then you that do nothing but evil could learn 
-to do what is right.
+\v 23 Can people change the \ta color|a-uk="colour"\ta* of their skin, or a 
+leopard remove its spots? If they could, then you that do nothing but evil 
+could learn to do what is right.
 ----
 USX::
 +
@@ -55,7 +55,7 @@ USX::
     <verse number="23" style="v" sid="JER 13:23" />Can people change the 
     <char style="ta" a-uk="colour">color</char> of their skin, or a leopard 
     remove its spots? If they could, then you that do nothing but evil could 
-    learn to do what is right.<verse eid="XXA 13:23" /></para>
+    learn to do what is right.<verse eid="JER 13:23" /></para>
 </usx>
 ----
 USJ::
@@ -67,7 +67,7 @@ Missing
 ----
 ======
 
-image::char/missing.jpg[,300]
+image::char/ta_1.jpg[Jeremiah 13.23 (GNT),300]
 
 == Properties
 
