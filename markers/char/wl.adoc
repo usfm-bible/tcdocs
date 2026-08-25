@@ -29,7 +29,7 @@ Added:: 3.1.2
 ======
 USFM::
 +
-.Luke 2.21 (GNT)
+.Luke 2.21 (GNT - adapted with unknown footnote example source)
 [source#src-usfm-char-wl_1,usfm,highlight=4]
 ----
 \p
@@ -40,7 +40,7 @@ the angel had given him before he had been conceived.
 ----
 USX::
 +
-.Unknown example source
+.Luke 2.21 (GNT - adapted with unknown footnote example source)
 [source#src-usx-char-wl_1,xml,highlight=10]
 ----
 <usx version="3.1.2">
@@ -59,7 +59,7 @@ USX::
 ----
 ======
 
-image::char/missing.jpg[,300]
+image::char/wl_1.jpg[Luke 2.21 (GNT - adapted with unknown footnote example source),500]
 
 == Properties
 
