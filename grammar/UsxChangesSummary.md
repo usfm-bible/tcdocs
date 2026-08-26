@@ -18,8 +18,8 @@ The largest difference between the two schemas is that the USFM 3.1.2 schema has
 
 Paratext 9 has an option to upgrade a USFM 3.0 project to USFM 3.1. No new markers or attributes are added during the upgrade process. The following changes will be made:
  - The `+` character before nested styles will be removed since it is no longer needed in USFM 3.1. The `+` was not included in the USX generated from USFM 3.0.
-   - Example: `\bd bold\\+it bold-italic\\+it*\bd*
-   - Upgraded: `\bd bold\it bold-italic\it*\bd*
+   - Example: `\bd bold\\+it bold-italic\\+it*\bd*`
+   - Upgraded: `\bd bold\it bold-italic\it*\bd*`
    - USX: unchanged
  - Ending markers will be added when a character style is closed by the start of a new character style. This will not affect the USX since the `char` element is being closed in the same place, the USFM is just being made more explicit about where the style closes.
    - Example: `\bd bold\it italic\it*`
@@ -27,8 +27,8 @@ Paratext 9 has an option to upgrade a USFM 3.0 project to USFM 3.1. No new marke
    - USX: unchanged
  - To prevent footnotes and cross-references from having many new ending markers, USFM 3.1 defines the section markers for notes as special character styles that don't need ending markers. See [footnote character types](https://docs.usfm.bible/usfm/3.1.2/char/notes/footnote/index.html) and [cross reference character types](https://docs.usfm.bible/usfm/3.1.2/char/notes/crossref/index.html) for the list of markers treated this way.
  - The `xt` marker in a footnote is a regular character style. This means that an ending marker will be added for it and that it will be nested under the previous note section marker. This will create a minor difference in the USX, but it will not affect the meaning of the USX.
-   - Example: `\f - \ft text\xt JHN 3.16\f*
-   - Upgraded: `\f - \ft text\xt JHN 3.16\xt*\f*
+   - Example: `\f - \ft text\xt JHN 3.16\f*`
+   - Upgraded: `\f - \ft text\xt JHN 3.16\xt*\f*`
    - 3.0 USX:<br>
 	> `<note style='f' caller='-'>`<br>
 	> &nbsp;&nbsp;`<char style='ft'>text</char>`<br>
