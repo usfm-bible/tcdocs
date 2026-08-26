@@ -1,10 +1,45 @@
 # Executive summary
 
-Some USFM/USX development teams only use the USX form of the data. This document summarizes the changes between USFM 3.0.5 and USFM 3.1.2 that affect USX.
+Some USFM/USX development teams only use the USX form of the data. This document summarizes the changes between USFM 3.0.8 and USFM 3.1.2 that affect USX.
 
 The goal of the USFM/USX technical committee when selecting changes for USFM 3.1.2 was to only allow changes that would not affect the existing structure of USX.
 
 NOTE: The formatting of USFM styles is not included in the USFM 3.1 specification. The documentation has example usage along with formatted text and descriptions of USFM markers in this document will contain links to that online documentation.
+
+# USX RNG schemas
+
+The most recent RNG schema for USFM 3 is USFM 3.0.8 and is found [here](https://github.com/ubsicap/usx/blob/master/schema/usx.rng).
+
+The RNG Schema for USFM 3.1.2 is found [here](https://github.com/usfm-bible/tcdocs/blob/3.1.2/grammar/usx.rng)
+
+The largest difference between the two schemas is that the USFM 3.1.2 schema has annotations that are used to guide a reference USFM to USX parser. These annotations are in the `usfm` namespace which is ignored when using the schema to validate USX. For other changes see the sections on new styles.
+
+# Upgrading from USMF 3.0 to USFM 3.1.2
+
+Paratext 9 has an option to upgrade a USFM 3.0 project to USFM 3.1. No new markers or attributes are added during the upgrade process. The following changes will be made:
+ - The `+` character before nested styles will be removed since it is no longer needed in USFM 3.1. The `+` was not included in the USX generated from USFM 3.0.
+   - Example: `\bd bold\\+it bold-italic\\+it*\bd*
+   - Upgraded: `\bd bold\it bold-italic\it*\bd*
+   - USX: unchanged
+ - Ending markers will be added when a character style is closed by the start of a new character style. This will not affect the USX since the `char` element is being closed in the same place, the USFM is just being made more explicit about where the style closes.
+   - Example: `\bd bold\it italic\it*`
+   - Upgraded: `\bd bold\bd*\it italic\it*`
+   - USX: unchanged
+ - To prevent footnotes and cross-references from having many new ending markers, USFM 3.1 defines the section markers for notes as special character styles that don't need ending markers. See [footnote character types](https://docs.usfm.bible/usfm/3.1.2/char/notes/footnote/index.html) and [cross reference character types](https://docs.usfm.bible/usfm/3.1.2/char/notes/crossref/index.html) for the list of markers treated this way.
+ - The `xt` marker in a footnote is a regular character style. This means that an ending marker will be added for it and that it will be nested under the previous note section marker. This will create a minor difference in the USX, but it will not affect the meaning of the USX.
+   - Example: `\f - \ft text\xt JHN 3.16\f*
+   - Upgraded: `\f - \ft text\xt JHN 3.16\xt*\f*
+   - 3.0 USX:<br>
+	> `<note style='f' caller='-'>`<br>
+	> &nbsp;&nbsp;`<char style='ft'>text</char>`<br>
+	> &nbsp;&nbsp;`<char style='xt'>JHN 3.16</char>`<br>
+	> `</note>`
+   - 3.1 USX:<br>
+   > `<note style='f' caller='-'>`<br>
+   > &nbsp;&nbsp;`<char style='ft'>text`<br>
+   > &nbsp;&nbsp;&nbsp;&nbsp;`<char style='xt'>JHN 3.16</char>`<br>
+   > &nbsp;&nbsp;`</char>`<br>
+   > `</note>`<br>
 
 # New Paragraph Styles
 
@@ -32,7 +67,7 @@ There is no changed to the meaning of the markers.
 
 Added for inline headings that some projects use so semantic meaning could be given to the text rather than just using a style like `bd'.
 
-There is [a proposal](https://github.com/usfm-bible/tcdocs/blob/main/proposals/2025/U25009%20Pl%20Marker.md) for this style. The online documentaion will be updated soon.
+There is [pl documentation](https://docs.usfm.bible/usfm/3.1.2/char/features/pl.html) for more details.
 
 ## `ta` - Text alternatives
 
