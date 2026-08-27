@@ -2,6 +2,8 @@
 
 - Add \wl with @lang as optional default attribute
 - Add optional default @lang attribute to \tl
+- Add \pl character style
+- Add \ta character style. Has custom attributes beginning with "a-" to identify alternatives
 
 # 3.1.1
 
