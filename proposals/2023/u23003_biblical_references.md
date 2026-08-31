@@ -720,6 +720,36 @@ letter = "a" | "b" | ... | "z" ;
 capital = "A" | "B" | ... | "Z" ;
 ```
 
+# Appendix 3. Examples
+
+The examples here are for explanatory purposes. They are non-normative and may
+change without affecting the standard, but they do try to help in explacating
+the standard.
+
+### Psalms d
+
+```
+\id PSA LEB
+\c 78
+\cl Psalm 78
+\s1 God’s Faithfulness in Israel’s History
+\d A maskil of Asaph.\f + \fr Ps 78 \ft The Hebrew Bible counts the superscription as the first verse of the psalm \f*
+\q1
+\v 1 Listen, O my people, to my teaching.
+\q1 Incline your ears to the words of my mouth.
+```
+
+| Reference | Text |
+| :-------- | :-------------------------- |
+| PSA 78!d!2    | maskil    |
+| PSA 78:0!d!2  | maskil    |
+| PSA 78!d!f!2  | 78        |
+- PSA 78:1!s1!5 | History   |
+- PSA 78:1!1    | Listen,   |
+- PSA 78:1!q1!3 | ears      |
+- PSA 78:cl     | Psalm 78  |
+
+
 # Changes
 
 ## 1.0
