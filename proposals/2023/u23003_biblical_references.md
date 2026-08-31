@@ -744,10 +744,10 @@ the standard.
 | PSA 78!d!2    | maskil    |
 | PSA 78:0!d!2  | maskil    |
 | PSA 78!d!f!2  | 78        |
-- PSA 78:1!s1!5 | History   |
-- PSA 78:1!1    | Listen,   |
-- PSA 78:1!q1!3 | ears      |
-- PSA 78:cl     | Psalm 78  |
+| PSA 78:1!s1!5 | History   |
+| PSA 78:1!1    | Listen,   |
+| PSA 78:1!q1!3 | ears      |
+| PSA 78:cl     | Psalm 78  |
 
 
 # Changes
@@ -755,4 +755,5 @@ the standard.
 ## 1.0
 
 - Initial release Feb 2026
+- Released and moved from proposals
 
