@@ -14,7 +14,7 @@ The RNG Schema for USFM 3.1.2 is found [here](https://github.com/usfm-bible/tcdo
 
 The largest difference between the two schemas is that the USFM 3.1.2 schema has annotations that are used to guide a reference USFM to USX parser. These annotations are in the `usfm` namespace which is ignored when using the schema to validate USX. For other changes see the sections on new styles.
 
-# Upgrading from USMF 3.0 to USFM 3.1.2
+# Upgrading from USFM 3.0 to USFM 3.1.2
 
 Paratext 9 has an option to upgrade a USFM 3.0 project to USFM 3.1. No new markers or attributes are added during the upgrade process. The following changes will be made:
  - The `+` character before nested styles will be removed since it is no longer needed in USFM 3.1. The `+` was not included in the USX generated from USFM 3.0.
